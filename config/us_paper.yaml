@@ -3,18 +3,26 @@ exchange: US
 data_dir: paper/us
 signals_dir: signals_us
 nse_checks: false
-screen: {index: sp100, top_n: 8, min_traded_value_cr: 0, vol_exclude_pct: 0.2}
+screen: {index: sp100, top_n: 10, min_traded_value_cr: 0, vol_exclude_pct: 0.2, trend_template: true}
 llm: {signal_source: external}   # ratings come from the Claude analyst (this session)
 strategy:
   signal_mode: hybrid
   regime_index: "^GSPC"
   results_blackout_days: 0      # NSE calendar is India-only; the analyst checks US earnings dates instead
+  # slow momentum book (see config.example.yaml); positions opened on 28 Oct keep their original stops
+  rsi_max_entry: 85
+  atr_stop_mult: 4.0
+  min_stop_pct: 0.08
+  max_stop_pct: 0.25
+  take_profit_rr: 100
+  min_hold_days: 20
+  reentry_cooldown_days: 20
 risk:
   capital: 10000
-  max_position_pct: 0.20
-  risk_per_trade_pct: 0.01
-  max_open_positions: 5
-  max_per_sector: 2
+  max_position_pct: 0.10
+  risk_per_trade_pct: 0.02
+  max_open_positions: 10
+  max_per_sector: 3
   min_order_value: 100
 broker: {name: paper, paper_state_file: paper/us/paper_account.json}
 shadow_arms: [factor]
