@@ -238,7 +238,8 @@ def screen(
     as_of = date.fromisoformat(on) if on else previous_trading_day(now_ist().date(), s.holidays)
     members = index_members(index, s.path("universe", "_").parent)
     table = score_universe(download_closes(members, as_of - timedelta(days=420), as_of), as_of,
-                           min_traded_value_cr=sc.min_traded_value_cr, vol_exclude_pct=sc.vol_exclude_pct)
+                           min_traded_value_cr=sc.min_traded_value_cr,
+                           vol_exclude_pct=sc.vol_exclude_pct, trend_template_required=sc.trend_template)
     picks = table[table["eligible"]].head(top)
     typer.echo(picks.to_string(index=False))
     typer.echo(f"\n{int(table['eligible'].sum())} of {len(table)} {index} stocks eligible; top {top} shown (data to {as_of})")

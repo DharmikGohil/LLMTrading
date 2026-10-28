@@ -155,3 +155,17 @@ def test_sector_cap(hybrid, monkeypatch):
     assert eng.rebalance(D) == []                                     # a second pharma name is blocked
     monkeypatch.setattr(eng, "_sectors", lambda: {"AAA": "IT", "ZZZ": "Pharma"})
     assert [e["symbol"] for e in eng.rebalance(D)] == ["AAA"]
+
+
+def test_trend_template_and_screen_option(ohlcv):
+    from indtrader.signals.technical import trend_template
+
+    up = ohlcv(300, drift=0.004, seed=11)["Close"]
+    down = ohlcv(300, drift=-0.004, seed=12)["Close"]
+    assert sum(trend_template(up).values()) == 7
+    assert sum(trend_template(down).values()) <= 2
+    assert trend_template(up.iloc[:100]) == {}
+    hist = {"UP": ohlcv(300, drift=0.004, seed=11), "DOWN": ohlcv(300, drift=-0.004, seed=12),
+            "MID": ohlcv(300, drift=0.001, seed=13)}
+    strict = score_universe(hist, min_traded_value_cr=0, vol_exclude_pct=0.0, trend_template_required=True)
+    assert set(strict.loc[strict["eligible"], "symbol"]) <= {"UP"}

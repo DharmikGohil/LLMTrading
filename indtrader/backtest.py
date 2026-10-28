@@ -26,7 +26,7 @@ from indtrader.config import Settings
 from indtrader.risk import AccountView, check_buy
 from indtrader.signals.llm_agent import SignalStore
 from indtrader.signals.technical import ema, is_bear_market, rsi, snapshot
-from indtrader.strategy import plan_target, protective_levels
+from indtrader.strategy import BULLISH, plan_target, protective_levels
 
 # Returns a rating, or (rating, llm_stop, llm_target) when the source has levels.
 RatingFn = Callable[[str, pd.DataFrame, date], str | None | tuple]
@@ -60,7 +60,7 @@ def momentum_rating_fn(histories: dict[str, pd.DataFrame], settings: Settings, r
             cache["day"] = as_of
             if cache["age"] >= recompute_every:
                 cache["table"] = score_universe(histories, as_of, min_traded_value_cr=sc.min_traded_value_cr,
-                                                vol_exclude_pct=sc.vol_exclude_pct)
+                                                vol_exclude_pct=sc.vol_exclude_pct, trend_template_required=sc.trend_template)
                 cache["age"] = 0
         return momentum_rating(cache["table"], symbol, sc.top_n) if cache["table"] is not None else None
 
@@ -186,10 +186,12 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             past = h.loc[: day - pd.Timedelta(days=1)]
             if len(past) < s.trend_ema + 5:
                 continue
-            tech = snapshot(past, s.trend_ema, s.atr_period)
             out = rating_fn(sym, past, past.index[-1].date())
             rating, llm_stop, llm_target = out if isinstance(out, tuple) else (out, None, None)
             held = pos.get(sym, {}).get("qty", 0)
+            if not held and rating not in BULLISH:
+                continue   # nothing to buy or sell: skip the indicator work (big universes)
+            tech = snapshot(past, s.trend_ema, s.atr_period)
             price = float(bars[sym]["Open"])
             held_days = (day - pos[sym]["opened"]).days if sym in pos else None
             plan = plan_target(sym, rating, price, tech, held, min(r.capital, prev_equity), s, r,

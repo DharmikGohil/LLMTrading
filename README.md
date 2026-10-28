@@ -68,7 +68,7 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 61 tests, no network/LLM needed
+pytest                                  # 62 tests, no network/LLM needed
 ```
 
 ### Optional: Vibe-Trading second opinion
@@ -236,6 +236,13 @@ How we combine them: Vibe-Trading's committee is wired in as an optional second
 opinion (above), running in its own virtualenv with read-only tools. This repo
 does the execution. Ideas borrowed: statistical validation of backtests and a
 file-based kill switch.
+
+## Ideas borrowed from other projects
+- **ai-hedge-fund v2** (virattt): keep the LLM away from execution; grade every signal source with a scorecard.
+- **finance-skills** (himself65, MIT): Minervini's SEPA trend template (`screen.trend_template`, and in `indtrader brief`).
+- **FinRobot**: "numbers are code-calculated, narratives are LLM-assisted" (the brief computes, the analyst interprets).
+- **marketcalls/AutoAgent**: the LLM may only scale risk down, never up.
+- **Vibe-Trading**: backtest validation and a file kill switch.
 
 ## Related open-source projects
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents): the multi-agent LLM analyst/trader used here
