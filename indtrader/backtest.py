@@ -28,7 +28,8 @@ from indtrader.signals.llm_agent import SignalStore
 from indtrader.signals.technical import ema, is_bear_market, rsi, snapshot
 from indtrader.strategy import plan_target, protective_levels
 
-RatingFn = Callable[[str, pd.DataFrame, date], str | None]
+# Returns a rating, or (rating, llm_stop, llm_target) when the source has levels.
+RatingFn = Callable[[str, pd.DataFrame, date], str | None | tuple]
 
 
 def technical_rating(symbol: str, hist: pd.DataFrame, as_of: date) -> str | None:
@@ -53,7 +54,7 @@ def llm_rating_fn(settings: Settings) -> RatingFn:
         sig = store.latest(symbol, as_of.isoformat())
         if not sig or (as_of - date.fromisoformat(sig.as_of)).days > settings.strategy.max_signal_age_days:
             return None
-        return sig.rating
+        return sig.rating, sig.stop_loss, sig.price_target
 
     return fn
 
@@ -166,12 +167,13 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             if len(past) < s.trend_ema + 5:
                 continue
             tech = snapshot(past, s.trend_ema, s.atr_period)
-            rating = rating_fn(sym, past, past.index[-1].date())
+            out = rating_fn(sym, past, past.index[-1].date())
+            rating, llm_stop, llm_target = out if isinstance(out, tuple) else (out, None, None)
             held = pos.get(sym, {}).get("qty", 0)
             price = float(bars[sym]["Open"])
             held_days = (day - pos[sym]["opened"]).days if sym in pos else None
             plan = plan_target(sym, rating, price, tech, held, min(r.capital, prev_equity), s, r,
-                               bear_market=bear, held_days=held_days)
+                               llm_stop, llm_target, bear_market=bear, held_days=held_days)
             plans.append((plan.target_qty - held, sym, plan, tech, price, held))
         for delta, sym, plan, tech, price, held in sorted(plans, key=lambda x: x[0]):
             if delta < 0:

@@ -25,7 +25,9 @@ class Order:
 @dataclass
 class OrderResult:
     order_id: str
-    status: Literal["COMPLETE", "OPEN", "REJECTED", "DRY_RUN"]
+    # UNKNOWN: the request failed in a way that does not tell whether the broker
+    # accepted it (timeout, network error); the engine looks it up by tag.
+    status: Literal["COMPLETE", "OPEN", "REJECTED", "CANCELLED", "UNKNOWN", "DRY_RUN"]
     filled_qty: int = 0
     avg_price: float | None = None
     message: str = ""
@@ -59,3 +61,10 @@ class Broker(ABC):
 
     def order_status(self, order_id: str) -> OrderResult | None:  # pragma: no cover - optional
         return None
+
+    def find_order(self, symbol: str, side: str, tag: str) -> OrderResult | None:  # pragma: no cover - optional
+        """Today's most recent order for symbol/side/tag, used after an UNKNOWN placement."""
+        return None
+
+
+TERMINAL = ("COMPLETE", "REJECTED", "CANCELLED")

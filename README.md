@@ -43,11 +43,20 @@ every 5m   monitor   stop-loss / take-profit exits
 | `indtrader/backtest.py` | Daily portfolio backtest with the same sizing/risk/regime code and Indian costs; compares with Nifty and equal-weight buy-and-hold of the same stocks |
 | `indtrader/validation.py` | Block-bootstrap confidence interval for Sharpe, walk-forward windows vs Nifty |
 
-**Safety by design:** the bot only sells shares it bought itself (tracked in
-`state/bot_state.json`), so your long-term holdings in the same demat account
-are never touched. It only uses `risk.capital` even if the account holds more.
-It sends marketable LIMIT orders, never naked market orders, and has a
-`--dry-run` mode.
+**Safety by design**
+- **Only its own shares:** the bot sells only shares it bought itself (tracked in
+  `state/bot_state.json`), so your long-term holdings in the same demat account are never touched.
+- **Own cash ledger:** capital + realised P&L − open positions − charges. It never spends more
+  than `risk.capital` (plus profits), even if the account holds more, and the daily-loss kill
+  switch sees the bot's real P&L.
+- **Pending orders:** while an order is working at the broker, no second order is sent for that
+  stock, so there are no duplicate buys or exits. Partial fills are tracked, and an order whose
+  placement timed out is looked up in the broker's order book before anything else happens.
+- **Orders:** marketable LIMIT orders on NSE's price-band tick grid (0.01 / 0.05 / 0.10 / 0.50 / 1 / 5),
+  never naked market orders. Stops only move up. `--dry-run` mode and `indtrader halt` kill switch.
+- **Scheduler:** each step has its own error handling, analysis runs in the background so
+  stop-loss monitoring never pauses, and progress is saved so a restart never repeats the day's trades.
+- **Zerodha:** the morning `zerodha-login` token is picked up by a running scheduler automatically.
 
 ## Setup
 
@@ -59,7 +68,7 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 35 tests, no network/LLM needed
+pytest                                  # 47 tests, no network/LLM needed
 ```
 
 ### Optional: Vibe-Trading second opinion

@@ -8,9 +8,18 @@ server, log in to your broker there, and set OPENALGO_API_KEY.
 
 from __future__ import annotations
 
+import logging
 import os
 
 from indtrader.brokers.base import Broker, Holding, Order, OrderResult
+
+log = logging.getLogger(__name__)
+_AMBIGUOUS = ("timeout", "timed out", "connection", "temporarily", "502", "503", "504")
+
+
+def _status(raw: str) -> str:
+    st = str(raw or "").upper()
+    return {"COMPLETE": "COMPLETE", "REJECTED": "REJECTED", "CANCELLED": "CANCELLED", "CANCELED": "CANCELLED"}.get(st, "OPEN")
 
 
 class OpenAlgoBroker(Broker):
@@ -52,16 +61,28 @@ class OpenAlgoBroker(Broker):
         return {s: h for s, h in out.items() if h.quantity}
 
     def ltp(self, symbols: list[str], exchange: str = "NSE") -> dict[str, float]:
-        return {s: float(self._ok(self.client.quotes(symbol=s, exchange=exchange))["data"]["ltp"]) for s in symbols}
+        out = {}
+        for s in symbols:   # one bad symbol must not hide the others' prices
+            try:
+                out[s] = float(self._ok(self.client.quotes(symbol=s, exchange=exchange))["data"]["ltp"])
+            except Exception as exc:
+                log.warning("OpenAlgo quote failed for %s: %s", s, exc)
+        return out
 
     def place_order(self, order: Order) -> OrderResult:
         kwargs = {"price": str(order.price)} if order.order_type == "LIMIT" and order.price else {}
-        resp = self.client.placeorder(
-            strategy=self.strategy, symbol=order.symbol, action=order.side, exchange=order.exchange,
-            price_type=order.order_type, product=order.product, quantity=int(order.quantity), **kwargs,
-        )
+        try:
+            resp = self.client.placeorder(
+                strategy=self.strategy, symbol=order.symbol, action=order.side, exchange=order.exchange,
+                price_type=order.order_type, product=order.product, quantity=int(order.quantity), **kwargs,
+            )
+        except Exception as exc:
+            return OrderResult("", "UNKNOWN", message=str(exc))
         if resp.get("status") != "success":
-            return OrderResult("", "REJECTED", message=str(resp.get("message", resp)))
+            msg = str(resp.get("message", resp))
+            # the SDK reports its own timeouts as error dicts: the order may still exist
+            status = "UNKNOWN" if any(k in msg.lower() for k in _AMBIGUOUS) else "REJECTED"
+            return OrderResult("", status, message=msg)
         return OrderResult(str(resp.get("orderid", "")), "OPEN")
 
     def order_status(self, order_id: str) -> OrderResult | None:
@@ -69,7 +90,24 @@ class OpenAlgoBroker(Broker):
         if resp.get("status") != "success":
             return None
         d = resp["data"]
-        st = str(d.get("order_status", "")).upper()
-        status = "COMPLETE" if st == "COMPLETE" else "REJECTED" if st in ("REJECTED", "CANCELLED") else "OPEN"
+        status = _status(d.get("order_status"))
+        # OpenAlgo's order status has no filled quantity; only a complete order is known to be filled
         return OrderResult(order_id, status, int(float(d.get("quantity", 0))) if status == "COMPLETE" else 0,
                            float(d.get("average_price") or d.get("price") or 0) or None)
+
+    def find_order(self, symbol: str, side: str, tag: str) -> OrderResult | None:
+        """Latest order for symbol/side in today's order book. OpenAlgo has no per-order
+        tag, so a manual order for the same stock and side could match: check alerts."""
+        try:
+            orders = self._ok(self.client.orderbook())["data"].get("orders", [])
+        except Exception as exc:
+            log.warning("OpenAlgo orderbook failed: %s", exc)
+            return None
+        mine = [o for o in orders if o.get("symbol") == symbol and str(o.get("action", "")).upper() == side]
+        if not mine:
+            return None
+        o = mine[-1]
+        status = _status(o.get("order_status"))
+        return OrderResult(str(o.get("orderid", "")), status,
+                           int(float(o.get("quantity", 0))) if status == "COMPLETE" else 0,
+                           float(o.get("average_price") or o.get("price") or 0) or None)

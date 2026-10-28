@@ -23,7 +23,7 @@ dependencies = [
 [project.optional-dependencies]
 zerodha = ["kiteconnect>=5.0"]
 openalgo = ["openalgo>=1.0"]
-dev = ["pytest>=8.0", "ruff>=0.5"]
+dev = ["pytest>=8.0", "ruff>=0.5", "kiteconnect>=5.0"]
 
 [project.scripts]
 indtrader = "indtrader.cli:app"

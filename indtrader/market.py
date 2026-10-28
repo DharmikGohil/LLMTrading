@@ -91,11 +91,32 @@ def broker_symbol(symbol: str) -> tuple[str, str]:
     return s, "NSE"
 
 
-def round_to_tick(price: float, tick: float = 0.05, side: str = "BUY") -> float:
+# NSE cash-market tick sizes by price band (effective 15 Apr 2025, bands reviewed
+# monthly on closing prices). Every tick divides the next larger one, so a price
+# on a coarser grid is always valid on a finer one.
+TICK_BANDS: tuple[tuple[float, float], ...] = (
+    (250, 0.01), (1000, 0.05), (5000, 0.10), (10000, 0.50), (20000, 1.00), (float("inf"), 5.00),
+)
+
+
+def tick_size(price: float) -> float:
+    for upper, tick in TICK_BANDS:
+        if price < upper:
+            return tick
+    return TICK_BANDS[-1][1]
+
+
+def round_to_tick(price: float, tick: float | None = None, side: str = "BUY") -> float:
     """Round a limit price onto the exchange tick grid, in the direction that keeps
-    the order marketable (up for BUY, down for SELL)."""
+    the order marketable (up for BUY, down for SELL).
+
+    Without an explicit `tick`, uses the tick of a band 20% higher than `price`:
+    since bands are set on last month's close, a stock near a band edge may
+    already trade on the coarser grid, and the coarser grid is valid either way.
+    """
     import math
 
+    tick = tick or tick_size(price * 1.2)
     steps = price / tick
     steps = math.ceil(steps - 1e-9) if side.upper() == "BUY" else math.floor(steps + 1e-9)
     return round(steps * tick, 2)
