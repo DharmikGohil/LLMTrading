@@ -1,0 +1,36 @@
+[
+ {
+  "market": "US",
+  "book": "main",
+  "label": "LLM-reviewed (hybrid)",
+  "currency": "USD",
+  "start_capital": 10000.0,
+  "equity": 9996.15,
+  "cash": 2916.4,
+  "return_pct": -0.038,
+  "realized_pnl": 0.0,
+  "unrealized_pnl": -3.85,
+  "open_positions": 4,
+  "trades": 4,
+  "updated": "2026-10-28T14:24:10-04:00",
+  "index_return_pct": 0.008,
+  "id": "US:main"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "label": "LLM off (momentum only)",
+  "currency": "USD",
+  "start_capital": 10000.0,
+  "equity": 9990.56,
+  "cash": 1329.5,
+  "return_pct": -0.094,
+  "realized_pnl": 0.0,
+  "unrealized_pnl": -9.44,
+  "open_positions": 5,
+  "trades": 5,
+  "updated": "2026-10-28T14:24:10-04:00",
+  "index_return_pct": 0.008,
+  "id": "US:factor"
+ }
+]
