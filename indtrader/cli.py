@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import typer
@@ -178,6 +178,82 @@ def scorecard(horizon: int = typer.Option(10, help="trading days after the signa
                "Meaningful after ~100+ graded calls; a positive bullish-minus-bearish spread and rank IC are the goal.")
     if out:
         graded.to_csv(out, index=False)
+
+
+lesson_app = typer.Typer(help="The desk's lesson book (journal/lessons.json).")
+app.add_typer(lesson_app, name="lesson")
+
+
+@app.command()
+def review(config: str = ConfigOpt):
+    """Close-of-day facts: orders, vetoes and graded analyst calls -> journal/daily/<date>-<market>.md."""
+    from indtrader import data as market_data
+    from indtrader.export import _books
+    from indtrader.journal import daily_facts, write_daily
+    from indtrader.market import is_us
+
+    s = _setup(config)
+    today = now_ist().date()
+    cache: dict = {}
+
+    def closes(sym):
+        if sym not in cache:
+            cache[sym] = market_data.history(sym, today - timedelta(days=60), today, s.exchange)["Close"]
+        return cache[sym]
+
+    idx = market_data.history(s.strategy.regime_index, today - timedelta(days=60), today)["Close"]
+    books = _books(s)
+    facts = daily_facts(s.signals_root, books, today, closes, idx)
+    accounts = []
+    for book, d in books.items():
+        f = d / "equity_intraday.csv"
+        if f.exists():
+            last = f.read_text().strip().splitlines()[-1].split(",")
+            eq = float(last[1])
+            accounts.append({"book": book, "equity": round(eq, 2), "return_pct": round(100 * (eq / s.risk.capital - 1), 2)})
+    path = write_daily("US" if is_us() else "India", today, facts, accounts)
+    typer.echo(path.read_text())
+    typer.echo(f"\n-> {path}  (now write the Reflection section and update lessons: `indtrader lesson ...`)")
+
+
+@app.command()
+def lessons(market: str = typer.Option(None, help="US | India (default: all)")):
+    """Active lessons, confirmed first. Analyst runs read these before reviewing stocks."""
+    from indtrader.journal import LessonBook
+
+    book = LessonBook()
+    active = book.active(market)
+    if not active:
+        typer.echo("no lessons yet")
+    for x in active:
+        typer.echo(f"[{x.status} +{x.evidence_for}/-{x.evidence_against}] ({x.market}) {x.id}: {x.lesson}")
+
+
+@lesson_app.command("add")
+def lesson_add(text: str, market: str = typer.Option("all", help="US | India | all"),
+               example: str = typer.Option("", help="the case that suggested it (date, symbol, numbers)")):
+    """Record a new hypothesis (needs 3 supporting cases to become confirmed)."""
+    from indtrader.journal import LessonBook
+
+    book = LessonBook()
+    if len(text.strip()) < 25 or not example.strip():
+        typer.echo("REJECTED: write a specific lesson and give the case that suggested it (--example)")
+        raise typer.Exit(1)
+    x = book.add(text, market, example, now_ist().date())
+    book.save()
+    typer.echo(f"added {x.id} [{x.status}]")
+
+
+@lesson_app.command("evidence")
+def lesson_evidence(lesson_id: str, supports: bool = typer.Option(..., "--supports/--contradicts"),
+                    example: str = typer.Option(..., help="the case (date, symbol, numbers)")):
+    """Count one more case for or against a lesson; status updates automatically."""
+    from indtrader.journal import LessonBook
+
+    book = LessonBook()
+    x = book.evidence(lesson_id, supports, example, now_ist().date())
+    book.save()
+    typer.echo(f"{x.id}: +{x.evidence_for}/-{x.evidence_against} -> {x.status}")
 
 
 @app.command("export-dashboard")

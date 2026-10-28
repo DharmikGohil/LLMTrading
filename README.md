@@ -68,7 +68,7 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 62 tests, no network/LLM needed
+pytest                                  # 64 tests, no network/LLM needed
 ```
 
 ### Optional: Vibe-Trading second opinion
@@ -108,6 +108,22 @@ data tools always return today's data (the code refuses past dates).
 - **India paper desk (₹10 lakh, `config/india_paper.yaml`)** also runs in the cloud: the analyst reviews at 07:40 IST,
   then there are trade (09:35), midday (12:35) and close (15:05) runs. State is kept in `paper/india/`. To trade
   for real later, run the same config with `broker: zerodha` or `openalgo` on your own machine (option A below).
+
+## Learning loop: journal and lesson book
+
+The LLM is not retrained. The desk instead learns in context from a journal that every run reads:
+1. **Close run:** `indtrader review` writes graded facts to `journal/daily/<date>-<market>.md`: orders,
+   each veto's outcome vs the index (did it help?), and analyst calls vs the index after 1 and 5 days.
+   Claude adds a short reflection.
+2. **Lesson book (`journal/lessons.json`):**
+   - `indtrader lesson add` starts a *hypothesis* (it needs a concrete case).
+   - `indtrader lesson evidence <id> --supports/--contradicts` counts cases.
+   - A lesson becomes *confirmed* at 3 supporting cases and is *retired* when contradicted (2 more against than for).
+3. **Every analyst run** starts with `indtrader lessons`. Confirmed lessons guide judgement, and hypotheses are
+   watched. Lessons never loosen risk limits. Config numbers change only with backtest plus paper evidence,
+   logged in `journal/changes.md`.
+4. **Measured, not assumed:** `indtrader scorecard` and the LLM-off control account show whether this
+   learning actually improves results.
 
 ## Option A: Claude as your morning analyst (no API key)
 
