@@ -1,0 +1,53 @@
+# Copy to config/config.yaml and edit.  All money values are in rupees.
+
+universe: [RELIANCE, TCS, HDFCBANK, INFY, ICICIBANK, BHARTIARTL, LT, ITC]
+exchange: NSE
+data_dir: state
+dry_run: false            # true = log orders, never send them
+extra_holidays: []        # add exchange holidays not in indtrader/market.py
+
+llm:
+  llm_provider: anthropic           # openai | google | anthropic | deepseek | ollama | openrouter | ...
+  deep_think_llm: claude-opus-5-5   # Research/Portfolio managers
+  quick_think_llm: claude-sonnet-5  # analysts, debaters, trader
+  max_debate_rounds: 1
+  max_risk_discuss_rounds: 1
+  analysts: [market, social, news, fundamentals]
+  fundamental_data_vendor: yfinance # SEC EDGAR only covers US filers
+
+strategy:
+  rating_weights: {Buy: 1.0, Overweight: 0.75, Hold: null, Underweight: 0.25, Sell: 0.0}
+  trend_filter: true      # only buy when close > EMA(trend_ema)
+  trend_ema: 50
+  rsi_max_entry: 75
+  atr_stop_mult: 2.0
+  take_profit_rr: 2.5
+  max_signal_age_days: 3
+  reentry_cooldown_days: 5   # no re-buy right after a stop-loss
+
+risk:
+  capital: 100000         # what the bot may deploy
+  max_position_pct: 0.20
+  risk_per_trade_pct: 0.01
+  max_open_positions: 5
+  max_gross_exposure_pct: 1.0
+  max_daily_loss_pct: 0.03
+  max_orders_per_day: 30
+  min_order_value: 1000
+  limit_buffer_pct: 0.003
+  max_price_deviation_pct: 0.05
+
+broker:
+  name: paper             # paper | zerodha | openalgo
+  product: CNC            # CNC (delivery, recommended) | MIS (intraday)
+  paper_state_file: state/paper_account.json
+  openalgo_host: http://127.0.0.1:5000
+  strategy_tag: indtrader
+
+schedule:                 # IST
+  analysis_time: "08:30"
+  execution_time: "09:30"
+  monitor_interval_min: 5
+  eod_time: "15:20"
+
+costs: {}                 # override any field of indtrader/costs.py:CostModel
