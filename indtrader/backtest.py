@@ -48,7 +48,7 @@ def technical_rating(symbol: str, hist: pd.DataFrame, as_of: date) -> str | None
 
 
 def llm_rating_fn(settings: Settings) -> RatingFn:
-    store = SignalStore(settings.path("signals", "_").parent)
+    store = SignalStore(settings.signals_root)
 
     def fn(symbol: str, hist: pd.DataFrame, as_of: date) -> str | None:
         sig = store.latest(symbol, as_of.isoformat())
