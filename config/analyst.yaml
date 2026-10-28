@@ -1,0 +1,6 @@
+# Shared by the scheduled Claude analyst (writes ratings) and your trading machine
+# (reads them). Keep `universe` identical in both places.
+universe: [RELIANCE, TCS, HDFCBANK, INFY, ICICIBANK, BHARTIARTL, LT, ITC]
+exchange: NSE
+data_dir: state
+signals_dir: signals          # tracked in git: the analyst commits here, your machine pulls

@@ -16,6 +16,11 @@ from indtrader.costs import CostModel
 class LLMSettings(BaseModel):
     """Passed through to TradingAgents' config (see tradingagents/default_config.py)."""
 
+    # tradingagents: this machine runs TradingAgents each morning.
+    # external: ratings are written by someone else (e.g. the scheduled Claude
+    # analyst, see analyst/PLAYBOOK.md) into `signals_dir`; this machine only trades.
+    signal_source: Literal["tradingagents", "external"] = "tradingagents"
+
     llm_provider: str | None = None          # None -> TradingAgents default / TRADINGAGENTS_* env
     deep_think_llm: str | None = None
     quick_think_llm: str | None = None
@@ -112,6 +117,8 @@ class Settings(BaseModel):
     universe: list[str] = Field(default_factory=lambda: ["RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK"])
     exchange: Literal["NSE", "BSE"] = "NSE"
     data_dir: str = "state"
+    signals_dir: str | None = None            # default <data_dir>/signals; "signals" = tracked in git
+    signal_sync: Literal["none", "git"] = "none"   # git: `git pull` before using signals (external analyst)
     extra_holidays: list[date] = Field(default_factory=list)
     llm: LLMSettings = Field(default_factory=LLMSettings)
     second_opinion: SecondOpinionSettings = Field(default_factory=SecondOpinionSettings)
@@ -129,6 +136,12 @@ class Settings(BaseModel):
     @property
     def holidays(self) -> set[date]:
         return set(self.extra_holidays)
+
+    @property
+    def signals_root(self) -> Path:
+        root = Path(self.signals_dir) if self.signals_dir else Path(self.data_dir) / "signals"
+        root.mkdir(parents=True, exist_ok=True)
+        return root
 
     def path(self, *parts: str) -> Path:
         p = Path(self.data_dir).joinpath(*parts)

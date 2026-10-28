@@ -68,7 +68,7 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 47 tests, no network/LLM needed
+pytest                                  # 50 tests, no network/LLM needed
 ```
 
 ### Optional: Vibe-Trading second opinion
@@ -91,6 +91,35 @@ for Vibe-Trading in `.env` (`LANGCHAIN_PROVIDER`, `LANGCHAIN_MODEL_NAME`, API ke
 Sells and holds are never changed by the second opinion. If it fails,
 `on_missing: hold` skips new buys that day. **Never use it for backtests**: its
 data tools always return today's data (the code refuses past dates).
+
+## Option A: Claude as your morning analyst (no API key)
+
+Instead of running TradingAgents with a paid API key, a scheduled Claude Code
+session on your Claude plan does the analysis every trading morning at
+**07:40 IST**, following [`analyst/PLAYBOOK.md`](analyst/PLAYBOOK.md):
+- `indtrader brief SYMBOL` gives it real price and technical data.
+- It searches the web for India news and results.
+- It rates each stock with a strict rubric (default Hold).
+- It submits ratings through `indtrader submit-signal`, which validates them.
+- It commits `signals/<date>/*.json` plus a `REPORT.md` with sources.
+
+Your trading machine (laptop or VPS) pulls those ratings and trades them with
+all the normal rules. In `config/config.yaml`:
+
+```yaml
+universe: [RELIANCE, TCS, HDFCBANK, INFY, ICICIBANK, BHARTIARTL, LT, ITC]   # same as config/analyst.yaml
+signals_dir: signals
+signal_sync: git          # git pull before using signals
+llm:
+  signal_source: external # do not run TradingAgents here
+broker:
+  name: paper             # start with paper!
+```
+Then `indtrader run`: at 08:30 it pulls and reports the ratings, and at 09:30 it trades them.
+
+**Vibe-Trading on your Claude login (option B):** in `.env` set
+`LANGCHAIN_PROVIDER=claude-cli` and `LANGCHAIN_MODEL_NAME=claude-opus-5-5`. With the
+`claude` command logged in on that machine, the second-opinion committee needs no API key.
 
 ## Recommended path to live trading
 

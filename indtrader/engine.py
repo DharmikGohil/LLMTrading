@@ -106,7 +106,7 @@ class Engine:
         self.s = settings
         self.broker = broker
         self.analyzer = analyzer
-        self.store = SignalStore(settings.path("signals", "_").parent)
+        self.store = SignalStore(settings.signals_root)
         self.vibe_store = SignalStore(settings.path("signals_vibe", "_").parent)
         self.vibe = None  # VibeTradingAnalyzer, created lazily
         self.state = BotState(settings.path("bot_state.json"), settings.risk.capital)
@@ -115,8 +115,19 @@ class Engine:
 
     # ---------------------------------------------------------------- analysis
     def analyze_universe(self, today: date, force: bool = False) -> dict:
-        """Run TradingAgents for every symbol on data up to the previous close."""
+        """Run TradingAgents for every symbol on data up to the previous close
+        (or, with llm.signal_source=external, just report the signals delivered)."""
         as_of = previous_trading_day(today, self.s.holidays)
+        if self.s.llm.signal_source == "external":
+            self.sync_signals()
+            found = {sym: sig for sym in self.s.universe if (sig := self.store.get(sym, as_of.isoformat()))}
+            missing = [sym for sym in self.s.universe if sym not in found]
+            notify(f"[indtrader] external signals {as_of}: "
+                   + (", ".join(f"{k}={v.rating}({v.confidence})" for k, v in found.items()) or "none")
+                   + (f"; missing: {', '.join(missing)}" if missing else ""))
+            if self.s.second_opinion.enabled:
+                self._second_opinions(found, as_of)
+            return found
         analyzer = self.analyzer or TradingAgentsAnalyzer(self.s)
         portfolio = self._portfolio_context()
         out = {}
@@ -131,6 +142,17 @@ class Engine:
         notify("[indtrader] analysis " + as_of.isoformat() + ": "
                + ", ".join(f"{k}={v.rating}" for k, v in out.items()))
         return out
+
+    def sync_signals(self) -> None:
+        """Pull signals committed by the external analyst (signal_sync: git)."""
+        if self.s.signal_sync != "git":
+            return
+        import subprocess
+
+        proc = subprocess.run(["git", "pull", "--ff-only", "--quiet"], capture_output=True, text=True, timeout=120)
+        if proc.returncode != 0:
+            log.warning("git pull failed: %s", proc.stderr.strip())
+            notify(f"[indtrader] WARNING: could not pull signals: {proc.stderr.strip()[:300]}")
 
     def _second_opinions(self, primary: dict, as_of: date) -> None:
         from indtrader.signals.vibe_opinion import VibeTradingAnalyzer
@@ -355,6 +377,8 @@ class Engine:
 
     def rebalance(self, today: date) -> list[dict]:
         """Turn the latest signals into orders. Sells first, then buys."""
+        if self.s.llm.signal_source == "external":
+            self.sync_signals()
         self.reconcile_pending()
         as_of = previous_trading_day(today, self.s.holidays)
         symbols = sorted(set(self.s.universe) | set(self.state.positions))

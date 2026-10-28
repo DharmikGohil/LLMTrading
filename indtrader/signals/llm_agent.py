@@ -146,7 +146,7 @@ def build_ta_config(settings: Settings) -> dict:
 class TradingAgentsAnalyzer:
     def __init__(self, settings: Settings):
         self.settings = settings
-        self.store = SignalStore(settings.path("signals", "_").parent)
+        self.store = SignalStore(settings.signals_root)
         self._graph = None
 
     @property
