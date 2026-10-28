@@ -19,8 +19,8 @@ class CostModel:
     # Securities Transaction Tax
     stt_delivery_pct: float = 0.001            # 0.1% on buy and sell
     stt_intraday_sell_pct: float = 0.00025     # 0.025% on sell side only
-    # Exchange transaction charges (NSE)
-    exchange_txn_pct: float = 0.0000297
+    # Exchange transaction charges (NSE): Rs 307/crore incl. IPFT from 1 Mar 2026 (NSE/FA/73061)
+    exchange_txn_pct: float = 0.0000307
     # SEBI turnover fee: Rs 10 per crore
     sebi_pct: float = 0.000001
     # Stamp duty (buy side only)

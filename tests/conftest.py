@@ -9,6 +9,8 @@ from indtrader.config import Settings
 def settings(tmp_path):
     s = Settings(universe=["AAA", "BBB"], data_dir=str(tmp_path / "state"))
     s.broker.paper_state_file = str(tmp_path / "state" / "paper.json")
+    s.strategy.signal_mode = "llm"      # most tests exercise the LLM-driven path; hybrid has its own tests
+    s.nse_checks = False                # no network in tests
     return s
 
 

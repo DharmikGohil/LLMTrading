@@ -25,8 +25,9 @@ MAX_ATTEMPTS = 3
 
 
 class Scheduler:
-    def __init__(self, engine, settings):
+    def __init__(self, engine, settings, arms: dict | None = None):
         self.eng = engine
+        self.arms = arms or {}       # name -> Engine (paper shadow accounts)
         self.s = settings
         self.file = settings.path("scheduler.json")
         self.done: dict[str, str] = json.loads(self.file.read_text()) if self.file.exists() else {}
@@ -76,20 +77,32 @@ class Scheduler:
         if (self._due("execution", sch.execution_time, now) and market_open and not analysing
                 and self.done.get("analysis") == day):
             self._attempt("execution", day, lambda: self.eng.rebalance(today))
+            for name, arm in self.arms.items():
+                try:
+                    arm.rebalance(today)
+                except Exception as exc:
+                    log.exception("shadow arm %s failed", name)
+                    notify(f"[indtrader] shadow arm {name} failed: {exc}")
 
         if market_open and time.monotonic() - self.last_monitor >= sch.monitor_interval_min * 60:
             self.last_monitor = time.monotonic()
-            try:
-                self.eng.monitor()
-            except Exception as exc:
-                log.exception("monitor failed")
-                notify(f"[indtrader] ERROR in monitor: {exc}")
+            for name, eng in {"main": self.eng, **self.arms}.items():
+                try:
+                    eng.monitor()
+                except Exception as exc:
+                    log.exception("monitor failed (%s)", name)
+                    notify(f"[indtrader] ERROR in monitor ({name}): {exc}")
 
         if self._due("eod", sch.eod_time, now):
-            self._attempt("eod", day, self._eod)
+            self._attempt("eod", day, lambda: self._eod(today))
 
-    def _eod(self) -> None:
+    def _eod(self, today) -> None:
         self.eng.square_off_intraday()
+        for name, eng in {"main": self.eng, **self.arms}.items():
+            try:
+                eng.record_equity(today)
+            except Exception as exc:
+                log.warning("equity log failed (%s): %s", name, exc)
         st = self.eng.status()
         notify("[indtrader] EOD: bot equity Rs {:,.0f} (cash {:,.0f}, realised {:+,.0f}); positions: {}".format(
             st["bot_equity"], st["bot_cash"], st["realized_pnl"],

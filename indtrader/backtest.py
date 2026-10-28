@@ -47,6 +47,26 @@ def technical_rating(symbol: str, hist: pd.DataFrame, as_of: date) -> str | None
     return "Hold"
 
 
+def momentum_rating_fn(histories: dict[str, pd.DataFrame], settings: Settings, recompute_every: int = 5) -> RatingFn:
+    """Factor-only arm: ratings from the momentum screen, re-ranked every `recompute_every` days."""
+    from indtrader.screen import momentum_rating, score_universe
+
+    sc = settings.screen
+    cache: dict = {"day": None, "table": None, "age": 10**9}
+
+    def fn(symbol: str, hist: pd.DataFrame, as_of: date) -> str | None:
+        if cache["day"] != as_of:
+            cache["age"] += 1
+            cache["day"] = as_of
+            if cache["age"] >= recompute_every:
+                cache["table"] = score_universe(histories, as_of, min_traded_value_cr=sc.min_traded_value_cr,
+                                                vol_exclude_pct=sc.vol_exclude_pct)
+                cache["age"] = 0
+        return momentum_rating(cache["table"], symbol, sc.top_n) if cache["table"] is not None else None
+
+    return fn
+
+
 def llm_rating_fn(settings: Settings) -> RatingFn:
     store = SignalStore(settings.signals_root)
 

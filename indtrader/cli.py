@@ -111,7 +111,82 @@ def run(config: str = ConfigOpt, broker: str = BrokerOpt, dry_run: bool = typer.
     from indtrader.scheduler import Scheduler
 
     s = _setup(config, broker, dry_run)
-    Scheduler(_engine(s), s).run_forever(now_ist)
+    main = _engine(s)
+    Scheduler(main, s, _shadow_arms(s, main)).run_forever(now_ist)
+
+
+def _shadow_arms(s: Settings, main) -> dict:
+    """Paper accounts with other signal modes, sharing the main engine's data (screen, NSE, signals)."""
+    from indtrader.brokers.paper import PaperBroker
+    from indtrader.data import last_price
+    from indtrader.engine import Engine
+
+    arms = {}
+    for mode in s.shadow_arms:
+        if mode == s.strategy.signal_mode and s.broker.name == "paper":
+            continue   # the main account already is this arm
+        a = s.model_copy(deep=True)
+        a.data_dir = str(Path(s.data_dir) / "arms" / mode)
+        a.signals_dir = str(s.signals_root)
+        a.strategy.signal_mode = mode
+        a.dry_run = False
+        a.broker.name = "paper"
+        a.broker.paper_state_file = str(Path(a.data_dir) / "paper_account.json")
+        a.shadow_arms = []
+        eng = Engine(a, PaperBroker(a.broker.paper_state_file, a.risk.capital, a.cost_model, price_fn=last_price))
+        eng.screen_table = main.screen_table
+        eng._nse = main.nse
+        arms[mode] = eng
+    return arms
+
+
+@app.command()
+def scorecard(horizon: int = typer.Option(10, help="trading days after the signal"),
+              out: str = typer.Option(None, help="write every graded signal to this CSV"),
+              config: str = ConfigOpt):
+    """Grade all stored ratings (LLM, second opinion, screen) against Nifty-relative outcomes."""
+    from indtrader.scorecard import run_scorecard
+
+    s = _setup(config)
+    graded, summary = run_scorecard({"tradingagents": s.signals_root, "vibe-trading": s.path("signals_vibe", "_").parent},
+                                    horizon, s.strategy.regime_index)
+    if summary.empty:
+        typer.echo("no signals stored yet")
+        raise typer.Exit(0)
+    typer.echo(summary.to_string(index=False))
+    typer.echo(f"\nexcess = stock minus Nifty over {horizon} trading days after the next open. "
+               "Meaningful after ~100+ graded calls; a positive bullish-minus-bearish spread and rank IC are the goal.")
+    if out:
+        graded.to_csv(out, index=False)
+
+
+@app.command()
+def compare(config: str = ConfigOpt):
+    """Main account vs shadow arms vs the index, from each equity.csv (written daily at EOD)."""
+    import pandas as pd
+
+    s = _setup(config)
+    books = {"main": Path(s.data_dir) / "equity.csv"}
+    books.update({m: Path(s.data_dir) / "arms" / m / "equity.csv" for m in s.shadow_arms})
+    rows = []
+    for name, f in books.items():
+        if not f.exists():
+            continue
+        df = pd.read_csv(f)
+        if len(df) < 1:
+            continue
+        r = {"book": name, "since": df["date"].iloc[0], "days": len(df),
+             "return_pct": round(100 * (df["equity"].iloc[-1] / df["equity"].iloc[0] - 1), 2),
+             "realized_pnl": df["realized_pnl"].iloc[-1]}
+        idx = pd.to_numeric(df["index_close"], errors="coerce").dropna()
+        if len(idx) > 1:
+            r["nifty_pct"] = round(100 * (idx.iloc[-1] / idx.iloc[0] - 1), 2)
+        rows.append(r)
+    if not rows:
+        typer.echo("no equity history yet (written at end of day by `indtrader run`)")
+        raise typer.Exit(0)
+    typer.echo(pd.DataFrame(rows).to_string(index=False))
+    typer.echo("\nJudge the LLM only after months of data: compare 'main' (hybrid) with 'factor' (LLM off).")
 
 
 @app.command()
@@ -123,13 +198,76 @@ def brief(symbols: str = typer.Argument(..., help="comma-separated, e.g. RELIANC
 
     s = _setup(config)
     as_of = date.fromisoformat(on) if on else previous_trading_day(now_ist().date(), s.holidays)
+    from indtrader.nse import NSEData, NullNSE
+
+    nse = NSEData(s.path("nse", "_").parent, now_ist().date()) if s.nse_checks else NullNSE()
     out = []
     for sym in symbols.split(","):
+        sym = sym.strip().upper()
         try:
-            out.append(build_brief(sym.strip(), as_of, s.exchange, s.strategy.regime_index))
+            b = build_brief(sym, as_of, s.exchange, s.strategy.regime_index)
         except Exception as exc:
-            out.append({"symbol": sym.strip().upper(), "error": str(exc)})
+            out.append({"symbol": sym, "error": str(exc)})
+            continue
+        upcoming = sorted(d for d in nse.results_dates().get(sym, []) if d >= now_ist().date())
+        series = nse.series().get(sym)
+        b["nse"] = {"upcoming_results": [str(d) for d in upcoming[:2]],
+                    "surveillance": nse.surveillance().get(sym),
+                    "series_band": list(series) if series else None,
+                    "recent_filings": nse.announcements(sym, 8)}
+        out.append(b)
     typer.echo(json.dumps(out, indent=2, default=str))
+
+
+@app.command()
+def screen(
+    on: str = typer.Option(None, "--date", help="data up to this date (default: previous trading day)"),
+    index: str = typer.Option(None, help="nifty50 | nifty100 | nifty200 | nifty500 (default: config)"),
+    top: int = typer.Option(None, help="number of candidates (default: config screen.top_n)"),
+    save: bool = typer.Option(False, help="write <signals_dir>/<date>/_screen.json"),
+    config: str = ConfigOpt,
+):
+    """Momentum + low-volatility + trend screen: today's candidate stocks."""
+    from datetime import timedelta
+
+    from indtrader.screen import download_closes, index_members, score_universe
+
+    s = _setup(config)
+    sc = s.screen
+    index, top = index or sc.index, top or sc.top_n
+    as_of = date.fromisoformat(on) if on else previous_trading_day(now_ist().date(), s.holidays)
+    members = index_members(index, s.path("universe", "_").parent)
+    table = score_universe(download_closes(members, as_of - timedelta(days=420), as_of), as_of,
+                           min_traded_value_cr=sc.min_traded_value_cr, vol_exclude_pct=sc.vol_exclude_pct)
+    picks = table[table["eligible"]].head(top)
+    typer.echo(picks.to_string(index=False))
+    typer.echo(f"\n{int(table['eligible'].sum())} of {len(table)} {index} stocks eligible; top {top} shown (data to {as_of})")
+    if save:
+        out = s.signals_root / as_of.isoformat() / "_screen.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps({"as_of": as_of.isoformat(), "index": index, "top_n": top,
+                                   "candidates": picks["symbol"].tolist(),
+                                   "table": table.head(3 * top).to_dict(orient="records")}, indent=2, default=str))
+        typer.echo(f"saved {out}")
+
+
+@app.command("recent-picks")
+def recent_picks(days: int = typer.Option(20, help="look back this many calendar days"), config: str = ConfigOpt):
+    """Symbols rated Buy/Overweight recently (likely still held): the analyst must keep rating them."""
+    from datetime import timedelta
+
+    from indtrader.signals.llm_agent import SignalStore
+
+    s = _setup(config)
+    store = SignalStore(s.signals_root)
+    since = (now_ist().date() - timedelta(days=days)).isoformat()
+    picks = set()
+    for d in sorted(p.name for p in s.signals_root.iterdir() if p.is_dir() and p.name >= since):
+        for sym in store.symbols_on(d):
+            sig = store.get(sym, d)
+            if sig and sig.rating in ("Buy", "Overweight"):
+                picks.add(sym)
+    typer.echo(",".join(sorted(picks)))
 
 
 @app.command("submit-signal")
@@ -216,17 +354,31 @@ def backtest(
     config: str = ConfigOpt,
     start: str = typer.Option(..., help="YYYY-MM-DD"),
     end: str = typer.Option(None, help="YYYY-MM-DD (default today)"),
-    signals: str = typer.Option("technical", help="technical | llm (uses cached TradingAgents decisions)"),
+    signals: str = typer.Option("technical", help="technical | llm (cached decisions) | momentum (factor arm on screen.index)"),
     out: str = typer.Option(None, help="write trades CSV here"),
 ):
     """Backtest the strategy with Indian transaction costs."""
-    from indtrader.backtest import llm_rating_fn, run_backtest, technical_rating
+    from datetime import timedelta
 
-    s = _setup(config)
-    fn = llm_rating_fn(s) if signals == "llm" else technical_rating
+    from indtrader.backtest import llm_rating_fn, momentum_rating_fn, run_backtest, technical_rating
     from indtrader.validation import bootstrap_sharpe_ci, walk_forward
 
-    res = run_backtest(s, date.fromisoformat(start), date.fromisoformat(end) if end else now_ist().date(), fn)
+    s = _setup(config)
+    d0, d1 = date.fromisoformat(start), date.fromisoformat(end) if end else now_ist().date()
+    histories = benchmark = None
+    if signals == "momentum":
+        from indtrader import data as market_data
+        from indtrader.screen import download_closes, index_members
+
+        members = index_members(s.screen.index, s.path("universe", "_").parent)
+        histories = download_closes(members, d0 - timedelta(days=420), d1)
+        typer.echo(f"momentum arm on {len(histories)} {s.screen.index} stocks "
+                   "(today's members: survivorship bias flatters this)", err=True)
+        fn = momentum_rating_fn(histories, s)
+        benchmark = market_data.history(s.strategy.regime_index, d0 - timedelta(days=400), d1)["Close"]
+    else:
+        fn = llm_rating_fn(s) if signals == "llm" else technical_rating
+    res = run_backtest(s, d0, d1, fn, histories=histories, benchmark=benchmark)
     report = {**res.stats, "sharpe_95ci": bootstrap_sharpe_ci(res.equity), "walk_forward": walk_forward(res.equity, 4, res.benchmark)}
     typer.echo(json.dumps(report, indent=2))
     if out:

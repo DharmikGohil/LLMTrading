@@ -1,6 +1,10 @@
-# Shared by the scheduled Claude analyst (writes ratings) and your trading machine
-# (reads them). Keep `universe` identical in both places.
-universe: [RELIANCE, TCS, HDFCBANK, INFY, ICICIBANK, BHARTIARTL, LT, ITC]
+# Used by the scheduled Claude analyst (and shared with your trading machine).
+# In hybrid mode the momentum screen chooses the candidates; the analyst reviews them.
 exchange: NSE
 data_dir: state
 signals_dir: signals          # tracked in git: the analyst commits here, your machine pulls
+screen:
+  index: nifty200
+  top_n: 12
+strategy:
+  signal_mode: hybrid

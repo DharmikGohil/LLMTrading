@@ -203,6 +203,9 @@ class FakeEngine:
     def square_off_intraday(self):
         pass
 
+    def record_equity(self, today):
+        self.calls.append("equity")
+
     def status(self):
         return {"bot_equity": 1, "bot_cash": 1, "realized_pnl": 0, "positions": []}
 
@@ -233,3 +236,9 @@ def test_scheduler_flow_and_restart(settings):
     # holidays: nothing at all
     sch2.tick(datetime(2026, 11, 10, 10, 0, tzinfo=IST))
     assert eng2.calls == ["monitor"]
+    # end of day: equity logged for main and shadow arms
+    arm = FakeEngine()
+    sch3 = Scheduler(FakeEngine(), settings, {"factor": arm})
+    sch3.done = {"analysis": "2026-10-28", "execution": "2026-10-28"}
+    sch3.tick(_at(15, 6))
+    assert "equity" in sch3.eng.calls and "equity" in arm.calls
