@@ -4,7 +4,8 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p public/raw
-for cfg in "${@:-config/us_paper.yaml}"; do
+cfgs=("$@"); [ ${#cfgs[@]} -eq 0 ] && cfgs=(config/us_paper.yaml config/india_paper.yaml)
+for cfg in "${cfgs[@]}"; do
   INDTRADER_CONFIG="$cfg" indtrader export-dashboard --out public/raw 2>/dev/null | tail -n +1
 done
 python3 scripts/combine_dashboard.py public/raw public >/dev/null

@@ -1,0 +1,23 @@
+# India (NSE) paper desk, run in the cloud by scheduled Claude sessions (analyst/DESK_PLAYBOOK.md).
+exchange: NSE
+data_dir: paper/india
+signals_dir: signals            # written by the 07:40 IST analyst run (analyst/PLAYBOOK.md)
+llm: {signal_source: external}
+screen: {index: nifty200, top_n: 10, trend_template: true}
+strategy:
+  signal_mode: hybrid
+  rsi_max_entry: 85
+  atr_stop_mult: 4.0
+  min_stop_pct: 0.08
+  max_stop_pct: 0.25
+  take_profit_rr: 100
+  min_hold_days: 20
+  reentry_cooldown_days: 20
+risk:
+  capital: 1000000              # Rs 10 lakh paper (about $10k)
+  max_position_pct: 0.10
+  risk_per_trade_pct: 0.02
+  max_open_positions: 10
+  max_per_sector: 3
+broker: {name: paper, paper_state_file: paper/india/paper_account.json}
+shadow_arms: [factor]

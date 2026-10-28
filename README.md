@@ -99,14 +99,15 @@ data tools always return today's data (the code refuses past dates).
   It is private until shared from the page's Share menu.
 - **Research brief:** https://claude.ai/artifact/3Rv5N3xts4ndnc7KxrCNFH
 - **US paper desk ($10k, `config/us_paper.yaml`)** runs in the Indian night through scheduled Claude sessions
-  ([`analyst/US_PLAYBOOK.md`](analyst/US_PLAYBOOK.md)):
+  ([`analyst/DESK_PLAYBOOK.md`](analyst/DESK_PLAYBOOK.md)):
   - open run at 09:50 New York time (review + trade)
   - midday run at 12:50 (monitor)
   - close run at 15:45 (monitor + end-of-day equity)
 
   Each run refreshes the dashboard and commits the paper state in `paper/us/`.
-- **India** runs on your machine in the morning (option A below). `indtrader export-dashboard` plus a git push lets the
-  morning analyst run publish its numbers too.
+- **India paper desk (₹10 lakh, `config/india_paper.yaml`)** also runs in the cloud: the analyst reviews at 07:40 IST,
+  then there are trade (09:35), midday (12:35) and close (15:05) runs. State is kept in `paper/india/`. To trade
+  for real later, run the same config with `broker: zerodha` or `openalgo` on your own machine (option A below).
 
 ## Option A: Claude as your morning analyst (no API key)
 
