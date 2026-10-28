@@ -50,16 +50,34 @@ def analyze(
     on: str = typer.Option(None, "--date", help="analysis data date YYYY-MM-DD (default: previous trading day)"),
     symbols: str = typer.Option(None, help="comma-separated symbols (default: universe)"),
     force: bool = typer.Option(False, help="re-run even if a cached decision exists"),
+    second_opinion: bool = typer.Option(None, "--second-opinion/--no-second-opinion",
+                                        help="also ask the Vibe-Trading committee (default: config)"),
 ):
-    """Run TradingAgents on each symbol and cache the decision."""
+    """Run TradingAgents on each symbol (plus the optional Vibe-Trading second opinion) and cache the decisions."""
     from indtrader.signals.llm_agent import TradingAgentsAnalyzer
+    from indtrader.strategy import BULLISH, combine_opinions
 
     s = _setup(config)
+    if second_opinion is not None:
+        s.second_opinion.enabled = second_opinion
     as_of = date.fromisoformat(on) if on else previous_trading_day(now_ist().date(), s.holidays)
     analyzer = TradingAgentsAnalyzer(s)
+    vibe = None
+    if s.second_opinion.enabled:
+        from indtrader.signals.vibe_opinion import VibeTradingAnalyzer
+
+        vibe = VibeTradingAnalyzer(s)
     for sym in symbols.split(",") if symbols else s.universe:
         sig = analyzer.analyze(sym.strip().upper(), as_of, force=force)
-        typer.echo(f"{sig.symbol:<12} {sig.as_of}  {sig.rating:<11} stop={sig.stop_loss} target={sig.price_target}")
+        line = f"{sig.symbol:<12} {sig.as_of}  TradingAgents={sig.rating:<11} stop={sig.stop_loss} target={sig.price_target}"
+        if vibe and (sig.rating in BULLISH or not s.second_opinion.only_when_bullish):
+            try:
+                second = vibe.analyze(sig.symbol, as_of, force=force)
+                final, note = combine_opinions(sig.rating, second, s.second_opinion)
+                line += f"  Vibe={second.rating}({second.confidence})  -> {final}: {note}"
+            except Exception as exc:
+                line += f"  Vibe=FAILED ({exc})"
+        typer.echo(line)
 
 
 @app.command()
@@ -129,6 +147,17 @@ def run(config: str = ConfigOpt, broker: str = BrokerOpt, dry_run: bool = typer.
             logging.exception("scheduler step failed")
             notify(f"[indtrader] ERROR: {exc}")
         _time.sleep(30)
+
+
+@app.command("vibe-check")
+def vibe_check(config: str = ConfigOpt):
+    """Check the Vibe-Trading install and preset (no LLM calls)."""
+    from indtrader.signals.vibe_opinion import VibeTradingAnalyzer
+
+    s = _setup(config)
+    res = VibeTradingAnalyzer(s).check()
+    typer.echo(json.dumps(res, indent=2))
+    raise typer.Exit(0 if res.get("ok") else 1)
 
 
 @app.command()

@@ -22,6 +22,9 @@ class LLMSettings(BaseModel):
     backend_url: str | None = None
     max_debate_rounds: int = 1
     max_risk_discuss_rounds: int = 1
+    # Run TradingAgents N times per stock and take a majority vote (LLM output is
+    # non-deterministic; disagreement between runs -> Hold). N times the cost.
+    runs: int = 1
     analysts: list[str] = Field(default_factory=lambda: ["market", "social", "news", "fundamentals"])
     output_language: str = "English"
     # Indian macro headlines for the News Analyst instead of the US-centric defaults
@@ -34,6 +37,22 @@ class LLMSettings(BaseModel):
     ])
     # Fundamentals: SEC EDGAR only covers US filers, so use Yahoo directly
     fundamental_data_vendor: str = "yfinance"
+
+
+class SecondOpinionSettings(BaseModel):
+    """Vibe-Trading investment-committee swarm as a second opinion.
+
+    It can only make the bot MORE conservative: it can block or shrink a buy,
+    never create one, and never stops a sell.
+    """
+
+    enabled: bool = False
+    vibe_python: str = "~/vibe-venv/bin/python"   # interpreter of the separate Vibe-Trading virtualenv
+    mode: Literal["veto", "confirm"] = "veto"     # veto: block buys it disagrees with; confirm: buy only if it agrees
+    min_confidence: float = 50.0                  # its verdicts below this confidence are ignored (veto) / not enough (confirm)
+    on_missing: Literal["hold", "proceed"] = "hold"  # if it failed or has no verdict: skip new buys, or trust TradingAgents alone
+    only_when_bullish: bool = True                # only consult it when TradingAgents wants to buy (saves cost)
+    timeout_min: float = 45
 
 
 class StrategySettings(BaseModel):
@@ -52,6 +71,13 @@ class StrategySettings(BaseModel):
     max_stop_pct: float = 0.15
     max_signal_age_days: int = 3              # do not trade on stale analyses
     reentry_cooldown_days: int = 5            # no re-buy within N calendar days of a stop-loss exit
+    min_hold_days: int = 3                    # rating-driven sells wait this long after entry (stops still fire)
+    # Market regime: when the index closes below its long moving average, new
+    # buys are scaled down (LLM agents tend to be too aggressive in bear markets).
+    regime_filter: bool = True
+    regime_index: str = "^NSEI"
+    regime_sma: int = 200
+    bear_market_scale: float = 0.5           # 0 = no new buys in a bear regime
 
 
 class RiskSettings(BaseModel):
@@ -88,6 +114,7 @@ class Settings(BaseModel):
     data_dir: str = "state"
     extra_holidays: list[date] = Field(default_factory=list)
     llm: LLMSettings = Field(default_factory=LLMSettings)
+    second_opinion: SecondOpinionSettings = Field(default_factory=SecondOpinionSettings)
     strategy: StrategySettings = Field(default_factory=StrategySettings)
     risk: RiskSettings = Field(default_factory=RiskSettings)
     broker: BrokerSettings = Field(default_factory=BrokerSettings)

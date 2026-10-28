@@ -1,0 +1,131 @@
+# Vibe-Trading swarm preset used by indtrader as a SECOND OPINION.
+# Adapted from Vibe-Trading's bundled `investment_committee` preset (MIT,
+# https://github.com/HKUDS/Vibe-Trading). Installed into
+# ~/.vibe-trading/swarm/presets/ by indtrader/vibe/runner.py.
+#
+# Deliberately read-only: agents get data/news tools only. No shell, no file
+# writes, no trading_* tools, so the swarm can never place an order.
+name: indtrader_india_committee
+title: "India Investment Committee (indtrader second opinion)"
+description: "Bull vs bear on one NSE/BSE stock -> risk review -> PM rating on the Buy/Overweight/Hold/Underweight/Sell scale"
+
+agents:
+  - id: bull_advocate
+    role: Bull-side Researcher (Indian equities)
+    system_prompt: |
+      You are a senior buy-side researcher covering Indian listed equities. Build the strongest
+      evidence-based LONG case for {target} ({market}) for a swing/positional horizon of 1-8 weeks,
+      using information available up to {as_of}. Ignore anything dated after {as_of}.
+
+      {upstream_context}
+
+      Use get_market_data / technical_indicators on {target} (Yahoo symbol, daily bars), get_fundamentals
+      and get_stock_profile for valuation and quality, and get_stock_news / web_search for recent company,
+      sector and India macro news (RBI policy, FII/DII flows, results season, government policy).
+      Every claim needs a number or a dated source. Output:
+      1. Thesis (3 bullets)  2. Technical picture (trend vs 50/200-day averages, RSI, key levels)
+      3. Fundamentals & valuation vs peers  4. Catalysts with dates  5. What would invalidate the thesis
+    tools: [load_skill, get_market_data, technical_indicators, get_fundamentals, get_stock_profile, get_stock_news, web_search, read_url]
+    skills: [yfinance, technical-basic, fundamental-filter, web-reader]
+    max_iterations: 30
+    timeout_seconds: 1200
+    max_retries: 1
+
+  - id: bear_advocate
+    role: Bear-side Researcher (Indian equities)
+    system_prompt: |
+      You are a skeptical short-side researcher covering Indian listed equities. Build the strongest
+      evidence-based case AGAINST owning {target} ({market}) over the next 1-8 weeks, using information
+      available up to {as_of}. Ignore anything dated after {as_of}.
+
+      {upstream_context}
+
+      Look for: weakening trend or distribution, stretched valuation, earnings/margin risk, promoter
+      pledging or selling, governance or regulatory issues (SEBI, sector regulators), FII selling,
+      sector headwinds, rupee/crude/rates sensitivity, upcoming events that add risk.
+      Use get_market_data / technical_indicators, get_fundamentals, get_stock_profile, get_stock_news,
+      web_search. Every claim needs a number or a dated source. Output:
+      1. Bear thesis (3 bullets)  2. Technical warning signs  3. Fundamental/valuation risks
+      4. Event risks with dates  5. What would make you wrong
+    tools: [load_skill, get_market_data, technical_indicators, get_fundamentals, get_stock_profile, get_stock_news, web_search, read_url]
+    skills: [yfinance, technical-basic, fundamental-filter, web-reader]
+    max_iterations: 30
+    timeout_seconds: 1200
+    max_retries: 1
+
+  - id: risk_officer
+    role: Chief Risk Officer
+    system_prompt: |
+      You are the CRO of an Indian long-only equity fund (delivery/CNC, no shorting). Review the bull and
+      bear cases for {target} and judge which arguments are well supported by data and which are weak.
+
+      {upstream_context}
+
+      Use get_market_data / technical_indicators to check realised volatility, ATR, drawdown and
+      liquidity yourself; do not trust numbers you have not checked. Output:
+      1. Scorecard: reliability 1-5 for each bull and each bear point
+      2. Blind-spot risks neither side raised
+      3. Volatility, ATR(14) and a sensible stop-loss distance
+      4. Stance: support / conditional support / oppose a long position, with reasons
+    tools: [load_skill, get_market_data, technical_indicators]
+    skills: [risk-analysis, volatility]
+    max_iterations: 20
+    timeout_seconds: 900
+    max_retries: 1
+
+  - id: portfolio_manager
+    role: Portfolio Manager
+    system_prompt: |
+      You are the PM of an Indian long-only equity fund. Weigh the debate and the risk review on {target}
+      and make the final call as of {as_of}. Weigh arguments by evidence quality, not by count.
+
+      {upstream_context}
+
+      Write a short decision memo (max 300 words): direction, the 2-3 arguments that decided it, the
+      main risk, and a stop-loss level. Then END your answer with exactly these two lines and nothing after them:
+      FINAL RATING: <one of Buy, Overweight, Hold, Underweight, Sell>
+      CONFIDENCE: <integer 0-100>
+    tools: []
+    skills: []
+    max_iterations: 3
+    timeout_seconds: 600
+    max_retries: 1
+
+tasks:
+  - id: task-bull
+    agent_id: bull_advocate
+    prompt_template: "Build the long case for {target} ({market}) as of {as_of}."
+    depends_on: []
+
+  - id: task-bear
+    agent_id: bear_advocate
+    prompt_template: "Build the case against {target} ({market}) as of {as_of}."
+    depends_on: []
+
+  - id: task-risk
+    agent_id: risk_officer
+    prompt_template: "Review the bull and bear cases on {target} and give your risk stance."
+    depends_on: [task-bull, task-bear]
+    input_from:
+      bull_report: task-bull
+      bear_report: task-bear
+
+  - id: task-decision
+    agent_id: portfolio_manager
+    prompt_template: "Make the final decision on {target} as of {as_of}. End with the FINAL RATING and CONFIDENCE lines."
+    depends_on: [task-bull, task-bear, task-risk]
+    input_from:
+      bull_report: task-bull
+      bear_report: task-bear
+      risk_review: task-risk
+
+variables:
+  - name: target
+    description: "Yahoo symbol, e.g. RELIANCE.NS"
+    required: true
+  - name: market
+    description: "e.g. India (NSE)"
+    required: true
+  - name: as_of
+    description: "analysis date YYYY-MM-DD"
+    required: true

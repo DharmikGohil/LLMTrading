@@ -12,6 +12,7 @@ llm:
   quick_think_llm: claude-sonnet-5  # analysts, debaters, trader
   max_debate_rounds: 1
   max_risk_discuss_rounds: 1
+  runs: 1                           # >1 = majority vote over N TradingAgents runs (N x cost)
   analysts: [market, social, news, fundamentals]
   fundamental_data_vendor: yfinance # SEC EDGAR only covers US filers
 
@@ -24,6 +25,22 @@ strategy:
   take_profit_rr: 2.5
   max_signal_age_days: 3
   reentry_cooldown_days: 5   # no re-buy right after a stop-loss
+  min_hold_days: 3           # rating-driven sells wait N days after entry (stops still fire)
+  regime_filter: true        # Nifty below its 200-day average -> smaller new buys
+  regime_index: "^NSEI"
+  regime_sma: 200
+  bear_market_scale: 0.5     # 0 = no new buys in a bear market
+
+# Second opinion: HKUDS/Vibe-Trading multi-agent committee (install with scripts/install_vibe.sh).
+# It can only block or shrink buys, never add risk or stop a sell.
+second_opinion:
+  enabled: false
+  vibe_python: ~/vibe-venv/bin/python
+  mode: veto                 # veto: block buys it rates Underweight/Sell | confirm: buy only if it also says Buy/Overweight
+  min_confidence: 50
+  on_missing: hold           # if it fails: hold (no new buys) | proceed (TradingAgents alone)
+  only_when_bullish: true    # only ask it when TradingAgents wants to buy (saves cost)
+  timeout_min: 45
 
 risk:
   capital: 100000         # what the bot may deploy

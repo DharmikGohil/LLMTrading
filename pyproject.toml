@@ -31,6 +31,9 @@ indtrader = "indtrader.cli:app"
 [tool.setuptools.packages.find]
 include = ["indtrader*"]
 
+[tool.setuptools.package-data]
+"indtrader.vibe" = ["*.yaml"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
