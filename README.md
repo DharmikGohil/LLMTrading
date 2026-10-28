@@ -68,7 +68,7 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 50 tests, no network/LLM needed
+pytest                                  # 61 tests, no network/LLM needed
 ```
 
 ### Optional: Vibe-Trading second opinion
@@ -97,9 +97,9 @@ data tools always return today's data (the code refuses past dates).
 Instead of running TradingAgents with a paid API key, a scheduled Claude Code
 session on your Claude plan does the analysis every trading morning at
 **07:40 IST**, following [`analyst/PLAYBOOK.md`](analyst/PLAYBOOK.md):
-- `indtrader brief SYMBOL` gives it real price and technical data.
-- It searches the web for India news and results.
-- It rates each stock with a strict rubric (default Hold).
+- `indtrader screen --save` produces the day's momentum candidates.
+- `indtrader brief A,B,C` gives it real price and technical data, plus NSE filings, results dates and surveillance status.
+- It searches the web for India news and checks each candidate against a red-flag list.
 - It submits ratings through `indtrader submit-signal`, which validates them.
 - It commits `signals/<date>/*.json` plus a `REPORT.md` with sources.
 
@@ -107,7 +107,9 @@ Your trading machine (laptop or VPS) pulls those ratings and trades them with
 all the normal rules. In `config/config.yaml`:
 
 ```yaml
-universe: [RELIANCE, TCS, HDFCBANK, INFY, ICICIBANK, BHARTIARTL, LT, ITC]   # same as config/analyst.yaml
+screen: {index: nifty200, top_n: 12}   # same as config/analyst.yaml
+strategy: {signal_mode: hybrid}
+shadow_arms: [factor]
 signals_dir: signals
 signal_sync: git          # git pull before using signals
 llm:
@@ -183,13 +185,27 @@ Research summary (October 2026):
 - **Look-ahead**: LLMs memorise past prices and news, so backtests on dates before the
   model's training cutoff are inflated ([FinCAD, arXiv 2605.24564](https://arxiv.org/abs/2605.24564)).
 
+A deeper review (Oct 2026: benchmark papers read in full, code of the top repos,
+practitioner reports, NSE rules) sharpened this. In properly controlled tests
+no study shows LLMs reliably picking stocks. A 2026 China study found 9 of 10
+agents had negative stock-selection skill. Two things do have evidence:
+**rule-based momentum/low-vol stock selection in India** (NSE factor indices beat
+the Nifty since 2005), and **LLMs catching negative news and red flags**.
+
 Design choices that follow from this:
-1. The LLM is a **filter inside a rule-based system** (trend/RSI filter, ATR stops, risk caps), not the trader.
-2. A **regime filter** shrinks new buys when Nifty is below its 200-day average.
-3. **Non-determinism**: `llm.runs: 3` gives a majority vote; disagreement means Hold.
-4. **Two independent committees** (TradingAgents + Vibe-Trading) can veto each other's buys.
-5. **Anti-overtrading**: minimum holding period, re-entry cooldown after stops, and costs in every backtest.
-6. **Honest evaluation**: compare against Nifty *and* equal-weight buy-and-hold, require a Sharpe CI above 0,
+1. **Hybrid mode (default):** a Nifty 200 momentum + low-volatility + trend screen
+   (`indtrader screen`) proposes the stocks. The LLM review can only **veto or shrink**
+   them, never add a stock. `signal_mode: llm` (the LLM drives) and `factor` (screen only) remain available.
+2. **Measure it:** a paper "LLM off" shadow account (`shadow_arms: [factor]`) trades alongside;
+   `indtrader compare` and `indtrader scorecard` (hit rate, bullish/bearish spread and rank IC vs Nifty)
+   show whether the LLM earns its cost.
+3. **India safety data from NSE:** skip ASM/GSM and trade-for-trade stocks, no buys just before results,
+   rescale positions on splits and bonuses, cap positions per sector.
+4. A **regime filter** shrinks new buys when Nifty is below its 200-day average.
+5. **Non-determinism**: `llm.runs: 3` gives a majority vote; disagreement means Hold.
+6. **Several independent reviewers** (Claude analyst or TradingAgents, plus optional Vibe-Trading) can each veto a buy.
+7. **Anti-overtrading**: minimum holding period, re-entry cooldown after stops, sector cap, and costs in every backtest.
+8. **Honest evaluation**: compare against Nifty *and* equal-weight buy-and-hold, require a Sharpe CI above 0,
    and judge LLM signals on **paper trading after the model's training cutoff**, not on old backtests.
 
 ## Known limitations / ideas

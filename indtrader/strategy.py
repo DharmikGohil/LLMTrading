@@ -108,7 +108,8 @@ def combine_opinions(primary: str | None, second, cfg) -> tuple[str | None, str]
         return "Hold", "second opinion missing; no new buys"
     conf = second.confidence
     confident = conf is None or conf >= cfg.min_confidence
-    tag = f"Vibe-Trading {second.rating}" + (f" ({conf:.0f}%)" if conf is not None else "")
+    who = getattr(second, "source", None) or "second opinion"
+    tag = f"{who} {second.rating}" + (f" ({conf:.0f}%)" if conf is not None else "")
     if cfg.mode == "confirm":
         if second.rating in BULLISH and confident:
             return primary, f"{tag} confirms"

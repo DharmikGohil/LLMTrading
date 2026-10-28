@@ -479,7 +479,7 @@ class Engine:
             rating, note2 = combine_opinions(rating, self.vibe_store.get(sym, sig.as_of) if sig else None,
                                              self.s.second_opinion)
             note += f"; {note2}" if note2 else ""
-        return rating, note.replace("second opinion", "LLM review")
+        return rating, note
 
     def _plan(self, sym: str, today: date, as_of: date, price: float, capital: float, bear: bool):
         sig = self.store.latest(sym, as_of.isoformat())
