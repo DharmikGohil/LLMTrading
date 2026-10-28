@@ -114,6 +114,11 @@ class SignalStore:
         f.parent.mkdir(parents=True, exist_ok=True)
         f.write_text(json.dumps(asdict(sig), indent=2), encoding="utf-8")
 
+    def symbols_on(self, as_of: str) -> list[str]:
+        d = self.root / as_of
+        # files starting with "_" (e.g. _screen.json) are not signals
+        return sorted(p.stem for p in d.glob("*.json") if not p.stem.startswith("_")) if d.is_dir() else []
+
     def latest(self, symbol: str, on_or_before: str) -> LLMSignal | None:
         if not self.root.exists():
             return None

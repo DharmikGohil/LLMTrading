@@ -61,6 +61,15 @@ class SecondOpinionSettings(BaseModel):
 
 
 class StrategySettings(BaseModel):
+    # Where entries come from:
+    #   hybrid - momentum screen picks the stocks, the LLM rating can only veto/shrink (best-evidenced, default)
+    #   llm    - the LLM rating drives entries (TradingAgents-style)
+    #   factor - momentum screen alone (the "LLM off" control arm)
+    signal_mode: Literal["hybrid", "llm", "factor"] = "hybrid"
+    llm_veto_min_confidence: float = 55.0     # hybrid: LLM Underweight/Sell at or above this blocks a buy
+    llm_missing: Literal["hold", "proceed"] = "hold"   # hybrid: no LLM review for a candidate -> no new buy / buy anyway
+    results_blackout_days: int = 3            # no new buys this many calendar days before a results board meeting
+    avoid_surveillance: bool = True           # no new buys in ASM/GSM or trade-for-trade (non-EQ) stocks
     # Target weight (fraction of the per-position allocation) for each rating.
     # None = keep whatever is currently held.
     rating_weights: dict[str, float | None] = Field(default_factory=lambda: {
@@ -90,6 +99,7 @@ class RiskSettings(BaseModel):
     max_position_pct: float = 0.20            # max allocation per stock
     risk_per_trade_pct: float = 0.01          # rupees lost at stop as fraction of capital
     max_open_positions: int = 5
+    max_per_sector: int = 2                   # positions in one NSE industry (screens cluster in hot sectors)
     max_gross_exposure_pct: float = 1.0       # no leverage on CNC
     max_daily_loss_pct: float = 0.03          # kill switch: stop new entries for the day
     max_orders_per_day: int = 30
@@ -110,7 +120,16 @@ class ScheduleSettings(BaseModel):
     analysis_time: str = "08:30"              # IST; TradingAgents runs on previous close data
     execution_time: str = "09:30"             # after opening volatility settles
     monitor_interval_min: int = 5             # stop-loss / target checks
-    eod_time: str = "15:20"                   # MIS square-off / daily report
+    eod_time: str = "15:05"                   # MIS square-off / daily report (before the 15:15 closing auction)
+
+
+class ScreenSettings(BaseModel):
+    """Momentum + low-vol + trend screen that picks the candidates (indtrader/screen.py)."""
+
+    index: Literal["nifty50", "nifty100", "nifty200", "nifty500"] = "nifty200"
+    top_n: int = 12
+    min_traded_value_cr: float = 20.0        # median daily traded value, Rs crore
+    vol_exclude_pct: float = 0.2             # drop the most volatile 20%
 
 
 class Settings(BaseModel):
@@ -122,12 +141,17 @@ class Settings(BaseModel):
     extra_holidays: list[date] = Field(default_factory=list)
     llm: LLMSettings = Field(default_factory=LLMSettings)
     second_opinion: SecondOpinionSettings = Field(default_factory=SecondOpinionSettings)
+    screen: ScreenSettings = Field(default_factory=ScreenSettings)
     strategy: StrategySettings = Field(default_factory=StrategySettings)
     risk: RiskSettings = Field(default_factory=RiskSettings)
     broker: BrokerSettings = Field(default_factory=BrokerSettings)
     schedule: ScheduleSettings = Field(default_factory=ScheduleSettings)
     costs: dict = Field(default_factory=dict)
     dry_run: bool = False                     # log orders instead of sending them
+    nse_checks: bool = True                   # surveillance / results / corporate-action data from nseindia.com
+    # Paper "shadow" accounts traded alongside the main one with a different signal_mode,
+    # so `indtrader compare` can show whether the LLM adds anything (the research's key control).
+    shadow_arms: list[Literal["factor", "llm", "hybrid"]] = Field(default_factory=lambda: ["factor"])
 
     @property
     def cost_model(self) -> CostModel:

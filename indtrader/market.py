@@ -14,12 +14,23 @@ IST = ZoneInfo("Asia/Kolkata")
 
 MARKET_OPEN = time(9, 15)
 MARKET_CLOSE = time(15, 30)
+# Closing Auction Session (live 3 Aug 2026) for stocks with F&O, which is most of
+# the Nifty: continuous trading ends 15:15, then 15:20-15:30 is a limit-only
+# auction where stop-loss orders are not allowed. From 7 Dec 2026 continuous
+# trading runs to 15:30 and the auction moves to 15:30-15:40 (NSE/CMTR/73362, 76963).
+CAS_CHANGE = date(2026, 12, 7)
+
+
+def continuous_close(d: date) -> time:
+    """When continuous trading ends for F&O stocks; the bot stops sending orders then."""
+    return time(15, 15) if d < CAS_CHANGE else time(15, 30)
 
 # NSE equity-segment trading holidays (weekdays only). Source: NSE circular
 # for 2026. Update every December from
 # https://www.nseindia.com/resources/exchange-communication-holidays
 # Extra dates can be added through `market.extra_holidays` in config.yaml.
 NSE_HOLIDAYS: set[date] = {
+    date(2026, 1, 15),   # Maharashtra municipal elections (NSE/CMTR/72260)
     date(2026, 1, 26),   # Republic Day
     date(2026, 3, 3),    # Holi
     date(2026, 3, 26),   # Shri Ram Navami
@@ -70,7 +81,7 @@ def next_trading_day(d: date, extra_holidays: set[date] | None = None) -> date:
 
 def is_market_open(ts: datetime | None = None, extra_holidays: set[date] | None = None) -> bool:
     ts = (ts or now_ist()).astimezone(IST)
-    return is_trading_day(ts.date(), extra_holidays) and MARKET_OPEN <= ts.time() < MARKET_CLOSE
+    return is_trading_day(ts.date(), extra_holidays) and MARKET_OPEN <= ts.time() < continuous_close(ts.date())
 
 
 def yahoo_symbol(symbol: str, exchange: str = "NSE") -> str:
