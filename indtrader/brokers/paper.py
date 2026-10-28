@@ -10,7 +10,7 @@ from pathlib import Path
 
 from indtrader.brokers.base import Broker, Holding, Order, OrderResult
 from indtrader.costs import CostModel
-from indtrader.market import now_ist
+from indtrader.market import is_us, now_ist
 
 
 class PaperBroker(Broker):
@@ -69,7 +69,7 @@ class PaperBroker(Broker):
             if pos["qty"] == 0:
                 del self.state["positions"][order.symbol]
         self.state["charges"] += charges
-        return self._record(order, OrderResult(oid, "COMPLETE", qty, round(fill, 2), f"charges Rs {charges:.2f}"))
+        return self._record(order, OrderResult(oid, "COMPLETE", qty, round(fill, 2), f"charges {'$' if is_us() else 'Rs '}{charges:.2f}"))
 
     def _record(self, order: Order, result: OrderResult) -> OrderResult:
         self.state["orders"].append({

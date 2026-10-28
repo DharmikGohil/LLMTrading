@@ -1,0 +1,155 @@
+[
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "ABBV",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "AMGN",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "BMY",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "DE",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "MRK",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy but close 141.82 <= EMA50 143.04; not adding"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "SPG",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "TGT",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy but close 148.01 <= EMA50 153.31; not adding"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "TMO",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "UNP",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "USB",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "LLY",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "AAPL",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "JNJ",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "CSCO",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "MET",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "KO",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "momentum: Buy; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6"
+ },
+ {
+  "time": "2026-10-28T18:14:08+00:00",
+  "as_of": "2026-10-27",
+  "symbol": "KO",
+  "price": null,
+  "held": 0,
+  "target_qty": null,
+  "decision": "buy blocked: max open positions (5)"
+ }
+]
