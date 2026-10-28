@@ -51,3 +51,10 @@ def snapshot(df: pd.DataFrame, trend_ema: int = 50, atr_period: int = 14) -> Tec
         rsi=float(rsi(close).iloc[-1]),
         atr=float(atr(df, atr_period).iloc[-1]),
     )
+
+
+def is_bear_market(index_close: pd.Series, sma: int = 200) -> bool:
+    """Index below its `sma`-day simple moving average (False when history is too short)."""
+    if len(index_close) < sma:
+        return False
+    return bool(index_close.iloc[-1] < index_close.iloc[-sma:].mean())

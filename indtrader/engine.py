@@ -20,8 +20,8 @@ from indtrader.market import IST, previous_trading_day, round_to_tick
 from indtrader.notify import notify
 from indtrader.risk import AccountView, check_buy, check_sell
 from indtrader.signals.llm_agent import SignalStore, TradingAgentsAnalyzer
-from indtrader.signals.technical import snapshot
-from indtrader.strategy import plan_target, protective_levels
+from indtrader.signals.technical import is_bear_market, snapshot
+from indtrader.strategy import BULLISH, combine_opinions, plan_target, protective_levels
 
 log = logging.getLogger(__name__)
 
@@ -66,6 +66,8 @@ class Engine:
         self.broker = broker
         self.analyzer = analyzer
         self.store = SignalStore(settings.path("signals", "_").parent)
+        self.vibe_store = SignalStore(settings.path("signals_vibe", "_").parent)
+        self.vibe = None  # VibeTradingAnalyzer, created lazily
         self.state = BotState(settings.path("bot_state.json"))
         self.journal = settings.path("trades.csv")
 
@@ -82,9 +84,25 @@ class Engine:
             except Exception as exc:
                 log.exception("analysis failed for %s", sym)
                 notify(f"[indtrader] analysis failed for {sym}: {exc}")
+        if self.s.second_opinion.enabled:
+            self._second_opinions(out, as_of)
         notify("[indtrader] analysis " + as_of.isoformat() + ": "
                + ", ".join(f"{k}={v.rating}" for k, v in out.items()))
         return out
+
+    def _second_opinions(self, primary: dict, as_of: date) -> None:
+        from indtrader.signals.vibe_opinion import VibeTradingAnalyzer
+
+        self.vibe = self.vibe or VibeTradingAnalyzer(self.s)
+        for sym, sig in primary.items():
+            if self.s.second_opinion.only_when_bullish and sig.rating not in BULLISH:
+                continue
+            try:
+                second = self.vibe.analyze(sym, as_of)
+                notify(f"[indtrader] {sym}: TradingAgents={sig.rating}, Vibe-Trading={second.rating} ({second.confidence})")
+            except Exception as exc:
+                log.exception("second opinion failed for %s", sym)
+                notify(f"[indtrader] second opinion failed for {sym}: {exc}")
 
     def _portfolio_context(self) -> dict:
         return {
@@ -180,6 +198,27 @@ class Engine:
                         order.price, result.status, result.filled_qty, result.avg_price, result.order_id,
                         order.reason, result.message])
 
+    def _bear_market(self, as_of: date) -> bool:
+        st = self.s.strategy
+        if not st.regime_filter:
+            return False
+        try:
+            idx = market_data.recent_history(st.regime_index, as_of, lookback_days=int(st.regime_sma * 1.6) + 30)
+        except Exception as exc:
+            log.warning("regime index %s unavailable (%s); assuming normal regime", st.regime_index, exc)
+            return False
+        bear = is_bear_market(idx["Close"], st.regime_sma)
+        if bear:
+            log.info("%s below its %d-day average: bear regime, new buys scaled by %s",
+                     st.regime_index, st.regime_sma, st.bear_market_scale)
+        return bear
+
+    def _fresh_second(self, symbol: str, primary):
+        """The Vibe-Trading verdict for the same analysis date as the primary signal."""
+        if primary is None or not self.s.second_opinion.enabled:
+            return None
+        return self.vibe_store.get(symbol, primary.as_of)
+
     def rebalance(self, today: date) -> list[dict]:
         """Turn the latest signals into orders. Sells first, then buys."""
         self.reconcile_pending()
@@ -188,11 +227,14 @@ class Engine:
         prices = self.broker.ltp(symbols, self.s.exchange)
         acct = self._account(prices)
         capital = min(self.s.risk.capital, acct.equity)
+        bear = self._bear_market(as_of)
         plans = []
         for sym in symbols:
             sig = self.store.latest(sym, as_of.isoformat())
             if sig and (as_of - date.fromisoformat(sig.as_of)).days > self.s.strategy.max_signal_age_days:
                 sig = None
+            rating, opinion_note = combine_opinions(sig.rating if sig else None, self._fresh_second(sym, sig),
+                                                    self.s.second_opinion)
             try:
                 hist = market_data.recent_history(sym, as_of, exchange=self.s.exchange)
                 tech = snapshot(hist, self.s.strategy.trend_ema, self.s.strategy.atr_period)
@@ -201,11 +243,15 @@ class Engine:
                 continue
             if sym not in prices:
                 continue
-            plan = plan_target(sym, sig.rating if sig else None, prices[sym], tech, self.state.qty(sym), capital,
-                               self.s.strategy, self.s.risk,
-                               sig.stop_loss if sig else None, sig.price_target if sig else None)
-            # trail the stop of an existing position (never lower it)
             pos = self.state.positions.get(sym)
+            held_days = (today - date.fromisoformat(pos["opened"])).days if pos and pos.get("opened") else None
+            plan = plan_target(sym, rating, prices[sym], tech, self.state.qty(sym), capital,
+                               self.s.strategy, self.s.risk,
+                               sig.stop_loss if sig else None, sig.price_target if sig else None,
+                               bear_market=bear, held_days=held_days)
+            if opinion_note:
+                plan.notes.insert(0, opinion_note)
+            # trail the stop of an existing position (never lower it)
             if pos and pos.get("stop"):
                 trail, _ = protective_levels(prices[sym], tech, self.s.strategy)
                 pos["stop"] = max(pos["stop"], trail)

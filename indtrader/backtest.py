@@ -25,7 +25,7 @@ from indtrader import data as market_data
 from indtrader.config import Settings
 from indtrader.risk import AccountView, check_buy
 from indtrader.signals.llm_agent import SignalStore
-from indtrader.signals.technical import ema, rsi, snapshot
+from indtrader.signals.technical import ema, is_bear_market, rsi, snapshot
 from indtrader.strategy import plan_target, protective_levels
 
 RatingFn = Callable[[str, pd.DataFrame, date], str | None]
@@ -90,12 +90,14 @@ def _stats(equity: pd.Series, trades: pd.DataFrame, benchmark: pd.Series | None)
 def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn = technical_rating,
                  histories: dict[str, pd.DataFrame] | None = None,
                  benchmark: pd.Series | None = None) -> BacktestResult:
+    """`benchmark` (index closes, ideally with ~1 year of warm-up before `start`)
+    is used for the regime filter and for comparison."""
     s, r, costs = settings.strategy, settings.risk, settings.cost_model
     if histories is None:
         histories = {sym: market_data.history(sym, start - timedelta(days=400), end, settings.exchange)
                      for sym in settings.universe}
         try:
-            bench = market_data.history("^NSEI" if settings.exchange == "NSE" else "^BSESN", start, end)
+            bench = market_data.history(s.regime_index, start - timedelta(days=400), end)
             benchmark = bench["Close"]
         except Exception:
             benchmark = None
@@ -116,7 +118,7 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
         ch = costs.charges(side, qty, px, settings.broker.product)
         pnl = None
         if side == "BUY":
-            p = pos.setdefault(sym, {"qty": 0, "avg": 0.0})
+            p = pos.setdefault(sym, {"qty": 0, "avg": 0.0, "opened": day})
             p["avg"] = (p["qty"] * p["avg"] + qty * px) / (p["qty"] + qty)
             p["qty"] += qty
             p["stop"], p["target"] = stop, target
@@ -141,6 +143,11 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             val += p["qty"] * float(h.loc[:day, "Close"].iloc[-1])
         return val
 
+    def bear_on(day) -> bool:
+        if not s.regime_filter or benchmark is None:
+            return False
+        return is_bear_market(benchmark.loc[: day - pd.Timedelta(days=1)], s.regime_sma)
+
     prev_equity = r.capital
     for day in dates:
         orders_today = 0
@@ -151,6 +158,7 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
                 fill(sym, "SELL", pos[sym]["qty"], float(bars[sym]["Open"]), day, "stop (gap)")
         # 2) rebalance at the open on yesterday's information
         plans = []
+        bear = bear_on(day)
         for sym, h in histories.items():
             if sym not in bars:
                 continue
@@ -161,7 +169,9 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             rating = rating_fn(sym, past, past.index[-1].date())
             held = pos.get(sym, {}).get("qty", 0)
             price = float(bars[sym]["Open"])
-            plan = plan_target(sym, rating, price, tech, held, min(r.capital, prev_equity), s, r)
+            held_days = (day - pos[sym]["opened"]).days if sym in pos else None
+            plan = plan_target(sym, rating, price, tech, held, min(r.capital, prev_equity), s, r,
+                               bear_market=bear, held_days=held_days)
             plans.append((plan.target_qty - held, sym, plan, tech, price, held))
         for delta, sym, plan, tech, price, held in sorted(plans, key=lambda x: x[0]):
             if delta < 0:
@@ -199,7 +209,20 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
     if benchmark is not None:
         bench = benchmark.loc[(benchmark.index >= equity.index[0]) & (benchmark.index <= equity.index[-1])]
         bench = bench / bench.iloc[0] * r.capital if len(bench) else None
-    return BacktestResult(equity, tdf, bench, _stats(equity, tdf, bench))
+    stats = _stats(equity, tdf, bench)
+    stats["equal_weight_buy_hold_pct"] = _equal_weight_buy_hold(histories, equity.index[0], equity.index[-1], costs)
+    return BacktestResult(equity, tdf, bench, stats)
+
+
+def _equal_weight_buy_hold(histories: dict[str, pd.DataFrame], start, end, costs) -> float | None:
+    """Ablation baseline: buy the same universe in equal weight on day one and hold."""
+    rets = []
+    for h in histories.values():
+        seg = h.loc[(h.index >= start) & (h.index <= end)]
+        if len(seg) > 1:
+            gross = float(seg["Close"].iloc[-1] / seg["Open"].iloc[0])
+            rets.append(gross * (1 - costs.stt_delivery_pct) ** 2 - 1)
+    return round(100 * float(np.mean(rets)), 2) if rets else None
 
 
 __all__ = ["run_backtest", "technical_rating", "llm_rating_fn", "BacktestResult"]

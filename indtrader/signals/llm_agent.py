@@ -46,6 +46,8 @@ class LLMSignal:
     stop_loss: float | None = None
     price_target: float | None = None
     summary: str = ""
+    confidence: float | None = None  # 0-100 when the source reports one
+    source: str = "tradingagents"
     created_at: str = field(default_factory=lambda: datetime.now(IST).isoformat(timespec="seconds"))
 
     @property
@@ -65,6 +67,31 @@ class LLMSignal:
             price_target=_first_number(_TARGET_RE, decision),
             summary=decision[:4000],
         )
+
+
+_SCORE = {"Buy": 2, "Overweight": 1, "Hold": 0, "Underweight": -1, "Sell": -2}
+_BY_SCORE = {v: k for k, v in _SCORE.items()}
+
+
+def consensus(ratings: list[str]) -> tuple[str, float]:
+    """Majority vote over several runs' ratings.
+
+    Returns (rating, agreement 0-100). A direction (bullish / bearish) needs a
+    strict majority of all runs, REVIEW runs included; the rating is then the
+    median strength of the runs on that side, rounded toward Hold. Anything
+    else is Hold (or REVIEW when no run produced a rating).
+    """
+    valid = [_SCORE[r] for r in ratings if r in _SCORE]
+    if not valid:
+        return "REVIEW", 0.0
+    n = len(ratings)
+    for side in (1, -1):
+        votes = sorted(abs(v) for v in valid if v * side > 0)
+        if len(votes) * 2 > n:
+            median = votes[(len(votes) - 1) // 2]          # lower median: the more cautious strength
+            return _BY_SCORE[side * median], round(100 * len(votes) / n, 1)
+    holds = sum(1 for v in valid if v == 0)
+    return "Hold", round(100 * holds / n, 1)
 
 
 class SignalStore:
@@ -110,6 +137,9 @@ def build_ta_config(settings: Settings) -> dict:
     cfg["global_news_queries"] = list(llm.global_news_queries)
     cfg["data_vendors"] = {**cfg["data_vendors"], "fundamental_data": llm.fundamental_data_vendor}
     cfg["benchmark_ticker"] = "^NSEI" if settings.exchange == "NSE" else "^BSESN"
+    if llm.runs > 1:
+        # a checkpoint would replay the first run instead of drawing a new sample
+        cfg["checkpoint_enabled"] = False
     return cfg
 
 
@@ -143,9 +173,20 @@ class TradingAgentsAnalyzer:
             from tradingagents.portfolio import PortfolioContext
 
             ctx = PortfolioContext.model_validate(portfolio)
-        log.info("%s %s: running TradingAgents (this takes a few minutes)...", ticker, as_of_s)
-        final_state, rating = self.graph.propagate(ticker, as_of_s, portfolio=ctx)
+        runs = max(1, self.settings.llm.runs)
+        results = []
+        for i in range(runs):
+            log.info("%s %s: running TradingAgents%s (a few minutes)...", ticker, as_of_s,
+                     f" [run {i + 1}/{runs}]" if runs > 1 else "")
+            results.append(self.graph.propagate(ticker, as_of_s, portfolio=ctx))
+        ratings = [r for _, r in results]
+        rating, agreement = consensus(ratings) if runs > 1 else (ratings[0], None)
+        # levels (stop / target) come from a run that agrees with the consensus
+        final_state = next((st for st, r in results if r == rating), results[-1][0])
         sig = LLMSignal.from_state(symbol.upper(), as_of_s, final_state, rating)
+        if runs > 1:
+            sig.confidence = agreement
+            sig.summary = f"Consensus of {runs} runs: {', '.join(ratings)}\n\n" + sig.summary
         self.store.put(sig)
         try:
             self.graph.save_reports(final_state, ticker)

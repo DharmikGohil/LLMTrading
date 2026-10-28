@@ -19,8 +19,13 @@ OpenAlgo / paper), stop-loss monitoring, a scheduler and a backtester.
                      Market + Social + News + Fundamentals analysts
                      -> Bull vs Bear debate -> Trader -> Risk team -> Portfolio Manager
                      -> rating: Buy / Overweight / Hold / Underweight / Sell (+ stop, target)
-                     cached in state/signals/<date>/<SYMBOL>.json
-09:30 IST  trade     rating + technical filter -> target qty -> risk checks -> LIMIT orders
+                     (optional: N runs + majority vote)  -> state/signals/<date>/<SYMBOL>.json
+           2nd opinion  (optional) Vibe-Trading "India investment committee" swarm on the
+                     stocks TradingAgents wants to buy: bull vs bear -> CRO -> PM verdict
+                     -> state/signals_vibe/<date>/<SYMBOL>.json
+09:30 IST  trade     ratings combined (2nd opinion can only veto/shrink buys)
+                     + trend/RSI filter + market regime (Nifty vs 200-DMA)
+                     -> target qty -> risk checks -> LIMIT orders
 every 5m   monitor   stop-loss / take-profit exits
 15:20 IST  eod       MIS square-off (if intraday), daily summary (Telegram)
 ```
@@ -28,13 +33,15 @@ every 5m   monitor   stop-loss / take-profit exits
 | Module | What it does |
 |---|---|
 | `indtrader/signals/llm_agent.py` | Wraps `TradingAgentsGraph`: `.NS` tickers, Nifty benchmark, Indian macro news queries, Yahoo fundamentals (SEC EDGAR is US-only), passes your holdings as portfolio context, caches decisions, parses the Trader's stop-loss and the PM's price target |
-| `indtrader/strategy.py` | Long-only mapping: Buy/Overweight may **add** (only if close > EMA50 and RSI < 75); Underweight/Sell may only **trim**; Hold/REVIEW/stale = no change. Size = min(20% allocation, 1%-risk-to-stop) |
+| `indtrader/strategy.py` | Long-only mapping: Buy/Overweight may **add** (only if close > EMA50 and RSI < 75); Underweight/Sell may only **trim** (not within `min_hold_days` of entry); Hold/REVIEW/stale = no change. Size = min(20% allocation, 1%-risk-to-stop), halved when Nifty is below its 200-day average. `combine_opinions` merges the second opinion |
+| `indtrader/signals/vibe_opinion.py` + `indtrader/vibe/` | Vibe-Trading bridge: our read-only India committee preset (no shell, no trading tools), a runner executed in Vibe-Trading's own virtualenv, verdict parsing and caching |
 | `indtrader/risk.py` | Daily-loss kill switch, max open positions, exposure/position caps, cash, max orders/day, min order value, "price ran away from analysed close" guard |
 | `indtrader/costs.py` | STT, stamp duty, exchange txn, SEBI fee, GST, DP charge, brokerage (delivery vs intraday) |
 | `indtrader/market.py` | IST session times, 2026 NSE holidays, special sessions, tick rounding, symbol mapping |
 | `indtrader/brokers/` | `paper` (simulated with costs), `zerodha` (Kite Connect), `openalgo` (Angel One, Dhan, Upstox, Fyers, Kotak, 5paisa, Shoonya, ...) |
 | `indtrader/engine.py` | Orchestration, order fill tracking, trailing stops, re-entry cooldown, trade journal (`state/trades.csv`) |
-| `indtrader/backtest.py` | Daily portfolio backtest with the same sizing/risk code and Indian costs |
+| `indtrader/backtest.py` | Daily portfolio backtest with the same sizing/risk/regime code and Indian costs; compares with Nifty and equal-weight buy-and-hold of the same stocks |
+| `indtrader/validation.py` | Block-bootstrap confidence interval for Sharpe, walk-forward windows vs Nifty |
 
 **Safety by design:** the bot only sells shares it bought itself (tracked in
 `state/bot_state.json`), so your long-term holdings in the same demat account
@@ -52,8 +59,29 @@ pip install -e ".[zerodha]"             # or ".[openalgo]" for live trading
 
 cp .env.example .env                    # add your LLM API key (Anthropic/OpenAI/Google/...)
 cp config/config.example.yaml config/config.yaml   # universe, capital, risk, broker
-pytest                                  # 16 tests, no network/LLM needed
+pytest                                  # 35 tests, no network/LLM needed
 ```
+
+### Optional: Vibe-Trading second opinion
+Vibe-Trading must live in its **own virtualenv** (it and TradingAgents both ship
+a top-level `cli` package, so they would overwrite each other):
+
+```bash
+scripts/install_vibe.sh                 # -> ~/vibe-venv, validates our preset
+indtrader vibe-check                    # re-check any time (no LLM calls)
+```
+Then set `second_opinion.enabled: true` in `config/config.yaml` and the model
+for Vibe-Trading in `.env` (`LANGCHAIN_PROVIDER`, `LANGCHAIN_MODEL_NAME`, API key).
+`indtrader analyze --second-opinion` shows both verdicts and the combined result.
+
+| `second_opinion.mode` | TradingAgents Buy/Overweight is executed when Vibe-Trading says |
+|---|---|
+| `veto` (default) | anything except confident Underweight/Sell (a confident Hold turns Buy into Overweight) |
+| `confirm` | confident Buy/Overweight only |
+
+Sells and holds are never changed by the second opinion. If it fails,
+`on_missing: hold` skips new buys that day. **Never use it for backtests**: its
+data tools always return today's data (the code refuses past dates).
 
 ## Recommended path to live trading
 
@@ -102,6 +130,30 @@ The SEBI retail algo framework (full implementation deadline extended to
 
 Check your broker's current notice before going live. These rules change.
 
+## What the evidence says about LLM trading (and what we did about it)
+
+Research summary (October 2026):
+- **FINSABER** (KDD 2026, 20 years of S&P 500 including delisted stocks): published
+  LLM agents (FinMem, FinAgent) did **not** beat buy-and-hold. They were too cautious in
+  bull markets and too aggressive in bear markets
+  ([arXiv 2505.07078](https://arxiv.org/abs/2505.07078)).
+- **StockBench** ([arXiv 2510.02209](https://arxiv.org/abs/2510.02209)): best models made
+  +1.9–2.5% vs buy-and-hold +0.4% over 4 months, with large run-to-run variance; no agent
+  beat buy-and-hold in the downturn. **LiveTradeBench** ([arXiv 2511.03628](https://arxiv.org/abs/2511.03628)):
+  general LLM leaderboard rank does not predict trading results.
+- **nof1 Alpha Arena**: most models lost money. The worst traders overtraded.
+- **Look-ahead**: LLMs memorise past prices and news, so backtests on dates before the
+  model's training cutoff are inflated ([FinCAD, arXiv 2605.24564](https://arxiv.org/abs/2605.24564)).
+
+Design choices that follow from this:
+1. The LLM is a **filter inside a rule-based system** (trend/RSI filter, ATR stops, risk caps), not the trader.
+2. A **regime filter** shrinks new buys when Nifty is below its 200-day average.
+3. **Non-determinism**: `llm.runs: 3` gives a majority vote; disagreement means Hold.
+4. **Two independent committees** (TradingAgents + Vibe-Trading) can veto each other's buys.
+5. **Anti-overtrading**: minimum holding period, re-entry cooldown after stops, and costs in every backtest.
+6. **Honest evaluation**: compare against Nifty *and* equal-weight buy-and-hold, require a Sharpe CI above 0,
+   and judge LLM signals on **paper trading after the model's training cutoff**, not on old backtests.
+
 ## Known limitations / ideas
 - TradingAgents' Social analyst reads StockTwits/Reddit, which say little about
   most Indian stocks. Consider `analysts: [market, news, fundamentals]` to save cost.
@@ -126,13 +178,16 @@ MCP server and web UI. For **Indian live trading** it does not fit:
 - It does have an India daily backtest engine (delivery costs, T+1, circuit bands), and
   `india_broker` historical data from Zerodha, Shoonya or Dhan.
 
-Useful ways to combine them: use Vibe-Trading for research (e.g. its
-`equity_research_team` swarm or backtests on `.NS` symbols), and this repo to
-execute. Ideas borrowed here: statistical validation of backtests, and a
+How we combine them: Vibe-Trading's committee is wired in as an optional second
+opinion (above), running in its own virtualenv with read-only tools. This repo
+does the execution. Ideas borrowed: statistical validation of backtests and a
 file-based kill switch.
 
 ## Related open-source projects
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents): the multi-agent LLM analyst/trader used here
+- [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading): the second-opinion committee
+- [AI-Trader](https://github.com/HKUDS/AI-Trader), [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund), [FinRobot](https://github.com/AI4Finance-Foundation/FinRobot): other LLM trading agents
+- [Agentic-Trader](https://github.com/marketcalls/Agentic-Trader): LLM agent trading NSE through OpenAlgo
 - [OpenAlgo](https://github.com/marketcalls/openalgo): unified API for Indian brokers
 - [pykiteconnect](https://github.com/zerodha/pykiteconnect): official Zerodha client
 - [jugaad-data](https://github.com/jugaad-py/jugaad-data) / [nsepython](https://github.com/aeron7/nsepython): NSE data (bhavcopy, F&O, indices)

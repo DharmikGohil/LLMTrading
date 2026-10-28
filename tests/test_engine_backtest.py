@@ -82,3 +82,18 @@ def test_halt_blocks_orders(setup, settings):
     settings.path("HALT").write_text("test")
     eng.rebalance(date(2026, 10, 28))
     assert broker.positions() == {} and broker.funds() == 100000
+
+
+def test_second_opinion_veto_in_engine(setup, settings):
+    eng, broker, _ = setup
+    settings.second_opinion.enabled = True
+    eng.vibe_store.put(LLMSignal("AAA", "2026-10-27", "Sell", confidence=90, source="vibe-trading"))
+    assert eng.rebalance(date(2026, 10, 28)) == []               # TradingAgents Buy vetoed
+    eng.vibe_store.put(LLMSignal("AAA", "2026-10-27", "Buy", confidence=90, source="vibe-trading"))
+    assert [e["symbol"] for e in eng.rebalance(date(2026, 10, 28))] == ["AAA"]
+
+
+def test_second_opinion_missing_blocks_buy(setup, settings):
+    eng, broker, _ = setup
+    settings.second_opinion.enabled = True                       # on_missing=hold by default
+    assert eng.rebalance(date(2026, 10, 28)) == []

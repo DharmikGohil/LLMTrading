@@ -47,7 +47,8 @@ def protective_levels(price: float, tech: TechnicalSnapshot, s: StrategySettings
 
 def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSnapshot, current_qty: int,
                 capital: float, s: StrategySettings, r: RiskSettings,
-                llm_stop: float | None = None, llm_target: float | None = None) -> TargetPlan:
+                llm_stop: float | None = None, llm_target: float | None = None,
+                bear_market: bool = False, held_days: int | None = None) -> TargetPlan:
     plan = TargetPlan(symbol, current_qty)
     if rating is None or rating not in s.rating_weights:
         plan.notes.append(f"no tradeable rating ({rating}); holding {current_qty}")
@@ -62,6 +63,9 @@ def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSn
     risk_per_share = price - stop
     risk_qty = math.floor(capital * r.risk_per_trade_pct / risk_per_share) if risk_per_share > 0 else 0
     sized = min(alloc_qty, risk_qty) if weight > 0 else 0
+    if rating in BULLISH and bear_market:
+        sized = math.floor(sized * s.bear_market_scale)
+        plan.notes.append(f"bear regime: size x{s.bear_market_scale:g}")
 
     if rating in BULLISH:
         if sized <= current_qty:
@@ -76,6 +80,38 @@ def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSn
         plan.target_qty, plan.stop, plan.take_profit = sized, stop, take
         plan.notes.append(f"{rating}: add to {sized} (alloc {alloc_qty}, risk-sized {risk_qty}) stop {stop} tp {take}")
     elif rating in BEARISH:
+        if current_qty and held_days is not None and held_days < s.min_hold_days:
+            plan.notes.append(f"{rating} but held {held_days}d < min {s.min_hold_days}d; keeping (stop still active)")
+            return plan
         plan.target_qty = min(current_qty, sized)
         plan.notes.append(f"{rating}: trim {current_qty} -> {plan.target_qty}")
     return plan
+
+
+def combine_opinions(primary: str | None, second, cfg) -> tuple[str | None, str]:
+    """Merge the TradingAgents rating with the Vibe-Trading second opinion.
+
+    The second opinion can only reduce risk: bearish/neutral primary ratings
+    pass through unchanged; a bullish one can be downgraded to Hold (no new
+    buys, keep what is held) or from Buy to Overweight (smaller size).
+    `second` is an LLMSignal or None.
+    """
+    if not cfg.enabled or primary not in BULLISH:
+        return primary, ""
+    if second is None or second.rating not in ("Buy", "Overweight", "Hold", "Underweight", "Sell"):
+        if cfg.on_missing == "proceed":
+            return primary, "second opinion missing; proceeding on TradingAgents alone"
+        return "Hold", "second opinion missing; no new buys"
+    conf = second.confidence
+    confident = conf is None or conf >= cfg.min_confidence
+    tag = f"Vibe-Trading {second.rating}" + (f" ({conf:.0f}%)" if conf is not None else "")
+    if cfg.mode == "confirm":
+        if second.rating in BULLISH and confident:
+            return primary, f"{tag} confirms"
+        return "Hold", f"{tag} does not confirm; no new buys"
+    # veto mode
+    if second.rating in BEARISH and confident:
+        return "Hold", f"{tag} vetoes the buy"
+    if second.rating == "Hold" and primary == "Buy" and confident:
+        return "Overweight", f"{tag}: Buy softened to Overweight"
+    return primary, f"{tag} does not object"
