@@ -208,6 +208,20 @@ Design choices that follow from this:
 8. **Honest evaluation**: compare against Nifty *and* equal-weight buy-and-hold, require a Sharpe CI above 0,
    and judge LLM signals on **paper trading after the model's training cutoff**, not on old backtests.
 
+## Backtests (Jan 2024 – Oct 2026, Nifty 200, Indian costs)
+
+| Variant | Return | Max drawdown | Trades | Charges | Windows beating Nifty |
+|---|---|---|---|---|---|
+| Momentum screen, swing exits (2×ATR stop, 2.5R target) | −7.0% | −21% | 646 | ₹12,965 | 1/4 |
+| … + SEPA trend template | −10.4% | −28% | 721 | ₹14,584 | 2/4 |
+| Slow momentum book (4×ATR stop, no target, 20-day hold) | −1.5% | −23% | 357 | ₹5,356 | 2/4 |
+| **Slow book + SEPA (current default)** | **+10.2%** | −20% | 473 | ₹7,199 | 3/4 |
+| Nifty 50 buy-and-hold | +4.6% | | | | |
+
+Today's index members are used throughout, so survivorship bias flatters every row. None of these
+shows a statistically proven edge (all Sharpe 95% ranges cross zero). The LLM layer cannot be
+backtested honestly at all, so it is judged on forward paper trading against the "LLM off" control.
+
 ## Known limitations / ideas
 - TradingAgents' Social analyst reads StockTwits/Reddit, which say little about
   most Indian stocks. Consider `analysts: [market, news, fundamentals]` to save cost.

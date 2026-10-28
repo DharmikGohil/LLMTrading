@@ -5,6 +5,7 @@ data_dir: state
 signals_dir: signals          # tracked in git: the analyst commits here, your machine pulls
 screen:
   index: nifty200
-  top_n: 12
+  top_n: 10
+  trend_template: true
 strategy:
   signal_mode: hybrid

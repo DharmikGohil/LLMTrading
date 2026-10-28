@@ -26,12 +26,18 @@ strategy:
   rating_weights: {Buy: 1.0, Overweight: 0.75, Hold: null, Underweight: 0.25, Sell: 0.0}
   trend_filter: true      # only buy when close > EMA(trend_ema)
   trend_ema: 50
-  rsi_max_entry: 75
-  atr_stop_mult: 2.0
-  take_profit_rr: 2.5
+  # Slow momentum book: momentum pays over months, so wide stops, no fixed target (winners run
+  # until the trailing stop or the rank drops) and a long minimum hold. Backtest Jan 2024-Oct 2026
+  # on the Nifty 200 with trend_template: +10.2% vs Nifty +4.6% (tight swing exits: -7.0%).
+  # Not statistically proven; judge it on paper trading.
+  rsi_max_entry: 85
+  atr_stop_mult: 4.0
+  min_stop_pct: 0.08
+  max_stop_pct: 0.25
+  take_profit_rr: 100        # effectively no fixed target
   max_signal_age_days: 3
-  reentry_cooldown_days: 5   # no re-buy right after a stop-loss
-  min_hold_days: 3           # rating-driven sells wait N days after entry (stops still fire)
+  reentry_cooldown_days: 20  # no re-buy right after a stop-loss
+  min_hold_days: 20          # rating-driven sells wait N days after entry (stops still fire)
   regime_filter: true        # Nifty below its 200-day average -> smaller new buys
   regime_index: "^NSEI"
   regime_sma: 200
@@ -50,10 +56,10 @@ second_opinion:
 
 risk:
   capital: 100000         # what the bot may deploy
-  max_position_pct: 0.20
-  risk_per_trade_pct: 0.01
-  max_open_positions: 5
-  max_per_sector: 2         # e.g. at most 2 pharma names at once
+  max_position_pct: 0.10
+  risk_per_trade_pct: 0.02
+  max_open_positions: 10
+  max_per_sector: 3         # e.g. at most 3 pharma names at once
   max_gross_exposure_pct: 1.0
   max_daily_loss_pct: 0.03
   max_orders_per_day: 30
@@ -76,10 +82,10 @@ schedule:                 # IST
 
 screen:                   # momentum + low-vol + trend screen (hybrid / factor modes)
   index: nifty200
-  top_n: 12
+  top_n: 10
   min_traded_value_cr: 20
   vol_exclude_pct: 0.2
-  trend_template: false     # true = also require Minervini's SEPA trend template (stricter, fewer trades)
+  trend_template: true      # Minervini's SEPA trend template (best variant in backtests)
 
 shadow_arms: [factor]     # paper "LLM off" control traded alongside; see `indtrader compare`
 nse_checks: true          # surveillance, results calendar, splits/bonuses from nseindia.com
