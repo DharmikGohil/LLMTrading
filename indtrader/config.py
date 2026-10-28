@@ -126,7 +126,7 @@ class ScheduleSettings(BaseModel):
 class ScreenSettings(BaseModel):
     """Momentum + low-vol + trend screen that picks the candidates (indtrader/screen.py)."""
 
-    index: Literal["nifty50", "nifty100", "nifty200", "nifty500"] = "nifty200"
+    index: Literal["nifty50", "nifty100", "nifty200", "nifty500", "sp100"] = "nifty200"
     top_n: int = 12
     min_traded_value_cr: float = 20.0        # median daily traded value, Rs crore
     vol_exclude_pct: float = 0.2             # drop the most volatile 20%
@@ -135,7 +135,7 @@ class ScreenSettings(BaseModel):
 
 class Settings(BaseModel):
     universe: list[str] = Field(default_factory=lambda: ["RELIANCE", "TCS", "HDFCBANK", "INFY", "ICICIBANK"])
-    exchange: Literal["NSE", "BSE"] = "NSE"
+    exchange: Literal["NSE", "BSE", "US"] = "NSE"
     data_dir: str = "state"
     signals_dir: str | None = None            # default <data_dir>/signals; "signals" = tracked in git
     signal_sync: Literal["none", "git"] = "none"   # git: `git pull` before using signals (external analyst)
@@ -184,6 +184,9 @@ def load_settings(path: str | os.PathLike | None = None) -> Settings:
     path = Path(path or os.getenv("INDTRADER_CONFIG", "config/config.yaml"))
     data = yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else {}
     settings = Settings.model_validate(data or {})
+    from indtrader.market import configure
+
+    configure(settings.exchange)
     if os.getenv("INDTRADER_BROKER"):
         settings.broker.name = os.environ["INDTRADER_BROKER"]  # type: ignore[assignment]
     return settings

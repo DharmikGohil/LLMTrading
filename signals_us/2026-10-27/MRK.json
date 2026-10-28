@@ -1,0 +1,12 @@
+{
+  "symbol": "MRK",
+  "as_of": "2026-10-27",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 results on Thu 29 Oct, 9am ET call (24/7 Wall St, 28 Oct); Seeking Alpha preview expects EPS down 19% to 2.09. Binary event tomorrow: no new entry.",
+  "confidence": 75.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-28T14:13:13-04:00"
+}

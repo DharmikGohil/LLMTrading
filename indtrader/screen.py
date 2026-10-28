@@ -28,6 +28,12 @@ from indtrader.signals.technical import trend_template
 
 log = logging.getLogger(__name__)
 
+# S&P 100 members (as of late 2025; refresh occasionally). US mode uses this static list.
+SP100 = """AAPL ABBV ABT ACN ADBE AIG AMD AMGN AMT AMZN AVGO AXP BA BAC BK BKNG BLK BMY BRK.B C CAT CHTR CL CMCSA
+COF COP COST CRM CSCO CVS CVX DE DHR DIS DUK EMR F FDX GD GE GILD GM GOOGL GS HD HON IBM INTC INTU ISRG JNJ JPM
+KHC KO LIN LLY LMT LOW MA MCD MDLZ MDT MET META MMM MO MRK MS MSFT NEE NFLX NKE NOW NVDA ORCL PEP PFE PG PLTR PM
+PYPL QCOM RTX SBUX SCHW SO SPG T TGT TMO TMUS TSLA TXN UBER UNH UNP UPS USB V VZ WFC WMT XOM""".split()  # noqa: SIM905
+
 INDEX_CSV = {
     "nifty50": "ind_nifty50list.csv",
     "nifty100": "ind_nifty100list.csv",
@@ -41,6 +47,8 @@ def index_members(index: str, cache_dir: Path) -> list[str]:
     """Current constituents (NSE symbols). Cached on disk; the cache is used if NSE is unreachable."""
     import requests
 
+    if index == "sp100":
+        return list(SP100)
     fname = INDEX_CSV[index]
     cache = cache_dir / fname
     for url in _URLS:
@@ -62,6 +70,8 @@ def index_members(index: str, cache_dir: Path) -> list[str]:
 
 def industries(index: str, cache_dir: Path) -> dict[str, str]:
     """symbol -> NSE industry, from the cached constituent file (empty if not cached yet)."""
+    if index not in INDEX_CSV:
+        return {}
     f = cache_dir / INDEX_CSV[index]
     if not f.exists():
         return {}
@@ -73,7 +83,9 @@ def download_closes(symbols: list[str], start: date, end: date) -> dict[str, pd.
     """Daily OHLCV for many NSE symbols in one batched Yahoo request."""
     import yfinance as yf
 
-    tickers = [f"{s}.NS" for s in symbols]
+    from indtrader.market import is_us, yahoo_symbol
+
+    tickers = [yahoo_symbol(s, "US") if is_us() else f"{s}.NS" for s in symbols]
     raw = yf.download(tickers, start=str(start), end=str(end + timedelta(days=1)), auto_adjust=True,
                       progress=False, group_by="ticker", threads=True)
     out = {}

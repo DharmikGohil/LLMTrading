@@ -1,0 +1,12 @@
+{
+  "symbol": "JNJ",
+  "as_of": "2026-10-27",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 reported 13 Oct (EPS 2.59 vs 2.53 consensus per Nasdaq calendar listing; not independently verified). Trend template 7/7, 3.5% below the 52-week high, no upcoming event found; relative strength slightly negative over 3m.",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-28T14:13:14-04:00"
+}

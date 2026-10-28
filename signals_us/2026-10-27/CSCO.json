@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-10-27",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Trend template 7/7, up 4.8% in 1m; fiscal Q1 results usually mid-November (date not yet confirmed in search), so no event in the next week. Weak point: 13.7% below the 52-week high and RS -6% over 3m.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-28T14:13:15-04:00"
+}

@@ -1,4 +1,10 @@
-"""Indian market calendar, session times and symbol helpers.
+"""Market calendars, session times and symbol helpers: NSE/BSE (default) and US.
+
+`configure(exchange)` selects the active market once per process (from config);
+`now_ist()` then returns the time in that market's timezone, and the calendar
+functions use that market's hours and holidays.
+
+Indian market notes:
 
 All times are IST (Asia/Kolkata). NSE cash market:
   pre-open  09:00-09:08, normal session 09:15-15:30,
@@ -22,8 +28,15 @@ CAS_CHANGE = date(2026, 12, 7)
 
 
 def continuous_close(d: date) -> time:
-    """When continuous trading ends for F&O stocks; the bot stops sending orders then."""
+    """When continuous trading ends for F&O stocks; the bot stops sending orders then.
+    US: 16:00 New York time (stop at 15:55 to stay clear of the closing cross)."""
+    if is_us():
+        return time(15, 55)
     return time(15, 15) if d < CAS_CHANGE else time(15, 30)
+
+
+def market_open_time() -> time:
+    return time(9, 30) if is_us() else MARKET_OPEN
 
 # NSE equity-segment trading holidays (weekdays only). Source: NSE circular
 # for 2026. Update every December from
@@ -53,11 +66,36 @@ NSE_HOLIDAYS: set[date] = {
 SPECIAL_SESSIONS: set[date] = {date(2026, 2, 1)}
 
 
+# NYSE/Nasdaq full-day holidays 2026 (early 13:00 closes on 27 Nov and 24 Dec are not modelled).
+US_HOLIDAYS: set[date] = {
+    date(2026, 1, 1), date(2026, 1, 19), date(2026, 2, 16), date(2026, 4, 3), date(2026, 5, 25),
+    date(2026, 6, 19), date(2026, 7, 3), date(2026, 9, 7), date(2026, 11, 26), date(2026, 12, 25),
+}
+NY = ZoneInfo("America/New_York")
+_ACTIVE = {"market": "NSE"}
+
+
+def configure(exchange: str) -> None:
+    """Select the active market: "US" for NYSE/Nasdaq, anything else for NSE/BSE."""
+    _ACTIVE["market"] = "US" if exchange.upper() == "US" else "NSE"
+
+
+def is_us() -> bool:
+    return _ACTIVE["market"] == "US"
+
+
+def market_tz() -> ZoneInfo:
+    return NY if is_us() else IST
+
+
 def now_ist() -> datetime:
-    return datetime.now(IST)
+    """Now, in the active market's timezone (IST for India, New York time for the US)."""
+    return datetime.now(market_tz())
 
 
 def is_trading_day(d: date, extra_holidays: set[date] | None = None) -> bool:
+    if is_us():
+        return d.weekday() < 5 and d not in US_HOLIDAYS and d not in (extra_holidays or set())
     if d in SPECIAL_SESSIONS:
         return True
     if d.weekday() >= 5:
@@ -80,15 +118,15 @@ def next_trading_day(d: date, extra_holidays: set[date] | None = None) -> date:
 
 
 def is_market_open(ts: datetime | None = None, extra_holidays: set[date] | None = None) -> bool:
-    ts = (ts or now_ist()).astimezone(IST)
-    return is_trading_day(ts.date(), extra_holidays) and MARKET_OPEN <= ts.time() < continuous_close(ts.date())
+    ts = (ts or now_ist()).astimezone(market_tz())
+    return is_trading_day(ts.date(), extra_holidays) and market_open_time() <= ts.time() < continuous_close(ts.date())
 
 
 def yahoo_symbol(symbol: str, exchange: str = "NSE") -> str:
     """RELIANCE -> RELIANCE.NS (NSE) / RELIANCE.BO (BSE). Already-suffixed symbols pass through."""
     s = symbol.strip().upper()
-    if s.endswith((".NS", ".BO")) or s.startswith("^"):
-        return s
+    if exchange.upper() == "US" or s.endswith((".NS", ".BO")) or s.startswith("^"):
+        return s.replace(".", "-") if exchange.upper() == "US" and not s.startswith("^") else s   # BRK.B -> BRK-B
     return f"{s}.NS" if exchange.upper() == "NSE" else f"{s}.BO"
 
 
@@ -127,7 +165,7 @@ def round_to_tick(price: float, tick: float | None = None, side: str = "BUY") ->
     """
     import math
 
-    tick = tick or tick_size(price * 1.2)
+    tick = tick or (0.01 if is_us() else tick_size(price * 1.2))
     steps = price / tick
     steps = math.ceil(steps - 1e-9) if side.upper() == "BUY" else math.floor(steps + 1e-9)
     return round(steps * tick, 2)

@@ -30,6 +30,11 @@ class CostModel:
     dp_charge_per_sell: float = 15.34          # depository charge per scrip, delivery sells
     # Slippage assumption used by the paper broker and backtests
     slippage_pct: float = 0.0005
+    # US equities (exchange: US): zero-commission broker; regulatory fees on sells only
+    us_commission_per_order: float = 0.0
+    us_sec_fee_pct: float = 0.0000278        # SEC Section 31 fee on sale proceeds (rate changes each fiscal year)
+    us_taf_per_share: float = 0.000166       # FINRA trading activity fee on shares sold ...
+    us_taf_cap: float = 8.30                 # ... capped per trade
 
     @classmethod
     def from_dict(cls, data: dict | None) -> CostModel:
@@ -43,6 +48,11 @@ class CostModel:
             return 0.0
         buy = side.upper() == "BUY"
         intraday = product.upper() == "MIS"
+        from indtrader.market import is_us
+
+        if is_us():
+            fees = 0.0 if buy else turnover * self.us_sec_fee_pct + min(abs(quantity) * self.us_taf_per_share, self.us_taf_cap)
+            return round(self.us_commission_per_order + fees, 2)
 
         if intraday:
             brokerage = min(turnover * self.intraday_brokerage_pct, self.intraday_brokerage_cap)

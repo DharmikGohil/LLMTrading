@@ -6,12 +6,11 @@ from __future__ import annotations
 import json
 import uuid
 from collections.abc import Callable
-from datetime import datetime
 from pathlib import Path
 
 from indtrader.brokers.base import Broker, Holding, Order, OrderResult
 from indtrader.costs import CostModel
-from indtrader.market import IST
+from indtrader.market import now_ist
 
 
 class PaperBroker(Broker):
@@ -74,7 +73,7 @@ class PaperBroker(Broker):
 
     def _record(self, order: Order, result: OrderResult) -> OrderResult:
         self.state["orders"].append({
-            "time": datetime.now(IST).isoformat(timespec="seconds"), "id": result.order_id,
+            "time": now_ist().isoformat(timespec="seconds"), "id": result.order_id,
             "symbol": order.symbol, "side": order.side, "qty": order.quantity, "status": result.status,
             "price": result.avg_price, "reason": order.reason, "message": result.message,
         })
