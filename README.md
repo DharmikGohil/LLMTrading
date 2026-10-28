@@ -72,7 +72,12 @@ pytest                                  # 16 tests, no network/LLM needed
    first day with `--dry-run`.
 
 One-off commands: `indtrader trade [--dry-run] [--force]`, `indtrader monitor`,
-`indtrader status`.
+`indtrader status`. Emergency stop: `indtrader halt` (creates `state/HALT`; the
+running scheduler sends no orders until `indtrader resume`).
+
+Every backtest also prints a **bootstrap 95% confidence interval for Sharpe**
+and a **walk-forward** split (excess return vs Nifty per window). Treat a
+strategy as unproven unless `edge_shown` is true and most windows beat Nifty.
 
 ### Zerodha (Kite Connect)
 Create an app at developers.kite.trade (paid API subscription), set
@@ -107,6 +112,24 @@ Check your broker's current notice before going live. These rules change.
   [NSE holiday page](https://www.nseindia.com/resources/exchange-communication-holidays).
 - F&O (NIFTY/BANKNIFTY options) is not implemented. LLM analysis takes minutes,
   which suits daily swing decisions, not intraday option scalping.
+
+## How this compares with Vibe-Trading (HKUDS)
+
+[Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) (MIT) is a large LLM
+research workspace: chat agent, 29 multi-agent "swarm" presets, 29 data
+sources, 478-alpha factor zoo, backtests with Monte Carlo/bootstrap/walk-forward,
+MCP server and web UI. For **Indian live trading** it does not fit:
+- Its Zerodha, Dhan, Shoonya and mStock connectors are **paper-only or read-only
+  by design**: there is no live order path for any Indian broker.
+- Its paper-trading simulator covers China A-shares, Hong Kong and the US only, not India.
+- The alpha-zoo benchmark is limited to CSI300, S&P 500 and BTC-USDT (no NSE universe).
+- It does have an India daily backtest engine (delivery costs, T+1, circuit bands), and
+  `india_broker` historical data from Zerodha, Shoonya or Dhan.
+
+Useful ways to combine them: use Vibe-Trading for research (e.g. its
+`equity_research_team` swarm or backtests on `.NS` symbols), and this repo to
+execute. Ideas borrowed here: statistical validation of backtests, and a
+file-based kill switch.
 
 ## Related open-source projects
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents): the multi-agent LLM analyst/trader used here

@@ -113,7 +113,15 @@ class Engine:
         buf = self.s.risk.limit_buffer_pct
         return round_to_tick(ltp * (1 + buf) if side == "BUY" else ltp * (1 - buf), side=side)
 
+    @property
+    def halted(self) -> bool:
+        """Kill switch: while <data_dir>/HALT exists no order of any kind is sent."""
+        return self.s.path("HALT").exists()
+
     def _send(self, symbol: str, side: str, qty: int, ltp: float, reason: str, stop=None, target=None) -> OrderResult:
+        if self.halted:
+            log.warning("HALT file present: not sending %s %d %s", side, qty, symbol)
+            return OrderResult("", "REJECTED", message="halted")
         order = Order(symbol=symbol, side=side, quantity=qty, order_type="LIMIT",
                       price=self._limit_price(side, ltp), product=self.s.broker.product,
                       exchange=self.s.exchange, reason=reason, tag=self.s.broker.strategy_tag)

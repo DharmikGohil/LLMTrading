@@ -132,6 +132,22 @@ def run(config: str = ConfigOpt, broker: str = BrokerOpt, dry_run: bool = typer.
 
 
 @app.command()
+def halt(config: str = ConfigOpt, reason: str = typer.Option("manual", help="why")):
+    """Kill switch: block every order until `indtrader resume`. Works while `run` is live."""
+    s = _setup(config)
+    s.path("HALT").write_text(f"{now_ist().isoformat()} {reason}\n")
+    typer.echo(f"halted ({s.path('HALT')}). Open orders at the broker are NOT cancelled; check your broker app.")
+
+
+@app.command()
+def resume(config: str = ConfigOpt):
+    """Remove the kill switch."""
+    s = _setup(config)
+    s.path("HALT").unlink(missing_ok=True)
+    typer.echo("resumed")
+
+
+@app.command()
 def backtest(
     config: str = ConfigOpt,
     start: str = typer.Option(..., help="YYYY-MM-DD"),
@@ -144,8 +160,11 @@ def backtest(
 
     s = _setup(config)
     fn = llm_rating_fn(s) if signals == "llm" else technical_rating
+    from indtrader.validation import bootstrap_sharpe_ci, walk_forward
+
     res = run_backtest(s, date.fromisoformat(start), date.fromisoformat(end) if end else now_ist().date(), fn)
-    typer.echo(json.dumps(res.stats, indent=2))
+    report = {**res.stats, "sharpe_95ci": bootstrap_sharpe_ci(res.equity), "walk_forward": walk_forward(res.equity, 4, res.benchmark)}
+    typer.echo(json.dumps(report, indent=2))
     if out:
         Path(out).parent.mkdir(parents=True, exist_ok=True)
         res.trades.to_csv(out, index=False)
