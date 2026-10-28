@@ -83,19 +83,39 @@ def analyze(
 def trade(config: str = ConfigOpt, broker: str = BrokerOpt,
           dry_run: bool = typer.Option(False, "--dry-run", help="log orders, do not send"),
           force: bool = typer.Option(False, help="trade even when the market is closed (paper testing)")):
-    """Rebalance once from the latest cached ratings."""
+    """Rebalance once from the latest ratings (main account and shadow arms)."""
     s = _setup(config, broker, dry_run)
     if not force and not is_market_open(extra_holidays=s.holidays):
         typer.echo("market is closed (use --force for paper testing)")
         raise typer.Exit(1)
-    typer.echo(json.dumps(_engine(s).rebalance(now_ist().date()), indent=2))
+    for name, eng in _all_books(s).items():
+        if s.llm.signal_source == "external" and name == "main":
+            eng.sync_signals()
+        typer.echo(f"== {name}")
+        typer.echo(json.dumps(eng.rebalance(now_ist().date()), indent=2))
 
 
 @app.command()
 def monitor(config: str = ConfigOpt, broker: str = BrokerOpt, dry_run: bool = typer.Option(False, "--dry-run")):
-    """Check stop-loss / take-profit once."""
+    """Check stop-loss / take-profit once (main account and shadow arms)."""
     s = _setup(config, broker, dry_run)
-    typer.echo(json.dumps(_engine(s).monitor(), indent=2))
+    for name, eng in _all_books(s).items():
+        typer.echo(f"== {name}: " + json.dumps(eng.monitor()))
+
+
+@app.command()
+def eod(config: str = ConfigOpt, broker: str = BrokerOpt):
+    """End of day: intraday square-off (MIS only) and the daily equity record for every account."""
+    s = _setup(config, broker)
+    today = now_ist().date()
+    for name, eng in _all_books(s).items():
+        eng.square_off_intraday()
+        typer.echo(f"== {name}: " + json.dumps(eng.record_equity(today)))
+
+
+def _all_books(s: Settings) -> dict:
+    main = _engine(s)
+    return {"main": main, **_shadow_arms(s, main)}
 
 
 @app.command()
@@ -158,6 +178,20 @@ def scorecard(horizon: int = typer.Option(10, help="trading days after the signa
                "Meaningful after ~100+ graded calls; a positive bullish-minus-bearish spread and rank IC are the goal.")
     if out:
         graded.to_csv(out, index=False)
+
+
+@app.command("export-dashboard")
+def export_dashboard(out: str = typer.Option("public", help="output folder for the JSON row files"), config: str = ConfigOpt):
+    """Write the dashboard's data (accounts, positions, trades, decisions, analyst calls, equity) as JSON."""
+    from indtrader import data as market_data
+    from indtrader.export import export
+
+    s = _setup(config)
+    res = export(s, Path(out), lambda sym: market_data.last_price(sym, s.exchange))
+    for r in res["summary"]:
+        typer.echo(f"{r['market']:6} {r['book']:7} equity {r['equity']:>12,.2f} {r['currency']}  "
+                   f"return {r['return_pct']:+.2f}%  positions {r['open_positions']}  trades {r['trades']}")
+    typer.echo(f"wrote {len(res)} files to {out}/")
 
 
 @app.command()

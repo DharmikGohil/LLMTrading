@@ -1,0 +1,5 @@
+time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
+2026-10-28T14:14:05-04:00,JNJ,BUY,7,272.12,COMPLETE,7,271.44,PAPER-1cf14db33f,"momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",charges Rs 0.00
+2026-10-28T14:14:05-04:00,MET,BUY,15,100.0,COMPLETE,15,99.75,PAPER-450b0193a5,"momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 15 (alloc 15, risk-sized 23) stop 95.42 tp 110.4",charges Rs 0.00
+2026-10-28T14:14:05-04:00,CSCO,BUY,16,110.26,COMPLETE,16,109.98,PAPER-6209d106a8,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",charges Rs 0.00
+2026-10-28T14:14:05-04:00,KO,BUY,21,92.03,COMPLETE,21,91.79,PAPER-82ff95db9c,"momentum Buy; LLM: claude-analyst Buy (65%) does not object; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",charges Rs 0.00

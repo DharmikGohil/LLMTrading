@@ -1,0 +1,84 @@
+{
+  "cash": 1329.40689076233,
+  "positions": {
+    "LLY": {
+      "qty": 1,
+      "avg": 1289.689566467285
+    },
+    "AAPL": {
+      "qty": 5,
+      "avg": 345.2125285491943
+    },
+    "JNJ": {
+      "qty": 7,
+      "avg": 271.4406451721191
+    },
+    "CSCO": {
+      "qty": 16,
+      "avg": 109.98496530532836
+    },
+    "MET": {
+      "qty": 20,
+      "avg": 99.7498469467163
+    }
+  },
+  "orders": [
+    {
+      "time": "2026-10-28T14:14:08-04:00",
+      "id": "PAPER-7758100818",
+      "symbol": "LLY",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 1289.69,
+      "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:08-04:00",
+      "id": "PAPER-8c8966925d",
+      "symbol": "AAPL",
+      "side": "BUY",
+      "qty": 5,
+      "status": "COMPLETE",
+      "price": 345.21,
+      "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:08-04:00",
+      "id": "PAPER-3aa4e1a06e",
+      "symbol": "JNJ",
+      "side": "BUY",
+      "qty": 7,
+      "status": "COMPLETE",
+      "price": 271.44,
+      "reason": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:08-04:00",
+      "id": "PAPER-72aa38e35e",
+      "symbol": "CSCO",
+      "side": "BUY",
+      "qty": 16,
+      "status": "COMPLETE",
+      "price": 109.98,
+      "reason": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:08-04:00",
+      "id": "PAPER-a307b56d45",
+      "symbol": "MET",
+      "side": "BUY",
+      "qty": 20,
+      "status": "COMPLETE",
+      "price": 99.75,
+      "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
+      "message": "charges Rs 0.00"
+    }
+  ],
+  "realized_pnl": 0.0,
+  "charges": 0.0
+}

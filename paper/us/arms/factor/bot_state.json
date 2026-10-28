@@ -1,0 +1,55 @@
+{
+  "positions": {
+    "LLY": {
+      "qty": 1,
+      "avg": 1289.69,
+      "stop": 1216.33,
+      "target": 1470.84,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "AAPL": {
+      "qty": 5,
+      "avg": 345.21,
+      "stop": 332.33,
+      "target": 376.83,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "JNJ": {
+      "qty": 7,
+      "avg": 271.44,
+      "stop": 258.61,
+      "target": 303.04,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "CSCO": {
+      "qty": 16,
+      "avg": 109.98,
+      "stop": 104.01,
+      "target": 124.74,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "MET": {
+      "qty": 20,
+      "avg": 99.75,
+      "stop": 95.42,
+      "target": 110.4,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    }
+  },
+  "pending": [],
+  "day": {
+    "date": "2026-10-28",
+    "start_equity": 10000.0,
+    "orders": 5
+  },
+  "stopped_out": {},
+  "realized_pnl": 0.0,
+  "cash": 1329.499999999999,
+  "capital": 10000.0,
+  "ca_applied": []
+}

@@ -1,0 +1,47 @@
+{
+  "positions": {
+    "JNJ": {
+      "qty": 7,
+      "avg": 271.44,
+      "stop": 258.61,
+      "target": 303.04,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "MET": {
+      "qty": 15,
+      "avg": 99.75,
+      "stop": 95.42,
+      "target": 110.4,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "CSCO": {
+      "qty": 16,
+      "avg": 109.98,
+      "stop": 104.01,
+      "target": 124.74,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    },
+    "KO": {
+      "qty": 21,
+      "avg": 91.79,
+      "stop": 88.6,
+      "target": 99.6,
+      "opened": "2026-10-28",
+      "buy_charges": 0.0
+    }
+  },
+  "pending": [],
+  "day": {
+    "date": "2026-10-28",
+    "start_equity": 10000.0,
+    "orders": 4
+  },
+  "stopped_out": {},
+  "realized_pnl": 0.0,
+  "cash": 2916.3999999999996,
+  "capital": 10000.0,
+  "ca_applied": []
+}

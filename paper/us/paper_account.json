@@ -1,0 +1,69 @@
+{
+  "cash": 2916.2999545021057,
+  "positions": {
+    "JNJ": {
+      "qty": 7,
+      "avg": 271.4406451721191
+    },
+    "MET": {
+      "qty": 15,
+      "avg": 99.7498469467163
+    },
+    "CSCO": {
+      "qty": 16,
+      "avg": 109.98496530532836
+    },
+    "KO": {
+      "qty": 21,
+      "avg": 91.79087524795531
+    }
+  },
+  "orders": [
+    {
+      "time": "2026-10-28T14:14:05-04:00",
+      "id": "PAPER-1cf14db33f",
+      "symbol": "JNJ",
+      "side": "BUY",
+      "qty": 7,
+      "status": "COMPLETE",
+      "price": 271.44,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:05-04:00",
+      "id": "PAPER-450b0193a5",
+      "symbol": "MET",
+      "side": "BUY",
+      "qty": 15,
+      "status": "COMPLETE",
+      "price": 99.75,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 15 (alloc 15, risk-sized 23) stop 95.42 tp 110.4",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:05-04:00",
+      "id": "PAPER-6209d106a8",
+      "symbol": "CSCO",
+      "side": "BUY",
+      "qty": 16,
+      "status": "COMPLETE",
+      "price": 109.98,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
+      "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-28T14:14:05-04:00",
+      "id": "PAPER-82ff95db9c",
+      "symbol": "KO",
+      "side": "BUY",
+      "qty": 21,
+      "status": "COMPLETE",
+      "price": 91.79,
+      "reason": "momentum Buy; LLM: claude-analyst Buy (65%) does not object; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",
+      "message": "charges Rs 0.00"
+    }
+  ],
+  "realized_pnl": 0.0,
+  "charges": 0.0
+}

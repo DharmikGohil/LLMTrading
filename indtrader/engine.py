@@ -537,6 +537,7 @@ class Engine:
             plans.append((plan, tech, prices[sym]))
         self.state.save()
 
+        self._log_decisions(as_of, plans)
         executed = []
         for plan, tech, ltp in sorted(plans, key=lambda x: x[0].target_qty - self.state.qty(x[0].symbol)):
             held = self.state.qty(plan.symbol)
@@ -563,6 +564,20 @@ class Engine:
                 else:
                     log.info("%s: buy blocked: %s", plan.symbol, d.reason)
         return executed
+
+    def _log_decisions(self, as_of: date, plans) -> None:
+        """Why each candidate was bought, trimmed or skipped (for the dashboard)."""
+        f = self.s.path("decisions.json")
+        try:
+            hist = json.loads(f.read_text()) if f.exists() else []
+        except ValueError:
+            hist = []
+        stamp = now_ist().isoformat(timespec="seconds")
+        for plan, _tech, ltp in plans:
+            hist.append({"time": stamp, "as_of": as_of.isoformat(), "symbol": plan.symbol, "price": round(ltp, 2),
+                         "held": self.state.qty(plan.symbol), "target_qty": plan.target_qty,
+                         "decision": "; ".join(plan.notes)})
+        f.write_text(json.dumps(hist[-2000:], indent=1))
 
     def monitor(self) -> list[dict]:
         """Exit positions that hit their stop-loss or take-profit."""

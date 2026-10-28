@@ -9,3 +9,8 @@ results/
 .ruff_cache/
 config/config.yaml
 state_us/
+paper/**/run.log
+paper/**/screen/
+paper/**/nse/
+paper/**/universe/
+public/raw/
