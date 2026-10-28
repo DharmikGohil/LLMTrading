@@ -2,7 +2,10 @@
 
 The bot only manages quantity it bought itself (tracked in
 <data_dir>/bot_state.json), so manual holdings in the same demat account are
-never sold by it.
+never sold by it. It also keeps its own cash ledger (capital + realised P&L -
+cost of open positions - charges), so it never spends more than `risk.capital`
+plus what it has made, and the daily-loss kill switch sees its real P&L even
+when the broker account holds more money.
 """
 
 from __future__ import annotations
@@ -10,11 +13,13 @@ from __future__ import annotations
 import csv
 import json
 import logging
+import math
 import time
 from datetime import date, datetime
 
 from indtrader import data as market_data
 from indtrader.brokers import Broker, Order, OrderResult
+from indtrader.brokers.base import TERMINAL
 from indtrader.config import Settings
 from indtrader.market import IST, previous_trading_day, round_to_tick
 from indtrader.notify import notify
@@ -26,36 +31,72 @@ from indtrader.strategy import BULLISH, combine_opinions, plan_target, protectiv
 log = logging.getLogger(__name__)
 
 
+def _valid_price(p) -> bool:
+    return isinstance(p, int | float) and math.isfinite(p) and p > 0
+
+
 class BotState:
-    def __init__(self, path):
+    def __init__(self, path, capital: float):
         self.path = path
         self.data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
-        self.data.setdefault("positions", {})   # symbol -> {qty, avg, stop, target, opened}
-        self.data.setdefault("pending", [])     # open live orders awaiting fills
+        self.data.setdefault("positions", {})    # symbol -> {qty, avg, stop, target, opened}
+        self.data.setdefault("pending", [])      # live orders not yet final
         self.data.setdefault("day", {})
         self.data.setdefault("stopped_out", {})  # symbol -> date of last stop-loss exit
+        self.data.setdefault("realized_pnl", 0.0)
+        if "cash" not in self.data:
+            invested = sum(p["qty"] * p["avg"] for p in self.positions.values())
+            self.data["cash"] = capital - invested
+            self.data["capital"] = capital
+        if self.data.get("capital") != capital:   # capital changed in config: move the difference in/out
+            self.data["cash"] += capital - self.data.get("capital", capital)
+            self.data["capital"] = capital
 
     def save(self) -> None:
-        self.path.write_text(json.dumps(self.data, indent=2), encoding="utf-8")
+        tmp = self.path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(self.data, indent=2), encoding="utf-8")
+        tmp.replace(self.path)                     # atomic: a crash never leaves half a file
 
     @property
     def positions(self) -> dict:
         return self.data["positions"]
 
+    @property
+    def cash(self) -> float:
+        return float(self.data["cash"])
+
     def qty(self, symbol: str) -> int:
         return int(self.positions.get(symbol, {}).get("qty", 0))
 
-    def apply_fill(self, symbol: str, side: str, qty: int, price: float, stop=None, target=None) -> None:
-        pos = self.positions.setdefault(symbol, {"qty": 0, "avg": 0.0, "stop": None, "target": None,
-                                                 "opened": datetime.now(IST).date().isoformat()})
+    def pending_for(self, symbol: str, side: str | None = None) -> list[dict]:
+        return [p for p in self.data["pending"] if p["symbol"] == symbol and (side is None or p["side"] == side)]
+
+    def apply_fill(self, symbol: str, side: str, qty: int, price: float, charges: float = 0.0,
+                   stop=None, target=None) -> None:
+        if qty <= 0:
+            return
         if side == "BUY":
+            pos = self.positions.setdefault(symbol, {"qty": 0, "avg": 0.0, "stop": None, "target": None,
+                                                     "opened": datetime.now(IST).date().isoformat()})
             total = pos["qty"] + qty
             pos["avg"] = round((pos["qty"] * pos["avg"] + qty * price) / total, 2)
             pos["qty"] = total
-            pos["stop"] = stop if stop is not None else pos["stop"]
-            pos["target"] = target if target is not None else pos["target"]
+            if stop is not None:   # adding must never loosen a trailed stop
+                pos["stop"] = max(pos["stop"], stop) if pos.get("stop") else stop
+            if target is not None:
+                pos["target"] = target
+            pos["buy_charges"] = pos.get("buy_charges", 0.0) + charges   # realised when sold
+            self.data["cash"] -= qty * price + charges
         else:
-            pos["qty"] = max(0, pos["qty"] - qty)
+            pos = self.positions.get(symbol)
+            if not pos:
+                return
+            qty = min(qty, pos["qty"])
+            buy_charges = pos.get("buy_charges", 0.0) * qty / pos["qty"]
+            pos["buy_charges"] = pos.get("buy_charges", 0.0) - buy_charges
+            self.data["realized_pnl"] += qty * (price - pos["avg"]) - charges - buy_charges
+            self.data["cash"] += qty * price - charges
+            pos["qty"] -= qty
             if pos["qty"] == 0:
                 del self.positions[symbol]
 
@@ -68,8 +109,9 @@ class Engine:
         self.store = SignalStore(settings.path("signals", "_").parent)
         self.vibe_store = SignalStore(settings.path("signals_vibe", "_").parent)
         self.vibe = None  # VibeTradingAnalyzer, created lazily
-        self.state = BotState(settings.path("bot_state.json"))
+        self.state = BotState(settings.path("bot_state.json"), settings.risk.capital)
         self.journal = settings.path("trades.csv")
+        self.fill_timeout_s = 30.0   # how long _send waits for a live order to fill before tracking it as pending
 
     # ---------------------------------------------------------------- analysis
     def analyze_universe(self, today: date, force: bool = False) -> dict:
@@ -106,35 +148,66 @@ class Engine:
 
     def _portfolio_context(self) -> dict:
         return {
-            "cash": self.broker.funds(),
+            "cash": max(min(self.broker.funds(), self.state.cash), 0.0),
             "currency": "INR",
             "positions": [{"ticker": f"{s}.NS" if self.s.exchange == "NSE" else f"{s}.BO",
                            "quantity": p["qty"], "average_price": p["avg"]}
                           for s, p in self.state.positions.items()],
         }
 
-    # ---------------------------------------------------------------- execution
+    # ---------------------------------------------------------------- accounting
+    def _prices(self, symbols) -> dict[str, float]:
+        if not symbols:
+            return {}
+        try:
+            raw = self.broker.ltp(sorted(symbols), self.s.exchange)
+        except Exception as exc:
+            log.warning("bulk quote failed (%s); fetching one by one", exc)
+            raw = {}
+            for sym in symbols:
+                try:
+                    raw.update(self.broker.ltp([sym], self.s.exchange))
+                except Exception as exc2:
+                    log.warning("%s: no quote (%s)", sym, exc2)
+        return {s: float(p) for s, p in raw.items() if _valid_price(p)}
+
     def _account(self, prices: dict[str, float]) -> AccountView:
+        """Bot account view; also rolls the daily counters over on the first call of a day."""
         exposure = sum(p["qty"] * prices.get(s, p["avg"]) for s, p in self.state.positions.items())
-        # the bot may only use `capital`, even if the account holds more
-        cash = min(self.broker.funds(), max(self.s.risk.capital - exposure, 0.0))
+        pending_buys = sum(p.get("qty", 0) * p.get("price", 0) for p in self.state.data["pending"] if p["side"] == "BUY")
+        ledger = self.state.cash
+        equity = ledger + exposure
         today = datetime.now(IST).date().isoformat()
         day = self.state.data["day"]
         if day.get("date") != today:
             day.clear()
-            day.update({"date": today, "start_equity": cash + exposure, "orders": 0})
+            day.update({"date": today, "start_equity": round(equity, 2), "orders": 0})
             self.state.save()
-        return AccountView(cash, cash + exposure, day["start_equity"], exposure,
-                           sum(1 for p in self.state.positions.values() if p["qty"]), day["orders"])
+        # spendable = what the bot's ledger allows AND what the broker actually has
+        cash = max(min(self.broker.funds(), ledger - pending_buys), 0.0)
+        return AccountView(cash, equity, day["start_equity"], exposure + pending_buys,
+                           len({s for s, p in self.state.positions.items() if p["qty"]}
+                               | {p["symbol"] for p in self.state.data["pending"] if p["side"] == "BUY"}),
+                           day["orders"])
 
     def _limit_price(self, side: str, ltp: float) -> float:
         buf = self.s.risk.limit_buffer_pct
         return round_to_tick(ltp * (1 + buf) if side == "BUY" else ltp * (1 - buf), side=side)
 
+    # ---------------------------------------------------------------- orders
     @property
     def halted(self) -> bool:
         """Kill switch: while <data_dir>/HALT exists no order of any kind is sent."""
         return self.s.path("HALT").exists()
+
+    def _charges(self, side: str, qty: int, price: float) -> float:
+        return self.s.cost_model.charges(side, qty, price, self.s.broker.product)
+
+    def _apply_result(self, symbol: str, side: str, result: OrderResult, fallback_price: float, stop, target) -> None:
+        if result.filled_qty > 0:   # complete, or partially filled then cancelled/rejected
+            px = result.avg_price or fallback_price
+            self.state.apply_fill(symbol, side, result.filled_qty, px, self._charges(side, result.filled_qty, px),
+                                  stop, target)
 
     def _send(self, symbol: str, side: str, qty: int, ltp: float, reason: str, stop=None, target=None) -> OrderResult:
         if self.halted:
@@ -146,15 +219,23 @@ class Engine:
         if self.s.dry_run:
             result = OrderResult("DRY", "DRY_RUN", message="dry run")
         else:
-            result = self.broker.place_order(order)
             self.state.data["day"]["orders"] = self.state.data["day"].get("orders", 0) + 1
+            result = self.broker.place_order(order)
+            if result.status == "UNKNOWN":
+                found = self.broker.find_order(symbol, side, order.tag)
+                result = found or result
             if result.status == "OPEN":
-                result = self._await_fill(result)
-            if result.status == "COMPLETE":
-                self.state.apply_fill(symbol, side, result.filled_qty, result.avg_price or order.price, stop, target)
-            elif result.status == "OPEN":
-                self.state.data["pending"].append({"order_id": result.order_id, "symbol": symbol, "side": side,
-                                                   "stop": stop, "target": target})
+                result = self._await_fill(result, self.fill_timeout_s)
+            if result.status in TERMINAL:
+                self._apply_result(symbol, side, result, order.price, stop, target)
+            elif result.status in ("OPEN", "UNKNOWN"):
+                self.state.data["pending"].append({
+                    "order_id": result.order_id or None, "symbol": symbol, "side": side, "qty": qty,
+                    "price": order.price, "stop": stop, "target": target, "tag": order.tag,
+                    "placed": datetime.now(IST).date().isoformat()})
+                if result.status == "UNKNOWN":
+                    notify(f"[indtrader] WARNING: {side} {qty} {symbol} status unknown ({result.message}); "
+                           "check the broker order book. No new orders for this stock until it is resolved.")
         self.state.save()
         self._log_trade(order, result)
         notify(f"[indtrader] {side} {qty} {symbol} @ ~{order.price} -> {result.status} {result.message} ({reason})")
@@ -163,29 +244,60 @@ class Engine:
     def _await_fill(self, result: OrderResult, timeout_s: float = 30, poll_s: float = 2) -> OrderResult:
         deadline = time.monotonic() + timeout_s
         while time.monotonic() < deadline:
-            st = self.broker.order_status(result.order_id)
-            if st and st.status in ("COMPLETE", "REJECTED"):
+            try:
+                st = self.broker.order_status(result.order_id)
+            except Exception as exc:
+                log.warning("order status failed (%s)", exc)
+                st = None
+            if st and st.status in TERMINAL:
                 return st
             time.sleep(poll_s)
         return result
 
     def reconcile_pending(self) -> None:
-        """Apply fills of live orders that completed after we stopped waiting."""
+        """Apply fills of orders that finished after we stopped waiting, then
+        make sure the bot never believes it holds more than the broker does."""
         still = []
+        today = datetime.now(IST).date().isoformat()
         for p in self.state.data["pending"]:
-            st = self.broker.order_status(p["order_id"])
-            if st and st.status == "COMPLETE":
-                self.state.apply_fill(p["symbol"], p["side"], st.filled_qty, st.avg_price or 0.0, p["stop"], p["target"])
-            elif not st or st.status == "OPEN":
+            try:
+                if not p.get("order_id"):
+                    st = self.broker.find_order(p["symbol"], p["side"], p.get("tag", self.s.broker.strategy_tag))
+                    if st is None:
+                        if p.get("placed", today) < today:
+                            notify(f"[indtrader] dropping unresolved {p['side']} {p['symbol']} from {p.get('placed')}")
+                            continue
+                        still.append(p)
+                        continue
+                    p["order_id"] = st.order_id
+                    if st.status not in TERMINAL:
+                        st = self.broker.order_status(st.order_id) or st
+                else:
+                    st = self.broker.order_status(p["order_id"])
+            except Exception as exc:
+                log.warning("could not check order %s (%s)", p.get("order_id"), exc)
+                still.append(p)
+                continue
+            if st and st.status in TERMINAL:
+                self._apply_result(p["symbol"], p["side"], st, p.get("price") or 0.0, p.get("stop"), p.get("target"))
+            else:
                 still.append(p)
         self.state.data["pending"] = still
-        # never believe we hold more than the broker says
-        broker_pos = self.broker.positions()
+
+        try:
+            broker_pos = self.broker.positions()
+        except Exception as exc:
+            log.warning("could not read broker positions (%s); skipping position check", exc)
+            self.state.save()
+            return
         for sym in list(self.state.positions):
-            have = broker_pos.get(sym).quantity if sym in broker_pos else 0
-            if have < self.state.qty(sym):
-                log.warning("%s: bot thinks %d, broker has %d; adjusting", sym, self.state.qty(sym), have)
-                self.state.apply_fill(sym, "SELL", self.state.qty(sym) - have, 0.0)
+            have = broker_pos[sym].quantity if sym in broker_pos else 0
+            mine = self.state.qty(sym)
+            if have < mine:
+                log.warning("%s: bot thinks %d, broker has %d; adjusting", sym, mine, have)
+                notify(f"[indtrader] {sym}: broker holds {have} < bot's {mine}; reducing (sold outside the bot?)")
+                pos = self.state.positions[sym]
+                self.state.apply_fill(sym, "SELL", mine - have, pos["avg"])   # at cost: no P&L invented
         self.state.save()
 
     def _log_trade(self, order: Order, result: OrderResult) -> None:
@@ -198,6 +310,7 @@ class Engine:
                         order.price, result.status, result.filled_qty, result.avg_price, result.order_id,
                         order.reason, result.message])
 
+    # ---------------------------------------------------------------- decisions
     def _bear_market(self, as_of: date) -> bool:
         st = self.s.strategy
         if not st.regime_filter:
@@ -219,42 +332,49 @@ class Engine:
             return None
         return self.vibe_store.get(symbol, primary.as_of)
 
+    def _plan(self, sym: str, today: date, as_of: date, price: float, capital: float, bear: bool):
+        sig = self.store.latest(sym, as_of.isoformat())
+        if sig and (as_of - date.fromisoformat(sig.as_of)).days > self.s.strategy.max_signal_age_days:
+            sig = None
+        rating, opinion_note = combine_opinions(sig.rating if sig else None, self._fresh_second(sym, sig),
+                                                self.s.second_opinion)
+        hist = market_data.recent_history(sym, as_of, exchange=self.s.exchange)
+        tech = snapshot(hist, self.s.strategy.trend_ema, self.s.strategy.atr_period)
+        pos = self.state.positions.get(sym)
+        held_days = (today - date.fromisoformat(pos["opened"])).days if pos and pos.get("opened") else None
+        plan = plan_target(sym, rating, price, tech, self.state.qty(sym), capital,
+                           self.s.strategy, self.s.risk,
+                           sig.stop_loss if sig else None, sig.price_target if sig else None,
+                           bear_market=bear, held_days=held_days)
+        if opinion_note:
+            plan.notes.insert(0, opinion_note)
+        if pos and pos.get("stop"):   # trail the stop of an existing position (never lower it)
+            trail, _ = protective_levels(price, tech, self.s.strategy)
+            pos["stop"] = max(pos["stop"], trail)
+        return plan, tech
+
     def rebalance(self, today: date) -> list[dict]:
         """Turn the latest signals into orders. Sells first, then buys."""
         self.reconcile_pending()
         as_of = previous_trading_day(today, self.s.holidays)
         symbols = sorted(set(self.s.universe) | set(self.state.positions))
-        prices = self.broker.ltp(symbols, self.s.exchange)
+        prices = self._prices(symbols)
         acct = self._account(prices)
         capital = min(self.s.risk.capital, acct.equity)
         bear = self._bear_market(as_of)
         plans = []
         for sym in symbols:
-            sig = self.store.latest(sym, as_of.isoformat())
-            if sig and (as_of - date.fromisoformat(sig.as_of)).days > self.s.strategy.max_signal_age_days:
-                sig = None
-            rating, opinion_note = combine_opinions(sig.rating if sig else None, self._fresh_second(sym, sig),
-                                                    self.s.second_opinion)
-            try:
-                hist = market_data.recent_history(sym, as_of, exchange=self.s.exchange)
-                tech = snapshot(hist, self.s.strategy.trend_ema, self.s.strategy.atr_period)
-            except Exception as exc:
-                log.warning("%s: no technicals (%s); skipping", sym, exc)
+            if self.state.pending_for(sym):
+                log.info("%s: order still pending at the broker; no new orders", sym)
                 continue
             if sym not in prices:
+                log.warning("%s: no valid price; skipping", sym)
                 continue
-            pos = self.state.positions.get(sym)
-            held_days = (today - date.fromisoformat(pos["opened"])).days if pos and pos.get("opened") else None
-            plan = plan_target(sym, rating, prices[sym], tech, self.state.qty(sym), capital,
-                               self.s.strategy, self.s.risk,
-                               sig.stop_loss if sig else None, sig.price_target if sig else None,
-                               bear_market=bear, held_days=held_days)
-            if opinion_note:
-                plan.notes.insert(0, opinion_note)
-            # trail the stop of an existing position (never lower it)
-            if pos and pos.get("stop"):
-                trail, _ = protective_levels(prices[sym], tech, self.s.strategy)
-                pos["stop"] = max(pos["stop"], trail)
+            try:
+                plan, tech = self._plan(sym, today, as_of, prices[sym], capital, bear)
+            except Exception as exc:
+                log.warning("%s: could not plan (%s); skipping", sym, exc)
+                continue
             plans.append((plan, tech, prices[sym]))
         self.state.save()
 
@@ -266,8 +386,8 @@ class Engine:
             if delta < 0:
                 d = check_sell(-delta, held)
                 if d.allowed:
-                    self._send(plan.symbol, "SELL", d.quantity, ltp, "; ".join(plan.notes))
-                    executed.append({"symbol": plan.symbol, "side": "SELL", "qty": d.quantity})
+                    r = self._send(plan.symbol, "SELL", d.quantity, ltp, "; ".join(plan.notes))
+                    executed.append({"symbol": plan.symbol, "side": "SELL", "qty": d.quantity, "status": r.status})
             elif delta > 0:
                 last_stop = self.state.data["stopped_out"].get(plan.symbol)
                 if last_stop and (today - date.fromisoformat(last_stop)).days < self.s.strategy.reentry_cooldown_days:
@@ -276,8 +396,8 @@ class Engine:
                 acct = self._account(prices)
                 d = check_buy(plan.symbol, delta, ltp, held, acct, self.s.risk, analysed_close=tech.close)
                 if d.allowed:
-                    self._send(plan.symbol, "BUY", d.quantity, ltp, "; ".join(plan.notes), plan.stop, plan.take_profit)
-                    executed.append({"symbol": plan.symbol, "side": "BUY", "qty": d.quantity})
+                    r = self._send(plan.symbol, "BUY", d.quantity, ltp, "; ".join(plan.notes), plan.stop, plan.take_profit)
+                    executed.append({"symbol": plan.symbol, "side": "BUY", "qty": d.quantity, "status": r.status})
                 else:
                     log.info("%s: buy blocked: %s", plan.symbol, d.reason)
         return executed
@@ -287,12 +407,15 @@ class Engine:
         self.reconcile_pending()
         if not self.state.positions:
             return []
-        prices = self.broker.ltp(list(self.state.positions), self.s.exchange)
+        prices = self._prices(list(self.state.positions))
+        self._account(prices)   # rolls the day over so early exits count toward today
         exits = []
         for sym, pos in list(self.state.positions.items()):
             ltp = prices.get(sym)
             if ltp is None:
                 continue
+            if self.state.pending_for(sym, "SELL"):
+                continue   # an exit is already working at the broker: never send a second one
             if pos.get("stop") and ltp <= pos["stop"]:
                 reason = f"stop-loss hit ({ltp:.2f} <= {pos['stop']})"
             elif pos.get("target") and ltp >= pos["target"]:
@@ -300,27 +423,31 @@ class Engine:
             else:
                 continue
             result = self._send(sym, "SELL", pos["qty"], ltp, reason)
-            if reason.startswith("stop") and result.status in ("COMPLETE", "OPEN"):
+            if reason.startswith("stop") and result.status not in ("REJECTED", "DRY_RUN"):
                 self.state.data["stopped_out"][sym] = datetime.now(IST).date().isoformat()
                 self.state.save()
-            exits.append({"symbol": sym, "reason": reason})
+            exits.append({"symbol": sym, "reason": reason, "status": result.status})
         return exits
 
     def square_off_intraday(self) -> None:
         """MIS positions must be closed before the broker's auto square-off (~15:20)."""
         if self.s.broker.product != "MIS":
             return
-        prices = self.broker.ltp(list(self.state.positions), self.s.exchange) if self.state.positions else {}
+        self.reconcile_pending()
+        prices = self._prices(list(self.state.positions))
         for sym, pos in list(self.state.positions.items()):
+            if self.state.pending_for(sym, "SELL"):
+                continue
             self._send(sym, "SELL", pos["qty"], prices.get(sym, pos["avg"]), "intraday square-off")
 
     def status(self) -> dict:
-        symbols = list(self.state.positions)
-        prices = self.broker.ltp(symbols, self.s.exchange) if symbols else {}
+        prices = self._prices(list(self.state.positions))
         rows = []
         for s, p in self.state.positions.items():
             ltp = prices.get(s, p["avg"])
             rows.append({**p, "symbol": s, "ltp": ltp, "unrealized": round((ltp - p["avg"]) * p["qty"], 2)})
-        return {"broker": self.broker.name, "funds": self.broker.funds(), "positions": rows,
+        exposure = sum(r["ltp"] * r["qty"] for r in rows)
+        return {"broker": self.broker.name, "broker_funds": self.broker.funds(),
+                "bot_cash": round(self.state.cash, 2), "bot_equity": round(self.state.cash + exposure, 2),
+                "realized_pnl": round(self.state.data["realized_pnl"], 2), "positions": rows,
                 "pending": self.state.data["pending"], "day": self.state.data["day"]}
-

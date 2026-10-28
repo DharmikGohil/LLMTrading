@@ -8,6 +8,7 @@ from indtrader.market import (
     is_trading_day,
     previous_trading_day,
     round_to_tick,
+    tick_size,
     yahoo_symbol,
 )
 
@@ -27,9 +28,16 @@ def test_symbols_and_ticks():
     assert yahoo_symbol("TCS", "BSE") == "TCS.BO"
     assert yahoo_symbol("INFY.NS") == "INFY.NS"
     assert broker_symbol("INFY.BO") == ("INFY", "BSE")
-    assert round_to_tick(100.01, side="BUY") == 100.05
-    assert round_to_tick(100.04, side="SELL") == 100.0
-    assert round_to_tick(100.05, side="BUY") == 100.05
+    assert round_to_tick(100.01, tick=0.05, side="BUY") == 100.05
+    assert round_to_tick(100.04, tick=0.05, side="SELL") == 100.0
+    assert round_to_tick(100.05, tick=0.05, side="BUY") == 100.05
+    # NSE price bands (Apr 2025): 0.01 < 250, 0.05 < 1000, 0.10 < 5000, 0.50 < 10000, 1 < 20000, else 5
+    assert [tick_size(p) for p in (100, 500, 2500, 7000, 15000, 30000)] == [0.01, 0.05, 0.10, 0.50, 1.00, 5.00]
+    assert round_to_tick(100.013, side="BUY") == 100.02
+    assert round_to_tick(1412.34, side="BUY") == 1412.4      # 0.10 grid
+    assert round_to_tick(1412.34, side="SELL") == 1412.3
+    assert round_to_tick(900.03, side="BUY") == 900.1         # near the 1000 edge: coarser 0.10 grid is safe
+    assert round_to_tick(2963.0, side="BUY") == 2963.0
 
 
 def test_delivery_costs():

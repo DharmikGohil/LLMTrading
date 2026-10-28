@@ -34,12 +34,13 @@ def protective_levels(price: float, tech: TechnicalSnapshot, s: StrategySettings
                       llm_stop: float | None = None, llm_target: float | None = None) -> tuple[float, float]:
     """Stop-loss and take-profit for a long entered at `price`."""
     stop = None
+    atr = tech.atr if math.isfinite(tech.atr) and tech.atr > 0 else s.min_stop_pct * price / max(s.atr_stop_mult, 1e-9)
     if llm_stop and 0 < llm_stop < price:
         dist = (price - llm_stop) / price
         if s.min_stop_pct <= dist <= s.max_stop_pct:
             stop = llm_stop
     if stop is None:
-        dist = min(max(s.atr_stop_mult * tech.atr / price, s.min_stop_pct), s.max_stop_pct)
+        dist = min(max(s.atr_stop_mult * atr / price, s.min_stop_pct), s.max_stop_pct)
         stop = price * (1 - dist)
     take = llm_target if llm_target and llm_target > price * (1 + s.min_stop_pct) else price + s.take_profit_rr * (price - stop)
     return round(stop, 2), round(take, 2)
@@ -50,6 +51,9 @@ def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSn
                 llm_stop: float | None = None, llm_target: float | None = None,
                 bear_market: bool = False, held_days: int | None = None) -> TargetPlan:
     plan = TargetPlan(symbol, current_qty)
+    if not (math.isfinite(price) and price > 0):
+        plan.notes.append(f"invalid price {price}; holding {current_qty}")
+        return plan
     if rating is None or rating not in s.rating_weights:
         plan.notes.append(f"no tradeable rating ({rating}); holding {current_qty}")
         return plan

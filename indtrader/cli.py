@@ -12,14 +12,13 @@ from __future__ import annotations
 
 import json
 import logging
-import time as _time
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import typer
 
 from indtrader.config import Settings, load_settings
-from indtrader.market import is_market_open, is_trading_day, now_ist, previous_trading_day
+from indtrader.market import is_market_open, now_ist, previous_trading_day
 
 app = typer.Typer(add_completion=False, help="LLM (TradingAgents) algo trading for NSE/BSE.")
 
@@ -109,44 +108,10 @@ def status(config: str = ConfigOpt, broker: str = BrokerOpt):
 @app.command()
 def run(config: str = ConfigOpt, broker: str = BrokerOpt, dry_run: bool = typer.Option(False, "--dry-run")):
     """Daily scheduler (IST): analysis -> execution -> monitoring -> EOD. Ctrl+C to stop."""
-    from indtrader.notify import notify
+    from indtrader.scheduler import Scheduler
 
     s = _setup(config, broker, dry_run)
-    eng = _engine(s)
-    sch = s.schedule
-    done: dict[str, str] = {}
-    last_monitor = 0.0
-    notify(f"[indtrader] scheduler started: broker={s.broker.name} dry_run={s.dry_run} universe={s.universe}")
-
-    def due(key: str, hhmm: str, now: datetime) -> bool:
-        return now.strftime("%H:%M") >= hhmm and done.get(key) != now.date().isoformat()
-
-    while True:
-        now = now_ist()
-        today = now.date()
-        try:
-            if is_trading_day(today, s.holidays):
-                if due("analysis", sch.analysis_time, now):
-                    eng.analyze_universe(today)
-                    done["analysis"] = today.isoformat()
-                if due("execution", sch.execution_time, now) and is_market_open(now, s.holidays):
-                    eng.rebalance(today)
-                    done["execution"] = today.isoformat()
-                if is_market_open(now, s.holidays) and _time.monotonic() - last_monitor >= sch.monitor_interval_min * 60:
-                    eng.monitor()
-                    last_monitor = _time.monotonic()
-                if due("eod", sch.eod_time, now):
-                    eng.square_off_intraday()
-                    st = eng.status()
-                    notify("[indtrader] EOD: funds Rs {:,.0f}, positions: {}".format(
-                        st["funds"], ", ".join(f"{p['symbol']} {p['qty']} ({p['unrealized']:+,.0f})" for p in st["positions"]) or "none"))
-                    done["eod"] = today.isoformat()
-        except KeyboardInterrupt:
-            raise
-        except Exception as exc:
-            logging.exception("scheduler step failed")
-            notify(f"[indtrader] ERROR: {exc}")
-        _time.sleep(30)
+    Scheduler(_engine(s), s).run_forever(now_ist)
 
 
 @app.command("vibe-check")
