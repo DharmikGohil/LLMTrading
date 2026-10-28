@@ -77,6 +77,7 @@ def export(s: Settings, out_dir: Path, prices_fn) -> dict[str, list]:
         for row in _read_json(d / "decisions.json", [])[-300:]:
             decisions.append({"market": market, "book": book, **row})
         # intraday equity log (appended each export)
+        d.mkdir(parents=True, exist_ok=True)
         eq_file = d / "equity_intraday.csv"
         new = not eq_file.exists()
         with eq_file.open("a", encoding="utf-8") as f:
