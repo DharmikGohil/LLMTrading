@@ -21,7 +21,7 @@ from indtrader import data as market_data
 from indtrader.brokers import Broker, Order, OrderResult
 from indtrader.brokers.base import TERMINAL
 from indtrader.config import SecondOpinionSettings, Settings
-from indtrader.market import IST, previous_trading_day, round_to_tick
+from indtrader.market import now_ist, previous_trading_day, round_to_tick
 from indtrader.notify import notify
 from indtrader.risk import AccountView, check_buy, check_sell
 from indtrader.signals.llm_agent import SignalStore, TradingAgentsAnalyzer
@@ -77,7 +77,7 @@ class BotState:
             return
         if side == "BUY":
             pos = self.positions.setdefault(symbol, {"qty": 0, "avg": 0.0, "stop": None, "target": None,
-                                                     "opened": datetime.now(IST).date().isoformat()})
+                                                     "opened": now_ist().date().isoformat()})
             total = pos["qty"] + qty
             pos["avg"] = round((pos["qty"] * pos["avg"] + qty * price) / total, 2)
             pos["qty"] = total
@@ -121,7 +121,7 @@ class Engine:
         if self._nse is None:
             from indtrader.nse import NSEData, NullNSE
 
-            self._nse = (NSEData(self.s.path("nse", "_").parent, datetime.now(IST).date())
+            self._nse = (NSEData(self.s.path("nse", "_").parent, now_ist().date())
                          if self.s.nse_checks else NullNSE())
         return self._nse
 
@@ -306,7 +306,7 @@ class Engine:
         pending_buys = sum(p.get("qty", 0) * p.get("price", 0) for p in self.state.data["pending"] if p["side"] == "BUY")
         ledger = self.state.cash
         equity = ledger + exposure
-        today = datetime.now(IST).date().isoformat()
+        today = now_ist().date().isoformat()
         day = self.state.data["day"]
         if day.get("date") != today:
             day.clear()
@@ -361,7 +361,7 @@ class Engine:
                 self.state.data["pending"].append({
                     "order_id": result.order_id or None, "symbol": symbol, "side": side, "qty": qty,
                     "price": order.price, "stop": stop, "target": target, "tag": order.tag,
-                    "placed": datetime.now(IST).date().isoformat()})
+                    "placed": now_ist().date().isoformat()})
                 if result.status == "UNKNOWN":
                     notify(f"[indtrader] WARNING: {side} {qty} {symbol} status unknown ({result.message}); "
                            "check the broker order book. No new orders for this stock until it is resolved.")
@@ -387,7 +387,7 @@ class Engine:
         """Apply fills of orders that finished after we stopped waiting, then
         make sure the bot never believes it holds more than the broker does."""
         still = []
-        today = datetime.now(IST).date().isoformat()
+        today = now_ist().date().isoformat()
         for p in self.state.data["pending"]:
             try:
                 if not p.get("order_id"):
@@ -435,7 +435,7 @@ class Engine:
             w = csv.writer(f)
             if new:
                 w.writerow(["time", "symbol", "side", "qty", "limit", "status", "fill_qty", "fill_price", "order_id", "reason", "message"])
-            w.writerow([datetime.now(IST).isoformat(timespec="seconds"), order.symbol, order.side, order.quantity,
+            w.writerow([now_ist().isoformat(timespec="seconds"), order.symbol, order.side, order.quantity,
                         order.price, result.status, result.filled_qty, result.avg_price, result.order_id,
                         order.reason, result.message])
 
@@ -568,7 +568,7 @@ class Engine:
         """Exit positions that hit their stop-loss or take-profit."""
         self.reconcile_pending()
         try:
-            self.apply_corporate_actions(datetime.now(IST).date())
+            self.apply_corporate_actions(now_ist().date())
         except Exception as exc:
             log.warning("corporate action check failed: %s", exc)
         if not self.state.positions:
@@ -590,7 +590,7 @@ class Engine:
                 continue
             result = self._send(sym, "SELL", pos["qty"], ltp, reason)
             if reason.startswith("stop") and result.status not in ("REJECTED", "DRY_RUN"):
-                self.state.data["stopped_out"][sym] = datetime.now(IST).date().isoformat()
+                self.state.data["stopped_out"][sym] = now_ist().date().isoformat()
                 self.state.save()
             exits.append({"symbol": sym, "reason": reason, "status": result.status})
         return exits

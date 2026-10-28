@@ -11,11 +11,11 @@ import json
 import logging
 import re
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 from indtrader.config import Settings
-from indtrader.market import IST, yahoo_symbol
+from indtrader.market import now_ist, yahoo_symbol
 
 log = logging.getLogger(__name__)
 
@@ -48,7 +48,7 @@ class LLMSignal:
     summary: str = ""
     confidence: float | None = None  # 0-100 when the source reports one
     source: str = "tradingagents"
-    created_at: str = field(default_factory=lambda: datetime.now(IST).isoformat(timespec="seconds"))
+    created_at: str = field(default_factory=lambda: now_ist().isoformat(timespec="seconds"))
 
     @property
     def tradeable(self) -> bool:

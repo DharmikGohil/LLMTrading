@@ -1,0 +1,21 @@
+# US paper trading ($10k), run in the cloud session in the Indian night.
+exchange: US
+data_dir: state_us
+signals_dir: signals_us
+nse_checks: false
+screen: {index: sp100, top_n: 8, min_traded_value_cr: 0, vol_exclude_pct: 0.2}
+llm: {signal_source: external}   # ratings come from the Claude analyst (this session)
+strategy:
+  signal_mode: hybrid
+  regime_index: "^GSPC"
+  results_blackout_days: 0      # NSE calendar is India-only; the analyst checks US earnings dates instead
+risk:
+  capital: 10000
+  max_position_pct: 0.20
+  risk_per_trade_pct: 0.01
+  max_open_positions: 5
+  max_per_sector: 2
+  min_order_value: 100
+broker: {name: paper, paper_state_file: state_us/paper_account.json}
+shadow_arms: [factor]
+schedule: {analysis_time: "09:00", execution_time: "09:45", monitor_interval_min: 5, eod_time: "15:50"}

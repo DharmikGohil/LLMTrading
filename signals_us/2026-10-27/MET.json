@@ -1,0 +1,12 @@
+{
+  "symbol": "MET",
+  "as_of": "2026-10-27",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Trend template 7/7, 3.5% below the 52-week high; Q3 results Wed 4 Nov after the close (MetLife newsroom), 5 trading days away, so size down rather than full entry.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-28T14:13:13-04:00"
+}

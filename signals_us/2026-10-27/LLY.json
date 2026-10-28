@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-10-27",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 results on Thu 29 Oct, 10am ET call (Lilly press release via MarketScreener); consensus EPS estimates are unsettled (6.67 vs 9.92 across providers), so binary gap risk is high. Veto new entry until after results.",
+  "confidence": 75.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-28T14:13:13-04:00"
+}
