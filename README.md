@@ -92,6 +92,22 @@ Sells and holds are never changed by the second opinion. If it fails,
 `on_missing: hold` skips new buys that day. **Never use it for backtests**: its
 data tools always return today's data (the code refuses past dates).
 
+## Live desk: India by day, US by night
+
+- **Public dashboard:** https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf. It shows accounts, equity curves, open positions,
+  every order, the reason behind each candidate decision, the analyst's sourced calls, research and backtests.
+  It is private until shared from the page's Share menu.
+- **Research brief:** https://claude.ai/artifact/3Rv5N3xts4ndnc7KxrCNFH
+- **US paper desk ($10k, `config/us_paper.yaml`)** runs in the Indian night through scheduled Claude sessions
+  ([`analyst/US_PLAYBOOK.md`](analyst/US_PLAYBOOK.md)):
+  - open run at 09:50 New York time (review + trade)
+  - midday run at 12:50 (monitor)
+  - close run at 15:45 (monitor + end-of-day equity)
+
+  Each run refreshes the dashboard and commits the paper state in `paper/us/`.
+- **India** runs on your machine in the morning (option A below). `indtrader export-dashboard` plus a git push lets the
+  morning analyst run publish its numbers too.
+
 ## Option A: Claude as your morning analyst (no API key)
 
 Instead of running TradingAgents with a paid API key, a scheduled Claude Code

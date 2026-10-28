@@ -1,0 +1,110 @@
+[
+ {
+  "time": "2026-10-28T14:14:05-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "JNJ",
+  "side": "BUY",
+  "qty": 7,
+  "price": 271.44,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
+  "id": "US:main:0"
+ },
+ {
+  "time": "2026-10-28T14:14:05-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "MET",
+  "side": "BUY",
+  "qty": 15,
+  "price": 99.75,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 15 (alloc 15, risk-sized 23) stop 95.42 tp 110.4",
+  "id": "US:main:1"
+ },
+ {
+  "time": "2026-10-28T14:14:05-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "CSCO",
+  "side": "BUY",
+  "qty": 16,
+  "price": 109.98,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
+  "id": "US:main:2"
+ },
+ {
+  "time": "2026-10-28T14:14:05-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "KO",
+  "side": "BUY",
+  "qty": 21,
+  "price": 91.79,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Buy (65%) does not object; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",
+  "id": "US:main:3"
+ },
+ {
+  "time": "2026-10-28T14:14:08-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "LLY",
+  "side": "BUY",
+  "qty": 1,
+  "price": 1289.69,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
+  "id": "US:factor:4"
+ },
+ {
+  "time": "2026-10-28T14:14:08-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "AAPL",
+  "side": "BUY",
+  "qty": 5,
+  "price": 345.21,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
+  "id": "US:factor:5"
+ },
+ {
+  "time": "2026-10-28T14:14:08-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "JNJ",
+  "side": "BUY",
+  "qty": 7,
+  "price": 271.44,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
+  "id": "US:factor:6"
+ },
+ {
+  "time": "2026-10-28T14:14:08-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "CSCO",
+  "side": "BUY",
+  "qty": 16,
+  "price": 109.98,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
+  "id": "US:factor:7"
+ },
+ {
+  "time": "2026-10-28T14:14:08-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "MET",
+  "side": "BUY",
+  "qty": 20,
+  "price": 99.75,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
+  "id": "US:factor:8"
+ }
+]

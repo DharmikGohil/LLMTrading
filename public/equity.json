@@ -1,0 +1,66 @@
+[
+ {
+  "time": "2026-10-28T14:15:53-04:00",
+  "market": "US",
+  "book": "main",
+  "equity": 9996.36,
+  "index_close": 7726.24,
+  "id": "US:main:0"
+ },
+ {
+  "time": "2026-10-28T14:16:23-04:00",
+  "market": "US",
+  "book": "main",
+  "equity": 9997.4,
+  "index_close": 7724.77,
+  "id": "US:main:1"
+ },
+ {
+  "time": "2026-10-28T14:17:02-04:00",
+  "market": "US",
+  "book": "main",
+  "equity": 9998.07,
+  "index_close": 7726.05,
+  "id": "US:main:2"
+ },
+ {
+  "time": "2026-10-28T14:24:10-04:00",
+  "market": "US",
+  "book": "main",
+  "equity": 9996.15,
+  "index_close": 7726.87,
+  "id": "US:main:3"
+ },
+ {
+  "time": "2026-10-28T14:15:53-04:00",
+  "market": "US",
+  "book": "factor",
+  "equity": 9994.56,
+  "index_close": 7726.24,
+  "id": "US:factor:4"
+ },
+ {
+  "time": "2026-10-28T14:16:23-04:00",
+  "market": "US",
+  "book": "factor",
+  "equity": 9995.0,
+  "index_close": 7724.77,
+  "id": "US:factor:5"
+ },
+ {
+  "time": "2026-10-28T14:17:02-04:00",
+  "market": "US",
+  "book": "factor",
+  "equity": 9996.36,
+  "index_close": 7726.05,
+  "id": "US:factor:6"
+ },
+ {
+  "time": "2026-10-28T14:24:10-04:00",
+  "market": "US",
+  "book": "factor",
+  "equity": 9990.56,
+  "index_close": 7726.87,
+  "id": "US:factor:7"
+ }
+]
