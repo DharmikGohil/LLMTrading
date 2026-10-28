@@ -75,3 +75,10 @@ def test_no_rebuy_after_stop(setup):
     eng.monitor()
     prices["AAA"] += 1.5
     assert eng.rebalance(date.today()) == []          # cooldown blocks the immediate re-entry
+
+
+def test_halt_blocks_orders(setup, settings):
+    eng, broker, _ = setup
+    settings.path("HALT").write_text("test")
+    eng.rebalance(date(2026, 10, 28))
+    assert broker.positions() == {} and broker.funds() == 100000
