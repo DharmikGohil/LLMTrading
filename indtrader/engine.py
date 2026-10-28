@@ -143,7 +143,8 @@ class Engine:
             sc = self.s.screen
             members = index_members(sc.index, self.s.path("universe", "_").parent)
             table = score_universe(download_closes(members, as_of - timedelta(days=420), as_of), as_of,
-                                   min_traded_value_cr=sc.min_traded_value_cr, vol_exclude_pct=sc.vol_exclude_pct)
+                                   min_traded_value_cr=sc.min_traded_value_cr,
+                           vol_exclude_pct=sc.vol_exclude_pct, trend_template_required=sc.trend_template)
             table.to_json(f)
         self._screen_cache[key] = table
         return table

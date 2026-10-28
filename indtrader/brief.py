@@ -10,7 +10,7 @@ import pandas as pd
 
 from indtrader import data as market_data
 from indtrader.market import yahoo_symbol
-from indtrader.signals.technical import atr, ema, is_bear_market, rsi
+from indtrader.signals.technical import atr, ema, is_bear_market, rsi, trend_template
 
 
 def _ret(close: pd.Series, days: int) -> float | None:
@@ -54,6 +54,9 @@ def build_brief(symbol: str, as_of: date, exchange: str = "NSE", index: str = "^
         "volume_20d_vs_100d": round(float(vol.iloc[-20:].mean() / vol.iloc[-100:].mean()), 2) if len(vol) >= 100 else None,
         "last_10_closes": [round(float(x), 2) for x in close.iloc[-10:]],
     }
+    tt = trend_template(close)
+    if tt:
+        brief["sepa_trend_template"] = {**tt, "passed": f"{sum(tt.values())}/7"}
     try:
         idx = market_data.recent_history(index, as_of, lookback_days=420)["Close"]
         brief["index"] = {"symbol": index, "close": round(float(idx.iloc[-1]), 2),

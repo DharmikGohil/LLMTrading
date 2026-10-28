@@ -79,6 +79,7 @@ screen:                   # momentum + low-vol + trend screen (hybrid / factor m
   top_n: 12
   min_traded_value_cr: 20
   vol_exclude_pct: 0.2
+  trend_template: false     # true = also require Minervini's SEPA trend template (stricter, fewer trades)
 
 shadow_arms: [factor]     # paper "LLM off" control traded alongside; see `indtrader compare`
 nse_checks: true          # surveillance, results calendar, splits/bonuses from nseindia.com

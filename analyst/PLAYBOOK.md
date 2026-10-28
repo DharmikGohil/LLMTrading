@@ -40,7 +40,8 @@ Review list = screen top N + recent picks (usually 12-20 stocks).
 close and GIFT Nifty. Note 2-3 dated facts with sources.
 
 ## 3. Per stock (batch the briefs: `indtrader brief A,B,C`)
-1. Read the brief: trend, RSI, ATR, distance from the 52-week high, relative strength, and the `nse` block
+1. Read the brief: trend, RSI, ATR, distance from the 52-week high, relative strength, the
+   `sepa_trend_template` checklist (7/7 = a textbook Stage-2 uptrend; fewer = weaker setup), and the `nse` block
    (upcoming results, surveillance, recent exchange filings with PDF links).
 2. Web search news from the last 7 days (Moneycontrol, Economic Times, Business Standard, Mint, BSE/NSE filings).
 3. **Red-flag checklist.** Any confirmed item points to Underweight/Sell:

@@ -130,6 +130,7 @@ class ScreenSettings(BaseModel):
     top_n: int = 12
     min_traded_value_cr: float = 20.0        # median daily traded value, Rs crore
     vol_exclude_pct: float = 0.2             # drop the most volatile 20%
+    trend_template: bool = False             # also require Minervini's SEPA trend template (stricter)
 
 
 class Settings(BaseModel):

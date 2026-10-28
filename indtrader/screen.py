@@ -24,6 +24,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from indtrader.signals.technical import trend_template
+
 log = logging.getLogger(__name__)
 
 INDEX_CSV = {
@@ -87,7 +89,7 @@ def download_closes(symbols: list[str], start: date, end: date) -> dict[str, pd.
 
 
 def score_universe(histories: dict[str, pd.DataFrame], as_of: date | None = None, *, min_traded_value_cr: float = 20.0,
-                   vol_exclude_pct: float = 0.2, skip_days: int = 21) -> pd.DataFrame:
+                   vol_exclude_pct: float = 0.2, skip_days: int = 21, trend_template_required: bool = False) -> pd.DataFrame:
     """Rank stocks; only data up to `as_of` is used. Returns a table sorted by score (eligible first)."""
     rows = []
     for sym, df in histories.items():
@@ -105,7 +107,9 @@ def score_universe(histories: dict[str, pd.DataFrame], as_of: date | None = None
         r12 = float(ref / close.iloc[-1 - skip_days - 231] - 1) if len(close) > skip_days + 231 else np.nan
         traded_cr = float((close * df["Volume"]).iloc[-60:].median() / 1e7)
         sma200 = float(close.iloc[-200:].mean())
-        rows.append({"symbol": sym, "close": round(float(close.iloc[-1]), 2), "ret6m_pct": round(100 * r6, 1),
+        tt = trend_template(close)
+        rows.append({"tt_passed": sum(tt.values()) if tt else 0,
+                     "symbol": sym, "close": round(float(close.iloc[-1]), 2), "ret6m_pct": round(100 * r6, 1),
                      "ret12m_pct": round(100 * r12, 1) if np.isfinite(r12) else None, "vol_pct": round(100 * vol, 1),
                      "ra6": r6 / vol, "ra12": r12 / vol if np.isfinite(r12) else np.nan,
                      "above_200dma": bool(close.iloc[-1] > sma200), "traded_value_cr": round(traded_cr, 1)})
@@ -119,6 +123,8 @@ def score_universe(histories: dict[str, pd.DataFrame], as_of: date | None = None
     t["score"] = pd.concat([z(t["ra6"]), z(t["ra12"].fillna(t["ra6"]))], axis=1).mean(axis=1).round(3)
     vol_cut = t["vol_pct"].quantile(1 - vol_exclude_pct)
     t["eligible"] = t["above_200dma"] & (t["vol_pct"] <= vol_cut) & (t["traded_value_cr"] >= min_traded_value_cr)
+    if trend_template_required:   # SEPA: all 7 price conditions + RS (score) in the top 30%
+        t["eligible"] &= (t["tt_passed"] == 7) & (t["score"].rank(pct=True) >= 0.70)
     t = t.drop(columns=["ra6", "ra12"]).sort_values(["eligible", "score"], ascending=[False, False]).reset_index(drop=True)
     t["rank"] = range(1, len(t) + 1)
     return t

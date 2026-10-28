@@ -58,3 +58,25 @@ def is_bear_market(index_close: pd.Series, sma: int = 200) -> bool:
     if len(index_close) < sma:
         return False
     return bool(index_close.iloc[-1] < index_close.iloc[-sma:].mean())
+
+
+def trend_template(close: pd.Series) -> dict[str, bool]:
+    """Mark Minervini's SEPA trend template, conditions 1-7 (condition 8, relative
+    strength, is the screen's momentum rank). Needs ~1 year of closes.
+    Adapted from himself65/finance-skills `sepa-strategy` (MIT)."""
+    if len(close) < 230:
+        return {}
+    c = float(close.iloc[-1])
+    ma50, ma150, ma200 = (float(close.iloc[-n:].mean()) for n in (50, 150, 200))
+    ma200_month_ago = float(close.iloc[-221:-21].mean())
+    window = close.iloc[-250:]
+    low, high = float(window.min()), float(window.max())
+    return {
+        "price_above_150_200": c > ma150 and c > ma200,
+        "ma150_above_ma200": ma150 > ma200,
+        "ma200_rising_1m": ma200 > ma200_month_ago,
+        "ma50_above_150_200": ma50 > ma150 and ma50 > ma200,
+        "price_above_ma50": c > ma50,
+        "30pct_above_52w_low": c >= 1.30 * low,
+        "within_25pct_of_52w_high": c >= 0.75 * high,
+    }
