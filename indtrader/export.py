@@ -128,8 +128,17 @@ def export(s: Settings, out_dir: Path, prices_fn) -> dict[str, list]:
         r["id"] = f"{market}:{r['date']}:{r['symbol']}"
     for i, r in enumerate(equity):
         r["id"] = f"{market}:{r['book']}:{i}"
+    from indtrader.journal import ROOT as JOURNAL
+    from indtrader.journal import LessonBook
+
+    lessons = [{**x.__dict__, "examples": " | ".join(x.examples)} for x in LessonBook().lessons]
+    journal = []
+    for f in sorted((JOURNAL / "daily").glob(f"*-{market.lower()}.md"), reverse=True)[:60]:
+        text = f.read_text(encoding="utf-8")
+        refl = text.split("## Reflection", 1)[1].strip() if "## Reflection" in text else ""
+        journal.append({"id": f.stem, "date": f.stem[:10], "market": market, "reflection": refl[:2500]})
     out = {"summary": summary, "positions": positions, "trades": trades, "decisions": decisions,
-           "signals": signals, "equity": equity}
+           "signals": signals, "equity": equity, "journal": journal, "lessons": lessons}
     out_dir.mkdir(parents=True, exist_ok=True)
     for name, rows in out.items():
         (out_dir / f"{market.lower()}_{name}.json").write_text(json.dumps(rows, indent=1), encoding="utf-8")

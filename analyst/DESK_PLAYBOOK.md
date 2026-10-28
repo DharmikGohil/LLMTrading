@@ -22,6 +22,12 @@ indtrader is-trading-day || exit 0                # weekend/holiday on that exch
 ```
 If a previous run left a live `indtrader run` process in this container, stop it first (only one writer per desk).
 
+## Learning loop (read first, every run)
+Run `indtrader lessons --market US` (or `India`) before any review. **Confirmed** lessons are rules for your
+judgement; **hypotheses** are things to watch for. Lessons can make you more careful or more specific. They never
+loosen risk limits, and they never change config numbers (stops, sizing, screen settings). Those change only
+after a backtest plus paper evidence, logged in `journal/changes.md`.
+
 ## 1. Open run
 - **US:** review first. Run `indtrader screen --save` and `indtrader recent-picks`, then `indtrader brief A,B,C`.
   Search the web for the last 7 days of news and **the next earnings date** of each candidate. Apply the red-flag
@@ -38,14 +44,29 @@ If a previous run left a live `indtrader run` process in this container, stop it
 ```bash
 indtrader monitor            # stops / targets for both accounts
 indtrader eod                # close run only: daily equity record
+indtrader review             # close run only: graded facts -> journal/daily/<date>-<market>.md
 ```
+**Close run reflection** (after `indtrader review`): open the daily file and replace the Reflection placeholder with
+5-10 lines covering:
+- what the LLM-reviewed account did differently from the control today, and whether it helped
+- each veto whose outcome is now known (from the vetoes table: negative excess = the veto helped)
+- any stop-out, and whether the stop was reasonable
+- calls that went clearly right or wrong, and why
+
+Then update the lesson book, using facts only:
+- a pattern seen again → `indtrader lesson evidence <id> --supports --example "<date> <symbol> <numbers>"`
+- a pattern that failed → the same command with `--contradicts`
+- a genuinely new pattern → `indtrader lesson add "<specific, testable lesson>" --market US --example "<case>"`
+
+A lesson is confirmed only after 3 supporting cases, and is retired when contradicted.
+Never write a lesson from a single day's P&L noise.
 
 ## 3. Refresh the public dashboard (every run)
 ```bash
 scripts/refresh_dashboard.sh          # exports both desks into public/*.json
 ```
 Dashboard: https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf (Dashboard type).
-For each of `summary positions trades decisions signals equity`:
+For each of `summary positions trades decisions signals equity journal lessons`:
 1. Upload `public/<name>.json` with the Artifact tool (`url` = the dashboard, `file_path`, `asset: true`).
    Each JSON file goes in its own call.
 2. Read `datasets/<name>` with ArtifactData `get` to get its `version`.
@@ -54,7 +75,7 @@ For each of `summary positions trades decisions signals equity`:
 
 ## 4. Save state
 ```bash
-git add paper signals signals_us public && git commit -m "<desk> <run> <date>" && git push origin ccr-1574bece-7xdh0b
+git add paper signals signals_us public journal && git commit -m "<desk> <run> <date>" && git push origin ccr-1574bece-7xdh0b
 ```
 Retry the push up to 4 times with 2s/4s/8s/16s backoff on network errors. If the push is rejected because the
 branch moved, `git pull --rebase origin ccr-1574bece-7xdh0b` and push again.

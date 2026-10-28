@@ -5,7 +5,7 @@ from pathlib import Path
 
 src, dst = Path(sys.argv[1]), Path(sys.argv[2])
 dst.mkdir(parents=True, exist_ok=True)
-for name in ("summary", "positions", "trades", "decisions", "signals", "equity"):
+for name in ("summary", "positions", "trades", "decisions", "signals", "equity", "journal"):
     rows = []
     for market in ("us", "india"):
         f = src / f"{market}_{name}.json"
@@ -13,3 +13,10 @@ for name in ("summary", "positions", "trades", "decisions", "signals", "equity")
             rows += json.loads(f.read_text())
     (dst / f"{name}.json").write_text(json.dumps(rows, indent=1))
     print(name, len(rows))
+
+# lessons are shared across markets: take one copy
+for market in ("us", "india"):
+    f = src / f"{market}_lessons.json"
+    if f.exists():
+        (dst / "lessons.json").write_text(f.read_text())
+        break

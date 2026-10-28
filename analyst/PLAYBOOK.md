@@ -27,6 +27,10 @@ indtrader is-trading-day || exit 0      # holiday/weekend: do nothing, commit no
 ```
 `D` = the analysis date printed above (the previous trading day). If `signals/D/REPORT.md` exists, today is done.
 
+## 0b. Read the lesson book
+`indtrader lessons --market India`: confirmed lessons are rules for your judgement, hypotheses are things to watch.
+They never loosen risk limits.
+
 ## 1. Candidates
 ```bash
 indtrader screen --save          # top momentum stocks -> signals/D/_screen.json
