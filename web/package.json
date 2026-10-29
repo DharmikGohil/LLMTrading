@@ -1,0 +1,19 @@
+{
+  "name": "llmtrading-desk",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "sync": "node scripts/sync-data.mjs",
+    "prebuild": "node scripts/sync-data.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "marked": "18.1.0",
+    "next": "15.5.27",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "engines": { "node": ">=20" }
+}

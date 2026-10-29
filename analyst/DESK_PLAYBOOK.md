@@ -63,8 +63,9 @@ Never write a lesson from a single day's P&L noise.
 
 ## 3. Refresh the public dashboard (every run)
 ```bash
-scripts/refresh_dashboard.sh          # exports both desks into public/*.json
+scripts/refresh_dashboard.sh          # exports both desks into public/*.json and web/data/ (the Next.js site)
 ```
+The public Next.js site (`web/`, hosted on Vercel) rebuilds by itself when step 4 pushes `web/data`.
 Dashboard: https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf (Dashboard type).
 For each of `summary positions trades decisions signals equity journal lessons`:
 1. Upload `public/<name>.json` with the Artifact tool (`url` = the dashboard, `file_path`, `asset: true`).
@@ -75,7 +76,7 @@ For each of `summary positions trades decisions signals equity journal lessons`:
 
 ## 4. Save state
 ```bash
-git add paper signals signals_us public journal && git commit -m "<desk> <run> <date>" && git push origin ccr-1574bece-7xdh0b
+git add paper signals signals_us public journal web/data && git commit -m "<desk> <run> <date>" && git push origin ccr-1574bece-7xdh0b
 ```
 Retry the push up to 4 times with 2s/4s/8s/16s backoff on network errors. If the push is rejected because the
 branch moved, `git pull --rebase origin ccr-1574bece-7xdh0b` and push again.
