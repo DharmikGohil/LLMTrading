@@ -74,5 +74,6 @@
   "stopped_out": {},
   "realized_pnl": 0.0,
   "cash": 608643.11,
-  "capital": 1000000.0
+  "capital": 1000000.0,
+  "ca_applied": []
 }
