@@ -17,6 +17,6 @@ npm run build      # all pages are static
 ## Deploy on Vercel
 1. vercel.com → Add New → Project → import `DharmikGohil/LLMTrading`.
 2. Framework preset: Next.js. **Root Directory: `web`**. No environment variables.
-3. Settings → Git → Production Branch: `ccr-1574bece-7xdh0b` (or merge it into `main`).
+3. Production Branch: `main` (the default branch; check under Settings → Git).
 
 Every scheduled desk run pushes fresh `web/data/`, and Vercel redeploys on that push.

@@ -20,7 +20,7 @@ and red flags do predict short-term moves. Be a sharp sceptic, not a cheerleader
 ## 0. Setup (fresh container each run)
 ```bash
 cd /home/user/LLMTrading 2>/dev/null || { git clone https://github.com/DharmikGohil/LLMTrading /home/user/LLMTrading && cd /home/user/LLMTrading; }
-git fetch origin ccr-1574bece-7xdh0b && git checkout ccr-1574bece-7xdh0b && git pull --ff-only origin ccr-1574bece-7xdh0b
+git fetch origin main && git checkout main && git pull --ff-only origin main
 pip install -q pandas numpy pydantic pyyaml python-dotenv requests typer yfinance && pip install -q --no-deps -e .
 export INDTRADER_CONFIG=config/analyst.yaml
 indtrader is-trading-day || exit 0      # holiday/weekend: do nothing, commit nothing
@@ -74,7 +74,7 @@ Rules:
 Write `signals/D/REPORT.md`: market context (sourced), a table
 `symbol | screen rank | rating | confidence | red flags / reason`, and a source list. Then:
 ```bash
-git add signals/ && git commit -m "Analyst review for D" && git push origin ccr-1574bece-7xdh0b
+git add signals/ && git commit -m "Analyst review for D" && git push origin main
 ```
 Retry the push up to 4 times (2s/4s/8s/16s) on network errors. Touch nothing outside `signals/`.
 Finish with a short summary: vetoes, passes, and anything unusual.
