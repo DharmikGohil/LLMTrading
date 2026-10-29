@@ -1,0 +1,129 @@
+{
+  "cash": 608641.7022915189,
+  "positions": {
+    "BOSCHLTD": {
+      "qty": 1,
+      "avg": 47223.6
+    },
+    "DIVISLAB": {
+      "qty": 5,
+      "avg": 9600.29775
+    },
+    "HAL": {
+      "qty": 10,
+      "avg": 4810.804102294922
+    },
+    "ADANIPORTS": {
+      "qty": 27,
+      "avg": 1795.9975255737304
+    },
+    "ZYDUSLIFE": {
+      "qty": 42,
+      "avg": 1183.5915
+    },
+    "FEDERALBNK": {
+      "qty": 143,
+      "avg": 347.42362499999996
+    },
+    "NYKAA": {
+      "qty": 144,
+      "avg": 346.02293110656734
+    },
+    "ETERNAL": {
+      "qty": 153,
+      "avg": 325.8128188934326
+    }
+  },
+  "orders": [
+    {
+      "time": "2026-10-29T09:36:27+05:30",
+      "id": "PAPER-5aa36c0ed7",
+      "symbol": "BOSCHLTD",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 47223.6,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 42532.15 tp 513984.84",
+      "message": "charges Rs 56.07"
+    },
+    {
+      "time": "2026-10-29T09:36:27+05:30",
+      "id": "PAPER-b03b601bc3",
+      "symbol": "DIVISLAB",
+      "side": "BUY",
+      "qty": 5,
+      "status": "COMPLETE",
+      "price": 9600.3,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 5 (alloc 10, risk-sized 20) stop 8602.74 tp 108871.74",
+      "message": "charges Rs 57.00"
+    },
+    {
+      "time": "2026-10-29T09:36:28+05:30",
+      "id": "PAPER-afd1c7868a",
+      "symbol": "HAL",
+      "side": "BUY",
+      "qty": 10,
+      "status": "COMPLETE",
+      "price": 4810.8,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 10 (alloc 20, risk-sized 40) stop 4316.63 tp 53984.94",
+      "message": "charges Rs 57.12"
+    },
+    {
+      "time": "2026-10-29T09:36:29+05:30",
+      "id": "PAPER-769d454724",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 27,
+      "status": "COMPLETE",
+      "price": 1796.0,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 27 (alloc 55, risk-sized 108) stop 1611.74 tp 20171.5",
+      "message": "charges Rs 57.58"
+    },
+    {
+      "time": "2026-10-29T09:36:29+05:30",
+      "id": "PAPER-cd3ccf504f",
+      "symbol": "ZYDUSLIFE",
+      "side": "BUY",
+      "qty": 42,
+      "status": "COMPLETE",
+      "price": 1183.59,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 42 (alloc 84, risk-sized 154) stop 1054.66 tp 14128.15",
+      "message": "charges Rs 59.03"
+    },
+    {
+      "time": "2026-10-29T09:36:29+05:30",
+      "id": "PAPER-cf3ec70ece",
+      "symbol": "FEDERALBNK",
+      "side": "BUY",
+      "qty": 143,
+      "status": "COMPLETE",
+      "price": 347.42,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 143 (alloc 287, risk-sized 535) stop 309.91 tp 4080.97",
+      "message": "charges Rs 58.99"
+    },
+    {
+      "time": "2026-10-29T09:36:29+05:30",
+      "id": "PAPER-164b89998e",
+      "symbol": "NYKAA",
+      "side": "BUY",
+      "qty": 144,
+      "status": "COMPLETE",
+      "price": 346.02,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 144 (alloc 289, risk-sized 465) stop 302.89 tp 4641.7",
+      "message": "charges Rs 59.17"
+    },
+    {
+      "time": "2026-10-29T09:36:29+05:30",
+      "id": "PAPER-17654ffec3",
+      "symbol": "ETERNAL",
+      "side": "BUY",
+      "qty": 153,
+      "status": "COMPLETE",
+      "price": 325.81,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 153 (alloc 307, risk-sized 493) stop 285.12 tp 4378.74",
+      "message": "charges Rs 59.19"
+    }
+  ],
+  "realized_pnl": 0.0,
+  "charges": 464.15
+}

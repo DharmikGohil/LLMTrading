@@ -1,0 +1,78 @@
+{
+  "positions": {
+    "BOSCHLTD": {
+      "qty": 1,
+      "avg": 47223.6,
+      "stop": 42532.15,
+      "target": 513984.84,
+      "opened": "2026-10-29",
+      "buy_charges": 56.07
+    },
+    "DIVISLAB": {
+      "qty": 3,
+      "avg": 9597.3,
+      "stop": 8602.24,
+      "target": 108871.24,
+      "opened": "2026-10-29",
+      "buy_charges": 34.19
+    },
+    "HAL": {
+      "qty": 10,
+      "avg": 4810.8,
+      "stop": 4316.63,
+      "target": 53984.94,
+      "opened": "2026-10-29",
+      "buy_charges": 57.12
+    },
+    "ADANIPORTS": {
+      "qty": 20,
+      "avg": 1796.9,
+      "stop": 1612.54,
+      "target": 20172.3,
+      "opened": "2026-10-29",
+      "buy_charges": 42.67
+    },
+    "ZYDUSLIFE": {
+      "qty": 31,
+      "avg": 1184.69,
+      "stop": 1054.66,
+      "target": 14128.15,
+      "opened": "2026-10-29",
+      "buy_charges": 43.61
+    },
+    "NYKAA": {
+      "qty": 108,
+      "avg": 346.02,
+      "stop": 303.04,
+      "target": 4641.85,
+      "opened": "2026-10-29",
+      "buy_charges": 44.37
+    },
+    "ETERNAL": {
+      "qty": 115,
+      "avg": 325.81,
+      "stop": 285.12,
+      "target": 4378.74,
+      "opened": "2026-10-29",
+      "buy_charges": 44.49
+    },
+    "FEDERALBNK": {
+      "qty": 144,
+      "avg": 347.42,
+      "stop": 309.86,
+      "target": 4080.92,
+      "opened": "2026-10-29",
+      "buy_charges": 59.4
+    }
+  },
+  "pending": [],
+  "day": {
+    "date": "2026-10-29",
+    "start_equity": 1000000.0,
+    "orders": 8
+  },
+  "stopped_out": {},
+  "realized_pnl": 0.0,
+  "cash": 677964.3999999999,
+  "capital": 1000000.0
+}
