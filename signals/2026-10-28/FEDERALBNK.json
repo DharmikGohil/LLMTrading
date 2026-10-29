@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-10-28",
+  "rating": "Buy",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 FY27 (16 Oct): record net profit Rs 1,386 cr (+45% y/y), NII +26%, NIM 3.32%, gross NPA 1.32% and net NPA 0.17% at decade lows (Upstox, Free Press Journal). SEPA 7/7; results already out, so no event risk.",
+  "confidence": 66.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T07:43:29+05:30"
+}

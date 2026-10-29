@@ -1,0 +1,12 @@
+{
+  "symbol": "NYKAA",
+  "as_of": "2026-10-28",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "SEPA 7/7, RS +9% over 3m, 2% below the 52-week high, but Q2 results on 4 Nov (NSE calendar), 4 trading days after entry: gap risk inside the first week. Size down.",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T07:43:29+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "LAURUSLABS",
+  "as_of": "2026-10-28",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Board meeting today 29 Oct to approve Q2/H1 results (NSE board-meeting intimation, 13 Oct); earnings call 5pm IST (ScanX). Binary event on entry day, after a +109% 6m run with price 11.9% above EMA50 at a 52-week high. No entry before results.",
+  "confidence": 80.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T07:43:28+05:30"
+}

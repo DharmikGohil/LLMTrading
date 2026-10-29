@@ -1,0 +1,12 @@
+{
+  "symbol": "DIVISLAB",
+  "as_of": "2026-10-28",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Yahoo's 28 Oct bar is missing (NaN), so trend, RSI and the SEPA checklist cannot be verified today. Results due 7 Nov (NSE calendar). No red flags found; last close near the 52-week high (Rs 9,740). Hold until data is clean.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T07:43:29+05:30"
+}
