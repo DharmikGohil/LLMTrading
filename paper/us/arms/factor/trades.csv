@@ -4,3 +4,5 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-10-28T14:14:08-04:00,JNJ,BUY,7,272.12,COMPLETE,7,271.44,PAPER-3aa4e1a06e,"momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",charges Rs 0.00
 2026-10-28T14:14:08-04:00,CSCO,BUY,16,110.26,COMPLETE,16,109.98,PAPER-72aa38e35e,"momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",charges Rs 0.00
 2026-10-28T14:14:08-04:00,MET,BUY,20,100.0,COMPLETE,20,99.75,PAPER-a307b56d45,"momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",charges Rs 0.00
+2026-10-29T09:56:11-04:00,TMO,BUY,1,709.89,COMPLETE,1,708.11,PAPER-c460a24fe8,"momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",charges $0.00
+2026-10-29T09:56:11-04:00,ABBV,BUY,1,292.87,COMPLETE,1,292.14,PAPER-40c911af3f,"momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",charges $0.00

@@ -1,5 +1,5 @@
 {
-  "cash": 2916.2999545021057,
+  "cash": 1304.029256198883,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -16,6 +16,14 @@
     "KO": {
       "qty": 21,
       "avg": 91.79087524795531
+    },
+    "TMO": {
+      "qty": 1,
+      "avg": 708.1138897705077
+    },
+    "UNP": {
+      "qty": 3,
+      "avg": 301.3856028442383
     }
   },
   "orders": [
@@ -62,6 +70,28 @@
       "price": 91.79,
       "reason": "momentum Buy; LLM: claude-analyst Buy (65%) does not object; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",
       "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-29T09:56:09-04:00",
+      "id": "PAPER-bdf0abc57a",
+      "symbol": "TMO",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 708.11,
+      "reason": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-29T09:56:09-04:00",
+      "id": "PAPER-632e6ea6d8",
+      "symbol": "UNP",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 301.39,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",
+      "message": "charges $0.00"
     }
   ],
   "realized_pnl": 0.0,

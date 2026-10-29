@@ -48,6 +48,30 @@
   "id": "US:main:3"
  },
  {
+  "time": "2026-10-29T09:56:09-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "TMO",
+  "side": "BUY",
+  "qty": 1,
+  "price": 708.11,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
+  "id": "US:main:4"
+ },
+ {
+  "time": "2026-10-29T09:56:09-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "UNP",
+  "side": "BUY",
+  "qty": 3,
+  "price": 301.39,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",
+  "id": "US:main:5"
+ },
+ {
   "time": "2026-10-28T14:14:08-04:00",
   "market": "US",
   "book": "factor",
@@ -57,7 +81,7 @@
   "price": 1289.69,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
-  "id": "US:factor:4"
+  "id": "US:factor:6"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -69,7 +93,7 @@
   "price": 345.21,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
-  "id": "US:factor:5"
+  "id": "US:factor:7"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -81,7 +105,7 @@
   "price": 271.44,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
-  "id": "US:factor:6"
+  "id": "US:factor:8"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -93,7 +117,7 @@
   "price": 109.98,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
-  "id": "US:factor:7"
+  "id": "US:factor:9"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -105,7 +129,31 @@
   "price": 99.75,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
-  "id": "US:factor:8"
+  "id": "US:factor:10"
+ },
+ {
+  "time": "2026-10-29T09:56:11-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "TMO",
+  "side": "BUY",
+  "qty": 1,
+  "price": 708.11,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
+  "id": "US:factor:11"
+ },
+ {
+  "time": "2026-10-29T09:56:11-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "ABBV",
+  "side": "BUY",
+  "qty": 1,
+  "price": 292.14,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
+  "id": "US:factor:12"
  },
  {
   "time": "2026-10-29T09:36:18+05:30",

@@ -1,0 +1,12 @@
+{
+  "symbol": "AMGN",
+  "as_of": "2026-10-28",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 2026 results Tue 3 Nov after the close (Amgen webcast announcement), 3 trading days away. Strongest trend in the list (at the 52-week high, RS +13% over 3m, RSI 66), but an earnings gap inside the holding window. Wait for the print.",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T09:55:36-04:00"
+}

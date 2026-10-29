@@ -1,5 +1,5 @@
 {
-  "cash": 1329.40689076233,
+  "cash": 329.1570157623301,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -20,6 +20,14 @@
     "MET": {
       "qty": 20,
       "avg": 99.7498469467163
+    },
+    "TMO": {
+      "qty": 1,
+      "avg": 708.1138897705077
+    },
+    "ABBV": {
+      "qty": 1,
+      "avg": 292.1359852294922
     }
   },
   "orders": [
@@ -77,6 +85,28 @@
       "price": 99.75,
       "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
       "message": "charges Rs 0.00"
+    },
+    {
+      "time": "2026-10-29T09:56:11-04:00",
+      "id": "PAPER-c460a24fe8",
+      "symbol": "TMO",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 708.11,
+      "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-29T09:56:11-04:00",
+      "id": "PAPER-40c911af3f",
+      "symbol": "ABBV",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 292.14,
+      "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
+      "message": "charges $0.00"
     }
   ],
   "realized_pnl": 0.0,

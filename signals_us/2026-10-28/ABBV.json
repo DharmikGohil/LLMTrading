@@ -1,0 +1,12 @@
+{
+  "symbol": "ABBV",
+  "as_of": "2026-10-28",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 2026 results Fri 30 Oct before the open (AbbVie press release, 1 Oct 2026), i.e. tomorrow: binary event inside the entry window. Trend template 7/7, RS +7.7% over 3m, 1% below the 52-week high; the 5 Oct 8-K cut FY adjusted EPS guidance to 13.76-13.96 for acquired IPR&D. No new entry before results.",
+  "confidence": 75.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T09:55:36-04:00"
+}

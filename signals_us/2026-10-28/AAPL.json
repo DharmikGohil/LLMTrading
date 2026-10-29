@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-10-28",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results Mon 2 Nov after the close (Apple, Oct 2026), 2 trading days away. Trend template 7/7, 1.3% below the 52-week high, RS slightly negative over 3m. Earnings gap risk inside the window; same call as 27 Oct.",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T09:55:36-04:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-10-28",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results are out: Q3 2026 revenue +39% to 24.4B vs about 22.3-22.4B expected, non-GAAP EPS 7.48 vs about 5.6-5.7 consensus, FY revenue guidance raised 5.5B at the midpoint to 91-92B; FY EPS guidance trimmed to 35-36 on a 4.57 IPR&D charge (Lilly 8-K and Investing.com, 29 Oct). Shares about +4% premarket near 1,345. Binary event passed; gap-up entry after a beat is the main risk.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-29T09:55:37-04:00"
+}

@@ -31,17 +31,33 @@
       "target": 99.6,
       "opened": "2026-10-28",
       "buy_charges": 0.0
+    },
+    "TMO": {
+      "qty": 1,
+      "avg": 708.11,
+      "stop": 626.76,
+      "target": 8807.87,
+      "opened": "2026-10-29",
+      "buy_charges": 0.0
+    },
+    "UNP": {
+      "qty": 3,
+      "avg": 301.39,
+      "stop": 277.14,
+      "target": 2711.11,
+      "opened": "2026-10-29",
+      "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-10-28",
-    "start_equity": 10000.0,
-    "orders": 4
+    "date": "2026-10-29",
+    "start_equity": 10065.01,
+    "orders": 2
   },
   "stopped_out": {},
   "realized_pnl": 0.0,
-  "cash": 2916.3999999999996,
+  "cash": 1304.1199999999994,
   "capital": 10000.0,
   "ca_applied": []
 }
