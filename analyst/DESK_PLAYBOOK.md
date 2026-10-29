@@ -31,7 +31,11 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
 
 ## 1. Open run
 - **US:** review first. Run `indtrader screen --save` and `indtrader recent-picks`, then `indtrader brief A,B,C`.
-  Search the web for the last 7 days of news and **the next earnings date** of each candidate. Apply the red-flag
+  For the candidates and holdings, run the project skills (see `.claude/skills/README.md`):
+  `python3 .claude/skills/trader-news/news.py --tickers A,B,C --hours 168` (headlines and 8-Ks),
+  `python3 .claude/skills/trader-analyst/facts.py A B` for any that reported in the last 30 days (filed numbers), and
+  `python3 .claude/skills/trader-pelosi/ptr.py` for Congress trades in them (context only).
+  Then search the web for anything they miss and **the next earnings date** of each candidate. Apply the red-flag
   rules of `analyst/PLAYBOOK.md` section 3 (US equivalents: SEC/FDA/FTC actions, guidance cuts, downgrade clusters,
   insider selling); earnings within 3 trading days = **Underweight**. Submit each rating with
   `indtrader submit-signal SYMBOL --rating ... --confidence ... --thesis "... (source, date)"`, using the analysis
