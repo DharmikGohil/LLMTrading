@@ -28,7 +28,8 @@ def history(symbol: str, start: date | str, end: date | str | None = None, excha
     if df.empty:
         raise ValueError(f"No data for {symbol} from Yahoo Finance")
     df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
-    return df[["Open", "High", "Low", "Close", "Volume"]]
+    # Yahoo sometimes returns an empty (NaN) bar for the latest day; drop it rather than poison indicators
+    return df[["Open", "High", "Low", "Close", "Volume"]].dropna(subset=["Close"])
 
 
 def recent_history(symbol: str, as_of: date, lookback_days: int = 300, exchange: str = "NSE") -> pd.DataFrame:

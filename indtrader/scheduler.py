@@ -33,7 +33,7 @@ class Scheduler:
         self.done: dict[str, str] = json.loads(self.file.read_text()) if self.file.exists() else {}
         self.attempts: dict[str, int] = {}
         self.analysis_thread: threading.Thread | None = None
-        self.last_monitor = 0.0
+        self.last_monitor = float("-inf")   # monitor on the first tick, even right after boot
 
     def _mark(self, key: str, day: str) -> None:
         self.done[key] = day

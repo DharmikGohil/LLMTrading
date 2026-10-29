@@ -319,7 +319,7 @@ def brief(symbols: str = typer.Argument(..., help="comma-separated, e.g. RELIANC
         except Exception as exc:
             out.append({"symbol": sym, "error": str(exc)})
             continue
-        upcoming = sorted(d for d in nse.results_dates().get(sym, []) if d >= now_ist().date())
+        upcoming = [d for d in nse.results_dates_for(sym) if d >= now_ist().date()]
         series = nse.series().get(sym)
         b["nse"] = {"upcoming_results": [str(d) for d in upcoming[:2]],
                     "surveillance": nse.surveillance().get(sym),
