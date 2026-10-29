@@ -14,3 +14,6 @@ paper/**/screen/
 paper/**/nse/
 paper/**/universe/
 public/raw/
+
+# day-trader-skill state
+trader/
