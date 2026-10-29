@@ -21,6 +21,7 @@ and red flags do predict short-term moves. Be a sharp sceptic, not a cheerleader
 ```bash
 cd /home/user/LLMTrading 2>/dev/null || { git clone https://github.com/DharmikGohil/LLMTrading /home/user/LLMTrading && cd /home/user/LLMTrading; }
 git fetch origin main && git checkout main && git pull --ff-only origin main
+git config user.name "dharmikgohil" && git config user.email "gohildharmik2020@gmail.com"   # commits are made as the repo owner
 pip install -q pandas numpy pydantic pyyaml python-dotenv requests typer yfinance && pip install -q --no-deps -e .
 export INDTRADER_CONFIG=config/analyst.yaml
 indtrader is-trading-day || exit 0      # holiday/weekend: do nothing, commit nothing

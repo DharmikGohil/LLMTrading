@@ -16,6 +16,7 @@ fresh container. **Never place real orders; never edit code.**
 ```bash
 cd /home/user/LLMTrading 2>/dev/null || { git clone https://github.com/DharmikGohil/LLMTrading /home/user/LLMTrading && cd /home/user/LLMTrading; }
 git fetch origin main && git checkout main && git pull --ff-only origin main
+git config user.name "dharmikgohil" && git config user.email "gohildharmik2020@gmail.com"   # commits are made as the repo owner
 pip install -q pandas numpy pydantic pyyaml python-dotenv requests typer yfinance && pip install -q --no-deps -e .
 export INDTRADER_CONFIG=config/us_paper.yaml      # or config/india_paper.yaml for the India desk
 indtrader is-trading-day || exit 0                # weekend/holiday on that exchange: do nothing
