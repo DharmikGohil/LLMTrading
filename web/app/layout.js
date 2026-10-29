@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { MarketClocks, ThemeToggle, TickerGo } from "@/components/HeadTools";
 import Nav from "@/components/Nav";
-import { load } from "@/lib/data";
+import Tape from "@/components/Tape";
+import { asOf, load, symbols, tape } from "@/lib/data";
 import "./globals.css";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -9,26 +11,46 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata = {
   title: { default: "LLMTrading Desk", template: "%s · LLMTrading Desk" },
-  description: "Paper trading desk run by Claude: a momentum screen picks NSE and US stocks, an LLM analyst can only veto, and a control account trades without it.",
+  description: "A paper trading desk run by Claude on NSE and US stocks: a momentum screen picks, an LLM analyst can only veto, and a control account trades without it.",
 };
 
+export const viewport = { themeColor: "#07090c" };
+
+// set the theme before first paint (dark unless the visitor chose light)
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+
 export default function RootLayout({ children }) {
-  const { meta } = load();
+  const data = load();
+  const updated = asOf(data);
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`} data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
-        <header className="top">
-          <div className="top-inner">
-            <Link href="/" className="mark"><span className="mark-dot" aria-hidden="true" />llmtrading/desk</Link>
+        <header className="head">
+          <div className="head-row">
+            <Link href="/" className="brand" aria-label="LLMTrading Desk, overview">
+              <span className="brand-box" aria-hidden="true">L</span>
+              <span>llmtrading<b>/desk</b></span>
+            </Link>
             <Nav />
-            <span className="paper" title="No real money is traded">Paper trading</span>
+            <div className="head-tools">
+              <TickerGo symbols={symbols(data).map((s) => s.symbol)} />
+              <ThemeToggle />
+            </div>
           </div>
+          <div className="status">
+            <span className="paper-tag" title="No real money is traded">PAPER</span>
+            <MarketClocks asOf={updated} />
+          </div>
+          <Tape items={tape(data)} />
         </header>
         <div className="shell">
           {children}
           <footer className="foot">
-            <span>Paper money only. Not investment advice. Data synced {meta.synced_at ? new Date(meta.synced_at).toUTCString() : "—"}.</span>
-            <a href="https://github.com/DharmikGohil/LLMTrading">Source</a>
+            <span>Paper money only. Not investment advice. Run by Claude through scheduled sessions; every decision is logged.</span>
+            <a href="https://github.com/DharmikGohil/LLMTrading">Source on GitHub</a>
           </footer>
         </div>
       </body>

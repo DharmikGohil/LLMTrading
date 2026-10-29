@@ -21,13 +21,16 @@ export default async function Note({ params }) {
   const renderer = new marked.Renderer();
   renderer.html = ({ text }) => text.replace(/</g, "&lt;");
   const html = marked.parse(doc.body, { renderer, gfm: true });
+  const what = doc.kind === "report" ? `Analyst report · data to ${fmt.day(doc.date)}` : doc.kind === "review" ? `Close review · ${fmt.day(doc.date)}` : "Strategy change log";
   return (
     <main>
       <div className="page-head">
-        <span className="eyebrow">{doc.market} · {doc.kind === "report" ? `analyst report, data to ${fmt.day(doc.date)}` : doc.kind === "review" ? `daily review, ${fmt.day(doc.date)}` : "change log"}</span>
-        <Link className="note" href="/journal">← Journal</Link>
+        <div>
+          <div className="crumbs"><Link className="label" href="/journal">← Journal</Link></div>
+          <h1 style={{ fontSize: 18 }}>{doc.market !== "all" ? <span className="chip ghost" style={{ marginRight: 8, verticalAlign: "middle" }}>{doc.market === "US" ? "US" : "NSE"}</span> : null}{what}</h1>
+        </div>
       </div>
-      <article className="card prose" dangerouslySetInnerHTML={{ __html: html }} />
+      <section className="panel"><div className="panel-b"><article className="prose" dangerouslySetInnerHTML={{ __html: html }} /></div></section>
     </main>
   );
 }
