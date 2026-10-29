@@ -94,9 +94,9 @@ data tools always return today's data (the code refuses past dates).
 
 ## Live desk: India by day, US by night
 
-- **Public dashboard:** https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf. It shows accounts, equity curves, open positions,
-  every order, the reason behind each candidate decision, the analyst's sourced calls, research and backtests.
-  It is private until shared from the page's Share menu.
+- **Public site:** https://llmtrading.dharmikgohil.in (Next.js in `web/`, deployed on Vercel from `main`). It shows
+  both accounts per desk, equity curves, open positions, every order, the reason behind each candidate decision,
+  the analyst's sourced calls, daily reviews and the lesson book. Every scheduled run's push redeploys it.
 - **Research brief:** https://claude.ai/artifact/3Rv5N3xts4ndnc7KxrCNFH
 - **US paper desk ($10k, `config/us_paper.yaml`)** runs in the Indian night through scheduled Claude sessions
   ([`analyst/DESK_PLAYBOOK.md`](analyst/DESK_PLAYBOOK.md)):

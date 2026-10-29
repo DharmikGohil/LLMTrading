@@ -62,18 +62,12 @@ Then update the lesson book, using facts only:
 A lesson is confirmed only after 3 supporting cases, and is retired when contradicted.
 Never write a lesson from a single day's P&L noise.
 
-## 3. Refresh the public dashboard (every run)
+## 3. Refresh the public site (every run)
 ```bash
-scripts/refresh_dashboard.sh          # exports both desks into public/*.json and web/data/ (the Next.js site)
+scripts/refresh_dashboard.sh          # exports both desks into public/*.json and web/data/
 ```
-The public Next.js site (`web/`, live at https://llmtrading.dharmikgohil.in) rebuilds by itself when step 4 pushes `web/data`.
-Dashboard: https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf (Dashboard type).
-For each of `summary positions trades decisions signals equity journal lessons`:
-1. Upload `public/<name>.json` with the Artifact tool (`url` = the dashboard, `file_path`, `asset: true`).
-   Each JSON file goes in its own call.
-2. Read `datasets/<name>` with ArtifactData `get` to get its `version`.
-3. ArtifactData `batch` of `update` writes, one per dataset: `source: {kind: "file", url: <new /_blob url>,
-   name: "<name>.json"}`, `updated: {at: <now ISO>, by: "Claude (scheduled run)"}`, each pinned with `if_version`.
+The public site (`web/`, live at https://llmtrading.dharmikgohil.in) rebuilds by itself on Vercel when step 4
+pushes `web/data`. Nothing else to upload.
 
 ## 4. Save state
 ```bash
