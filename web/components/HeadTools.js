@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SESSIONS, sessionState as state } from "@/components/Live";
 
 /** Ticker box: type a symbol, press Enter (or GO) to open everything on it. */
 export function TickerGo({ symbols }) {
@@ -44,20 +45,6 @@ export function ThemeToggle() {
   );
 }
 
-// Regular sessions only; exchange holidays are not modelled here (the desk itself checks them).
-const SESSIONS = [
-  { name: "NSE", tz: "Asia/Kolkata", label: "IST", open: 9 * 60 + 15, close: 15 * 60 + 30 },
-  { name: "NYSE", tz: "America/New_York", label: "ET", open: 9 * 60 + 30, close: 16 * 60 },
-];
-
-function state(s, now) {
-  const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", { timeZone: s.tz, weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false })
-    .formatToParts(now).map((x) => [x.type, x.value]));
-  const mins = Number(p.hour) * 60 + Number(p.minute);
-  const weekday = !["Sat", "Sun"].includes(p.weekday);
-  return { open: weekday && mins >= s.open && mins < s.close, clock: `${p.hour}:${p.minute}` };
-}
-
 export function MarketClocks({ asOf }) {
   const [now, setNow] = useState(null);
   useEffect(() => {
@@ -74,7 +61,7 @@ export function MarketClocks({ asOf }) {
         return (
           <span className="mkt" key={s.name}>
             <i className={`dot ${st?.open ? "open" : ""}`} aria-hidden="true" />
-            {s.name} <span className={st?.open ? "up" : "muted"}>{st ? (st.open ? "OPEN" : "CLOSED") : "—"}</span>
+            {s.name}{" "}<span className={st?.open ? "up" : "muted"}>{st ? (st.open ? "OPEN" : "CLOSED") : "—"}</span>
             <span className="muted">{st ? `${st.clock} ${s.label}` : ""}</span>
           </span>
         );

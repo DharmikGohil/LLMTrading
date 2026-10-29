@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fmt } from "./fmt";
 
 const DATA = path.join(process.cwd(), "data");
 
@@ -201,7 +202,7 @@ export function deskOf(data, market) {
 export function tape(data) {
   return data.positions
     .filter((p) => p.book === "main")
-    .map((p) => ({ symbol: p.symbol, market: p.market, last: p.last_price, pct: p.unrealized_pct }))
+    .map((p) => ({ symbol: p.symbol, market: p.market, last: p.last_price, pct: p.unrealized_pct, avg: p.avg_price }))
     .sort((a, b) => a.market.localeCompare(b.market) || a.symbol.localeCompare(b.symbol));
 }
 
@@ -268,37 +269,27 @@ export function cleanNote(s) {
   return s.replace(/ stop ([\d.]+) tp ([\d.]+)/g, (m, stop, tp) => (Number(tp) > 3 * Number(stop) ? ` stop ${stop}` : m));
 }
 
-export const RATING_TONE = { Buy: "up", Overweight: "up", Hold: "flat", Underweight: "down", Sell: "down" };
+export { RATING_TONE, fmt } from "./fmt";
 
-const r0 = (v, d) => { const x = Number(v); return Math.abs(x) < 0.5 * 10 ** -d ? 0 : x; };
-const nf = (d) => new Intl.NumberFormat("en-IN", { maximumFractionDigits: d, minimumFractionDigits: d });
-export const fmt = {
-  money: (v, sym = "", d = 2) => (v == null || v === "" ? "—" : `${Number(v) < 0 ? "−" : ""}${sym}${nf(d).format(Math.abs(Number(v)))}`),
-  num: (v, d = 2) => (v == null || v === "" ? "—" : nf(d).format(Number(v))),
-  pct: (v, d = 2) => {
-    if (v == null || v === "" || Number.isNaN(Number(v))) return "—";
-    const x = r0(v, d);
-    return `${x > 0 ? "+" : x < 0 ? "−" : ""}${Math.abs(x).toFixed(d)}%`;
-  },
-  pp: (v) => {
-    if (v == null || Number.isNaN(Number(v))) return "—";
-    const x = r0(v, 2);
-    return `${x > 0 ? "+" : x < 0 ? "−" : ""}${Math.abs(x).toFixed(2)} pp`;
-  },
-  time: (v, tz = "Asia/Kolkata", label = "IST") => {
-    if (!v) return "—";
-    const d = new Date(v);
-    if (Number.isNaN(d.getTime())) return String(v);
-    return `${d.toLocaleString("en-GB", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit", hour12: false, timeZone: tz })} ${label}`;
-  },
-  clock: (v, tz = "Asia/Kolkata") => new Date(v).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: tz }),
-  day: (v) => {
-    const d = new Date(`${v}T12:00:00Z`);
-    return Number.isNaN(d.getTime()) ? v : d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
-  },
-  short: (v) => {
-    const d = new Date(`${v}T12:00:00Z`);
-    return Number.isNaN(d.getTime()) ? v : d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
-  },
-  tone: (v) => (v == null || Number.isNaN(Number(v)) || r0(v, 2) === 0 ? "" : Number(v) > 0 ? "up" : "down"),
-};
+const YAHOO_INDEX = { US: "^GSPC", India: "^NSEI" };
+export const yahooSymbol = (market, sym) => (market === "US" ? sym : `${sym}.NS`);
+
+/** What the browser needs to recompute equity from live prices: cash, holdings, start capital, index base. */
+export function liveSpec(data, market) {
+  const m = MARKETS[market];
+  const book = (b) => {
+    const s = data.summary.find((r) => r.market === m.name && r.book === b);
+    if (!s) return null;
+    return { start: s.start_capital, cash: s.cash, equity: s.equity,
+      pos: data.positions.filter((p) => p.market === m.name && p.book === b).map((p) => [p.symbol, p.qty, p.last_price, p.avg_price]) };
+  };
+  const idx = data.equity.filter((r) => r.market === m.name && r.index_close != null).sort((a, b) => new Date(a.time) - new Date(b.time));
+  return { market: m.name, main: book("main"), factor: book("factor"), index: idx.length ? { key: `${m.name}:${YAHOO_INDEX[m.name]}`, base: idx[0].index_close, last: idx.at(-1).index_close } : null };
+}
+
+/** Every quote key the site shows live: open positions plus both indices. */
+export function liveKeys(data) {
+  const keys = new Set(data.positions.map((p) => `${p.market}:${p.symbol}`));
+  for (const [mk, y] of Object.entries(YAHOO_INDEX)) keys.add(`${mk}:${y}`);
+  return [...keys].sort();
+}

@@ -308,3 +308,12 @@ td.sym a:hover { color: var(--accent-ink); text-decoration: underline; text-unde
 .runs b { font: 600 12px var(--mono); }
 .stack { display: flex; flex-direction: column; gap: 12px; }
 .grid > [class^="c"] > .panel:only-child { height: 100%; }
+
+/* live quotes */
+.dot.live { background: var(--up); animation: pulse 2s ease-out infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 189, 111, 0.55); } 100% { box-shadow: 0 0 0 7px rgba(46, 189, 111, 0); } }
+.fl-up, .fl-down { border-radius: 2px; animation: flash-up 1.2s ease-out; }
+.fl-down { animation-name: flash-down; }
+@keyframes flash-up { from { background: rgba(46, 189, 111, 0.35); } to { background: transparent; } }
+@keyframes flash-down { from { background: rgba(242, 85, 79, 0.35); } to { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { .dot.live, .fl-up, .fl-down { animation: none; } }

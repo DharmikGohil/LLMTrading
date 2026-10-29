@@ -1,9 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { MarketClocks, ThemeToggle, TickerGo } from "@/components/HeadTools";
+import { LiveBadge, LiveProvider } from "@/components/Live";
 import Nav from "@/components/Nav";
 import Tape from "@/components/Tape";
-import { asOf, load, symbols, tape } from "@/lib/data";
+import { asOf, liveKeys, load, symbols, tape } from "@/lib/data";
 import "./globals.css";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
+        <LiveProvider keys={liveKeys(data)}>
         <header className="head">
           <div className="head-row">
             <Link href="/" className="brand" aria-label="LLMTrading Desk, overview">
@@ -42,6 +44,8 @@ export default function RootLayout({ children }) {
           </div>
           <div className="status">
             <span className="paper-tag" title="No real money is traded">PAPER</span>
+            <LiveBadge />
+            <span className="sep" aria-hidden="true" />
             <MarketClocks asOf={updated} />
           </div>
           <Tape items={tape(data)} />
@@ -53,6 +57,7 @@ export default function RootLayout({ children }) {
             <a href="https://github.com/DharmikGohil/LLMTrading">Source on GitHub</a>
           </footer>
         </div>
+        </LiveProvider>
       </body>
     </html>
   );

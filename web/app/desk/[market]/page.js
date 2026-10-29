@@ -2,9 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import EquityChart from "@/components/EquityChart";
 import Filters from "@/components/Filters";
+import { LiveEdge, LiveEquity, LiveIndexRet, LiveLast, LivePnl, LivePnlPct, LiveToStop, LiveUnrealized, LiveValue } from "@/components/Live";
 import Log from "@/components/Log";
-import { Book, Conf, Kpi, Kpis, Panel, PnlPct, Rating, Side, Signed, Table } from "@/components/ui";
-import { BOOK_LONG, MARKETS, cleanNote, dailyLedger, deskOf, equitySeries, fmt, isSkip, isVeto, load, timeline } from "@/lib/data";
+import { Book, Conf, Kpi, Kpis, Panel, Rating, Side, Signed, Table } from "@/components/ui";
+import { BOOK_LONG, MARKETS, cleanNote, dailyLedger, deskOf, equitySeries, fmt, isSkip, isVeto, liveSpec, load, timeline } from "@/lib/data";
 
 export function generateStaticParams() {
   return Object.keys(MARKETS).map((market) => ({ market }));
@@ -36,6 +37,7 @@ export default async function Desk({ params }) {
   if (!MARKETS[market]) notFound();
   const data = load();
   const d = deskOf(data, market);
+  const spec = liveSpec(data, market);
   const days = timeline(data).map(([day, evs]) => [day, evs.filter((e) => e.market === d.name)]).filter(([, evs]) => evs.length);
   const pos = d.positions.map((p) => ({ ...p, toStop: p.stop && p.last_price ? ((p.last_price - p.stop) / p.last_price) * 100 : null }));
   const scale = Math.max(0.5, ...pos.map((p) => Math.abs(p.unrealized_pct ?? 0)));
@@ -43,12 +45,12 @@ export default async function Desk({ params }) {
     { key: "symbol", label: "Stock", sym: true },
     { key: "qty", label: "Qty", n: true },
     { key: "avg_price", label: "Avg", n: true, render: (p) => fmt.num(p.avg_price) },
-    { key: "last_price", label: "Last", n: true, render: (p) => fmt.num(p.last_price) },
-    { key: "value", label: "Value", n: true, render: (p) => fmt.money(p.value, d.symbol, 0) },
-    { key: "unrealized", label: "P&L", n: true, render: (p) => <Signed v={p.unrealized} sym={d.symbol} /> },
-    { key: "unrealized_pct", label: "P&L %", n: true, render: (p) => <PnlPct v={p.unrealized_pct} scale={scale} /> },
+    { key: "last_price", label: "Last", n: true, render: (p) => <LiveLast market={p.market} sym={p.symbol} fallback={p.last_price} /> },
+    { key: "value", label: "Value", n: true, render: (p) => <LiveValue market={p.market} sym={p.symbol} qty={p.qty} fallback={p.value} cur={d.symbol} /> },
+    { key: "unrealized", label: "P&L", n: true, render: (p) => <LivePnl market={p.market} sym={p.symbol} qty={p.qty} avg={p.avg_price} fallback={p.unrealized} cur={d.symbol} /> },
+    { key: "unrealized_pct", label: "P&L %", n: true, render: (p) => <LivePnlPct market={p.market} sym={p.symbol} avg={p.avg_price} fallback={p.unrealized_pct} scale={scale} /> },
     { key: "stop", label: "Stop", n: true, render: (p) => fmt.num(p.stop) },
-    { key: "toStop", label: "To stop", n: true, render: (p) => (p.toStop == null ? "—" : `${p.toStop.toFixed(1)}%`) },
+    { key: "toStop", label: "To stop", n: true, render: (p) => <LiveToStop market={p.market} sym={p.symbol} stop={p.stop} fallback={p.last_price} /> },
     { key: "opened", label: "Opened", render: (p) => <span className="muted mono">{p.opened ? fmt.short(p.opened) : "—"}</span> },
   ];
   const ledger = dailyLedger(data).filter((r) => r.desk === market);
@@ -68,22 +70,22 @@ export default async function Desk({ params }) {
       </div>
 
       <Kpis>
-        <Kpi label="LLM-reviewed equity" value={fmt.money(d.main?.equity, d.symbol)} delta={fmt.pct(d.main?.return_pct)} deltaTone={fmt.tone(d.main?.return_pct)} />
-        <Kpi label="LLM off equity" value={fmt.money(d.control?.equity, d.symbol)} delta={fmt.pct(d.control?.return_pct)} deltaTone={fmt.tone(d.control?.return_pct)} />
-        <Kpi hl label="LLM edge" value={fmt.pp(d.edge)} tone={fmt.tone(d.edge)} delta="reviewed minus LLM off" />
-        <Kpi label={`${d.index} since start`} value={fmt.pct(d.indexReturn)} tone={fmt.tone(d.indexReturn)} delta="buy-and-hold benchmark" />
-        <Kpi label="Unrealized P&L" value={<Signed v={d.main?.unrealized_pnl} sym={d.symbol} />} delta={`realized ${fmt.money(d.main?.realized_pnl, d.symbol)}`} />
+        <Kpi label="LLM-reviewed equity" value={<LiveEquity spec={spec} cur={d.symbol} />} delta={<LiveEquity spec={spec} show="ret" />} />
+        <Kpi label="LLM off equity" value={<LiveEquity spec={spec} book="factor" cur={d.symbol} />} delta={<LiveEquity spec={spec} book="factor" show="ret" />} />
+        <Kpi hl label="LLM edge" value={<LiveEdge spec={spec} />} delta="reviewed minus LLM off" />
+        <Kpi label={`${d.index} since start`} value={<LiveIndexRet spec={spec} />} delta="buy-and-hold benchmark" />
+        <Kpi label="Unrealized P&L" value={<LiveUnrealized spec={spec} cur={d.symbol} />} delta={`realized ${fmt.money(d.main?.realized_pnl, d.symbol)}`} />
         <Kpi label="LLM vetoes" value={d.vetoes.length} delta={`${d.signals.length} calls made`} />
       </Kpis>
 
       <div className="grid" style={{ marginTop: 12 }}>
         <div className="c8">
           <Panel title="Equity" meta={`% since start · ${d.tzLabel}`}>
-            <EquityChart data={equitySeries(data, market)} height={300} />
+            <EquityChart data={equitySeries(data, market)} spec={spec} height={300} />
           </Panel>
         </div>
         <div className="c4">
-          <Panel title="Exposure" meta="invested vs cash">
+          <Panel title="Exposure" meta="invested vs cash · at last run">
             <Exposure s={d.main} book="main" sym={d.symbol} />
             <Exposure s={d.control} book="factor" sym={d.symbol} />
             <p className="muted" style={{ fontSize: 12.5 }}>

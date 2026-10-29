@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { liveEquity, liveIndex, useLive } from "@/components/Live";
 
 const COLOR = { main: "var(--s-main)", factor: "var(--s-factor)", index: "var(--s-index)" };
 const RANGES = [["1D", 1], ["5D", 5], ["1M", 31], ["All", Infinity]];
@@ -23,11 +24,30 @@ function niceTicks(lo, hi) {
 }
 
 /** Equity of both books and the index, as % since start. Ordinal x (one slot per observation) so nights and weekends don't stretch the line. */
-export default function EquityChart({ data, height = 260, compact = false, ranges = true }) {
+export default function EquityChart({ data: recorded, spec, height = 260, compact = false, ranges = true }) {
   const wrap = useRef(null);
   const [w, setW] = useState(720);
   const [range, setRange] = useState("All");
   const [hi, setHi] = useState(null);
+  const { quotes } = useLive();
+
+  // add a live point after the last recorded one when fresher quotes exist for this market
+  const data = useMemo(() => {
+    if (!spec || !recorded.times.length) return recorded;
+    const ts = Object.entries(quotes).filter(([k]) => k.startsWith(`${spec.market}:`)).map(([, q]) => q.t || 0);
+    const t = Math.max(0, ...ts);
+    if (t <= recorded.times[recorded.times.length - 1]) return recorded;
+    const pt = { main: liveEquity(spec.main, quotes, spec.market), factor: liveEquity(spec.factor, quotes, spec.market), index: liveIndex(spec, quotes) };
+    return {
+      ...recorded,
+      times: [...recorded.times, t],
+      liveFrom: recorded.times.length,
+      series: recorded.series.map((s) => {
+        const p = pt[s.key];
+        return { ...s, values: [...s.values, p ? { v: s.key === "index" ? p.p : p.eq, r: p.ret } : null] };
+      }),
+    };
+  }, [recorded, spec, quotes]);
 
   useEffect(() => {
     if (!wrap.current) return;
@@ -161,7 +181,7 @@ export default function EquityChart({ data, height = 260, compact = false, range
         </svg>
         {hi != null ? (
           <div className="tip" style={{ left: Math.max(0, tipLeft), top: 8 }} role="status">
-            <div className="t">{timeFmt.format(view.times[hi])} {data.tzLabel}</div>
+            <div className="t">{timeFmt.format(view.times[hi])} {data.tzLabel}{data.liveFrom != null && view.idx[hi] === data.liveFrom ? <span className="up"> · live</span> : null}</div>
             {view.series.map((s) => {
               const p = s.values[hi];
               return (
