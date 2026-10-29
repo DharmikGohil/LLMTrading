@@ -104,6 +104,21 @@ class NSEData:
             log.warning("could not parse event calendar: %s", exc)
         return out
 
+    def results_dates_for(self, symbol: str) -> list[date]:
+        """Results board meetings for one stock: the event calendar plus the stock's own
+        board-meeting intimations. The calendar drops a meeting on its own day, so the
+        per-stock list is what catches a results announcement *today*."""
+        dates = set(self.results_dates().get(symbol, []))
+        txt = self._cached(f"bm_{symbol}.json", BASE + f"corporate-board-meetings?index=equities&symbol={symbol}")
+        try:
+            for row in json.loads(txt) if txt else []:
+                text = f"{row.get('bm_purpose', '')} {row.get('bm_desc', '')}".lower()
+                if "result" in text:
+                    dates.add(datetime.strptime(row["bm_date"], "%d-%b-%Y").date())
+        except (ValueError, KeyError, TypeError) as exc:
+            log.warning("could not parse board meetings for %s: %s", symbol, exc)
+        return sorted(dates)
+
     def corporate_actions(self, start: date, end: date) -> list[dict]:
         url = (BASE + "corporates-corporateActions?index=equities"
                f"&from_date={start:%d-%m-%Y}&to_date={end:%d-%m-%Y}")
@@ -135,6 +150,9 @@ class NullNSE:
 
     def results_dates(self):
         return {}
+
+    def results_dates_for(self, symbol):
+        return []
 
     def corporate_actions(self, start, end):
         return []

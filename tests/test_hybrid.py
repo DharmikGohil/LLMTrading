@@ -169,3 +169,43 @@ def test_trend_template_and_screen_option(ohlcv):
             "MID": ohlcv(300, drift=0.001, seed=13)}
     strict = score_universe(hist, min_traded_value_cr=0, vol_exclude_pct=0.0, trend_template_required=True)
     assert set(strict.loc[strict["eligible"], "symbol"]) <= {"UP"}
+
+
+def test_results_today_caught_by_board_meetings(tmp_path, monkeypatch):
+    import json as _json
+
+    from indtrader import nse as nse_mod
+
+    today = date(2026, 10, 29)
+    pages = {
+        "event-calendar": [{"symbol": "OTHER", "purpose": "Financial Results", "bm_desc": "", "date": "05-Nov-2026"}],
+        "corporate-board-meetings?index=equities&symbol=LAURUSLABS": [
+            {"bm_symbol": "LAURUSLABS", "bm_date": "29-Oct-2026", "bm_purpose": "Board Meeting Intimation",
+             "bm_desc": "to consider and approve the Half Yearly Unaudited Financial results"}],
+    }
+    monkeypatch.setattr(nse_mod, "_get", lambda url: _json.dumps(next(v for k, v in pages.items() if url.endswith(k))))
+    n = nse_mod.NSEData(tmp_path, today)
+    assert n.results_dates().get("LAURUSLABS") is None                # the calendar alone misses it
+    assert n.results_dates_for("LAURUSLABS") == [today]               # the per-stock board meetings catch it
+
+
+def test_history_drops_empty_bars(monkeypatch):
+    import numpy as np
+
+    from indtrader import data as data_mod
+
+    idx = pd.DatetimeIndex(["2026-10-27", "2026-10-28"]).tz_localize("Asia/Kolkata")
+    df = pd.DataFrame({"Open": [1.0, np.nan], "High": [1.0, np.nan], "Low": [1.0, np.nan], "Close": [1.0, np.nan],
+                       "Volume": [10, np.nan]}, index=idx)
+
+    class T:
+        def __init__(self, s):
+            pass
+
+        def history(self, **kw):
+            return df
+
+    import yfinance
+    monkeypatch.setattr(yfinance, "Ticker", T)
+    out = data_mod.history("DIVISLAB", "2026-10-20", "2026-10-28")
+    assert len(out) == 1 and out["Close"].iloc[-1] == 1.0

@@ -164,7 +164,8 @@ class Engine:
             if sector and symbol not in self.state.positions and len(same) >= self.s.risk.max_per_sector:
                 return f"sector cap: already {len(same)} in {sector} ({', '.join(same)})"
         if st.results_blackout_days > 0:
-            for d in self.nse.results_dates().get(symbol, []):
+            lookup = getattr(self.nse, "results_dates_for", None)
+            for d in (lookup(symbol) if lookup else self.nse.results_dates().get(symbol, [])):
                 if 0 <= (d - today).days <= st.results_blackout_days:
                     return f"results board meeting on {d} (blackout {st.results_blackout_days}d)"
         return None

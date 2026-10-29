@@ -225,7 +225,7 @@ def test_scheduler_flow_and_restart(settings):
     eng.fail_rebalance = 1
     sch.tick(_at(9, 31))                            # rebalance fails, monitor still runs
     assert "monitor" in eng.calls and "rebalance" not in eng.calls
-    sch.last_monitor = 0
+    sch.last_monitor = float("-inf")
     sch.tick(_at(9, 32))
     assert eng.calls.count("rebalance") == 1
     # a restart the same day does not repeat analysis or execution
