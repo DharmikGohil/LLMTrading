@@ -66,7 +66,7 @@ Never write a lesson from a single day's P&L noise.
 ```bash
 scripts/refresh_dashboard.sh          # exports both desks into public/*.json and web/data/ (the Next.js site)
 ```
-The public Next.js site (`web/`, hosted on Vercel) rebuilds by itself when step 4 pushes `web/data`.
+The public Next.js site (`web/`, live at https://llmtrading.dharmikgohil.in) rebuilds by itself when step 4 pushes `web/data`.
 Dashboard: https://claude.ai/artifact/AVbfJFgz75SiRsSwsd2Wvf (Dashboard type).
 For each of `summary positions trades decisions signals equity journal lessons`:
 1. Upload `public/<name>.json` with the Artifact tool (`url` = the dashboard, `file_path`, `asset: true`).

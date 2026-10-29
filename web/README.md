@@ -1,5 +1,7 @@
 # llmtrading/desk: public site
 
+Live: https://llmtrading.dharmikgohil.in
+
 A static Next.js site showing both paper desks: equity against the control
 account and the index, every analyst call with sources, every order and
 skipped buy, daily reviews and the lesson book.
