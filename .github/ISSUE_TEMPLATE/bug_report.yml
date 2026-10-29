@@ -1,0 +1,29 @@
+name: Bug report
+description: Something behaves wrongly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Anything that could send a wrong order or skip a stop? Please use SECURITY.md instead."
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Command, config (no keys), date and market.
+      render: shell
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [engine / orders, risk / stops, screen / strategy, data (Yahoo, NSE, SEC), brokers, CLI, site, docs]
+  - type: input
+    id: version
+    attributes:
+      label: Commit or version

@@ -4,10 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "indtrader"
-version = "0.1.0"
-description = "LLM multi-agent (TradingAgents) algorithmic trading for Indian equities (NSE/BSE)"
+version = "0.2.0"
+description = "Momentum trading desks for NSE and US stocks with an LLM risk reviewer and a control account that measures it"
 readme = "README.md"
 requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Dharmik Gohil"}]
+keywords = ["algorithmic-trading", "llm", "nse", "india", "momentum", "paper-trading", "tradingagents", "claude"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
 dependencies = [
     "tradingagents @ git+https://github.com/TauricResearch/TradingAgents.git@v0.7.1",
     "pandas>=2.2",
@@ -19,6 +33,13 @@ dependencies = [
     "typer>=0.12",
     "yfinance>=0.2.50",
 ]
+
+[project.urls]
+Homepage = "https://llmtrading.dharmikgohil.in"
+Repository = "https://github.com/DharmikGohil/LLMTrading"
+Documentation = "https://github.com/DharmikGohil/LLMTrading/tree/main/docs"
+Changelog = "https://github.com/DharmikGohil/LLMTrading/blob/main/CHANGELOG.md"
+Issues = "https://github.com/DharmikGohil/LLMTrading/issues"
 
 [project.optional-dependencies]
 zerodha = ["kiteconnect>=5.0"]
@@ -40,6 +61,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 140
 target-version = "py311"
+extend-exclude = [".claude", "web"]   # vendored skills keep upstream style; web/ is JavaScript
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "B", "UP", "SIM"]

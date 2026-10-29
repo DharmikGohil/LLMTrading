@@ -1,0 +1,36 @@
+# Changelog
+
+All notable changes are listed here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and on the site.
+
+## [Unreleased]
+
+### Added
+- Project documentation in `docs/`, licence, contribution and security policies, CI, issue and PR templates.
+- All eleven day-trader-skill skills in `.claude/skills/`; the US review uses its SEC news, filings and
+  Congress-trade tools.
+
+## [0.2.0] - 2026-10-29
+
+### Added
+- Public site (Next.js, Vercel): overview, desks, history ledger and blotter, activity log, analyst calls,
+  per-stock pages, journal, research; dark terminal theme with a light theme; keyboard navigation.
+- Live quotes on the site every 15 seconds while a market is open (`/api/quotes`, CDN-cached).
+- US paper desk ($10,000, S&P 100) next to the India desk.
+
+### Changed
+- Work moved to the `main` branch; commits authored as the repository owner.
+- The claude.ai dashboard was retired in favour of the site.
+
+### Fixed
+- Same-day NSE board meetings missing from the event calendar; NaN Yahoo bars; scheduler monitor timing
+  after a fresh start; placeholder take-profit values shown in order notes.
+
+## [0.1.0] - 2026-10-28
+
+### Added
+- `indtrader`: NSE calendar and ticks, Indian and US costs, momentum screen with SEPA trend template,
+  hybrid LLM veto, slow momentum book, risk limits, paper / Zerodha / OpenAlgo brokers, backtester with
+  bootstrap and walk-forward validation, NSE surveillance and results checks, corporate actions.
+- TradingAgents integration, Vibe-Trading second opinion, Claude analyst playbooks (no API key).
+- Shadow "LLM off" accounts, scorecard, graded daily reviews and lesson book.
