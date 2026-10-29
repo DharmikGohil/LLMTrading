@@ -10,3 +10,5 @@ for cfg in "${cfgs[@]}"; do
 done
 python3 scripts/combine_dashboard.py public/raw public >/dev/null
 echo "dashboard data in public/: $(ls public/*.json | tr '\n' ' ')"
+# keep the Next.js site's snapshot (web/data) in step; Vercel rebuilds on push
+node web/scripts/sync-data.mjs

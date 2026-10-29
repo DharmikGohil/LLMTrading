@@ -73,7 +73,10 @@ def export(s: Settings, out_dir: Path, prices_fn) -> dict[str, list]:
                               "last_price": round(px, 2), "value": round(p["qty"] * px, 2),
                               "unrealized": round(p["qty"] * (px - p["avg"]), 2),
                               "unrealized_pct": round(100 * (px / p["avg"] - 1), 2) if p["avg"] else None,
-                              "stop": p.get("stop"), "target": p.get("target"), "opened": p.get("opened")})
+                              "stop": p.get("stop"),
+                              # the slow book has no real target (take_profit_rr=100): don't show a fake one
+                              "target": p.get("target") if p.get("target") and p["target"] <= 3 * px else None,
+                              "opened": p.get("opened")})
         for row in _read_json(d / "decisions.json", [])[-300:]:
             decisions.append({"market": market, "book": book, **row})
         # intraday equity log (appended each export)

@@ -82,7 +82,8 @@ def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSn
             plan.notes.append(f"{rating} but RSI {tech.rsi:.0f} > {s.rsi_max_entry:.0f}; not chasing")
             return plan
         plan.target_qty, plan.stop, plan.take_profit = sized, stop, take
-        plan.notes.append(f"{rating}: add to {sized} (alloc {alloc_qty}, risk-sized {risk_qty}) stop {stop} tp {take}")
+        tp = f" tp {take}" if s.take_profit_rr < 50 else ""   # slow book: no real target
+        plan.notes.append(f"{rating}: add to {sized} (alloc {alloc_qty}, risk-sized {risk_qty}) stop {stop}{tp}")
     elif rating in BEARISH:
         if current_qty and held_days is not None and held_days < s.min_hold_days:
             plan.notes.append(f"{rating} but held {held_days}d < min {s.min_hold_days}d; keeping (stop still active)")
