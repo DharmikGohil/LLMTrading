@@ -1,5 +1,5 @@
 {
-  "cash": 329.1570157623301,
+  "cash": 140.04250148773295,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -28,6 +28,10 @@
     "ABBV": {
       "qty": 1,
       "avg": 292.1359852294922
+    },
+    "KO": {
+      "qty": 2,
+      "avg": 94.55725713729858
     }
   },
   "orders": [
@@ -106,6 +110,17 @@
       "status": "COMPLETE",
       "price": 292.14,
       "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-30T09:53:12-04:00",
+      "id": "PAPER-12d7ae1c84",
+      "symbol": "KO",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 94.56,
+      "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.95",
       "message": "charges $0.00"
     }
   ],

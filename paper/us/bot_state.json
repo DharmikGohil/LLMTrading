@@ -43,21 +43,44 @@
     "UNP": {
       "qty": 3,
       "avg": 301.39,
-      "stop": 277.14,
+      "stop": 278.28,
       "target": 2711.11,
       "opened": "2026-10-29",
+      "buy_charges": 0.0
+    },
+    "PM": {
+      "qty": 4,
+      "avg": 211.71,
+      "stop": 191.3,
+      "target": 2252.39,
+      "opened": "2026-10-30",
+      "buy_charges": 0.0
+    },
+    "USB": {
+      "qty": 6,
+      "avg": 59.87,
+      "stop": 55.05,
+      "target": 538.56,
+      "opened": "2026-10-30",
       "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-10-29",
-    "start_equity": 10065.01,
-    "orders": 2
+    "date": "2026-10-30",
+    "start_equity": 10039.43,
+    "orders": 2,
+    "partial": false
   },
   "stopped_out": {},
   "realized_pnl": 0.0,
-  "cash": 1304.1199999999994,
+  "cash": 98.05999999999943,
   "capital": 10000.0,
-  "ca_applied": []
+  "ca_applied": [],
+  "applied_orders": [
+    "PAPER-e4231e0858",
+    "PAPER-299d24b6bc"
+  ],
+  "ca_pending": {},
+  "peak_equity": 10039.43
 }

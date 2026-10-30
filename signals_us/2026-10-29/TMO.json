@@ -1,0 +1,12 @@
+{
+  "symbol": "TMO",
+  "as_of": "2026-10-29",
+  "rating": "Buy",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Beat on 21 Oct (revenue 12.14B vs 11.95B, adj. EPS 6.68 vs 6.40; Thermo Fisher 8-K). No event until late January; trend template 7/7.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:50-04:00"
+}

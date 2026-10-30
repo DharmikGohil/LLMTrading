@@ -1,5 +1,5 @@
 {
-  "cash": 1304.029256198883,
+  "cash": 97.98651085662857,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -24,6 +24,14 @@
     "UNP": {
       "qty": 3,
       "avg": 301.3856028442383
+    },
+    "PM": {
+      "qty": 4,
+      "avg": 211.70580610656737
+    },
+    "USB": {
+      "qty": 6,
+      "avg": 59.86992015266418
     }
   },
   "orders": [
@@ -91,6 +99,28 @@
       "status": "COMPLETE",
       "price": 301.39,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-30T09:53:09-04:00",
+      "id": "PAPER-e4231e0858",
+      "symbol": "PM",
+      "side": "BUY",
+      "qty": 4,
+      "status": "COMPLETE",
+      "price": 211.71,
+      "reason": "momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: add to 4 (alloc 4, risk-sized 9) stop 191.3",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-30T09:53:09-04:00",
+      "id": "PAPER-299d24b6bc",
+      "symbol": "USB",
+      "side": "BUY",
+      "qty": 6,
+      "status": "COMPLETE",
+      "price": 59.87,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 12 (alloc 12, risk-sized 41) stop 55.05",
       "message": "charges $0.00"
     }
   ],

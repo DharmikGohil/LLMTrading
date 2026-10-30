@@ -3,7 +3,7 @@
     "LLY": {
       "qty": 1,
       "avg": 1289.69,
-      "stop": 1247.3,
+      "stop": 1253.17,
       "target": 1470.84,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -51,21 +51,35 @@
     "ABBV": {
       "qty": 1,
       "avg": 292.14,
-      "stop": 266.91,
+      "stop": 271.73,
       "target": 2799.73,
       "opened": "2026-10-29",
+      "buy_charges": 0.0
+    },
+    "KO": {
+      "qty": 2,
+      "avg": 94.56,
+      "stop": 86.95,
+      "target": 850.59,
+      "opened": "2026-10-30",
       "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-10-29",
-    "start_equity": 10185.91,
-    "orders": 2
+    "date": "2026-10-30",
+    "start_equity": 10121.78,
+    "orders": 1,
+    "partial": false
   },
   "stopped_out": {},
   "realized_pnl": 0.0,
-  "cash": 329.2499999999991,
+  "cash": 140.1299999999991,
   "capital": 10000.0,
-  "ca_applied": []
+  "ca_applied": [],
+  "applied_orders": [
+    "PAPER-12d7ae1c84"
+  ],
+  "ca_pending": {},
+  "peak_equity": 10121.78
 }

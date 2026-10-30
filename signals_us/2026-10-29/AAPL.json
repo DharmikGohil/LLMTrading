@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-10-29",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results Mon 2 Nov after the close (Apple; TIKR preview 30 Oct), 1 trading day away. Trend template 7/7 near the 52-week high, but an earnings gap inside the holding window; Nasdaq -2% this morning on Amazon and Intel earnings (Yahoo Finance live, 30 Oct).",
+  "confidence": 70.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:49-04:00"
+}

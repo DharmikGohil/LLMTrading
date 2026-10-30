@@ -268,5 +268,158 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "AAPL",
+  "price": 345.65,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (70%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "ABBV",
+  "price": 297.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "AMGN",
+  "price": 472.94,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "CSCO",
+  "price": 105.32,
+  "held": 16,
+  "target_qty": 16,
+  "decision": "momentum Sell; Sell but held 2d < min 20d; keeping (stop still active)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "CVX",
+  "price": 234.79,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "JNJ",
+  "price": 278.41,
+  "held": 7,
+  "target_qty": 7,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "KO",
+  "price": 94.51,
+  "held": 21,
+  "target_qty": 21,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "LLY",
+  "price": 1424.52,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "MET",
+  "price": 100.27,
+  "held": 15,
+  "target_qty": 15,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (60%) vetoes the buy; Hold: keep 15"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "MSFT",
+  "price": 522.11,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "PFE",
+  "price": 30.48,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "PM",
+  "price": 211.71,
+  "held": 0,
+  "target_qty": 4,
+  "decision": "momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: add to 4 (alloc 4, risk-sized 9) stop 191.3"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "TMO",
+  "price": 705.11,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: already at/above size (1 >= 1)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "UNH",
+  "price": 413.46,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "UNP",
+  "price": 302.48,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "USB",
+  "price": 59.84,
+  "held": 0,
+  "target_qty": 12,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 12 (alloc 12, risk-sized 41) stop 55.05"
+ },
+ {
+  "time": "2026-10-30T09:53:09-04:00",
+  "as_of": "2026-10-29",
+  "symbol": "XOM",
+  "price": 187.26,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
  }
 ]

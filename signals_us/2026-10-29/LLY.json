@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-10-29",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results out 29 Oct: revenue +39% to 24.4B, guidance raised; stock +7% to a record (Lilly 8-K; TIKR 30 Oct). Event passed; post-earnings drift supports holding. One share (about 1,374) exceeds the 1,000 slot of a 10k account.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:49-04:00"
+}

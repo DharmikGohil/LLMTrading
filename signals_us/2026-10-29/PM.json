@@ -1,0 +1,12 @@
+{
+  "symbol": "PM",
+  "as_of": "2026-10-29",
+  "rating": "Buy",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 2026 (21 Oct): net revenue +5.5% to about 11.44B, record operating income +14.1%, US revenue +22.7% on nicotine pouches, dividend +8.8% to 1.60, FY adj. EPS narrowed to 8.29-8.44 (PMI release via PR Newswire). Event passed; trend template 7/7.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:50-04:00"
+}

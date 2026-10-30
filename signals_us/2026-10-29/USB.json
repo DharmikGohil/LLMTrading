@@ -1,0 +1,12 @@
+{
+  "symbol": "USB",
+  "as_of": "2026-10-29",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Reported Q3 on 15 Oct (scheduled release); figures not verified in this review. New to the screen; no event ahead (management at an industry conference). Size down until the numbers are checked.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:50-04:00"
+}

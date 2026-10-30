@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-10-29",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held; fell out of the top 10 (rank 11+). Fiscal Q1 results expected mid-November, not in the next week. Weakest relative strength of the holdings: no adding.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T09:52:52-04:00"
+}
