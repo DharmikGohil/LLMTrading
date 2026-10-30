@@ -120,6 +120,7 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 | [CLI reference](docs/cli.md) | Every `indtrader` command |
 | [Going live](docs/live-trading.md) | Brokers, data sources, SEBI algo rules, a checklist before real money |
 | [Research](docs/research.md) | The evidence behind the design, and the projects it borrows from |
+| [Audit](docs/audit.md) | What was taken from each project, what was left out, and why |
 | [Roadmap](docs/roadmap.md) | What comes next |
 
 ## Contributing

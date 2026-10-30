@@ -1,5 +1,22 @@
 # Project skills
 
+Two third-party packs, copied unchanged, each under its MIT licence.
+
+## finance-skills (himself65)
+
+From [himself65/finance-skills](https://github.com/himself65/finance-skills) (commit a085078, MIT, see
+`LICENSE-finance-skills`). Yahoo Finance based; no keys.
+
+| Skill | Role here |
+|---|---|
+| `sepa-strategy` | Minervini's SEPA method. Its trend template is implemented in `indtrader/screen.py` (`trend_template`) and shown by `indtrader brief`. |
+| `earnings-preview`, `estimate-analysis` | Analyst review: consensus, beat/miss record and estimate revisions before a stock's results. |
+| `stock-correlation` | Portfolio check: how closely the holdings move together. |
+| `stock-liquidity` | Spread, ADTV and market-impact check before sizing up. |
+| `options-payoff` | Payoff and Greeks of an options position (for the planned options desk). |
+
+## day-trader-skill (Jakeschincariol)
+
 All eleven skills from [Jakeschincariol/day-trader-skill](https://github.com/Jakeschincariol/day-trader-skill)
 (commit 3d0f4ef, MIT, see `LICENSE-day-trader-skill`), copied unchanged with their offline test
 suite (`tests/`, run `python3 -m unittest discover -s tests` from this folder). The pack's own

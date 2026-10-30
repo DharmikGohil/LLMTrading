@@ -6,8 +6,8 @@ sublicense or sell the software or any part of it, in whole or in part, without 
 permission of the copyright holder.
 
 Exceptions: third-party material keeps its own licence.
-  - .claude/skills/ : day-trader-skill by Jake Schincariol, MIT licence
-                      (see .claude/skills/LICENSE-day-trader-skill)
+  - .claude/skills/ : day-trader-skill by Jake Schincariol and finance-skills by himself65,
+                      both MIT (see .claude/skills/LICENSE-day-trader-skill and LICENSE-finance-skills)
   - Dependencies installed by pip or npm are governed by their own licences.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. NOTHING IN THIS

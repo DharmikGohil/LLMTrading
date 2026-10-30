@@ -35,6 +35,9 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
   `python3 .claude/skills/trader-news/news.py --tickers A,B,C --hours 168` (headlines and 8-Ks),
   `python3 .claude/skills/trader-analyst/facts.py A B` for any that reported in the last 30 days (filed numbers), and
   `python3 .claude/skills/trader-pelosi/ptr.py` for Congress trades in them (context only).
+  For a candidate reporting within ~10 trading days, follow `.claude/skills/earnings-preview` and
+  `.claude/skills/estimate-analysis` (consensus, beat/miss record, revision trend). Once a week at the close run,
+  check how correlated the holdings are with `.claude/skills/stock-correlation`.
   Then search the web for anything they miss and **the next earnings date** of each candidate. Apply the red-flag
   rules of `analyst/PLAYBOOK.md` section 3 (US equivalents: SEC/FDA/FTC actions, guidance cuts, downgrade clusters,
   insider selling); earnings within 3 trading days = **Underweight**. Submit each rating with
