@@ -14,7 +14,7 @@ strategy:
   min_hold_days: 20
   reentry_cooldown_days: 20
 risk:
-  capital: 1000000              # Rs 10 lakh paper (about $10k)
+  capital: 100000               # Rs 1 lakh paper (decided 30 Oct 2026; the Rs 10 lakh run is in paper/archive/)
   max_position_pct: 0.10
   risk_per_trade_pct: 0.02
   max_open_positions: 10

@@ -5,7 +5,11 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 
 ## [Unreleased]
 
+### Changed
+- Licence: all rights reserved (was MIT for a few hours on 29 October 2026).
+
 ### Added
+- Volatility targeting, a drawdown circuit breaker and the deflated Sharpe ratio (off by default).
 - Project documentation in `docs/`, licence, contribution and security policies, CI, issue and PR templates.
 - All eleven day-trader-skill skills in `.claude/skills/`; the US review uses its SEC news, filings and
   Congress-trade tools.

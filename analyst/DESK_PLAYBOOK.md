@@ -6,7 +6,7 @@ Two paper desks run in the cloud through scheduled Claude sessions on the
 
 | Desk | Config | Capital | Runs (local exchange time) |
 |---|---|---|---|
-| **India (NSE)** | `config/india_paper.yaml` | ₹10,00,000 | analyst 07:40 IST (`analyst/PLAYBOOK.md`), **open 09:35**, **midday 12:35**, **close 15:05** |
+| **India (NSE)** | `config/india_paper.yaml` | ₹1,00,000 | analyst 07:40 IST (`analyst/PLAYBOOK.md`), **open 09:35**, **midday 12:35**, **close 15:05** |
 | **US** | `config/us_paper.yaml` | $10,000 | **open 09:50 New York** (review + trade), **midday 12:50**, **close 15:45** |
 
 State lives in git (`paper/india/`, `paper/us/`) because each run may start in a

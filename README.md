@@ -9,7 +9,7 @@ shrink a buy. A control account trades the same screen without the LLM, so the L
 not assumed. Everything runs in paper mode, and every decision is published.
 
 [![CI](https://github.com/DharmikGohil/LLMTrading/actions/workflows/ci.yml/badge.svg)](https://github.com/DharmikGohil/LLMTrading/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: all rights reserved](https://img.shields.io/badge/license-all%20rights%20reserved-lightgrey.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776ab.svg)](pyproject.toml)
 [![Live desk](https://img.shields.io/badge/live%20desk-llmtrading.dharmikgohil.in-ff9e1b.svg)](https://llmtrading.dharmikgohil.in)
 
@@ -124,12 +124,13 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 
 ## Contributing
 
-Issues and pull requests are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+Issues and suggestions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and the
 [Code of Conduct](CODE_OF_CONDUCT.md). Security issues: see [SECURITY.md](SECURITY.md).
 
 ## License
 
-[MIT](LICENSE). Bundled third-party skills keep their own MIT licence
+Copyright © 2026 Dharmik Gohil. **All rights reserved.** The code is public to read and audit, not to
+reuse: see [LICENSE](LICENSE). Bundled third-party skills keep their own MIT licence
 ([`.claude/skills/LICENSE-day-trader-skill`](.claude/skills/LICENSE-day-trader-skill)).
 
 ## Acknowledgements

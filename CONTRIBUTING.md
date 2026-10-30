@@ -1,6 +1,8 @@
 # Contributing
 
-Thanks for helping. This project trades (paper) money on its own, so changes are held to a simple rule:
+Thanks for helping. The code is copyright Dharmik Gohil, all rights reserved (see [LICENSE](LICENSE)).
+By submitting a contribution you agree that it may be used, changed and distributed as part of this
+project under its licence. This project trades (paper) money on its own, so changes are held to a simple rule:
 **nothing that touches trading behaviour lands without a test, and nothing that changes strategy numbers
 lands without evidence.**
 

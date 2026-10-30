@@ -2,7 +2,7 @@
   "name": "llmtrading-desk",
   "private": true,
   "version": "0.2.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
     "prebuild": "node scripts/sync-data.mjs",
@@ -13,8 +13,10 @@
   "dependencies": {
     "marked": "18.1.2",
     "next": "15.5.27",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }
