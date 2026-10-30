@@ -1,0 +1,12 @@
+{
+  "symbol": "ZYDUSLIFE",
+  "as_of": "2026-10-29",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results Wed 4 Nov (NSE board meeting), 3 trading days away: binary event inside the entry window. Trend template 7/7 but -2.4% over 1m. Wait for the print.",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T11:04:10+05:30"
+}

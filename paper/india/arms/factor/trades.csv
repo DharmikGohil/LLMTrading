@@ -1,0 +1,8 @@
+time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
+2026-10-30T11:04:39+05:30,HAL,BUY,1,4832.0,COMPLETE,1,4819.81,PAPER-fbb763ebff,"momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4334.25",charges Rs 5.72
+2026-10-30T11:04:39+05:30,TVSMOTOR,BUY,1,4258.0,COMPLETE,1,4247.22,PAPER-6aca3a61ce,"momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.27",charges Rs 5.04
+2026-10-30T11:04:39+05:30,ADANIPORTS,BUY,2,1848.6,COMPLETE,2,1843.92,PAPER-0da79158df,"momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.74",charges Rs 4.38
+2026-10-30T11:04:40+05:30,ZYDUSLIFE,BUY,4,1233.7,COMPLETE,4,1230.62,PAPER-5465948968,"momentum: Buy; bear regime: size x0.5; Buy: add to 4 (alloc 8, risk-sized 15) stop 1100.56",charges Rs 5.84
+2026-10-30T11:04:40+05:30,ETERNAL,BUY,14,345.7,COMPLETE,14,344.67,PAPER-5cee339f07,"momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.77",charges Rs 5.73
+2026-10-30T11:04:41+05:30,FEDERALBNK,BUY,14,346.3,COMPLETE,14,345.37,PAPER-ac4f1349bf,"momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.19",charges Rs 5.74
+2026-10-30T11:04:42+05:30,NYKAA,BUY,14,350.95,COMPLETE,14,350.07,PAPER-b4e83a264a,"momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",charges Rs 5.82

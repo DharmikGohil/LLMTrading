@@ -1,0 +1,92 @@
+[
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ADANIPORTS",
+  "price": 1843.0,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.74"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "BOSCHLTD",
+  "price": 47560.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "DIVISLAB",
+  "price": 9799.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ETERNAL",
+  "price": 344.65,
+  "held": 0,
+  "target_qty": 14,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.77"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "FEDERALBNK",
+  "price": 345.25,
+  "held": 0,
+  "target_qty": 14,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.19"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "HAL",
+  "price": 4817.4,
+  "held": 0,
+  "target_qty": 1,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4334.25"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "LAURUSLABS",
+  "price": 2356.6,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 8) stop 2109.02"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "NYKAA",
+  "price": 349.9,
+  "held": 0,
+  "target_qty": 14,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "TVSMOTOR",
+  "price": 4245.1,
+  "held": 0,
+  "target_qty": 1,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.27"
+ },
+ {
+  "time": "2026-10-30T11:04:39+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ZYDUSLIFE",
+  "price": 1230.0,
+  "held": 0,
+  "target_qty": 4,
+  "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 4 (alloc 8, risk-sized 15) stop 1100.56"
+ }
+]

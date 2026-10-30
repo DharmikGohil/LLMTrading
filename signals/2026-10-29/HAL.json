@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-10-29",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results 12 Nov (NSE board meeting), outside the entry window. Trend template 7/7, 4.5% below the 52-week high, flat this week. No negative filings found.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T11:04:09+05:30"
+}

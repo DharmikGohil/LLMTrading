@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-10-29",
+  "rating": "Buy",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 FY27 (28 Oct, NSE press release): record revenue Rs 17,103 cr (+44%), EBITDA Rs 2,219 cr (+47%, margin 13.0%), PAT Rs 1,377 cr (+52%). Also a composite scheme (Harita ARC acquisition and a demerger) needing approvals: long-dated, not a near-term event. Trend template 7/7, 4.2% below the 52-week high.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T11:04:08+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-10-29",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 FY27 reported 16 Oct (record net profit Rs 1,386 cr, +45% y/y; NIM 3.32%; gross NPA 1.32%, prior review). No event ahead; trend template 7/7, 6% below the 52-week high, flat this week.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T11:04:08+05:30"
+}

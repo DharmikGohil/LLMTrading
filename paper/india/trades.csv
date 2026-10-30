@@ -1,0 +1,6 @@
+time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
+2026-10-30T11:04:32+05:30,HAL,BUY,1,4834.5,COMPLETE,1,4819.21,PAPER-915cdcfff1,"momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4336.85",charges Rs 5.72
+2026-10-30T11:04:33+05:30,TVSMOTOR,BUY,1,4258.0,COMPLETE,1,4247.72,PAPER-03995ed7d1,"momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.07",charges Rs 5.04
+2026-10-30T11:04:34+05:30,ADANIPORTS,BUY,2,1848.3,COMPLETE,2,1843.92,PAPER-1f05a476c9,"momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.44",charges Rs 4.38
+2026-10-30T11:04:36+05:30,ETERNAL,BUY,14,345.85,COMPLETE,14,344.77,PAPER-cc26c39e0b,"momentum Buy; LLM: claude-analyst Overweight (56%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.92",charges Rs 5.73
+2026-10-30T11:04:37+05:30,FEDERALBNK,BUY,14,346.2,COMPLETE,14,345.42,PAPER-5d7e1a7e83,"momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.09",charges Rs 5.74

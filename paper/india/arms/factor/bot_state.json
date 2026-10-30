@@ -1,0 +1,82 @@
+{
+  "positions": {
+    "HAL": {
+      "qty": 1,
+      "avg": 4819.81,
+      "stop": 4334.25,
+      "target": 53132.75,
+      "opened": "2026-10-30",
+      "buy_charges": 5.72
+    },
+    "TVSMOTOR": {
+      "qty": 1,
+      "avg": 4247.22,
+      "stop": 3759.27,
+      "target": 52828.4,
+      "opened": "2026-10-30",
+      "buy_charges": 5.04
+    },
+    "ADANIPORTS": {
+      "qty": 2,
+      "avg": 1843.92,
+      "stop": 1640.74,
+      "target": 22069.29,
+      "opened": "2026-10-30",
+      "buy_charges": 4.38
+    },
+    "ZYDUSLIFE": {
+      "qty": 4,
+      "avg": 1230.62,
+      "stop": 1100.56,
+      "target": 14174.05,
+      "opened": "2026-10-30",
+      "buy_charges": 5.84
+    },
+    "ETERNAL": {
+      "qty": 14,
+      "avg": 344.67,
+      "stop": 302.77,
+      "target": 4532.52,
+      "opened": "2026-10-30",
+      "buy_charges": 5.73
+    },
+    "FEDERALBNK": {
+      "qty": 14,
+      "avg": 345.37,
+      "stop": 309.19,
+      "target": 3950.85,
+      "opened": "2026-10-30",
+      "buy_charges": 5.74
+    },
+    "NYKAA": {
+      "qty": 14,
+      "avg": 350.07,
+      "stop": 306.9,
+      "target": 4650.33,
+      "opened": "2026-10-30",
+      "buy_charges": 5.82
+    }
+  },
+  "pending": [],
+  "day": {
+    "date": "2026-10-30",
+    "start_equity": 100000.0,
+    "orders": 7,
+    "partial": false
+  },
+  "stopped_out": {},
+  "realized_pnl": 0.0,
+  "applied_orders": [
+    "PAPER-fbb763ebff",
+    "PAPER-6aca3a61ce",
+    "PAPER-0da79158df",
+    "PAPER-5465948968",
+    "PAPER-5cee339f07",
+    "PAPER-ac4f1349bf",
+    "PAPER-b4e83a264a"
+  ],
+  "ca_pending": {},
+  "cash": 67722.84000000001,
+  "capital": 100000.0,
+  "peak_equity": 100000.0
+}

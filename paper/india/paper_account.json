@@ -1,7 +1,84 @@
 {
-  "cash": 100000.0,
-  "positions": {},
-  "orders": [],
+  "cash": 77555.88686221314,
+  "positions": {
+    "HAL": {
+      "qty": 1,
+      "avg": 4819.208204589843
+    },
+    "TVSMOTOR": {
+      "qty": 1,
+      "avg": 4247.722897705078
+    },
+    "ADANIPORTS": {
+      "qty": 2,
+      "avg": 1843.9215
+    },
+    "ETERNAL": {
+      "qty": 14,
+      "avg": 344.77230610656744
+    },
+    "FEDERALBNK": {
+      "qty": 14,
+      "avg": 345.422625
+    }
+  },
+  "orders": [
+    {
+      "time": "2026-10-30T11:04:32+05:30",
+      "id": "PAPER-915cdcfff1",
+      "symbol": "HAL",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 4819.21,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4336.85",
+      "message": "charges Rs 5.72"
+    },
+    {
+      "time": "2026-10-30T11:04:33+05:30",
+      "id": "PAPER-03995ed7d1",
+      "symbol": "TVSMOTOR",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 4247.72,
+      "reason": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.07",
+      "message": "charges Rs 5.04"
+    },
+    {
+      "time": "2026-10-30T11:04:34+05:30",
+      "id": "PAPER-1f05a476c9",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 1843.92,
+      "reason": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.44",
+      "message": "charges Rs 4.38"
+    },
+    {
+      "time": "2026-10-30T11:04:36+05:30",
+      "id": "PAPER-cc26c39e0b",
+      "symbol": "ETERNAL",
+      "side": "BUY",
+      "qty": 14,
+      "status": "COMPLETE",
+      "price": 344.77,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.92",
+      "message": "charges Rs 5.73"
+    },
+    {
+      "time": "2026-10-30T11:04:37+05:30",
+      "id": "PAPER-5d7e1a7e83",
+      "symbol": "FEDERALBNK",
+      "side": "BUY",
+      "qty": 14,
+      "status": "COMPLETE",
+      "price": 345.42,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.09",
+      "message": "charges Rs 5.74"
+    }
+  ],
   "realized_pnl": 0.0,
-  "charges": 0.0
+  "charges": 26.61
 }

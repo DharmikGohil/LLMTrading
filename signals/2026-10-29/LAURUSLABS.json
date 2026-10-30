@@ -1,0 +1,12 @@
+{
+  "symbol": "LAURUSLABS",
+  "as_of": "2026-10-29",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results are out (board outcome 29 Oct 14:55, NSE): H1 revenue Rs 4,233 cr, EBITDA Rs 1,406 cr at 33.2% margin, with the Galenvs Sciences acquisition (press release 29 Oct, NSE). Event risk passed; trend template 7/7 at the 52-week high, RS +31% over 3m. Risk: extended (RSI 72, +12% this week).",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-10-30T11:04:08+05:30"
+}

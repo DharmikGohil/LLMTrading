@@ -1,0 +1,92 @@
+[
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ADANIPORTS",
+  "price": 1842.7,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.44"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "BOSCHLTD",
+  "price": 47560.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "DIVISLAB",
+  "price": 9799.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ETERNAL",
+  "price": 344.8,
+  "held": 0,
+  "target_qty": 14,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.92"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "FEDERALBNK",
+  "price": 345.15,
+  "held": 0,
+  "target_qty": 14,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.09"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "HAL",
+  "price": 4820.0,
+  "held": 0,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4336.85"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "LAURUSLABS",
+  "price": 2356.7,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 8) stop 2109.12"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "NYKAA",
+  "price": 350.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "TVSMOTOR",
+  "price": 4244.9,
+  "held": 0,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.07"
+ },
+ {
+  "time": "2026-10-30T11:04:26+05:30",
+  "as_of": "2026-10-29",
+  "symbol": "ZYDUSLIFE",
+  "price": 1229.9,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ }
+]
