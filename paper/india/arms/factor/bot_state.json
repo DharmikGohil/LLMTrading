@@ -78,5 +78,6 @@
   "ca_pending": {},
   "cash": 67722.84000000001,
   "capital": 100000.0,
-  "peak_equity": 100000.0
+  "peak_equity": 100000.0,
+  "ca_applied": []
 }
