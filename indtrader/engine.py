@@ -26,7 +26,7 @@ from indtrader.notify import notify
 from indtrader.risk import AccountView, check_buy, check_sell
 from indtrader.signals.llm_agent import SignalStore, TradingAgentsAnalyzer
 from indtrader.signals.technical import is_bear_market, snapshot
-from indtrader.strategy import BULLISH, combine_opinions, plan_target, protective_levels
+from indtrader.strategy import BULLISH, combine_opinions, plan_target, protective_levels, vol_scale
 
 log = logging.getLogger(__name__)
 
@@ -483,7 +483,27 @@ class Engine:
             note += f"; {note2}" if note2 else ""
         return rating, note
 
-    def _plan(self, sym: str, today: date, as_of: date, price: float, capital: float, bear: bool):
+    def _exposure_scale(self, as_of: date, equity: float) -> float:
+        """Drawdown circuit breaker (risk.max_drawdown_pct) and volatility target (strategy.vol_target)."""
+        peak = max(self.state.data.get("peak_equity", self.s.risk.capital), equity)
+        self.state.data["peak_equity"] = round(peak, 2)
+        dd = self.s.risk.max_drawdown_pct
+        if dd and equity < peak * (1 - dd):
+            log.warning("equity %.2f is %.1f%% below its peak %.2f: circuit breaker, no new buys",
+                        equity, 100 * (1 - equity / peak), peak)
+            return 0.0
+        st = self.s.strategy
+        if not st.vol_target:
+            return 1.0
+        try:
+            idx = market_data.recent_history(st.regime_index, as_of, lookback_days=int(st.vol_lookback * 1.6) + 10)
+        except Exception as exc:
+            log.warning("index %s unavailable for the volatility target (%s); no scaling", st.regime_index, exc)
+            return 1.0
+        return vol_scale(idx["Close"], st)
+
+    def _plan(self, sym: str, today: date, as_of: date, price: float, capital: float, bear: bool,
+              scale: float = 1.0):
         sig = self.store.latest(sym, as_of.isoformat())
         if sig and (as_of - date.fromisoformat(sig.as_of)).days > self.s.strategy.max_signal_age_days:
             sig = None
@@ -495,7 +515,7 @@ class Engine:
         plan = plan_target(sym, rating, price, tech, self.state.qty(sym), capital,
                            self.s.strategy, self.s.risk,
                            sig.stop_loss if sig else None, sig.price_target if sig else None,
-                           bear_market=bear, held_days=held_days)
+                           bear_market=bear, held_days=held_days, exposure_scale=scale)
         if opinion_note:
             plan.notes.insert(0, opinion_note)
         if pos and pos.get("stop"):   # trail the stop of an existing position (never lower it)
@@ -522,6 +542,7 @@ class Engine:
         acct = self._account(prices)
         capital = min(self.s.risk.capital, acct.equity)
         bear = self._bear_market(as_of)
+        scale = self._exposure_scale(as_of, acct.equity)
         plans = []
         for sym in symbols:
             if self.state.pending_for(sym):
@@ -531,7 +552,7 @@ class Engine:
                 log.warning("%s: no valid price; skipping", sym)
                 continue
             try:
-                plan, tech = self._plan(sym, today, as_of, prices[sym], capital, bear)
+                plan, tech = self._plan(sym, today, as_of, prices[sym], capital, bear, scale)
             except Exception as exc:
                 log.warning("%s: could not plan (%s); skipping", sym, exc)
                 continue

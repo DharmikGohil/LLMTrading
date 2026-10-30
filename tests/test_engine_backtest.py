@@ -97,3 +97,13 @@ def test_second_opinion_missing_blocks_buy(setup, settings):
     eng, broker, _ = setup
     settings.second_opinion.enabled = True                       # on_missing=hold by default
     assert eng.rebalance(date(2026, 10, 28)) == []
+
+
+def test_drawdown_circuit_breaker_blocks_new_buys(setup, settings):
+    eng, broker, prices = setup
+    settings.risk.max_drawdown_pct = 0.10
+    eng.state.data["peak_equity"] = settings.risk.capital / 0.85     # equity is 15% below its peak
+    assert eng.rebalance(date(2026, 10, 28)) == []
+    assert "AAA" not in eng.state.positions
+    eng.state.data["peak_equity"] = settings.risk.capital            # back at the peak: buys resume
+    assert [e["symbol"] for e in eng.rebalance(date(2026, 10, 28))] == ["AAA"]

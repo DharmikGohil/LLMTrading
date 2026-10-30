@@ -19,5 +19,6 @@ risk:
   risk_per_trade_pct: 0.02
   max_open_positions: 10
   max_per_sector: 3
+  max_drawdown_pct: 0.10         # circuit breaker: no new buys while 10%+ below the peak (journal/changes.md, 30 Oct)
 broker: {name: paper, paper_state_file: paper/india/paper_account.json}
 shadow_arms: [factor]
