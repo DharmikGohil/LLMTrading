@@ -136,12 +136,20 @@
   "id": "US:main:16"
  },
  {
+  "time": "2026-10-30T05:37:04-04:00",
+  "market": "US",
+  "book": "main",
+  "equity": 10044.6,
+  "index_close": 7720.39,
+  "id": "US:main:17"
+ },
+ {
   "time": "2026-10-28T14:15:53-04:00",
   "market": "US",
   "book": "factor",
   "equity": 9994.56,
   "index_close": 7726.24,
-  "id": "US:factor:17"
+  "id": "US:factor:18"
  },
  {
   "time": "2026-10-28T14:16:23-04:00",
@@ -149,7 +157,7 @@
   "book": "factor",
   "equity": 9995.0,
   "index_close": 7724.77,
-  "id": "US:factor:18"
+  "id": "US:factor:19"
  },
  {
   "time": "2026-10-28T14:17:02-04:00",
@@ -157,7 +165,7 @@
   "book": "factor",
   "equity": 9996.36,
   "index_close": 7726.05,
-  "id": "US:factor:19"
+  "id": "US:factor:20"
  },
  {
   "time": "2026-10-28T14:24:10-04:00",
@@ -165,7 +173,7 @@
   "book": "factor",
   "equity": 9990.56,
   "index_close": 7726.87,
-  "id": "US:factor:20"
+  "id": "US:factor:21"
  },
  {
   "time": "2026-10-28T14:31:04-04:00",
@@ -173,7 +181,7 @@
   "book": "factor",
   "equity": 9992.56,
   "index_close": 7736.77,
-  "id": "US:factor:21"
+  "id": "US:factor:22"
  },
  {
   "time": "2026-10-28T14:35:07-04:00",
@@ -181,7 +189,7 @@
   "book": "factor",
   "equity": 9988.67,
   "index_close": 7738.65,
-  "id": "US:factor:22"
+  "id": "US:factor:23"
  },
  {
   "time": "2026-10-28T15:46:54-04:00",
@@ -189,7 +197,7 @@
   "book": "factor",
   "equity": 9998.96,
   "index_close": 7741.13,
-  "id": "US:factor:23"
+  "id": "US:factor:24"
  },
  {
   "time": "2026-10-28T15:47:13-04:00",
@@ -197,7 +205,7 @@
   "book": "factor",
   "equity": 9998.39,
   "index_close": 7741.24,
-  "id": "US:factor:24"
+  "id": "US:factor:25"
  },
  {
   "time": "2026-10-29T00:06:39-04:00",
@@ -205,7 +213,7 @@
   "book": "factor",
   "equity": 9991.67,
   "index_close": 7743.98,
-  "id": "US:factor:25"
+  "id": "US:factor:26"
  },
  {
   "time": "2026-10-29T00:14:18-04:00",
@@ -213,7 +221,7 @@
   "book": "factor",
   "equity": 9991.67,
   "index_close": 7743.98,
-  "id": "US:factor:26"
+  "id": "US:factor:27"
  },
  {
   "time": "2026-10-29T03:10:36-04:00",
@@ -221,7 +229,7 @@
   "book": "factor",
   "equity": 9991.67,
   "index_close": 7743.98,
-  "id": "US:factor:27"
+  "id": "US:factor:28"
  },
  {
   "time": "2026-10-29T05:36:49-04:00",
@@ -229,7 +237,7 @@
   "book": "factor",
   "equity": 9991.67,
   "index_close": 7743.98,
-  "id": "US:factor:28"
+  "id": "US:factor:29"
  },
  {
   "time": "2026-10-29T09:56:30-04:00",
@@ -237,7 +245,7 @@
   "book": "factor",
   "equity": 10179.97,
   "index_close": 7703.62,
-  "id": "US:factor:29"
+  "id": "US:factor:30"
  },
  {
   "time": "2026-10-29T12:52:04-04:00",
@@ -245,7 +253,7 @@
   "book": "factor",
   "equity": 10130.37,
   "index_close": 7713.56,
-  "id": "US:factor:30"
+  "id": "US:factor:31"
  },
  {
   "time": "2026-10-29T23:11:37-04:00",
@@ -253,7 +261,7 @@
   "book": "factor",
   "equity": 10127.91,
   "index_close": 7720.39,
-  "id": "US:factor:31"
+  "id": "US:factor:32"
  },
  {
   "time": "2026-10-30T01:34:52-04:00",
@@ -261,7 +269,7 @@
   "book": "factor",
   "equity": 10127.91,
   "index_close": 7720.39,
-  "id": "US:factor:32"
+  "id": "US:factor:33"
  },
  {
   "time": "2026-10-30T03:08:39-04:00",
@@ -269,7 +277,15 @@
   "book": "factor",
   "equity": 10127.91,
   "index_close": 7720.39,
-  "id": "US:factor:33"
+  "id": "US:factor:34"
+ },
+ {
+  "time": "2026-10-30T05:37:04-04:00",
+  "market": "US",
+  "book": "factor",
+  "equity": 10127.91,
+  "index_close": 7720.39,
+  "id": "US:factor:35"
  },
  {
   "time": "2026-10-30T08:41:41+05:30",
@@ -296,12 +312,20 @@
   "id": "India:main:2"
  },
  {
+  "time": "2026-10-30T15:07:08+05:30",
+  "market": "India",
+  "book": "main",
+  "equity": 99820.66,
+  "index_close": 23027.35,
+  "id": "India:main:3"
+ },
+ {
   "time": "2026-10-30T11:04:56+05:30",
   "market": "India",
   "book": "factor",
   "equity": 99941.94,
   "index_close": 22988.3,
-  "id": "India:factor:3"
+  "id": "India:factor:4"
  },
  {
   "time": "2026-10-30T12:38:43+05:30",
@@ -309,6 +333,14 @@
   "book": "factor",
   "equity": 100045.14,
   "index_close": 23090.25,
-  "id": "India:factor:4"
+  "id": "India:factor:5"
+ },
+ {
+  "time": "2026-10-30T15:07:08+05:30",
+  "market": "India",
+  "book": "factor",
+  "equity": 99897.14,
+  "index_close": 23027.35,
+  "id": "India:factor:6"
  }
 ]
