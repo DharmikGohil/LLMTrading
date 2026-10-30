@@ -71,6 +71,14 @@ class PaperBroker(Broker):
         self.state["charges"] += charges
         return self._record(order, OrderResult(oid, "COMPLETE", qty, round(fill, 2), f"charges {'$' if is_us() else 'Rs '}{charges:.2f}"))
 
+    def apply_split(self, symbol: str, factor: float) -> None:
+        """Split/bonus on the ex-date: more shares at a proportionally lower average."""
+        pos = self.state["positions"].get(symbol)
+        if pos and pos["qty"]:
+            pos["qty"] = int(round(pos["qty"] * factor))
+            pos["avg"] = pos["avg"] / factor
+            self._save()
+
     def _record(self, order: Order, result: OrderResult) -> OrderResult:
         self.state["orders"].append({
             "time": now_ist().isoformat(timespec="seconds"), "id": result.order_id,

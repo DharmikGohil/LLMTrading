@@ -41,8 +41,9 @@ class CostModel:
         known = set(cls.__dataclass_fields__)
         return cls(**{k: v for k, v in (data or {}).items() if k in known})
 
-    def charges(self, side: str, quantity: int, price: float, product: str = "CNC") -> float:
-        """Total charges in rupees for one executed order."""
+    def charges(self, side: str, quantity: int, price: float, product: str = "CNC", dp: bool = True) -> float:
+        """Total charges in rupees for one executed order. `dp=False` skips the depository charge
+        (it is levied once per stock per day, not per order)."""
         turnover = abs(quantity) * price
         if turnover == 0:
             return 0.0
@@ -63,7 +64,7 @@ class CostModel:
             brokerage = turnover * self.delivery_brokerage_pct
             stt = turnover * self.stt_delivery_pct
             stamp = turnover * self.stamp_delivery_pct if buy else 0.0
-            dp = 0.0 if buy else self.dp_charge_per_sell
+            dp = 0.0 if buy or not dp else self.dp_charge_per_sell
 
         exchange = turnover * self.exchange_txn_pct
         sebi = turnover * self.sebi_pct

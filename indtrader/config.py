@@ -107,6 +107,7 @@ class RiskSettings(BaseModel):
     max_gross_exposure_pct: float = 1.0       # no leverage on CNC
     max_daily_loss_pct: float = 0.03          # kill switch: stop new entries for the day
     max_drawdown_pct: float | None = None     # circuit breaker: no new buys while equity is this far below its peak
+    stale_exit_s: int = 120                   # a stop/target sell still working after this long is cancelled and re-priced
     max_orders_per_day: int = 30
     min_order_value: float = 1000.0
     limit_buffer_pct: float = 0.003           # marketable LIMIT = LTP +/- buffer

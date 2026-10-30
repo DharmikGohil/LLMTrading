@@ -8,11 +8,13 @@ Your static IP must be whitelisted in the Kite developer console.
 
 from __future__ import annotations
 
+import logging
 import os
 from pathlib import Path
 
 from indtrader.brokers.base import Broker, Holding, Order, OrderResult
 
+log = logging.getLogger(__name__)
 TOKEN_FILE = Path("state/kite_access_token")
 
 
@@ -143,6 +145,14 @@ class ZerodhaBroker(Broker):
     def order_status(self, order_id: str) -> OrderResult | None:
         hist = self._call("order_history", order_id)
         return _result_from_order(hist[-1]) if hist else None
+
+    def cancel_order(self, order_id: str) -> bool:
+        try:
+            self._call("cancel_order", variety="regular", order_id=order_id)
+            return True
+        except Exception as exc:
+            log.warning("cancel %s failed: %s", order_id, exc)
+            return False
 
     def find_order(self, symbol: str, side: str, tag: str) -> OrderResult | None:
         mine = [o for o in self._call("orders")

@@ -1,7 +1,7 @@
 {
   "name": "llmtrading-desk",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "UNLICENSED",
   "scripts": {
     "sync": "node scripts/sync-data.mjs",

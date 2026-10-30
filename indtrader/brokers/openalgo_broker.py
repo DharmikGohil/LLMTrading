@@ -95,6 +95,14 @@ class OpenAlgoBroker(Broker):
         return OrderResult(order_id, status, int(float(d.get("quantity", 0))) if status == "COMPLETE" else 0,
                            float(d.get("average_price") or d.get("price") or 0) or None)
 
+    def cancel_order(self, order_id: str) -> bool:
+        try:
+            self._ok(self.client.cancelorder(order_id=order_id, strategy=self.strategy))
+            return True
+        except Exception as exc:
+            log.warning("OpenAlgo cancel %s failed: %s", order_id, exc)
+            return False
+
     def find_order(self, symbol: str, side: str, tag: str) -> OrderResult | None:
         """Latest order for symbol/side in today's order book. OpenAlgo has no per-order
         tag, so a manual order for the same stock and side could match: check alerts."""

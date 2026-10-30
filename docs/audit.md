@@ -65,6 +65,29 @@ good ideas from these projects are in it, and that the risky ones were left out 
 | Inverse-volatility and risk-parity sizing | Covered | Positions are already sized by risk to an ATR stop |
 | Futures trend (Donchian, ATR contracts) | Skipped | One Nifty lot needs about ₹1.8–2 lakh margin; above the desk's capital |
 
+## Independent code review (30 October 2026)
+
+A separate reviewer, given the code but not the author's reasoning, audited the money path (engine, risk,
+strategy, costs, brokers, backtest, export) and reproduced each defect with fake-data scripts. All were fixed
+the same day, each with a regression test in `tests/test_order_safety.py`.
+
+| # | Severity | Finding | Fix |
+|---|---|---|---|
+| 1 | Critical (live) | An order whose placement timed out, followed by a failed lookup, was forgotten and sent again | Each order is saved as pending **before** it is sent; lookup errors keep it pending |
+| 2 | Critical (live) | A timed-out order could match an older order of the same stock and book its fill twice | A unique tag per order, and a ledger of booked order ids |
+| 3 | Major | Split/bonus shares not yet credited by the broker were "corrected" away | Pending corporate-action adjustments are respected; the paper broker applies splits |
+| 4 | Major | Lowering capital tripped the drawdown breaker and daily-loss switch | Capital changes shift the peak and day baselines |
+| 5 | Major | The LLM-off control used the LLM's stops and targets | LLM levels drive exits only in `signal_mode: llm`; both hybrid books use the same ATR levels |
+| 6 | Major (live) | A stop-loss LIMIT left behind by a falling stock was never re-priced | Stale exits are cancelled after `risk.stale_exit_s` (120 s) and re-sent at the current price |
+| 7 | Minor | Holdings without a quote were valued at cost when setting the peak and the day baseline | Baselines and the peak wait for full quotes |
+| 8 | Minor | An order from a previous session could stay pending forever | DAY orders from earlier sessions are dropped with an alert |
+| 9 | Minor | Orders that filled after the wait were missing from the trade log | Late fills are logged; the export keeps one row per order |
+| 10 | Minor | DP charge per order instead of per stock per day; sector cap ignored pending buys; `compare` measured from day one | All three corrected |
+
+Checked and found correct: sizing and scaling, stops only rising, minimum hold and cooldown, the cash ledger
+with partial fills, sells capped at the bot's own shares, the halt and kill switch, timezones and holidays,
+tick rounding, the Indian cost formula, and the backtest's lack of look-ahead.
+
 ## Research and other projects
 
 FinRobot (numbers in code, narrative by the LLM), marketcalls/AutoAgent (the LLM may only scale risk down),

@@ -60,13 +60,19 @@ def export(s: Settings, out_dir: Path, prices_fn) -> dict[str, list]:
         n_trades = 0
         tfile = d / "trades.csv"
         if tfile.exists():
+            by_order: dict[str, dict] = {}
             with tfile.open(encoding="utf-8") as f:
-                for r in csv.DictReader(f):
-                    n_trades += 1
-                    trades.append({"time": r["time"], "market": market, "book": book, "symbol": r["symbol"],
-                                   "side": r["side"], "qty": int(float(r["fill_qty"] or 0)) or int(r["qty"]),
-                                   "price": float(r["fill_price"]) if r["fill_price"] else None,
-                                   "status": r["status"], "reason": r["reason"]})
+                for i, r in enumerate(csv.DictReader(f)):
+                    row = {"time": r["time"], "market": market, "book": book, "symbol": r["symbol"],
+                           "side": r["side"], "qty": int(float(r["fill_qty"] or 0)) or int(r["qty"]),
+                           "price": float(r["fill_price"]) if r["fill_price"] else None,
+                           "status": r["status"], "reason": r["reason"]}
+                    key = r.get("order_id") or f"row{i}"
+                    if key in by_order:   # an order that filled after the wait: keep its first time, final status
+                        row["time"] = by_order[key]["time"]
+                    by_order[key] = row
+            n_trades = len(by_order)
+            trades.extend(by_order.values())
         for sym, p in pos.items():
             px = prices[sym]
             positions.append({"market": market, "book": book, "symbol": sym, "qty": p["qty"], "avg_price": p["avg"],

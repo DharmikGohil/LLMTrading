@@ -286,7 +286,7 @@ def compare(config: str = ConfigOpt):
         if len(df) < 1:
             continue
         r = {"book": name, "since": df["date"].iloc[0], "days": len(df),
-             "return_pct": round(100 * (df["equity"].iloc[-1] / df["equity"].iloc[0] - 1), 2),
+             "return_pct": round(100 * (df["equity"].iloc[-1] / s.risk.capital - 1), 2),   # from starting capital
              "realized_pnl": df["realized_pnl"].iloc[-1]}
         idx = pd.to_numeric(df["index_close"], errors="coerce").dropna()
         if len(idx) > 1:
