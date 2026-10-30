@@ -1,15 +1,24 @@
-"""Is a backtest result luck? Two cheap statistical checks.
+"""Is a backtest result luck? Cheap statistical checks.
 
 - bootstrap_sharpe_ci: resample daily returns -> confidence interval for Sharpe.
   If the interval contains 0, the backtest has not shown an edge.
 - walk_forward: split the equity curve into consecutive windows; a real edge
   should be positive in most of them, not just one lucky stretch.
+- deflated_sharpe: the probability that the Sharpe ratio is real after testing
+  n_trials variants (Bailey and Lopez de Prado, 2014). Picking the best of many
+  backtests inflates its Sharpe; this corrects for that and for fat tails.
 """
 
 from __future__ import annotations
 
+import math
+from statistics import NormalDist
+
 import numpy as np
 import pandas as pd
+
+_EULER = 0.5772156649015329
+_N = NormalDist()
 
 
 def _sharpe(rets: np.ndarray) -> float:
@@ -59,3 +68,34 @@ def walk_forward(equity: pd.Series, windows: int = 4, benchmark: pd.Series | Non
     key = "excess_pct" if all("excess_pct" in r for r in rows) else "return_pct"
     wins = sum(r[key] > 0 for r in rows)
     return {"windows": rows, "positive_windows": f"{wins}/{len(rows)}", "measured_on": key}
+
+
+def probabilistic_sharpe(rets: np.ndarray, benchmark_sr: float = 0.0) -> float:
+    """P(true per-period Sharpe > benchmark_sr), allowing for skew and fat tails."""
+    if len(rets) < 3 or rets.std(ddof=1) == 0:
+        return float("nan")
+    sr = rets.mean() / rets.std(ddof=1)
+    r = pd.Series(rets)
+    skew, kurt = float(r.skew()), float(r.kurt()) + 3.0   # pandas kurt is excess kurtosis
+    denom = 1 - skew * sr + (kurt - 1) / 4 * sr ** 2
+    if denom <= 0:
+        return float("nan")
+    return _N.cdf((sr - benchmark_sr) * math.sqrt(len(rets) - 1) / math.sqrt(denom))
+
+
+def deflated_sharpe(equity: pd.Series, n_trials: int, trial_sharpes: list[float] | None = None) -> dict:
+    """Deflated Sharpe ratio. `trial_sharpes` are the annualised Sharpes of every variant tried; without
+    them the spread of Sharpe under the null is taken as 1/sqrt(T)."""
+    rets = equity.pct_change().dropna().to_numpy()
+    if len(rets) < 30:
+        return {"error": "need at least 30 daily returns"}
+    if n_trials > 1:
+        sd = float(np.std(np.asarray(trial_sharpes) / math.sqrt(252), ddof=1)) if trial_sharpes and len(trial_sharpes) > 1 \
+            else 1 / math.sqrt(len(rets))
+        sr0 = sd * ((1 - _EULER) * _N.inv_cdf(1 - 1 / n_trials) + _EULER * _N.inv_cdf(1 - 1 / (n_trials * math.e)))
+    else:
+        sr0 = 0.0
+    dsr = probabilistic_sharpe(rets, sr0)
+    verdict = "robust" if dsr >= 0.95 else "marginal" if dsr >= 0.80 else "likely luck"
+    return {"n_trials": n_trials, "sharpe": round(_sharpe(rets), 2), "sharpe_hurdle": round(sr0 * math.sqrt(252), 2),
+            "deflated_sharpe": round(dsr, 3), "verdict": verdict}

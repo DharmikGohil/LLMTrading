@@ -92,6 +92,10 @@ class StrategySettings(BaseModel):
     regime_index: str = "^NSEI"
     regime_sma: int = 200
     bear_market_scale: float = 0.5           # 0 = no new buys in a bear regime
+    # Volatility targeting: new buys are scaled by min(1, vol_target / the index's realised volatility over
+    # vol_lookback days), so the book buys less in turbulent markets. None = off.
+    vol_target: float | None = None          # annualised, e.g. 0.15
+    vol_lookback: int = 63
 
 
 class RiskSettings(BaseModel):
@@ -102,6 +106,7 @@ class RiskSettings(BaseModel):
     max_per_sector: int = 2                   # positions in one NSE industry (screens cluster in hot sectors)
     max_gross_exposure_pct: float = 1.0       # no leverage on CNC
     max_daily_loss_pct: float = 0.03          # kill switch: stop new entries for the day
+    max_drawdown_pct: float | None = None     # circuit breaker: no new buys while equity is this far below its peak
     max_orders_per_day: int = 30
     min_order_value: float = 1000.0
     limit_buffer_pct: float = 0.003           # marketable LIMIT = LTP +/- buffer

@@ -66,3 +66,24 @@ def test_parse_trader_levels():
     assert (sig.entry_price, sig.stop_loss, sig.price_target) == (2450.5, 2310.0, 2800.0)
     none = LLMSignal.from_state("X", "2026-10-27", {"trader_investment_plan": "**Stop Loss**: not provided"}, "Hold")
     assert none.stop_loss is None
+
+
+def test_exposure_scale_and_vol_target():
+    import numpy as np
+    import pandas as pd
+
+    from indtrader.strategy import vol_scale
+
+    s, r = StrategySettings(), RiskSettings(capital=100000)
+    full = plan_target("X", "Buy", 100, UP, 0, 100000, s, r)
+    half = plan_target("X", "Buy", 100, UP, 0, 100000, s, r, exposure_scale=0.5)
+    none = plan_target("X", "Buy", 100, UP, 0, 100000, s, r, exposure_scale=0.0)
+    assert half.target_qty == full.target_qty // 2 and none.target_qty == 0
+    assert plan_target("X", "Sell", 100, UP, 50, 100000, s, r, exposure_scale=0.0).target_qty == 0   # exits unaffected
+
+    rng = np.random.default_rng(0)
+    calm = pd.Series(100 * np.cumprod(1 + 0.005 * rng.standard_normal(200)))
+    wild = pd.Series(100 * np.cumprod(1 + 0.03 * rng.standard_normal(200)))
+    assert vol_scale(calm, s) == 1.0                       # off by default
+    s.vol_target = 0.15
+    assert vol_scale(calm, s) == 1.0 and 0 < vol_scale(wild, s) < 0.5

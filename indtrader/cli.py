@@ -467,12 +467,13 @@ def backtest(
     end: str = typer.Option(None, help="YYYY-MM-DD (default today)"),
     signals: str = typer.Option("technical", help="technical | llm (cached decisions) | momentum (factor arm on screen.index)"),
     out: str = typer.Option(None, help="write trades CSV here"),
+    trials: int = typer.Option(1, help="how many variants you have tried in total (for the deflated Sharpe)"),
 ):
     """Backtest the strategy with Indian transaction costs."""
     from datetime import timedelta
 
     from indtrader.backtest import llm_rating_fn, momentum_rating_fn, run_backtest, technical_rating
-    from indtrader.validation import bootstrap_sharpe_ci, walk_forward
+    from indtrader.validation import bootstrap_sharpe_ci, deflated_sharpe, walk_forward
 
     s = _setup(config)
     d0, d1 = date.fromisoformat(start), date.fromisoformat(end) if end else now_ist().date()
@@ -490,7 +491,8 @@ def backtest(
     else:
         fn = llm_rating_fn(s) if signals == "llm" else technical_rating
     res = run_backtest(s, d0, d1, fn, histories=histories, benchmark=benchmark)
-    report = {**res.stats, "sharpe_95ci": bootstrap_sharpe_ci(res.equity), "walk_forward": walk_forward(res.equity, 4, res.benchmark)}
+    report = {**res.stats, "sharpe_95ci": bootstrap_sharpe_ci(res.equity), "walk_forward": walk_forward(res.equity, 4, res.benchmark),
+              "deflated_sharpe": deflated_sharpe(res.equity, trials)}
     typer.echo(json.dumps(report, indent=2))
     if out:
         Path(out).parent.mkdir(parents=True, exist_ok=True)

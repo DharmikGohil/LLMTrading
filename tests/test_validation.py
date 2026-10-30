@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from indtrader.validation import bootstrap_sharpe_ci, walk_forward
+from indtrader.validation import bootstrap_sharpe_ci, deflated_sharpe, walk_forward
 
 
 def _curve(drift, n=500, seed=0):
@@ -20,3 +20,12 @@ def test_walk_forward_windows():
     out = walk_forward(eq, 4, benchmark=eq * 0 + 100000)
     assert len(out["windows"]) == 4 and out["measured_on"] == "excess_pct"
     assert out["windows"][0]["start"] == "2024-01-01"
+
+
+def test_deflated_sharpe_penalises_many_trials():
+    eq = _curve(0.0008, n=700, seed=3)
+    one, many = deflated_sharpe(eq, 1), deflated_sharpe(eq, 50)
+    assert many["sharpe_hurdle"] > one["sharpe_hurdle"] == 0
+    assert many["deflated_sharpe"] < one["deflated_sharpe"]
+    assert deflated_sharpe(_curve(0.004, seed=4), 10)["verdict"] == "robust"
+    assert deflated_sharpe(_curve(0.0, seed=5), 10)["verdict"] == "likely luck"

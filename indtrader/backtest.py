@@ -26,7 +26,7 @@ from indtrader.config import Settings
 from indtrader.risk import AccountView, check_buy
 from indtrader.signals.llm_agent import SignalStore
 from indtrader.signals.technical import ema, is_bear_market, rsi, snapshot
-from indtrader.strategy import BULLISH, plan_target, protective_levels
+from indtrader.strategy import BULLISH, plan_target, protective_levels, vol_scale
 
 # Returns a rating, or (rating, llm_stop, llm_target) when the source has levels.
 RatingFn = Callable[[str, pd.DataFrame, date], str | None | tuple]
@@ -169,7 +169,7 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             return False
         return is_bear_market(benchmark.loc[: day - pd.Timedelta(days=1)], s.regime_sma)
 
-    prev_equity = r.capital
+    prev_equity = peak = r.capital
     for day in dates:
         orders_today = 0
         bars = {sym: h.loc[day] for sym, h in histories.items() if day in h.index}
@@ -180,6 +180,9 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
         # 2) rebalance at the open on yesterday's information
         plans = []
         bear = bear_on(day)
+        scale = vol_scale(benchmark.loc[: day - pd.Timedelta(days=1)], s) if benchmark is not None else 1.0
+        if r.max_drawdown_pct and prev_equity < peak * (1 - r.max_drawdown_pct):
+            scale = 0.0   # circuit breaker: no new buys until equity recovers
         for sym, h in histories.items():
             if sym not in bars:
                 continue
@@ -195,7 +198,7 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
             price = float(bars[sym]["Open"])
             held_days = (day - pos[sym]["opened"]).days if sym in pos else None
             plan = plan_target(sym, rating, price, tech, held, min(r.capital, prev_equity), s, r,
-                               llm_stop, llm_target, bear_market=bear, held_days=held_days)
+                               llm_stop, llm_target, bear_market=bear, held_days=held_days, exposure_scale=scale)
             plans.append((plan.target_qty - held, sym, plan, tech, price, held))
         for delta, sym, plan, tech, price, held in sorted(plans, key=lambda x: x[0]):
             if delta < 0:
@@ -225,6 +228,7 @@ def run_backtest(settings: Settings, start: date, end: date, rating_fn: RatingFn
                 trail, _ = protective_levels(float(h["Close"].iloc[-1]), snapshot(h, s.trend_ema, s.atr_period), s)
                 p["stop"] = max(p["stop"], trail)
         prev_equity = mark(day)
+        peak = max(peak, prev_equity)
         curve[day] = prev_equity
 
     equity = pd.Series(curve).sort_index()

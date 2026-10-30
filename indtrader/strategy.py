@@ -46,10 +46,20 @@ def protective_levels(price: float, tech: TechnicalSnapshot, s: StrategySettings
     return round(stop, 2), round(take, 2)
 
 
+def vol_scale(index_close, s: StrategySettings) -> float:
+    """min(1, vol_target / realised index volatility); 1.0 when off or without enough data."""
+    if not s.vol_target or index_close is None or len(index_close) < s.vol_lookback + 1:
+        return 1.0
+    rets = index_close.pct_change().dropna().iloc[-s.vol_lookback:]
+    vol = float(rets.std(ddof=1)) * math.sqrt(252)
+    return min(1.0, s.vol_target / vol) if vol > 0 else 1.0
+
+
 def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSnapshot, current_qty: int,
                 capital: float, s: StrategySettings, r: RiskSettings,
                 llm_stop: float | None = None, llm_target: float | None = None,
-                bear_market: bool = False, held_days: int | None = None) -> TargetPlan:
+                bear_market: bool = False, held_days: int | None = None,
+                exposure_scale: float = 1.0) -> TargetPlan:
     plan = TargetPlan(symbol, current_qty)
     if not (math.isfinite(price) and price > 0):
         plan.notes.append(f"invalid price {price}; holding {current_qty}")
@@ -70,6 +80,9 @@ def plan_target(symbol: str, rating: str | None, price: float, tech: TechnicalSn
     if rating in BULLISH and bear_market:
         sized = math.floor(sized * s.bear_market_scale)
         plan.notes.append(f"bear regime: size x{s.bear_market_scale:g}")
+    if rating in BULLISH and exposure_scale < 1:
+        sized = math.floor(sized * max(exposure_scale, 0.0))
+        plan.notes.append(f"exposure scale x{exposure_scale:.2f}")
 
     if rating in BULLISH:
         if sized <= current_qty:
