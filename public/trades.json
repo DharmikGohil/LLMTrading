@@ -96,6 +96,18 @@
   "id": "US:main:7"
  },
  {
+  "time": "2026-10-30T15:47:26-04:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "CSCO",
+  "side": "SELL",
+  "qty": 16,
+  "price": 103.43,
+  "status": "COMPLETE",
+  "reason": "stop-loss hit (103.48 <= 104.01)",
+  "id": "US:main:8"
+ },
+ {
   "time": "2026-10-28T14:14:08-04:00",
   "market": "US",
   "book": "factor",
@@ -105,7 +117,7 @@
   "price": 1289.69,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
-  "id": "US:factor:8"
+  "id": "US:factor:9"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -117,7 +129,7 @@
   "price": 345.21,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
-  "id": "US:factor:9"
+  "id": "US:factor:10"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -129,7 +141,7 @@
   "price": 271.44,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
-  "id": "US:factor:10"
+  "id": "US:factor:11"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -141,7 +153,7 @@
   "price": 109.98,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
-  "id": "US:factor:11"
+  "id": "US:factor:12"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -153,7 +165,7 @@
   "price": 99.75,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
-  "id": "US:factor:12"
+  "id": "US:factor:13"
  },
  {
   "time": "2026-10-29T09:56:11-04:00",
@@ -165,7 +177,7 @@
   "price": 708.11,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
-  "id": "US:factor:13"
+  "id": "US:factor:14"
  },
  {
   "time": "2026-10-29T09:56:11-04:00",
@@ -177,7 +189,7 @@
   "price": 292.14,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
-  "id": "US:factor:14"
+  "id": "US:factor:15"
  },
  {
   "time": "2026-10-30T09:53:12-04:00",
@@ -189,7 +201,19 @@
   "price": 94.56,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.95",
-  "id": "US:factor:15"
+  "id": "US:factor:16"
+ },
+ {
+  "time": "2026-10-30T15:47:27-04:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "CSCO",
+  "side": "SELL",
+  "qty": 16,
+  "price": 103.43,
+  "status": "COMPLETE",
+  "reason": "stop-loss hit (103.48 <= 104.01)",
+  "id": "US:factor:17"
  },
  {
   "time": "2026-10-30T11:04:32+05:30",

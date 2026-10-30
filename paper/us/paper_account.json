@@ -1,5 +1,5 @@
 {
-  "cash": 97.98651085662857,
+  "cash": 1752.7887245407105,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -8,10 +8,6 @@
     "MET": {
       "qty": 15,
       "avg": 99.7498469467163
-    },
-    "CSCO": {
-      "qty": 16,
-      "avg": 109.98496530532836
     },
     "KO": {
       "qty": 21,
@@ -122,8 +118,19 @@
       "price": 59.87,
       "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 12 (alloc 12, risk-sized 41) stop 55.05",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-30T15:47:26-04:00",
+      "id": "PAPER-18465a91da",
+      "symbol": "CSCO",
+      "side": "SELL",
+      "qty": 16,
+      "status": "COMPLETE",
+      "price": 103.43,
+      "reason": "stop-loss hit (103.48 <= 104.01)",
+      "message": "charges $0.05"
     }
   ],
-  "realized_pnl": 0.0,
-  "charges": 0.0
+  "realized_pnl": -104.95723120117172,
+  "charges": 0.05
 }

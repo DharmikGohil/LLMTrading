@@ -7,3 +7,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-10-29T09:56:09-04:00,UNP,BUY,3,302.14,COMPLETE,3,301.39,PAPER-632e6ea6d8,"momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",charges $0.00
 2026-10-30T09:53:09-04:00,PM,BUY,4,212.35,COMPLETE,4,211.71,PAPER-e4231e0858,"momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: add to 4 (alloc 4, risk-sized 9) stop 191.3",charges $0.00
 2026-10-30T09:53:09-04:00,USB,BUY,6,60.02,COMPLETE,6,59.87,PAPER-299d24b6bc,"momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 12 (alloc 12, risk-sized 41) stop 55.05",charges $0.00
+2026-10-30T15:47:26-04:00,CSCO,SELL,16,103.16,COMPLETE,16,103.43,PAPER-18465a91da,stop-loss hit (103.48 <= 104.01),charges $0.05

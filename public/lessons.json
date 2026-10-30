@@ -1,1 +1,13 @@
-[]
+[
+ {
+  "id": "a-pre-results-veto-on-a-top-ranked-momen",
+  "lesson": "A pre-results veto on a top-ranked momentum stock may cost more than it saves: so far the vetoed names that reported a beat rose sharply (judge on 5-day excess, not 1-day).",
+  "market": "all",
+  "status": "hypothesis",
+  "evidence_for": 1,
+  "evidence_against": 0,
+  "first_seen": "2026-10-31",
+  "last_seen": "2026-10-31",
+  "examples": "2026-10-27 LLY vetoed (results 29 Oct), beat and raised, 1-day excess +6.9%, +7% to a record"
+ }
+]

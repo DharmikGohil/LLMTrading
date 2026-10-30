@@ -1,5 +1,5 @@
 {
-  "cash": 140.04250148773295,
+  "cash": 1794.844715171815,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -12,10 +12,6 @@
     "JNJ": {
       "qty": 7,
       "avg": 271.4406451721191
-    },
-    "CSCO": {
-      "qty": 16,
-      "avg": 109.98496530532836
     },
     "MET": {
       "qty": 20,
@@ -122,8 +118,19 @@
       "price": 94.56,
       "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.95",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-10-30T15:47:27-04:00",
+      "id": "PAPER-f4030203cc",
+      "symbol": "CSCO",
+      "side": "SELL",
+      "qty": 16,
+      "status": "COMPLETE",
+      "price": 103.43,
+      "reason": "stop-loss hit (103.48 <= 104.01)",
+      "message": "charges $0.05"
     }
   ],
-  "realized_pnl": 0.0,
-  "charges": 0.0
+  "realized_pnl": -104.95723120117172,
+  "charges": 0.05
 }

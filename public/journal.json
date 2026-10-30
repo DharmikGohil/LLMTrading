@@ -1,5 +1,11 @@
 [
  {
+  "id": "2026-10-30-us",
+  "date": "2026-10-30",
+  "market": "US",
+  "reflection": "Third US session; a down day (Nasdaq about -2% at the open on Amazon and Intel earnings).\n- **Close:** LLM-reviewed $9,935 (-0.65% since start), LLM off $10,025 (+0.25%); S&P 500 close 7,553.86, below\n  both books since the start. Both books bought PM/USB (reviewed) or KO (control) at the open and are fully invested.\n- **Stop-out:** CSCO in both books at 103.16 (stop 104.01, entry 109.98), realized -$104.85 each. It was the\n  weakest holding (RS -6.6% over 3m, 14.5% off its high) and the review had flagged \"no adding\": the stop did its job.\n- **Vetoes, 1-day outcomes:** every pre-results veto so far has cost money on day one: LLY +6.9% excess (beat and\n  raised), MRK +4.1%, AMGN +3.5%, ABBV +3.2%, AAPL +1.8%/+0.8%. Part of this is the down market (large-cap pharma held\n  up while tech fell), so excess vs the index flatters defensives. The 5-day outcomes (from 3 Nov) are the real test.\n- **Lesson book:** added a hypothesis (not a rule) that pre-results vetoes on top-ranked momentum names may cost more\n  than they save, with LLY as the first case. The rule stays until the 5-day evidence is in; LAURUSLABS (India) is the\n  next case to record, and NYKAA/ZYDUSLIFE (4 Nov) and AAPL/AMGN/MET (2-4 Nov) will test it either way."
+ },
+ {
   "id": "2026-10-28-us",
   "date": "2026-10-28",
   "market": "US",
