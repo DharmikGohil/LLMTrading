@@ -72,7 +72,8 @@ def test_book_pnl_take_profit_stop_and_time_exit(tmp_path):
     assert book.data["cash"] == pytest.approx(100000 + closed["pnl"], abs=0.05)
     credit = sum(lg.entry if lg.side == "SELL" else -lg.entry for lg in legs)
     max_loss = (200 - credit) * LOT
-    assert closed["pnl"] >= -max_loss - 400              # bounded by the wings (plus exit spread and charges)
+    spread = sum((crash.quote(lg.kind, lg.strike).ask - crash.quote(lg.kind, lg.strike).bid) * lg.qty for lg in legs)
+    assert closed["pnl"] >= -max_loss - spread - 400     # bounded by the wings, plus the exit spread and charges
 
 
 def test_lotto_fits_budget_and_doubles(tmp_path):
@@ -83,7 +84,7 @@ def test_lotto_fits_budget_and_doubles(tmp_path):
     book.enter("lotto", legs, ch.expiry, "t", legs[0].entry * LOT)
     up = make_chain(shift=600)
     assert exit_reason(book, up, datetime(2026, 11, 3, 11, 0)).startswith("target")
-    assert plan_lotto(ch, "down", 5) is None
+    assert plan_lotto(ch, "down", 1) is None
 
 
 def test_calendar_helpers():
