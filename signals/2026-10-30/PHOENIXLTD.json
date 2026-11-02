@@ -1,0 +1,12 @@
+{
+  "symbol": "PHOENIXLTD",
+  "as_of": "2026-10-30",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen. Q2 FY27 results out 30 Oct (NSE board outcome and investor presentation; H1 operating free cash flow +22% y/y). Event passed; 9% below the 52-week high. Figures only partly verified, so no more than Overweight.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-02T07:43:26+05:30"
+}
