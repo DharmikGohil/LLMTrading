@@ -1,5 +1,5 @@
 {
-  "cash": 67722.71846450806,
+  "cash": 58914.07175991821,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -28,6 +28,14 @@
     "NYKAA": {
       "qty": 14,
       "avg": 350.0749438934326
+    },
+    "LAURUSLABS": {
+      "qty": 2,
+      "avg": 2378.388551147461
+    },
+    "PHOENIXLTD": {
+      "qty": 2,
+      "avg": 2020.709801147461
     }
   },
   "orders": [
@@ -107,8 +115,30 @@
       "price": 350.07,
       "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",
       "message": "charges Rs 5.82"
+    },
+    {
+      "time": "2026-11-02T09:36:44+05:30",
+      "id": "PAPER-9b799c0453",
+      "symbol": "LAURUSLABS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2378.39,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2090.13",
+      "message": "charges Rs 5.65"
+    },
+    {
+      "time": "2026-11-02T09:36:44+05:30",
+      "id": "PAPER-44504a6799",
+      "symbol": "PHOENIXLTD",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2020.71,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",
+      "message": "charges Rs 4.80"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 38.27
+  "charges": 48.72
 }

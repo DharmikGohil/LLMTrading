@@ -1,5 +1,5 @@
 {
-  "cash": 77555.88686221314,
+  "cash": 68744.2386576233,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -20,6 +20,14 @@
     "FEDERALBNK": {
       "qty": 14,
       "avg": 345.422625
+    },
+    "LAURUSLABS": {
+      "qty": 2,
+      "avg": 2379.8893011474606
+    },
+    "PHOENIXLTD": {
+      "qty": 2,
+      "avg": 2020.709801147461
     }
   },
   "orders": [
@@ -77,8 +85,30 @@
       "price": 345.42,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.09",
       "message": "charges Rs 5.74"
+    },
+    {
+      "time": "2026-11-02T09:36:39+05:30",
+      "id": "PAPER-5526a9051f",
+      "symbol": "LAURUSLABS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2379.89,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2091.13",
+      "message": "charges Rs 5.65"
+    },
+    {
+      "time": "2026-11-02T09:36:41+05:30",
+      "id": "PAPER-1c8a29cfc9",
+      "symbol": "PHOENIXLTD",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2020.71,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.31",
+      "message": "charges Rs 4.80"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 26.61
+  "charges": 37.059999999999995
 }
