@@ -1,0 +1,12 @@
+{
+  "symbol": "MRK",
+  "as_of": "2026-10-30",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 2026 reported 29 Oct: revenue about $18.1B (+5%), non-GAAP EPS $2.49 vs about $2.09 consensus, FY26 EPS guidance raised to $2.77-2.82 (Finviz/StockStory, 29 Oct 2026). Results risk is behind it; Januvia generic erosion (-39%) is known. No regulatory or legal red flag found.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-02T10:53:32-05:00"
+}

@@ -1,5 +1,5 @@
 {
-  "cash": 1752.7887245407105,
+  "cash": 183.7212882156373,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -28,6 +28,14 @@
     "USB": {
       "qty": 6,
       "avg": 59.86992015266418
+    },
+    "DE": {
+      "qty": 1,
+      "avg": 679.3928103332519
+    },
+    "MRK": {
+      "qty": 6,
+      "avg": 148.27910433197022
     }
   },
   "orders": [
@@ -129,6 +137,28 @@
       "price": 103.43,
       "reason": "stop-loss hit (103.48 <= 104.01)",
       "message": "charges $0.05"
+    },
+    {
+      "time": "2026-11-02T10:53:59-05:00",
+      "id": "PAPER-258ee94d99",
+      "symbol": "DE",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 679.39,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.47",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-02T10:54:00-05:00",
+      "id": "PAPER-1c8c9b758a",
+      "symbol": "MRK",
+      "side": "BUY",
+      "qty": 6,
+      "status": "COMPLETE",
+      "price": 148.28,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
+      "message": "charges $0.00"
     }
   ],
   "realized_pnl": -104.95723120117172,

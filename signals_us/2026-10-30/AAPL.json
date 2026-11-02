@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-10-30",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results due today, 2 Nov 2026 after the close (Yahoo Finance earnings wrap, TheStreet, 2 Nov 2026), the first under new CEO John Ternus; Oppenheimer notes valuation leaves little room for disappointment (Yahoo Finance, 2 Nov 2026). Earnings within 3 trading days: playbook rule.",
+  "confidence": 70.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-02T10:53:33-05:00"
+}

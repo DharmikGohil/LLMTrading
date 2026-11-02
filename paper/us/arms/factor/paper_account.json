@@ -1,5 +1,5 @@
 {
-  "cash": 1794.844715171815,
+  "cash": 42.2705780639661,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -28,6 +28,18 @@
     "KO": {
       "qty": 2,
       "avg": 94.55725713729858
+    },
+    "DE": {
+      "qty": 1,
+      "avg": 679.3928103332519
+    },
+    "AMGN": {
+      "qty": 2,
+      "avg": 462.45111122131345
+    },
+    "MRK": {
+      "qty": 1,
+      "avg": 148.27910433197022
     }
   },
   "orders": [
@@ -129,6 +141,39 @@
       "price": 103.43,
       "reason": "stop-loss hit (103.48 <= 104.01)",
       "message": "charges $0.05"
+    },
+    {
+      "time": "2026-11-02T10:54:05-05:00",
+      "id": "PAPER-5ddb0169d4",
+      "symbol": "DE",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 679.39,
+      "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.3",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-02T10:54:05-05:00",
+      "id": "PAPER-03d9e9811d",
+      "symbol": "AMGN",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 462.45,
+      "reason": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 416.29",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-02T10:54:05-05:00",
+      "id": "PAPER-646cee9174",
+      "symbol": "MRK",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 148.28,
+      "reason": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
+      "message": "charges $0.00"
     }
   ],
   "realized_pnl": -104.95723120117172,

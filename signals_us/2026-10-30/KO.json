@@ -1,0 +1,12 @@
+{
+  "symbol": "KO",
+  "as_of": "2026-10-30",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 reported 27 Oct 2026 (Yahoo calendar), so results risk is past; next report due early 2027. No regulatory, guidance-cut or downgrade-cluster red flag found in the last week's headlines (trader-news, 2 Nov 2026).",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-02T10:53:33-05:00"
+}

@@ -51,32 +51,56 @@
     "KO": {
       "qty": 2,
       "avg": 94.56,
-      "stop": 86.95,
+      "stop": 87.5,
       "target": 850.59,
       "opened": "2026-10-30",
+      "buy_charges": 0.0
+    },
+    "DE": {
+      "qty": 1,
+      "avg": 679.39,
+      "stop": 604.3,
+      "target": 8154.63,
+      "opened": "2026-11-02",
+      "buy_charges": 0.0
+    },
+    "AMGN": {
+      "qty": 2,
+      "avg": 462.45,
+      "stop": 416.29,
+      "target": 5055.1,
+      "opened": "2026-11-02",
+      "buy_charges": 0.0
+    },
+    "MRK": {
+      "qty": 1,
+      "avg": 148.28,
+      "stop": 129.8,
+      "target": 1988.72,
+      "opened": "2026-11-02",
       "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-10-30",
-    "start_equity": 10121.78,
-    "orders": 2,
-    "partial": false,
-    "dp_charged": [
-      "CSCO"
-    ]
+    "date": "2026-11-02",
+    "start_equity": 9967.98,
+    "orders": 3,
+    "partial": false
   },
   "stopped_out": {
     "CSCO": "2026-10-30"
   },
   "realized_pnl": -104.84999999999995,
-  "cash": 1794.9599999999991,
+  "cash": 42.389999999999276,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
     "PAPER-12d7ae1c84",
-    "PAPER-f4030203cc"
+    "PAPER-f4030203cc",
+    "PAPER-5ddb0169d4",
+    "PAPER-03d9e9811d",
+    "PAPER-646cee9174"
   ],
   "ca_pending": {},
   "peak_equity": 10121.78

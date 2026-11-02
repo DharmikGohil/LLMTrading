@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-10-30",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results expected 25 Nov 2026 before the open (Unusual Whales), about 16 trading days away, outside the window. Last update raised FY26 net income guidance (Nasdaq, Aug 2026); no November red flag found. Recheck as the report nears.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-02T10:53:35-05:00"
+}
