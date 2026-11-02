@@ -593,9 +593,10 @@ def options_status():
 def live(
     options_every: int = typer.Option(60, help="seconds between options checks"),
     stocks_every: int = typer.Option(300, help="seconds between stock stop checks"),
-    configs: str = typer.Option("config/india_paper.yaml", help="comma-separated stock desk configs to monitor"),
+    configs: str = typer.Option("", help="comma-separated stock desk configs to also monitor (default: none; the "
+                                         "stock desks are checked by the scheduled runs, 2-3 times a day)"),
 ):
-    """Watch the NSE session: options exits every minute, stock stops every 5 minutes, until 15:30 IST.
+    """Watch the NSE session: options exits every minute until 15:30 IST (stock stops only if --configs is given).
     Paper only. The scheduled runs remain the backstop and do the commits."""
     import time as _time
 

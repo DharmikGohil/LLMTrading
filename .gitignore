@@ -18,3 +18,4 @@ public/raw/
 # day-trader-skill state
 trader/
 paper/options/live.log
+paper/options/live.pid

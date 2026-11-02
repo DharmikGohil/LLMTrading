@@ -55,14 +55,15 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
      The gate may only make things safer; the rules-only control ignores it.
   2. `indtrader options-enter` (opens a position only in accounts that are flat, on the expiry 3-7 trading days away).
   3. Start the one-minute monitor if it is not running:
-     `pgrep -f "indtrader live" >/dev/null || nohup indtrader live >> paper/options/live.log 2>&1 &`
-     It checks option exits every minute and stock stops every 5 minutes until 15:30 IST.
+     `scripts/start_live.sh` (does nothing if it is already running)
+     It checks option exits every minute until 15:30 IST. Stocks are checked only by the scheduled runs (2-3 a day):
+     the slow momentum book does not need more, and more checks invite overtrading.
 
 ## 2. Midday and close runs
 ```bash
 indtrader monitor            # stops / targets for both accounts
 indtrader options-monitor    # India runs: option exits (the live monitor normally handles these)
-pgrep -f "indtrader live" >/dev/null || nohup indtrader live >> paper/options/live.log 2>&1 &   # India runs before 15:30
+scripts/start_live.sh        # India runs before 15:30: make sure the one-minute options monitor is running
 indtrader eod                # close run only: daily equity record
 indtrader review             # close run only: graded facts -> journal/daily/<date>-<market>.md
 ```
