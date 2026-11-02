@@ -45,6 +45,7 @@ export function load() {
     backtests: read("backtests", []),
     research: read("research", []),
     docs: read("docs", []),
+    options: read("options", null),
   };
   return cache;
 }

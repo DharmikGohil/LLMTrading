@@ -7,6 +7,7 @@ export const LINKS = [
   ["/", "Overview"],
   ["/desk/us", "US desk"],
   ["/desk/india", "India desk"],
+  ["/options", "Nifty options"],
   ["/history", "History"],
   ["/tape", "Activity"],
   ["/calls", "Analyst calls"],
@@ -29,7 +30,7 @@ export default function Nav() {
         return;
       }
       const n = Number(e.key);
-      if (n >= 1 && n <= LINKS.length) router.push(LINKS[n - 1][0]);
+      if (n >= 1 && n <= Math.min(9, LINKS.length)) router.push(LINKS[n - 1][0]);
     };
     window.addEventListener("keydown", on);
     return () => window.removeEventListener("keydown", on);

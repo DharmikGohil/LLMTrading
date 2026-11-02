@@ -1,0 +1,172 @@
+{
+ "time": "2026-11-02T10:31:55+05:30",
+ "spot": 23334.7,
+ "books": {
+  "main": {
+   "capital": 100000.0,
+   "equity": 99861.95,
+   "realized": 0.0,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-11-09",
+    "opened": "2026-11-02T10:29:06+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 23950,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 20.85
+     },
+     {
+      "kind": "PE",
+      "strike": 22650,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 35.15
+     },
+     {
+      "kind": "CE",
+      "strike": 24150,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 9.25
+     },
+     {
+      "kind": "PE",
+      "strike": 22450,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 21.85
+     }
+    ],
+    "credit": 1618.5,
+    "entry_charges": 102.3,
+    "max_loss": 11381.5,
+    "note": "1.25 SD short strikes, spot 23320, ATM IV 15.4%; gate: widen: Events before the 9 Nov expiry: US midterm elections Tue 3 Nov (results land before the Indian open on 4 Nov) and US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026); no FOMC (next 8-9 Dec, MUFG 2026 calendar) and no RBI meeting this week. India VIX 15.6 (NSE). Binary overnight risk -> wider short strikes (1.25 SD). Lotto: Nifty 5-day trend is up (+1.5% since 30 Oct), trend rule says calls; no directional edge claimed."
+   },
+   "mark": {
+    "close_value": 1654.25,
+    "pnl": -138.05,
+    "prices": [
+     21.95,
+     34.5,
+     9.7,
+     21.3
+    ]
+   },
+   "closed": []
+  },
+  "control": {
+   "capital": 100000.0,
+   "equity": 99848.51,
+   "realized": 0.0,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-11-09",
+    "opened": "2026-11-02T10:29:06+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 23850,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 31.15
+     },
+     {
+      "kind": "PE",
+      "strike": 22800,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 51.15
+     },
+     {
+      "kind": "CE",
+      "strike": 24050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 13.7
+     },
+     {
+      "kind": "PE",
+      "strike": 22600,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 31.3
+     }
+    ],
+    "credit": 2424.5,
+    "entry_charges": 105.99,
+    "max_loss": 10575.5,
+    "note": "1 SD short strikes, spot 23320, ATM IV 15.4%; rules only"
+   },
+   "mark": {
+    "close_value": 2470.0,
+    "pnl": -151.49,
+    "prices": [
+     32.75,
+     49.9,
+     14.25,
+     30.4
+    ]
+   },
+   "closed": []
+  },
+  "lotto": {
+   "capital": 1000.0,
+   "equity": 1011.75,
+   "realized": 0.0,
+   "open": {
+    "name": "lotto",
+    "expiry": "2026-11-09",
+    "opened": "2026-11-02T10:29:06+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 24050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 13.7
+     }
+    ],
+    "credit": -890.5,
+    "entry_charges": 24.0,
+    "max_loss": 890.5,
+    "note": "buy up: Events before the 9 Nov expiry: US midterm elections Tue 3 Nov (results land before the Indian open on 4 Nov) and US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026); no FOMC (next 8-9 Dec, MUFG 2026 calendar) and no RBI meeting this week. India VIX 15.6 (NSE). Binary overnight risk -> wider short strikes (1.25 SD). Lotto: Nifty 5-day trend is up (+1.5% since 30 Oct), trend rule says calls; no directional edge claimed."
+   },
+   "mark": {
+    "close_value": -926.25,
+    "pnl": 11.75,
+    "prices": [
+     14.25
+    ]
+   },
+   "closed": []
+  }
+ },
+ "equity": [
+  {
+   "time": "2026-11-02T10:29:35+05:30",
+   "spot": "23319.9",
+   "main": "99868.45",
+   "control": "99851.76",
+   "lotto": "969.5"
+  },
+  {
+   "time": "2026-11-02T10:31:55+05:30",
+   "spot": "23334.7",
+   "main": "99861.95",
+   "control": "99848.51",
+   "lotto": "1011.75"
+  }
+ ],
+ "gates": [
+  {
+   "date": "2026-11-02",
+   "action": "widen",
+   "lotto_direction": "up",
+   "note": "Events before the 9 Nov expiry: US midterm elections Tue 3 Nov (results land before the Indian open on 4 Nov) and US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026); no FOMC (next 8-9 Dec, MUFG 2026 calendar) and no RBI meeting this week. India VIX 15.6 (NSE). Binary overnight risk -> wider short strikes (1.25 SD). Lotto: Nifty 5-day trend is up (+1.5% since 30 Oct), trend rule says calls; no directional edge claimed.",
+   "time": "2026-11-02T10:29:02+05:30"
+  }
+ ]
+}

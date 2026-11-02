@@ -571,6 +571,13 @@ def options_monitor():
     typer.echo(json.dumps(_options_desk().monitor(), indent=1, default=str))
 
 
+@app.command("options-export")
+def options_export(out: str = typer.Option("public", help="output folder")):
+    """Write the options desk's data for the site (public/options.json)."""
+    snap = _options_desk().export(Path(out))
+    typer.echo("options: " + ", ".join(f"{a} {b['equity']:,.2f}" for a, b in snap["books"].items()))
+
+
 @app.command("options-status")
 def options_status():
     """Open positions, marks and P&L of the three options accounts."""

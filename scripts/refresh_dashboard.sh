@@ -9,6 +9,7 @@ for cfg in "${cfgs[@]}"; do
   INDTRADER_CONFIG="$cfg" indtrader export-dashboard --out public/raw 2>/dev/null | tail -n +1
 done
 python3 scripts/combine_dashboard.py public/raw public >/dev/null
+indtrader options-export --out public 2>/dev/null || echo "options export failed (NSE unavailable?)"
 echo "dashboard data in public/: $(ls public/*.json | tr '\n' ' ')"
 # keep the Next.js site's snapshot (web/data) in step; Vercel rebuilds on push
 node web/scripts/sync-data.mjs

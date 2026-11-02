@@ -384,6 +384,22 @@ class OptionsDesk:
                     out.append({"arm": arm, "reason": reason, "pnl": closed["pnl"]})
         return out
 
+    def export(self, out: Path) -> dict:
+        """Write public/options.json (accounts, open legs with marks, closed trades, equity path, gates)."""
+        snap = self.snapshot()
+        eq = self.root / "equity.csv"
+        new = not eq.exists()
+        with eq.open("a") as fh:
+            if new:
+                fh.write("time,spot," + ",".join(self.books) + "\n")
+            fh.write(f"{snap['time']},{snap['spot'] or ''}," + ",".join(str(b["equity"]) for b in snap["books"].values()) + "\n")
+        with eq.open() as fh:
+            snap["equity"] = list(csv.DictReader(fh))[-2000:]
+        snap["gates"] = [json.loads(f.read_text()) for f in sorted(self.gates.glob("*.json"))][-30:] if self.gates.exists() else []
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "options.json").write_text(json.dumps(snap, indent=1, default=str))
+        return snap
+
     def snapshot(self) -> dict:
         """State of all three accounts at current prices, for the site and the equity log."""
         chains: dict[date, Chain] = {}

@@ -47,10 +47,22 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
   REPORT.md (the analyst run failed), do the review now following `analyst/PLAYBOOK.md` with
   `INDTRADER_CONFIG=config/analyst.yaml`, then switch back to `config/india_paper.yaml`.
 - Then `indtrader trade` (main and control account).
+- **India only, Nifty options desk** (`paper/options/`, see `indtrader/options.py`):
+  1. If `paper/options/gates/<today>.json` is missing, write today's gate: check the events before the next weekly
+     expiry (RBI, budget, election results, FOMC/US CPI/US jobs, Nifty heavyweight results, global shocks, India VIX),
+     then `indtrader options-gate --action trade|widen|skip --direction up|down|none --note "... (source, date)"`.
+     `widen` = short strikes at 1.25 SD instead of 1 SD; `skip` = no new LLM-reviewed condor and no lotto today.
+     The gate may only make things safer; the rules-only control ignores it.
+  2. `indtrader options-enter` (opens a position only in accounts that are flat, on the expiry 3-7 trading days away).
+  3. Start the one-minute monitor if it is not running:
+     `pgrep -f "indtrader live" >/dev/null || nohup indtrader live >> paper/options/live.log 2>&1 &`
+     It checks option exits every minute and stock stops every 5 minutes until 15:30 IST.
 
 ## 2. Midday and close runs
 ```bash
 indtrader monitor            # stops / targets for both accounts
+indtrader options-monitor    # India runs: option exits (the live monitor normally handles these)
+pgrep -f "indtrader live" >/dev/null || nohup indtrader live >> paper/options/live.log 2>&1 &   # India runs before 15:30
 indtrader eod                # close run only: daily equity record
 indtrader review             # close run only: graded facts -> journal/daily/<date>-<market>.md
 ```
