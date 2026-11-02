@@ -1,10 +1,10 @@
 {
- "time": "2026-11-02T12:51:43+05:30",
- "spot": 23297.9,
+ "time": "2026-11-02T15:07:12+05:30",
+ "spot": 23307.8,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 99936.7,
+   "equity": 100040.7,
    "realized": 0.0,
    "open": {
     "name": "iron condor",
@@ -46,20 +46,20 @@
     "note": "1.25 SD short strikes, spot 23320, ATM IV 15.4%; gate: widen: Events before the 9 Nov expiry: US midterm elections Tue 3 Nov (results land before the Indian open on 4 Nov) and US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026); no FOMC (next 8-9 Dec, MUFG 2026 calendar) and no RBI meeting this week. India VIX 15.6 (NSE). Binary overnight risk -> wider short strikes (1.25 SD). Lotto: Nifty 5-day trend is up (+1.5% since 30 Oct), trend rule says calls; no directional edge claimed."
    },
    "mark": {
-    "close_value": 1579.5,
-    "pnl": -63.3,
+    "close_value": 1475.5,
+    "pnl": 40.7,
     "prices": [
-     22.3,
-     34.1,
-     10.65,
-     21.45
+     19.4,
+     32.55,
+     9.25,
+     20.0
     ]
    },
    "closed": []
   },
   "control": {
    "capital": 100000.0,
-   "equity": 99946.01,
+   "equity": 100072.76,
    "realized": 0.0,
    "open": {
     "name": "iron condor",
@@ -101,20 +101,20 @@
     "note": "1 SD short strikes, spot 23320, ATM IV 15.4%; rules only"
    },
    "mark": {
-    "close_value": 2372.5,
-    "pnl": -53.99,
+    "close_value": 2245.75,
+    "pnl": 72.76,
     "prices": [
-     32.35,
-     49.55,
-     15.3,
-     30.1
+     28.0,
+     48.4,
+     13.35,
+     28.5
     ]
    },
    "closed": []
   },
   "lotto": {
    "capital": 1000.0,
-   "equity": 1080.0,
+   "equity": 953.25,
    "realized": 0.0,
    "open": {
     "name": "lotto",
@@ -135,10 +135,10 @@
     "note": "buy up: Events before the 9 Nov expiry: US midterm elections Tue 3 Nov (results land before the Indian open on 4 Nov) and US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026); no FOMC (next 8-9 Dec, MUFG 2026 calendar) and no RBI meeting this week. India VIX 15.6 (NSE). Binary overnight risk -> wider short strikes (1.25 SD). Lotto: Nifty 5-day trend is up (+1.5% since 30 Oct), trend rule says calls; no directional edge claimed."
    },
    "mark": {
-    "close_value": -994.5,
-    "pnl": 80.0,
+    "close_value": -867.75,
+    "pnl": -46.75,
     "prices": [
-     15.3
+     13.35
     ]
    },
    "closed": []
@@ -165,6 +165,13 @@
    "main": "99936.7",
    "control": "99946.01",
    "lotto": "1080.0"
+  },
+  {
+   "time": "2026-11-02T15:07:12+05:30",
+   "spot": "23307.8",
+   "main": "100040.7",
+   "control": "100072.76",
+   "lotto": "953.25"
   }
  ],
  "gates": [

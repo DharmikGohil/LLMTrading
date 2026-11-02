@@ -12,6 +12,12 @@
   "reflection": "First session, a partial day: entries at about 14:15 New York time, close at 16:00.\n- **Difference from the control:** the LLM review vetoed LLY and MRK (results Thu 29 Oct) and AAPL (results Mon 2 Nov),\n  shrank MET (results 4 Nov) and bought KO (beat and raised guidance on 27 Oct), which the control did not hold.\n  The control held LLY and AAPL instead of KO.\n- **Result:** both accounts were flat into the close (main +0.01%, control -0.01%) while the S&P 500 gained about 0.19%\n  from the entry time. That is too small a difference to mean anything.\n- **Vetoes:** no outcomes yet. LLY and MRK report before tomorrow's open, so the 1-day outcome of the earnings vetoes\n  is known at tomorrow's close. This is the first real test of the \"no entry before earnings\" rule.\n- **No stop-outs**, and no calls have elapsed outcome windows yet.\n- **Process note:** in earnings season, 3 of the 8 top S&P 100 momentum names had results within 3 trading days.\n  The earnings check is the most important part of the US review right now.\n- **No lessons added:** no evidence yet. Candidate to watch: whether vetoing names into earnings beats holding them."
  },
  {
+  "id": "2026-11-02-india",
+  "date": "2026-11-02",
+  "market": "India",
+  "reflection": "- Close equity (eod): LLM-reviewed \u20b999,770.01 (\u22120.23%), control \u20b999,844.69 (\u22120.16%); Nifty 23,305.95, +1.1% today.\n  Both accounts are about 31\u201341% invested because of the bear-regime \u00d70.5 rule, so both lag a rising index.\n- Same trades in both accounts today: LAURUSLABS 2 and PHOENIXLTD 2 at the open. The only difference is that the\n  control still holds the two names the LLM vetoed before results: NYKAA (14) and ZYDUSLIFE (4).\n- Vetoes on today's move: NYKAA +0.94% vs Nifty +1.11% (excess \u22120.17), ZYDUSLIFE \u22120.31% (excess \u22121.42). Both\n  vetoes helped slightly today. NYKAA, ZYDUSLIFE and AUROPHARMA report on 4 Nov; the 5-day excess is what counts for\n  the pre-results-veto hypothesis, so no lesson evidence is recorded from one day.\n- No stops hit; no exits. Every stop is still well below price.\n- Options paper book: main condor +\u20b937, control condor +\u20b963 (both inside their exit rules), \u20b91,000 test \u2212\u20b963 (\u20b9937).\n- Lesson book unchanged: nothing today meets the evidence bar."
+ },
+ {
   "id": "2026-10-30-india",
   "date": "2026-10-30",
   "market": "India",
