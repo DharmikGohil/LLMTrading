@@ -2,8 +2,19 @@ from datetime import date, datetime
 
 import pytest
 
-from indtrader.options import (LOT, Chain, Leg, OptionCosts, OptionsBook, OptionsDesk, Quote, exit_reason,
-                               last_trading_day_before, plan_iron_condor, plan_lotto, trading_days_between)
+from indtrader.options import (
+    LOT,
+    Chain,
+    OptionCosts,
+    OptionsBook,
+    OptionsDesk,
+    Quote,
+    exit_reason,
+    last_trading_day_before,
+    plan_iron_condor,
+    plan_lotto,
+    trading_days_between,
+)
 
 
 def make_chain(spot=23300.0, iv=15.0, expiry=date(2026, 11, 9), shift=0.0):
