@@ -525,3 +525,97 @@ def costs(price: float, qty: int, product: str = "CNC", config: str = ConfigOpt)
 
 if __name__ == "__main__":
     app()
+
+
+# ---------------------------------------------------------------- Nifty options paper desk
+OPTIONS_DIR = Path("paper/options")
+
+
+def _options_desk():
+    from indtrader.options import OptionsDesk
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    return OptionsDesk(OPTIONS_DIR)
+
+
+@app.command("options-gate")
+def options_gate(
+    action: str = typer.Option(..., help="trade | widen | skip (applies to the LLM-reviewed iron condor)"),
+    direction: str = typer.Option("none", help="lotto direction: up | down | none (none = skip the lotto)"),
+    note: str = typer.Option(..., help="the events checked and the reason, with sources"),
+):
+    """The analyst's event gate for today's options entries. The rules-only control ignores it."""
+    if action not in ("trade", "widen", "skip") or direction not in ("up", "down", "none"):
+        raise typer.BadParameter("action: trade|widen|skip; direction: up|down|none")
+    f = _options_desk().set_gate(now_ist().date(), action, direction, note)
+    typer.echo(f"gate -> {f}")
+
+
+@app.command("options-enter")
+def options_enter():
+    """Open today's positions in the accounts that are flat (needs today's gate for the LLM-reviewed account)."""
+    from indtrader import data as market_data
+
+    desk = _options_desk()
+    try:
+        idx = market_data.recent_history("^NSEI", now_ist().date(), lookback_days=15)["Close"]
+        ret5 = float(idx.iloc[-1] / idx.iloc[-6] - 1)
+    except Exception:
+        ret5 = None
+    typer.echo(json.dumps(desk.enter_all(now_ist().date(), ret5), indent=1, default=str))
+
+
+@app.command("options-monitor")
+def options_monitor():
+    """Check the open options positions once against their exits."""
+    typer.echo(json.dumps(_options_desk().monitor(), indent=1, default=str))
+
+
+@app.command("options-status")
+def options_status():
+    """Open positions, marks and P&L of the three options accounts."""
+    snap = _options_desk().snapshot()
+    for arm, b in snap["books"].items():
+        o, m = b["open"], b["mark"]
+        legs = ", ".join(f"{lg['side'][0]} {lg['strike']}{lg['kind']}@{lg['entry']}" for lg in o["legs"]) if o else "flat"
+        typer.echo(f"{arm:8} equity {b['equity']:>11,.2f} of {b['capital']:>9,.0f}  realized {b['realized']:>9,.2f}  "
+                   f"{legs}{'  unrealized ' + format(m['pnl'], ',.2f') if m else ''}")
+
+
+@app.command()
+def live(
+    options_every: int = typer.Option(60, help="seconds between options checks"),
+    stocks_every: int = typer.Option(300, help="seconds between stock stop checks"),
+    configs: str = typer.Option("config/india_paper.yaml", help="comma-separated stock desk configs to monitor"),
+):
+    """Watch the NSE session: options exits every minute, stock stops every 5 minutes, until 15:30 IST.
+    Paper only. The scheduled runs remain the backstop and do the commits."""
+    import time as _time
+
+    desk = _options_desk()
+    last_stocks = float("-inf")
+    while True:
+        now = now_ist()
+        if not is_trading_day(now.date()):
+            typer.echo("not a trading day")
+            return
+        if (now.hour, now.minute) >= (15, 30):
+            typer.echo("session over")
+            return
+        if (now.hour, now.minute) >= (9, 15):
+            try:
+                for e in desk.monitor():
+                    typer.echo(f"{now:%H:%M:%S} options {e}")
+            except Exception as exc:
+                logging.getLogger("live").warning("options check failed: %s", exc)
+            if _time.monotonic() - last_stocks >= stocks_every:
+                last_stocks = _time.monotonic()
+                for cfg in [c for c in configs.split(",") if c]:
+                    try:
+                        s = load_settings(cfg)
+                        for name, eng in _all_books(s).items():
+                            if out := eng.monitor():
+                                typer.echo(f"{now:%H:%M:%S} stocks {cfg} {name}: {out}")
+                    except Exception as exc:
+                        logging.getLogger("live").warning("stock check %s failed: %s", cfg, exc)
+        _time.sleep(options_every)
