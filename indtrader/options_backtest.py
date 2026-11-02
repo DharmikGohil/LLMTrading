@@ -63,8 +63,10 @@ def load(symbol: str, years: range | None = None) -> dict[date, dict]:
                     continue
                 d = date.fromisoformat(r["date"])
                 day = days.setdefault(d, {"spot": float(r["fut_close"] or 0), "chains": defaultdict(dict)})
-                day["chains"][date.fromisoformat(r["expiry"])][(float(r["strike"]), r["type"])] = (
-                    float(r["close"] or 0), int(r["volume"] or 0))
+                close, vol = float(r["close"] or 0), int(r["volume"] or 0)
+                # untraded contracts carry a stale close: use NSE's settlement price for them instead
+                price = close if vol > 0 else float(r["settle"] or 0) or close
+                day["chains"][date.fromisoformat(r["expiry"])][(float(r["strike"]), r["type"])] = (price, vol)
     return dict(sorted(days.items()))
 
 
