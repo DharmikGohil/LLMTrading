@@ -122,6 +122,7 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 | [Research](docs/research.md) | The evidence behind the design, and the projects it borrows from |
 | [Audit](docs/audit.md) | What was taken from each project, what was left out, and why |
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
+| [Kronos test](docs/kronos.md) | Walk-forward check of the Kronos candlestick model on Nifty, stocks and SPY |
 | [Roadmap](docs/roadmap.md) | What comes next |
 
 ## Contributing

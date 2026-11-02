@@ -5,6 +5,10 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 
 ## [Unreleased]
 
+### Added
+- Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
+  its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+
 ## [0.3.0] - 2026-10-30
 
 ### Fixed
