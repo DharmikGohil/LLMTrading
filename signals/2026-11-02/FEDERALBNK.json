@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. No results due (brief); recent NSE filings are routine (analyst meets, ESOP allotment, 23-28 Oct). RSI 51.6, trend template 7/7. No red flag found.",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:20+05:30"
+}

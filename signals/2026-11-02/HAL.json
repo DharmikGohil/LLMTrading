@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Results 12 Nov 2026 (NSE calendar in brief), outside the window. Director changes 7 and 28 Oct are routine government nominations per NSE filings. RSI 52. No red flag found.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:21+05:30"
+}

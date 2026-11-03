@@ -1,0 +1,12 @@
+{
+  "symbol": "ADANIPORTS",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Earnings-call transcript and the October monthly business update were filed on 2 Nov (NSE); the update's contents are not yet verified in the press. September cargo was 46 MMT, +11% y/y, and H1 FY27 cargo +15% (PSU Connect / NSE filing). No red flag found.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:26+05:30"
+}

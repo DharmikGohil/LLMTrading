@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Q2 results out 28-29 Oct (NSE press release); September sales 672,790 units, +24% y/y (TVS NSE filing, 1 Oct 2026); October sales update filed 1 Nov (NSE). Trend template 6/7. No red flag found.",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:21+05:30"
+}

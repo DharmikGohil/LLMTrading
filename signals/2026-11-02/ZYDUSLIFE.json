@@ -1,0 +1,12 @@
+{
+  "symbol": "ZYDUSLIFE",
+  "as_of": "2026-11-02",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 results Wed 4 Nov 2026 (NSE results calendar in brief): within 3 trading days. NSE filings also show a change in management on 31 Oct and a general update on 2 Nov, not yet verified in the press.",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:19+05:30"
+}

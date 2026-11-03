@@ -1,0 +1,12 @@
+{
+  "symbol": "BOSCHLTD",
+  "as_of": "2026-11-02",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 results Fri 6 Nov 2026 (NSE results calendar in brief; analyst meet scheduled per NSE filing 26 Oct): now within 3 trading days, binary gap risk.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T07:43:19+05:30"
+}
