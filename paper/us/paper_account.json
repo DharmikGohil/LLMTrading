@@ -1,5 +1,5 @@
 {
-  "cash": 183.7212882156373,
+  "cash": 26.982954551696878,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -36,6 +36,10 @@
     "MRK": {
       "qty": 6,
       "avg": 148.27910433197022
+    },
+    "TGT": {
+      "qty": 1,
+      "avg": 156.7383336639404
     }
   },
   "orders": [
@@ -158,6 +162,17 @@
       "status": "COMPLETE",
       "price": 148.28,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-03T09:52:22-05:00",
+      "id": "PAPER-76c00c010e",
+      "symbol": "TGT",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 156.74,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 11) stop 139.86",
       "message": "charges $0.00"
     }
   ],

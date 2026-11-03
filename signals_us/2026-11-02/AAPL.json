@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-02",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 reported after the close on 2 Nov 2026 (Apple IR schedule via MacTrast); details not yet verified. Shares about -1.6% in the first half hour on 3 Nov (Yahoo 5-min). Prior guidance was +9-11% revenue (Apple, 30 Jul). Results risk is past but the reaction is negative and unverified: Hold.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:55-05:00"
+}

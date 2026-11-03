@@ -1,0 +1,12 @@
+{
+  "symbol": "MRK",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Q3 beat and raised FY26 EPS guidance to $2.77-2.82 (Finviz/StockStory, 29 Oct 2026). Results risk is past; no new red flag found.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:55-05:00"
+}

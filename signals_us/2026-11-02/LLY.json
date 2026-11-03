@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Q3 results are out (reported before the 28-29 Oct ratings; the 27 Oct pre-results veto is now behind it). No new red flag found in recent headlines.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:59-05:00"
+}

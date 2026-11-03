@@ -71,20 +71,28 @@
       "target": 1988.72,
       "opened": "2026-11-02",
       "buy_charges": 0.0
+    },
+    "TGT": {
+      "qty": 1,
+      "avg": 156.74,
+      "stop": 139.86,
+      "target": 1836.87,
+      "opened": "2026-11-03",
+      "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-02",
-    "start_equity": 9932.24,
-    "orders": 2,
+    "date": "2026-11-03",
+    "start_equity": 9887.5,
+    "orders": 1,
     "partial": false
   },
   "stopped_out": {
     "CSCO": "2026-10-30"
   },
   "realized_pnl": -104.84999999999995,
-  "cash": 183.81999999999948,
+  "cash": 27.079999999999472,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
@@ -92,7 +100,8 @@
     "PAPER-299d24b6bc",
     "PAPER-18465a91da",
     "PAPER-258ee94d99",
-    "PAPER-1c8c9b758a"
+    "PAPER-1c8c9b758a",
+    "PAPER-76c00c010e"
   ],
   "ca_pending": {},
   "peak_equity": 10039.43

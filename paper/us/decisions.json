@@ -610,5 +610,194 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "AAPL",
+  "price": 333.38,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 2 (alloc 2, risk-sized 7) stop 305.31"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "ABBV",
+  "price": 290.29,
+  "held": 0,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 263.96"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "AMGN",
+  "price": 465.73,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "BMY",
+  "price": 62.95,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "CSCO",
+  "price": 102.51,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Sell; Sell: trim 0 -> 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "CVX",
+  "price": 225.68,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "DE",
+  "price": 663.43,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (1 >= 1)"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "EMR",
+  "price": 165.96,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "JNJ",
+  "price": 269.55,
+  "held": 7,
+  "target_qty": 7,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "KO",
+  "price": 94.46,
+  "held": 21,
+  "target_qty": 21,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "LLY",
+  "price": 1432.24,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "MET",
+  "price": 100.02,
+  "held": 15,
+  "target_qty": 15,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 15"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "MRK",
+  "price": 146.25,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: already at/above size (6 >= 6)"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "PM",
+  "price": 207.05,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum Hold; Hold: keep 4"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "TGT",
+  "price": 156.66,
+  "held": 0,
+  "target_qty": 6,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 11) stop 139.86"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "TMO",
+  "price": 692.58,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "UNH",
+  "price": 398.45,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "UNP",
+  "price": 303.24,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "USB",
+  "price": 60.24,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Hold; Hold: keep 6"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "V",
+  "price": 420.36,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:52:22-05:00",
+  "as_of": "2026-11-02",
+  "symbol": "XOM",
+  "price": 178.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
  }
 ]

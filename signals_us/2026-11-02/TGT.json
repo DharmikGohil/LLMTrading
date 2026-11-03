@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-02",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Next results expected 18 Nov 2026, not yet company-confirmed (Earnings Whispers / ChartRow), about 11 trading days away, outside the window. Last quarter beat: EPS $2.46 vs $2.30 (19 Aug 2026). No regulatory or guidance-cut red flag found. Recheck as the report nears.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:54-05:00"
+}

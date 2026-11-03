@@ -1,0 +1,12 @@
+{
+  "symbol": "AMGN",
+  "as_of": "2026-11-02",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 results due today, 3 Nov 2026, after the close (most calendars; Earnings Whispers had 2 Nov): within 3 trading days, binary gap risk.",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:57-05:00"
+}

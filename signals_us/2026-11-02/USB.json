@@ -1,0 +1,12 @@
+{
+  "symbol": "USB",
+  "as_of": "2026-11-02",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Next results 19 Jan 2027 (Yahoo calendar). No new red flag found.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:58-05:00"
+}

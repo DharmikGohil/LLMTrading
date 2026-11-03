@@ -3,7 +3,7 @@
     "LLY": {
       "qty": 1,
       "avg": 1289.69,
-      "stop": 1253.17,
+      "stop": 1254.01,
       "target": 1470.84,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -67,7 +67,7 @@
     "AMGN": {
       "qty": 2,
       "avg": 462.45,
-      "stop": 416.29,
+      "stop": 420.79,
       "target": 5055.1,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-02",
-    "start_equity": 9967.98,
-    "orders": 3,
+    "date": "2026-11-03",
+    "start_equity": 9941.68,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {

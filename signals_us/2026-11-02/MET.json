@@ -1,0 +1,12 @@
+{
+  "symbol": "MET",
+  "as_of": "2026-11-02",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 results Wed 4 Nov 2026 after the close (company-confirmed, Unusual Whales/TipRanks): within 3 trading days. Holding stays; no adds before the print.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-03T09:51:55-05:00"
+}

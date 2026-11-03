@@ -10,3 +10,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-10-30T15:47:26-04:00,CSCO,SELL,16,103.16,COMPLETE,16,103.43,PAPER-18465a91da,stop-loss hit (103.48 <= 104.01),charges $0.05
 2026-11-02T10:53:59-05:00,DE,BUY,1,681.27,COMPLETE,1,679.39,PAPER-258ee94d99,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.47",charges $0.00
 2026-11-02T10:54:00-05:00,MRK,BUY,6,148.65,COMPLETE,6,148.28,PAPER-1c8c9b758a,"momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",charges $0.00
+2026-11-03T09:52:22-05:00,TGT,BUY,1,157.13,COMPLETE,1,156.74,PAPER-76c00c010e,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 11) stop 139.86",charges $0.00
