@@ -196,5 +196,131 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "ADANIPORTS",
+  "price": 1866.0,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "AUROPHARMA",
+  "price": 1668.4,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "BOSCHLTD",
+  "price": 50385.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "DIVISLAB",
+  "price": 9951.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (58%): Buy softened to Overweight; bear regime: size x0.5; Overweight: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "ETERNAL",
+  "price": 347.6,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; bear regime: size x0.5; Buy: already at/above size (14 >= 14)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "FEDERALBNK",
+  "price": 334.2,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Sell; Sell but held 4d < min 20d; keeping (stop still active)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "GAIL",
+  "price": 181.18,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "GLENMARK",
+  "price": 2385.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: second opinion missing; no new buys; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "HAL",
+  "price": 4892.0,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "LAURUSLABS",
+  "price": 2303.4,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (58%): Buy softened to Overweight; bear regime: size x0.5; Overweight: already at/above size (2 >= 1)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "NYKAA",
+  "price": 349.4,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "PHOENIXLTD",
+  "price": 2031.7,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "TVSMOTOR",
+  "price": 4264.0,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Sell; Sell but held 4d < min 20d; keeping (stop still active)"
+ },
+ {
+  "time": "2026-11-03T09:36:17+05:30",
+  "as_of": "2026-11-02",
+  "symbol": "ZYDUSLIFE",
+  "price": 1221.2,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
  }
 ]
