@@ -1,13 +1,9 @@
 {
-  "cash": 42.2705780639661,
+  "cash": 1696.2431591644302,
   "positions": {
     "LLY": {
       "qty": 1,
       "avg": 1289.689566467285
-    },
-    "AAPL": {
-      "qty": 5,
-      "avg": 345.2125285491943
     },
     "JNJ": {
       "qty": 7,
@@ -174,8 +170,19 @@
       "price": 148.28,
       "reason": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-03T15:47:13-05:00",
+      "id": "PAPER-f3df608737",
+      "symbol": "AAPL",
+      "side": "SELL",
+      "qty": 5,
+      "status": "COMPLETE",
+      "price": 330.8,
+      "reason": "stop-loss hit (330.97 <= 332.33)",
+      "message": "charges $0.05"
     }
   ],
-  "realized_pnl": -104.95723120117172,
-  "charges": 0.05
+  "realized_pnl": -177.0472928466792,
+  "charges": 0.1
 }

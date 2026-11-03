@@ -8,14 +8,6 @@
       "opened": "2026-10-28",
       "buy_charges": 0.0
     },
-    "AAPL": {
-      "qty": 5,
-      "avg": 345.21,
-      "stop": 332.33,
-      "target": 376.83,
-      "opened": "2026-10-28",
-      "buy_charges": 0.0
-    },
     "JNJ": {
       "qty": 7,
       "avg": 271.44,
@@ -85,14 +77,18 @@
   "day": {
     "date": "2026-11-03",
     "start_equity": 9941.68,
-    "orders": 0,
-    "partial": false
+    "orders": 1,
+    "partial": false,
+    "dp_charged": [
+      "AAPL"
+    ]
   },
   "stopped_out": {
-    "CSCO": "2026-10-30"
+    "CSCO": "2026-10-30",
+    "AAPL": "2026-11-03"
   },
-  "realized_pnl": -104.84999999999995,
-  "cash": 42.389999999999276,
+  "realized_pnl": -176.9499999999998,
+  "cash": 1696.3399999999992,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
@@ -100,7 +96,8 @@
     "PAPER-f4030203cc",
     "PAPER-5ddb0169d4",
     "PAPER-03d9e9811d",
-    "PAPER-646cee9174"
+    "PAPER-646cee9174",
+    "PAPER-f3df608737"
   ],
   "ca_pending": {},
   "peak_equity": 10121.78

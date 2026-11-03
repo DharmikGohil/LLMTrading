@@ -288,6 +288,18 @@
   "id": "US:factor:23"
  },
  {
+  "time": "2026-11-03T15:47:13-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "AAPL",
+  "side": "SELL",
+  "qty": 5,
+  "price": 330.8,
+  "status": "COMPLETE",
+  "reason": "stop-loss hit (330.97 <= 332.33)",
+  "id": "US:factor:24"
+ },
+ {
   "time": "2026-10-30T11:04:32+05:30",
   "market": "India",
   "book": "main",
