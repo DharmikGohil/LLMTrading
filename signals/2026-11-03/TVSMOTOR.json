@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-03",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Press release filed 3 Nov and October sales update 1 Nov (NSE), contents not yet verified in the press; September sales +24% y/y (TVS NSE filing, 1 Oct). Trend template 6/7. No red flag found.",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-04T07:43:19+05:30"
+}

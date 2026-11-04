@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-03",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Q2 results 12 Nov 2026 (NSE results calendar in brief), now 6 trading days away (4-7 days = Hold). General update filed 3 Nov (NSE), content not verified in the press. RSI 52.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-04T07:43:19+05:30"
+}
