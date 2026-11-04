@@ -51,7 +51,7 @@
     "USB": {
       "qty": 6,
       "avg": 59.87,
-      "stop": 55.59,
+      "stop": 56.47,
       "target": 538.56,
       "opened": "2026-10-30",
       "buy_charges": 0.0
@@ -75,7 +75,7 @@
     "TGT": {
       "qty": 1,
       "avg": 156.74,
-      "stop": 139.86,
+      "stop": 142.2,
       "target": 1836.87,
       "opened": "2026-11-03",
       "buy_charges": 0.0
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-03",
-    "start_equity": 9887.5,
-    "orders": 1,
+    "date": "2026-11-04",
+    "start_equity": 9966.3,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {

@@ -300,6 +300,42 @@
   "id": "US:factor:24"
  },
  {
+  "time": "2026-11-04T09:52:50-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "ABBV",
+  "side": "BUY",
+  "qty": 2,
+  "price": 288.15,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",
+  "id": "US:factor:25"
+ },
+ {
+  "time": "2026-11-04T09:52:50-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "UNP",
+  "side": "BUY",
+  "qty": 3,
+  "price": 301.75,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",
+  "id": "US:factor:26"
+ },
+ {
+  "time": "2026-11-04T09:52:50-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "KO",
+  "side": "BUY",
+  "qty": 2,
+  "price": 94.82,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",
+  "id": "US:factor:27"
+ },
+ {
   "time": "2026-10-30T11:04:32+05:30",
   "market": "India",
   "book": "main",

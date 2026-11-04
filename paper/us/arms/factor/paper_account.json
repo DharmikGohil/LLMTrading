@@ -1,5 +1,5 @@
 {
-  "cash": 1696.2431591644302,
+  "cash": 25.04794802093639,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -18,12 +18,12 @@
       "avg": 708.1138897705077
     },
     "ABBV": {
-      "qty": 1,
-      "avg": 292.1359852294922
+      "qty": 3,
+      "avg": 289.4813382568359
     },
     "KO": {
-      "qty": 2,
-      "avg": 94.55725713729858
+      "qty": 4,
+      "avg": 94.68731938934326
     },
     "DE": {
       "qty": 1,
@@ -36,6 +36,10 @@
     "MRK": {
       "qty": 1,
       "avg": 148.27910433197022
+    },
+    "UNP": {
+      "qty": 3,
+      "avg": 301.7508061065674
     }
   },
   "orders": [
@@ -181,6 +185,39 @@
       "price": 330.8,
       "reason": "stop-loss hit (330.97 <= 332.33)",
       "message": "charges $0.05"
+    },
+    {
+      "time": "2026-11-04T09:52:50-05:00",
+      "id": "PAPER-83881d201f",
+      "symbol": "ABBV",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 288.15,
+      "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-04T09:52:50-05:00",
+      "id": "PAPER-9964d80ba8",
+      "symbol": "UNP",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 301.75,
+      "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-04T09:52:50-05:00",
+      "id": "PAPER-418779cf2a",
+      "symbol": "KO",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 94.82,
+      "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",
+      "message": "charges $0.00"
     }
   ],
   "realized_pnl": -177.0472928466792,

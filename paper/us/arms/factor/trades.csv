@@ -12,3 +12,6 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-02T10:54:05-05:00,AMGN,BUY,2,463.61,COMPLETE,2,462.45,PAPER-03d9e9811d,"momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 416.29",charges $0.00
 2026-11-02T10:54:05-05:00,MRK,BUY,1,148.65,COMPLETE,1,148.28,PAPER-646cee9174,"momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",charges $0.00
 2026-11-03T15:47:13-05:00,AAPL,SELL,5,329.97,COMPLETE,5,330.8,PAPER-f3df608737,stop-loss hit (330.97 <= 332.33),charges $0.05
+2026-11-04T09:52:50-05:00,ABBV,BUY,2,288.88,COMPLETE,2,288.15,PAPER-83881d201f,"momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",charges $0.00
+2026-11-04T09:52:50-05:00,UNP,BUY,3,302.51,COMPLETE,3,301.75,PAPER-9964d80ba8,"momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",charges $0.00
+2026-11-04T09:52:50-05:00,KO,BUY,2,95.06,COMPLETE,2,94.82,PAPER-418779cf2a,"momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",charges $0.00
