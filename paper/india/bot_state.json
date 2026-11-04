@@ -3,7 +3,7 @@
     "HAL": {
       "qty": 1,
       "avg": 4819.21,
-      "stop": 4431.47,
+      "stop": 4529.44,
       "target": 53135.35,
       "opened": "2026-10-30",
       "buy_charges": 5.72
@@ -11,7 +11,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 3779.01,
+      "stop": 3847.1,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -19,7 +19,7 @@
     "ADANIPORTS": {
       "qty": 2,
       "avg": 1843.92,
-      "stop": 1664.13,
+      "stop": 1703.75,
       "target": 22068.99,
       "opened": "2026-10-30",
       "buy_charges": 4.38
@@ -51,7 +51,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1802.31,
+      "stop": 1828.67,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -59,8 +59,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-03",
-    "start_equity": 99847.71,
+    "date": "2026-11-04",
+    "start_equity": 100072.61,
     "orders": 0,
     "partial": false
   },
@@ -78,6 +78,6 @@
   "ca_pending": {},
   "cash": 68744.31000000003,
   "capital": 100000.0,
-  "peak_equity": 100000.0,
+  "peak_equity": 100072.61,
   "ca_applied": []
 }

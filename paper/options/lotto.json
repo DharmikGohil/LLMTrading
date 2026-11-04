@@ -1,24 +1,7 @@
 {
  "capital": 1000.0,
- "cash": 80.07999999999993,
- "open": {
-  "name": "lotto",
-  "expiry": "2026-11-09",
-  "opened": "2026-11-03T09:36:58+05:30",
-  "legs": [
-   {
-    "kind": "CE",
-    "strike": 24050,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 44.6
-   }
-  ],
-  "credit": -2899.0,
-  "entry_charges": 24.91,
-  "max_loss": 2899.0,
-  "note": "buy up: Events before the 10 Nov expiry: US midterm elections today, 3 Nov (results land before the Indian open on 4 Nov); US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026). No FOMC (next 8-9 Dec) and no RBI meeting this week. Nifty opened about +1.3% at 23,618 (Yahoo 5-min, 09:35 IST). Binary overnight risk, so short strikes widen to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; no directional edge claimed."
- },
+ "cash": 8675.15,
+ "open": null,
  "closed": [
   {
    "name": "lotto",
@@ -44,7 +27,32 @@
    "exit_charges": 29.26,
    "pnl": 2003.99,
    "reason": "target: worth 2948 >= 2x cost 890"
+  },
+  {
+   "name": "lotto",
+   "expiry": "2026-11-09",
+   "opened": "2026-11-03T09:36:58+05:30",
+   "legs": [
+    {
+     "kind": "CE",
+     "strike": 24050,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 44.6
+    }
+   ],
+   "credit": -2899.0,
+   "entry_charges": 24.91,
+   "max_loss": 2899.0,
+   "note": "buy up: Events before the 10 Nov expiry: US midterm elections today, 3 Nov (results land before the Indian open on 4 Nov); US October jobs report Fri 6 Nov (Newsquawk week ahead, 2-6 Nov 2026). No FOMC (next 8-9 Dec) and no RBI meeting this week. Nifty opened about +1.3% at 23,618 (Yahoo 5-min, 09:35 IST). Binary overnight risk, so short strikes widen to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; no directional edge claimed.",
+   "closed": "2026-11-04T09:36:25+05:30",
+   "exit_prices": [
+    132.85
+   ],
+   "exit_charges": 40.18,
+   "pnl": 5671.16,
+   "reason": "target: worth 8635 >= 2x cost 2899"
   }
  ],
- "realized": 2003.99
+ "realized": 7675.15
 }
