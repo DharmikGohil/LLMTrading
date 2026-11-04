@@ -3,11 +3,11 @@
   "id": "a-pre-results-veto-on-a-top-ranked-momen",
   "lesson": "A pre-results veto on a top-ranked momentum stock may cost more than it saves: so far the vetoed names that reported a beat rose sharply (judge on 5-day excess, not 1-day).",
   "market": "all",
-  "status": "hypothesis",
-  "evidence_for": 2,
+  "status": "confirmed",
+  "evidence_for": 4,
   "evidence_against": 0,
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-04",
-  "examples": "2026-10-27 LLY vetoed (results 29 Oct), beat and raised, 1-day excess +6.9%, +7% to a record | + 2026-10-27 MRK vetoed before 29 Oct results (beat, guidance raised): 5-day excess vs S&P +3.52% (close 27 Oct 141.82 -> 3 Nov 144.02)"
+  "last_seen": "2026-11-05",
+  "examples": "2026-10-27 LLY vetoed (results 29 Oct), beat and raised, 1-day excess +6.9%, +7% to a record | + 2026-10-27 MRK vetoed before 29 Oct results (beat, guidance raised): 5-day excess vs S&P +3.52% (close 27 Oct 141.82 -> 3 Nov 144.02) | + 2026-10-28 AMGN vetoed before 3 Nov results (beat: revenue +8%, non-GAAP EPS +14%): 5-day excess vs S&P +6.75% (close 28 Oct to 4 Nov) | + 2026-10-28 ABBV vetoed before 30 Oct results (beat, FY26 outlook and dividend raised): 5-day excess vs S&P +3.38% (close 28 Oct to 4 Nov)"
  }
 ]
