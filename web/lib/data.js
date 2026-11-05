@@ -294,3 +294,47 @@ export function liveKeys(data) {
   for (const [mk, y] of Object.entries(YAHOO_INDEX)) keys.add(`${mk}:${y}`);
   return [...keys].sort();
 }
+
+export const OPTION_ARMS = {
+  main: { title: "LLM-reviewed iron condor", short: "LLM-reviewed condor", sub: "Rules plus Claude's event gate (trade, widen or skip)" },
+  control: { title: "Rules-only iron condor", short: "Rules-only condor", sub: "Same rules, no LLM: the control" },
+  lotto: { title: "Rs 1,000 option buying", short: "Rs 1,000 test", sub: "One cheap out-of-the-money option per expiry, trend direction; reinvests its whole balance" },
+};
+
+/** Options desk view: per-account money summary, desk totals, and equity paths for the charts. */
+export function optionsView(options) {
+  const rows = Object.entries(OPTION_ARMS).filter(([k]) => options.books[k]).map(([k, a]) => {
+    const b = options.books[k];
+    const closed = b.closed || [];
+    const pnls = closed.map((c) => c.pnl);
+    const open = b.mark?.pnl ?? null;
+    return {
+      id: k, name: a.short, invested: b.capital, value: b.equity, pnl: b.equity - b.capital,
+      ret: (b.equity / b.capital - 1) * 100, realized: b.realized, open, status: b.open ? "open" : "flat",
+      trades: closed.length, wins: pnls.filter((p) => p > 0).length,
+      best: pnls.length ? Math.max(...pnls) : null, worst: pnls.length ? Math.min(...pnls) : null,
+    };
+  });
+  const condors = rows.filter((r) => r.id !== "lotto");
+  const sum = (xs, f) => xs.reduce((s, r) => s + (f(r) || 0), 0);
+  const totals = { invested: sum(rows, (r) => r.invested), value: sum(rows, (r) => r.value) };
+  totals.pnl = totals.value - totals.invested;
+  totals.ret = (totals.value / totals.invested - 1) * 100;
+
+  const eq = (options.equity || []).map((r) => ({ t: ms(r.time), spot: Number(r.spot) || null, main: Number(r.main), control: Number(r.control), lotto: Number(r.lotto) }))
+    .filter((r) => r.t).sort((a, b) => a.t - b.t);
+  const times = eq.map((r) => r.t);
+  const spot0 = eq.find((r) => r.spot)?.spot;
+  const cap = (k) => options.books[k]?.capital;
+  const line = (key, label, pick, base) => ({ key, label, values: eq.map((r) => { const v = pick(r); return v == null || !base ? null : { v, r: (v / base - 1) * 100 }; }) });
+  const base = { tz: "Asia/Kolkata", tzLabel: "IST", symbol: "₹", times };
+  let lastSpot = null;
+  const spotPick = (r) => (r.spot ? (lastSpot = r.spot) : lastSpot);
+  const condorChart = { ...base, series: [
+    line("main", OPTION_ARMS.main.short, (r) => r.main, cap("main")),
+    line("factor", OPTION_ARMS.control.short, (r) => r.control, cap("control")),
+    ...(spot0 ? [line("index", "Nifty 50", spotPick, spot0)] : []),
+  ] };
+  const lottoChart = cap("lotto") ? { ...base, series: [line("main", OPTION_ARMS.lotto.short, (r) => r.lotto, cap("lotto"))] } : null;
+  return { rows, condors, totals, condorChart, lottoChart };
+}

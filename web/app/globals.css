@@ -317,3 +317,15 @@ td.sym a:hover { color: var(--accent-ink); text-decoration: underline; text-unde
 @keyframes flash-up { from { background: rgba(46, 189, 111, 0.35); } to { background: transparent; } }
 @keyframes flash-down { from { background: rgba(242, 85, 79, 0.35); } to { background: transparent; } }
 @media (prefers-reduced-motion: reduce) { .dot.live, .fl-up, .fl-down { animation: none; } }
+
+/* options: live Nifty vs strikes */
+.sw { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; background: var(--panel-2, var(--panel)); }
+.sw-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 12.5px; }
+.sw-bar { position: relative; height: 6px; border-radius: 3px; margin: 10px 0 8px; background: var(--up-soft, var(--line-2)); }
+.sw-bar i { position: absolute; top: -4px; width: 3px; height: 14px; margin-left: -1.5px; border-radius: 2px; background: var(--accent); }
+.sw-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: end; }
+.sw-row > :nth-child(2) { text-align: center; }
+.sw-item { display: flex; flex-direction: column; gap: 2px; font-size: 12.5px; min-width: 0; }
+.sw-item:last-child { text-align: right; align-items: flex-end; }
+.sw-row:has(> :nth-child(2):last-child) { grid-template-columns: 1fr 1fr; }
+.sw-item b { font-size: 15px; }
