@@ -1,5 +1,5 @@
 {
-  "cash": 58914.07175991821,
+  "cash": 55455.64536221313,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -36,6 +36,10 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.709801147461
+    },
+    "AUROPHARMA": {
+      "qty": 2,
+      "avg": 1727.163198852539
     }
   },
   "orders": [
@@ -137,8 +141,19 @@
       "price": 2020.71,
       "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",
       "message": "charges Rs 4.80"
+    },
+    {
+      "time": "2026-11-05T09:40:11+05:30",
+      "id": "PAPER-5e7a7ff832",
+      "symbol": "AUROPHARMA",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 1727.16,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",
+      "message": "charges Rs 4.10"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 48.72
+  "charges": 52.82
 }

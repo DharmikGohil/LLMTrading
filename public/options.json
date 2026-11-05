@@ -1,6 +1,6 @@
 {
- "time": "2026-11-05T02:17:55+05:30",
- "spot": 23960.6,
+ "time": "2026-11-05T09:40:41+05:30",
+ "spot": 24365.45,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -62,7 +62,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 96506.43,
+   "equity": 94247.68,
    "realized": -4167.15,
    "open": {
     "name": "iron condor",
@@ -104,13 +104,13 @@
     "note": "1 SD short strikes, spot 23918, ATM IV 17.4%; rules only"
    },
    "mark": {
-    "close_value": 1670.5,
-    "pnl": 673.58,
+    "close_value": 3929.25,
+    "pnl": -1585.17,
     "prices": [
-     26.8,
-     27.4,
-     13.6,
-     14.9
+     103.2,
+     9.75,
+     45.35,
+     7.15
     ]
    },
    "closed": [
@@ -358,6 +358,13 @@
    "main": "96278.05",
    "control": "96506.43",
    "lotto": "8675.15"
+  },
+  {
+   "time": "2026-11-05T09:40:41+05:30",
+   "spot": "24365.45",
+   "main": "96278.05",
+   "control": "94247.68",
+   "lotto": "8675.15"
   }
  ],
  "gates": [
@@ -381,6 +388,13 @@
    "lotto_direction": "none",
    "note": "Nifty has gapped up two sessions in a row: 23,306 on 2 Nov to about 23,930 at 09:35 on 4 Nov (+2.7%, Yahoo 5-min), after the US midterm results. India VIX is 16.05, up from 15.6 on 2 Nov (Yahoo). The US October jobs report is due Fri 6 Nov, before the 10 Nov expiry. Both condors were just stopped out by the gap. Skip: no new LLM-reviewed condor and no lotto today; the rules-only control still trades.",
    "time": "2026-11-04T09:37:36+05:30"
+  },
+  {
+   "date": "2026-11-05",
+   "action": "skip",
+   "lotto_direction": "none",
+   "note": "Third gap-up in three sessions: Nifty 23,306 on 2 Nov to 24,366 at 09:40 on 5 Nov (+4.5%, Yahoo 5-min). India VIX 15.2 is falling while realized moves are large, so premiums understate the risk. The US October jobs report is due Fri 6 Nov, before the 10 Nov expiry. Skip: no new LLM-reviewed condor and no lotto entry today; the rules-only control trades by rule. Also noted: the lotto would stake its whole Rs 8,675 balance; its sizing is awaiting the owner's decision.",
+   "time": "2026-11-05T09:40:28+05:30"
   }
  ]
 }

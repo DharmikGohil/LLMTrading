@@ -1,5 +1,5 @@
 {
-  "cash": 68744.2386576233,
+  "cash": 58300.13528549195,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -28,6 +28,18 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.709801147461
+    },
+    "AUROPHARMA": {
+      "qty": 2,
+      "avg": 1725.8625
+    },
+    "ZYDUSLIFE": {
+      "qty": 3,
+      "avg": 1179.5895
+    },
+    "NYKAA": {
+      "qty": 10,
+      "avg": 344.12198721313473
     }
   },
   "orders": [
@@ -107,8 +119,41 @@
       "price": 2020.71,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.31",
       "message": "charges Rs 4.80"
+    },
+    {
+      "time": "2026-11-05T09:40:05+05:30",
+      "id": "PAPER-d663aa4d3e",
+      "symbol": "AUROPHARMA",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 1725.86,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 2 (alloc 4, risk-sized 12) stop 1561.58",
+      "message": "charges Rs 4.10"
+    },
+    {
+      "time": "2026-11-05T09:40:06+05:30",
+      "id": "PAPER-8b2f075bc7",
+      "symbol": "ZYDUSLIFE",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 1179.59,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 3 (alloc 6, risk-sized 13) stop 1033.62",
+      "message": "charges Rs 4.20"
+    },
+    {
+      "time": "2026-11-05T09:40:07+05:30",
+      "id": "PAPER-441c231889",
+      "symbol": "NYKAA",
+      "side": "BUY",
+      "qty": 10,
+      "status": "COMPLETE",
+      "price": 344.12,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 10 (alloc 21, risk-sized 48) stop 303.58",
+      "message": "charges Rs 4.09"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 37.059999999999995
+  "charges": 49.45
 }

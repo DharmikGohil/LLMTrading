@@ -8,3 +8,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-10-30T11:04:42+05:30,NYKAA,BUY,14,350.95,COMPLETE,14,350.07,PAPER-b4e83a264a,"momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",charges Rs 5.82
 2026-11-02T09:36:44+05:30,LAURUSLABS,BUY,2,2384.2,COMPLETE,2,2378.39,PAPER-9b799c0453,"momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2090.13",charges Rs 5.65
 2026-11-02T09:36:44+05:30,PHOENIXLTD,BUY,2,2025.8,COMPLETE,2,2020.71,PAPER-44504a6799,"momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",charges Rs 4.80
+2026-11-05T09:40:11+05:30,AUROPHARMA,BUY,2,1730.2,COMPLETE,2,1727.16,PAPER-5e7a7ff832,"momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",charges Rs 4.10

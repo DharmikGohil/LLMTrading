@@ -457,5 +457,140 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "ADANIPORTS",
+  "price": 1928.3,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; bear regime: size x0.5; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "AUROPHARMA",
+  "price": 1725.0,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 2 (alloc 4, risk-sized 12) stop 1561.58"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "BOSCHLTD",
+  "price": 51250.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "DIVISLAB",
+  "price": 10001.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (60%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "ETERNAL",
+  "price": 347.75,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Hold; Hold: keep 14"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "FEDERALBNK",
+  "price": 332.35,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Sell; Sell but held 6d < min 20d; keeping (stop still active)"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "GLENMARK",
+  "price": 2519.6,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "HAL",
+  "price": 5093.5,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (57%): Buy softened to Overweight; bear regime: size x0.5; Overweight: already at/above size (1 >= 0)"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "INDHOTEL",
+  "price": 856.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "LAURUSLABS",
+  "price": 2304.5,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "MANKIND",
+  "price": 2536.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "NYKAA",
+  "price": 344.8,
+  "held": 0,
+  "target_qty": 10,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 10 (alloc 21, risk-sized 48) stop 303.58"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "PHOENIXLTD",
+  "price": 2076.9,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; bear regime: size x0.5; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "TVSMOTOR",
+  "price": 4419.5,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-05T09:40:00+05:30",
+  "as_of": "2026-11-04",
+  "symbol": "ZYDUSLIFE",
+  "price": 1179.2,
+  "held": 0,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 3 (alloc 6, risk-sized 13) stop 1033.62"
  }
 ]

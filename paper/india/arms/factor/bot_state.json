@@ -3,7 +3,7 @@
     "HAL": {
       "qty": 1,
       "avg": 4819.81,
-      "stop": 4529.44,
+      "stop": 4625.84,
       "target": 53132.75,
       "opened": "2026-10-30",
       "buy_charges": 5.72
@@ -11,7 +11,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 3847.1,
+      "stop": 3953.85,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -19,7 +19,7 @@
     "ADANIPORTS": {
       "qty": 2,
       "avg": 1843.92,
-      "stop": 1703.75,
+      "stop": 1727.9,
       "target": 22069.29,
       "opened": "2026-10-30",
       "buy_charges": 4.38
@@ -35,7 +35,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.67,
-      "stop": 306.96,
+      "stop": 308.62,
       "target": 4532.52,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -67,17 +67,25 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1828.67,
+      "stop": 1834.87,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
+    },
+    "AUROPHARMA": {
+      "qty": 2,
+      "avg": 1727.16,
+      "stop": 1561.58,
+      "target": 18066.91,
+      "opened": "2026-11-05",
+      "buy_charges": 4.1
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-04",
-    "start_equity": 100239.49,
-    "orders": 0,
+    "date": "2026-11-05",
+    "start_equity": 100086.89,
+    "orders": 1,
     "partial": false
   },
   "stopped_out": {},
@@ -91,10 +99,11 @@
     "PAPER-ac4f1349bf",
     "PAPER-b4e83a264a",
     "PAPER-9b799c0453",
-    "PAPER-44504a6799"
+    "PAPER-44504a6799",
+    "PAPER-5e7a7ff832"
   ],
   "ca_pending": {},
-  "cash": 58914.19000000001,
+  "cash": 55455.77000000001,
   "capital": 100000.0,
   "peak_equity": 100239.49,
   "ca_applied": []

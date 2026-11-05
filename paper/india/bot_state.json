@@ -3,7 +3,7 @@
     "HAL": {
       "qty": 1,
       "avg": 4819.21,
-      "stop": 4529.44,
+      "stop": 4626.04,
       "target": 53135.35,
       "opened": "2026-10-30",
       "buy_charges": 5.72
@@ -11,7 +11,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 3847.1,
+      "stop": 3958.05,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -19,7 +19,7 @@
     "ADANIPORTS": {
       "qty": 2,
       "avg": 1843.92,
-      "stop": 1703.75,
+      "stop": 1727.6,
       "target": 22068.99,
       "opened": "2026-10-30",
       "buy_charges": 4.38
@@ -27,7 +27,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.77,
-      "stop": 306.96,
+      "stop": 308.37,
       "target": 4532.67,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -51,17 +51,41 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1828.67,
+      "stop": 1839.57,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
+    },
+    "AUROPHARMA": {
+      "qty": 2,
+      "avg": 1725.86,
+      "stop": 1561.58,
+      "target": 18066.91,
+      "opened": "2026-11-05",
+      "buy_charges": 4.1
+    },
+    "ZYDUSLIFE": {
+      "qty": 3,
+      "avg": 1179.59,
+      "stop": 1033.62,
+      "target": 15737.07,
+      "opened": "2026-11-05",
+      "buy_charges": 4.2
+    },
+    "NYKAA": {
+      "qty": 10,
+      "avg": 344.12,
+      "stop": 303.58,
+      "target": 4466.96,
+      "opened": "2026-11-05",
+      "buy_charges": 4.09
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-04",
-    "start_equity": 100072.61,
-    "orders": 0,
+    "date": "2026-11-05",
+    "start_equity": 100398.11,
+    "orders": 3,
     "partial": false
   },
   "stopped_out": {},
@@ -73,11 +97,14 @@
     "PAPER-cc26c39e0b",
     "PAPER-5d7e1a7e83",
     "PAPER-5526a9051f",
-    "PAPER-1c8a29cfc9"
+    "PAPER-1c8a29cfc9",
+    "PAPER-d663aa4d3e",
+    "PAPER-8b2f075bc7",
+    "PAPER-441c231889"
   ],
   "ca_pending": {},
-  "cash": 68744.31000000003,
+  "cash": 58300.230000000025,
   "capital": 100000.0,
-  "peak_equity": 100072.61,
+  "peak_equity": 100398.11,
   "ca_applied": []
 }
