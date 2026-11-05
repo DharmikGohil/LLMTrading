@@ -33,8 +33,9 @@ Changes since the last review:
 - LAURUSLABS: Hold to Overweight (the spike has cooled).
 - FEDERALBNK: Overweight to Hold (trend weakening).
 
-Correction: the 4 Nov close reflection used intraday Yahoo data and showed ZYDUSLIFE −4.06 excess. The final close was
-flat (1,240.5 to 1,240.6), so that figure was wrong.
+Correction (added at the 5 Nov close): this report's own correction, and the ZYDUSLIFE rating's "closed flat", were
+wrong. The brief's prices ran only to 3 Nov. ZYDUSLIFE fell 4.2% on its 4 Nov results day (Yahoo daily: 1,240.6 to
+1,188.1), so the original 4 Nov figure was right.
 
 ## Sources
 - Laurus Labs Q2 FY27, 29 Oct 2026: https://www.indiainfoline.com/news/companies/laurus-labs-shares-rise-5-after-q2-fy27-net-profit-jumps-126
