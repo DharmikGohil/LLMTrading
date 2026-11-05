@@ -116,7 +116,7 @@ export default function Overview() {
             <div className="runs">
               {[
                 ["07:40", "NSE", "Analyst reviews the screen's candidates (results dates, filings, news)"],
-                ["09:35", "NSE", "Trade both accounts"],
+                ["09:16", "NSE", "Start the options monitor, trade both accounts"],
                 ["12:35", "NSE", "Monitor stops"],
                 ["15:05", "NSE", "Close: equity, graded review, lessons"],
                 ["19:20", "US", "Analyst review, then trade (09:50 ET)"],

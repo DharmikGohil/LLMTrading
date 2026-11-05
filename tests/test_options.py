@@ -112,3 +112,13 @@ def test_desk_needs_a_gate_for_the_llm_account(tmp_path):
     out = {r["arm"]: r for r in desk.enter_all(date(2026, 11, 2), 0.01)}
     assert "legs" in out["main"] and "1.25 SD" in out["main"]["note"]
     assert set(out) == {"main"}                                      # the others are already open
+
+
+def test_lotto_stakes_at_most_1000_and_keeps_winnings(tmp_path):
+    from indtrader.options import LOTTO_STAKE
+    desk = OptionsDesk(tmp_path, FakeNSE(make_chain()))
+    desk.books["lotto"].data["cash"] = 8675.0          # after two winning trades
+    out = {r["arm"]: r for r in desk.enter_all(date(2026, 11, 2), 0.01)}
+    leg = out["lotto"]["legs"][0]
+    assert leg["entry"] * LOT <= LOTTO_STAKE                   # stake capped, not the whole balance
+    assert desk.books["lotto"].data["cash"] >= 8675.0 - LOTTO_STAKE - 50   # winnings stay in the account

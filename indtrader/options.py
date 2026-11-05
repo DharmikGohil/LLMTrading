@@ -6,7 +6,8 @@ Three paper accounts on NSE's live option chain:
            analyst's event gate (trade / skip / widen) written by `indtrader options-gate`
 - control  the same iron condor with no gate: the rules alone
 - lotto    the Rs 1,000 test: buys one cheap out-of-the-money option per expiry in the direction of the
-           Nifty's 5-day trend (the gate can skip it)
+           Nifty's 5-day trend (the gate can skip it). Each trade stakes at most LOTTO_STAKE; profits stay in
+           the account and are not reinvested
 
 Fills are at the bid (sells) and ask (buys) of the live chain, with Indian F&O charges. Every structure has
 its maximum loss fixed at entry. Exits: take profit at 50% of the credit, stop when the loss equals the
@@ -286,6 +287,7 @@ def exit_reason(book: OptionsBook, chain: Chain, now: datetime) -> str | None:
 
 # ---------------------------------------------------------------- desk
 ARMS = {"main": 100000.0, "control": 100000.0, "lotto": 1000.0}
+LOTTO_STAKE = 1000.0   # most the lotto risks on one trade; winnings are kept, not re-staked
 
 
 class OptionsDesk:
@@ -337,7 +339,7 @@ class OptionsDesk:
                 if gate.get("action") == "skip" or direction == "none":
                     out.append({"arm": arm, "skipped": gate.get("note", "gate: skip")})
                     continue
-                legs = plan_lotto(chain, direction, book.data["cash"])
+                legs = plan_lotto(chain, direction, min(book.data["cash"], LOTTO_STAKE))
                 if not legs:
                     out.append({"arm": arm, "skipped": "no option fits the budget"})
                     continue

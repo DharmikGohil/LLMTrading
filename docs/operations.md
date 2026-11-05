@@ -7,7 +7,7 @@ on, and no LLM API key is used: the analysis runs on a Claude plan.
 
 | Desk | Config | Capital | Runs |
 |---|---|---|---|
-| India (NSE) | `config/india_paper.yaml` | ₹10,00,000 | analyst 07:40 IST, trade 09:35, monitor 12:35, close 15:05 |
+| India (NSE) | `config/india_paper.yaml` | ₹10,00,000 | analyst 07:40 IST, trade 09:16, monitor 12:35, close 15:05 |
 | US | `config/us_paper.yaml` | $10,000 | review + trade 09:50 New York, monitor 12:50, close 15:45 |
 
 > The scheduled runs are **paused** while the Nifty options desk is designed (see [roadmap](roadmap.md)).

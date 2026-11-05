@@ -298,7 +298,7 @@ export function liveKeys(data) {
 export const OPTION_ARMS = {
   main: { title: "LLM-reviewed iron condor", short: "LLM-reviewed condor", sub: "Rules plus Claude's event gate (trade, widen or skip)" },
   control: { title: "Rules-only iron condor", short: "Rules-only condor", sub: "Same rules, no LLM: the control" },
-  lotto: { title: "Rs 1,000 option buying", short: "Rs 1,000 test", sub: "One cheap out-of-the-money option per expiry, trend direction; reinvests its whole balance" },
+  lotto: { title: "Rs 1,000 option buying", short: "Rs 1,000 test", sub: "One cheap out-of-the-money option per expiry, trend direction; stakes at most Rs 1,000 a trade and keeps its winnings" },
 };
 
 /** Options desk view: per-account money summary, desk totals, and equity paths for the charts. */

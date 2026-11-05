@@ -8,6 +8,13 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Options page: invested, value and return per account, P&L charts, and the live Nifty against open strikes.
+
+### Changed
+- The Rs 1,000 options test stakes at most Rs 1,000 per trade (`LOTTO_STAKE`) and keeps its winnings; it no longer
+  re-stakes its whole balance.
+- The India open run moved from 09:35 to 09:16 IST and starts the one-minute options monitor first, so positions
+  are watched from the opening minute.
 
 ## [0.3.0] - 2026-10-30
 

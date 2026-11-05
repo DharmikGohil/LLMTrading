@@ -69,7 +69,7 @@ export default function Options() {
           </Panel>
         </div>
         <div className="c5">
-          <Panel title="Rs 1,000 test" meta="Return on Rs 1,000; it reinvests its whole balance each trade">
+          <Panel title="Rs 1,000 test" meta="Return on the Rs 1,000 start; each trade stakes at most Rs 1,000 (from 5 Nov; before that it re-staked its whole balance)">
             {v.lottoChart ? <EquityChart data={v.lottoChart} height={240} compact ranges={false} /> : <div className="empty">No data yet.</div>}
           </Panel>
         </div>
@@ -135,7 +135,7 @@ export default function Options() {
       </div>
       <p className="muted" style={{ fontSize: 12.5, marginTop: 12 }}>
         The Nifty price and the strike distances update live, about every 15 seconds. Option prices, account values and the
-        charts update when the desk syncs, at each scheduled run (09:35, 12:35 and 15:05 IST, plus the US-session runs).
+        charts update when the desk syncs, at each scheduled run (09:16, 12:35 and 15:05 IST, plus the US-session runs).
         NSE&apos;s option chain cannot be read from this website directly. See the <Link className="accent" href="/research">research</Link> and
         the <Link className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/options-backtest.md">options backtest</Link> before
         drawing conclusions from a few weeks.

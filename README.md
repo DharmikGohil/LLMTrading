@@ -61,7 +61,7 @@ flowchart LR
 | Time (IST) | Desk | Run |
 |---|---|---|
 | 07:40 | India | Analyst reviews the screen's candidates and writes sourced ratings |
-| 09:35 · 12:35 · 15:05 | India | Trade · monitor stops · close (equity, graded review, lessons) |
+| 09:16 · 12:35 · 15:05 | India | Trade · monitor stops · close (equity, graded review, lessons) |
 | 19:20 · 22:20 · 01:15 | US | Review and trade · monitor · close |
 
 The scheduled runs are currently paused while the next phase (a Nifty options desk) is designed.

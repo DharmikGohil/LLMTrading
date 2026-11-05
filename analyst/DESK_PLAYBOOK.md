@@ -6,7 +6,7 @@ Two paper desks run in the cloud through scheduled Claude sessions on the
 
 | Desk | Config | Capital | Runs (local exchange time) |
 |---|---|---|---|
-| **India (NSE)** | `config/india_paper.yaml` | ₹1,00,000 | analyst 07:40 IST (`analyst/PLAYBOOK.md`), **open 09:35**, **midday 12:35**, **close 15:05** |
+| **India (NSE)** | `config/india_paper.yaml` | ₹1,00,000 | analyst 07:40 IST (`analyst/PLAYBOOK.md`), **open 09:16**, **midday 12:35**, **close 15:05** |
 | **US** | `config/us_paper.yaml` | $10,000 | **open 09:50 New York** (review + trade), **midday 12:50**, **close 15:45** |
 
 State lives in git (`paper/india/`, `paper/us/`) because each run may start in a
@@ -46,6 +46,9 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
 - **India:** the 07:40 analyst run already reviewed the candidates into `signals/`. If `signals/<date>/` has no
   REPORT.md (the analyst run failed), do the review now following `analyst/PLAYBOOK.md` with
   `INDTRADER_CONFIG=config/analyst.yaml`, then switch back to `config/india_paper.yaml`.
+- **India open run, first thing:** if the one-minute options monitor is not running (`paper/options/live.pid`),
+  run `indtrader options-monitor` once and then `scripts/start_live.sh`, so positions are watched from 09:16.
+  Never run `indtrader options-monitor` while the live monitor is running: two writers record every exit twice.
 - Then `indtrader trade` (main and control account).
 - **India only, Nifty options desk** (`paper/options/`, see `indtrader/options.py`):
   1. If `paper/options/gates/<today>.json` is missing, write today's gate: check the events before the next weekly
