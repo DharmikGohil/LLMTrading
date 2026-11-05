@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 export const LINKS = [
   ["/", "Overview"],
+  ["/portfolio", "Portfolio"],
   ["/desk/us", "US desk"],
   ["/desk/india", "India desk"],
   ["/options", "Nifty options"],

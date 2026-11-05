@@ -21,7 +21,7 @@ export const MARKETS = {
   india: {
     key: "india", name: "India", title: "India desk", exchange: "NSE", universe: "Nifty 200", index: "Nifty 50",
     currency: "INR", symbol: "₹", tz: "Asia/Kolkata", tzLabel: "IST",
-    schedule: [["07:40", "Analyst review"], ["09:35", "Trade"], ["12:35", "Monitor"], ["15:05", "Close + review"]], openMin: 9 * 60 + 15,
+    schedule: [["07:40", "Analyst review"], ["09:16", "Trade"], ["12:35", "Monitor"], ["15:05", "Close + review"]], openMin: 9 * 60 + 15,
   },
 };
 export const MARKET_LIST = [MARKETS.us, MARKETS.india];
