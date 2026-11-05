@@ -1,6 +1,6 @@
 {
- "time": "2026-11-05T09:40:41+05:30",
- "spot": 24365.45,
+ "time": "2026-11-05T12:38:07+05:30",
+ "spot": null,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -62,57 +62,10 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 94247.68,
-   "realized": -4167.15,
-   "open": {
-    "name": "iron condor",
-    "expiry": "2026-11-09",
-    "opened": "2026-11-04T09:37:38+05:30",
-    "legs": [
-     {
-      "kind": "CE",
-      "strike": 24450,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 36.9
-     },
-     {
-      "kind": "PE",
-      "strike": 23400,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 48.2
-     },
-     {
-      "kind": "CE",
-      "strike": 24650,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 19.7
-     },
-     {
-      "kind": "PE",
-      "strike": 23200,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 27.7
-     }
-    ],
-    "credit": 2450.5,
-    "entry_charges": 106.42,
-    "max_loss": 10549.5,
-    "note": "1 SD short strikes, spot 23918, ATM IV 17.4%; rules only"
-   },
-   "mark": {
-    "close_value": 3929.25,
-    "pnl": -1585.17,
-    "prices": [
-     103.2,
-     9.75,
-     45.35,
-     7.15
-    ]
-   },
+   "equity": 93036.18,
+   "realized": -6963.82,
+   "open": null,
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -162,6 +115,55 @@
      "exit_charges": 118.91,
      "pnl": -4167.15,
      "reason": "stop: close cost 6367 >= 2x credit 2424 (loss = credit)"
+    },
+    {
+     "name": "iron condor",
+     "expiry": "2026-11-09",
+     "opened": "2026-11-04T09:37:38+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 24450,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 36.9
+      },
+      {
+       "kind": "PE",
+       "strike": 23400,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 48.2
+      },
+      {
+       "kind": "CE",
+       "strike": 24650,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 19.7
+      },
+      {
+       "kind": "PE",
+       "strike": 23200,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 27.7
+      }
+     ],
+     "credit": 2450.5,
+     "entry_charges": 106.42,
+     "max_loss": 10549.5,
+     "note": "1 SD short strikes, spot 23918, ATM IV 17.4%; rules only",
+     "closed": "2026-11-05T12:37:56+05:30",
+     "exit_prices": [
+      134.7,
+      6.65,
+      58.5,
+      5.4
+     ],
+     "exit_charges": 106.5,
+     "pnl": -2796.67,
+     "reason": "stop: close cost 5034 >= 2x credit 2450 (loss = credit)"
     }
    ]
   },
@@ -364,6 +366,13 @@
    "spot": "24365.45",
    "main": "96278.05",
    "control": "94247.68",
+   "lotto": "8675.15"
+  },
+  {
+   "time": "2026-11-05T12:38:07+05:30",
+   "spot": "",
+   "main": "96278.05",
+   "control": "93036.18",
    "lotto": "8675.15"
   }
  ],
