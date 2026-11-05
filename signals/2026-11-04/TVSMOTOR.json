@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-04",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Call transcript 4 Nov and press release 3 Nov (NSE); trend template back to 7/7, RSI 64. No red flag found.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-05T07:42:55+05:30"
+}

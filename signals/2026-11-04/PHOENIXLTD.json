@@ -1,0 +1,12 @@
+{
+  "symbol": "PHOENIXLTD",
+  "as_of": "2026-11-04",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Call transcript filed 4 Nov (NSE); +7.5% in a week, RSI 66.5, trend template 7/7. No red flag found.",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-05T07:42:54+05:30"
+}
