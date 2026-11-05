@@ -3,7 +3,7 @@
     "LLY": {
       "qty": 1,
       "avg": 1289.69,
-      "stop": 1254.01,
+      "stop": 1258.23,
       "target": 1470.84,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -19,7 +19,7 @@
     "MET": {
       "qty": 20,
       "avg": 99.75,
-      "stop": 95.42,
+      "stop": 96.34,
       "target": 110.4,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -43,7 +43,7 @@
     "KO": {
       "qty": 4,
       "avg": 94.69,
-      "stop": 87.5,
+      "stop": 88.78,
       "target": 852.93,
       "opened": "2026-10-30",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "DE": {
       "qty": 1,
       "avg": 679.39,
-      "stop": 604.3,
+      "stop": 607.19,
       "target": 8154.63,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -59,7 +59,7 @@
     "AMGN": {
       "qty": 2,
       "avg": 462.45,
-      "stop": 431.53,
+      "stop": 433.81,
       "target": 5055.1,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -67,7 +67,7 @@
     "MRK": {
       "qty": 1,
       "avg": 148.28,
-      "stop": 129.8,
+      "stop": 133.88,
       "target": 1988.72,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -75,7 +75,7 @@
     "UNP": {
       "qty": 3,
       "avg": 301.75,
-      "stop": 277.47,
+      "stop": 280.48,
       "target": 2714.4,
       "opened": "2026-11-04",
       "buy_charges": 0.0
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-04",
-    "start_equity": 9993.06,
-    "orders": 3,
+    "date": "2026-11-05",
+    "start_equity": 10206.2,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {
@@ -108,5 +108,5 @@
     "PAPER-418779cf2a"
   ],
   "ca_pending": {},
-  "peak_equity": 10121.78
+  "peak_equity": 10206.2
 }

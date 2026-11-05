@@ -1006,5 +1006,194 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 12) stop 155.51"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "AAPL",
+  "price": 352.71,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 318.6"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "ABBV",
+  "price": 298.86,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "AMGN",
+  "price": 480.44,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "COP",
+  "price": 140.11,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "CSCO",
+  "price": 100.6,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Sell; Sell: trim 0 -> 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "CVX",
+  "price": 221.52,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "DE",
+  "price": 681.73,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "JNJ",
+  "price": 279.92,
+  "held": 7,
+  "target_qty": 7,
+  "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "KO",
+  "price": 96.5,
+  "held": 4,
+  "target_qty": 10,
+  "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 88.78"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "LLY",
+  "price": 1436.14,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "MET",
+  "price": 104.76,
+  "held": 20,
+  "target_qty": 20,
+  "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "MO",
+  "price": 79.29,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "MRK",
+  "price": 152.34,
+  "held": 1,
+  "target_qty": 6,
+  "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 133.88"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "MSFT",
+  "price": 546.35,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "PM",
+  "price": 208.97,
+  "held": 0,
+  "target_qty": 4,
+  "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 188.38"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "TGT",
+  "price": 164.19,
+  "held": 0,
+  "target_qty": 6,
+  "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 145.43"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "TMO",
+  "price": 698.03,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "UNP",
+  "price": 304.87,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum: Hold; Hold: keep 3"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "USB",
+  "price": 61.75,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "V",
+  "price": 438.43,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-05T09:52:39-05:00",
+  "as_of": "2026-11-04",
+  "symbol": "XOM",
+  "price": 172.91,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
  }
 ]

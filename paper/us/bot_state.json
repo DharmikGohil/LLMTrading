@@ -11,7 +11,7 @@
     "MET": {
       "qty": 15,
       "avg": 99.75,
-      "stop": 95.42,
+      "stop": 96.34,
       "target": 110.4,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -19,7 +19,7 @@
     "KO": {
       "qty": 21,
       "avg": 91.79,
-      "stop": 88.6,
+      "stop": 88.78,
       "target": 99.6,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "USB": {
       "qty": 6,
       "avg": 59.87,
-      "stop": 56.47,
+      "stop": 56.66,
       "target": 538.56,
       "opened": "2026-10-30",
       "buy_charges": 0.0
@@ -59,7 +59,7 @@
     "DE": {
       "qty": 1,
       "avg": 679.39,
-      "stop": 604.47,
+      "stop": 607.58,
       "target": 8154.81,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -67,7 +67,7 @@
     "MRK": {
       "qty": 6,
       "avg": 148.28,
-      "stop": 129.8,
+      "stop": 133.8,
       "target": 1988.72,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -75,7 +75,7 @@
     "TGT": {
       "qty": 1,
       "avg": 156.74,
-      "stop": 142.2,
+      "stop": 145.41,
       "target": 1836.87,
       "opened": "2026-11-03",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-04",
-    "start_equity": 9966.3,
+    "date": "2026-11-05",
+    "start_equity": 10162.25,
     "orders": 0,
     "partial": false
   },
@@ -104,5 +104,5 @@
     "PAPER-76c00c010e"
   ],
   "ca_pending": {},
-  "peak_equity": 10039.43
+  "peak_equity": 10162.25
 }
