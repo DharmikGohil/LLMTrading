@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-05",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Fiscal Q4 results expected 25 Nov 2026, 13 trading days away. No new red flag found.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T09:52:02-05:00"
+}

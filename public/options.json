@@ -1,60 +1,13 @@
 {
- "time": "2026-11-06T15:06:54+05:30",
- "spot": 24899.6,
+ "time": "2026-11-06T20:22:56+05:30",
+ "spot": null,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 94665.3,
-   "realized": -3721.95,
-   "open": {
-    "name": "iron condor",
-    "expiry": "2026-11-17",
-    "opened": "2026-11-06T09:18:20+05:30",
-    "legs": [
-     {
-      "kind": "CE",
-      "strike": 25350,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 28.75
-     },
-     {
-      "kind": "PE",
-      "strike": 23650,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 65.05
-     },
-     {
-      "kind": "CE",
-      "strike": 25550,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 17.85
-     },
-     {
-      "kind": "PE",
-      "strike": 23450,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 46.95
-     }
-    ],
-    "credit": 1885.0,
-    "entry_charges": 108.0,
-    "max_loss": 11115.0,
-    "note": "1.25 SD short strikes, spot 24488, ATM IV 15.3%; gate: widen: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
-   },
-   "mark": {
-    "close_value": 3389.75,
-    "pnl": -1612.75,
-    "prices": [
-     121.0,
-     24.55,
-     75.2,
-     18.2
-    ]
-   },
+   "equity": 94123.31,
+   "realized": -5876.69,
+   "open": null,
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -104,12 +57,61 @@
      "exit_charges": 112.9,
      "pnl": -3721.95,
      "reason": "stop: close cost 5125 >= 2x credit 1618 (loss = credit)"
+    },
+    {
+     "name": "iron condor",
+     "expiry": "2026-11-17",
+     "opened": "2026-11-06T09:18:20+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 25350,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 28.75
+      },
+      {
+       "kind": "PE",
+       "strike": 23650,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 65.05
+      },
+      {
+       "kind": "CE",
+       "strike": 25550,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 17.85
+      },
+      {
+       "kind": "PE",
+       "strike": 23450,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 46.95
+      }
+     ],
+     "credit": 1885.0,
+     "entry_charges": 108.0,
+     "max_loss": 11115.0,
+     "note": "1.25 SD short strikes, spot 24488, ATM IV 15.3%; gate: widen: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed.",
+     "closed": "2026-11-06T15:09:21+05:30",
+     "exit_prices": [
+      144.65,
+      23.5,
+      91.8,
+      17.6
+     ],
+     "exit_charges": 112.99,
+     "pnl": -2154.74,
+     "reason": "stop: close cost 3819 >= 2x credit 1885 (loss = credit)"
     }
    ]
   },
   "control": {
    "capital": 100000.0,
-   "equity": 90832.85,
+   "equity": 95759.85,
    "realized": -6963.82,
    "open": {
     "name": "iron condor",
@@ -150,16 +152,7 @@
     "max_loss": 10162.75,
     "note": "1 SD short strikes, spot 24488, ATM IV 15.3%; rules only"
    },
-   "mark": {
-    "close_value": 4927.0,
-    "pnl": -2203.33,
-    "prices": [
-     187.3,
-     31.15,
-     120.5,
-     22.15
-    ]
-   },
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -548,6 +541,13 @@
    "spot": "24899.6",
    "main": "94665.3",
    "control": "90832.85",
+   "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-06T20:22:56+05:30",
+   "spot": "",
+   "main": "94123.31",
+   "control": "95759.85",
    "lotto": "9634.6"
   }
  ],
