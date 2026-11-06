@@ -1,24 +1,7 @@
 {
  "capital": 1000.0,
- "cash": 7741.139999999999,
- "open": {
-  "name": "lotto",
-  "expiry": "2026-11-17",
-  "opened": "2026-11-06T09:18:20+05:30",
-  "legs": [
-   {
-    "kind": "CE",
-    "strike": 25650,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 14.0
-   }
-  ],
-  "credit": -910.0,
-  "entry_charges": 24.01,
-  "max_loss": 910.0,
-  "note": "buy up: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
- },
+ "cash": 9634.599999999999,
+ "open": null,
  "closed": [
   {
    "name": "lotto",
@@ -69,7 +52,32 @@
    "exit_charges": 40.18,
    "pnl": 5671.16,
    "reason": "target: worth 8635 >= 2x cost 2899"
+  },
+  {
+   "name": "lotto",
+   "expiry": "2026-11-17",
+   "opened": "2026-11-06T09:18:20+05:30",
+   "legs": [
+    {
+     "kind": "CE",
+     "strike": 25650,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 14.0
+    }
+   ],
+   "credit": -910.0,
+   "entry_charges": 24.01,
+   "max_loss": 910.0,
+   "note": "buy up: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed.",
+   "closed": "2026-11-06T12:37:25+05:30",
+   "exit_prices": [
+    29.55
+   ],
+   "exit_charges": 27.29,
+   "pnl": 959.45,
+   "reason": "target: worth 1921 >= 2x cost 910"
   }
  ],
- "realized": 7675.15
+ "realized": 8634.6
 }

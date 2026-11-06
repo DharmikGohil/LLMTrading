@@ -1,10 +1,10 @@
 {
- "time": "2026-11-06T12:36:37+05:30",
- "spot": 24685.05,
+ "time": "2026-11-06T15:06:54+05:30",
+ "spot": 24899.6,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 95689.05,
+   "equity": 94665.3,
    "realized": -3721.95,
    "open": {
     "name": "iron condor",
@@ -46,13 +46,13 @@
     "note": "1.25 SD short strikes, spot 24488, ATM IV 15.3%; gate: widen: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
    },
    "mark": {
-    "close_value": 2366.0,
-    "pnl": -589.0,
+    "close_value": 3389.75,
+    "pnl": -1612.75,
     "prices": [
-     60.45,
-     40.1,
-     35.9,
-     28.25
+     121.0,
+     24.55,
+     75.2,
+     18.2
     ]
    },
    "closed": [
@@ -109,7 +109,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 92165.35,
+   "equity": 90832.85,
    "realized": -6963.82,
    "open": {
     "name": "iron condor",
@@ -151,13 +151,13 @@
     "note": "1 SD short strikes, spot 24488, ATM IV 15.3%; rules only"
    },
    "mark": {
-    "close_value": 3594.5,
-    "pnl": -870.83,
+    "close_value": 4927.0,
+    "pnl": -2203.33,
     "prices": [
-     99.75,
-     52.4,
-     60.25,
-     36.6
+     187.3,
+     31.15,
+     120.5,
+     22.15
     ]
    },
    "closed": [
@@ -263,33 +263,10 @@
   },
   "lotto": {
    "capital": 1000.0,
-   "equity": 9548.14,
-   "realized": 7675.15,
-   "open": {
-    "name": "lotto",
-    "expiry": "2026-11-17",
-    "opened": "2026-11-06T09:18:20+05:30",
-    "legs": [
-     {
-      "kind": "CE",
-      "strike": 25650,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 14.0
-     }
-    ],
-    "credit": -910.0,
-    "entry_charges": 24.01,
-    "max_loss": 910.0,
-    "note": "buy up: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
-   },
-   "mark": {
-    "close_value": -1807.0,
-    "pnl": 872.99,
-    "prices": [
-     27.8
-    ]
-   },
+   "equity": 9634.6,
+   "realized": 8634.6,
+   "open": null,
+   "mark": null,
    "closed": [
     {
      "name": "lotto",
@@ -340,6 +317,31 @@
      "exit_charges": 40.18,
      "pnl": 5671.16,
      "reason": "target: worth 8635 >= 2x cost 2899"
+    },
+    {
+     "name": "lotto",
+     "expiry": "2026-11-17",
+     "opened": "2026-11-06T09:18:20+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 25650,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 14.0
+      }
+     ],
+     "credit": -910.0,
+     "entry_charges": 24.01,
+     "max_loss": 910.0,
+     "note": "buy up: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed.",
+     "closed": "2026-11-06T12:37:25+05:30",
+     "exit_prices": [
+      29.55
+     ],
+     "exit_charges": 27.29,
+     "pnl": 959.45,
+     "reason": "target: worth 1921 >= 2x cost 910"
     }
    ]
   }
@@ -540,6 +542,13 @@
    "main": "95689.05",
    "control": "92165.35",
    "lotto": "9548.14"
+  },
+  {
+   "time": "2026-11-06T15:06:54+05:30",
+   "spot": "24899.6",
+   "main": "94665.3",
+   "control": "90832.85",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
