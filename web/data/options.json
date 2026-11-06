@@ -1,10 +1,10 @@
 {
- "time": "2026-11-06T09:18:36+05:30",
- "spot": 24488.4,
+ "time": "2026-11-06T12:36:37+05:30",
+ "spot": 24685.05,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 96072.55,
+   "equity": 95689.05,
    "realized": -3721.95,
    "open": {
     "name": "iron condor",
@@ -46,13 +46,13 @@
     "note": "1.25 SD short strikes, spot 24488, ATM IV 15.3%; gate: widen: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
    },
    "mark": {
-    "close_value": 1982.5,
-    "pnl": -205.5,
+    "close_value": 2366.0,
+    "pnl": -589.0,
     "prices": [
-     29.0,
-     65.55,
-     17.65,
-     46.4
+     60.45,
+     40.1,
+     35.9,
+     28.25
     ]
    },
    "closed": [
@@ -109,7 +109,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 92805.6,
+   "equity": 92165.35,
    "realized": -6963.82,
    "open": {
     "name": "iron condor",
@@ -151,13 +151,13 @@
     "note": "1 SD short strikes, spot 24488, ATM IV 15.3%; rules only"
    },
    "mark": {
-    "close_value": 2954.25,
-    "pnl": -230.58,
+    "close_value": 3594.5,
+    "pnl": -870.83,
     "prices": [
-     48.95,
-     85.0,
-     28.75,
-     59.75
+     99.75,
+     52.4,
+     60.25,
+     36.6
     ]
    },
    "closed": [
@@ -263,7 +263,7 @@
   },
   "lotto": {
    "capital": 1000.0,
-   "equity": 8644.64,
+   "equity": 9548.14,
    "realized": 7675.15,
    "open": {
     "name": "lotto",
@@ -284,10 +284,10 @@
     "note": "buy up: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
    },
    "mark": {
-    "close_value": -903.5,
-    "pnl": -30.51,
+    "close_value": -1807.0,
+    "pnl": 872.99,
     "prices": [
-     13.9
+     27.8
     ]
    },
    "closed": [
@@ -533,6 +533,13 @@
    "main": "96072.55",
    "control": "92805.6",
    "lotto": "8644.64"
+  },
+  {
+   "time": "2026-11-06T12:36:37+05:30",
+   "spot": "24685.05",
+   "main": "95689.05",
+   "control": "92165.35",
+   "lotto": "9548.14"
   }
  ],
  "gates": [
