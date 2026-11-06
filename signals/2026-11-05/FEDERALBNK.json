@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-05",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Routine ESOP allotment filing 5 Nov (NSE). Trend weakening: below EMA50, RSI 47.8, template 6/7 (brief). Hold.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:31+05:30"
+}

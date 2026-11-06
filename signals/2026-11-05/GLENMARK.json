@@ -1,0 +1,12 @@
+{
+  "symbol": "GLENMARK",
+  "as_of": "2026-11-05",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 results filed 5 Nov evening (NSE: board outcome 17:04, press release 17:17, investor update 17:24). Figures not verified in the press; Q2 FY26 had a one-off AbbVie licensing gain, so y/y comparisons are distorted (Informist). Hold.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:30+05:30"
+}

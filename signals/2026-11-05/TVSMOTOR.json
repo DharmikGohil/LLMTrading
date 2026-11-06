@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-05",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Q2 out 28-29 Oct; transcript 4 Nov (NSE). RSI 65, template 7/7. No red flag found.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:31+05:30"
+}

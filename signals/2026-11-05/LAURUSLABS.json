@@ -1,0 +1,12 @@
+{
+  "symbol": "LAURUSLABS",
+  "as_of": "2026-11-05",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Strong Q2 FY27 (net profit +126%; IIFL, 29 Oct). The spike has cooled: RSI 69, 15% above EMA50 (brief, data to 4 Nov). No new red flag found. Held.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:29+05:30"
+}

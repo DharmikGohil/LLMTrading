@@ -1,0 +1,12 @@
+{
+  "symbol": "DIVISLAB",
+  "as_of": "2026-11-05",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 board meeting Sat 7 Nov 2026 (NSE results calendar in brief): the gap lands on Mon 9 Nov, the next trading day after today.",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:29+05:30"
+}

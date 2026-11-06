@@ -1,0 +1,12 @@
+{
+  "symbol": "ZYDUSLIFE",
+  "as_of": "2026-11-05",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results filed 4 Nov; the stock fell 4.2% on the day (Yahoo daily, 1,240.6 to 1,188.1). Analyst meets scheduled 5 Nov (NSE). Figures not verified in the press: Hold.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:30+05:30"
+}

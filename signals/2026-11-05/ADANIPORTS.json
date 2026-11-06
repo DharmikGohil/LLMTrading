@@ -1,0 +1,12 @@
+{
+  "symbol": "ADANIPORTS",
+  "as_of": "2026-11-05",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Three 'Updates' filings on 5 Nov (16:20, 16:40, 22:28; NSE) of unknown content, not verifiable today. Trend is fine (RSI 67, template 7/7), but unverified news means Hold until it is read.",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-06T07:42:30+05:30"
+}
