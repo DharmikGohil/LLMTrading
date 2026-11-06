@@ -1,5 +1,5 @@
 {
-  "cash": 58300.13528549195,
+  "cash": 39931.82672651673,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -18,28 +18,28 @@
       "avg": 344.77230610656744
     },
     "FEDERALBNK": {
-      "qty": 14,
-      "avg": 345.422625
+      "qty": 22,
+      "avg": 342.65760459761185
     },
     "LAURUSLABS": {
-      "qty": 2,
-      "avg": 2379.8893011474606
+      "qty": 4,
+      "avg": 2351.1749999999997
     },
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.709801147461
     },
     "AUROPHARMA": {
-      "qty": 2,
-      "avg": 1725.8625
+      "qty": 4,
+      "avg": 1758.0786122131346
     },
     "ZYDUSLIFE": {
-      "qty": 3,
-      "avg": 1179.5895
+      "qty": 6,
+      "avg": 1186.6930255737304
     },
     "NYKAA": {
-      "qty": 10,
-      "avg": 344.12198721313473
+      "qty": 21,
+      "avg": 346.58511333138597
     }
   },
   "orders": [
@@ -152,8 +152,63 @@
       "price": 344.12,
       "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; bear regime: size x0.5; Overweight: add to 10 (alloc 21, risk-sized 48) stop 303.58",
       "message": "charges Rs 4.09"
+    },
+    {
+      "time": "2026-11-06T09:17:52+05:30",
+      "id": "PAPER-61cca3eaef",
+      "symbol": "AUROPHARMA",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 1790.29,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 11) stop 1608.55",
+      "message": "charges Rs 4.25"
+    },
+    {
+      "time": "2026-11-06T09:17:53+05:30",
+      "id": "PAPER-a030081fcb",
+      "symbol": "LAURUSLABS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2322.46,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 4 (alloc 4, risk-sized 6) stop 2027.31",
+      "message": "charges Rs 5.52"
+    },
+    {
+      "time": "2026-11-06T09:17:54+05:30",
+      "id": "PAPER-a4759be770",
+      "symbol": "ZYDUSLIFE",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 1193.8,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 6 (alloc 6, risk-sized 13) stop 1047.42",
+      "message": "charges Rs 4.25"
+    },
+    {
+      "time": "2026-11-06T09:17:55+05:30",
+      "id": "PAPER-48c34d1b3d",
+      "symbol": "FEDERALBNK",
+      "side": "BUY",
+      "qty": 8,
+      "status": "COMPLETE",
+      "price": 337.82,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 22 (alloc 22, risk-sized 55) stop 302.29",
+      "message": "charges Rs 3.21"
+    },
+    {
+      "time": "2026-11-06T09:17:56+05:30",
+      "id": "PAPER-2732ad8044",
+      "symbol": "NYKAA",
+      "side": "BUY",
+      "qty": 11,
+      "status": "COMPLETE",
+      "price": 348.82,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 21 (alloc 21, risk-sized 45) stop 304.89",
+      "message": "charges Rs 4.56"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 49.45
+  "charges": 71.24
 }

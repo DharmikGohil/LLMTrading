@@ -456,6 +456,66 @@
   "id": "India:main:9"
  },
  {
+  "time": "2026-11-06T09:17:52+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "AUROPHARMA",
+  "side": "BUY",
+  "qty": 2,
+  "price": 1790.29,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 11) stop 1608.55",
+  "id": "India:main:10"
+ },
+ {
+  "time": "2026-11-06T09:17:53+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "LAURUSLABS",
+  "side": "BUY",
+  "qty": 2,
+  "price": 2322.46,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 4 (alloc 4, risk-sized 6) stop 2027.31",
+  "id": "India:main:11"
+ },
+ {
+  "time": "2026-11-06T09:17:54+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "ZYDUSLIFE",
+  "side": "BUY",
+  "qty": 3,
+  "price": 1193.8,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 6 (alloc 6, risk-sized 13) stop 1047.42",
+  "id": "India:main:12"
+ },
+ {
+  "time": "2026-11-06T09:17:55+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "FEDERALBNK",
+  "side": "BUY",
+  "qty": 8,
+  "price": 337.82,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 22 (alloc 22, risk-sized 55) stop 302.29",
+  "id": "India:main:13"
+ },
+ {
+  "time": "2026-11-06T09:17:56+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "NYKAA",
+  "side": "BUY",
+  "qty": 11,
+  "price": 348.82,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 21 (alloc 21, risk-sized 45) stop 304.89",
+  "id": "India:main:14"
+ },
+ {
   "time": "2026-10-30T11:04:39+05:30",
   "market": "India",
   "book": "factor",
@@ -465,7 +525,7 @@
   "price": 4819.81,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4334.25",
-  "id": "India:factor:10"
+  "id": "India:factor:15"
  },
  {
   "time": "2026-10-30T11:04:39+05:30",
@@ -477,7 +537,7 @@
   "price": 4247.22,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.27",
-  "id": "India:factor:11"
+  "id": "India:factor:16"
  },
  {
   "time": "2026-10-30T11:04:39+05:30",
@@ -489,7 +549,7 @@
   "price": 1843.92,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.74",
-  "id": "India:factor:12"
+  "id": "India:factor:17"
  },
  {
   "time": "2026-10-30T11:04:40+05:30",
@@ -501,7 +561,7 @@
   "price": 1230.62,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 4 (alloc 8, risk-sized 15) stop 1100.56",
-  "id": "India:factor:13"
+  "id": "India:factor:18"
  },
  {
   "time": "2026-10-30T11:04:40+05:30",
@@ -513,7 +573,7 @@
   "price": 344.67,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.77",
-  "id": "India:factor:14"
+  "id": "India:factor:19"
  },
  {
   "time": "2026-10-30T11:04:41+05:30",
@@ -525,7 +585,7 @@
   "price": 345.37,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.19",
-  "id": "India:factor:15"
+  "id": "India:factor:20"
  },
  {
   "time": "2026-10-30T11:04:42+05:30",
@@ -537,7 +597,7 @@
   "price": 350.07,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",
-  "id": "India:factor:16"
+  "id": "India:factor:21"
  },
  {
   "time": "2026-11-02T09:36:44+05:30",
@@ -549,7 +609,7 @@
   "price": 2378.39,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2090.13",
-  "id": "India:factor:17"
+  "id": "India:factor:22"
  },
  {
   "time": "2026-11-02T09:36:44+05:30",
@@ -561,7 +621,7 @@
   "price": 2020.71,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",
-  "id": "India:factor:18"
+  "id": "India:factor:23"
  },
  {
   "time": "2026-11-05T09:40:11+05:30",
@@ -573,6 +633,66 @@
   "price": 1727.16,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",
-  "id": "India:factor:19"
+  "id": "India:factor:24"
+ },
+ {
+  "time": "2026-11-06T09:18:00+05:30",
+  "market": "India",
+  "book": "factor",
+  "symbol": "LAURUSLABS",
+  "side": "BUY",
+  "qty": 2,
+  "price": 2323.66,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 6) stop 2028.91",
+  "id": "India:factor:25"
+ },
+ {
+  "time": "2026-11-06T09:18:01+05:30",
+  "market": "India",
+  "book": "factor",
+  "symbol": "AUROPHARMA",
+  "side": "BUY",
+  "qty": 3,
+  "price": 1789.49,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 1608.15",
+  "id": "India:factor:26"
+ },
+ {
+  "time": "2026-11-06T09:18:01+05:30",
+  "market": "India",
+  "book": "factor",
+  "symbol": "ZYDUSLIFE",
+  "side": "BUY",
+  "qty": 4,
+  "price": 1194.7,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 8 (alloc 8, risk-sized 13) stop 1048.62",
+  "id": "India:factor:27"
+ },
+ {
+  "time": "2026-11-06T09:18:01+05:30",
+  "market": "India",
+  "book": "factor",
+  "symbol": "NYKAA",
+  "side": "BUY",
+  "qty": 14,
+  "price": 348.82,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 28 (alloc 28, risk-sized 45) stop 304.54",
+  "id": "India:factor:28"
+ },
+ {
+  "time": "2026-11-06T09:18:01+05:30",
+  "market": "India",
+  "book": "factor",
+  "symbol": "FEDERALBNK",
+  "side": "BUY",
+  "qty": 15,
+  "price": 337.87,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",
+  "id": "India:factor:29"
  }
 ]

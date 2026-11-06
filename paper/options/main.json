@@ -1,7 +1,45 @@
 {
  "capital": 100000.0,
- "cash": 96278.05,
- "open": null,
+ "cash": 98055.05,
+ "open": {
+  "name": "iron condor",
+  "expiry": "2026-11-17",
+  "opened": "2026-11-06T09:18:20+05:30",
+  "legs": [
+   {
+    "kind": "CE",
+    "strike": 25350,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 28.75
+   },
+   {
+    "kind": "PE",
+    "strike": 23650,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 65.05
+   },
+   {
+    "kind": "CE",
+    "strike": 25550,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 17.85
+   },
+   {
+    "kind": "PE",
+    "strike": 23450,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 46.95
+   }
+  ],
+  "credit": 1885.0,
+  "entry_charges": 108.0,
+  "max_loss": 11115.0,
+  "note": "1.25 SD short strikes, spot 24488, ATM IV 15.3%; gate: widen: Next tradable expiry 17 Nov (9 Nov is 1 trading day away). Events before it: US October jobs report today (6 Nov) and US CPI next week; the S&P 500 fell 4.1% on 5 Nov with the US VIX at 26.8 (Yahoo), and the selloff spread to Asia (BusinessToday, 6 Nov). The Nifty opened only -0.3% at 24,473 with India VIX 16.4 (Yahoo 5-min, 09:15). Gap risk is high but premiums are richer: widen short strikes to 1.25 SD. Lotto: the 5-day trend is up, so the rule says calls; stake capped at Rs 1,000; no directional edge claimed."
+ },
  "closed": [
   {
    "name": "iron condor",

@@ -1,5 +1,5 @@
 {
-  "cash": 55455.64536221313,
+  "cash": 30680.098535491943,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -14,32 +14,32 @@
       "avg": 1843.9215
     },
     "ZYDUSLIFE": {
-      "qty": 4,
-      "avg": 1230.615
+      "qty": 8,
+      "avg": 1212.6560127868652
     },
     "ETERNAL": {
       "qty": 14,
       "avg": 344.67224999999996
     },
     "FEDERALBNK": {
-      "qty": 14,
-      "avg": 345.37261221313474
+      "qty": 29,
+      "avg": 341.4913622131347
     },
     "NYKAA": {
-      "qty": 14,
-      "avg": 350.0749438934326
+      "qty": 28,
+      "avg": 349.44963139343264
     },
     "LAURUSLABS": {
-      "qty": 2,
-      "avg": 2378.388551147461
+      "qty": 4,
+      "avg": 2351.0249005737305
     },
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.709801147461
     },
     "AUROPHARMA": {
-      "qty": 2,
-      "avg": 1727.163198852539
+      "qty": 5,
+      "avg": 1764.561844885254
     }
   },
   "orders": [
@@ -152,8 +152,63 @@
       "price": 1727.16,
       "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",
       "message": "charges Rs 4.10"
+    },
+    {
+      "time": "2026-11-06T09:18:00+05:30",
+      "id": "PAPER-454fba2f7b",
+      "symbol": "LAURUSLABS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 2323.66,
+      "reason": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 6) stop 2028.91",
+      "message": "charges Rs 5.52"
+    },
+    {
+      "time": "2026-11-06T09:18:01+05:30",
+      "id": "PAPER-cdf1745edf",
+      "symbol": "AUROPHARMA",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 1789.49,
+      "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 1608.15",
+      "message": "charges Rs 6.37"
+    },
+    {
+      "time": "2026-11-06T09:18:01+05:30",
+      "id": "PAPER-ea12022563",
+      "symbol": "ZYDUSLIFE",
+      "side": "BUY",
+      "qty": 4,
+      "status": "COMPLETE",
+      "price": 1194.7,
+      "reason": "momentum: Buy; Buy: add to 8 (alloc 8, risk-sized 13) stop 1048.62",
+      "message": "charges Rs 5.67"
+    },
+    {
+      "time": "2026-11-06T09:18:01+05:30",
+      "id": "PAPER-a7c76b39b7",
+      "symbol": "NYKAA",
+      "side": "BUY",
+      "qty": 14,
+      "status": "COMPLETE",
+      "price": 348.82,
+      "reason": "momentum: Buy; Buy: add to 28 (alloc 28, risk-sized 45) stop 304.54",
+      "message": "charges Rs 5.80"
+    },
+    {
+      "time": "2026-11-06T09:18:01+05:30",
+      "id": "PAPER-496bfc779b",
+      "symbol": "FEDERALBNK",
+      "side": "BUY",
+      "qty": 15,
+      "status": "COMPLETE",
+      "price": 337.87,
+      "reason": "momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",
+      "message": "charges Rs 6.02"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 52.82
+  "charges": 82.2
 }
