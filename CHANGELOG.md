@@ -8,6 +8,9 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Open-interest build-up study (`scripts/download_futstk_bhavcopy.py`, `scripts/oi_buildup_study.py`,
+  `docs/oi-buildup.md`): the order-flow board's bull/bear split has no edge, and its long/short loses 6 bps a day
+  after costs; not adopted.
 - Options page: invested, value and return per account, P&L charts, and the live Nifty against open strikes.
 
 ### Changed

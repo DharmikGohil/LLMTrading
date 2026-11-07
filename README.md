@@ -123,6 +123,7 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 | [Audit](docs/audit.md) | What was taken from each project, what was left out, and why |
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
 | [Kronos test](docs/kronos.md) | Walk-forward check of the Kronos candlestick model on Nifty, stocks and SPY |
+| [OI build-up test](docs/oi-buildup.md) | Does the F&O open-interest build-up ("order-flow board") predict returns? 2023-2026 |
 | [Roadmap](docs/roadmap.md) | What comes next |
 
 ## Contributing
