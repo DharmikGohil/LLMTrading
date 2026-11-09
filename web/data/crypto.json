@@ -1,6 +1,6 @@
 {
- "time": "2026-11-09T17:20:45+00:00",
- "btc": 74804.81,
+ "time": "2026-11-09T17:36:55+00:00",
+ "btc": 74820.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 10018.07,
+   "value": 10020.11,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": 0.18,
+   "return_pct": 0.2,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 74804.81,
-     "value": 10017.97,
-     "pnl": 28.06,
-     "pnl_pct": 0.28,
-     "day_pct": -1.223,
+     "last": 74820.01,
+     "value": 10020.01,
+     "pnl": 30.09,
+     "pnl_pct": 0.3,
+     "day_pct": -1.172,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -97,7 +97,44 @@
     "verdict": "no scored calls yet"
    }
   },
-  "recent": [],
+  "recent": [
+   {
+    "id": "20261109T1736-ETH-24",
+    "made": "2026-11-09T17:36:47+00:00",
+    "due": "2026-11-10T17:36:47+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "2125.95",
+    "p_up": "0.46",
+    "lo": "2040.0",
+    "hi": "2218.0",
+    "note": "Slight down lean, range widened ~25% vs baseline for US October CPI on Tue 10 Nov 08:30 ET (BLS schedule). Bear case: ETH -14% below its 50-day and below its 200-day average, ETH/BTC at its lowest since July (cryptoticker, Nov 2026), sixth straight week of Ether ETF outflows (Zerocap weekly wrap, 9 Nov 2026). Bull case: Fear & Greed 29, RSI 33, funding barely positive (0.002%/8h, OKX) so little leverage left to unwind. Emotion checks: the -4.5% day is not a reason by itself (recency); not following the crowd's fear either way; stays inside 0.40-0.60.",
+    "base_lo": "2055.757325",
+    "base_hi": "2198.539364",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261109T1736-BTC-24",
+    "made": "2026-11-09T17:36:45+00:00",
+    "due": "2026-11-10T17:36:45+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "74820.01",
+    "p_up": "0.47",
+    "lo": "72640.0",
+    "hi": "77130.0",
+    "note": "Slight down lean, range widened ~25% vs baseline for US October CPI on Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm). Bear case: below the 50-day average (-8.5%), US spot BTC ETFs shed ~US$1.28B last week (Zerocap weekly wrap, 9 Nov 2026), selloff led by US tech/AI stocks. Bull case: Fear & Greed 29 (alternative.me), longs already flushed (~US$773M liquidated 8 Nov, coingabbar; ~US$1.05B to 6 Nov, cryptobriefing), OKX funding normal (0.005%/8h), RSI 36 near oversold. Emotion checks: not extending the last 24h; first call, no anchor; lessons all unproven so not used.",
+    "base_lo": "73064.980027",
+    "base_hi": "76617.196013",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   }
+  ],
   "lessons": [
    {
     "id": "fear-rebound-7d",
@@ -208,6 +245,6 @@
     "last_checked": "2026-11-09"
    }
   ],
-  "open": 0
+  "open": 2
  }
 }
