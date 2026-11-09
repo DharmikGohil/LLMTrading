@@ -185,8 +185,9 @@ and 2 a day at 168 hours. By day 90 that is up to about 540 and 180 calls.
 three things make it too easy to pass for any wider purpose:
 1. **Overlap.** Calls 8 hours apart with 24-hour horizons share most of their outcome, and BTC and ETH move
    together. Thirty 24-hour calls can come from 5 days, which is close to one market episode. The code's
-   Newey-West lag is `ceil(horizon/8) − 1`, which assumes one call every 8 hours. With BTC and ETH pooled, a
-   24-hour call overlaps about the next 5 rows, not 2 (P0-C lists this as a code check).
+   Newey-West lag was `ceil(horizon/8) − 1`, which assumed one call every 8 hours; with BTC and ETH pooled, a
+   24-hour call overlaps about the next 5 rows, not 2. Fixed on 9 Nov 2026: the lag is now counted from the actual
+   call times (`crypto_learn.overlap_lags`). The daily-series rule below still applies.
 2. **Drift.** The baseline says 50% up. In a rising market, a forecaster who always says 53% beats it with no skill.
 3. **Many tags.** The code makes about 19 tags. With two horizons and two kinds of lesson, that is about 76
    possible cells. At |t| ≥ 2, a few will "confirm" by luck.

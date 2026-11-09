@@ -1,0 +1,30 @@
+time,commit,test,variant,period,asset,kind,n,metric,value,t,note
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-1,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-2,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-3,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-4,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-5,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-6,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-7,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-8,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-9,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-10,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-11,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-12,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-13,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_backtest,past-14,2018-2026,crypto,past,,seen,,,docs/crypto-backtest.md: 14 rules in scripts/crypto_backtest.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-1,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-2,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-3,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-4,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-5,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-6,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-7,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,crypto_momentum_study,past-8,2018-2026,crypto,past,,seen,,,docs/crypto-desk.md: 8 more in scripts/crypto_momentum_study.py
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-1,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-2,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-3,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-4,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-5,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-6,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
+2026-11-09T19:44:37+00:00,6acfcd4,sentiment_scratch,past-7,2018-2026,crypto,past,,seen,,,about 7 Fear & Greed and funding add-ons in the crowd-emotion research brief's scratch scripts
