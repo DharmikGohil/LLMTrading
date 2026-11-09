@@ -589,6 +589,56 @@ def options_status():
                    f"{legs}{'  unrealized ' + format(m['pnl'], ',.2f') if m else ''}")
 
 
+CRYPTO_DIR = Path("paper/crypto")
+
+
+def _crypto_desk():
+    from indtrader.crypto import CryptoDesk
+
+    return CryptoDesk(CRYPTO_DIR)
+
+
+@app.command("crypto-run")
+def crypto_run(force: bool = typer.Option(False, help="rebalance now even if the weekly rebalance is not due")):
+    """Daily crypto job: weekly rebalance of the strategy accounts when due, buy the BTC benchmark once, record equity."""
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    typer.echo(json.dumps(_crypto_desk().run(force=force), indent=1, default=str))
+
+
+@app.command("crypto-check")
+def crypto_check():
+    """Hourly crypto job: apply today's gate to the LLM-gated account (risk can only go down) and record equity."""
+    typer.echo(json.dumps(_crypto_desk().check(), indent=1, default=str))
+
+
+@app.command("crypto-gate")
+def crypto_gate(
+    exposure: float = typer.Option(1.0, help="maximum share of the account in coins, 0-1 (1 = no limit)"),
+    exclude: str = typer.Option("", help="comma-separated coins the LLM-gated account must not hold today"),
+    note: str = typer.Option(..., help="the events and sources behind the decision"),
+):
+    """Write today's crypto gate for the LLM-gated account. It can only cut exposure or exclude coins."""
+    f = _crypto_desk().set_gate(exposure, [c.strip() for c in exclude.split(",") if c.strip()], note)
+    typer.echo(f"gate -> {f}")
+
+
+@app.command("crypto-status")
+def crypto_status():
+    """Value, return and holdings of the three crypto paper accounts."""
+    snap = _crypto_desk().snapshot()
+    typer.echo(f"BTC {snap['btc']:,.2f}  ({snap['time']})")
+    for arm, b in snap["books"].items():
+        hold = ", ".join(f"{p['coin']} {p['value']:,.0f} ({p['pnl_pct']:+.1f}%)" for p in b["positions"]) or "all USDT"
+        typer.echo(f"{arm:8} {b['value']:>10,.2f} USDT ({b['return_pct']:+.2f}%)  fees {b['fees']:,.2f}  {hold}")
+
+
+@app.command("crypto-export")
+def crypto_export(out: str = typer.Option("public", help="output folder")):
+    """Write public/crypto.json for the site."""
+    snap = _crypto_desk().export(Path(out))
+    typer.echo("crypto: " + ", ".join(f"{a} {b['value']:,.2f}" for a, b in snap["books"].items()))
+
+
 @app.command()
 def live(
     options_every: int = typer.Option(60, help="seconds between options checks"),

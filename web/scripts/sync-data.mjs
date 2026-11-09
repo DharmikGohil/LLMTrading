@@ -16,7 +16,7 @@ if (!fs.existsSync(publicDir)) {
   process.exit(0);
 }
 
-for (const name of ["summary", "positions", "trades", "decisions", "signals", "equity", "journal", "lessons", "backtests", "research", "options"]) {
+for (const name of ["summary", "positions", "trades", "decisions", "signals", "equity", "journal", "lessons", "backtests", "research", "options", "crypto"]) {
   const f = path.join(publicDir, `${name}.json`);
   if (fs.existsSync(f)) fs.copyFileSync(f, path.join(out, `${name}.json`));
 }

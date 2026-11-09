@@ -9,6 +9,7 @@ export const LINKS = [
   ["/desk/us", "US desk"],
   ["/desk/india", "India desk"],
   ["/options", "Nifty options"],
+  ["/crypto", "Crypto"],
   ["/history", "History"],
   ["/tape", "Activity"],
   ["/calls", "Analyst calls"],
