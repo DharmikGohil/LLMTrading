@@ -30,21 +30,19 @@ export default async function SymbolPage({ params }) {
       <div className="page-head">
         <div>
           <div className="crumbs"><Link className="label" href={`/desk/${m.key}`}>{m.title} →</Link></div>
-          <h1 className="mono" style={{ fontSize: 26 }}>{sym} <span className="chip ghost" style={{ verticalAlign: "middle" }}>{m.name === "US" ? "US" : "NSE"}</span></h1>
-          <p className="sub">Everything the desk has said and done on {sym}: analyst calls, the engine&apos;s decision each run, and orders in both books.</p>
+          <h1>{sym} <span className="chip ghost" style={{ verticalAlign: "middle" }}>{m.name === "US" ? "US" : "NSE"}</span></h1>
+          <p className="sub">Everything the desk has said and done on {sym}.</p>
         </div>
       </div>
 
       <Kpis>
         <Kpi label="Last price" value={last != null ? fmt.money(last, m.symbol) : "—"} delta={main ? `held since ${fmt.short(main.opened)}` : "not held (reviewed)"} />
-        <Kpi label="LLM-reviewed" value={main ? `${main.qty} sh` : "flat"} delta={main ? <PnlPct v={main.unrealized_pct} /> : "—"} />
+        <Kpi label="LLM-reviewed" value={main ? `${main.qty} sh` : "flat"} delta={main ? <><PnlPct v={main.unrealized_pct} />{main.stop ? ` · stop ${fmt.num(main.stop)}` : ""}</> : vetoes ? `${vetoes} LLM veto${vetoes > 1 ? "es" : ""}` : "—"} />
         <Kpi label="LLM off" value={ctl ? `${ctl.qty} sh` : "flat"} delta={ctl ? <PnlPct v={ctl.unrealized_pct} /> : "—"} />
         <Kpi hl label="Latest call" value={v.signals[0] ? <Rating r={v.signals[0].rating} /> : "—"} delta={v.signals[0] ? `${Math.round(v.signals[0].confidence ?? 0)}% · data to ${fmt.short(v.signals[0].date)}` : "never reviewed"} />
-        <Kpi label="LLM vetoes" value={vetoes} delta="on this stock" />
-        <Kpi label="Stop (reviewed)" value={main?.stop ? fmt.num(main.stop) : "—"} delta={main?.stop && main.last_price ? `${(((main.last_price - main.stop) / main.last_price) * 100).toFixed(1)}% away` : ""} />
       </Kpis>
 
-      <div className="grid" style={{ marginTop: 12 }}>
+      <div className="grid section">
         <div className="c12">
           <Panel title="Price chart" meta="Daily candles · EMA 20/50 · SMA 200 · support/resistance · volume · RSI · MACD">
             <PriceChart market={market} sym={sym} avg={main?.avg_price} stop={main?.stop} cur={m.symbol} />

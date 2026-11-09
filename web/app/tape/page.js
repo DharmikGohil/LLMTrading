@@ -10,9 +10,8 @@ export default function Tape() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">The whole thread, newest first</span>
           <h1>Activity</h1>
-          <p className="sub">Every analyst call with its reasoning, every candidate the engine did not buy and why, every order, and the daily reports and reviews.</p>
+          <p className="sub">Every call, order, veto and review across both stock desks, newest first.</p>
         </div>
       </div>
       <Filters countLabel="events" search="Filter by stock or text" groups={[

@@ -20,11 +20,10 @@ export default function Calls() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">Claude as risk reviewer</span>
           <h1>Analyst calls</h1>
           <p className="sub">
-            For every stock the momentum screen proposes, the analyst checks results dates, exchange filings and recent news, then rates it.
-            Underweight or Sell at 55% confidence or more <b>blocks</b> the buy, Hold shrinks it, Buy and Overweight mean no objection. Every reason cites its source.
+            Claude checks each screened stock for results dates, filings and news. Underweight or Sell at 55%+ blocks the buy, Hold
+            shrinks it, Buy and Overweight mean no objection.
           </p>
         </div>
       </div>
@@ -34,7 +33,7 @@ export default function Calls() {
         <Kpi label="Size cuts" value={shrinks} delta="Hold ratings" />
         <Kpi label="No objection" value={rows.length - blocks - shrinks} delta="Buy / Overweight" />
       </Kpis>
-      <div style={{ marginTop: 12 }}>
+      <div className="section">
         <Filters countLabel="calls" search="Filter by stock or text" groups={[
           { name: "market", label: "Desk", options: [["", "Both desks"], ["US", "US"], ["India", "India"]] },
           { name: "tone", label: "Rating", options: [["", "All ratings"], ["down", "Blocks"], ["flat", "Hold"], ["up", "Buy / Overweight"]] },

@@ -26,16 +26,21 @@ export default function PortfolioPage() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">Paper money · all accounts</span>
           <h1>Portfolio</h1>
-          <p className="sub">
-            A broker-style view of every paper account. Stock holdings are priced live from the quote feed, about every
-            15 seconds while the market is open. F&amp;O positions are priced from NSE&apos;s option chain when it can be
-            reached, otherwise from the desk&apos;s last sync. Cash, orders and positions change when a scheduled run trades.
-          </p>
+          <p className="sub">Every paper account in one place: funds, holdings at live prices, orders and F&amp;O positions.</p>
         </div>
       </div>
       <Portfolio accounts={accounts} options={data.options} />
+      <details className="how section">
+        <summary>Where the prices come from</summary>
+        <div>
+          <p>
+            Stock holdings are priced live from the quote feed, about every 15 seconds while the market is open. F&amp;O positions are
+            priced from NSE&apos;s option chain when it can be reached, otherwise from the desk&apos;s last sync. Cash, orders and positions
+            change only when a scheduled run trades.
+          </p>
+        </div>
+      </details>
     </main>
   );
 }

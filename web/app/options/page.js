@@ -2,6 +2,7 @@ import Link from "next/link";
 import EquityChart from "@/components/EquityChart";
 import { LiveNiftyKpi, StrikeWatch } from "@/components/OptionsLive";
 import Payoff from "@/components/Payoff";
+import Tabs from "@/components/Tabs";
 import { Kpi, Kpis, Panel, Signed, Table } from "@/components/ui";
 import { OPTION_ARMS, fmt, load, optionsView } from "@/lib/data";
 
@@ -25,121 +26,132 @@ export default function Options() {
   const books = options.books;
   const gate = options.gates?.at(-1);
   const v = optionsView(options);
+  const edge = books.main && books.control ? ((books.main.equity - books.control.equity) / books.main.capital) * 100 : null;
+  const arm = (k) => {
+    const b = books[k];
+    const o = b.open;
+    return (
+      <div className="pad" style={{ paddingBottom: 16 }}>
+        <p className="muted" style={{ fontSize: 13, marginBottom: 12 }}>{OPTION_ARMS[k].sub}</p>
+        {o ? (
+          <div className="grid">
+            <div className="c7">
+              <StrikeWatch legs={o.legs} fallback={options.spot} />
+              <Table rows={legRows(o, b.mark)} cols={[
+                { key: "side", label: "Side", render: (r) => <span className={`side ${r.side === "SELL" ? "SELL" : "BUY"}`}>{r.side}</span> },
+                { key: "strike", label: "Strike", n: true },
+                { key: "kind", label: "Type" },
+                { key: "qty", label: "Qty", n: true },
+                { key: "entry", label: "Entry", n: true, render: (r) => fmt.num(r.entry) },
+                { key: "now", label: "At sync", n: true, render: (r) => (r.now == null ? "—" : fmt.num(r.now)) },
+                { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
+              ]} />
+              <p className="muted" style={{ fontSize: 12.5, marginTop: 10 }}>
+                Expiry {fmt.day(o.expiry)} · {o.credit >= 0 ? `credit ${money(o.credit)}` : `cost ${money(-o.credit)}`} ·
+                max loss {money(o.max_loss)} · charges {money(o.entry_charges)} ·
+                {b.mark ? <> P&amp;L at sync <Signed v={b.mark.pnl} sym="₹" d={0} /></> : " no mark"} · opened {fmt.time(o.opened)}
+              </p>
+              {o.note ? <p className="muted" style={{ fontSize: 12.5, marginTop: 4 }}>{o.note}</p> : null}
+            </div>
+            <div className="c5">
+              <span className="label">P&amp;L at expiry</span>
+              <Payoff legs={o.legs} spot={options.spot} charges={o.entry_charges} />
+            </div>
+          </div>
+        ) : <div className="empty">Flat: no open position.</div>}
+        {b.closed?.length ? (
+          <div style={{ marginTop: 16 }}>
+            <span className="label">Closed trades</span>
+            <Table rows={[...b.closed].reverse()} rowKey={(r) => r.opened + r.closed} cols={[
+              { key: "opened", label: "Opened", render: (r) => <span className="muted">{fmt.time(r.opened)}</span> },
+              { key: "closed", label: "Closed", render: (r) => <span className="muted">{fmt.time(r.closed)}</span> },
+              { key: "legs", label: "Position", render: (r) => r.legs.map((l) => `${l.side === "SELL" ? "S" : "B"} ${l.strike}${l.kind}`).join(" · ") },
+              { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
+              { key: "reason", label: "Exit", wrap: true },
+            ]} />
+          </div>
+        ) : null}
+      </div>
+    );
+  };
+
   return (
     <main>
       <div className="page-head">
         <div>
-          <span className="label">NSE · Nifty weekly options · paper money</span>
-          <h1>Nifty options desk</h1>
+          <h1>Nifty options</h1>
           <p className="sub">
-            Three paper accounts. Two sell defined-risk iron condors on Nifty weekly options: an LLM-reviewed one, where
-            Claude&apos;s event gate can widen or skip a trade, and a rules-only control. The third is a Rs 1,000 option-buying
-            test. A one-minute monitor checks exits during market hours.
+            Iron condors on Nifty weekly options, with and without Claude&apos;s event gate, plus a ₹1,000 option-buying test.
           </p>
         </div>
       </div>
 
       <Kpis>
-        <Kpi hl label="Invested (paper)" value={money(v.totals.invested)} delta="3 accounts" />
-        <Kpi label="Value now" value={money(v.totals.value)} delta={`as of ${fmt.time(options.time)}`} />
+        <Kpi hl label="Value now" value={money(v.totals.value)} delta={`of ${money(v.totals.invested)} invested`} />
         <Kpi label="Total P&L" value={<Signed v={v.totals.pnl} sym="₹" d={0} />} delta={fmt.pct(v.totals.ret)} deltaTone={fmt.tone(v.totals.ret)} />
+        <Kpi label="LLM vs rules-only" value={<span className={fmt.tone(edge)}>{fmt.pp(edge)}</span>} delta="condor accounts" />
         <LiveNiftyKpi fallback={options.spot} syncedAt={options.time} />
       </Kpis>
 
-      <div className="grid" style={{ marginTop: 12 }}>
-        <div className="c12">
-          <Panel title="Accounts" meta="Invested, value and return of each paper account">
-            <Table rows={v.rows} cols={[
-              { key: "name", label: "Account", render: (r) => <b>{r.name}</b> },
-              { key: "ret", label: "Return", n: true, render: (r) => <span className={fmt.tone(r.ret)}>{fmt.pct(r.ret)}</span> },
-              { key: "value", label: "Value", n: true, render: (r) => money(r.value) },
-              { key: "invested", label: "Invested", n: true, render: (r) => money(r.invested) },
-              { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
-              { key: "realized", label: "Booked", n: true, render: (r) => <Signed v={r.realized} sym="₹" d={0} /> },
-              { key: "open", label: "Open P&L", n: true, render: (r) => (r.open == null ? <span className="muted">{r.status}</span> : <Signed v={r.open} sym="₹" d={0} />) },
-              { key: "trades", label: "Trades", n: true, render: (r) => `${r.trades} · ${r.wins} won` },
-              { key: "best", label: "Best / worst", n: true, render: (r) => (r.best == null ? "—" : <><Signed v={r.best} sym="₹" d={0} /> / <Signed v={r.worst} sym="₹" d={0} /></>) },
-            ]} />
-          </Panel>
-        </div>
-
+      <div className="grid section">
         <div className="c7">
-          <Panel title="Condor accounts vs Nifty" meta="Return since start, at each sync">
+          <Panel title="Condor accounts vs Nifty" meta="% since start">
             <EquityChart data={v.condorChart} height={240} compact ranges={false} />
           </Panel>
         </div>
         <div className="c5">
-          <Panel title="Rs 1,000 test" meta="Return on the Rs 1,000 start; each trade stakes at most Rs 1,000 (from 5 Nov; before that it re-staked its whole balance)">
+          <Panel title="₹1,000 test" meta="% on the ₹1,000 start">
             {v.lottoChart ? <EquityChart data={v.lottoChart} height={240} compact ranges={false} /> : <div className="empty">No data yet.</div>}
           </Panel>
         </div>
       </div>
 
       {gate ? (
-        <div className="callout" style={{ marginTop: 12 }}>
-          <b>Latest gate ({fmt.short(gate.date)}): {gate.action}</b>
+        <div className="callout section">
+          <b>Latest gate, {fmt.short(gate.date)}: {gate.action}</b>
           {gate.lotto_direction && gate.lotto_direction !== "none" ? <> · lotto direction <b>{gate.lotto_direction}</b></> : null}. {gate.note}
         </div>
       ) : null}
 
-      <div className="grid" style={{ marginTop: 12 }}>
-        {Object.entries(OPTION_ARMS).map(([k, a]) => {
-          const b = books[k];
-          if (!b) return null;
-          const o = b.open;
-          return (
-            <div className="c12" key={k}>
-              <Panel title={a.title} meta={a.sub}>
-                {o ? (
-                  <div className="grid">
-                    <div className="c7">
-                      <StrikeWatch legs={o.legs} fallback={options.spot} />
-                      <Table rows={legRows(o, b.mark)} cols={[
-                        { key: "side", label: "Side", render: (r) => <span className={`side ${r.side === "SELL" ? "SELL" : "BUY"}`}>{r.side}</span> },
-                        { key: "strike", label: "Strike", n: true },
-                        { key: "kind", label: "Type" },
-                        { key: "qty", label: "Qty", n: true },
-                        { key: "entry", label: "Entry", n: true, render: (r) => fmt.num(r.entry) },
-                        { key: "now", label: "At sync", n: true, render: (r) => (r.now == null ? "—" : fmt.num(r.now)) },
-                        { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
-                      ]} />
-                      <p className="muted" style={{ fontSize: 12.5, marginTop: 10 }}>
-                        Expiry {fmt.day(o.expiry)} · {o.credit >= 0 ? `credit ${money(o.credit)}` : `cost ${money(-o.credit)}`} ·
-                        max loss {money(o.max_loss)} · charges {money(o.entry_charges)} ·
-                        {b.mark ? <> P&amp;L at sync <Signed v={b.mark.pnl} sym="₹" d={0} /></> : " no mark"} · opened {fmt.time(o.opened)}
-                      </p>
-                      <p className="muted" style={{ fontSize: 12.5 }}>{o.note}</p>
-                    </div>
-                    <div className="c5">
-                      <span className="label">P&amp;L at expiry</span>
-                      <Payoff legs={o.legs} spot={options.spot} charges={o.entry_charges} />
-                    </div>
-                  </div>
-                ) : <div className="empty">Flat: no open position.</div>}
-                {b.closed?.length ? (
-                  <div style={{ marginTop: 12 }}>
-                    <span className="label">Closed trades</span>
-                    <Table rows={[...b.closed].reverse()} rowKey={(r) => r.opened + r.closed} cols={[
-                      { key: "opened", label: "Opened", render: (r) => <span className="mono muted">{fmt.time(r.opened)}</span> },
-                      { key: "closed", label: "Closed", render: (r) => <span className="mono muted">{fmt.time(r.closed)}</span> },
-                      { key: "legs", label: "Position", render: (r) => <span className="mono">{r.legs.map((l) => `${l.side === "SELL" ? "S" : "B"} ${l.strike}${l.kind}`).join(" · ")}</span> },
-                      { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
-                      { key: "reason", label: "Exit", wrap: true },
-                    ]} />
-                  </div>
-                ) : null}
-              </Panel>
-            </div>
-          );
-        })}
+      <div className="section">
+        <Tabs tabs={[
+          {
+            label: "Accounts", body: (
+              <Table rows={v.rows} cols={[
+                { key: "name", label: "Account", render: (r) => <b>{r.name}</b> },
+                { key: "ret", label: "Return", n: true, render: (r) => <span className={fmt.tone(r.ret)}>{fmt.pct(r.ret)}</span> },
+                { key: "value", label: "Value", n: true, render: (r) => money(r.value) },
+                { key: "invested", label: "Invested", n: true, render: (r) => money(r.invested) },
+                { key: "pnl", label: "P&L", n: true, render: (r) => <Signed v={r.pnl} sym="₹" d={0} /> },
+                { key: "realized", label: "Booked", n: true, render: (r) => <Signed v={r.realized} sym="₹" d={0} /> },
+                { key: "open", label: "Open P&L", n: true, render: (r) => (r.open == null ? <span className="muted">{r.status}</span> : <Signed v={r.open} sym="₹" d={0} />) },
+                { key: "trades", label: "Trades", n: true, render: (r) => `${r.trades} · ${r.wins} won` },
+              ]} />
+            ),
+          },
+          ...Object.keys(OPTION_ARMS).filter((k) => books[k]).map((k) => ({
+            label: OPTION_ARMS[k].short, count: books[k].open ? "open" : null, body: arm(k),
+          })),
+        ]} />
       </div>
-      <p className="muted" style={{ fontSize: 12.5, marginTop: 12 }}>
-        The Nifty price and the strike distances update live, about every 15 seconds. Option prices, account values and the
-        charts update when the desk syncs, at each scheduled run (09:16, 12:35 and 15:05 IST, plus the US-session runs).
-        NSE&apos;s option chain cannot be read from this website directly. See the <Link className="accent" href="/research">research</Link> and
-        the <Link className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/options-backtest.md">options backtest</Link> before
-        drawing conclusions from a few weeks.
-      </p>
+
+      <details className="how section">
+        <summary>How this desk works</summary>
+        <div>
+          <p>
+            Three paper accounts. Two sell defined-risk iron condors on Nifty weekly options: an LLM-reviewed one, where Claude&apos;s
+            event gate can widen or skip a trade, and a rules-only control. The third buys one cheap out-of-the-money option per
+            expiry in the trend direction, staking at most ₹1,000 a trade (before 5 November it re-staked its whole balance).
+            A one-minute monitor checks exits during market hours.
+          </p>
+          <p style={{ marginTop: 10 }}>
+            The Nifty price and strike distances update live, about every 15 seconds. Option prices, account values and the charts
+            update when the desk syncs at each scheduled run (09:16, 12:35 and 15:05 IST, plus the US-session runs). Read the{" "}
+            <Link className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/options-backtest.md">options backtest</Link>{" "}
+            before drawing conclusions from a few weeks.
+          </p>
+        </div>
+      </details>
     </main>
   );
 }

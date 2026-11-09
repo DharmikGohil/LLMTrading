@@ -13,12 +13,10 @@ export default function Research() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">Why the desk is built this way</span>
           <h1>Research</h1>
           <p className="sub">
-            Properly controlled studies find no reliable stock-picking skill in LLMs on their own once they test after the model&apos;s
-            training cutoff, over long periods, with costs. Rule-based momentum has the better record, and LLMs are useful at spotting
-            red flags. Hence a momentum screen with an LLM veto, next to a control account without it.
+            Controlled studies find no reliable stock-picking skill in LLMs on their own. Rules have the better record and LLMs are good
+            at spotting red flags, hence rules with an LLM veto, next to a control without it.
           </p>
         </div>
       </div>

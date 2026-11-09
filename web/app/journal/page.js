@@ -16,12 +16,10 @@ export default function Journal() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">How the desk learns</span>
           <h1>Journal</h1>
           <p className="sub">
-            The model is not retrained. Every close produces a graded review (orders, how each veto turned out, calls versus the index),
-            and patterns go into a lesson book: a hypothesis becomes confirmed after three supporting cases and is retired when the
-            evidence turns against it. Every analyst run reads the lesson book first. Lessons sharpen judgement; they never loosen risk limits.
+            Every close is graded, and patterns go into a lesson book that each analyst run reads first. Lessons sharpen judgement;
+            they never loosen risk limits.
           </p>
         </div>
       </div>
@@ -31,7 +29,7 @@ export default function Journal() {
         <Kpi hl label="Confirmed lessons" value={lessons.filter((l) => l.status === "confirmed").length} delta="3+ supporting cases" />
         <Kpi label="Hypotheses" value={lessons.filter((l) => l.status === "hypothesis").length} delta="being tested" />
       </Kpis>
-      <div className="grid" style={{ marginTop: 12 }}>
+      <div className="grid section">
         <div className="c12">
           <Panel title="Lesson book" flush>
             <Table rows={lessons} empty="No lessons yet. They need evidence first: the first candidates come once vetoes have outcomes." cols={[

@@ -18,7 +18,6 @@ export default function History() {
     <main>
       <div className="page-head">
         <div>
-          <span className="label">Everything the desk has done</span>
           <h1>History</h1>
           <p className="sub">Each session&apos;s closing equity for both books against the index, and every order with its realized result.</p>
         </div>
@@ -36,7 +35,7 @@ export default function History() {
         </span>} delta="LLM-reviewed books, US · India" />
       </Kpis>
 
-      <div className="grid" style={{ marginTop: 12 }}>
+      <div className="grid section">
         <div className="c12">
           <Panel title="Daily ledger" meta="close of each session · edge is cumulative" flush>
             <Table rows={ledger} rowKey={(r) => r.id} empty="The first close will appear here." cols={[

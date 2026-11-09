@@ -4,6 +4,7 @@ import EquityChart from "@/components/EquityChart";
 import Filters from "@/components/Filters";
 import { LiveEdge, LiveEquity, LiveIndexRet, LiveLast, LivePnl, LivePnlPct, LiveToStop, LiveUnrealized, LiveValue } from "@/components/Live";
 import Log from "@/components/Log";
+import Tabs from "@/components/Tabs";
 import { Book, Conf, Kpi, Kpis, Panel, Rating, Side, Signed, Table } from "@/components/ui";
 import { BOOK_LONG, MARKETS, cleanNote, dailyLedger, deskOf, equitySeries, fmt, isSkip, isVeto, liveSpec, load, timeline } from "@/lib/data";
 
@@ -60,122 +61,130 @@ export default async function Desk({ params }) {
     <main>
       <div className="page-head">
         <div>
-          <div className="crumbs"><span className="label">{d.exchange} · {d.universe} momentum · {d.currency}</span></div>
           <h1>{d.title}</h1>
-          <div className="sched" style={{ marginTop: 8 }}>
-            {d.schedule.map(([t, l]) => <span key={t}><b>{t}</b>{l}</span>)}
-            <span className="muted">{d.tzLabel}, weekdays</span>
+          <p className="sub">
+            {d.universe} momentum on {d.exchange}, in {d.currency}. The LLM-reviewed account follows Claude&apos;s vetoes; the LLM-off account trades the screen alone.
+          </p>
+          <div className="facts">
+            {d.schedule.map(([t, l]) => <span key={t}><b>{t}</b> {l}</span>)}
+            <span>{d.tzLabel}, weekdays</span>
           </div>
         </div>
       </div>
 
       <Kpis>
-        <Kpi label="LLM-reviewed equity" value={<LiveEquity spec={spec} cur={d.symbol} />} delta={<LiveEquity spec={spec} show="ret" />} />
-        <Kpi label="LLM off equity" value={<LiveEquity spec={spec} book="factor" cur={d.symbol} />} delta={<LiveEquity spec={spec} book="factor" show="ret" />} />
+        <Kpi label="LLM-reviewed" value={<LiveEquity spec={spec} cur={d.symbol} />} delta={<LiveEquity spec={spec} show="ret" />} />
+        <Kpi label="LLM off" value={<LiveEquity spec={spec} book="factor" cur={d.symbol} />} delta={<LiveEquity spec={spec} book="factor" show="ret" />} />
         <Kpi hl label="LLM edge" value={<LiveEdge spec={spec} />} delta="reviewed minus LLM off" />
-        <Kpi label={`${d.index} since start`} value={<LiveIndexRet spec={spec} />} delta="buy-and-hold benchmark" />
-        <Kpi label="Unrealized P&L" value={<LiveUnrealized spec={spec} cur={d.symbol} />} delta={`realized ${fmt.money(d.main?.realized_pnl, d.symbol)}`} />
-        <Kpi label="LLM vetoes" value={d.vetoes.length} delta={`${d.signals.length} calls made`} />
+        <Kpi label={`${d.index} since start`} value={<LiveIndexRet spec={spec} />} delta="buy and hold" />
       </Kpis>
 
-      <div className="grid" style={{ marginTop: 12 }}>
+      <div className="grid section">
         <div className="c8">
           <Panel title="Equity" meta={`% since start · ${d.tzLabel}`}>
             <EquityChart data={equitySeries(data, market)} spec={spec} height={300} />
           </Panel>
         </div>
         <div className="c4">
-          <Panel title="Exposure" meta="invested vs cash · at last run">
+          <Panel title="Exposure" meta="at last run">
             <Exposure s={d.main} book="main" sym={d.symbol} />
             <Exposure s={d.control} book="factor" sym={d.symbol} />
-            <p className="muted" style={{ fontSize: 12.5 }}>
-              Up to 10 positions of 10% each, at most 3 per sector. In a bear regime ({d.index} below its 200-day average) new buys are halved.
-              Stops sit at 4× ATR and only ever move up.
-            </p>
-          </Panel>
-        </div>
-
-        <div className="c12">
-          <Panel title="Open positions" meta={`${pos.filter((p) => p.book === "main").length} LLM-reviewed · ${pos.filter((p) => p.book === "factor").length} LLM off`} flush>
-            <div style={{ padding: "12px 14px 0" }}>
-              <Filters countLabel="positions" search="Filter by stock" groups={[
-                { name: "book", label: "Book", initial: "main", options: [["main", BOOK_LONG.main], ["factor", BOOK_LONG.factor], ["", "Both"]] },
-              ]}>
-                <Table rows={pos} empty="No open positions." cols={[posCols[0], { key: "book", label: "Book", render: (p) => <Book b={p.book} /> }, ...posCols.slice(1)]}
-                  rowProps={(p) => ({ "data-fi": "", "data-book": p.book, "data-text": p.symbol })} />
-              </Filters>
+            <div className="split-legend" style={{ marginTop: 4 }}>
+              <span>Unrealized P&amp;L</span><b><LiveUnrealized spec={spec} cur={d.symbol} /></b>
             </div>
-          </Panel>
-        </div>
-
-        <div className="c12">
-          <Panel title="Analyst calls" meta={d.lastCallDate ? `data to ${fmt.day(d.lastCallDate)}` : ""} act={<Link href="/calls">All dates →</Link>} flush>
-            <Table rows={d.latestCalls} rowKey={(r) => r.symbol} empty="No calls yet." cols={[
-              { key: "screen_rank", label: "#", n: true, render: (r) => r.screen_rank ?? "—" },
-              { key: "symbol", label: "Stock", sym: true },
-              { key: "rating", label: "Rating", render: (r) => <Rating r={r.rating} /> },
-              { key: "confidence", label: "Conf.", render: (r) => <Conf v={r.confidence} /> },
-              { key: "thesis", label: "Reasoning and sources", wrap: true },
-            ]} />
-          </Panel>
-        </div>
-
-        <div className="c12">
-          <Panel title="Daily history" meta="close of each session" act={<Link href="/history">Both desks →</Link>} flush>
-            <Table rows={ledger} rowKey={(r) => r.id} empty="The first close will appear here." cols={[
-              { key: "date", label: "Date", render: (r) => <span className="mono">{fmt.day(r.date)}</span> },
-              { key: "main", label: "LLM-reviewed", n: true, render: (r) => fmt.money(r.main, d.symbol) },
-              { key: "mainDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.mainDay)}>{fmt.pct(r.mainDay)}</span> },
-              { key: "factor", label: "LLM off", n: true, render: (r) => fmt.money(r.factor, d.symbol) },
-              { key: "factorDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.factorDay)}>{fmt.pct(r.factorDay)}</span> },
-              { key: "indexDay", label: d.index, n: true, render: (r) => <span className={fmt.tone(r.indexDay)}>{fmt.pct(r.indexDay)}</span> },
-              { key: "edge", label: "Edge (cum.)", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
-              { key: "orders", label: "Orders", n: true },
-              { key: "vetoes", label: "Vetoes", n: true },
-            ]} />
-          </Panel>
-        </div>
-
-        <div className="c12">
-          <Panel title="Decision on every candidate" meta="why each screened stock was bought, shrunk, vetoed or skipped" flush>
-            <div style={{ padding: "12px 14px 0" }}>
-              <Filters countLabel="decisions" search="Filter by stock or text" groups={[
-                { name: "book", label: "Book", options: [["", "Both books"], ["main", "LLM-reviewed"], ["factor", "LLM off"]] },
-                { name: "kind", label: "Outcome", options: [["", "All"], ["veto", "LLM vetoes"], ["skip", "Not bought"], ["bought", "Bought"]] },
-              ]}>
-                <Table rows={decisions} empty="No decisions yet."
-                  rowProps={(r) => ({ "data-fi": "", "data-book": r.book, "data-kind": [r.veto && "veto", r.skip ? "skip" : "bought"].filter(Boolean).join(" ") })} cols={[
-                  { key: "time", label: "Time", render: (r) => <span className="mono muted">{fmt.time(r.time, d.tz, d.tzLabel)}</span> },
-                  { key: "book", label: "Book", render: (r) => <Book b={r.book} /> },
-                  { key: "symbol", label: "Stock", sym: true },
-                  { key: "out", label: "Outcome", render: (r) => <span className={`chip ${r.veto ? "llm" : r.skip ? "" : "up"}`}>{r.veto ? "LLM veto" : r.skip ? "Not bought" : "Bought"}</span> },
-                  { key: "decision", label: "Reasoning", wrap: true, render: (r) => cleanNote(r.decision) },
-                ]} />
-              </Filters>
+            <div className="split-legend">
+              <span>Realized P&amp;L</span><span>{fmt.money(d.main?.realized_pnl, d.symbol)}</span>
             </div>
-          </Panel>
-        </div>
-
-        <div className="c7">
-          <Panel title="Orders" meta={`${d.trades.length} total`} flush>
-            <Table rows={d.trades} empty="No orders yet." cols={[
-              { key: "time", label: "Time", render: (r) => <span className="mono muted">{fmt.time(r.time, d.tz, d.tzLabel)}</span> },
-              { key: "book", label: "Book", render: (r) => <Book b={r.book} /> },
-              { key: "side", label: "Side", render: (r) => <Side s={r.side} /> },
-              { key: "symbol", label: "Stock", sym: true },
-              { key: "qty", label: "Qty", n: true },
-              { key: "price", label: "Price", n: true, render: (r) => fmt.num(r.price) },
-              { key: "realized", label: "Realized", n: true, render: (r) => (r.realized == null ? <span className="muted">—</span> : <Signed v={r.realized} sym={d.symbol} />) },
-              { key: "status", label: "Status", render: (r) => <span className={`chip ${r.status === "COMPLETE" ? "" : "down"}`}>{r.status}</span> },
-            ]} />
-          </Panel>
-        </div>
-        <div className="c5">
-          <Panel title="Activity" meta={d.name} act={<Link href="/tape">Everything →</Link>} flush>
-            <Log days={days} limit={14} compact />
           </Panel>
         </div>
       </div>
+
+      <div className="section">
+        <Tabs tabs={[
+          {
+            label: "Positions", count: pos.length, body: (
+              <div className="pad">
+                <Filters countLabel="positions" search="Filter by stock" groups={[
+                  { name: "book", label: "Book", initial: "main", options: [["main", BOOK_LONG.main], ["factor", BOOK_LONG.factor], ["", "Both"]] },
+                ]}>
+                  <Table rows={pos} empty="No open positions." cols={[posCols[0], { key: "book", label: "Book", render: (p) => <Book b={p.book} /> }, ...posCols.slice(1)]}
+                    rowProps={(p) => ({ "data-fi": "", "data-book": p.book, "data-text": p.symbol })} />
+                </Filters>
+              </div>
+            ),
+          },
+          {
+            label: "Decisions", count: decisions.length, body: (
+              <div className="pad">
+                <Filters countLabel="decisions" search="Filter by stock or text" groups={[
+                  { name: "book", label: "Book", options: [["", "Both books"], ["main", "LLM-reviewed"], ["factor", "LLM off"]] },
+                  { name: "kind", label: "Outcome", options: [["", "All"], ["veto", `LLM vetoes (${d.vetoes.length})`], ["skip", "Not bought"], ["bought", "Bought"]] },
+                ]}>
+                  <Table rows={decisions} empty="No decisions yet."
+                    rowProps={(r) => ({ "data-fi": "", "data-book": r.book, "data-kind": [r.veto && "veto", r.skip ? "skip" : "bought"].filter(Boolean).join(" ") })} cols={[
+                    { key: "time", label: "Time", render: (r) => <span className="muted">{fmt.time(r.time, d.tz, d.tzLabel)}</span> },
+                    { key: "book", label: "Book", render: (r) => <Book b={r.book} /> },
+                    { key: "symbol", label: "Stock", sym: true },
+                    { key: "out", label: "Outcome", render: (r) => <span className={`chip ${r.veto ? "llm" : r.skip ? "" : "up"}`}>{r.veto ? "LLM veto" : r.skip ? "Not bought" : "Bought"}</span> },
+                    { key: "decision", label: "Reasoning", wrap: true, render: (r) => cleanNote(r.decision) },
+                  ]} />
+                </Filters>
+              </div>
+            ),
+          },
+          {
+            label: "Orders", count: d.trades.length, body: (
+              <Table rows={d.trades} empty="No orders yet." cols={[
+                { key: "time", label: "Time", render: (r) => <span className="muted">{fmt.time(r.time, d.tz, d.tzLabel)}</span> },
+                { key: "book", label: "Book", render: (r) => <Book b={r.book} /> },
+                { key: "side", label: "Side", render: (r) => <Side s={r.side} /> },
+                { key: "symbol", label: "Stock", sym: true },
+                { key: "qty", label: "Qty", n: true },
+                { key: "price", label: "Price", n: true, render: (r) => fmt.num(r.price) },
+                { key: "realized", label: "Realized", n: true, render: (r) => (r.realized == null ? <span className="muted">—</span> : <Signed v={r.realized} sym={d.symbol} />) },
+                { key: "status", label: "Status", render: (r) => <span className={`chip ${r.status === "COMPLETE" ? "" : "down"}`}>{r.status}</span> },
+              ]} />
+            ),
+          },
+          {
+            label: "Analyst calls", count: d.latestCalls.length, body: (
+              <Table rows={d.latestCalls} rowKey={(r) => r.symbol} empty="No calls yet." cols={[
+                { key: "screen_rank", label: "#", n: true, render: (r) => r.screen_rank ?? "—" },
+                { key: "symbol", label: "Stock", sym: true },
+                { key: "rating", label: "Rating", render: (r) => <Rating r={r.rating} /> },
+                { key: "confidence", label: "Conf.", render: (r) => <Conf v={r.confidence} /> },
+                { key: "thesis", label: d.lastCallDate ? `Reasoning (${fmt.day(d.lastCallDate)})` : "Reasoning", wrap: true },
+              ]} />
+            ),
+          },
+          {
+            label: "Daily history", count: ledger.length, body: (
+              <Table rows={ledger} rowKey={(r) => r.id} empty="The first close will appear here." cols={[
+                { key: "date", label: "Date", render: (r) => fmt.day(r.date) },
+                { key: "main", label: "LLM-reviewed", n: true, render: (r) => fmt.money(r.main, d.symbol) },
+                { key: "mainDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.mainDay)}>{fmt.pct(r.mainDay)}</span> },
+                { key: "factor", label: "LLM off", n: true, render: (r) => fmt.money(r.factor, d.symbol) },
+                { key: "factorDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.factorDay)}>{fmt.pct(r.factorDay)}</span> },
+                { key: "indexDay", label: d.index, n: true, render: (r) => <span className={fmt.tone(r.indexDay)}>{fmt.pct(r.indexDay)}</span> },
+                { key: "edge", label: "Edge (cum.)", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
+                { key: "orders", label: "Orders", n: true },
+                { key: "vetoes", label: "Vetoes", n: true },
+              ]} />
+            ),
+          },
+          { label: "Activity", body: <Log days={days} limit={30} compact /> },
+        ]} />
+      </div>
+
+      <details className="how section">
+        <summary>Rules</summary>
+        <div>
+          <p>
+            Up to 10 positions of 10% each, at most 3 per sector. In a bear regime ({d.index} below its 200-day average) new buys are halved.
+            Stops sit at 4× ATR and only ever move up. Claude can veto or shrink a buy, never add one.
+          </p>
+        </div>
+      </details>
     </main>
   );
 }
