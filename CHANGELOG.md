@@ -8,6 +8,9 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Crypto backtest (`scripts/download_crypto_klines.py`, `scripts/crypto_backtest.py`, `docs/crypto-backtest.md`):
+  altcoin momentum was a 2021 effect and loses after Indian tax since 2023; BTC 50-day trend halves drawdowns but
+  trails buy-and-hold BTC after tax.
 - Backtest forensics (`scripts/backtest_forensics.py`, `docs/backtest-forensics.md`): on a point-in-time universe,
   with higher costs or with one day's delay, the momentum backtest trails the Nifty (+12.5% to +13.4% vs +15.1%);
   the README's results section now cites the audited figures.
