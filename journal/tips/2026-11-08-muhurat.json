@@ -1,0 +1,62 @@
+{
+ "name": "Muhurat Trading 2026: 6 high-momentum stocks (Instagram video)",
+ "market": "India",
+ "entry_date": "2026-11-09",
+ "tips": [
+  {
+   "symbol": "INDHOTEL",
+   "entry": 889.25,
+   "target": [
+    950,
+    1000
+   ],
+   "stop": 835
+  },
+  {
+   "symbol": "MOTILALOFS",
+   "entry": 1144.55,
+   "target": [
+    1200,
+    1250
+   ],
+   "stop": 1079
+  },
+  {
+   "symbol": "MCX",
+   "entry": 3556.8,
+   "target": [
+    3750,
+    3850
+   ],
+   "stop": 3446
+  },
+  {
+   "symbol": "BSE",
+   "entry": 3795.2,
+   "target": [
+    4150,
+    4400
+   ],
+   "stop": 3600
+  },
+  {
+   "symbol": "VBL",
+   "entry": 437.15,
+   "target": [
+    485,
+    520
+   ],
+   "stop": 415
+  },
+  {
+   "symbol": "ICICIBANK",
+   "entry": 1576.0,
+   "target": [
+    1680,
+    1750
+   ],
+   "stop": 1480
+  }
+ ],
+ "index_entry": 25073.65
+}

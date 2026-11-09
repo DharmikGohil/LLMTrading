@@ -40,7 +40,8 @@ after a backtest plus paper evidence, logged in `journal/changes.md`.
   check how correlated the holdings are with `.claude/skills/stock-correlation`.
   Then search the web for anything they miss and **the next earnings date** of each candidate. Apply the red-flag
   rules of `analyst/PLAYBOOK.md` section 3 (US equivalents: SEC/FDA/FTC actions, guidance cuts, downgrade clusters,
-  insider selling); earnings within 3 trading days = **Underweight**. Submit each rating with
+  insider selling); earnings within 3 trading days = **Underweight**. Every Buy or Overweight ends its thesis with a
+  `Bear case: ...` line (the devil's-advocate step in `analyst/PLAYBOOK.md` section 3). Submit each rating with
   `indtrader submit-signal SYMBOL --rating ... --confidence ... --thesis "... (source, date)"`, using the analysis
   date printed by `is-trading-day`.
 - **India:** the 07:40 analyst run already reviewed the candidates into `signals/`. If `signals/<date>/` has no

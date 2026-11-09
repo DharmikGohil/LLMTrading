@@ -59,6 +59,10 @@ close and GIFT Nifty. Note 2-3 dated facts with sources.
    - surveillance (ASM/GSM) or a non-EQ series
 4. No red flags found after a real search: **Overweight** (confidence 55-65), or **Buy** if there are fresh positive
    catalysts you verified (confidence 65-75). A minor concern: **Hold**. Unverifiable or conflicting news: **Hold**.
+   **Devil's advocate (every Buy or Overweight):** write the strongest case *against* the stock in one sentence, and
+   end the thesis with it as `Bear case: ...`. If that case is a verified red flag from step 3, change the rating.
+   If it is only a risk to watch (valuation, extended chart, a crowded trade), keep the rating and lower the
+   confidence by about 5.
 5. Submit (stop/target optional; omit them for Hold/Underweight/Sell):
 ```bash
 indtrader submit-signal SYMBOL --rating Underweight --confidence 70 \
