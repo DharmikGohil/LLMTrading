@@ -11,18 +11,18 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 3961.44,
+      "stop": 3976.17,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
     },
     "ADANIPORTS": {
-      "qty": 2,
-      "avg": 1843.92,
-      "stop": 1727.9,
-      "target": 22069.29,
+      "qty": 5,
+      "avg": 1903.53,
+      "stop": 1733.77,
+      "target": 22795.29,
       "opened": "2026-10-30",
-      "buy_charges": 4.38
+      "buy_charges": 11.3
     },
     "ZYDUSLIFE": {
       "qty": 8,
@@ -35,7 +35,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.67,
-      "stop": 316.94,
+      "stop": 321.77,
       "target": 4532.52,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -59,7 +59,7 @@
     "LAURUSLABS": {
       "qty": 4,
       "avg": 2351.02,
-      "stop": 2090.13,
+      "stop": 2095.51,
       "target": 31530.32,
       "opened": "2026-11-02",
       "buy_charges": 11.17
@@ -67,7 +67,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1865.38,
+      "stop": 1895.3,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -75,7 +75,7 @@
     "AUROPHARMA": {
       "qty": 5,
       "avg": 1764.56,
-      "stop": 1608.15,
+      "stop": 1639.46,
       "target": 19843.33,
       "opened": "2026-11-05",
       "buy_charges": 10.469999999999999
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-06",
-    "start_equity": 100417.17,
-    "orders": 5,
+    "date": "2026-11-09",
+    "start_equity": 101106.52,
+    "orders": 1,
     "partial": false
   },
   "stopped_out": {},
@@ -105,11 +105,12 @@
     "PAPER-cdf1745edf",
     "PAPER-ea12022563",
     "PAPER-a7c76b39b7",
-    "PAPER-496bfc779b"
+    "PAPER-496bfc779b",
+    "PAPER-a1e3bab141"
   ],
   "ca_pending": {},
-  "cash": 30680.27000000001,
+  "cash": 24843.54000000001,
   "capital": 100000.0,
-  "peak_equity": 100417.17,
+  "peak_equity": 101106.52,
   "ca_applied": []
 }

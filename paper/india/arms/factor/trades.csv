@@ -14,3 +14,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-06T09:18:01+05:30,ZYDUSLIFE,BUY,4,1196.8,COMPLETE,4,1194.7,PAPER-ea12022563,"momentum: Buy; Buy: add to 8 (alloc 8, risk-sized 13) stop 1048.62",charges Rs 5.67
 2026-11-06T09:18:01+05:30,NYKAA,BUY,14,349.7,COMPLETE,14,348.82,PAPER-a7c76b39b7,"momentum: Buy; Buy: add to 28 (alloc 28, risk-sized 45) stop 304.54",charges Rs 5.80
 2026-11-06T09:18:01+05:30,FEDERALBNK,BUY,15,338.75,COMPLETE,15,337.87,PAPER-496bfc779b,"momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",charges Rs 6.02
+2026-11-09T09:17:54+05:30,ADANIPORTS,BUY,3,1948.2,COMPLETE,3,1943.27,PAPER-a1e3bab141,"momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 1733.77",charges Rs 6.92

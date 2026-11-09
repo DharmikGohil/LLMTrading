@@ -1,5 +1,5 @@
 {
-  "cash": 30680.098535491943,
+  "cash": 24843.364938934326,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -10,8 +10,8 @@
       "avg": 4247.222647705078
     },
     "ADANIPORTS": {
-      "qty": 2,
-      "avg": 1843.9215
+      "qty": 5,
+      "avg": 1903.531319311523
     },
     "ZYDUSLIFE": {
       "qty": 8,
@@ -207,8 +207,19 @@
       "price": 337.87,
       "reason": "momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",
       "message": "charges Rs 6.02"
+    },
+    {
+      "time": "2026-11-09T09:17:54+05:30",
+      "id": "PAPER-a1e3bab141",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 1943.27,
+      "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 1733.77",
+      "message": "charges Rs 6.92"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 82.2
+  "charges": 89.12
 }

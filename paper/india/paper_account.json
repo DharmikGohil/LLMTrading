@@ -1,5 +1,5 @@
 {
-  "cash": 39931.82672651673,
+  "cash": 35624.5166526642,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -10,16 +10,16 @@
       "avg": 4247.722897705078
     },
     "ADANIPORTS": {
-      "qty": 2,
-      "avg": 1843.9215
+      "qty": 3,
+      "avg": 1877.2048162841795
     },
     "ETERNAL": {
       "qty": 14,
       "avg": 344.77230610656744
     },
     "FEDERALBNK": {
-      "qty": 22,
-      "avg": 342.65760459761185
+      "qty": 29,
+      "avg": 341.27227331542963
     },
     "LAURUSLABS": {
       "qty": 4,
@@ -207,8 +207,30 @@
       "price": 348.82,
       "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 21 (alloc 21, risk-sized 45) stop 304.89",
       "message": "charges Rs 4.56"
+    },
+    {
+      "time": "2026-11-09T09:17:43+05:30",
+      "id": "PAPER-fe2d199aea",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 1943.77,
+      "reason": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 3 (alloc 3, risk-sized 9) stop 1734.87",
+      "message": "charges Rs 2.31"
+    },
+    {
+      "time": "2026-11-09T09:17:45+05:30",
+      "id": "PAPER-db179c960a",
+      "symbol": "FEDERALBNK",
+      "side": "BUY",
+      "qty": 7,
+      "status": "COMPLETE",
+      "price": 336.92,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 29 (alloc 29, risk-sized 57) stop 301.73",
+      "message": "charges Rs 2.80"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 71.24
+  "charges": 76.35
 }

@@ -11,39 +11,39 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 3965.44,
+      "stop": 3981.67,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
     },
     "ADANIPORTS": {
-      "qty": 2,
-      "avg": 1843.92,
-      "stop": 1727.6,
-      "target": 22068.99,
+      "qty": 3,
+      "avg": 1877.2,
+      "stop": 1734.87,
+      "target": 22796.39,
       "opened": "2026-10-30",
-      "buy_charges": 4.38
+      "buy_charges": 6.6899999999999995
     },
     "ETERNAL": {
       "qty": 14,
       "avg": 344.77,
-      "stop": 316.74,
+      "stop": 322.32,
       "target": 4532.67,
       "opened": "2026-10-30",
       "buy_charges": 5.73
     },
     "FEDERALBNK": {
-      "qty": 22,
-      "avg": 342.66,
+      "qty": 29,
+      "avg": 341.27,
       "stop": 309.09,
-      "target": 3913.65,
+      "target": 3808.08,
       "opened": "2026-10-30",
-      "buy_charges": 8.95
+      "buy_charges": 11.75
     },
     "LAURUSLABS": {
       "qty": 4,
       "avg": 2351.18,
-      "stop": 2091.13,
+      "stop": 2097.21,
       "target": 31528.72,
       "opened": "2026-11-02",
       "buy_charges": 11.17
@@ -51,7 +51,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1865.88,
+      "stop": 1890.3,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -59,7 +59,7 @@
     "AUROPHARMA": {
       "qty": 4,
       "avg": 1758.07,
-      "stop": 1608.55,
+      "stop": 1639.36,
       "target": 19843.73,
       "opened": "2026-11-05",
       "buy_charges": 8.35
@@ -67,7 +67,7 @@
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.69,
-      "stop": 1047.42,
+      "stop": 1063.65,
       "target": 15650.02,
       "opened": "2026-11-05",
       "buy_charges": 8.45
@@ -75,7 +75,7 @@
     "NYKAA": {
       "qty": 21,
       "avg": 346.58,
-      "stop": 304.89,
+      "stop": 305.74,
       "target": 4759.57,
       "opened": "2026-11-05",
       "buy_charges": 8.649999999999999
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-06",
-    "start_equity": 100678.33,
-    "orders": 5,
+    "date": "2026-11-09",
+    "start_equity": 101303.76,
+    "orders": 2,
     "partial": false
   },
   "stopped_out": {},
@@ -105,11 +105,13 @@
     "PAPER-a030081fcb",
     "PAPER-a4759be770",
     "PAPER-48c34d1b3d",
-    "PAPER-2732ad8044"
+    "PAPER-2732ad8044",
+    "PAPER-fe2d199aea",
+    "PAPER-db179c960a"
   ],
   "ca_pending": {},
-  "cash": 39931.96000000002,
+  "cash": 35624.64000000002,
   "capital": 100000.0,
-  "peak_equity": 100678.33,
+  "peak_equity": 101303.76,
   "ca_applied": []
 }
