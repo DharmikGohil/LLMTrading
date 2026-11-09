@@ -8,6 +8,11 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Backtest forensics (`scripts/backtest_forensics.py`, `docs/backtest-forensics.md`): on a point-in-time universe,
+  with higher costs or with one day's delay, the momentum backtest trails the Nifty (+12.5% to +13.4% vs +15.1%);
+  the README's results section now cites the audited figures.
+- Analyst calibration (`scripts/analyst_calibration.py`), tip-sheet scoring (`scripts/score_tips.py`) and a
+  devil's-advocate bear case on every Buy/Overweight in the playbooks.
 - Open-interest build-up study (`scripts/download_futstk_bhavcopy.py`, `scripts/oi_buildup_study.py`,
   `docs/oi-buildup.md`): the order-flow board's bull/bear split has no edge, and its long/short loses 6 bps a day
   after costs; not adopted.

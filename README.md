@@ -86,12 +86,16 @@ The public site lives in [`web/`](web/README.md): `cd web && npm ci && npm run d
 
 ## Results so far
 
-Backtest of the current default (slow momentum book with the SEPA trend template), Nifty 200,
-January 2024 to October 2026, Indian costs: **+10.2%** against the Nifty 50's **+4.6%**, with a −20%
-maximum drawdown. Today's index members are used, so survivorship bias flatters this, and the Sharpe
-confidence interval crosses zero: there is no proven edge yet. The LLM layer cannot be backtested honestly
-(models have seen the past), so it is judged only on forward paper trading against the control account.
-Live numbers: [llmtrading.dharmikgohil.in](https://llmtrading.dharmikgohil.in).
+**Backtest:** the slow momentum book with the SEPA trend template on the Nifty 200, 1 Jan 2024 to 6 Nov 2026, with
+Indian costs, returned +18.5% against the Nifty 50's +15.1%. That figure flatters the strategy. A
+[forensic audit](docs/backtest-forensics.md) re-ran it three ways:
+- on the stock list as it actually stood in January 2024 (removing survivorship bias): +12.6%
+- with realistic higher costs: +13.4%
+- with decisions executed one day late: +12.5%
+
+Every audited version trails the index, so there is no proven edge. The LLM layer cannot be backtested honestly
+(models have seen the past), so it is judged only on forward paper trading against the control account. Live
+numbers: [llmtrading.dharmikgohil.in](https://llmtrading.dharmikgohil.in).
 
 ## Repository layout
 
@@ -123,6 +127,7 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 | [Audit](docs/audit.md) | What was taken from each project, what was left out, and why |
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
 | [Kronos test](docs/kronos.md) | Walk-forward check of the Kronos candlestick model on Nifty, stocks and SPY |
+| [Backtest forensics](docs/backtest-forensics.md) | Survivorship, costs and timing audit of the momentum backtest |
 | [OI build-up test](docs/oi-buildup.md) | Does the F&O open-interest build-up ("order-flow board") predict returns? 2023-2026 |
 | [Roadmap](docs/roadmap.md) | What comes next |
 
