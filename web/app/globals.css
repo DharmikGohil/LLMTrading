@@ -443,3 +443,12 @@ article.call .foot { display: flex; gap: 10px; font-size: 12.5px; color: var(--m
 .card .row b > .flat { background: var(--flat-soft); }
 .card .row { align-items: center; }
 .kpi.hl .d > .up:only-child, .kpi.hl .d > .down:only-child { background: rgba(255, 255, 255, 0.18); }
+
+/* crypto learning loop */
+.learn .sub { color: var(--ink-2); font-size: 14px; max-width: 820px; margin-bottom: 16px; }
+.learn-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.learn-kpis > div { background: var(--panel-2); border-radius: var(--r); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.learn-kpis b { font: 700 22px/1.2 var(--sans); letter-spacing: -0.02em; }
+.learn-kpis b.verdict { font-size: 15px; line-height: 1.35; font-weight: 650; }
+.learn-kpis .muted { font-size: 12.5px; }
+@media (max-width: 760px) { .learn-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

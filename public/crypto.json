@@ -1,6 +1,6 @@
 {
- "time": "2026-11-09T14:52:49+00:00",
- "btc": 74967.31,
+ "time": "2026-11-09T17:20:45+00:00",
+ "btc": 74804.81,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 10039.83,
+   "value": 10018.07,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": 0.4,
+   "return_pct": 0.18,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 74967.31,
-     "value": 10039.73,
-     "pnl": 49.82,
-     "pnl_pct": 0.5,
-     "day_pct": -1.417,
+     "last": 74804.81,
+     "value": 10017.97,
+     "pnl": 28.06,
+     "pnl_pct": 0.28,
+     "day_pct": -1.223,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -85,5 +85,129 @@
   "trend_sma": 50,
   "rebalance_days": 1,
   "drift": 0.05
+ },
+ "learn": {
+  "summary": {
+   "24h": {
+    "n": 0,
+    "verdict": "no scored calls yet"
+   },
+   "168h": {
+    "n": 0,
+    "verdict": "no scored calls yet"
+   }
+  },
+  "recent": [],
+  "lessons": [
+   {
+    "id": "fear-rebound-7d",
+    "lesson": "Extreme fear (Fear & Greed below 25) is followed by BTC/ETH being higher a week later more often than not: crowds sell in panic, prices rebound.",
+    "kind": "market",
+    "tag": "fg_extreme_fear",
+    "horizon_h": 168,
+    "expect": "up",
+    "status": "hypothesis",
+    "source": "Common contrarian belief; untested here. Evidence on sentiment indices is mixed.",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "up_pct": null,
+     "t": null
+    },
+    "last_checked": "2026-11-09"
+   },
+   {
+    "id": "greed-pullback-7d",
+    "lesson": "Extreme greed (Fear & Greed above 75) is followed by BTC/ETH being lower a week later more often than not: FOMO buying runs out.",
+    "kind": "market",
+    "tag": "fg_extreme_greed",
+    "horizon_h": 168,
+    "expect": "down",
+    "status": "hypothesis",
+    "source": "Common contrarian belief; untested here.",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "up_pct": null,
+     "t": null
+    },
+    "last_checked": "2026-11-09"
+   },
+   {
+    "id": "crowded-longs-24h",
+    "lesson": "High perpetual funding (crowded leveraged longs, above 0.03% per 8 hours on average) is followed by a lower price a day later more often than not.",
+    "kind": "market",
+    "tag": "funding_high",
+    "horizon_h": 24,
+    "expect": "down",
+    "status": "hypothesis",
+    "source": "Crypto derivatives research suggests extreme funding marks crowded positioning; the effect size is uncertain.",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "up_pct": null,
+     "t": null
+    },
+    "last_checked": "2026-11-09"
+   },
+   {
+    "id": "downtrend-continues-7d",
+    "lesson": "Below its 50-day average, a coin is lower a week later more often than not (trends persist). This is the idea behind the desk's trend rule.",
+    "kind": "market",
+    "tag": "below_50d",
+    "horizon_h": 168,
+    "expect": "down",
+    "status": "hypothesis",
+    "source": "Time-series momentum (Moskowitz, Ooi and Pedersen 2012; Liu and Tsyvinski 2021 for crypto); our 2020-26 backtest (docs/crypto-desk.md).",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "up_pct": null,
+     "t": null
+    },
+    "last_checked": "2026-11-09"
+   },
+   {
+    "id": "overconfident-in-high-vol",
+    "lesson": "My calls are worse than the no-skill baseline when volatility is high: overconfidence. Under this tag, stay close to 50% and the baseline range.",
+    "kind": "llm",
+    "tag": "vol_high",
+    "horizon_h": 24,
+    "expect": "worse",
+    "status": "hypothesis",
+    "source": "Overconfidence (Barber and Odean 2000, 2001); untested for this analyst.",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "brier_llm": null,
+     "brier_base": null,
+     "skill_pct": null,
+     "t": null,
+     "verdict": "no scored calls yet"
+    },
+    "last_checked": "2026-11-09"
+   },
+   {
+    "id": "chasing-big-moves",
+    "lesson": "After a move of more than 5% in 24 hours, my calls chase the move (recency bias) and score worse than the baseline.",
+    "kind": "llm",
+    "tag": "big_move_24h",
+    "horizon_h": 24,
+    "expect": "worse",
+    "status": "hypothesis",
+    "source": "Recency and attention effects (Barber and Odean 2008); untested for this analyst.",
+    "first_seen": "2026-11-09",
+    "evidence": {
+     "n": 0,
+     "brier_llm": null,
+     "brier_base": null,
+     "skill_pct": null,
+     "t": null,
+     "verdict": "no scored calls yet"
+    },
+    "last_checked": "2026-11-09"
+   }
+  ],
+  "open": 0
  }
 }

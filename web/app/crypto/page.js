@@ -1,6 +1,7 @@
 import Link from "next/link";
 import EquityChart from "@/components/EquityChart";
 import { CryptoHoldings, CryptoKpis, CryptoProvider } from "@/components/CryptoLive";
+import { ForecastTable, LearnStats, LessonTable } from "@/components/LearnPanel";
 import Tabs from "@/components/Tabs";
 import { Panel, Table } from "@/components/ui";
 import { fmt, load } from "@/lib/data";
@@ -58,6 +59,12 @@ export default function Crypto() {
         ) : null}
 
         <div className="section">
+          <Panel title="Is the LLM learning?" meta="forecast scorecard">
+            <LearnStats learn={c.learn} />
+          </Panel>
+        </div>
+
+        <div className="section">
           <Tabs tabs={[
             ...Object.entries(NAMES).filter(([k]) => c.books[k]).map(([k, n]) => ({
               label: n, count: c.books[k].positions.length || null, body: (
@@ -67,6 +74,8 @@ export default function Crypto() {
                 </div>
               ),
             })),
+            { label: "LLM forecasts", count: c.learn?.recent?.length || null, body: <ForecastTable learn={c.learn} /> },
+            { label: "Lessons", count: c.learn?.lessons?.length || null, body: <LessonTable learn={c.learn} /> },
             {
               label: "Trades", count: trades.length, body: (
                 <Table rows={trades} rowKey={(r) => r.arm + r.time + r.coin + r.side} empty="No trades yet." cols={[
