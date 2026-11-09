@@ -16,7 +16,27 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "evidence_history": {
+   "label": "history, outcomes already seen; does not change the status",
+   "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+   "design_years": {
+    "days_on": 466,
+    "episodes": 23,
+    "up_on_pct": 54.0,
+    "up_off_pct": 51.2,
+    "diff_pp": 2.7,
+    "t": 0.6
+   },
+   "2023_26": {
+    "days_on": 186,
+    "episodes": 8,
+    "up_on_pct": 53.5,
+    "up_off_pct": 51.8,
+    "diff_pp": 1.7,
+    "t": 0.3
+   }
+  }
  },
  {
   "id": "greed-pullback-7d",
@@ -35,7 +55,27 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "evidence_history": {
+   "label": "history, outcomes already seen; does not change the status",
+   "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+   "design_years": {
+    "days_on": 185,
+    "episodes": 11,
+    "up_on_pct": 63.0,
+    "up_off_pct": 50.6,
+    "diff_pp": 12.3,
+    "t": 2.1
+   },
+   "2023_26": {
+    "days_on": 97,
+    "episodes": 12,
+    "up_on_pct": 52.6,
+    "up_off_pct": 52.0,
+    "diff_pp": 0.6,
+    "t": 0.1
+   }
+  }
  },
  {
   "id": "crowded-longs-24h",
@@ -54,7 +94,27 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "evidence_history": {
+   "label": "history, outcomes already seen; does not change the status",
+   "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+   "design_years": {
+    "days_on": 244,
+    "episodes": 12,
+    "up_on_pct": 52.3,
+    "up_off_pct": 52.1,
+    "diff_pp": 0.1,
+    "t": 0.0
+   },
+   "2023_26": {
+    "days_on": 36,
+    "episodes": 4,
+    "up_on_pct": 51.4,
+    "up_off_pct": 50.6,
+    "diff_pp": 0.8,
+    "t": 0.1
+   }
+  }
  },
  {
   "id": "downtrend-continues-7d",
@@ -73,7 +133,27 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-09"
+  "last_checked": "2026-11-09",
+  "evidence_history": {
+   "label": "history, outcomes already seen; does not change the status",
+   "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+   "design_years": {
+    "days_on": 936,
+    "episodes": 14,
+    "up_on_pct": 46.8,
+    "up_off_pct": 52.9,
+    "diff_pp": -6.1,
+    "t": -1.7
+   },
+   "2023_26": {
+    "days_on": 710,
+    "episodes": 19,
+    "up_on_pct": 51.2,
+    "up_off_pct": 52.4,
+    "diff_pp": -1.2,
+    "t": -0.3
+   }
+  }
  },
  {
   "id": "overconfident-in-high-vol",

@@ -1,0 +1,222 @@
+{
+ "test": "H10c",
+ "period": "design",
+ "data_end": "2022-12-31",
+ "scored_from": "2019-02-06",
+ "registered_commit": null,
+ "universes": {
+  "btc_eth": {
+   "universe": "btc_eth",
+   "coin_days_scored": 2850,
+   "first_scored_month": "2019-02",
+   "levels_tested": 15002,
+   "levels_per_coin_day": 5.26,
+   "hits": 210,
+   "bounces": 82,
+   "coin_days_with_hit": 189,
+   "episodes": 143,
+   "coins_with_hits": 2,
+   "hits_dropped_outcome_outside_data": 0,
+   "bounce_rate_ours": 0.3905,
+   "random": {
+    "median": 0.4695,
+    "p5": 0.4064,
+    "p95": 0.5316,
+    "mean_hits_per_set": 157.0
+   },
+   "percentile_of_ours": 0.016,
+   "gap_vs_random_median": -0.079,
+   "gap_bootstrap_95": [
+    -0.1429,
+    -0.0183
+   ],
+   "above_95th_percentile": false,
+   "by_side_descriptive": {
+    "support": {
+     "hits": 104,
+     "ours": 0.4327,
+     "random_median": 0.5222,
+     "random_p95": 0.6125
+    },
+    "resistance": {
+     "hits": 106,
+     "ours": 0.3491,
+     "random_median": 0.4129,
+     "random_p95": 0.5067
+    }
+   },
+   "by_year_descriptive": {
+    "2019": {
+     "hits": 38,
+     "bounce_rate": 0.3947
+    },
+    "2020": {
+     "hits": 60,
+     "bounce_rate": 0.3167
+    },
+    "2021": {
+     "hits": 45,
+     "bounce_rate": 0.4444
+    },
+    "2022": {
+     "hits": 67,
+     "bounce_rate": 0.4179
+    }
+   }
+  },
+  "top20": {
+   "universe": "top20",
+   "coin_days_scored": 24032,
+   "first_scored_month": "2019-02",
+   "levels_tested": 124580,
+   "levels_per_coin_day": 5.18,
+   "hits": 1917,
+   "bounces": 958,
+   "coin_days_with_hit": 1739,
+   "episodes": 1336,
+   "coins_with_hits": 50,
+   "hits_dropped_outcome_outside_data": 3,
+   "bounce_rate_ours": 0.4997,
+   "random": {
+    "median": 0.5089,
+    "p5": 0.4872,
+    "p95": 0.5307,
+    "mean_hits_per_set": 1357.7
+   },
+   "percentile_of_ours": 0.242,
+   "gap_vs_random_median": -0.0092,
+   "gap_bootstrap_95": [
+    -0.0292,
+    0.0094
+   ],
+   "above_95th_percentile": false,
+   "by_side_descriptive": {
+    "support": {
+     "hits": 1013,
+     "ours": 0.5439,
+     "random_median": 0.5654,
+     "random_p95": 0.5948
+    },
+    "resistance": {
+     "hits": 904,
+     "ours": 0.4502,
+     "random_median": 0.4519,
+     "random_p95": 0.4812
+    }
+   },
+   "by_year_descriptive": {
+    "2019": {
+     "hits": 294,
+     "bounce_rate": 0.4592
+    },
+    "2020": {
+     "hits": 666,
+     "bounce_rate": 0.4805
+    },
+    "2021": {
+     "hits": 389,
+     "bounce_rate": 0.5784
+    },
+    "2022": {
+     "hits": 568,
+     "bounce_rate": 0.4894
+    }
+   }
+  }
+ },
+ "money_check": {
+  "universe": "BTC and ETH",
+  "trades": 93,
+  "per_event": {
+   "costs_pre_tax": {
+    "mean_pct": -1.347,
+    "median_pct": -0.993,
+    "nw_t": -1.21,
+    "hit_days": 72,
+    "share_positive": 0.458
+   },
+   "costs_after_tax": {
+    "mean_pct": -2.08,
+    "median_pct": -0.993,
+    "nw_t": -1.98,
+    "hit_days": 72,
+    "share_positive": 0.431
+   },
+   "costs_doubled_pre_tax": {
+    "mean_pct": -1.643,
+    "median_pct": -1.289,
+    "nw_t": -1.48,
+    "hit_days": 72,
+    "share_positive": 0.417
+   },
+   "costs_doubled_after_tax": {
+    "mean_pct": -2.331,
+    "median_pct": -1.289,
+    "nw_t": -2.22,
+    "hit_days": 72,
+    "share_positive": 0.417
+   }
+  },
+  "episodes": 74,
+  "random_sets": {
+   "median_mean_pct": -0.287,
+   "p5_mean_pct": -1.8,
+   "p95_mean_pct": 1.233,
+   "mean_trades_per_set": 68.6,
+   "percentile_of_ours": 0.127
+  },
+  "book": {
+   "trade_book_costs": {
+    "total_return_pct": -49.0,
+    "cagr_pct": -15.9,
+    "sharpe": -0.32,
+    "max_dd_pct": -61.3,
+    "after_tax_return_pct": -60.8,
+    "trades": 332
+   },
+   "just_hold_btc_costs": {
+    "total_return_pct": 384.8,
+    "cagr_pct": 49.9,
+    "sharpe": 0.93,
+    "max_dd_pct": -76.6,
+    "after_tax_return_pct": 264.0,
+    "trades": 2
+   },
+   "trade_book_costs_doubled": {
+    "total_return_pct": -54.5,
+    "cagr_pct": -18.3,
+    "sharpe": -0.41,
+    "max_dd_pct": -64.7,
+    "after_tax_return_pct": -65.0,
+    "trades": 331
+   },
+   "just_hold_btc_costs_doubled": {
+    "total_return_pct": 384.1,
+    "cagr_pct": 49.9,
+    "sharpe": 0.93,
+    "max_dd_pct": -76.6,
+    "after_tax_return_pct": 262.7,
+    "trades": 2
+   },
+   "deflated_sharpe": {
+    "n_trials": 36,
+    "sharpe": -0.27,
+    "sharpe_hurdle": 0.9,
+    "deflated_sharpe": 0.002,
+    "verdict": "likely luck"
+   }
+  },
+  "tds_note": {
+   "sales": 74,
+   "sales_per_year": 19.0,
+   "approx_tds_pct_of_book_per_year": 9.49,
+   "note": "1% TDS on each sale's value, not modelled; each sale is about half the book"
+  }
+ },
+ "pass_line": "The bounce rate at our levels is above the 95th percentile of the random sets' rates in the design period **and** again in the test period. Report the gap (ours minus the random median) with a bootstrap interval.",
+ "this_period": {
+  "btc_eth": false,
+  "top20": false
+ },
+ "verdict": "design only: the verdict needs the test period"
+}

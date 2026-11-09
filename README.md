@@ -118,6 +118,7 @@ holding the index (or BTC) after costs and tax:
 | [OI build-up board](docs/oi-buildup.md) | Trading it lost about −43% over four years after costs |
 | [Kronos forecasts](docs/kronos.md) | Its 80% price bands held only 46% of outcomes; its odds scored worse than the base rate |
 | [Technical analysis](docs/technical-analysis.md) | RSI, MACD, Bollinger and candle rules mostly do not beat buy and hold after costs; they are used as reading aids |
+| [Crypto chart studies](docs/crypto-studies.md) | Pre-registered on BTC/ETH, 2018-26: our support/resistance held less often than random levels; round numbers showed nothing; double tops and head-and-shoulders were too rare to test; fear, greed and funding gave no reliable 1-7 day signal |
 
 Before any real money, every desk has to pass the [go-live checklist](docs/go-live-checklist.md): numeric evidence that
 it beats the cheap alternative after costs and tax, that the result is not luck, and that the owner is ready. No desk
@@ -179,6 +180,7 @@ docs/             Architecture, strategy, operations, CLI, research and every st
 | [Research](docs/research.md) | The evidence behind the design, and the projects it borrows from |
 | [Technical analysis](docs/technical-analysis.md) | How the desk reads a chart (EMA, RSI, MACD, Bollinger, levels, candles) and what the evidence says |
 | [Crypto desk](docs/crypto-desk.md) | How the crypto strategy was chosen (design vs test period), how the 24/7 desk runs, and the learning loop |
+| [Crypto studies](docs/crypto-studies.md) | Support/resistance, round numbers, double tops and crowd mood on BTC and ETH: pre-registered tests and results |
 | [Crypto backtest](docs/crypto-backtest.md) | BTC trend and altcoin momentum vs buy and hold, 2020-2026, with Indian crypto tax |
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
 | [Backtest forensics](docs/backtest-forensics.md) | Survivorship, costs and timing audit of the momentum backtest |

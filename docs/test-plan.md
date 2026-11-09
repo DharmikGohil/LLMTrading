@@ -529,6 +529,11 @@ lost money in the S&P 500. The chart-patterns brief found no test on crypto.
 
 ### Crypto order of work
 
+**Status (9 Nov 2026).** P0-B is built (`indtrader/research/prereg.py`, `research/trials.csv`). H10c and H19c ran
+once on the test period and failed in both periods; H9c stopped at "too little data"; H8a found no lesson worth a
+forward test, so H8b is registered but not started. Results: [crypto-studies.md](crypto-studies.md).
+
+
 1. Build the pre-registration files and the trial ledger (P0-B), and enter the about 29 past crypto trials.
    Commit the files for H8b, H9c, H10c and H19c. This document fixes the M-C1 and M-C2 rules once committed.
 2. M-C1 and M-C2 are already collecting data. Read verdicts only at the checkpoints.

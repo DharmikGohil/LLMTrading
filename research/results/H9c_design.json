@@ -1,0 +1,126 @@
+{
+ "id": "H9c",
+ "period": "design",
+ "run_at": "2026-11-09T20:20:06+00:00",
+ "data_from": "2018-06-01",
+ "data_to": "2022-12-31",
+ "period_start": "2018-06-01",
+ "period_end": "2022-12-31",
+ "series": 64,
+ "costs_round_trip": 0.003,
+ "tax": 0.312,
+ "min_events": 300,
+ "variants": {
+  "kernel-hs": {
+   "counts": {
+    "patterns_detected": 7,
+    "completed_any_coin": 7,
+    "completed_in_universe": 3,
+    "usable": 3,
+    "event_days": 3,
+    "episodes": 3,
+    "by_year": {
+     "2022": 3
+    },
+    "by_coin": {
+     "LINK": 1,
+     "SAND": 1,
+     "LUNA2": 1
+    },
+    "btc_eth": 0
+   },
+   "status": "too little data: 3 usable events, fewer than 300; no outcome computed",
+   "pass_line_met": false
+  },
+  "kernel-dt": {
+   "counts": {
+    "patterns_detected": 16,
+    "completed_any_coin": 2,
+    "completed_in_universe": 2,
+    "usable": 2,
+    "event_days": 2,
+    "episodes": 2,
+    "by_year": {
+     "2019": 1,
+     "2020": 1
+    },
+    "by_coin": {
+     "ETC": 1,
+     "DASH": 1
+    },
+    "btc_eth": 0
+   },
+   "status": "too little data: 2 usable events, fewer than 300; no outcome computed",
+   "pass_line_met": false
+  },
+  "swing-hs": {
+   "counts": {
+    "patterns_detected": 69,
+    "completed_any_coin": 41,
+    "completed_in_universe": 18,
+    "usable": 17,
+    "event_days": 16,
+    "episodes": 17,
+    "by_year": {
+     "2018": 3,
+     "2019": 4,
+     "2020": 3,
+     "2021": 2,
+     "2022": 5
+    },
+    "by_coin": {
+     "BNB": 3,
+     "TRX": 3,
+     "BTC": 2,
+     "XLM": 1,
+     "DASH": 1,
+     "IOTA": 1,
+     "ADA": 1,
+     "XTZ": 1,
+     "LINK": 1,
+     "FIL": 1,
+     "NEAR": 1,
+     "DOT": 1
+    },
+    "btc_eth": 2
+   },
+   "status": "too little data: 17 usable events, fewer than 300; no outcome computed",
+   "pass_line_met": false
+  },
+  "swing-dt": {
+   "counts": {
+    "patterns_detected": 214,
+    "completed_any_coin": 67,
+    "completed_in_universe": 23,
+    "usable": 23,
+    "event_days": 19,
+    "episodes": 23,
+    "by_year": {
+     "2018": 1,
+     "2019": 4,
+     "2020": 2,
+     "2021": 3,
+     "2022": 13
+    },
+    "by_coin": {
+     "ADA": 4,
+     "TRX": 4,
+     "ETC": 2,
+     "LTC": 2,
+     "DOT": 2,
+     "XRP": 2,
+     "SOL": 2,
+     "NEO": 1,
+     "ATOM": 1,
+     "DOGE": 1,
+     "BTC": 1,
+     "LINK": 1
+    },
+    "btc_eth": 1
+   },
+   "status": "too little data: 23 usable events, fewer than 300; no outcome computed",
+   "pass_line_met": false
+  }
+ },
+ "step2": "not run: no variant passed the step-1 design line"
+}

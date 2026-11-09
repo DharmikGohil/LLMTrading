@@ -22,3 +22,6 @@ paper/options/live.pid
 data/fo/
 data/futstk/
 data/crypto/
+
+# study results are part of the record (docs/test-plan.md)
+!research/results/

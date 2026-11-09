@@ -1,0 +1,1732 @@
+{
+ "test": "H8b",
+ "run_at": "2026-11-09T20:19:01+00:00",
+ "f_minus_line": {
+  "BTC": {
+   "line_rate": 0.00045609762,
+   "line_pct_per_8h": 0.045609762,
+   "method": {
+    "p90": 0.00045609762,
+    "n_values": 1089,
+    "first_window_end": "2020-01-08 00:00:00",
+    "last_window_end": "2022-12-31 00:00:00",
+    "median": 8.9234286e-05,
+    "max": 0.0013084714,
+    "share_above_p90": 0.10009183
+   },
+   "sensitivity": {
+    "every_settlement": {
+     "p90": 0.00044948681,
+     "n_values": 3268,
+     "first_window_end": "2020-01-07 16:00:00",
+     "last_window_end": "2022-12-31 16:00:00",
+     "median": 8.9122619e-05,
+     "max": 0.0013084714,
+     "share_above_p90": 0.1000612
+    },
+    "windows_ending_16utc": {
+     "p90": 0.00044925152,
+     "n_values": 1090,
+     "first_window_end": "2020-01-07 16:00:00",
+     "last_window_end": "2022-12-31 16:00:00",
+     "median": 8.9109286e-05,
+     "max": 0.00128057,
+     "share_above_p90": 0.1
+    }
+   }
+  },
+  "ETH": {
+   "line_rate": 0.00059604362,
+   "line_pct_per_8h": 0.059604362,
+   "method": {
+    "p90": 0.00059604362,
+    "n_values": 1089,
+    "first_window_end": "2020-01-08 00:00:00",
+    "last_window_end": "2022-12-31 00:00:00",
+    "median": 9.9259048e-05,
+    "max": 0.0016121814,
+    "share_above_p90": 0.10009183
+   },
+   "sensitivity": {
+    "every_settlement": {
+     "p90": 0.00059911033,
+     "n_values": 3268,
+     "first_window_end": "2020-01-07 16:00:00",
+     "last_window_end": "2022-12-31 16:00:00",
+     "median": 9.8717381e-05,
+     "max": 0.001673379,
+     "share_above_p90": 0.1000612
+    },
+    "windows_ending_16utc": {
+     "p90": 0.00058874133,
+     "n_values": 1090,
+     "first_window_end": "2020-01-07 16:00:00",
+     "last_window_end": "2022-12-31 16:00:00",
+     "median": 9.8684286e-05,
+     "max": 0.0016517367,
+     "share_above_p90": 0.1
+    }
+   }
+  }
+ },
+ "okx_vs_binance": {
+  "period": [
+   "2026-10-01",
+   "2026-10-31"
+  ],
+  "by_coin": {
+   "BTC": {
+    "realized": {
+     "settlements_binance": 93,
+     "settlements_okx": 93,
+     "matched": 93,
+     "only_binance": [],
+     "only_okx": [],
+     "mean_binance_pct": 0.004356129,
+     "mean_okx_pct": 0.0051905428,
+     "corr": 0.58115468,
+     "mean_diff_okx_minus_binance_pct": 0.00083441379,
+     "mean_abs_diff_pct": 0.0026330876,
+     "max_abs_diff_pct": 0.011401,
+     "same_sign_share": 0.84946237,
+     "avg3d_at_00utc": {
+      "n": 31,
+      "corr": 0.8399864,
+      "mean_diff_pct": 0.00083285825,
+      "max_abs_diff_pct": 0.0038466474,
+      "funding_negative": {
+       "days_binance": 1,
+       "days_okx": 0,
+       "agree_share": 0.96774194
+      },
+      "funding_high": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     },
+     "avg7d_at_00utc": {
+      "n": 31,
+      "corr": 0.9264375,
+      "mean_diff_pct": 0.00072419981,
+      "max_abs_diff_pct": 0.0018792128,
+      "above_f_minus_line": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     }
+    },
+    "funding": {
+     "settlements_binance": 93,
+     "settlements_okx": 93,
+     "matched": 93,
+     "only_binance": [],
+     "only_okx": [],
+     "mean_binance_pct": 0.004356129,
+     "mean_okx_pct": 0.0051905428,
+     "corr": 0.58115468,
+     "mean_diff_okx_minus_binance_pct": 0.00083441379,
+     "mean_abs_diff_pct": 0.0026330876,
+     "max_abs_diff_pct": 0.011401,
+     "same_sign_share": 0.84946237,
+     "avg3d_at_00utc": {
+      "n": 31,
+      "corr": 0.8399864,
+      "mean_diff_pct": 0.00083285825,
+      "max_abs_diff_pct": 0.0038466474,
+      "funding_negative": {
+       "days_binance": 1,
+       "days_okx": 0,
+       "agree_share": 0.96774194
+      },
+      "funding_high": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     },
+     "avg7d_at_00utc": {
+      "n": 31,
+      "corr": 0.9264375,
+      "mean_diff_pct": 0.00072419981,
+      "max_abs_diff_pct": 0.0018792128,
+      "above_f_minus_line": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     }
+    },
+    "okx_history_starts": "2026-09-04 08:00:00"
+   },
+   "ETH": {
+    "realized": {
+     "settlements_binance": 93,
+     "settlements_okx": 93,
+     "matched": 93,
+     "only_binance": [],
+     "only_okx": [],
+     "mean_binance_pct": 0.0030118817,
+     "mean_okx_pct": 0.0033840799,
+     "corr": 0.74579251,
+     "mean_diff_okx_minus_binance_pct": 0.00037219823,
+     "mean_abs_diff_pct": 0.002705741,
+     "max_abs_diff_pct": 0.0097065246,
+     "same_sign_share": 0.87096774,
+     "avg3d_at_00utc": {
+      "n": 31,
+      "corr": 0.9355801,
+      "mean_diff_pct": 0.00030632083,
+      "max_abs_diff_pct": 0.0021470096,
+      "funding_negative": {
+       "days_binance": 4,
+       "days_okx": 4,
+       "agree_share": 1.0
+      },
+      "funding_high": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     },
+     "avg7d_at_00utc": {
+      "n": 31,
+      "corr": 0.92016003,
+      "mean_diff_pct": 0.00013453158,
+      "max_abs_diff_pct": 0.0019695863,
+      "above_f_minus_line": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     }
+    },
+    "funding": {
+     "settlements_binance": 93,
+     "settlements_okx": 93,
+     "matched": 93,
+     "only_binance": [],
+     "only_okx": [],
+     "mean_binance_pct": 0.0030118817,
+     "mean_okx_pct": 0.0033840799,
+     "corr": 0.74579251,
+     "mean_diff_okx_minus_binance_pct": 0.00037219823,
+     "mean_abs_diff_pct": 0.002705741,
+     "max_abs_diff_pct": 0.0097065246,
+     "same_sign_share": 0.87096774,
+     "avg3d_at_00utc": {
+      "n": 31,
+      "corr": 0.9355801,
+      "mean_diff_pct": 0.00030632083,
+      "max_abs_diff_pct": 0.0021470096,
+      "funding_negative": {
+       "days_binance": 4,
+       "days_okx": 4,
+       "agree_share": 1.0
+      },
+      "funding_high": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     },
+     "avg7d_at_00utc": {
+      "n": 31,
+      "corr": 0.92016003,
+      "mean_diff_pct": 0.00013453158,
+      "max_abs_diff_pct": 0.0019695863,
+      "above_f_minus_line": {
+       "days_binance": 0,
+       "days_okx": 0,
+       "agree_share": 1.0
+      }
+     }
+    },
+    "okx_history_starts": "2026-09-04 08:00:00"
+   }
+  }
+ },
+ "rows": {
+  "BTC": [
+   {
+    "time": "2026-09-21 00:00:00",
+    "binance": 4.2e-05,
+    "okx_funding": 9.2580651e-05,
+    "okx_realized": 9.2580651e-05
+   },
+   {
+    "time": "2026-09-21 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-09-21 16:00:00",
+    "binance": 5.485e-05,
+    "okx_funding": 2.0248442e-05,
+    "okx_realized": 2.0248442e-05
+   },
+   {
+    "time": "2026-09-22 00:00:00",
+    "binance": 7.663e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-09-22 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-09-22 16:00:00",
+    "binance": 2.784e-05,
+    "okx_funding": 5.4409919e-05,
+    "okx_realized": 5.4409919e-05
+   },
+   {
+    "time": "2026-09-23 00:00:00",
+    "binance": 1.021e-05,
+    "okx_funding": 2.1300323e-05,
+    "okx_realized": 2.1300323e-05
+   },
+   {
+    "time": "2026-09-23 08:00:00",
+    "binance": 3.34e-06,
+    "okx_funding": 3.624403e-05,
+    "okx_realized": 3.624403e-05
+   },
+   {
+    "time": "2026-09-23 16:00:00",
+    "binance": 1.286e-05,
+    "okx_funding": 9.4723899e-05,
+    "okx_realized": 9.4723899e-05
+   },
+   {
+    "time": "2026-09-24 00:00:00",
+    "binance": 1.32e-06,
+    "okx_funding": 4.9510159e-06,
+    "okx_realized": 4.9510159e-06
+   },
+   {
+    "time": "2026-09-24 08:00:00",
+    "binance": 4.796e-05,
+    "okx_funding": 2.9545815e-05,
+    "okx_realized": 2.9545815e-05
+   },
+   {
+    "time": "2026-09-24 16:00:00",
+    "binance": 1.422e-05,
+    "okx_funding": -3.2786158e-06,
+    "okx_realized": -3.2786158e-06
+   },
+   {
+    "time": "2026-09-25 00:00:00",
+    "binance": 2.14e-06,
+    "okx_funding": -3.7995723e-06,
+    "okx_realized": -3.7995723e-06
+   },
+   {
+    "time": "2026-09-25 08:00:00",
+    "binance": 3.512e-05,
+    "okx_funding": 7.1862445e-05,
+    "okx_realized": 7.1862445e-05
+   },
+   {
+    "time": "2026-09-25 16:00:00",
+    "binance": -5.74e-06,
+    "okx_funding": 3.4162596e-05,
+    "okx_realized": 3.4162596e-05
+   },
+   {
+    "time": "2026-09-26 00:00:00",
+    "binance": 7.69e-06,
+    "okx_funding": 1.7002837e-05,
+    "okx_realized": 1.7002837e-05
+   },
+   {
+    "time": "2026-09-26 08:00:00",
+    "binance": 4.93e-05,
+    "okx_funding": 2.070733e-05,
+    "okx_realized": 2.070733e-05
+   },
+   {
+    "time": "2026-09-26 16:00:00",
+    "binance": -5.45e-06,
+    "okx_funding": -5.5621777e-06,
+    "okx_realized": -5.5621777e-06
+   },
+   {
+    "time": "2026-09-27 00:00:00",
+    "binance": 4.703e-05,
+    "okx_funding": -8.7510287e-06,
+    "okx_realized": -8.7510287e-06
+   },
+   {
+    "time": "2026-09-27 08:00:00",
+    "binance": 1.449e-05,
+    "okx_funding": -1.8144399e-05,
+    "okx_realized": -1.8144399e-05
+   },
+   {
+    "time": "2026-09-27 16:00:00",
+    "binance": 1.051e-05,
+    "okx_funding": -1.0743914e-05,
+    "okx_realized": -1.0743914e-05
+   },
+   {
+    "time": "2026-09-28 00:00:00",
+    "binance": 1.987e-05,
+    "okx_funding": 4.5923522e-05,
+    "okx_realized": 4.5923522e-05
+   },
+   {
+    "time": "2026-09-28 08:00:00",
+    "binance": -2.585e-05,
+    "okx_funding": -7.6067767e-06,
+    "okx_realized": -7.6067767e-06
+   },
+   {
+    "time": "2026-09-28 16:00:00",
+    "binance": 6.501e-05,
+    "okx_funding": 7.0950787e-05,
+    "okx_realized": 7.0950787e-05
+   },
+   {
+    "time": "2026-09-29 00:00:00",
+    "binance": 3.836e-05,
+    "okx_funding": 5.4375433e-05,
+    "okx_realized": 5.4375433e-05
+   },
+   {
+    "time": "2026-09-29 08:00:00",
+    "binance": 6.798e-05,
+    "okx_funding": 2.5490092e-05,
+    "okx_realized": 2.5490092e-05
+   },
+   {
+    "time": "2026-09-29 16:00:00",
+    "binance": 1.399e-05,
+    "okx_funding": 3.293847e-05,
+    "okx_realized": 3.293847e-05
+   },
+   {
+    "time": "2026-09-30 00:00:00",
+    "binance": 7.697e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-09-30 08:00:00",
+    "binance": -2.44e-06,
+    "okx_funding": 3.3720072e-05,
+    "okx_realized": 3.3720072e-05
+   },
+   {
+    "time": "2026-09-30 16:00:00",
+    "binance": 6.606e-05,
+    "okx_funding": 3.6751906e-05,
+    "okx_realized": 3.6751906e-05
+   },
+   {
+    "time": "2026-10-01 00:00:00",
+    "binance": 7.981e-05,
+    "okx_funding": 5.3019032e-05,
+    "okx_realized": 5.3019032e-05
+   },
+   {
+    "time": "2026-10-01 08:00:00",
+    "binance": 4.568e-05,
+    "okx_funding": 2.1072156e-05,
+    "okx_realized": 2.1072156e-05
+   },
+   {
+    "time": "2026-10-01 16:00:00",
+    "binance": 6.98e-05,
+    "okx_funding": 6.2504861e-05,
+    "okx_realized": 6.2504861e-05
+   },
+   {
+    "time": "2026-10-02 00:00:00",
+    "binance": 2.693e-05,
+    "okx_funding": 3.2181373e-06,
+    "okx_realized": 3.2181373e-06
+   },
+   {
+    "time": "2026-10-02 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 7.0967086e-05,
+    "okx_realized": 7.0967086e-05
+   },
+   {
+    "time": "2026-10-02 16:00:00",
+    "binance": 1.214e-05,
+    "okx_funding": 4.6273906e-05,
+    "okx_realized": 4.6273906e-05
+   },
+   {
+    "time": "2026-10-03 00:00:00",
+    "binance": 4.574e-05,
+    "okx_funding": -9.3707338e-07,
+    "okx_realized": -9.3707338e-07
+   },
+   {
+    "time": "2026-10-03 08:00:00",
+    "binance": 3.61e-06,
+    "okx_funding": 3.0987742e-05,
+    "okx_realized": 3.0987742e-05
+   },
+   {
+    "time": "2026-10-03 16:00:00",
+    "binance": 4.528e-05,
+    "okx_funding": 3.3632239e-05,
+    "okx_realized": 3.3632239e-05
+   },
+   {
+    "time": "2026-10-04 00:00:00",
+    "binance": -1.346e-05,
+    "okx_funding": 2.7910824e-05,
+    "okx_realized": 2.7910824e-05
+   },
+   {
+    "time": "2026-10-04 08:00:00",
+    "binance": 3.451e-05,
+    "okx_funding": 1.3923091e-05,
+    "okx_realized": 1.3923091e-05
+   },
+   {
+    "time": "2026-10-04 16:00:00",
+    "binance": 3.785e-05,
+    "okx_funding": 4.7902233e-05,
+    "okx_realized": 4.7902233e-05
+   },
+   {
+    "time": "2026-10-05 00:00:00",
+    "binance": 7.492e-05,
+    "okx_funding": 7.0568276e-05,
+    "okx_realized": 7.0568276e-05
+   },
+   {
+    "time": "2026-10-05 08:00:00",
+    "binance": 4.186e-05,
+    "okx_funding": 4.3849035e-05,
+    "okx_realized": 4.3849035e-05
+   },
+   {
+    "time": "2026-10-05 16:00:00",
+    "binance": -1.541e-05,
+    "okx_funding": 2.6534036e-05,
+    "okx_realized": 2.6534036e-05
+   },
+   {
+    "time": "2026-10-06 00:00:00",
+    "binance": -2.485e-05,
+    "okx_funding": -1.5122423e-06,
+    "okx_realized": -1.5122423e-06
+   },
+   {
+    "time": "2026-10-06 08:00:00",
+    "binance": -1.592e-05,
+    "okx_funding": 4.3648262e-05,
+    "okx_realized": 4.3648262e-05
+   },
+   {
+    "time": "2026-10-06 16:00:00",
+    "binance": 2.245e-05,
+    "okx_funding": 3.1662226e-05,
+    "okx_realized": 3.1662226e-05
+   },
+   {
+    "time": "2026-10-07 00:00:00",
+    "binance": -7.43e-06,
+    "okx_funding": 6.1759278e-05,
+    "okx_realized": 6.1759278e-05
+   },
+   {
+    "time": "2026-10-07 08:00:00",
+    "binance": -3.657e-05,
+    "okx_funding": 2.4605065e-05,
+    "okx_realized": 2.4605065e-05
+   },
+   {
+    "time": "2026-10-07 16:00:00",
+    "binance": 1.152e-05,
+    "okx_funding": 1.7572601e-05,
+    "okx_realized": 1.7572601e-05
+   },
+   {
+    "time": "2026-10-08 00:00:00",
+    "binance": -9.92e-06,
+    "okx_funding": 6.3810005e-05,
+    "okx_realized": 6.3810005e-05
+   },
+   {
+    "time": "2026-10-08 08:00:00",
+    "binance": -1.185e-05,
+    "okx_funding": -1.685289e-06,
+    "okx_realized": -1.685289e-06
+   },
+   {
+    "time": "2026-10-08 16:00:00",
+    "binance": 3.445e-05,
+    "okx_funding": 6.1779399e-05,
+    "okx_realized": 6.1779399e-05
+   },
+   {
+    "time": "2026-10-09 00:00:00",
+    "binance": 1.767e-05,
+    "okx_funding": 2.7973983e-05,
+    "okx_realized": 2.7973983e-05
+   },
+   {
+    "time": "2026-10-09 08:00:00",
+    "binance": 5.156e-05,
+    "okx_funding": 6.7299443e-06,
+    "okx_realized": 6.7299443e-06
+   },
+   {
+    "time": "2026-10-09 16:00:00",
+    "binance": 1.286e-05,
+    "okx_funding": 2.8384213e-05,
+    "okx_realized": 2.8384213e-05
+   },
+   {
+    "time": "2026-10-10 00:00:00",
+    "binance": 5.232e-05,
+    "okx_funding": 1.6626813e-05,
+    "okx_realized": 1.6626813e-05
+   },
+   {
+    "time": "2026-10-10 08:00:00",
+    "binance": -4.31e-06,
+    "okx_funding": 4.3311903e-05,
+    "okx_realized": 4.3311903e-05
+   },
+   {
+    "time": "2026-10-10 16:00:00",
+    "binance": 4.57e-06,
+    "okx_funding": 1.1278752e-05,
+    "okx_realized": 1.1278752e-05
+   },
+   {
+    "time": "2026-10-11 00:00:00",
+    "binance": -2.718e-05,
+    "okx_funding": -2.1973068e-05,
+    "okx_realized": -2.1973068e-05
+   },
+   {
+    "time": "2026-10-11 08:00:00",
+    "binance": -9.93e-06,
+    "okx_funding": -1.5417582e-05,
+    "okx_realized": -1.5417582e-05
+   },
+   {
+    "time": "2026-10-11 16:00:00",
+    "binance": 1.347e-05,
+    "okx_funding": -8.035808e-10,
+    "okx_realized": -8.035808e-10
+   },
+   {
+    "time": "2026-10-12 00:00:00",
+    "binance": 5.56e-06,
+    "okx_funding": -1.0575081e-05,
+    "okx_realized": -1.0575081e-05
+   },
+   {
+    "time": "2026-10-12 08:00:00",
+    "binance": 1.866e-05,
+    "okx_funding": 2.4945206e-05,
+    "okx_realized": 2.4945206e-05
+   },
+   {
+    "time": "2026-10-12 16:00:00",
+    "binance": 1.944e-05,
+    "okx_funding": 4.0042518e-05,
+    "okx_realized": 4.0042518e-05
+   },
+   {
+    "time": "2026-10-13 00:00:00",
+    "binance": 6.741e-05,
+    "okx_funding": 2.3573613e-05,
+    "okx_realized": 2.3573613e-05
+   },
+   {
+    "time": "2026-10-13 08:00:00",
+    "binance": 8.349e-05,
+    "okx_funding": 3.9545653e-05,
+    "okx_realized": 3.9545653e-05
+   },
+   {
+    "time": "2026-10-13 16:00:00",
+    "binance": 3.455e-05,
+    "okx_funding": 4.8420602e-05,
+    "okx_realized": 4.8420602e-05
+   },
+   {
+    "time": "2026-10-14 00:00:00",
+    "binance": -1.022e-05,
+    "okx_funding": -3.0665007e-05,
+    "okx_realized": -3.0665007e-05
+   },
+   {
+    "time": "2026-10-14 08:00:00",
+    "binance": 1.528e-05,
+    "okx_funding": 6.305859e-05,
+    "okx_realized": 6.305859e-05
+   },
+   {
+    "time": "2026-10-14 16:00:00",
+    "binance": -1.788e-05,
+    "okx_funding": 7.1089749e-05,
+    "okx_realized": 7.1089749e-05
+   },
+   {
+    "time": "2026-10-15 00:00:00",
+    "binance": -4.135e-05,
+    "okx_funding": 3.6303176e-05,
+    "okx_realized": 3.6303176e-05
+   },
+   {
+    "time": "2026-10-15 08:00:00",
+    "binance": 6.617e-05,
+    "okx_funding": 5.2936689e-05,
+    "okx_realized": 5.2936689e-05
+   },
+   {
+    "time": "2026-10-15 16:00:00",
+    "binance": 1.828e-05,
+    "okx_funding": 2.5785975e-05,
+    "okx_realized": 2.5785975e-05
+   },
+   {
+    "time": "2026-10-16 00:00:00",
+    "binance": 5.429e-05,
+    "okx_funding": 4.3099782e-05,
+    "okx_realized": 4.3099782e-05
+   },
+   {
+    "time": "2026-10-16 08:00:00",
+    "binance": 6.803e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-16 16:00:00",
+    "binance": 4.313e-05,
+    "okx_funding": 5.0843487e-05,
+    "okx_realized": 5.0843487e-05
+   },
+   {
+    "time": "2026-10-17 00:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-17 08:00:00",
+    "binance": 3.71e-05,
+    "okx_funding": 5.2480176e-05,
+    "okx_realized": 5.2480176e-05
+   },
+   {
+    "time": "2026-10-17 16:00:00",
+    "binance": 3.726e-05,
+    "okx_funding": 9.4776478e-05,
+    "okx_realized": 9.4776478e-05
+   },
+   {
+    "time": "2026-10-18 00:00:00",
+    "binance": 6.412e-05,
+    "okx_funding": 5.8444846e-05,
+    "okx_realized": 5.8444846e-05
+   },
+   {
+    "time": "2026-10-18 08:00:00",
+    "binance": 6.03e-05,
+    "okx_funding": 2.5766638e-05,
+    "okx_realized": 2.5766638e-05
+   },
+   {
+    "time": "2026-10-18 16:00:00",
+    "binance": 5.841e-05,
+    "okx_funding": 6.3806418e-05,
+    "okx_realized": 6.3806418e-05
+   },
+   {
+    "time": "2026-10-19 00:00:00",
+    "binance": 4.958e-05,
+    "okx_funding": 6.8770571e-05,
+    "okx_realized": 6.8770571e-05
+   },
+   {
+    "time": "2026-10-19 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 5.8372688e-05,
+    "okx_realized": 5.8372688e-05
+   },
+   {
+    "time": "2026-10-19 16:00:00",
+    "binance": 7.964e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-20 00:00:00",
+    "binance": 9.208e-05,
+    "okx_funding": 8.2103788e-05,
+    "okx_realized": 8.2103788e-05
+   },
+   {
+    "time": "2026-10-20 08:00:00",
+    "binance": 7.102e-05,
+    "okx_funding": 5.1927818e-05,
+    "okx_realized": 5.1927818e-05
+   },
+   {
+    "time": "2026-10-20 16:00:00",
+    "binance": 7.856e-05,
+    "okx_funding": 5.2359366e-05,
+    "okx_realized": 5.2359366e-05
+   },
+   {
+    "time": "2026-10-21 00:00:00",
+    "binance": 6.542e-05,
+    "okx_funding": 5.4951304e-05,
+    "okx_realized": 5.4951304e-05
+   },
+   {
+    "time": "2026-10-21 08:00:00",
+    "binance": 8.54e-05,
+    "okx_funding": 7.236958e-05,
+    "okx_realized": 7.236958e-05
+   },
+   {
+    "time": "2026-10-21 16:00:00",
+    "binance": 4.896e-05,
+    "okx_funding": 3.4419174e-05,
+    "okx_realized": 3.4419174e-05
+   },
+   {
+    "time": "2026-10-22 00:00:00",
+    "binance": 5.07e-06,
+    "okx_funding": -4.7172457e-05,
+    "okx_realized": -4.7172457e-05
+   },
+   {
+    "time": "2026-10-22 08:00:00",
+    "binance": -1.401e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-22 16:00:00",
+    "binance": 1.265e-05,
+    "okx_funding": 7.8187979e-05,
+    "okx_realized": 7.8187979e-05
+   },
+   {
+    "time": "2026-10-23 00:00:00",
+    "binance": 5.369e-05,
+    "okx_funding": 6.6887905e-05,
+    "okx_realized": 6.6887905e-05
+   },
+   {
+    "time": "2026-10-23 08:00:00",
+    "binance": 7.075e-05,
+    "okx_funding": 7.5333416e-05,
+    "okx_realized": 7.5333416e-05
+   },
+   {
+    "time": "2026-10-23 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 6.8572196e-05,
+    "okx_realized": 6.8572196e-05
+   },
+   {
+    "time": "2026-10-24 00:00:00",
+    "binance": 3.939e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-24 08:00:00",
+    "binance": 3.431e-05,
+    "okx_funding": 4.9000191e-05,
+    "okx_realized": 4.9000191e-05
+   },
+   {
+    "time": "2026-10-24 16:00:00",
+    "binance": 9.6e-06,
+    "okx_funding": 4.7911187e-05,
+    "okx_realized": 4.7911187e-05
+   },
+   {
+    "time": "2026-10-25 00:00:00",
+    "binance": 9.409e-05,
+    "okx_funding": 2.1894752e-05,
+    "okx_realized": 2.1894752e-05
+   },
+   {
+    "time": "2026-10-25 08:00:00",
+    "binance": 6.005e-05,
+    "okx_funding": 9.4394619e-05,
+    "okx_realized": 9.4394619e-05
+   },
+   {
+    "time": "2026-10-25 16:00:00",
+    "binance": 8.027e-05,
+    "okx_funding": 5.5567704e-05,
+    "okx_realized": 5.5567704e-05
+   },
+   {
+    "time": "2026-10-26 00:00:00",
+    "binance": 1.713e-05,
+    "okx_funding": 6.9757196e-05,
+    "okx_realized": 6.9757196e-05
+   },
+   {
+    "time": "2026-10-26 08:00:00",
+    "binance": 7.945e-05,
+    "okx_funding": 9.7814565e-05,
+    "okx_realized": 9.7814565e-05
+   },
+   {
+    "time": "2026-10-26 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 00:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 08:00:00",
+    "binance": 8.696e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-28 00:00:00",
+    "binance": 5.373e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-28 08:00:00",
+    "binance": 7.89e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-28 16:00:00",
+    "binance": 7.984e-05,
+    "okx_funding": 6.5605551e-05,
+    "okx_realized": 6.5605551e-05
+   },
+   {
+    "time": "2026-10-29 00:00:00",
+    "binance": 6.216e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-29 08:00:00",
+    "binance": 5.306e-05,
+    "okx_funding": 3.3804156e-05,
+    "okx_realized": 3.3804156e-05
+   },
+   {
+    "time": "2026-10-29 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 9.5787744e-05,
+    "okx_realized": 9.5787744e-05
+   },
+   {
+    "time": "2026-10-30 00:00:00",
+    "binance": 3.619e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-30 08:00:00",
+    "binance": 4.306e-05,
+    "okx_funding": 5.4925286e-05,
+    "okx_realized": 5.4925286e-05
+   },
+   {
+    "time": "2026-10-30 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-31 00:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-31 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-31 16:00:00",
+    "binance": 0.0001,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   }
+  ],
+  "ETH": [
+   {
+    "time": "2026-09-21 00:00:00",
+    "binance": 8.166e-05,
+    "okx_funding": 3.6173208e-05,
+    "okx_realized": 3.6173208e-05
+   },
+   {
+    "time": "2026-09-21 08:00:00",
+    "binance": 8.66e-05,
+    "okx_funding": 7.9407512e-05,
+    "okx_realized": 7.9407512e-05
+   },
+   {
+    "time": "2026-09-21 16:00:00",
+    "binance": 8.935e-05,
+    "okx_funding": 1.096165e-05,
+    "okx_realized": 1.096165e-05
+   },
+   {
+    "time": "2026-09-22 00:00:00",
+    "binance": 5.727e-05,
+    "okx_funding": 2.0739415e-05,
+    "okx_realized": 2.0739415e-05
+   },
+   {
+    "time": "2026-09-22 08:00:00",
+    "binance": 9.361e-05,
+    "okx_funding": 7.740008e-05,
+    "okx_realized": 7.740008e-05
+   },
+   {
+    "time": "2026-09-22 16:00:00",
+    "binance": 5.735e-05,
+    "okx_funding": 5.7086283e-05,
+    "okx_realized": 5.7086283e-05
+   },
+   {
+    "time": "2026-09-23 00:00:00",
+    "binance": 9.373e-05,
+    "okx_funding": 8.1732276e-05,
+    "okx_realized": 8.1732276e-05
+   },
+   {
+    "time": "2026-09-23 08:00:00",
+    "binance": 4.462e-05,
+    "okx_funding": 5.3608723e-05,
+    "okx_realized": 5.3608723e-05
+   },
+   {
+    "time": "2026-09-23 16:00:00",
+    "binance": 4.502e-05,
+    "okx_funding": 4.3869275e-05,
+    "okx_realized": 4.3869275e-05
+   },
+   {
+    "time": "2026-09-24 00:00:00",
+    "binance": 5.263e-05,
+    "okx_funding": 3.0020106e-05,
+    "okx_realized": 3.0020106e-05
+   },
+   {
+    "time": "2026-09-24 08:00:00",
+    "binance": 5.176e-05,
+    "okx_funding": 2.0086843e-05,
+    "okx_realized": 2.0086843e-05
+   },
+   {
+    "time": "2026-09-24 16:00:00",
+    "binance": 6.466e-05,
+    "okx_funding": 4.1606794e-05,
+    "okx_realized": 4.1606794e-05
+   },
+   {
+    "time": "2026-09-25 00:00:00",
+    "binance": 2.767e-05,
+    "okx_funding": -3.367403e-05,
+    "okx_realized": -3.367403e-05
+   },
+   {
+    "time": "2026-09-25 08:00:00",
+    "binance": 3.742e-05,
+    "okx_funding": 5.5308159e-05,
+    "okx_realized": 5.5308159e-05
+   },
+   {
+    "time": "2026-09-25 16:00:00",
+    "binance": 4.924e-05,
+    "okx_funding": 4.8068805e-07,
+    "okx_realized": 4.8068805e-07
+   },
+   {
+    "time": "2026-09-26 00:00:00",
+    "binance": 6.606e-05,
+    "okx_funding": 3.4339877e-05,
+    "okx_realized": 3.4339877e-05
+   },
+   {
+    "time": "2026-09-26 08:00:00",
+    "binance": 6.744e-05,
+    "okx_funding": 2.5723237e-05,
+    "okx_realized": 2.5723237e-05
+   },
+   {
+    "time": "2026-09-26 16:00:00",
+    "binance": 5.798e-05,
+    "okx_funding": 1.7845617e-05,
+    "okx_realized": 1.7845617e-05
+   },
+   {
+    "time": "2026-09-27 00:00:00",
+    "binance": 5.712e-05,
+    "okx_funding": 2.9087757e-05,
+    "okx_realized": 2.9087757e-05
+   },
+   {
+    "time": "2026-09-27 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 4.2302956e-05,
+    "okx_realized": 4.2302956e-05
+   },
+   {
+    "time": "2026-09-27 16:00:00",
+    "binance": 5.39e-05,
+    "okx_funding": 5.7382475e-05,
+    "okx_realized": 5.7382475e-05
+   },
+   {
+    "time": "2026-09-28 00:00:00",
+    "binance": 3.121e-05,
+    "okx_funding": 3.8297751e-05,
+    "okx_realized": 3.8297751e-05
+   },
+   {
+    "time": "2026-09-28 08:00:00",
+    "binance": -3.065e-05,
+    "okx_funding": -6.1908067e-06,
+    "okx_realized": -6.1908067e-06
+   },
+   {
+    "time": "2026-09-28 16:00:00",
+    "binance": 5.929e-05,
+    "okx_funding": 2.9311668e-05,
+    "okx_realized": 2.9311668e-05
+   },
+   {
+    "time": "2026-09-29 00:00:00",
+    "binance": 6.984e-05,
+    "okx_funding": 6.1948883e-05,
+    "okx_realized": 6.1948883e-05
+   },
+   {
+    "time": "2026-09-29 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 5.7289912e-05,
+    "okx_realized": 5.7289912e-05
+   },
+   {
+    "time": "2026-09-29 16:00:00",
+    "binance": 4.202e-05,
+    "okx_funding": 5.9841587e-05,
+    "okx_realized": 5.9841587e-05
+   },
+   {
+    "time": "2026-09-30 00:00:00",
+    "binance": 6.622e-05,
+    "okx_funding": 5.7579752e-05,
+    "okx_realized": 5.7579752e-05
+   },
+   {
+    "time": "2026-09-30 08:00:00",
+    "binance": 5.437e-05,
+    "okx_funding": 6.1508137e-05,
+    "okx_realized": 6.1508137e-05
+   },
+   {
+    "time": "2026-09-30 16:00:00",
+    "binance": 3.478e-05,
+    "okx_funding": 3.6783103e-05,
+    "okx_realized": 3.6783103e-05
+   },
+   {
+    "time": "2026-10-01 00:00:00",
+    "binance": 5.694e-05,
+    "okx_funding": 1.679653e-05,
+    "okx_realized": 1.679653e-05
+   },
+   {
+    "time": "2026-10-01 08:00:00",
+    "binance": 7.243e-05,
+    "okx_funding": 8.0503035e-05,
+    "okx_realized": 8.0503035e-05
+   },
+   {
+    "time": "2026-10-01 16:00:00",
+    "binance": 3.406e-05,
+    "okx_funding": 4.0266095e-05,
+    "okx_realized": 4.0266095e-05
+   },
+   {
+    "time": "2026-10-02 00:00:00",
+    "binance": 4.786e-05,
+    "okx_funding": 1.4869664e-05,
+    "okx_realized": 1.4869664e-05
+   },
+   {
+    "time": "2026-10-02 08:00:00",
+    "binance": 0.0001,
+    "okx_funding": 7.5329192e-05,
+    "okx_realized": 7.5329192e-05
+   },
+   {
+    "time": "2026-10-02 16:00:00",
+    "binance": 1.715e-05,
+    "okx_funding": 2.133473e-05,
+    "okx_realized": 2.133473e-05
+   },
+   {
+    "time": "2026-10-03 00:00:00",
+    "binance": 1.496e-05,
+    "okx_funding": 7.1819386e-06,
+    "okx_realized": 7.1819386e-06
+   },
+   {
+    "time": "2026-10-03 08:00:00",
+    "binance": 9.3e-07,
+    "okx_funding": 4.3978424e-05,
+    "okx_realized": 4.3978424e-05
+   },
+   {
+    "time": "2026-10-03 16:00:00",
+    "binance": 1.833e-05,
+    "okx_funding": 1.2224672e-05,
+    "okx_realized": 1.2224672e-05
+   },
+   {
+    "time": "2026-10-04 00:00:00",
+    "binance": 3.8e-05,
+    "okx_funding": 3.6530152e-05,
+    "okx_realized": 3.6530152e-05
+   },
+   {
+    "time": "2026-10-04 08:00:00",
+    "binance": 5.456e-05,
+    "okx_funding": 1.8149919e-05,
+    "okx_realized": 1.8149919e-05
+   },
+   {
+    "time": "2026-10-04 16:00:00",
+    "binance": 3.073e-05,
+    "okx_funding": 4.2247638e-05,
+    "okx_realized": 4.2247638e-05
+   },
+   {
+    "time": "2026-10-05 00:00:00",
+    "binance": 9.815e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-05 08:00:00",
+    "binance": 6.919e-05,
+    "okx_funding": 3.7572475e-05,
+    "okx_realized": 3.7572475e-05
+   },
+   {
+    "time": "2026-10-05 16:00:00",
+    "binance": 2.986e-05,
+    "okx_funding": 4.2107072e-05,
+    "okx_realized": 4.2107072e-05
+   },
+   {
+    "time": "2026-10-06 00:00:00",
+    "binance": 1.605e-05,
+    "okx_funding": 6.0969082e-05,
+    "okx_realized": 6.0969082e-05
+   },
+   {
+    "time": "2026-10-06 08:00:00",
+    "binance": -2.085e-05,
+    "okx_funding": 3.5025177e-05,
+    "okx_realized": 3.5025177e-05
+   },
+   {
+    "time": "2026-10-06 16:00:00",
+    "binance": 5.651e-05,
+    "okx_funding": 1.689116e-05,
+    "okx_realized": 1.689116e-05
+   },
+   {
+    "time": "2026-10-07 00:00:00",
+    "binance": 9.228e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-07 08:00:00",
+    "binance": -3.226e-05,
+    "okx_funding": 9.3103952e-06,
+    "okx_realized": 9.3103952e-06
+   },
+   {
+    "time": "2026-10-07 16:00:00",
+    "binance": -3.411e-05,
+    "okx_funding": 6.2955246e-05,
+    "okx_realized": 6.2955246e-05
+   },
+   {
+    "time": "2026-10-08 00:00:00",
+    "binance": -3.319e-05,
+    "okx_funding": -2.8119744e-05,
+    "okx_realized": -2.8119744e-05
+   },
+   {
+    "time": "2026-10-08 08:00:00",
+    "binance": 5.09e-06,
+    "okx_funding": 4.2893673e-06,
+    "okx_realized": 4.2893673e-06
+   },
+   {
+    "time": "2026-10-08 16:00:00",
+    "binance": 2.629e-05,
+    "okx_funding": 3.3740378e-05,
+    "okx_realized": 3.3740378e-05
+   },
+   {
+    "time": "2026-10-09 00:00:00",
+    "binance": -1.441e-05,
+    "okx_funding": -5.0733136e-05,
+    "okx_realized": -5.0733136e-05
+   },
+   {
+    "time": "2026-10-09 08:00:00",
+    "binance": -1.161e-05,
+    "okx_funding": -8.4545287e-05,
+    "okx_realized": -8.4545287e-05
+   },
+   {
+    "time": "2026-10-09 16:00:00",
+    "binance": 1.537e-05,
+    "okx_funding": -2.0437102e-05,
+    "okx_realized": -2.0437102e-05
+   },
+   {
+    "time": "2026-10-10 00:00:00",
+    "binance": 5.576e-05,
+    "okx_funding": 3.2075761e-05,
+    "okx_realized": 3.2075761e-05
+   },
+   {
+    "time": "2026-10-10 08:00:00",
+    "binance": 4.99e-06,
+    "okx_funding": 1.4676856e-05,
+    "okx_realized": 1.4676856e-05
+   },
+   {
+    "time": "2026-10-10 16:00:00",
+    "binance": 2.995e-05,
+    "okx_funding": -2.4071925e-06,
+    "okx_realized": -2.4071925e-06
+   },
+   {
+    "time": "2026-10-11 00:00:00",
+    "binance": -0.00011754,
+    "okx_funding": -4.4212136e-05,
+    "okx_realized": -4.4212136e-05
+   },
+   {
+    "time": "2026-10-11 08:00:00",
+    "binance": -0.00011662,
+    "okx_funding": -4.1284626e-05,
+    "okx_realized": -4.1284626e-05
+   },
+   {
+    "time": "2026-10-11 16:00:00",
+    "binance": 1.163e-05,
+    "okx_funding": 1.0277656e-06,
+    "okx_realized": 1.0277656e-06
+   },
+   {
+    "time": "2026-10-12 00:00:00",
+    "binance": 1.479e-05,
+    "okx_funding": -1.9801644e-05,
+    "okx_realized": -1.9801644e-05
+   },
+   {
+    "time": "2026-10-12 08:00:00",
+    "binance": -1.797e-05,
+    "okx_funding": -9.6198863e-07,
+    "okx_realized": -9.6198863e-07
+   },
+   {
+    "time": "2026-10-12 16:00:00",
+    "binance": 1.695e-05,
+    "okx_funding": -3.7008638e-06,
+    "okx_realized": -3.7008638e-06
+   },
+   {
+    "time": "2026-10-13 00:00:00",
+    "binance": 6.35e-06,
+    "okx_funding": 1.2778983e-05,
+    "okx_realized": 1.2778983e-05
+   },
+   {
+    "time": "2026-10-13 08:00:00",
+    "binance": 8.377e-05,
+    "okx_funding": 2.7384046e-05,
+    "okx_realized": 2.7384046e-05
+   },
+   {
+    "time": "2026-10-13 16:00:00",
+    "binance": 3.153e-05,
+    "okx_funding": -1.2289137e-06,
+    "okx_realized": -1.2289137e-06
+   },
+   {
+    "time": "2026-10-14 00:00:00",
+    "binance": 3.179e-05,
+    "okx_funding": 6.9448998e-05,
+    "okx_realized": 6.9448998e-05
+   },
+   {
+    "time": "2026-10-14 08:00:00",
+    "binance": 1.783e-05,
+    "okx_funding": 3.8506156e-05,
+    "okx_realized": 3.8506156e-05
+   },
+   {
+    "time": "2026-10-14 16:00:00",
+    "binance": -1.064e-05,
+    "okx_funding": 2.0185255e-05,
+    "okx_realized": 2.0185255e-05
+   },
+   {
+    "time": "2026-10-15 00:00:00",
+    "binance": 8.159e-05,
+    "okx_funding": 8.2139605e-05,
+    "okx_realized": 8.2139605e-05
+   },
+   {
+    "time": "2026-10-15 08:00:00",
+    "binance": 1.9e-06,
+    "okx_funding": 1.8288564e-05,
+    "okx_realized": 1.8288564e-05
+   },
+   {
+    "time": "2026-10-15 16:00:00",
+    "binance": 5.355e-05,
+    "okx_funding": 5.7915448e-05,
+    "okx_realized": 5.7915448e-05
+   },
+   {
+    "time": "2026-10-16 00:00:00",
+    "binance": 7.466e-05,
+    "okx_funding": 7.1529382e-05,
+    "okx_realized": 7.1529382e-05
+   },
+   {
+    "time": "2026-10-16 08:00:00",
+    "binance": 4.648e-05,
+    "okx_funding": 1.0722619e-05,
+    "okx_realized": 1.0722619e-05
+   },
+   {
+    "time": "2026-10-16 16:00:00",
+    "binance": 3.67e-05,
+    "okx_funding": 2.2003683e-05,
+    "okx_realized": 2.2003683e-05
+   },
+   {
+    "time": "2026-10-17 00:00:00",
+    "binance": 5.251e-05,
+    "okx_funding": 7.9064033e-05,
+    "okx_realized": 7.9064033e-05
+   },
+   {
+    "time": "2026-10-17 08:00:00",
+    "binance": -1.797e-05,
+    "okx_funding": 1.9399436e-05,
+    "okx_realized": 1.9399436e-05
+   },
+   {
+    "time": "2026-10-17 16:00:00",
+    "binance": 6.616e-05,
+    "okx_funding": 7.9839664e-05,
+    "okx_realized": 7.9839664e-05
+   },
+   {
+    "time": "2026-10-18 00:00:00",
+    "binance": 4.77e-05,
+    "okx_funding": 2.0908197e-05,
+    "okx_realized": 2.0908197e-05
+   },
+   {
+    "time": "2026-10-18 08:00:00",
+    "binance": 4.045e-05,
+    "okx_funding": 8.5248931e-05,
+    "okx_realized": 8.5248931e-05
+   },
+   {
+    "time": "2026-10-18 16:00:00",
+    "binance": 3.561e-05,
+    "okx_funding": 4.0107652e-05,
+    "okx_realized": 4.0107652e-05
+   },
+   {
+    "time": "2026-10-19 00:00:00",
+    "binance": 3.916e-05,
+    "okx_funding": 8.5720264e-05,
+    "okx_realized": 8.5720264e-05
+   },
+   {
+    "time": "2026-10-19 08:00:00",
+    "binance": 9.885e-05,
+    "okx_funding": 6.3599048e-05,
+    "okx_realized": 6.3599048e-05
+   },
+   {
+    "time": "2026-10-19 16:00:00",
+    "binance": 4.646e-05,
+    "okx_funding": 7.2519822e-05,
+    "okx_realized": 7.2519822e-05
+   },
+   {
+    "time": "2026-10-20 00:00:00",
+    "binance": 5.32e-05,
+    "okx_funding": 7.6669431e-05,
+    "okx_realized": 7.6669431e-05
+   },
+   {
+    "time": "2026-10-20 08:00:00",
+    "binance": 3.039e-05,
+    "okx_funding": 4.3343993e-05,
+    "okx_realized": 4.3343993e-05
+   },
+   {
+    "time": "2026-10-20 16:00:00",
+    "binance": 7.381e-05,
+    "okx_funding": 5.8994396e-05,
+    "okx_realized": 5.8994396e-05
+   },
+   {
+    "time": "2026-10-21 00:00:00",
+    "binance": 4.599e-05,
+    "okx_funding": 9.6832205e-05,
+    "okx_realized": 9.6832205e-05
+   },
+   {
+    "time": "2026-10-21 08:00:00",
+    "binance": 5.314e-05,
+    "okx_funding": 7.4281441e-05,
+    "okx_realized": 7.4281441e-05
+   },
+   {
+    "time": "2026-10-21 16:00:00",
+    "binance": 8.498e-05,
+    "okx_funding": 3.1497282e-05,
+    "okx_realized": 3.1497282e-05
+   },
+   {
+    "time": "2026-10-22 00:00:00",
+    "binance": 1.426e-05,
+    "okx_funding": 3.6188157e-05,
+    "okx_realized": 3.6188157e-05
+   },
+   {
+    "time": "2026-10-22 08:00:00",
+    "binance": 2.21e-05,
+    "okx_funding": 6.9665177e-05,
+    "okx_realized": 6.9665177e-05
+   },
+   {
+    "time": "2026-10-22 16:00:00",
+    "binance": 5.238e-05,
+    "okx_funding": 4.353677e-05,
+    "okx_realized": 4.353677e-05
+   },
+   {
+    "time": "2026-10-23 00:00:00",
+    "binance": 5.563e-05,
+    "okx_funding": 6.3609534e-05,
+    "okx_realized": 6.3609534e-05
+   },
+   {
+    "time": "2026-10-23 08:00:00",
+    "binance": 5.847e-05,
+    "okx_funding": 6.8598207e-05,
+    "okx_realized": 6.8598207e-05
+   },
+   {
+    "time": "2026-10-23 16:00:00",
+    "binance": 7.399e-05,
+    "okx_funding": 5.1465498e-05,
+    "okx_realized": 5.1465498e-05
+   },
+   {
+    "time": "2026-10-24 00:00:00",
+    "binance": 1.569e-05,
+    "okx_funding": 1.8840578e-05,
+    "okx_realized": 1.8840578e-05
+   },
+   {
+    "time": "2026-10-24 08:00:00",
+    "binance": 3.433e-05,
+    "okx_funding": 9.0430546e-05,
+    "okx_realized": 9.0430546e-05
+   },
+   {
+    "time": "2026-10-24 16:00:00",
+    "binance": -3.39e-06,
+    "okx_funding": 2.2907832e-05,
+    "okx_realized": 2.2907832e-05
+   },
+   {
+    "time": "2026-10-25 00:00:00",
+    "binance": 3.746e-05,
+    "okx_funding": 1.3772124e-05,
+    "okx_realized": 1.3772124e-05
+   },
+   {
+    "time": "2026-10-25 08:00:00",
+    "binance": 7.8e-05,
+    "okx_funding": 1.2942791e-05,
+    "okx_realized": 1.2942791e-05
+   },
+   {
+    "time": "2026-10-25 16:00:00",
+    "binance": 5.601e-05,
+    "okx_funding": 3.5064955e-05,
+    "okx_realized": 3.5064955e-05
+   },
+   {
+    "time": "2026-10-26 00:00:00",
+    "binance": 7.28e-05,
+    "okx_funding": 3.4193524e-05,
+    "okx_realized": 3.4193524e-05
+   },
+   {
+    "time": "2026-10-26 08:00:00",
+    "binance": 4.911e-05,
+    "okx_funding": 1.8281324e-05,
+    "okx_realized": 1.8281324e-05
+   },
+   {
+    "time": "2026-10-26 16:00:00",
+    "binance": 6.24e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 00:00:00",
+    "binance": 8.957e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 08:00:00",
+    "binance": 5.932e-05,
+    "okx_funding": 0.0001,
+    "okx_realized": 0.0001
+   },
+   {
+    "time": "2026-10-27 16:00:00",
+    "binance": 7.171e-05,
+    "okx_funding": 8.6467331e-05,
+    "okx_realized": 8.6467331e-05
+   },
+   {
+    "time": "2026-10-28 00:00:00",
+    "binance": 8.495e-05,
+    "okx_funding": 8.6930952e-05,
+    "okx_realized": 8.6930952e-05
+   },
+   {
+    "time": "2026-10-28 08:00:00",
+    "binance": 6.678e-05,
+    "okx_funding": 9.8046586e-05,
+    "okx_realized": 9.8046586e-05
+   },
+   {
+    "time": "2026-10-28 16:00:00",
+    "binance": 9.213e-05,
+    "okx_funding": 7.1925372e-05,
+    "okx_realized": 7.1925372e-05
+   },
+   {
+    "time": "2026-10-29 00:00:00",
+    "binance": 7.76e-05,
+    "okx_funding": 9.8923567e-05,
+    "okx_realized": 9.8923567e-05
+   },
+   {
+    "time": "2026-10-29 08:00:00",
+    "binance": 4.215e-05,
+    "okx_funding": 6.0141509e-05,
+    "okx_realized": 6.0141509e-05
+   },
+   {
+    "time": "2026-10-29 16:00:00",
+    "binance": 9.689e-05,
+    "okx_funding": 6.285809e-05,
+    "okx_realized": 6.285809e-05
+   },
+   {
+    "time": "2026-10-30 00:00:00",
+    "binance": -4.294e-05,
+    "okx_funding": -2.9519199e-05,
+    "okx_realized": -2.9519199e-05
+   },
+   {
+    "time": "2026-10-30 08:00:00",
+    "binance": -3.223e-05,
+    "okx_funding": -7.8346498e-05,
+    "okx_realized": -7.8346498e-05
+   },
+   {
+    "time": "2026-10-30 16:00:00",
+    "binance": -4.221e-05,
+    "okx_funding": 4.71556e-06,
+    "okx_realized": 4.71556e-06
+   },
+   {
+    "time": "2026-10-31 00:00:00",
+    "binance": -0.00013577,
+    "okx_funding": -8.1179074e-05,
+    "okx_realized": -8.1179074e-05
+   },
+   {
+    "time": "2026-10-31 08:00:00",
+    "binance": -0.00010637,
+    "okx_funding": -8.6221056e-05,
+    "okx_realized": -8.6221056e-05
+   },
+   {
+    "time": "2026-10-31 16:00:00",
+    "binance": -3.597e-05,
+    "okx_funding": -4.8594431e-05,
+    "okx_realized": -4.8594431e-05
+   }
+  ]
+ }
+}

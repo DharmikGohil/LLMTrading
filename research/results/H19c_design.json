@@ -1,0 +1,889 @@
+{
+ "id": "H19c",
+ "period": "design",
+ "run_at": "2026-11-09T20:27:39+00:00",
+ "coins": [
+  "BTC",
+  "ETH"
+ ],
+ "data_from": "2018-06-01",
+ "data_to": "2022-12-31",
+ "period_start": "2018-06-01",
+ "period_end": "2022-12-31",
+ "n_random": 1000,
+ "seed": 20261109,
+ "costs_round_trip": 0.003,
+ "tax": 0.312,
+ "variants": {
+  "major-clustering": {
+   "highs": {
+    "round": 0.021207,
+    "random_median": 0.018817,
+    "random_p95": 0.023297,
+    "round_minus_random_median": 0.002389,
+    "share_random_below": 0.795,
+    "p_value": 0.205794,
+    "n_random": 1000,
+    "above_p95": false,
+    "hit_coin_days": 71,
+    "coin_days": 3348,
+    "episodes": 46,
+    "excess_nw": {
+     "n_days": 1674,
+     "mean": 0.00234,
+     "t": 0.82,
+     "lags": 7,
+     "ci95": [
+      -0.003251,
+      0.00793
+     ]
+    },
+    "round_rate_by_coin": {
+     "BTC": 0.025687,
+     "ETH": 0.016726
+    },
+    "hit_days_by_coin": {
+     "BTC": 43,
+     "ETH": 28
+    }
+   },
+   "lows": {
+    "round": 0.017921,
+    "random_median": 0.017622,
+    "random_p95": 0.021505,
+    "round_minus_random_median": 0.000299,
+    "share_random_below": 0.518,
+    "p_value": 0.482517,
+    "n_random": 1000,
+    "above_p95": false,
+    "hit_coin_days": 60,
+    "coin_days": 3348,
+    "episodes": 42,
+    "excess_nw": {
+     "n_days": 1674,
+     "mean": 0.000269,
+     "t": 0.104,
+     "lags": 7,
+     "ci95": [
+      -0.004826,
+      0.005365
+     ]
+    },
+    "round_rate_by_coin": {
+     "BTC": 0.026284,
+     "ETH": 0.009558
+    },
+    "hit_days_by_coin": {
+     "BTC": 44,
+     "ETH": 16
+    }
+   },
+   "combined (reported, not the pass line)": {
+    "round": 0.019564,
+    "random_median": 0.01822,
+    "random_p95": 0.021207,
+    "round_minus_random_median": 0.001344,
+    "share_random_below": 0.757,
+    "p_value": 0.243756,
+    "n_random": 1000,
+    "above_p95": false
+   },
+   "pass_line_met": false
+  },
+  "major-crossing": {
+   "events_coin_days": 113,
+   "event_days": 104,
+   "episodes": 56,
+   "up": 58,
+   "down": 55,
+   "events_by_coin": {
+    "BTC": 69,
+    "ETH": 44
+   },
+   "random_events_median": 116,
+   "horizons": {
+    "1d": {
+     "events_with_outcome": 113,
+     "gross_mean": -0.005422,
+     "share_positive_gross": 0.371681,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": -0.008422,
+       "random_median": -0.005213,
+       "random_p95": 0.001102,
+       "round_minus_random_median": -0.003208,
+       "share_random_below": 0.199,
+       "p_value": 0.801199,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.008422,
+        "t": -1.558,
+        "lags": 4,
+        "ci95": [
+         -0.019018,
+         0.002174
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": -0.012544,
+       "random_median": -0.009723,
+       "random_p95": -0.004422,
+       "round_minus_random_median": -0.002821,
+       "share_random_below": 0.196,
+       "p_value": 0.804196,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.012544,
+        "t": -2.672,
+        "lags": 4,
+        "ci95": [
+         -0.021744,
+         -0.003343
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": -0.011422,
+       "random_median": -0.008213,
+       "random_p95": -0.001898,
+       "round_minus_random_median": -0.003208,
+       "share_random_below": 0.199,
+       "p_value": 0.801199,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.011422,
+        "t": -2.113,
+        "lags": 4,
+        "ci95": [
+         -0.022018,
+         -0.000826
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.015226,
+       "random_median": -0.012341,
+       "random_p95": -0.007004,
+       "round_minus_random_median": -0.002885,
+       "share_random_below": 0.195,
+       "p_value": 0.805195,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.015226,
+        "t": -3.218,
+        "lags": 4,
+        "ci95": [
+         -0.024499,
+         -0.005952
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 104,
+      "total_return": -0.631105,
+      "sharpe": -0.84,
+      "max_drawdown": -0.711432,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 18.0,
+       "2019": 22.0,
+       "2020": 22.0,
+       "2021": 29.0,
+       "2022": 13.0
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 104,
+      "total_return": -0.731012,
+      "sharpe": -1.12,
+      "max_drawdown": -0.780036,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 18.0,
+       "2019": 22.0,
+       "2020": 22.0,
+       "2021": 29.0,
+       "2022": 13.0
+      }
+     }
+    },
+    "3d": {
+     "events_with_outcome": 113,
+     "gross_mean": 0.013065,
+     "share_positive_gross": 0.557522,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": 0.010065,
+       "random_median": 0.009767,
+       "random_p95": 0.019334,
+       "round_minus_random_median": 0.000298,
+       "share_random_below": 0.531,
+       "p_value": 0.46953,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": 0.010065,
+        "t": 1.307,
+        "lags": 4,
+        "ci95": [
+         -0.005026,
+         0.025155
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": -0.000745,
+       "random_median": -0.001164,
+       "random_p95": 0.00671,
+       "round_minus_random_median": 0.000418,
+       "share_random_below": 0.538,
+       "p_value": 0.462537,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.000745,
+        "t": -0.123,
+        "lags": 4,
+        "ci95": [
+         -0.012602,
+         0.011112
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": 0.007065,
+       "random_median": 0.006767,
+       "random_p95": 0.016334,
+       "round_minus_random_median": 0.000298,
+       "share_random_below": 0.531,
+       "p_value": 0.46953,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": 0.007065,
+        "t": 0.918,
+        "lags": 4,
+        "ci95": [
+         -0.008026,
+         0.022155
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.003238,
+       "random_median": -0.003652,
+       "random_p95": 0.004251,
+       "round_minus_random_median": 0.000414,
+       "share_random_below": 0.538,
+       "p_value": 0.462537,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.003238,
+        "t": -0.532,
+        "lags": 4,
+        "ci95": [
+         -0.015167,
+         0.008691
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 291,
+      "total_return": 0.605913,
+      "sharpe": 0.45,
+      "max_drawdown": -0.573135,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 16.83,
+       "2019": 20.5,
+       "2020": 21.0,
+       "2021": 27.33,
+       "2022": 12.0
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 291,
+      "total_return": 0.197009,
+      "sharpe": 0.29,
+      "max_drawdown": -0.61674,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 16.83,
+       "2019": 20.5,
+       "2020": 21.0,
+       "2021": 27.33,
+       "2022": 12.0
+      }
+     }
+    },
+    "7d": {
+     "events_with_outcome": 113,
+     "gross_mean": 0.016329,
+     "share_positive_gross": 0.477876,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": 0.013329,
+       "random_median": 0.01781,
+       "random_p95": 0.033086,
+       "round_minus_random_median": -0.004481,
+       "share_random_below": 0.277,
+       "p_value": 0.723277,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": 0.013329,
+        "t": 0.936,
+        "lags": 7,
+        "ci95": [
+         -0.01459,
+         0.041247
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": -0.004368,
+       "random_median": 0.000524,
+       "random_p95": 0.012057,
+       "round_minus_random_median": -0.004891,
+       "share_random_below": 0.222,
+       "p_value": 0.778222,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.004368,
+        "t": -0.383,
+        "lags": 7,
+        "ci95": [
+         -0.026748,
+         0.018013
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": 0.010329,
+       "random_median": 0.01481,
+       "random_p95": 0.030086,
+       "round_minus_random_median": -0.004481,
+       "share_random_below": 0.277,
+       "p_value": 0.723277,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": 0.010329,
+        "t": 0.725,
+        "lags": 7,
+        "ci95": [
+         -0.01759,
+         0.038247
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.006924,
+       "random_median": -0.002013,
+       "random_p95": 0.009575,
+       "round_minus_random_median": -0.004911,
+       "share_random_below": 0.222,
+       "p_value": 0.778222,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 104,
+        "mean": -0.006924,
+        "t": -0.605,
+        "lags": 7,
+        "ci95": [
+         -0.029367,
+         0.015519
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 611,
+      "total_return": -0.495728,
+      "sharpe": -0.0,
+      "max_drawdown": -0.791505,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 15.0,
+       "2019": 17.42,
+       "2020": 17.5,
+       "2021": 25.92,
+       "2022": 12.0
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 611,
+      "total_return": -0.613255,
+      "sharpe": -0.11,
+      "max_drawdown": -0.810967,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 15.0,
+       "2019": 17.42,
+       "2020": 17.5,
+       "2021": 25.92,
+       "2022": 12.0
+      }
+     }
+    }
+   },
+   "pass_line_met": false
+  },
+  "minor-clustering": {
+   "highs": {
+    "round": 0.204002,
+    "random_median": 0.189068,
+    "random_p95": 0.204301,
+    "round_minus_random_median": 0.014934,
+    "share_random_below": 0.942,
+    "p_value": 0.058941,
+    "n_random": 1000,
+    "above_p95": false,
+    "hit_coin_days": 683,
+    "coin_days": 3348,
+    "episodes": 482,
+    "excess_nw": {
+     "n_days": 1674,
+     "mean": 0.01572,
+     "t": 2.473,
+     "lags": 7,
+     "ci95": [
+      0.00326,
+      0.028181
+     ]
+    },
+    "round_rate_by_coin": {
+     "BTC": 0.258662,
+     "ETH": 0.149343
+    },
+    "hit_days_by_coin": {
+     "BTC": 433,
+     "ETH": 250
+    }
+   },
+   "lows": {
+    "round": 0.177121,
+    "random_median": 0.175329,
+    "random_p95": 0.188172,
+    "round_minus_random_median": 0.001792,
+    "share_random_below": 0.579,
+    "p_value": 0.421578,
+    "n_random": 1000,
+    "above_p95": false,
+    "hit_coin_days": 593,
+    "coin_days": 3348,
+    "episodes": 437,
+    "excess_nw": {
+     "n_days": 1674,
+     "mean": 0.001499,
+     "t": 0.244,
+     "lags": 7,
+     "ci95": [
+      -0.010534,
+      0.013532
+     ]
+    },
+    "round_rate_by_coin": {
+     "BTC": 0.221027,
+     "ETH": 0.133214
+    },
+    "hit_days_by_coin": {
+     "BTC": 370,
+     "ETH": 223
+    }
+   },
+   "combined (reported, not the pass line)": {
+    "round": 0.190562,
+    "random_median": 0.18175,
+    "random_p95": 0.193847,
+    "round_minus_random_median": 0.008811,
+    "share_random_below": 0.867,
+    "p_value": 0.133866,
+    "n_random": 1000,
+    "above_p95": false
+   },
+   "pass_line_met": false
+  },
+  "minor-crossing": {
+   "events_coin_days": 607,
+   "event_days": 460,
+   "episodes": 27,
+   "up": 349,
+   "down": 258,
+   "events_by_coin": {
+    "BTC": 314,
+    "ETH": 293
+   },
+   "random_events_median": 620,
+   "horizons": {
+    "1d": {
+     "events_with_outcome": 607,
+     "gross_mean": 2.8e-05,
+     "share_positive_gross": 0.474465,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": -0.002972,
+       "random_median": -0.002125,
+       "random_p95": -0.000809,
+       "round_minus_random_median": -0.000848,
+       "share_random_below": 0.16,
+       "p_value": 0.84016,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.002972,
+        "t": -1.501,
+        "lags": 5,
+        "ci95": [
+         -0.006853,
+         0.000909
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": -0.007474,
+       "random_median": -0.006947,
+       "random_p95": -0.005823,
+       "round_minus_random_median": -0.000527,
+       "share_random_below": 0.216,
+       "p_value": 0.784216,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.007474,
+        "t": -4.464,
+        "lags": 5,
+        "ci95": [
+         -0.010755,
+         -0.004193
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": -0.005972,
+       "random_median": -0.005125,
+       "random_p95": -0.003809,
+       "round_minus_random_median": -0.000848,
+       "share_random_below": 0.16,
+       "p_value": 0.84016,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.005972,
+        "t": -3.016,
+        "lags": 5,
+        "ci95": [
+         -0.009853,
+         -0.002091
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.010096,
+       "random_median": -0.009566,
+       "random_p95": -0.008424,
+       "round_minus_random_median": -0.000531,
+       "share_random_below": 0.217,
+       "p_value": 0.783217,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.010096,
+        "t": -5.973,
+        "lags": 5,
+        "ci95": [
+         -0.013409,
+         -0.006783
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 460,
+      "total_return": -0.837891,
+      "sharpe": -0.68,
+      "max_drawdown": -0.857564,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 63.0,
+       "2019": 84.0,
+       "2020": 103.0,
+       "2021": 127.0,
+       "2022": 83.0
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 460,
+      "total_return": -0.95958,
+      "sharpe": -1.35,
+      "max_drawdown": -0.960755,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 63.0,
+       "2019": 84.0,
+       "2020": 103.0,
+       "2021": 127.0,
+       "2022": 83.0
+      }
+     }
+    },
+    "3d": {
+     "events_with_outcome": 607,
+     "gross_mean": 0.010796,
+     "share_positive_gross": 0.537068,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": 0.007796,
+       "random_median": 0.007398,
+       "random_p95": 0.009535,
+       "round_minus_random_median": 0.000398,
+       "share_random_below": 0.609,
+       "p_value": 0.391608,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": 0.007796,
+        "t": 1.759,
+        "lags": 5,
+        "ci95": [
+         -0.000892,
+         0.016484
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": -0.002664,
+       "random_median": -0.003188,
+       "random_p95": -0.001527,
+       "round_minus_random_median": 0.000524,
+       "share_random_below": 0.676,
+       "p_value": 0.324675,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.002664,
+        "t": -0.743,
+        "lags": 5,
+        "ci95": [
+         -0.009693,
+         0.004364
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": 0.004796,
+       "random_median": 0.004398,
+       "random_p95": 0.006535,
+       "round_minus_random_median": 0.000398,
+       "share_random_below": 0.609,
+       "p_value": 0.391608,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": 0.004796,
+        "t": 1.082,
+        "lags": 5,
+        "ci95": [
+         -0.003892,
+         0.013484
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.005191,
+       "random_median": -0.005714,
+       "random_p95": -0.00404,
+       "round_minus_random_median": 0.000523,
+       "share_random_below": 0.677,
+       "p_value": 0.323676,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.005191,
+        "t": -1.439,
+        "lags": 5,
+        "ci95": [
+         -0.012261,
+         0.001879
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 914,
+      "total_return": 2.972073,
+      "sharpe": 0.78,
+      "max_drawdown": -0.445019,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 39.72,
+       "2019": 58.13,
+       "2020": 68.25,
+       "2021": 79.65,
+       "2022": 60.07
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 914,
+      "total_return": 0.57966,
+      "sharpe": 0.48,
+      "max_drawdown": -0.504978,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 39.72,
+       "2019": 58.13,
+       "2020": 68.25,
+       "2021": 79.65,
+       "2022": 60.07
+      }
+     }
+    },
+    "7d": {
+     "events_with_outcome": 607,
+     "gross_mean": 0.02059,
+     "share_positive_gross": 0.505766,
+     "lines": {
+      "costs 0.30% pre-tax": {
+       "round": 0.01759,
+       "random_median": 0.015104,
+       "random_p95": 0.01857,
+       "round_minus_random_median": 0.002486,
+       "share_random_below": 0.864,
+       "p_value": 0.136863,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": 0.01759,
+        "t": 1.99,
+        "lags": 7,
+        "ci95": [
+         0.000269,
+         0.034912
+        ]
+       }
+      },
+      "costs 0.30% after tax": {
+       "round": 0.00056,
+       "random_median": -0.001827,
+       "random_p95": 0.001051,
+       "round_minus_random_median": 0.002388,
+       "share_random_below": 0.912,
+       "p_value": 0.088911,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": 0.00056,
+        "t": 0.081,
+        "lags": 7,
+        "ci95": [
+         -0.013023,
+         0.014144
+        ]
+       }
+      },
+      "costs 0.60% pre-tax": {
+       "round": 0.01459,
+       "random_median": 0.012104,
+       "random_p95": 0.01557,
+       "round_minus_random_median": 0.002486,
+       "share_random_below": 0.864,
+       "p_value": 0.136863,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": 0.01459,
+        "t": 1.651,
+        "lags": 7,
+        "ci95": [
+         -0.002731,
+         0.031912
+        ]
+       }
+      },
+      "costs 0.60% after tax": {
+       "round": -0.001994,
+       "random_median": -0.004381,
+       "random_p95": -0.001502,
+       "round_minus_random_median": 0.002387,
+       "share_random_below": 0.91,
+       "p_value": 0.090909,
+       "n_random": 1000,
+       "above_p95": false,
+       "nw": {
+        "n_days": 460,
+        "mean": -0.001994,
+        "t": -0.287,
+        "lags": 7,
+        "ci95": [
+         -0.015624,
+         0.011637
+        ]
+       }
+      }
+     },
+     "portfolio costs 0.30%": {
+      "days": 1675,
+      "days_invested": 1344,
+      "total_return": 1.751361,
+      "sharpe": 0.66,
+      "max_drawdown": -0.558511,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 27.26,
+       "2019": 41.88,
+       "2020": 47.52,
+       "2021": 47.52,
+       "2022": 44.42
+      }
+     },
+     "portfolio costs 0.60%": {
+      "days": 1675,
+      "days_invested": 1344,
+      "total_return": 0.465327,
+      "sharpe": 0.48,
+      "max_drawdown": -0.585531,
+      "approx_tds_pct_of_capital_by_year": {
+       "2018": 27.26,
+       "2019": 41.88,
+       "2020": 47.52,
+       "2021": 47.52,
+       "2022": 44.42
+      }
+     }
+    }
+   },
+   "pass_line_met": false
+  }
+ }
+}

@@ -55,3 +55,10 @@ time,commit,test,variant,period,asset,kind,n,metric,value,t,note
 2026-11-09T20:41:11+00:00,32dc546,H8a,downtrend-continues-7d,history 2018-2026-10-31,crypto,exploratory,1653,uprate_diff_pp_7d,-3.899161,-1.498,design diff -6.11pp t -1.71 ep 14; test diff -1.21pp t -0.32 ep 19; full diff -3.90pp t -1.50 ep 32; deserves forward test: False
 2026-11-09T20:41:11+00:00,32dc546,H8a,addon-trend-or-negative-funding,history 2018-2026-10-31,crypto,exploratory,34,min_after_tax_excess_vs_plain_pp,-18.883701,,design after-tax excess -18.88pp; test after-tax excess 13.96pp
 2026-11-09T20:41:11+00:00,32dc546,H8a,addon-flat-when-funding-high,history 2018-2026-10-31,crypto,exploratory,16,min_after_tax_excess_vs_plain_pp,-189.201487,,design after-tax excess -189.20pp; test after-tax excess -7.68pp
+2026-11-09T20:44:16+00:00,f0cbd68,H10c,btc_eth,test,crypto,test,248,bounce_rate_gap_vs_random_median,-0.0982,,ours 0.4073 random median 0.5055 p95 0.5634 pctile 0.003 above_p95=False
+2026-11-09T20:44:16+00:00,f0cbd68,H10c,top20,test,crypto,test,2395,bounce_rate_gap_vs_random_median,-0.0252,,ours 0.5215 random median 0.5467 p95 0.5674 pctile 0.013 above_p95=False
+2026-11-09T20:44:16+00:00,f0cbd68,H10c,money_check,test,crypto,test,88,mean_net_ret_3d_pct,-0.311,-0.42,"report only; after tax -0.955%, doubled costs -0.609%, random median -0.103%"
+2026-11-09T20:44:26+00:00,f0cbd68,H19c,major-clustering,test,crypto,test,86,min_share_random_offsets_beaten,0.088,-1.738,binding line: highs; pass line met: False
+2026-11-09T20:44:26+00:00,f0cbd68,H19c,major-crossing,test,crypto,test,70,min_share_random_offsets_beaten,0.442,0.45,binding line: 7d costs 0.30% pre-tax; pass line met: False
+2026-11-09T20:44:26+00:00,f0cbd68,H19c,minor-clustering,test,crypto,test,1077,min_share_random_offsets_beaten,0.393,-0.382,binding line: lows; pass line met: False
+2026-11-09T20:44:26+00:00,f0cbd68,H19c,minor-crossing,test,crypto,test,441,min_share_random_offsets_beaten,0.228,-1.128,binding line: 1d costs 0.30% pre-tax; pass line met: False

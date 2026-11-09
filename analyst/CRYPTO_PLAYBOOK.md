@@ -75,11 +75,11 @@ indtrader crypto-forecast --coin BTC --horizon 24 --p-up 0.55 --lo 73200 --hi 76
   - *Herding/FOMO:* am I following the crowd's mood? Fear & Greed is a fact to weigh, not a feeling to share.
   - *Overconfidence:* would I really bet at these odds? Write the bull case **and** the bear case in the note.
   - *Results-chasing:* is a good or bad week for the accounts or the scorecard changing my calls? It should not.
-- **Chart claims are context only** until their tests in `docs/test-plan.md` report: support/resistance (H10c),
-  round numbers (H19c), double tops and head-and-shoulders (H9c). Describe them if useful, but never move `--p-up`
-  or set the gate because of one, and never quote a pattern book's "success rate" as odds. In one study of intraday
-  currency data (1996-98), arbitrary levels "held" 56% of the time, against 61% for levels published by trading
-  firms (Osler 2000); our crypto rate is unknown until H10c.
+- **Chart claims are not reasons.** Our pre-registered tests on BTC/ETH (2018-2026, `docs/crypto-studies.md`):
+  support/resistance from our chart code held *less* often than random levels (H10c, failed in both periods); round
+  numbers showed nothing (H19c); double tops and head-and-shoulders were too rare to test (H9c). So never move
+  `--p-up`, the range or the gate because of a level, a round number or a pattern; you may mention one as
+  description only, saying "no better than random on our data". Never quote a pattern book's "success rate" as odds.
 - One call per coin and horizon every 6 hours at most (the tool refuses repeats). Never delete or edit a forecast.
 
 ## 4. The gate (05:05 run only)

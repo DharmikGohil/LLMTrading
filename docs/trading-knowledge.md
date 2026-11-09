@@ -313,7 +313,8 @@ on each side. A swing point is only known k days later; using it earlier is look
     Tripathy 2018). As trading rules, India included: no profit after the snooping correction (Marshall et al. 2010).
 - **What we do with it.** Levels for stops and targets, not for picking. No stop just beyond an obvious level;
   paper sell targets just below round numbers (₹998, not ₹1,000). H10 tests our levels against random ones; H19
-  studies round numbers.
+  studies round numbers. **On crypto, done:** our levels held *less* often than random levels in both 2018-22 and
+  2023-26 (H10c), and round numbers showed nothing (H19c); see [crypto-studies.md](crypto-studies.md).
 
 ### 2.7 Candlesticks, trendlines and breakout volume
 - **Candlesticks: weak.** Dow stocks 1992-2002, 28 signals, none predictive (Marshall, Young & Rose 2006); Japan
