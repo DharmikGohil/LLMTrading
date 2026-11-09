@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PriceChart from "@/components/PriceChart";
 import { Book, Conf, Kpi, Kpis, Panel, PnlPct, Rating, Side, Signed, Table } from "@/components/ui";
 import { cleanNote, fmt, isVeto, load, marketOf, symbolView, symbols } from "@/lib/data";
 
@@ -44,6 +45,11 @@ export default async function SymbolPage({ params }) {
       </Kpis>
 
       <div className="grid" style={{ marginTop: 12 }}>
+        <div className="c12">
+          <Panel title="Price chart" meta="Daily candles · EMA 20/50 · SMA 200 · support/resistance · volume · RSI · MACD">
+            <PriceChart market={market} sym={sym} avg={main?.avg_price} stop={main?.stop} cur={m.symbol} />
+          </Panel>
+        </div>
         <div className="c12">
           <Panel title="Analyst calls" meta={`${v.signals.length}`} flush>
             <Table rows={v.signals} rowKey={(r) => r.date} empty="Never reviewed by the analyst." cols={[

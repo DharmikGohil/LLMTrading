@@ -10,6 +10,7 @@ import pandas as pd
 
 from indtrader import data as market_data
 from indtrader.market import yahoo_symbol
+from indtrader.signals.chart import chart_read
 from indtrader.signals.technical import atr, ema, is_bear_market, rsi, trend_template
 
 
@@ -54,6 +55,10 @@ def build_brief(symbol: str, as_of: date, exchange: str = "NSE", index: str = "^
         "volume_20d_vs_100d": round(float(vol.iloc[-20:].mean() / vol.iloc[-100:].mean()), 2) if len(vol) >= 100 else None,
         "last_10_closes": [round(float(x), 2) for x in close.iloc[-10:]],
     }
+    try:
+        brief["chart"] = chart_read(df)   # MACD, Bollinger, support/resistance, last candle (docs/technical-analysis.md)
+    except Exception as exc:
+        brief["chart"] = {"error": str(exc)}
     tt = trend_template(close)
     if tt:
         brief["sepa_trend_template"] = {**tt, "passed": f"{sum(tt.values())}/7"}

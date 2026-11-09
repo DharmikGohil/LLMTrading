@@ -8,6 +8,11 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Chart reading: `indtrader/signals/chart.py` (MACD, Bollinger Bands, support/resistance from swing points,
+  candlestick patterns) feeds a `chart` block into `indtrader brief`; each stock page on the site has a daily
+  candlestick chart with EMA 20/50, SMA 200, Bollinger, levels, volume, RSI, MACD and a plain-English chart read
+  (`web/components/PriceChart.js`, `web/lib/ta.js`, `/api/ohlc`); `docs/technical-analysis.md` documents each tool
+  and the evidence for it.
 - Crypto backtest (`scripts/download_crypto_klines.py`, `scripts/crypto_backtest.py`, `docs/crypto-backtest.md`):
   altcoin momentum was a 2021 effect and loses after Indian tax since 2023; BTC 50-day trend halves drawdowns but
   trails buy-and-hold BTC after tax.
