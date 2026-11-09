@@ -69,6 +69,12 @@ export function LessonTable({ learn }) {
         const mkt = e.up_pct != null ? ` · ${e.up_pct}% up${e.other_up_pct != null ? ` vs ${e.other_up_pct}% otherwise` : ""}` : "";
         return `${e.n} calls${mkt || (e.skill_pct != null ? ` · skill ${e.skill_pct}%` : "")}${e.t != null ? ` · t ${e.t}` : ""}`;
       } },
+      { key: "hist", label: "History 2018-26 (already seen)", n: true, render: (r) => {
+        const h = r.evidence_history;
+        if (!h?.design_years?.days_on) return <span className="muted">—</span>;
+        const f = (x) => `${x.up_on_pct}% vs ${x.up_off_pct}% (t ${x.t})`;
+        return <span title="Up-rate when the tag was on vs the other days; exploratory, does not change the status">{f(h.design_years)} · {f(h["2023_26"])}</span>;
+      } },
     ]} />
   );
 }

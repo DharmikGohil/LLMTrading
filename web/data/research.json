@@ -1,10 +1,98 @@
 [
- {"id": "finsaber", "study": "FINSABER (KDD 2026)", "sample": "US stocks 2004-2024, survivorship-free", "finding": "Buy-and-hold Sharpe beat the LLM agents FinMem and FinAgent in every setup; no significant alpha. Too cautious in bull years, too aggressive in bear years.", "verdict": "No edge", "link": "https://arxiv.org/abs/2505.07078"},
- {"id": "stockbench", "study": "StockBench", "sample": "20 Dow stocks, Mar-Jun 2025, after model cutoffs", "finding": "Best agent +2.5% vs buy-and-hold +0.4%; every agent trailed buy-and-hold in the downturn; worse with more stocks.", "verdict": "Thin", "link": "https://arxiv.org/abs/2510.02209"},
- {"id": "livetradebench", "study": "LiveTradeBench", "sample": "21 LLMs traded live for 50 days", "finding": "General leaderboard rank does not predict trading results.", "verdict": "Thin", "link": "https://arxiv.org/abs/2511.03628"},
- {"id": "ktdfin", "study": "KTD-Fin (2026)", "sample": "China CSI 300, 2024 to Apr 2026, tickers hidden", "finding": "9 of 10 agents had negative stock-selection alpha; returns came from market and momentum exposure.", "verdict": "No edge", "link": "https://arxiv.org/abs/2605.28359"},
- {"id": "fleets", "study": "Live agent fleets (2026)", "sample": "7.5M model calls, 14.6k fills", "finding": "No directional edge; sizing ignored volatility; many winners turned into losses without a mechanical exit.", "verdict": "No edge", "link": "https://arxiv.org/abs/2609.05663"},
- {"id": "lopezlira", "study": "Lopez-Lira & Tang", "sample": "GPT headline scores, 4,123 US stocks", "finding": "Real but short (1-2 day) drift, mostly from negative news; unprofitable at 20 bps costs and decaying each year.", "verdict": "Narrow", "link": "https://arxiv.org/abs/2304.07619"},
- {"id": "fincad", "study": "FinCAD (2026)", "sample": "Memorisation test on backtests", "finding": "Backtests on dates the model trained on were inflated by up to 67%, most for big famous stocks.", "verdict": "Bias", "link": "https://arxiv.org/abs/2605.24564"},
- {"id": "nsefactors", "study": "NSE factor indices", "sample": "Total return since Apr 2005, partly back-calculated", "finding": "Nifty200 Momentum 30 about 18.8%/yr and Low Vol 30 about 16.9%/yr vs Nifty 50 about 13.6%/yr; momentum can crash.", "verdict": "Evidence", "link": "https://files.hdfcfund.com/s3fs-public/Others/2026-06/Leaflet%20-%20Smart%20Beta%20Investing%20%28Momentum%20%26%20Low%20Vol%29%20%28June%202026%29.pdf"}
+ {
+  "id": "finsaber",
+  "study": "FINSABER (KDD 2026)",
+  "sample": "US stocks 2004-2024, survivorship-free",
+  "finding": "Buy-and-hold Sharpe beat the LLM agents FinMem and FinAgent in every setup; no significant alpha. Too cautious in bull years, too aggressive in bear years.",
+  "verdict": "No edge",
+  "link": "https://arxiv.org/abs/2505.07078"
+ },
+ {
+  "id": "stockbench",
+  "study": "StockBench",
+  "sample": "20 Dow stocks, Mar-Jun 2025, after model cutoffs",
+  "finding": "Best agent +2.5% vs buy-and-hold +0.4%; every agent trailed buy-and-hold in the downturn; worse with more stocks.",
+  "verdict": "Thin",
+  "link": "https://arxiv.org/abs/2510.02209"
+ },
+ {
+  "id": "livetradebench",
+  "study": "LiveTradeBench",
+  "sample": "21 LLMs traded live for 50 days",
+  "finding": "General leaderboard rank does not predict trading results.",
+  "verdict": "Thin",
+  "link": "https://arxiv.org/abs/2511.03628"
+ },
+ {
+  "id": "ktdfin",
+  "study": "KTD-Fin (2026)",
+  "sample": "China CSI 300, 2024 to Apr 2026, tickers hidden",
+  "finding": "9 of 10 agents had negative stock-selection alpha; returns came from market and momentum exposure.",
+  "verdict": "No edge",
+  "link": "https://arxiv.org/abs/2605.28359"
+ },
+ {
+  "id": "fleets",
+  "study": "Live agent fleets (2026)",
+  "sample": "7.5M model calls, 14.6k fills",
+  "finding": "No directional edge; sizing ignored volatility; many winners turned into losses without a mechanical exit.",
+  "verdict": "No edge",
+  "link": "https://arxiv.org/abs/2609.05663"
+ },
+ {
+  "id": "lopezlira",
+  "study": "Lopez-Lira & Tang",
+  "sample": "GPT headline scores, 4,123 US stocks",
+  "finding": "Real but short (1-2 day) drift, mostly from negative news; unprofitable at 20 bps costs and decaying each year.",
+  "verdict": "Narrow",
+  "link": "https://arxiv.org/abs/2304.07619"
+ },
+ {
+  "id": "fincad",
+  "study": "FinCAD (2026)",
+  "sample": "Memorisation test on backtests",
+  "finding": "Backtests on dates the model trained on were inflated by up to 67%, most for big famous stocks.",
+  "verdict": "Bias",
+  "link": "https://arxiv.org/abs/2605.24564"
+ },
+ {
+  "id": "nsefactors",
+  "study": "NSE factor indices",
+  "sample": "Total return since Apr 2005, partly back-calculated",
+  "finding": "Nifty200 Momentum 30 about 18.8%/yr and Low Vol 30 about 16.9%/yr vs Nifty 50 about 13.6%/yr; momentum can crash.",
+  "verdict": "Evidence",
+  "link": "https://files.hdfcfund.com/s3fs-public/Others/2026-06/Leaflet%20-%20Smart%20Beta%20Investing%20%28Momentum%20%26%20Low%20Vol%29%20%28June%202026%29.pdf"
+ },
+ {
+  "id": "ours-h10c",
+  "study": "Ours: crypto support/resistance (H10c)",
+  "sample": "BTC, ETH and the daily top-20 coins, 2019-2026, pre-registered",
+  "finding": "Price held at our chart's levels less often than at random levels, in both 2018-22 and 2023-26 (BTC+ETH 40.7% vs 50.5%). Buying at support lost money after costs and tax.",
+  "verdict": "No edge",
+  "link": "https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-studies.md#h10c-support-and-resistance-against-random-levels"
+ },
+ {
+  "id": "ours-h19c",
+  "study": "Ours: round numbers on BTC/ETH (H19c)",
+  "sample": "BTC and ETH, 2018-2026, pre-registered",
+  "finding": "Highs, lows and moves after crossing $X,000 levels were no different from random offsets in either period.",
+  "verdict": "No edge",
+  "link": "https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-studies.md#h19c-round-numbers-on-btc-and-eth"
+ },
+ {
+  "id": "ours-h9c",
+  "study": "Ours: double tops and head-and-shoulders on crypto (H9c)",
+  "sample": "Top-20 coins incl. dead ones, 2018-2022",
+  "finding": "Only 2-23 completed patterns in four and a half years, against the 300 needed: too rare to test, let alone trade.",
+  "verdict": "No edge",
+  "link": "https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-studies.md#h9c-double-tops-and-head-and-shoulders"
+ },
+ {
+  "id": "ours-h8a",
+  "study": "Ours: fear, greed and funding on BTC/ETH (H8a, exploratory)",
+  "sample": "BTC and ETH, 2018-2026 (history already seen)",
+  "finding": "No crowd-mood lesson predicted the next 1-7 days reliably; extreme greed was followed by gains, not pullbacks, in 2018-22. Funding add-ons trailed the plain trend rule after tax.",
+  "verdict": "No edge",
+  "link": "https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-studies.md#h8a-crowd-mood-and-trend-exploratory-history-had-already-been-seen"
+ }
 ]

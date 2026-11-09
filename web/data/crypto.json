@@ -1,6 +1,6 @@
 {
- "time": "2026-11-09T17:51:12+00:00",
- "btc": 74848.01,
+ "time": "2026-11-09T20:46:39+00:00",
+ "btc": 74842.0,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 10023.85,
+   "value": 10023.05,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": 0.24,
+   "return_pct": 0.23,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 74848.01,
-     "value": 10023.75,
-     "pnl": 33.84,
-     "pnl_pct": 0.34,
-     "day_pct": -1.238,
+     "last": 74842.0,
+     "value": 10022.95,
+     "pnl": 33.04,
+     "pnl_pct": 0.33,
+     "day_pct": -1.301,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -148,10 +148,32 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
+     "n_other": 0,
      "up_pct": null,
+     "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-09",
+    "evidence_history": {
+     "label": "history, outcomes already seen; does not change the status",
+     "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+     "design_years": {
+      "days_on": 466,
+      "episodes": 23,
+      "up_on_pct": 54.0,
+      "up_off_pct": 51.2,
+      "diff_pp": 2.7,
+      "t": 0.6
+     },
+     "2023_26": {
+      "days_on": 186,
+      "episodes": 8,
+      "up_on_pct": 53.5,
+      "up_off_pct": 51.8,
+      "diff_pp": 1.7,
+      "t": 0.3
+     }
+    }
    },
    {
     "id": "greed-pullback-7d",
@@ -165,10 +187,32 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
+     "n_other": 0,
      "up_pct": null,
+     "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-09",
+    "evidence_history": {
+     "label": "history, outcomes already seen; does not change the status",
+     "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+     "design_years": {
+      "days_on": 185,
+      "episodes": 11,
+      "up_on_pct": 63.0,
+      "up_off_pct": 50.6,
+      "diff_pp": 12.3,
+      "t": 2.1
+     },
+     "2023_26": {
+      "days_on": 97,
+      "episodes": 12,
+      "up_on_pct": 52.6,
+      "up_off_pct": 52.0,
+      "diff_pp": 0.6,
+      "t": 0.1
+     }
+    }
    },
    {
     "id": "crowded-longs-24h",
@@ -182,10 +226,32 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
+     "n_other": 0,
      "up_pct": null,
+     "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-09",
+    "evidence_history": {
+     "label": "history, outcomes already seen; does not change the status",
+     "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+     "design_years": {
+      "days_on": 244,
+      "episodes": 12,
+      "up_on_pct": 52.3,
+      "up_off_pct": 52.1,
+      "diff_pp": 0.1,
+      "t": 0.0
+     },
+     "2023_26": {
+      "days_on": 36,
+      "episodes": 4,
+      "up_on_pct": 51.4,
+      "up_off_pct": 50.6,
+      "diff_pp": 0.8,
+      "t": 0.1
+     }
+    }
    },
    {
     "id": "downtrend-continues-7d",
@@ -199,10 +265,32 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
+     "n_other": 0,
      "up_pct": null,
+     "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-09",
+    "evidence_history": {
+     "label": "history, outcomes already seen; does not change the status",
+     "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
+     "design_years": {
+      "days_on": 936,
+      "episodes": 14,
+      "up_on_pct": 46.8,
+      "up_off_pct": 52.9,
+      "diff_pp": -6.1,
+      "t": -1.7
+     },
+     "2023_26": {
+      "days_on": 710,
+      "episodes": 19,
+      "up_on_pct": 51.2,
+      "up_off_pct": 52.4,
+      "diff_pp": -1.2,
+      "t": -0.3
+     }
+    }
    },
    {
     "id": "overconfident-in-high-vol",
