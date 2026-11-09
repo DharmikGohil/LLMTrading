@@ -36,9 +36,9 @@ export default async function SymbolPage({ params }) {
       </div>
 
       <Kpis>
-        <Kpi label="Last price" value={last != null ? fmt.money(last, m.symbol) : "—"} delta={main ? `held since ${fmt.short(main.opened)}` : "not held (reviewed)"} />
-        <Kpi label="LLM-reviewed" value={main ? `${main.qty} sh` : "flat"} delta={main ? <><PnlPct v={main.unrealized_pct} />{main.stop ? ` · stop ${fmt.num(main.stop)}` : ""}</> : vetoes ? `${vetoes} LLM veto${vetoes > 1 ? "es" : ""}` : "—"} />
-        <Kpi label="LLM off" value={ctl ? `${ctl.qty} sh` : "flat"} delta={ctl ? <PnlPct v={ctl.unrealized_pct} /> : "—"} />
+        <Kpi label="Last price" value={last != null ? fmt.money(last, m.symbol) : "—"} delta={main ? `held since ${fmt.short(main.opened)}` : "not held (with LLM)"} />
+        <Kpi label="With LLM" value={main ? `${main.qty} sh` : "flat"} delta={main ? <><PnlPct v={main.unrealized_pct} />{main.stop ? ` · stop ${fmt.num(main.stop)}` : ""}</> : vetoes ? `${vetoes} LLM veto${vetoes > 1 ? "es" : ""}` : "—"} />
+        <Kpi label="Without LLM" value={ctl ? `${ctl.qty} sh` : "flat"} delta={ctl ? <PnlPct v={ctl.unrealized_pct} /> : "—"} />
         <Kpi hl label="Latest call" value={v.signals[0] ? <Rating r={v.signals[0].rating} /> : "—"} delta={v.signals[0] ? `${Math.round(v.signals[0].confidence ?? 0)}% · data to ${fmt.short(v.signals[0].date)}` : "never reviewed"} />
       </Kpis>
 

@@ -27,8 +27,8 @@ export const MARKETS = {
 export const MARKET_LIST = [MARKETS.us, MARKETS.india];
 export const marketOf = (name) => (name === "US" ? MARKETS.us : MARKETS.india);
 
-export const BOOKS = { main: "LLM-reviewed", factor: "LLM off" };
-export const BOOK_LONG = { main: "LLM-reviewed", factor: "LLM off (control)" };
+export const BOOKS = { main: "With LLM", factor: "Without LLM" };
+export const BOOK_LONG = { main: "With LLM", factor: "Without LLM" };
 
 let cache;
 export function load() {
@@ -297,8 +297,8 @@ export function liveKeys(data) {
 }
 
 export const OPTION_ARMS = {
-  main: { title: "LLM-reviewed iron condor", short: "LLM-reviewed condor", sub: "Rules plus Claude's event gate (trade, widen or skip)" },
-  control: { title: "Rules-only iron condor", short: "Rules-only condor", sub: "Same rules, no LLM: the control" },
+  main: { title: "Iron condor with LLM", short: "Condor with LLM", sub: "The rules plus the LLM's event check: trade, widen the strikes, or skip the week" },
+  control: { title: "Iron condor without LLM", short: "Condor without LLM", sub: "The same rules with no LLM, to measure what the LLM adds" },
   lotto: { title: "₹1,000 option buying", short: "₹1,000 test", sub: "One cheap out-of-the-money option per expiry, trend direction; stakes at most ₹1,000 a trade and keeps its winnings" },
 };
 

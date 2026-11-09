@@ -5,8 +5,9 @@
 **An open, measured experiment: does an LLM analyst make a rule-based trading strategy better?**
 
 Fixed rules pick the trades on four paper-money desks: India stocks, US stocks, Nifty options and crypto. Claude reviews
-them and can only veto, shrink or cut risk, never add it. A control account trades the same rules without the
-LLM, so the LLM's value is measured, not assumed. Every decision is published.
+them and can only veto, shrink or cut risk, never add it. Every desk runs two accounts on the same rules, one **with
+LLM** and one **without LLM**, so the LLM's value (the **LLM difference**) is measured, not assumed. Every decision is
+published.
 
 [![CI](https://github.com/DharmikGohil/LLMTrading/actions/workflows/ci.yml/badge.svg)](https://github.com/DharmikGohil/LLMTrading/actions/workflows/ci.yml)
 [![License: all rights reserved](https://img.shields.io/badge/license-all%20rights%20reserved-lightgrey.svg)](LICENSE)
@@ -31,10 +32,10 @@ LLM, so the LLM's value is measured, not assumed. Every decision is published.
 
 | Desk | Capital (paper) | Rules | What the LLM may do | Benchmark |
 |---|---|---|---|---|
-| **India stocks** | ₹1,00,000 | Nifty 200 momentum + SEPA trend template, 10 slots, 4× ATR stops | Veto or shrink a buy | Nifty 50, and the LLM-off control |
-| **US stocks** | $10,000 | S&P 100, same method | Veto or shrink a buy | S&P 500, and the LLM-off control |
-| **Nifty options** | ₹1,00,000 × 2, plus ₹1,000 | Weekly iron condors (defined risk); a ₹1,000 option-buying test | Event gate: widen strikes or skip a week | Rules-only condor account |
-| **Crypto** | $10,000 USDT × 3 | BTC and ETH, each held while above its 50-day average, rebalanced daily | Cut exposure or exclude a coin | Rules-only account and BTC buy and hold |
+| **India stocks** | ₹1,00,000 | Nifty 200 momentum + SEPA trend template, 10 slots, 4× ATR stops | Veto or shrink a buy | Nifty 50, and the account without LLM |
+| **US stocks** | $10,000 | S&P 100, same method | Veto or shrink a buy | S&P 500, and the account without LLM |
+| **Nifty options** | ₹1,00,000 × 2, plus ₹1,000 | Weekly iron condors (defined risk); a ₹1,000 option-buying test | Event gate: widen strikes or skip a week | Condor account without LLM |
+| **Crypto** | $10,000 USDT × 3 | BTC and ETH, each held while above its 50-day average, rebalanced daily | Cut exposure or exclude a coin | Account without LLM, and BTC buy and hold |
 
 **The LLM can only make things safer.** It never adds a trade or raises risk. Every rule was backtested before it went
 live; the honest results are below.
@@ -46,8 +47,8 @@ flowchart LR
     S["Rules<br/>screen, condor, trend"] --> C[Proposed trades]
     C --> A["Claude analyst<br/>news, filings, results dates,<br/>chart read, events"]
     A -->|ratings and gates in git| E[indtrader engine]
-    C -->|same trades, no LLM| X[Control account]
-    E --> M["LLM-reviewed account<br/>veto / shrink / cut only"]
+    C -->|same trades, no LLM| X[Account without LLM]
+    E --> M["Account with LLM<br/>veto / shrink / cut only"]
     M --> P["Paper broker<br/>full Indian, US or Binance costs"]
     X --> P
     P --> R["Review, lessons,<br/>public site"]
@@ -78,7 +79,7 @@ and every analyst run reads the lesson book first.
 
 [llmtrading.dharmikgohil.in](https://llmtrading.dharmikgohil.in) (Next.js on Vercel, in [`web/`](web/README.md)):
 
-- **Home:** one card per desk with value, return, benchmark, the LLM-vs-control gap and a trend line.
+- **Home:** one card per desk with value, return, benchmark, the LLM difference and a trend line.
 - **Portfolio:** a broker-style view of every account: funds, holdings at live prices, orders and F&O positions.
 - **Desks:** India stocks, US stocks, Nifty options and crypto, each with four key numbers, an equity chart against
   its benchmark, and tabs for positions, decisions, orders, calls and history.
@@ -89,7 +90,7 @@ and every analyst run reads the lesson book first.
 
 Stock and index prices update about every 15 seconds while markets are open, and crypto prices every 10 seconds.
 The look is light and calm by default: a lavender-grey page, white rounded cards, one violet accent (violet lines are
-the LLM-reviewed accounts, pink lines the rules-only controls, grey dashed lines the benchmarks), soft green and red
+the accounts with LLM, pink lines the accounts without LLM, grey dashed lines the benchmarks), soft green and red
 pills for changes, and Plus Jakarta Sans with tabular figures. There is a matching dark theme and a bottom tab bar on
 phones.
 
@@ -108,7 +109,7 @@ holding the index (or BTC) after costs and tax:
 | [Technical analysis](docs/technical-analysis.md) | RSI, MACD, Bollinger and candle rules mostly do not beat buy and hold after costs; they are used as reading aids |
 
 The LLM layer cannot be backtested honestly (models have seen the past), so it is judged only on forward paper
-trading against its control account. Live numbers are on the [site](https://llmtrading.dharmikgohil.in).
+trading against its account without LLM. Live numbers are on the [site](https://llmtrading.dharmikgohil.in).
 
 ## Quick start
 

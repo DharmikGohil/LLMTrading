@@ -7,7 +7,7 @@ import { fmt, load } from "@/lib/data";
 
 export const metadata = { title: "Crypto desk" };
 
-const NAMES = { main: "LLM-gated trend", control: "Rules-only trend", hold: "BTC buy and hold" };
+const NAMES = { main: "Trend with LLM", control: "Trend without LLM", hold: "BTC buy and hold" };
 
 function chartData(c) {
   const rows = (c.equity || []).map((r) => ({ t: new Date(r.time).getTime(), btc: +r.btc, main: +r.main, control: +r.control, hold: +r.hold }))
@@ -93,7 +93,7 @@ export default function Crypto() {
               Each coin gets an equal share while its daily close is above its {s.trend_sma ?? 50}-day average; otherwise that share sits
               in USDT. The rule was chosen by a test with a design period and an untouched test period; altcoin momentum lost money in
               that test (see the <a className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-desk.md">desk notes</a>).
-              The LLM-gated account can cut exposure or exclude coins around risky events; the control follows the rules alone.
+              The account with LLM can hold less or leave out a coin around risky events; the account without LLM follows the rules alone.
             </p>
             <p style={{ marginTop: 10 }}>
               Prices and account values update live from Binance every 10 seconds. Trades happen only at the desk&apos;s scheduled runs on

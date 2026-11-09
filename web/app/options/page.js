@@ -89,7 +89,7 @@ export default function Options() {
       <Kpis>
         <Kpi hl label="Value now" value={money(v.totals.value)} delta={`of ${money(v.totals.invested)} invested`} />
         <Kpi label="Total P&L" value={<Signed v={v.totals.pnl} sym="₹" d={0} />} delta={fmt.pct(v.totals.ret)} deltaTone={fmt.tone(v.totals.ret)} />
-        <Kpi label="LLM vs rules-only" value={<span className={fmt.tone(edge)}>{fmt.pp(edge)}</span>} delta="condor accounts" />
+        <Kpi label="LLM difference" value={<span className={fmt.tone(edge)}>{fmt.pp(edge)}</span>} delta="condor with LLM minus without" />
         <LiveNiftyKpi fallback={options.spot} syncedAt={options.time} />
       </Kpis>
 
@@ -139,8 +139,8 @@ export default function Options() {
         <summary>How this desk works</summary>
         <div>
           <p>
-            Three paper accounts. Two sell defined-risk iron condors on Nifty weekly options: an LLM-reviewed one, where Claude&apos;s
-            event gate can widen or skip a trade, and a rules-only control. The third buys one cheap out-of-the-money option per
+            Three paper accounts. Two sell defined-risk iron condors on Nifty weekly options: one with LLM, where Claude&apos;s
+            event check can widen or skip a trade, and one without LLM that follows the rules alone. The third buys one cheap out-of-the-money option per
             expiry in the trend direction, staking at most ₹1,000 a trade (before 5 November it re-staked its whole balance).
             A one-minute monitor checks exits during market hours.
           </p>

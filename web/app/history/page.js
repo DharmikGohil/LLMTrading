@@ -32,7 +32,7 @@ export default function History() {
             const v = closed.filter((t) => t.market === m && t.book === "main").reduce((a, t) => a + t.realized, 0);
             return <span key={m}>{i ? " · " : ""}<Signed v={v} sym={marketOf(m).symbol} d={0} /></span>;
           })}
-        </span>} delta="LLM-reviewed books, US · India" />
+        </span>} delta="accounts with LLM, US · India" />
       </Kpis>
 
       <div className="grid section">
@@ -41,14 +41,14 @@ export default function History() {
             <Table rows={ledger} rowKey={(r) => r.id} empty="The first close will appear here." cols={[
               { key: "date", label: "Date", render: (r) => <span className="mono">{fmt.day(r.date)}</span> },
               { key: "market", label: "Desk", render: (r) => <span className="chip ghost">{r.market === "US" ? "US" : "NSE"}</span> },
-              { key: "main", label: "LLM-reviewed", n: true, render: (r) => fmt.money(r.main, r.symbol) },
+              { key: "main", label: "With LLM", n: true, render: (r) => fmt.money(r.main, r.symbol) },
               { key: "mainDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.mainDay)}>{fmt.pct(r.mainDay)}</span> },
               { key: "mainTotal", label: "Total", n: true, render: (r) => <span className={fmt.tone(r.mainTotal)}>{fmt.pct(r.mainTotal)}</span> },
-              { key: "factor", label: "LLM off", n: true, render: (r) => fmt.money(r.factor, r.symbol) },
+              { key: "factor", label: "Without LLM", n: true, render: (r) => fmt.money(r.factor, r.symbol) },
               { key: "factorDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.factorDay)}>{fmt.pct(r.factorDay)}</span> },
               { key: "indexDay", label: "Index day", n: true, render: (r) => <span className={fmt.tone(r.indexDay)}>{fmt.pct(r.indexDay)}</span> },
               { key: "indexTotal", label: "Index total", n: true, render: (r) => <span className={fmt.tone(r.indexTotal)}>{fmt.pct(r.indexTotal)}</span> },
-              { key: "edge", label: "LLM edge", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
+              { key: "edge", label: "LLM difference", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
               { key: "orders", label: "Orders", n: true },
               { key: "vetoes", label: "Vetoes", n: true },
             ]} />
@@ -60,7 +60,7 @@ export default function History() {
             <div style={{ padding: "12px 14px 0" }}>
               <Filters countLabel="orders" search="Filter by stock" groups={[
                 { name: "market", label: "Desk", options: [["", "Both desks"], ["US", "US"], ["India", "India"]] },
-                { name: "book", label: "Book", options: [["", "Both books"], ["main", "LLM-reviewed"], ["factor", "LLM off"]] },
+                { name: "book", label: "Book", options: [["", "Both accounts"], ["main", "With LLM"], ["factor", "Without LLM"]] },
                 { name: "side", label: "Side", options: [["", "All"], ["BUY", "Buys"], ["SELL", "Sells"]] },
               ]}>
                 <Table rows={trades} empty="No orders yet."

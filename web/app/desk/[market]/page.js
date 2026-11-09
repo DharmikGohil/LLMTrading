@@ -63,7 +63,7 @@ export default async function Desk({ params }) {
         <div>
           <h1>{d.title}</h1>
           <p className="sub">
-            {d.universe} momentum on {d.exchange}, in {d.currency}. The LLM-reviewed account follows Claude&apos;s vetoes; the LLM-off account trades the screen alone.
+            {d.universe} momentum on {d.exchange}, in {d.currency}. The account with LLM follows Claude&apos;s vetoes; the account without LLM trades the same screen alone.
           </p>
           <div className="facts">
             {d.schedule.map(([t, l]) => <span key={t}><b>{t}</b> {l}</span>)}
@@ -73,9 +73,9 @@ export default async function Desk({ params }) {
       </div>
 
       <Kpis>
-        <Kpi label="LLM-reviewed" value={<LiveEquity spec={spec} cur={d.symbol} />} delta={<LiveEquity spec={spec} show="ret" />} />
-        <Kpi label="LLM off" value={<LiveEquity spec={spec} book="factor" cur={d.symbol} />} delta={<LiveEquity spec={spec} book="factor" show="ret" />} />
-        <Kpi hl label="LLM edge" value={<LiveEdge spec={spec} />} delta="reviewed minus LLM off" />
+        <Kpi label="With LLM" value={<LiveEquity spec={spec} cur={d.symbol} />} delta={<LiveEquity spec={spec} show="ret" />} />
+        <Kpi label="Without LLM" value={<LiveEquity spec={spec} book="factor" cur={d.symbol} />} delta={<LiveEquity spec={spec} book="factor" show="ret" />} />
+        <Kpi hl label="LLM difference" value={<LiveEdge spec={spec} />} delta="with LLM minus without" />
         <Kpi label={`${d.index} since start`} value={<LiveIndexRet spec={spec} />} delta="buy and hold" />
       </Kpis>
 
@@ -117,7 +117,7 @@ export default async function Desk({ params }) {
             label: "Decisions", count: decisions.length, body: (
               <div className="pad">
                 <Filters countLabel="decisions" search="Filter by stock or text" groups={[
-                  { name: "book", label: "Book", options: [["", "Both books"], ["main", "LLM-reviewed"], ["factor", "LLM off"]] },
+                  { name: "book", label: "Book", options: [["", "Both accounts"], ["main", "With LLM"], ["factor", "Without LLM"]] },
                   { name: "kind", label: "Outcome", options: [["", "All"], ["veto", `LLM vetoes (${d.vetoes.length})`], ["skip", "Not bought"], ["bought", "Bought"]] },
                 ]}>
                   <Table rows={decisions} empty="No decisions yet."
@@ -161,12 +161,12 @@ export default async function Desk({ params }) {
             label: "Daily history", count: ledger.length, body: (
               <Table rows={ledger} rowKey={(r) => r.id} empty="The first close will appear here." cols={[
                 { key: "date", label: "Date", render: (r) => fmt.day(r.date) },
-                { key: "main", label: "LLM-reviewed", n: true, render: (r) => fmt.money(r.main, d.symbol) },
+                { key: "main", label: "With LLM", n: true, render: (r) => fmt.money(r.main, d.symbol) },
                 { key: "mainDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.mainDay)}>{fmt.pct(r.mainDay)}</span> },
-                { key: "factor", label: "LLM off", n: true, render: (r) => fmt.money(r.factor, d.symbol) },
+                { key: "factor", label: "Without LLM", n: true, render: (r) => fmt.money(r.factor, d.symbol) },
                 { key: "factorDay", label: "Day", n: true, render: (r) => <span className={fmt.tone(r.factorDay)}>{fmt.pct(r.factorDay)}</span> },
                 { key: "indexDay", label: d.index, n: true, render: (r) => <span className={fmt.tone(r.indexDay)}>{fmt.pct(r.indexDay)}</span> },
-                { key: "edge", label: "Edge (cum.)", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
+                { key: "edge", label: "LLM difference", n: true, render: (r) => <b className={fmt.tone(r.edge)}>{fmt.pp(r.edge)}</b> },
                 { key: "orders", label: "Orders", n: true },
                 { key: "vetoes", label: "Vetoes", n: true },
               ]} />

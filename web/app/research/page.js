@@ -16,7 +16,7 @@ export default function Research() {
           <h1>Research</h1>
           <p className="sub">
             Controlled studies find no reliable stock-picking skill in LLMs on their own. Rules have the better record and LLMs are good
-            at spotting red flags, hence rules with an LLM veto, next to a control without it.
+            at spotting red flags, hence rules with an LLM veto, next to the same rules without the LLM.
           </p>
         </div>
       </div>

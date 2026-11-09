@@ -28,8 +28,8 @@ export default function Home() {
         <div>
           <h1>Overview</h1>
           <p className="sub">
-            Four paper-money desks run by Claude. A fixed strategy picks the trades, the LLM can only veto or cut risk, and
-            a control account trades the same rules without it. The gap between the two is what the LLM adds.
+            Four paper-money desks. Each runs the same rules in two accounts: one with the LLM (Claude), which can block or
+            shrink a trade but never add one, and one without. The LLM difference is the gap between them.
           </p>
         </div>
       </div>
@@ -39,9 +39,9 @@ export default function Home() {
           <Link key={d.key} href={`/desk/${d.key}`} className="card">
             <div className="top"><span className="nm">{d.name} stocks</span><span className="tag">{d.universe}</span></div>
             <span className="val"><LiveEquity spec={d.spec} cur={d.symbol} /></span>
-            <div className="row"><span>Return</span><b><LiveEquity spec={d.spec} show="ret" /></b></div>
+            <div className="row"><span>With LLM</span><b><LiveEquity spec={d.spec} show="ret" /></b></div>
             <div className="row"><span>{d.index}</span><b><LiveIndexRet spec={d.spec} /></b></div>
-            <div className="row"><span>LLM vs control</span><b><LiveEdge spec={d.spec} /></b></div>
+            <div className="row"><span>LLM difference</span><b><LiveEdge spec={d.spec} /></b></div>
             <Spark values={series(d.eq, "main")} bench={series(d.eq, "index")} />
           </Link>
         ))}
@@ -49,9 +49,9 @@ export default function Home() {
           <Link href="/options" className="card">
             <div className="top"><span className="nm">Nifty options</span><span className="tag">iron condors</span></div>
             <span className="val">{fmt.money(data.options.books.main.equity, "₹", 0)}</span>
-            <div className="row"><span>Return</span><b>{pct((data.options.books.main.equity / data.options.books.main.capital - 1) * 100)}</b></div>
-            <div className="row"><span>Rules-only control</span><b>{pct((data.options.books.control.equity / data.options.books.control.capital - 1) * 100)}</b></div>
-            <div className="row"><span>LLM vs control</span><b>{pp(((data.options.books.main.equity - data.options.books.control.equity) / data.options.books.main.capital) * 100)}</b></div>
+            <div className="row"><span>With LLM</span><b>{pct((data.options.books.main.equity / data.options.books.main.capital - 1) * 100)}</b></div>
+            <div className="row"><span>Without LLM</span><b>{pct((data.options.books.control.equity / data.options.books.control.capital - 1) * 100)}</b></div>
+            <div className="row"><span>LLM difference</span><b>{pp(((data.options.books.main.equity - data.options.books.control.equity) / data.options.books.main.capital) * 100)}</b></div>
             <Spark values={series(opt.condorChart, "main")} bench={series(opt.condorChart, "index")} />
           </Link>
         ) : null}
@@ -59,9 +59,9 @@ export default function Home() {
           <Link href="/crypto" className="card">
             <div className="top"><span className="nm">Crypto</span><span className="tag">BTC + ETH trend</span></div>
             <span className="val">${cBook("main").value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-            <div className="row"><span>Return</span><b>{pct(cBook("main").return_pct)}</b></div>
+            <div className="row"><span>With LLM</span><b>{pct(cBook("main").return_pct)}</b></div>
             <div className="row"><span>BTC buy and hold</span><b>{pct(cBook("hold").return_pct)}</b></div>
-            <div className="row"><span>LLM vs control</span><b>{pp(cBook("main").return_pct - cBook("control").return_pct)}</b></div>
+            <div className="row"><span>LLM difference</span><b>{pp(cBook("main").return_pct - cBook("control").return_pct)}</b></div>
             <Spark values={cRows.map((r) => (r.main / 10000 - 1) * 100)} bench={cRows.map((r) => (r.hold / 10000 - 1) * 100)} />
           </Link>
         ) : null}
@@ -94,12 +94,12 @@ export default function Home() {
         <div>
           <p>
             <b>Stocks (India and US):</b> a momentum screen with Minervini&apos;s trend template picks candidates. Each morning Claude
-            reviews them for red flags (results dates, filings, news) and can veto or shrink a buy, never add one. The LLM-off
-            account trades the screen alone.
+            reviews them for red flags (results dates, filings, news) and can veto or shrink a buy, never add one. The account
+            without LLM trades the screen alone.
           </p>
           <p style={{ marginTop: 10 }}>
             <b>Nifty options:</b> defined-risk iron condors. Claude&apos;s event gate can widen the strikes or skip a week; the
-            rules-only account ignores the gate. There is also a ₹1,000 option-buying test.
+            account without LLM ignores the gate. There is also a ₹1,000 option-buying test.
           </p>
           <p style={{ marginTop: 10 }}>
             <b>Crypto:</b> BTC and ETH, each held while above its 50-day average, running 24/7 on GitHub Actions, against simply
