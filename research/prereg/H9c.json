@@ -1,0 +1,156 @@
+{
+  "id": "H9c",
+  "title": "Double tops and head-and-shoulders on crypto",
+  "plan": "docs/test-plan.md, section 1, H9c (shared rules in section 1.0; ground rules in section 2; pass marks in section 3, T1). Stock version H9 (section 8) shares the detector and is not built yet.",
+  "written": "2026-11-09, before any design-period run and before any design-period event count",
+  "question": "After a completed top, do coins do worse than comparable coins? If so, would an exit flag help the desk after tax?",
+  "hypothesis": {
+    "step_1": "After a completed head-and-shoulders top or double top (Lo, Mamaysky & Wang 2000 shapes plus our completion rule), a coin in the daily top-20 universe returns less over the next 1, 7 and 30 days than the other coins in its 30-day-return quintile on the same date. Null: no difference.",
+    "step_2": "Moving a coin's half of the BTC + ETH 50-day trend book to USDT when a completed top appears, and bringing it back at the next fresh close above the 50-day average, beats the plain rule after the 31.2% tax line, with a maximum drawdown no deeper."
+  },
+  "data": {
+    "prices": "data/crypto/<COIN>.csv, daily Binance USDT candles (date, open, high, low, close, volume; UTC days), all 74 coin files from June 2018, dead coins included (LUNA, FTT, WAVES, OMG, XMR and others)",
+    "volume": "the volume column is traded value in USDT",
+    "luna": "LUNA's reused ticker (new coin from May 2022) is split into two series with scripts/crypto_momentum_study.py split_reused_tickers; no return is measured across the splice",
+    "not_used": "fear_greed.csv and the funding files are not used by this test",
+    "cut": "every file is cut at the period end as soon as it is read (2022-12-31 for design, 2026-10-31 for test); nothing after the period end reaches any calculation"
+  },
+  "periods": {
+    "design": "from the first day of data (2018-06-01) to 2022-12-31",
+    "test": "2023-01-01 to 2026-10-31, run once, only after this file is committed (scripts/study_head_shoulders.py calls indtrader.research.prereg.require_committed('H9c') before anything else)"
+  },
+  "universe": {
+    "top20": "each day's top 20 coins by 30-day traded value with at least 120 days of history (indtrader/crypto.py universe(): value30 = 30-day rolling mean of the volume column with at least 20 values; history = number of days with a close up to and including the day; the coin must have a close that day), dead coins included while they were in it. A pattern counts as an event only if its coin is in the top 20 on the completion day.",
+    "btc_eth": "BTC and ETH alone, reported on their own (the subset of top-20 events on BTC or ETH); they will have few events"
+  },
+  "definitions_fixed_in_plan": {
+    "head_and_shoulders_top": "five turning points E1 to E5. E1 is a peak. The head E3 is above both shoulders E1 and E5. The shoulders are within 1.5% of their average. The two troughs E2 and E4 are within 1.5% of their average.",
+    "double_top": "two peaks within 1.5% of their average, at least 22 days apart.",
+    "complete": "a close below the neckline within 10 days after the last turning point is confirmed. For head-and-shoulders, the neckline is the line through E2 and E4. For a double top, it is the lowest close between the peaks.",
+    "tolerance_note": "we keep the published 1.5% tolerance so the test matches the paper; crypto moves more each day than large stocks, so expect fewer patterns"
+  },
+  "detection": {
+    "kernel": "(a) a Gaussian Nadaraya-Watson kernel smoother of the daily closes at 0.3 x the cross-validated bandwidth over 38-day windows, with a 3-day lag, refitted on each window using data up to that window's last day only (indtrader/research/patterns.py detect_kernel)",
+    "swing": "(b) indtrader/signals/chart.py swing_points with k = 3 (peaks are swing highs of the High column, troughs swing lows of the Low column), each swing usable only from bar i + 3 (patterns.detect_swing)",
+    "shared": "both methods look for patterns completed inside the same 38-day window (LMW l = 35, d = 3) whose last turning point (E5, or the second peak of a double top) is exactly 3 days before the window's last day; that last day is the detection day (the last turning point is confirmed on its close). Runs of same-type turning points are merged so peaks and troughs alternate."
+  },
+  "outcome": {
+    "returns": "the return from the open of the day after the completion day to the close h days after the completion day, h = 1, 7 and 30 (decide at the completion day's close, 00:00 UTC; act at the next open), minus 0.30% round-trip costs",
+    "main_comparison": "the average net return of the other coins in the same 30-day-return quintile of the top-20 universe on the completion date, over the same window (the t-statistic uses this)",
+    "also_reported": ["the event return minus the equal-weight top 20 over the same window", "the event return against the same coin on 1,000 random dates in the same period", "the after-tax line: profitable events keep 68.8% of the gain", "costs doubled (0.60% round trip)", "Sharpe ratio and maximum drawdown of calendar-time books next to the returns", "event days and episodes next to event counts"]
+  },
+  "timing": "decide on the completion day's close (00:00 UTC), act at the next day's open. Detection, the universe, the 30-day-return quintile and the neckline all use data up to the completion day's close.",
+  "costs": {
+    "base": "0.1% Binance fee + 0.05% slippage on each side (indtrader/crypto.py and scripts/crypto_backtest.py FEE, SLIP = 0.001, 0.0005), 0.30% a round trip",
+    "doubled": "0.2% fee + 0.1% slippage on each side, 0.60% a round trip, reported for every money line"
+  },
+  "tax": {
+    "rule": "31.2% (30% + 4% cess) on each profitable sale; losses cannot be set off or carried forward; everything treated as sold on the last day (scripts/crypto_backtest.py simulate)",
+    "single_event": "a profitable event (after costs) keeps 68.8% of its gain; a losing event keeps its full loss",
+    "not_modelled": "surcharge; the 1% TDS on each sale's value (reported approximately per year for the event book and visible as trades in step 2)"
+  },
+  "statistics": {
+    "per_date": "for each variant and horizon, the per-event difference is averaged across coins for each completion date first; the mean of the per-date series and its Newey-West t (indtrader.crypto_learn.nw_tstat) with lags = max(h, floor(4 (n/100)^(2/9))), n = number of dates; 95% interval from the Newey-West standard error",
+    "episodes": "per coin, events no more than 30 days apart form one episode; events, event dates and episodes are all reported",
+    "books": "calendar-time books (equal weight across open positions each day, zero on days with none, Sharpe x sqrt(365), maximum drawdown): the event coins held long from the next open to the h-day close after 0.15% costs at entry and exit, and the abnormal book (each event coin's daily return minus its comparison basket's)"
+  },
+  "count_first": {
+    "rule_in_plan": "Count the design-period events before looking at any outcome. Fewer than 300 means \"too little data\", and the test stops there.",
+    "applied_as": "per variant, before any outcome is computed: events in the top-20 universe on a completion day inside the design period, whose 30-day window ends inside the period, with an open on the next day and at least one other universe coin in the same 30-day-return quintile that also has an open on the next day. A variant with fewer than 300 such events stops at 'too little data': none of its outcomes is computed, and it is logged as a trial with its count. The BTC and ETH subset uses the same floor: below 300 it reports counts only."
+  },
+  "step_2": {
+    "rule": "the BTC + ETH 50-day trend (each coin gets half the book while its daily close is above its 50-day average: indtrader/crypto.py above(close, 50)), with one change: a coin's half moves to USDT when a completed top appears on that coin (decided at the completion day's close, filled at the next open) and comes back at the next fresh close above the 50-day average (a close above the average on a day after the completion day when the previous day's close was not above it). A completion on a day with a fresh close above wins (the half goes out).",
+    "flags": "completed tops on BTC or ETH found by every variant that passed the step-1 design line, pooled into one rule (one trial); flags raised before the run's start date still apply",
+    "runs_only_if": "at least one variant passes the step-1 design line. Then it is run on the design years 2020-01-01 to 2022-12-31 for information (no pass line), and in the single test run on 2023-01-01 to 2026-10-31, where its pass line applies.",
+    "engine": "scripts/crypto_backtest.py simulate (costs, the after-tax book), with just hold BTC and the plain rule over the same days; costs doubled; deflated Sharpe of the flagged rule with every crypto row in research/trials.csv (indtrader.validation.deflated_sharpe, n_trials = prereg.trial_count('crypto'))",
+    "walk_forward": "the test period's days cut into 4 consecutive equal parts; each part simulated separately with a fresh book from its first day (data before it used only for the 50-day average and the flags)"
+  },
+  "variants": [
+    {"id": "kernel-hs", "trial": 1, "what": "head-and-shoulders tops, kernel turning points"},
+    {"id": "kernel-dt", "trial": 2, "what": "double tops, kernel turning points"},
+    {"id": "swing-hs", "trial": 3, "what": "head-and-shoulders tops, swing_points k = 3 turning points"},
+    {"id": "swing-dt", "trial": 4, "what": "double tops, swing_points k = 3 turning points"},
+    {"id": "step2-exit-flag", "trial": 5, "what": "the exit flag on the BTC + ETH 50-day trend rule; only if step 1 passes its design line"}
+  ],
+  "trials": "4, plus 1 if step 2 runs",
+  "pass_fail": {
+    "pass_fixed_in_plan": {
+      "step_1": "Step 1, the signal exists: design-period Newey-West t <= -3, and test-period t <= -2 with at least half the design effect. Average across coins for each date first.",
+      "step_2": "Step 2, it helps the desk: run the BTC + ETH 50-day trend with one change. A coin's half moves to USDT when a completed top appears and comes back at the next fresh close above the 50-day average. It must beat the plain rule after the 31.2% tax line in 2023-26 and in at least 3 of 4 walk-forward windows, with a maximum drawdown no deeper. Caveat: the plain rule was itself picked after seeing 2023-26.",
+      "t1_section_3": "After costs, the design period shows |t| >= 3.0. The test period shows the same sign, with |t| >= 2.0 and at least half the design-period effect. There are at least 300 events, or at least 36 independent months. Fewer than 300 events in the design period: report \"too little data\" and draw no conclusion."
+    },
+    "applied_as": {
+      "step_1_design": "for each variant on the top-20 universe: at least 300 usable design events, and the main comparison's Newey-West t <= -3.0 at every one of the three horizons (1, 7 and 30 days)",
+      "step_1_test": "only variants that passed the design line are computed in the test period; each passes if, at every horizon, the test-period t <= -2.0 and the test-period mean <= 0.5 x its design-period mean (both negative)",
+      "step_1_overall": "a variant passes step 1 only if it passes both the design and the test line",
+      "step_2": "test period 2023-01-01 to 2026-10-31: the flagged rule's after-tax return (simulate after_tax_final) is above the plain rule's; the flagged rule's after-tax return is above the plain rule's in at least 3 of the 4 walk-forward windows; and the flagged rule's maximum drawdown (pre-tax equity) is no deeper than the plain rule's",
+      "btc_eth": "reported only, no pass line"
+    }
+  },
+  "what_the_result_changes": {
+    "pass": "the exit flag is proposed through journal/changes.md and first runs as a shadow paper arm. The analyst may cite a completed top in gate notes.",
+    "fail": "the analyst may describe the shape but must not cite it as a reason to cut exposure or move a forecast. Pattern-book success rates (Bulkowski) are never quoted as odds.",
+    "too_little_data": "draw no conclusion (section 3, T1); the 'Fail' consequences apply to the analyst, since nothing was shown"
+  },
+  "script": "scripts/study_head_shoulders.py --crypto --period design|test (--counts-only gives the design-period counts with no outcome); detectors in indtrader/research/patterns.py (shared with H9)",
+  "outputs": "research/results/H9c_design.json, research/results/H9c_test.json; one research/trials.csv row per variant per run (kind design or test), plus one for step 2 if it runs",
+  "seeds": {
+    "random_dates": "for each event and horizon, numpy default_rng([909, variant index (kernel-hs 0, kernel-dt 1, swing-hs 2, swing-dt 3), h, completion row, coin column]) draws 1,000 dates with replacement"
+  },
+  "parameters": {
+    "window": 38,
+    "lag": 3,
+    "tolerance": 0.015,
+    "dt_min_gap": 22,
+    "complete_within": 10,
+    "bandwidth_factor": 0.3,
+    "bandwidth_grid": [0.5, 100.0, 0.1],
+    "swing_k": 3,
+    "horizons": [1, 7, 30],
+    "min_events": 300,
+    "top_n": 20,
+    "min_history": 120,
+    "return_lookback": 30,
+    "quintiles": 5,
+    "n_random": 1000,
+    "seed": 909,
+    "fee": 0.001,
+    "slippage": 0.0005,
+    "tax": 0.312,
+    "cost_multipliers": [1, 2],
+    "episode_gap": 30,
+    "gap_split_days": 7,
+    "trend_sma": 50,
+    "step2_design_start": "2020-01-01",
+    "pass_t_design": -3.0,
+    "pass_t_test": -2.0,
+    "pass_share_of_design": 0.5
+  },
+  "clarifications": [
+    "Cross-validated bandwidth: LMW eq. (12)-(13) as printed. For each 38-day window, h* minimises CV(h) = mean over t of (P_t - m_{h,-t})^2, where m_{h,-t} = sum over s != t of K_h(t - s) P_s divided by the sum over all s of K_h(t - s): the left-out point's weight is dropped without renormalising the others, as in the paper. The usual renormalised leave-one-out choice runs to the smallest bandwidth on any grid for a random-walk price, so 0.3 x h* would depend only on the grid's lower end; the printed formula gives interior minima for volatile windows and very large h* for quiet ones, which fits the paper's remark that the cross-validated bandwidth was too smooth. Gaussian kernel, time in days.",
+    "Bandwidth grid: h* is the first minimiser over h = 0.5, 0.6, ..., 100.0 days. Each window is divided by its mean first, which does not change the minimiser. Windows whose minimiser is at the top of the grid (quiet windows) are smoothed at 30 days and in practice show no pattern.",
+    "Kernel turning points: the sign of the smoother's analytic derivative is taken at each day of the window; where it flips from + to - (a peak) or - to + (a trough), tau is the day before the flip (the first zero-slope day if the slope is exactly zero in between, as LMW describe), and the turning point is the highest (lowest) close in [tau - 1, tau + 1] inside the window, as LMW do.",
+    "Kernel 3-day lag: LMW require the final extremum that completes a pattern on day t + l - 1, i.e. 3 days before the window's last day. Applied to the actual-close turning point: E5 (or the second double-top peak) must be exactly 3 days before the window's last day, which is the detection day. Each date is checked in one window only, so a pattern is never detected twice. Known limitation, kept as in the paper rather than tuned: the smoother is biased near the window's right edge, so a last peak only 3 days old is sometimes placed a day late or missed; some clean shapes are detected only by the swing method.",
+    "Swing method window: the same 38-day window and 3-day lag as the kernel, so only the turning-point finder differs between the methods. A pattern whose last peak is the swing high at bar i is detected on bar i + 3 (when that swing becomes usable) from the swings at bars i + 3 - 37 to i. swing_points is run on the whole series (a swing at bar i uses only bars i - 3 to i + 3, so this equals running it per window), and a swing is never used before bar i + 3.",
+    "Turning-point prices: the kernel method uses closes (LMW used closing prices); the swing method uses chart.swing_points as coded, so its peaks are daily highs and its troughs daily lows, and its head-and-shoulders neckline runs through two lows.",
+    "Alternation: turning points are sorted by day and runs of the same type are merged, keeping the highest peak or lowest trough (the earlier one on a tie). A day that is both a swing high and a swing low (an outside bar) is entered in the order that alternates with the previous turning point. A newly confirmed peak that is not higher than an earlier peak with no trough between them is merged away and starts no pattern.",
+    "Head-and-shoulders: E1 to E5 are the five consecutive (alternating) turning points ending with the peak at the lag, all inside the window. A literal reading of LMW's notation (E1 to E5 as the first five extrema of the window) was not used: it makes detection depend on where the window starts and has no meaning for the swing method. E3 must be strictly above E1 and E5. 'Within 1.5% of their average': |a - m| <= 0.015 m with m = (a + b) / 2, for the shoulders and for the troughs.",
+    "Double top: the second peak Ea is the peak at the lag; the first peak E1 is any earlier peak inside the window with Ea's day minus E1's day >= 22 ('at least 22 days apart', the plan's words; LMW wrote more than 22), the two within 1.5% of their average, and Ea at least as high as every turning point after E1 in the window (LMW: Ea is the highest later extremum; this includes any kernel turning point in the window's last 3 days). If several E1 qualify, the earliest is used: the longest pattern, so the lowest neckline and the strictest completion.",
+    "Completion: a close strictly below the neckline on one of the 10 days after the detection day (detection day + 1 to + 10; the detection day's own close is not 'after'). Head-and-shoulders neckline: the straight line through (E2's day, E2) and (E4's day, E4), extended to the day being checked. Double-top neckline: the lowest close strictly between the two peaks' days. The completion day is the event day; the first close below the neckline is the only completion of a pattern.",
+    "Events: one event per coin, variant and completion day (if two patterns complete on the same coin on the same day, the earlier-detected one is kept). Patterns are detected on every series whether or not the coin is in the top 20; only completions on a day when the coin is in the top 20 are events. Several events of the same coin on different days all count; episodes are reported next to them.",
+    "Series: besides the LUNA split, any gap of more than 7 days in a coin's file starts a new series that needs its own 120 days of history (FTT's file stops on 15 Nov 2022). Series with fewer than 120 rows are dropped, as crypto_momentum_study.load_all does; they can never join the top 20. No detection window or return crosses such a gap.",
+    "Delisting: a series whose data ends before the period end (as seen from the period: old LUNA in May 2022, FTT on 15 Nov 2022 in the design period) is treated as delisted, and a position in it is sold at its last close, as scripts/crypto_backtest.py simulate does. An event with no open on the next day cannot be acted on and is dropped. A window that runs past the period end (the data is cut there) has no outcome and is dropped.",
+    "The 300 floor is counted per variant on the top-20 universe before any outcome, on events whose 30-day window ends inside the period (the strictest of the three horizons), with an open on the next day and at least one comparison coin. Counts of all completions and all detections are reported too. The floor is a design-period rule (section 3, T1, and H9c's 'count first'); in the single test run, outcomes are computed for every variant that passed the design line whatever its test-period count, which is reported.",
+    "Pass horizon: the plan names three horizons and one t line. The design line must hold at every horizon (1, 7 and 30 days), and so must the test line, so the result is not the best of three looks and each variant stays one trial.",
+    "Main comparison: the 30-day return is close(day) / close(day - 30) - 1; quintiles are ranks among the top-20 coins with a 30-day return that day (quintile = floor(5 x rank / n), rank 0 = lowest return). The comparison group is the other coins in the event coin's quintile (the event coin itself excluded; other coins with a completed top that day are kept), equal weight, over the same window. When the universe is small (2018-19, fewer than 20 coins with 120 days of history), the groups are smaller.",
+    "Costs in the main comparison: the 0.30% round trip is charged to the event coin and to each comparison coin alike, so it cancels in the difference. Charging it to the event side only would push the difference down by 0.30% in favour of the hypothesis that tops are followed by underperformance; the cost of acting on the flag is judged in step 2 instead. The after-tax difference (after_tax(event - cost) minus the average of after_tax(comparison - cost)) does not cancel and is reported at 0.30% and 0.60%.",
+    "Equal-weight top 20: the average return of every top-20 coin (the event coin included) over the same window.",
+    "Random dates: for each event, 1,000 dates drawn with replacement from the period's days on which the same coin was in the top 20 and had a full outcome window. Reported: the event's net return minus the average of its random dates' net returns (per-date average, Newey-West t), and the share of the 1,000 random event sets (each event replaced by its j-th draw, averaged per completion date) whose mean is below the events' mean.",
+    "Sharpe and drawdown: the event studies are reported with two calendar-time books per horizon (the event coins held long, and the abnormal return against the comparison basket); step 2 reports the trend books with simulate. The TDS line is approximate (1% of the share of the book sold each day, summed by year).",
+    "BTC and ETH alone: the BTC and ETH events of each variant, with the same main comparison against the top-20 quintile. With fewer than 300 events (expected), only counts are reported.",
+    "Step 2 'next fresh close above the 50-day average' is read as a new crossing: a close above the average on a day after the flag when the previous close was not above it. A coin that stays above its average after a completed top therefore stays out until it has dipped to or below the average and closed back above it. Flags from all variants that passed the design line are pooled into one rule, so step 2 is one trial whatever the number of passing variants.",
+    "Step 2 in the design run: run on 2020-01-01 to 2022-12-31 (the design years used for the desk's trend variants) for information only; its pass line is judged only in the test period.",
+    "Test run: refuses unless this file is committed and unchanged (checked first, before any data is read) and research/results/H9c_design.json exists. Variants that did not pass the design line are not computed in the test period. If none passed, the test run computes nothing and records 'not run'.",
+    "Stocks: H9 (NSE) is only a stub in this script; it waits for the point-in-time price table (P0-A)."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "H19c",
+  "title": "Round numbers on BTC and ETH",
+  "plan": "docs/test-plan.md, section 1, H19c (shared rules: section 1.0; ground rules: section 2)",
+  "script": "scripts/study_round_numbers.py --crypto --period design|test",
+  "asset": "crypto",
+  "use": "Descriptive only. BTC and ETH alone cannot supply enough independent crossings for a trading rule.",
+  "hypothesis": "Osler (Journal of Finance 2003) found, at a large currency bank, that take-profit orders cluster at round numbers and stop-loss orders just beyond them. That would explain both 'reversal at the level' and 'acceleration after crossing'. Urquhart (Economics Letters 2017) found that over 10% of BTC prices end in .00, but no significant return pattern after round numbers. H19c asks whether, on BTC and ETH daily candles, (1) daily highs stop just below and lows just above round levels more often than at random offset levels with the same spacing, and (2) the move after a daily close crosses a round level, in the direction of the cross, is larger than after crossing a random offset level.",
+  "questions": {
+    "Q1_clustering": "Do daily highs stop just below a major level (within 0.5% under it) more often than just below random offset levels with the same spacing? The same for lows just above.",
+    "Q2_crossing": "After a daily close crosses a major level, is the move over the next 1, 3 and 7 days, in the direction of the cross, larger than after crossing a random offset level? A crossing counts only if the same level was not crossed in the previous 10 days. The move is reported after 0.30% costs, with the 31.2% after-tax line."
+  },
+  "levels": {
+    "rule": "For a price p, let s = 10^floor(log10 p). Major levels are multiples of s; minor levels are multiples of s/10.",
+    "BTC": "Above $10,000: majors every $10,000, minors every $1,000. Below $10,000 (2018-20): majors every $1,000, minors every $100.",
+    "ETH": "Between $1,000 and $10,000: majors every $1,000, minors every $100. Between $100 and $1,000: majors every $100, minors every $10. Below $100 (13 days in December 2018): majors every $10, minors every $1.",
+    "scale_price": "s is taken from the previous day's close (known before the day starts), as in the plan's event count.",
+    "random_levels": "(k + u) * spacing for integer k, with the same spacing as the round grid on that coin-day and an offset u drawn uniformly from [0, 1); u = 0 gives the round levels."
+  },
+  "exact_rules": {
+    "clustering_high_hit": "On coin-day t, with spacing g from close(t-1): the nearest level L strictly above high(t) satisfies high(t) >= (1 - 0.005) * L. A high exactly at a level does not count (it reached the level).",
+    "clustering_low_hit": "The nearest level L strictly below low(t) satisfies low(t) <= (1 + 0.005) * L. A low exactly at a level does not count.",
+    "clustering_statistic": "Share of coin-days with a hit, averaged across coins on each day first, then across days; highs and lows separately (the combined rate is also reported). The same for each of the 1,000 random offsets.",
+    "crossing": "With spacing g from close(t-1): level L is crossed up on day t if close(t-1) < L <= close(t), and down if close(t-1) >= L > close(t) (a close exactly at a level counts as at-or-above).",
+    "ten_day_rule": "A crossing counts only if the same level (the same price) was not crossed by a close-to-close move on any of the previous 10 days (days t-10 .. t-1, i.e. closes t-11 .. t-1), in either direction, whatever the scale was on those days. Equivalently: close(t) lies in a level bucket above the highest (or below the lowest) bucket of the previous 11 closes, using day t's grid. Coin-days with fewer than 11 previous closes are skipped.",
+    "event": "One event per coin-day: the coin-day counts if at least one level crossed that day passes the 10-day rule. All levels crossed on one day are crossed in the same direction.",
+    "move": "Decide at day t's close (00:00 UTC), act at day t+1's open. Move over h days = close(t+h) / open(t+1) - 1, multiplied by +1 for an up-cross and -1 for a down-cross (the direction of the cross). h = 1, 3, 7.",
+    "costs": "0.30% round trip subtracted from every directional move (0.1% fee + 0.05% slippage on each side); also run with costs doubled (0.60%).",
+    "after_tax": "Per event: a move that is positive after costs keeps 68.8% of it (31.2% tax); a losing move keeps its full loss. No set-off, no carry-forward.",
+    "crossing_statistic": "Mean directional move after costs: average across coins on each decision day first, then across days. The same for each of the 1,000 random offsets.",
+    "outcome_window": "An event is used at horizon h only if its whole outcome window (t+1 .. t+h) lies inside the period."
+  },
+  "data": {
+    "files": ["data/crypto/BTC.csv", "data/crypto/ETH.csv"],
+    "source": "Binance USDT daily candles (UTC days): date, open, high, low, close, volume",
+    "coverage": "BTC and ETH from 2018-06-01; no missing days",
+    "ticker_reuse": "split_reused_tickers from scripts/crypto_momentum_study.py is applied (it splits LUNA; BTC and ETH are expected not to split).",
+    "not_used": "Fear & Greed and funding are not used by this test."
+  },
+  "universe": ["BTC", "ETH"],
+  "periods": {
+    "design": "From the first usable day of data (June 2018) to 2022-12-31. Data after 2022-12-31 is dropped when the files are read.",
+    "test": "Decision days from 2023-01-01, outcomes up to 2026-10-31, run once, only after this file is committed. Data after 2026-10-31 is dropped when the files are read; data before 2023 may be used only as input (the previous close for the scale and the 10-day rule)."
+  },
+  "horizons_days": [1, 3, 7],
+  "parameters": {
+    "window": 0.005,
+    "lookback_days": 10,
+    "horizons": [1, 3, 7],
+    "n_random": 1000,
+    "random_seed": 20261109,
+    "fee": 0.001,
+    "slippage": 0.0005,
+    "tax": 0.312,
+    "cost_multipliers": [1, 2]
+  },
+  "timing": "Decide on day t's close (00:00 UTC). Act at day t+1's open.",
+  "statistics": {
+    "comparison": "The round-level statistic against the distribution of the same statistic at 1,000 random offsets (fixed seed 20261109; one offset per coin per draw, drawn independently for BTC and ETH; the same 1,000 draws for all four variants and both periods).",
+    "newey_west": "Reported, not used for pass: Newey-West t (indtrader.crypto_learn.nw_tstat) on the series of event days (crossings: daily average directional move after costs; clustering: daily average of round hit minus the random offsets' average hit), lags = max(h, floor(4 * (n/100)^(2/9))) with h = 1 for clustering. Each observation is a distinct day, so h lags span at least h days. A 95% interval (mean +/- 1.96 Newey-West standard errors) is reported next to it.",
+    "episodes": "Crossings: event days pooled across BTC and ETH; a new episode starts after more than 10 days without an event. Clustering: per coin and per level, hit days no more than 10 days apart at the same level are one episode. Episodes are reported next to event days.",
+    "sharpe_and_drawdown": "For crossings, a calendar-time portfolio per horizon: equal weight across open event positions, rebalanced daily, a down-cross held as a short, 0.15% cost at entry and 0.15% at exit, zero return on days with no open event, Sharpe annualised with sqrt(365), maximum drawdown of the compounded curve. Pre-tax, at 0.30% and 0.60% round-trip costs.",
+    "not_modelled": "Surcharge; the 1% TDS (an approximate TDS per year, 1% of the value sold by the calendar-time portfolio, is reported); short-sale availability for Indian residents (the down-cross move is a measurement, not a tradable claim); the bid-ask spread (covered by the doubled-cost line)."
+  },
+  "variants": [
+    {"variant": "major-clustering", "question": "Q1_clustering", "levels": "major", "trial": 1},
+    {"variant": "minor-clustering", "question": "Q1_clustering", "levels": "minor", "trial": 1},
+    {"variant": "major-crossing", "question": "Q2_crossing", "levels": "major", "trial": 1},
+    {"variant": "minor-crossing", "question": "Q2_crossing", "levels": "minor", "trial": 1}
+  ],
+  "trials": "4 (major and minor levels x the two questions)",
+  "pass_fail": {
+    "plan_text": "Pass, fixed now. Above the 95th percentile of 1,000 random offsets, in both the design and the test period.",
+    "operational": {
+      "clustering": "Pass only if the round-level rate is strictly above the 95th percentile of the 1,000 random-offset rates for highs AND for lows, in the design period AND in the test period.",
+      "crossing": "Pass only if the round-level mean directional move is strictly above the 95th percentile of the 1,000 random-offset means at every horizon (1, 3 and 7 days) and on every reported line (0.30% costs pre-tax, 0.30% costs after tax, 0.60% costs pre-tax, 0.60% costs after tax), in the design period AND in the test period.",
+      "percentile": "95th percentile = numpy quantile 0.95 with method 'higher' (the 951st smallest of 1,000); the round value must be strictly greater. Random offsets with no event are left out of the distribution and their number is reported."
+    },
+    "if_pass": "The analyst may note a nearby round level as context for its 80% range and gate notes. A new tag (near_round, within 0.5 ATR below a major level) could be added to the learning loop so that live data tests it. Adding it is a separate code change, and it counts as a new trial.",
+    "if_fail": "The analyst may not cite a round number as a reason."
+  },
+  "event_counts_in_plan": "Counting coin-days on which the daily close crossed at least one level (the scale s taken from the previous close), BTC and ETH crossed a major level on 359 days in the design period and 207 in the test period (to 31 Oct 2026), and a minor level on 1,966 and 1,390 days. Many are the same level crossed back and forth, so independent events are far fewer. The 10-day rule cuts them down.",
+  "clarifications": [
+    "Scale: s for coin-day t comes from close(t-1), the price known before day t starts (the plan's event count does the same). It is computed so that s <= close(t-1) < 10 s, guarding against floating-point error at exact powers of ten.",
+    "Minor levels are all multiples of s/10, including the majors (the plan's literal definition); majors are not removed from the minor grid.",
+    "The 0.5% window is applied to minor levels as well as majors (the plan states it for majors only; the random offsets use the same window, so the comparison stays like for like).",
+    "'Just below' is strict: a high exactly at the level counts as reaching it, not stopping below it; a low exactly at the level likewise does not count as 'just above'. This removes exact touches, which favour round numbers (prices end in .00 more often), so it is the conservative reading.",
+    "Q1 asks about highs and about lows. A clustering variant passes only if highs and lows each pass; the combined rate is reported but not used for the verdict.",
+    "Q2 names three horizons. A crossing variant passes only if all three horizons pass, on all four lines (0.30% and 0.60% costs, each pre-tax and after tax). Constant costs do not change the pre-tax rank; the tax line can.",
+    "'Above the 95th percentile' means strictly greater than numpy's 0.95 quantile with method 'higher' of the random values.",
+    "Random offsets: u ~ Uniform[0, 1) of the spacing, drawn independently for BTC and ETH, 1,000 draws with seed 20261109, reused for all four variants and both periods. Offsets very close to 0 (nearly the round grid) are kept: this makes the null harder to beat, never easier.",
+    "Crossing ties: a close exactly at a level counts as at-or-above, so an up-cross is close(t-1) < L <= close(t) and a down-cross is close(t-1) >= L > close(t).",
+    "10-day rule: 'the same level' is the same price, whatever the grid was on the earlier days; 'crossed' means crossed by a close-to-close move in either direction; 'the previous 10 days' are days t-10 .. t-1, whose moves use closes t-11 .. t-1. Coin-days without 11 previous closes are skipped.",
+    "Several levels crossed on one coin-day (a big move, or minor levels) make one event, counted if at least one of them passes the 10-day rule.",
+    "Move: from the open of day t+1 to the close of day t+h. A down-cross is measured as a short (the move in the direction of the cross). Costs are subtracted as a flat 0.30% (0.60% doubled) of the entry value.",
+    "Outcome windows never leave the period: for the design run the data is cut at 2022-12-31 when read, so the last events of 2022 are used only at the horizons whose window ends by 2022-12-31; for the test run, decision days start 2023-01-01 and windows end by 2026-10-31.",
+    "Averaging: when BTC and ETH both have an event (or a valid clustering day) on the same date, they are averaged first; the statistic is the mean of these daily averages. This is done identically for the round levels and each random offset.",
+    "Newey-West lags for clustering use h = 1 (a same-day measurement) with the floor(4 (n/100)^(2/9)) minimum; the t-statistics are reported only and are not part of the pass line, which is the random-offset percentile.",
+    "Sharpe ratio and maximum drawdown are reported for a calendar-time portfolio of the round-level crossing events (definition under statistics); clustering has no return, so it has none.",
+    "The deflated Sharpe is not computed: H19c is descriptive and the plan does not ask for it.",
+    "The near_round tag is not part of this test; it would be a separate code change and a new trial.",
+    "No per-coin pass line: BTC and ETH are pooled as the plan's text and event counts are; per-coin event counts and round-level rates are reported for description only."
+  ]
+}

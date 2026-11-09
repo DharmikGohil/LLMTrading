@@ -1,0 +1,137 @@
+{
+  "id": "H8a",
+  "title": "Crypto crowd extremes on history: Fear & Greed and funding (exploratory)",
+  "plan": "docs/test-plan.md, section 1, H8 / H8a (shared rules: section 1.0; ground rules: section 2)",
+  "script": "scripts/study_crypto_sentiment.py --exploratory (full history; allowed for H8a only, because its outcomes were already seen). --period design and --period test also exist; --period test refuses unless this file is committed.",
+  "asset": "crypto",
+  "kind": "exploratory",
+  "status": "Exploratory: outcomes 2018-2026 were already seen by the crowd-emotion brief's scratch scripts (section 1.0 table; section 2 rule 5). Every result is 'history, outcomes already seen'. It never changes a lesson's status and cannot pass any test. It only decides whether an idea deserves a forward test.",
+  "why": "The six seeded lessons include three crowd-mood ideas: 'fear rebounds', 'greed pulls back' and 'crowded longs fall'. History can show whether they deserve live attention. It cannot prove them, because the crowd-emotion brief has already looked at 2018-2026, test period included.",
+  "hypothesis": "Each seeded market lesson in journal/crypto_lessons.json, measured the way the live scorer measures it (the up-rate when the tag is on against the up-rate on the other days of the same period), holds with the same sign in the design years and in 2023-26: (1) fear-rebound-7d: after extreme fear BTC/ETH are higher a week later more often than on other days; (2) greed-pullback-7d: after extreme greed they are higher less often; (3) crowded-longs-24h: after high funding they are higher 24 hours later less often; (4) downtrend-continues-7d: below the 50-day average they are higher a week later less often.",
+  "step1_reproduce": {
+    "plan_text": "Make the brief's numbers reproducible. Until scripts/study_crypto_sentiment.py reproduces them, every figure below is an 'unreviewed exploratory result, not reproducible from the repo'.",
+    "brief_figures": [
+      "Fear & Greed against BTC's distance from its 50-day average: correlation 0.79 (rechecked for the plan: 0.79 against the previous day's distance).",
+      "After extreme fear, BTC was up 7 days later 56.7% of the time, against 52.6% on all days. The average return was lower than on all days.",
+      "On the first day of the 14 episodes with Fear & Greed below 15, BTC's next 30 days averaged -3.9%, against +4.2% on all days.",
+      "After crowded funding (3-day average >= 0.03% per 8 hours), BTC's next day was +0.16% against +0.14% on all days (51.9% up, 208 days).",
+      "Trend rule add-ons since 2023: plain BTC trend +390% (worst drawdown -27%); trend OR negative funding +483% (-38%). Going flat when funding is crowded hurt both BTC and ETH in 2020-26.",
+      "Day counts without outcomes: design (2018-22) 493 extreme-fear and 185 extreme-greed days; test (2023 to Nov 2026) 186 and 97."
+    ],
+    "how": "BTC alone, as the brief used; data to 2026-10-31 (the brief's runs went to early November 2026, so small differences are expected). The brief's exact alignments are unknown, so close-to-close and next-open versions are both reported where they differ. These rerun the brief's variants, already in research/trials.csv as sentiment_scratch past-1..7; they are not logged again."
+  },
+  "definitions": {
+    "plan_text": "The same as the live tags in crypto_learn.state. Extreme fear: Fear & Greed below 25. Extreme greed: above 75. Funding high: the average of the last 9 settlements (3 days) above 0.03% per 8 hours. Funding negative: below 0. Below the 50-day average: the close is under its 50-day average.",
+    "fg_extreme_fear": "Fear & Greed value < 25",
+    "fg_extreme_greed": "Fear & Greed value > 75",
+    "funding_high": "mean of the coin's last 9 settled Binance 8-hour funding rates > 0.0003 (0.03%)",
+    "funding_negative": "the same mean < 0",
+    "below_50d": "not (close(t) > mean of the last 50 closes including t), as crypto_learn.state tags it; needs 50 closes"
+  },
+  "questions": [
+    {"id": "fear-rebound-7d", "tag": "fg_extreme_fear", "horizon_days": 7, "expect": "up", "plan_text": "the 7-day up-rate after extreme fear, against the up-rate on the other days of the same period (the live scorer's comparison)."},
+    {"id": "greed-pullback-7d", "tag": "fg_extreme_greed", "horizon_days": 7, "expect": "down", "plan_text": "the same after extreme greed (the lesson expects 'down')."},
+    {"id": "crowded-longs-24h", "tag": "funding_high", "horizon_days": 1, "expect": "down", "plan_text": "the 24-hour up-rate after funding high (expects 'down')."},
+    {"id": "downtrend-continues-7d", "tag": "below_50d", "horizon_days": 7, "expect": "down", "plan_text": "the 7-day up-rate below the 50-day average (expects 'down')."}
+  ],
+  "also_report": "For each, also report the average return and the worst drawdown over 7 and 30 days, and the first day of each episode on its own. The first day is when a person feels the urge to act. (Computed at 1, 7 and 30 days.)",
+  "exact_rules": {
+    "timing": "Decide on day t's close (00:00 UTC of t+1); act at day t+1's open. Fear & Greed: the value dated t. Funding: the 9 settlements up to and including day t's 16:00 UTC settlement. Price tags: closes up to day t.",
+    "outcome": "Entry at open(t+1). Return over h days = close(t+h) / open(t+1) - 1 (h = 1 is the 24-hour call, h = 7 the 168-hour call, h = 30). 'Up' = close(t+h) > open(t+1), on price, before costs, as the live scorer grades (price at due > spot).",
+    "worst_drawdown": "Per event: min(low over days t+1..t+h) / open(t+1) - 1. Reported as the average over tag-on events (coins averaged per day first) and the single worst event.",
+    "comparison": "Tag-on coin-days against tag-off coin-days of the same half (the live scorer's comparison: the up-rate when the tag is on minus the up-rate on the other days of the same period).",
+    "averaging": "Average across coins on each day first, separately for the coins with the tag on and the coins with it off. The difference is the slope of these daily group means on a tag dummy.",
+    "newey_west": "t-statistic of that slope with a Newey-West covariance over calendar days, the per-row scores summed within each day (Driscoll-Kraay; equal to crypto_learn.hac_slope_t when each day has one row, as for the Fear & Greed tags). Lags = max(h, floor(4 (n/100)^(2/9))), n = calendar days spanned: at least the horizon in days. A 95% interval (difference +/- 1.96 standard errors) is reported.",
+    "episodes": "Tag-on stretches separated by at least 7 days with the tag off (the M-C1 definition), counted on the pooled day series (a day is on if either coin is tagged), within the half. Per-coin counts are also reported. Days and episodes are both reported.",
+    "first_day_of_episode": "The first day of each pooled episode; the coins tagged that day are the events. Same statistics, against the same tag-off coin-days of the half.",
+    "costs": "Return lines: before costs; after 0.30% round trip (0.1% fee + 0.05% slippage on each side, as indtrader/crypto.py and scripts/crypto_backtest.py); after 0.60% (costs doubled). Subtracted flat from each event's return.",
+    "after_tax": "Per event: a return that is positive after costs keeps 68.8% (31.2% = 30% + 4% cess); a loss is kept in full (no set-off, no carry-forward). Surcharge is not modelled.",
+    "sharpe_and_drawdown": "Next to every event return: a calendar-time portfolio per horizon, equal weight across the open event positions (enter at open t+1, exit at close t+h), rebalanced daily, 0.15% at entry and 0.15% at exit (0.30% each when doubled), zero return on days with nothing open; Sharpe annualised with sqrt(365), maximum drawdown of the compounded curve, pre-tax; for tag-on and for tag-off events.",
+    "halves": "Design years: 2018-22 for Fear & Greed and for the 50-day question (BTC and ETH candles start 2018-06-01), 2020-22 for funding (data starts 2020-01-01). 2023-26: decision days from 2023-01-01 to 2026-10-31. An event belongs to a half only if its whole outcome window lies inside it. The full history (start to 2026-10-31) is also reported.",
+    "endpoint_check": "Section 2 rule 4: the 2023-26 headline (lesson up-rate difference; add-on after-tax excess) is repeated with the end date at each month-end from 2025-06-30 to 2026-10-31. A sign change makes it 'endpoint-dependent: no evidence either way'."
+  },
+  "addon_rows": {
+    "plan_text": "Trials. 4 lesson rows plus 2 add-on rows, marked 'exploratory'. Line: as an add-on to the trend rule, it beats the plain rule after the 31.2% tax line in both halves. The brief's add-ons: trend OR negative funding; going flat when funding is crowded.",
+    "plain_rule": "The desk's rule (indtrader.crypto STRATEGY, the Without LLM account; crypto_momentum_study M7): BTC and ETH, each coin's half held while its close is above its 50-day average (indtrader.crypto.above: more than 50 closes and close > mean of the last 50), otherwise USDT.",
+    "rows": [
+      {"id": "addon-trend-or-negative-funding", "rule": "each coin's half is held while its close is above its 50-day average OR its 3-day average funding (last 9 settlements to day t 16:00 UTC) is below 0", "feeds_lesson": null, "note": "the brief's 'trend OR negative funding' (the idea behind the H8b F+ arm)"},
+      {"id": "addon-flat-when-funding-high", "rule": "each coin's half is held while its close is above its 50-day average AND its 3-day average funding is not above 0.03%", "feeds_lesson": "crowded-longs-24h", "note": "the brief's 'go flat when funding is crowded', with the plan's funding-high definition"}
+    ],
+    "simulation": "scripts/crypto_backtest.simulate (decide on day t's close, fill at day t+1's open; 0.1% fee + 0.05% slippage per trade's value; the India after-tax book: 31.2% on each profitable sale, no set-off, everything sold on the last day). Also with costs doubled. Each half is simulated on its own, from cash: 2020-01-01..2022-12-31 and 2023-01-01..2026-10-31. Before the first complete 3-day funding window (2020-01-01, 2020-01-02) the add-ons follow the plain rule.",
+    "benchmarks": "Just hold BTC (after tax) and the plain rule.",
+    "reported": "pre-tax and after-tax return, CAGR, Sharpe (sqrt(365)), maximum drawdown, trades, fees, approximate TDS per year, coin-days and episodes on which the add-on changes the plain rule's target, deflated Sharpe (indtrader.validation.deflated_sharpe, n_trials = every crypto row in research/trials.csv after this run's rows are logged)."
+  },
+  "data": {
+    "files": ["data/crypto/BTC.csv", "data/crypto/ETH.csv", "data/crypto/fear_greed.csv", "data/crypto/funding_BTC.csv", "data/crypto/funding_ETH.csv"],
+    "prices": "Binance USDT daily candles (UTC days), BTC and ETH from 2018-06-01, no missing days; split_reused_tickers from scripts/crypto_momentum_study.py is applied (it splits LUNA; BTC and ETH are expected not to split).",
+    "fear_greed": "alternative.me daily index from 2018-02-01; missing dates 2018-04-14..16 and 2024-10-26.",
+    "funding": "Binance USDT-margined 8-hour funding, 2020-01-01 00:00 to 2026-10-31 16:00 UTC, no missing settlements.",
+    "cut": "Everything is cut at 2026-10-31 when read (2022-12-31 for --period design). Fear & Greed day counts in the reproduction block read the whole file (values only, no outcomes), as the plan counted them."
+  },
+  "universe": ["BTC", "ETH"],
+  "periods": {
+    "exploratory": "2018-06-01 (2020-01-01 for funding) to 2026-10-31, split into the design years and 2023-26.",
+    "design": "up to 2022-12-31",
+    "test": "2023-01-01 to 2026-10-31"
+  },
+  "horizons_days": [1, 7, 30],
+  "parameters": {
+    "fg_extreme_fear_below": 25,
+    "fg_extreme_greed_above": 75,
+    "funding_high_above": 0.0003,
+    "funding_window_settlements": 9,
+    "sma_days": 50,
+    "episode_gap_days": 7,
+    "fee": 0.001,
+    "slippage": 0.0005,
+    "tax": 0.312,
+    "cost_multipliers": [1, 2],
+    "endpoint_check_first_month_end": "2025-06-30"
+  },
+  "variants": [
+    {"variant": "fear-rebound-7d", "kind": "lesson", "trial": 1},
+    {"variant": "greed-pullback-7d", "kind": "lesson", "trial": 1},
+    {"variant": "crowded-longs-24h", "kind": "lesson", "trial": 1},
+    {"variant": "downtrend-continues-7d", "kind": "lesson", "trial": 1},
+    {"variant": "addon-trend-or-negative-funding", "kind": "add-on", "trial": 1},
+    {"variant": "addon-flat-when-funding-high", "kind": "add-on", "trial": 1}
+  ],
+  "trials": "6 (4 lesson rows plus 2 add-on rows), logged with kind 'exploratory'",
+  "lines": {
+    "plan_text": "An idea 'deserves a forward test' only if all of these hold: the same sign in the design years (2018-22 for Fear & Greed, 2020-22 for funding) and in 2023-26; Newey-West t >= 2 in each half; at least 5 episodes in each half; as an add-on to the trend rule, it beats the plain rule after the 31.2% tax line in both halves. Otherwise it gets no forward arm, and the analyst may describe the gauge but not cite it as a reason.",
+    "operational": {
+      "same_sign": "The up-rate difference (tag on minus other days) at the lesson's horizon has the same non-zero sign in both halves, that sign is the lesson's claimed direction, and the 2023-26 sign does not change at any month-end end date from 2025-06-30 to 2026-10-31.",
+      "t": "Newey-West t >= 2 in the claimed direction in each half (t >= 2 for 'up', t <= -2 for 'down').",
+      "episodes": "At least 5 pooled episodes of the tag in each half.",
+      "addon": "The lesson's add-on row ends with a higher after-tax value than the plain rule in both halves, at the standard costs and with costs doubled, and the 2023-26 comparison keeps its sign at every month-end end date from 2025-06-30 to 2026-10-31. Only crowded-longs-24h has an add-on row (addon-flat-when-funding-high)."
+    },
+    "consequence": "Pass all: the idea may get a forward arm through a new pre-registration (new trials). Otherwise: no forward arm; the analyst may describe the gauge but not cite it as a reason."
+  },
+  "output": "research/results/H8a.json: every number, plus an evidence_history block per seeded lesson labelled 'history, outcomes already seen'. journal/crypto_lessons.json is not changed by this script; the blocks never change a lesson's status.",
+  "clarifications": [
+    "Universe: BTC and ETH, the coins the lessons and the live loop cover. The brief used BTC alone; BTC alone is used in the reproduction block, and each question is also reported per coin.",
+    "Fear & Greed timing: the decision at day t's close uses the value dated t, known from day t's open. The value dated t+1 is stamped at the decision instant (00:00 UTC) and is not used. This is a one-day lag at most, the conservative side.",
+    "Funding timing: 'settled values only' is read as settlements strictly before the decision instant. The 00:00 UTC settlement of day t+1 coincides with day t's close, so the 3-day window ends with day t's 16:00 settlement. A window counts only if its 9 settlements are consecutive (8 hours apart) and the latest is day t's 16:00 one.",
+    "Missing Fear & Greed dates (2018-04-14..16, 2024-10-26): the tag is unknown and those coin-days are left out of the Fear & Greed questions; no value is carried forward.",
+    "'Up' is measured on price before costs, as the live scorer grades a call (price at due above the spot). Costs and the tax line apply to the return lines, which a trade would earn; they cannot change the sign of a no-trade up-rate comparison.",
+    "'The other days of the same period' are the tag-off coin-days (tag known) of the same half. For per-coin tags (funding, 50-day) one day can hold a tag-on coin and a tag-off coin; coins are averaged within each group on each day, and the Newey-West covariance sums the scores by day (Driscoll-Kraay). For the Fear & Greed tags each day has one row and this equals crypto_learn.hac_slope_t (unit test).",
+    "Newey-West lags: max(horizon in days, floor(4 (n/100)^(2/9))). Both satisfy 'at least the horizon'; the larger is the conservative choice for persistent tags.",
+    "Halves: an event belongs to a half only if its outcome window ends inside that half, so no design-year number uses a 2023 price and no 2023-26 number uses one after 2026-10-31. Inputs (the 50-day average, the funding window) may use earlier data. The 50-day question uses 2018-22 as its design years, like Fear & Greed, because it is price only (the plan names years only for Fear & Greed and funding).",
+    "Episodes: pooled across coins (a day is on if either coin is tagged), separated by at least 7 days off, within the half, on days whose tag is known. Pooling gives fewer or equal episodes than counting per coin, so it is the conservative count for the 5-episode line; per-coin counts are reported.",
+    "First day of an episode: the first day of each pooled episode, with the coins tagged that day as events, compared with the same tag-off coin-days as the main comparison.",
+    "'Worst drawdown over 7 and 30 days' is read per event: the lowest low inside the window against the entry price. Both the average over tag-on events and the single worst event are reported.",
+    "'Sharpe and maximum drawdown next to every return' (section 1.0): for event returns, a calendar-time portfolio of the events (definition under exact_rules), pre-tax, at both cost levels; for the add-on rows, the simulated equity curve.",
+    "Lines, 'same sign': read as the same non-zero sign in both halves AND the lesson's claimed direction. A history that consistently goes the other way does not support the lesson, and turning it around after seeing it would be a new, data-mined idea.",
+    "Lines, 't >= 2': in the claimed direction in each half, at the lesson's own horizon (7 days; 24 hours for crowded-longs-24h).",
+    "Lines, endpoint: a 2023-26 sign that changes at any month-end end date from 2025-06-30 to 2026-10-31 is 'endpoint-dependent: no evidence either way' (section 2 rule 4) and fails the same-sign line.",
+    "Lines, add-on: the plan's 2 add-on rows are the brief's two (trend OR negative funding; flat when funding is crowded). Only crowded-longs-24h has one (flat when funding is high). Fear & Greed has no add-on row in the plan, and adding one would add trials, so fear-rebound-7d and greed-pullback-7d cannot meet the add-on line: no forward arm. downtrend-continues-7d is the plain trend rule itself and cannot be an add-on to it; it cannot meet the line either, and the desk already runs it live.",
+    "Lines, 'beats the plain rule after the 31.2% tax line in both halves': a strictly higher after-tax final value, at the standard costs and also with costs doubled (section 1.0 runs every result with costs doubled; requiring both is the conservative reading).",
+    "addon-trend-or-negative-funding feeds none of the four lessons. Its add-on line is reported on its own. The H8b arms do not depend on these lines: the plan chose them before the lines were written, and H8b is judged on forward data only.",
+    "Funding high is strictly above 0.03% and negative strictly below 0, as the live tags (crypto_learn.state). The brief used '>= 0.03%'; the reproduction block uses '>=' to match it.",
+    "Add-on simulations use scripts/crypto_backtest.simulate as written: it rebalances to the exact target weights each day (no 5% drift threshold, unlike the live desk). The plain rule gets the same treatment, as in crypto_momentum_study M7, so the comparison is like for like.",
+    "Deflated Sharpe: indtrader.validation.deflated_sharpe on the pre-tax equity curve, n_trials = prereg.trial_count('crypto') after this run's rows are logged. The past variants' Sharpe ratios are not in the ledger, so the null spread is validation's default 1/sqrt(T).",
+    "TDS: approximated per year as 1% of the value sold, with sales taken as half the traded value (simulate reports fees, not sales), in % of the starting capital. Surcharge is not modelled.",
+    "Trials: one ledger row per lesson and per add-on row (6), kind 'exploratory', for the full run. The reproduction block reruns past variants already in the ledger and is not logged again.",
+    "The evidence_history blocks are written to research/results/H8a.json, not into journal/crypto_lessons.json, and they never change a lesson's status (the plan: kept apart from the live evidence)."
+  ]
+}

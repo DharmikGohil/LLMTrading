@@ -1,0 +1,96 @@
+{
+  "id": "H10c",
+  "title": "Crypto support and resistance against random levels",
+  "plan": "docs/test-plan.md, section 1, H10c (shared rules in section 1.0; ground rules in section 2)",
+  "written": "2026-11-09, before any design-period run",
+  "question": "Does the price turn at the levels our chart code draws more often than at random levels?",
+  "hypothesis": "The bounce rate at the support and resistance levels drawn by indtrader/signals/chart.py support_resistance is above the 95th percentile of the bounce rates of 1,000 sets of random levels (same number of levels, placed uniformly inside the 250-day high-low range), scored by the same hit and bounce rules. Null: our levels hold no more often than random levels (Osler 2000: arbitrary levels held 56% of the time in intraday currency data, published levels 61%).",
+  "data": {
+    "main": "data/crypto BTC.csv and ETH.csv, daily Binance USDT candles (UTC days), 1 Jun 2018 to 31 Oct 2026",
+    "second": "data/crypto, all coin files (74 coins incl. dead ones: LUNA, FTT, WAVES, OMG, XMR...), LUNA's reused ticker split into two series with scripts/crypto_momentum_study.py split_reused_tickers (parts under 120 rows dropped, as load_all does)",
+    "volume": "the volume column is traded value in USDT",
+    "not_used": "fear_greed.csv and funding files are not used by this test"
+  },
+  "periods": {
+    "design": "first scoreable day (a full 250-bar window before it) to 2022-12-31; all data is cut at 2022-12-31 before any computation",
+    "test": "2023-01-01 to 2026-10-31, run once, only after this file is committed (scripts/study_candles_levels.py calls indtrader.research.prereg.require_committed('H10c') before loading any data)"
+  },
+  "universe": {
+    "btc_eth": "BTC and ETH, every day",
+    "top20": "each day's top 20 coins by 30-day traded value with at least 120 days of history (indtrader/crypto.py universe(): value30 = 30-day mean of the volume column, min 20 days; history = number of days with a close; the coin must have a close that day), dead coins included while they were in the top 20. Membership is taken at the close of day t-1, when the levels for day t are drawn."
+  },
+  "rules": {
+    "levels": "chart.support_resistance exactly as coded: a 250-bar lookback, swing points with k = 5, swings within 0.6 ATR clustered into one level, at least 2 touches, up to 4 levels on each side (strongest first by the recency-weighted touch count, as coded). Recompute every day from data up to that day's close. A swing needs 5 bars after it, so only swings already confirmed that day count. For the second universe, use unrounded level prices: chart.py rounds levels to 2 decimals, which breaks coins priced under about $1.",
+    "hit": "the previous close was above a support level, and the day's low reaches the level or comes within 0.2 x ATR(14) above it. Resistance is the mirror image. Count first hits only: the price must have been at least 1 ATR away from the level since its last hit.",
+    "bounce": "on the hit day and the next 3 days, no close more than 0.2 ATR beyond the level.",
+    "bounce_rate": "bounces / hits",
+    "random_levels": "for each coin and day, 1,000 sets with the same number of levels, placed uniformly at random inside the 250-day high-low range, scored by the same rules.",
+    "money_check": "report only: buy at the next open after a support hit, hold 3 days, minus 0.30% costs, with the 31.2% after-tax line. Compare with the same trade at random-level hits."
+  },
+  "horizons": {
+    "bounce": "the hit day and the next 3 days (closes t, t+1, t+2, t+3)",
+    "money_check": "3 days: buy at the open of t+1, sell at the open of t+4"
+  },
+  "timing": "decide on day t's close (00:00 UTC), act at day t+1's open. Levels, ATR, the random-level range and top-20 membership used for day t's hit test are all computed from bars up to day t-1's close.",
+  "costs": {
+    "base": "0.1% Binance fee + 0.05% slippage on each side (indtrader/crypto.py FEE, SLIP = 0.001, 0.0005; scripts/crypto_backtest.py), about 0.30% a round trip",
+    "doubled": "0.2% fee + 0.1% slippage on each side, about 0.60% a round trip; every money result is also reported this way",
+    "applies_to": "the money check only (the bounce rate has no trade)"
+  },
+  "tax": {
+    "rule": "31.2% (30% + 4% cess) on each profitable sale; losses cannot be set off or carried forward; everything treated as sold on the last day (scripts/crypto_backtest.py simulate)",
+    "single_event": "a profitable event (after costs) keeps 68.8% of its gain; a losing event keeps its full loss",
+    "not_modelled": "surcharge; the 1% TDS on each sale's value (reported approximately per year next to the after-tax line)"
+  },
+  "statistics": {
+    "bounce": "pooled bounce rate per universe and period for our levels and for each of the 1,000 random sets; our rate's percentile among the random rates; the gap (ours minus the random median) with a 95% bootstrap interval from resampling calendar months (2,000 draws). Hits, coin-days with a hit, and episodes are all reported.",
+    "money_check": "average across coins for each hit day first, then the mean and a Newey-West t with 3 lags (the holding horizon in days); pre-tax, after-tax line, costs doubled; Sharpe ratio and maximum drawdown of the trade book (scripts/crypto_backtest.py simulate) next to the returns, with just hold BTC (pre-tax and after tax) over the same days; deflated Sharpe of the book with every crypto row in research/trials.csv; the same per-day-averaged mean for each random set, and our mean's percentile among them.",
+    "episodes": "per coin, hit days no more than 3 days apart are one episode (their 4-day outcome windows overlap)"
+  },
+  "seeds": {
+    "random_levels": "numpy default_rng(SeedSequence([1010, period code (design 1, test 2), crc32(universe name), crc32(coin name)])), draws in row order",
+    "bootstrap": "numpy default_rng(1011)"
+  },
+  "variants": [
+    {"id": "btc_eth", "trial": 1, "what": "bounce rate at our levels against 1,000 random-level sets, BTC and ETH (main data), chart.py levels exactly as coded (2-decimal rounding kept)", "metric": "bounce rate gap: ours minus random median; percentile of ours among the 1,000 random rates"},
+    {"id": "top20", "trial": 2, "what": "the same on the daily top-20 universe, unrounded level prices", "metric": "bounce rate gap: ours minus random median; percentile of ours among the 1,000 random rates"},
+    {"id": "money_check", "trial": 3, "what": "report only: buy at the next open after a support first hit on BTC or ETH (one trade per coin-day), sell 3 days later at the open, 0.30% costs, 31.2% after-tax line; compared with the same trade at random-level support first hits", "metric": "mean net return per hit day (coins averaged per day), Newey-West t"}
+  ],
+  "trials": 3,
+  "pass_fail": {
+    "pass_fixed_in_plan": "The bounce rate at our levels is above the 95th percentile of the random sets' rates in the design period **and** again in the test period. Report the gap (ours minus the random median) with a bootstrap interval.",
+    "applied_as": "for each universe (btc_eth, top20) separately: our pooled bounce rate > numpy 95th percentile (linear interpolation) of the 1,000 random rates, in design and again in test. H10c passes only if both universes pass in both periods. If only one universe passes, the result is reported as mixed and the 'Fail' consequences below apply.",
+    "money_check": "report only, no pass line; it can never turn H10c into a trading rule",
+    "too_little_data": "the T1 300-event floor in section 3 is for signals with a t-statistic and does not apply to this percentile test; hit counts are reported so the reader can judge"
+  },
+  "what_the_result_changes": {
+    "pass": "levels may appear in the analyst's notes as 'levels where price paused more often than chance, on our data'. They may help place a forecast's 80% range.",
+    "fail": "the analyst may not cite support or resistance as a reason to move a forecast or set the gate. Any crypto chart that shows levels says 'no better than random on our data'.",
+    "either_way": "this is not a trading rule. The money check is reported only."
+  },
+  "script": "scripts/study_candles_levels.py --crypto --period design|test (the stock part of H10 is not built yet)",
+  "outputs": "research/results/H10c_design.json, research/results/H10c_test.json; one research/trials.csv row per variant per run (kind design or test)",
+  "clarifications": [
+    "Timing: the levels tested on day t are those chart.support_resistance draws from the 250 bars ending at day t-1's close, split into support (price below the t-1 close) and resistance (price at or above it) exactly as chart.py does. The hit is then read from day t's bar.",
+    "Full window only: a coin-day is scored only when 250 bars exist before day t, because both the level lookback and the random-level range are defined on 250 days. BTC and ETH data start on 1 Jun 2018, so design scoring starts in February 2019. A coin-day of the top-20 universe needs both top-20 membership (120-day history rule) and these 250 bars.",
+    "ATR(14) used as the ruler for the hit zone, the bounce threshold and the 1-ATR first-hit distance is the ATR that chart.support_resistance computes for that window at day t-1's close (Wilder EWM over the 250-bar window), known before day t. It is fixed for the event.",
+    "BTC and ETH (main) use chart.py's levels exactly, including the 2-decimal rounding of the level price. The top-20 universe (which includes BTC and ETH too) uses the same code with only the price rounding removed; the rounding of the strength value used to rank levels is kept, as coded.",
+    "A resistance hit needs the previous close strictly below the level (the mirror of support's 'above'); a level exactly at the previous close is classed as resistance by chart.py and cannot be hit that day.",
+    "First hit: levels move a little from day to day as swings are added, so a level is tracked by its price P. Walking back from day t-1 for at most 250 bars: if a bar whose range overlaps [P - 0.2 ATR, P + 0.2 ATR] (a touch, which includes the swing bars that formed the level and any bar that crossed it) comes before a bar lying wholly at least 1 ATR from P (low >= P + ATR or high <= P - ATR), the hit is not a first hit. If neither is found in 250 bars, it is a first hit. Any touch is treated as a hit here, which is stricter than counting only rule-defined hits.",
+    "Each level hit is one event: two levels hit on the same coin-day count as two hits, for our levels and the random levels alike.",
+    "Outcomes must lie inside the period: a hit is scored only when the closes of t..t+3 fall on or before the period end (2022-12-31 for design, 2026-10-31 for test) and inside the coin's own data. Hits whose window runs past a coin's last bar or across a data gap are dropped and counted.",
+    "Gaps: besides the LUNA split, a coin series is cut into segments at any gap of more than 7 days (FTT has a 311-day gap from 15 Nov 2022 to 22 Sep 2023); no level window, first-hit look-back or outcome window crosses a gap. Top-20 membership is still computed on the unsplit series exactly as indtrader/crypto.py universe() does.",
+    "Random levels: for each scored coin-day, the number of random levels equals our total number of levels that day (support plus resistance; 0 levels means no random levels that day). They are drawn uniformly between the lowest low and the highest high of the same 250 bars, then classed as support or resistance by the t-1 close exactly as ours are. Random set j is the j-th draw on every coin-day; each set's rate is its pooled bounces divided by its pooled hits over the period.",
+    "'Above the 95th percentile' means strictly greater than numpy's 95th percentile (linear interpolation) of the 1,000 random rates.",
+    "Pass rule across the two universes (the plan states one pass line for a main and a second universe): conservative reading, H10c passes only if both BTC+ETH and the top-20 universe pass in both the design and the test period. Anything less is reported as a fail or a mixed result, and the plan's 'Fail' consequences apply.",
+    "Bootstrap interval for the gap: calendar months are resampled with replacement (2,000 draws), keeping all coins and all levels of a month together; each draw recomputes our rate and the median of the 1,000 random rates; the interval is the 2.5th to 97.5th percentile of the gap.",
+    "Money check universe: BTC and ETH (the main data) only, so the trial count stays at the plan's 3. The top-20 money check is not run.",
+    "Money check trade: one trade per coin-day even when several support levels are hit; buy at the open of t+1, sell at the open of t+4 (3 days held, every action at an open as the timing rule says). Costs are charged as in scripts/crypto_backtest.py simulate: (fee + slippage) on each side's value, so net = open(t+4) x (1 - c) / (open(t+1) x (1 + c)) - 1 with c = 0.15% (doubled: 0.30%). The trade is scored only if open(t+4) is inside the period.",
+    "Money check statistics: per-event after-tax line as section 1.0 states (gain after costs x 0.688 if positive, full loss otherwise); returns averaged across coins for each hit day, then mean and Newey-West t with 3 lags over the hit-day series (a lag of 3 hit days spans at least 3 calendar days, so every overlapping pair is covered). Random comparison: the same per-day-averaged mean over the coin-days with at least one random support first hit, for each of the 1,000 sets.",
+    "Money check book (for the Sharpe ratio, maximum drawdown and the after-tax book line): scripts/crypto_backtest.py simulate with half the book on each coin while one of its trades is open (a coin hit on day h is held from the open of h+1 to the open of h+4; a new hit extends the hold), the rest in USDT; simulate rebalances to the target daily, which adds small drift trades. Just hold BTC is run over the same days. The deflated Sharpe uses validation.deflated_sharpe with n_trials = trial_count('crypto') at the time of the run. TDS (1% of each sale) is reported approximately as sales x book share per year.",
+    "Episodes: per coin, hit days no more than 3 days apart form one episode (their bounce windows overlap). Episodes are reported next to hits and coin-days; the pass line itself is the pooled rate, as the plan states.",
+    "Top-20 universe data limits: many coin files start on 1 Jun 2019, so in late 2018 and early 2019 'top 20' is the top of the coins on disk (fewer than 20 qualify). Renamed tickers (RNDR/RENDER, MATIC/POL, FTM/S) are separate files that do not overlap in time and are treated as separate coins, as scripts/crypto_momentum_study.py does; they only matter in the test period.",
+    "Test period: hits from 2023-01-01; levels, the first-hit look-back and the random range may use bars before 2023 (known at the time); data after 2026-10-31 is not loaded. No test-period event is counted before the test run.",
+    "Descriptive extras (support-only and resistance-only rates, hits by year) are reported next to the pooled result but are not pass lines and not separate trials."
+  ]
+}

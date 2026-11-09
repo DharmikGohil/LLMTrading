@@ -1,0 +1,113 @@
+{
+ "id": "H8b",
+ "title": "Two funding shadow paper arms on BTC and ETH (F+ and F-): the forward test",
+ "plan": "docs/test-plan.md, section 1, H8 / H8b (shared rules: section 1.0; ground rules: section 2; pass marks: section 3)",
+ "script": "scripts/study_crypto_sentiment.py --arms prints the verdict and refuses unless this file is committed and unchanged; --h8b-prep recomputes the F- line and the OKX-against-Binance check. The arms themselves are to be added to indtrader/crypto.py as extra paper accounts (not done here).",
+ "asset": "crypto",
+ "kind": "forward test (shadow paper arms); paper only, no real money",
+ "why": "Only data that arrives after the pre-registration commit is clean for these ideas. A shadow arm is an extra paper account that follows a fixed rule. The LLM plays no part in it.",
+ "hypothesis": "On BTC and ETH, changing the desk's 50-day trend rule by perpetual funding improves the after-tax result on forward data: F+ (also hold a coin while its 3-day average funding is negative, i.e. crowded shorts) or F- (cut a coin while its 7-day average funding is above a fixed high line, i.e. crowded longs; Schmeling, Schrimpf & Todorov, BIS Working Paper 1087, April 2023: a high crypto carry predicts future price crashes).",
+ "arms": {
+  "plan_text": "These were chosen before the H8a lines above were written, from the brief's run, so H8b is judged on forward data only. Arm F+: the desk's rule, except that each coin's half is also held while that coin's 3-day average funding is below 0 (trend or negative funding). Source: the crowd-emotion brief's scratch run. Arm F-: the desk's rule, except that a coin's half is cut to a quarter while its 7-day average funding is above a fixed line: the 90th percentile of that coin's Binance 7-day averages in 2020-22, computed once and written into the pre-registration file. A fixed line cannot peek at later data. Note: the brief's history run found that the stronger 'go flat when crowded' version hurt.",
+  "F+": {
+   "account": "fplus",
+   "rule": "For each of BTC and ETH: target weight 0.5 if (close > its 50-day average, as indtrader.crypto.above) OR (mean of its last 9 settled OKX 8-hour funding rates < 0); otherwise 0 (that half in USDT)."
+  },
+  "F-": {
+   "account": "fminus",
+   "rule": "For each of BTC and ETH: if close > its 50-day average (indtrader.crypto.above): target weight 0.25 when the mean of its last 21 settled OKX 8-hour funding rates is > the coin's line below, otherwise 0.5; if not above the average: 0.",
+   "line": {
+    "BTC": {
+     "rate": 0.00045609762,
+     "pct_per_8h": 0.045609762
+    },
+    "ETH": {
+     "rate": 0.00059604362,
+     "pct_per_8h": 0.059604362
+    }
+   },
+   "line_method": "The 90th percentile (numpy quantile 0.9, linear) of the coin's 7-day average Binance funding (mean of 21 consecutive settlements) taken once a day at the 00:00 UTC settlement, the value the daily 00:10 UTC run sees, over every window lying wholly inside 2020-01-01 00:00 .. 2022-12-31 16:00 UTC: 1,089 daily values per coin, windows ending 2020-01-08 00:00 to 2022-12-31 00:00. Source: data/crypto/funding_<COIN>.csv (Binance USDT-M monthly archive). No price, no outcome and no settlement from 2023 or later enters it.",
+   "line_sensitivity_reported_not_used": {
+    "every_settlement": {
+     "BTC": 0.00044948681,
+     "ETH": 0.00059911033
+    },
+    "windows_ending_16utc": {
+     "BTC": 0.00044925152,
+     "ETH": 0.00058874133
+    },
+    "medians_2020_22": {
+     "BTC": "0.0089% per 8h",
+     "ETH": "0.0099% per 8h"
+    }
+   }
+  }
+ },
+ "common_rules": {
+  "plan_text": "Both arms use BTC and ETH like the desk (the brief's history used BTC alone), the same 10,000 USDT start, the same 5% rebalance threshold, and the same fills, fee and slippage. They update in the same daily 00:10 UTC GitHub Actions job. Live funding comes from OKX, as the learning loop's fact sheet already reads it (crypto_learn.Feeds), while F-'s line comes from Binance history. So the arms start only after the OKX-against-Binance agreement check (section 1.0) has been run and reported.",
+  "base_rule": "indtrader.crypto STRATEGY: BTC and ETH, each coin's half held while its daily close is above its 50-day average, otherwise USDT (the Without LLM / control account's rule). The LLM gate plays no part in either arm.",
+  "capital": "10,000 USDT each, paper",
+  "rebalance": "CryptoBook.rebalance with the desk's 5% drift threshold, in the same daily 00:10 UTC job; sells first at the bid, then buys at the ask",
+  "fills_and_costs": "Buys at the ask, sells at the bid, plus 0.05% slippage and a 0.1% fee on each trade's value (indtrader/crypto.py FEE, SLIP), exactly as the desk's accounts",
+  "funding_source": "OKX public funding-rate-history for <COIN>-USDT-SWAP (the endpoint crypto_learn.Feeds reads), settled rates (realizedRate; fundingRate was identical on every settlement checked), the last 9 (F+) or 21 (F-) settlements at the time of the 00:10 UTC run. The 00:00 UTC settlement has settled by then and is included.",
+  "missing_funding": "If OKX fails or returns fewer settlements than needed, that day the arm follows the plain desk rule for that coin (the add-on does nothing without data) and the day is logged."
+ },
+ "okx_binance_check": {
+  "plan_text": "The live fact sheet reads OKX funding instead (crypto_learn.Feeds). Before relying on history, check that OKX and Binance agree on overlapping dates and report how closely.",
+  "run": "scripts/study_crypto_sentiment.py --h8b-prep, 2026-11-09; matched rows saved in research/results/H8b_prep.json (OKX keeps only about two months of funding history: on 2026-11-09 it started at 2026-09-04 08:00 UTC).",
+  "period": "October 2026 (2026-10-01 00:00 to 2026-10-31 16:00 UTC), the overlap of the Binance file and OKX's history",
+  "BTC": {
+   "settlements": "93 Binance, 93 OKX, 93 matched on the same timestamps (00:00, 08:00, 16:00 UTC), none unmatched",
+   "single_settlement": "correlation 0.58; mean Binance 0.0044%, mean OKX 0.0052% per 8 hours; OKX minus Binance +0.0008% on average; mean absolute difference 0.0026%, largest 0.0114%; same sign on 85% of settlements",
+   "avg_3_day_at_00utc": "31 days: correlation 0.84; mean difference +0.0008%, largest 0.0038%; funding_negative tag: Binance 1 day, OKX 0 (agree on 30 of 31 days); funding_high: 0 and 0",
+   "avg_7_day_at_00utc": "31 days: correlation 0.93; mean difference +0.0007%, largest 0.0019%; above the F- line: 0 days on either venue"
+  },
+  "ETH": {
+   "settlements": "93 Binance, 93 OKX, 93 matched, none unmatched",
+   "single_settlement": "correlation 0.75; mean Binance 0.0030%, mean OKX 0.0034% per 8 hours; OKX minus Binance +0.0004% on average; mean absolute difference 0.0027%, largest 0.0097%; same sign on 87% of settlements",
+   "avg_3_day_at_00utc": "31 days: correlation 0.94; mean difference +0.0003%, largest 0.0021%; funding_negative tag: 4 days on both (agree on all 31); funding_high: 0 and 0",
+   "avg_7_day_at_00utc": "31 days: correlation 0.92; mean difference +0.0001%, largest 0.0020%; above the F- line: 0 days on either venue"
+  },
+  "reading": "Single settlements differ noticeably (correlation 0.58 for BTC), but the 3-day and 7-day averages the arms use agree closely (correlations 0.84-0.94; average gaps of 0.0001-0.0008% per 8 hours, small next to the F- lines of 0.046% and 0.060% and next to the 0.03% funding-high line). OKX ran slightly higher than Binance in October 2026. One month in a calm funding regime (no day near either line) cannot show agreement at the extremes; the gap is re-measured and reported at every verdict. The line is not adjusted for it: a fixed line cannot peek."
+ },
+ "data": {
+  "line": "data/crypto/funding_BTC.csv and funding_ETH.csv (Binance, 2020-01-01 to 2026-10-31; only 2020-22 used)",
+  "live": "OKX funding-rate-history (forward), Binance spot prices as the desk uses (data-api.binance.vision)",
+  "accounts": "paper/crypto/fplus.json and fminus.json (to be created by the desk code), next to main, control and hold"
+ },
+ "universe": [
+  "BTC",
+  "ETH"
+ ],
+ "start": "The day this file is committed (plan: 'Start. The day research/prereg/H8b.json is committed.'). Only data from that day on counts. Nothing before it is ever used to judge the arms.",
+ "benchmarks": "The Without LLM account (control) and Just hold BTC, both after tax as if everything were sold that day.",
+ "costs": "As the desk: 0.1% fee + 0.05% slippage per side, plus the bid-ask spread of live quotes.",
+ "tax": "31.2% (30% + 4% cess) on each profitable sale; no set-off or carry-forward of losses; for the verdict, everything treated as sold that day (as scripts/crypto_backtest.simulate's after-tax book). Not modelled and reported next to it: surcharge; the 1% TDS on each sale's value (report the TDS deducted per year).",
+ "verdict_rules": {
+  "plan_text": "At 12 months, then every 6 months, on the after-tax value as if everything were sold that day. Stop: it trails the Without LLM account after tax at 12 months. Keep running: it beats both Without LLM and Just hold BTC after tax, and its maximum drawdown is no deeper than Without LLM's. Adopt: never on 12 months alone. It needs a Newey-West t >= 3.0 on the daily return difference against Without LLM, on forward data, and a deflated Sharpe >= 0.95 using the full crypto trial count. Then it goes through journal/changes.md. Twelve months cannot tell skill from luck (docs/go-live-checklist.md, section 2). Realistically, 'Adopt' would take many years. The brief's run also showed a deeper drawdown for F+ (-38% against -27%), so F+ may fail the drawdown line.",
+  "operational": {
+   "checkpoints": "12 months after the start, then every 6 months (18, 24, ...); the verdict uses data up to the latest checkpoint reached.",
+   "keep_running": "after-tax return of the arm > Without LLM's AND > Just hold BTC's, AND the arm's maximum drawdown (of its after-tax value) is no deeper than Without LLM's.",
+   "stop": "anything else, including trailing Without LLM after tax.",
+   "adopt": "only from the 18-month checkpoint on: the keep-running conditions AND Newey-West t >= 3.0 on the daily after-tax return difference (arm minus Without LLM), lags max(1, floor(4 (n/100)^(2/9))) via crypto_learn.nw_tstat, AND indtrader.validation.deflated_sharpe >= 0.95 on that difference series with n_trials = prereg.trial_count('crypto') at that time. Adoption still means only a dated journal/changes.md entry with paper evidence, never real money."
+  }
+ },
+ "trials": "2 (one per arm). Logged by --arms at each checkpoint (kind 'test'); they count in every crypto deflated Sharpe from the day the arms start.",
+ "for_desk_code": "To be judged, the desk must write paper/crypto/after_tax.csv once a day: date, control, hold, fplus, fminus = each account's value after tax as if everything were sold that day (31.2% on the gain of each position over its average cost, plus the tax already paid on realised gains, no set-off). Not implemented here: this study does not touch desk code.",
+ "clarifications": [
+  "'A coin's half is cut to a quarter' is read as: the coin's weight goes from one half to one quarter of the account (0.5 to 0.25), the same unit as 'half'. The other reading (a quarter of the half, 0.125) is not used. This is also the smaller departure from the tested desk rule.",
+  "3-day average = mean of the last 9 settled 8-hour rates; 7-day average = mean of the last 21. 'Below 0' and 'above the line' are strict.",
+  "F+ only adds holding when the trend rule is out; F- only cuts when the trend rule is in. When the trend rule is out, F- holds nothing, whatever the funding.",
+  "The line uses one value a day, at the 00:00 UTC settlement, because the arm decides once a day at 00:10 UTC and sees that settlement. Windows must lie wholly inside 2020-22 (2020-01-01 00:00 to 2022-12-31 16:00), so no 2019 or 2023 settlement enters. Two other ways of taking the percentile (every settlement; windows ending at 16:00) give 0.0449% for BTC and 0.0599% / 0.0589% for ETH; they are reported, not used.",
+  "Live funding is OKX's settled rate (realizedRate). In the October 2026 check, fundingRate and realizedRate were identical on every settlement, for both coins.",
+  "Timing differs from H8a's history on purpose: H8a's history leaves out the 00:00 UTC settlement that coincides with the day's close (the conservative backtest reading), while the live arm runs at 00:10 UTC, when that settlement has settled, so it uses it.",
+  "If OKX funding is missing or incomplete on a day, the arm follows the plain desk rule for that coin that day (the add-on cannot act without data); such days are logged and reported.",
+  "The plan names 'Stop' (trails Without LLM) and 'Keep running' (beats both, drawdown no deeper) but not the cases in between (beats Without LLM but trails BTC, or a deeper drawdown). Conservative reading: an arm that does not meet every keep-running condition at a checkpoint stops.",
+  "'Adopt: never on 12 months alone' is read as: no Adopt verdict at the 12-month checkpoint; Adopt can first be read at 18 months, and it also requires the keep-running conditions.",
+  "The deflated Sharpe for Adopt is computed on the daily after-tax return difference against Without LLM (the claim is that the arm beats the control), with the full crypto trial count; this is stricter than the arm's own Sharpe.",
+  "The H8a 'deserves a forward test' lines do not gate these arms: the plan chose the arms before writing those lines, and H8b is judged on forward data only.",
+  "The arms start only after the OKX-against-Binance check is reported; it is reported above (run 2026-11-09). The arms are not implemented here; adding them to indtrader/crypto.py is desk work outside this study.",
+  "Both arms update in the same daily job as the desk; a missed day is a missed day for all accounts alike. No arm trades between daily runs."
+ ],
+ "status": "Registered, not started. The plan's H8a lines say an idea gets a forward arm only if, among other things, as an add-on to the trend rule it beats the plain rule after the 31.2% tax line in both halves. In 2020-22 'trend OR negative funding' made +199% after tax against the plain rule's +218%, and 'flat when funding is high' +29% (research/results/H8a.json). Neither arm starts. Re-opening needs a new pre-registration."
+}
