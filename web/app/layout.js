@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
 import { MarketPill, ThemeToggle, TickerGo } from "@/components/HeadTools";
 import { LiveProvider } from "@/components/Live";
@@ -6,7 +6,7 @@ import Nav, { SubNav, TabBar } from "@/components/Nav";
 import { liveKeys, load, symbols } from "@/lib/data";
 import "./globals.css";
 
-const sans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const sans = Plus_Jakarta_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-jakarta", display: "swap" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata = {
@@ -14,15 +14,20 @@ export const metadata = {
   description: "Paper trading desks run by Claude: India and US stocks, Nifty options and crypto. A rules-based strategy, an LLM that can only make it safer, and a control account to measure whether it helps.",
 };
 
-export const viewport = { themeColor: "#0a0b0d" };
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f3f2f8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0b14" },
+  ],
+};
 
-// set the theme before first paint (dark unless the visitor chose light)
+// set the theme before first paint (light unless the visitor chose dark)
 const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default function RootLayout({ children }) {
   const data = load();
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`} data-theme="dark" suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`} data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

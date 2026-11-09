@@ -88,7 +88,10 @@ and every analyst run reads the lesson book first.
   and MACD, plus a plain-language chart read ([how it reads a chart](docs/technical-analysis.md)).
 
 Stock and index prices update about every 15 seconds while markets are open, and crypto prices every 10 seconds.
-The site has light and dark themes and a bottom tab bar on phones.
+The look is light and calm by default: a lavender-grey page, white rounded cards, one violet accent (violet lines are
+the LLM-reviewed accounts, pink lines the rules-only controls, grey dashed lines the benchmarks), soft green and red
+pills for changes, and Plus Jakarta Sans with tabular figures. There is a matching dark theme and a bottom tab bar on
+phones.
 
 ## Results so far
 

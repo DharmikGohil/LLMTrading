@@ -27,8 +27,8 @@ export function TickerGo({ symbols }) {
 }
 
 export function ThemeToggle() {
-  const [t, setT] = useState("dark");
-  useEffect(() => setT(document.documentElement.dataset.theme || "dark"), []);
+  const [t, setT] = useState("light");
+  useEffect(() => setT(document.documentElement.dataset.theme || "light"), []);
   const flip = () => {
     const n = t === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = n;
