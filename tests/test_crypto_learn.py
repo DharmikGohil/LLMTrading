@@ -113,7 +113,30 @@ def test_lessons_change_status_only_on_evidence(tmp_path, monkeypatch):
             rows_sc.append({"id": f"f{i}", "source": src, "coin": "BTC", "horizon_h": 24, "made": made, "due": made,
                             "spot": 100, "px": 99, "up": 0, "p_up": p, "brier": round((p - 0) ** 2, 6),
                             "inside": 1, "pinball": 0.1, "tags": "fg_extreme_greed;above_50d"})
+    # and 40 calls without the tag, where the price rose 3 times in 4 (the yardstick for the market lesson)
+    for i in range(40, 80):
+        made = (t0 + timedelta(hours=8 * i)).isoformat()
+        up = 0 if i % 4 == 0 else 1
+        for src, p in (("llm", 0.5), ("base", 0.5)):
+            rows_sc.append({"id": f"f{i}", "source": src, "coin": "BTC", "horizon_h": 24, "made": made, "due": made,
+                            "spot": 100, "px": 101 if up else 99, "up": up, "p_up": p, "brier": 0.25,
+                            "inside": 1, "pinball": 0.1, "tags": "fg_neutral;above_50d"})
     crypto_learn._append(ln.sc, crypto_learn.SC_COLS, rows_sc)
     out = {le["id"]: le for le in ln.update_lessons()}
     assert out["greed"]["status"] == "confirmed" and out["greed"]["evidence"]["n"] == 40
-    assert out["mkt"]["status"] == "confirmed" and out["mkt"]["evidence"]["up_pct"] == 0.0
+    ev = out["mkt"]["evidence"]
+    assert out["mkt"]["status"] == "confirmed" and ev["up_pct"] == 0.0 and ev["other_up_pct"] == 75.0
+
+
+def test_market_lesson_needs_a_contrast_not_a_coin_flip(tmp_path):
+    """If every call carries the tag, there is nothing to compare with, so the lesson cannot be confirmed."""
+    ln = learner(tmp_path)
+    ln.lessons.write_text(json.dumps([{"id": "m", "lesson": "x", "kind": "market", "tag": "fg_fear", "horizon_h": 24,
+                                       "expect": "up", "status": "hypothesis"}]))
+    t0 = datetime(2026, 1, 1, tzinfo=UTC)
+    rows = [{"id": f"f{i}", "source": "base", "coin": "BTC", "horizon_h": 24, "made": (t0 + timedelta(hours=8 * i)).isoformat(),
+             "due": "", "spot": 100, "px": 101, "up": 1, "p_up": 0.5, "brier": 0.25, "inside": 1, "pinball": 0.1,
+             "tags": "fg_fear"} for i in range(60)]
+    crypto_learn._append(ln.sc, crypto_learn.SC_COLS, rows)
+    le = ln.update_lessons()[0]
+    assert le["status"] == "hypothesis" and le["evidence"]["t"] is None

@@ -66,7 +66,8 @@ export function LessonTable({ learn }) {
       { key: "ev", label: "Evidence", n: true, render: (r) => {
         const e = r.evidence || {};
         if (!e.n) return <span className="muted">no cases yet</span>;
-        return `${e.n} calls${e.up_pct != null ? ` · ${e.up_pct}% up` : e.skill_pct != null ? ` · skill ${e.skill_pct}%` : ""}${e.t != null ? ` · t ${e.t}` : ""}`;
+        const mkt = e.up_pct != null ? ` · ${e.up_pct}% up${e.other_up_pct != null ? ` vs ${e.other_up_pct}% otherwise` : ""}` : "";
+        return `${e.n} calls${mkt || (e.skill_pct != null ? ` · skill ${e.skill_pct}%` : "")}${e.t != null ? ` · t ${e.t}` : ""}`;
       } },
     ]} />
   );

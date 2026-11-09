@@ -101,7 +101,9 @@ forecasts at 05:05, 13:05 and 23:05 IST (`indtrader crypto-forecast`): the proba
   with a 24-hour horizon overlap. Under 30 calls the verdict is "too few to tell".
 - **Lessons** (`journal/crypto_lessons.json`): each lesson names one tag, a horizon and what it expects: `llm`
   lessons claim the analyst is `worse` or `better` than the baseline under that tag; `market` lessons claim the
-  price went `up` or `down` more often than half the time. `indtrader crypto-learn` recounts the evidence from the
+  price went `up` or `down` more often under that tag than on the other calls of the same period (not more often than
+  50%: in a rising year most calls end up whatever the tag). That is a regression of the up/down outcome on the tag,
+  with a Newey-West t-statistic. `indtrader crypto-learn` recounts the evidence from the
   scores and sets the status: confirmed at 30+ calls and |t| ≥ 2 in the claimed direction, retired when it turns
   the other way. The analyst writes the words; the data decides the status. Seeded with six hypotheses: fear
   rebounds, greed pullbacks, crowded longs, downtrends persisting, overconfidence in high volatility, chasing big

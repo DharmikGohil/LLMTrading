@@ -131,6 +131,22 @@ def nw_tstat(x: np.ndarray, lags: int) -> float:
     return float(x.mean() / se)
 
 
+def hac_slope_t(y: np.ndarray, d: np.ndarray, lags: int) -> float:
+    """t-statistic of b in y = a + b*d + e, with a Newey-West (HAC) covariance. b is the difference in means."""
+    X = np.column_stack([np.ones_like(d), d])
+    xtx_inv = np.linalg.inv(X.T @ X)
+    beta = xtx_inv @ X.T @ y
+    g = X * (y - X @ beta)[:, None]                       # per-observation score
+    S = g.T @ g
+    for k in range(1, min(lags, len(y) - 1) + 1):
+        w = 1 - k / (lags + 1)
+        c = g[k:].T @ g[:-k]
+        S += w * (c + c.T)
+    V = xtx_inv @ S @ xtx_inv
+    se = math.sqrt(max(float(V[1, 1]), 1e-18))
+    return float(beta[1] / se)
+
+
 def _read(f: Path) -> list[dict]:
     return list(csv.DictReader(f.open())) if f.exists() else []
 
@@ -285,14 +301,22 @@ class Learner:
         return out
 
     def market_stats(self, tag: str, horizon_h: int) -> dict:
-        """How often the price rose over the horizon when this tag was on (from the baseline rows: one per call)."""
-        rows = [r for r in _read(self.sc) if r["source"] == "base" and int(r["horizon_h"]) == horizon_h
-                and tag in r["tags"].split(";")]
-        if not rows:
-            return {"n": 0, "up_pct": None, "t": None}
-        x = np.array([int(r["up"]) - 0.5 for r in sorted(rows, key=lambda r: r["made"])], dtype=float)
-        t = nw_tstat(x, max(0, math.ceil(horizon_h / 8) - 1))
-        return {"n": len(x), "up_pct": round(100 * (x.mean() + 0.5), 1), "t": None if math.isnan(t) else round(t, 2)}
+        """Did the price rise more (or less) often when this tag was on than on the other calls of the same period?
+
+        A coin flip is the wrong yardstick: in a rising year most calls end "up" whatever the tag. So the up/down
+        outcome of every baseline call (one per forecast) is regressed on the tag, and the tag's coefficient (its
+        up-rate minus everyone else's) gets a Newey-West t-statistic for the overlapping horizons."""
+        rows = sorted((r for r in _read(self.sc) if r["source"] == "base" and int(r["horizon_h"]) == horizon_h),
+                      key=lambda r: r["made"])
+        d = np.array([1.0 if tag in r["tags"].split(";") else 0.0 for r in rows])
+        y = np.array([float(r["up"]) for r in rows])
+        n_tag, n_other = int(d.sum()), int(len(d) - d.sum())
+        out = {"n": n_tag, "n_other": n_other,
+               "up_pct": round(100 * float(y[d == 1].mean()), 1) if n_tag else None,
+               "other_up_pct": round(100 * float(y[d == 0].mean()), 1) if n_other else None, "t": None}
+        if n_tag >= 3 and n_other >= 3:
+            out["t"] = round(hac_slope_t(y, d, max(0, math.ceil(horizon_h / 8) - 1)), 2)
+        return out
 
     # -- 5. lessons: text by the analyst, evidence by the data
     def update_lessons(self) -> list[dict]:
@@ -305,7 +329,7 @@ class Learner:
                 continue
             if le.get("kind") == "market":
                 # a claim about the market itself: under this tag the price rose ("expect": "up") or fell ("down")
-                # more often than half the time over the horizon
+                # more often than on the other calls of the same period
                 s = self.market_stats(tag, h)
                 want = 1 if le.get("expect", "up") == "up" else -1
                 le["evidence"] = s
