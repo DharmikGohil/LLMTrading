@@ -7,7 +7,7 @@ import { fmt, load } from "@/lib/data";
 
 export const metadata = { title: "Crypto desk" };
 
-const NAMES = { main: "Trend with LLM", control: "Trend without LLM", hold: "BTC buy and hold" };
+const NAMES = { main: "With LLM", control: "Without LLM", hold: "Just hold BTC" };
 
 function chartData(c) {
   const rows = (c.equity || []).map((r) => ({ t: new Date(r.time).getTime(), btc: +r.btc, main: +r.main, control: +r.control, hold: +r.hold }))
@@ -30,9 +30,7 @@ export default function Crypto() {
   const coins = ["BTC", ...Object.values(c.books).flatMap((b) => b.positions.map((p) => p.coin))];
   const gate = c.gates?.at(-1);
   const trades = [...(c.trades || [])].reverse();
-  const strat = s.mode === "trend"
-    ? `${(s.coins || ["BTC", "ETH"]).join(" and ")}, each held while above its ${s.trend_sma ?? 50}-day average`
-    : `top ${s.top_k ?? 3} coins by ${s.lookback ?? 90}-day return`;
+  const coinsTxt = (s.coins || ["BTC", "ETH"]).join(" and ");
   return (
     <CryptoProvider coins={coins}>
       <main>
@@ -40,7 +38,7 @@ export default function Crypto() {
           <div>
             <h1>Crypto</h1>
             <p className="sub">
-              Trend-following on Binance spot in USDT: {strat}, otherwise in cash. Runs 24/7; the benchmark is simply holding BTC.
+              Holds {coinsTxt} only while they are rising (above their {s.trend_sma ?? 50}-day average price); otherwise waits in cash (USDT). Runs 24/7, with and without the LLM; the benchmark is simply holding BTC.
             </p>
           </div>
         </div>
@@ -91,7 +89,7 @@ export default function Crypto() {
           <div>
             <p>
               Each coin gets an equal share while its daily close is above its {s.trend_sma ?? 50}-day average; otherwise that share sits
-              in USDT. The rule was chosen by a test with a design period and an untouched test period; altcoin momentum lost money in
+              in USDT (traders call this trend following). The rule was chosen by a test with a design period and an untouched test period; buying the hottest altcoins lost money in
               that test (see the <a className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-desk.md">desk notes</a>).
               The account with LLM can hold less or leave out a coin around risky events; the account without LLM follows the rules alone.
             </p>

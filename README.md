@@ -32,10 +32,10 @@ published.
 
 | Desk | Capital (paper) | Rules | What the LLM may do | Benchmark |
 |---|---|---|---|---|
-| **India stocks** | ₹1,00,000 | Nifty 200 momentum + SEPA trend template, 10 slots, 4× ATR stops | Veto or shrink a buy | Nifty 50, and the account without LLM |
-| **US stocks** | $10,000 | S&P 100, same method | Veto or shrink a buy | S&P 500, and the account without LLM |
-| **Nifty options** | ₹1,00,000 × 2, plus ₹1,000 | Weekly iron condors (defined risk); a ₹1,000 option-buying test | Event gate: widen strikes or skip a week | Condor account without LLM |
-| **Crypto** | $10,000 USDT × 3 | BTC and ETH, each held while above its 50-day average, rebalanced daily | Cut exposure or exclude a coin | Account without LLM, and BTC buy and hold |
+| **India stocks** | ₹1,00,000 | Buys Nifty 200 stocks that have been rising strongly (momentum + SEPA trend template), up to 10, each with a 4× ATR stop-loss | Veto or shrink a buy | Nifty 50, and the account without LLM |
+| **US stocks** | $10,000 | S&P 100 stocks, same method | Veto or shrink a buy | S&P 500, and the account without LLM |
+| **Nifty options** | ₹1,00,000 × 2, plus ₹1,000 | A weekly bet that Nifty stays inside a range, with the loss capped (an iron condor); plus a ₹1,000 lottery-ticket test that buys one cheap option a week | Bet a wider range or skip a risky week | Condor account without LLM |
+| **Crypto** | $10,000 USDT × 3 | Holds BTC and ETH only while they are rising (above their 50-day average), otherwise waits in cash; checked daily | Hold less, or leave out a coin | Account without LLM, and BTC buy and hold |
 
 **The LLM can only make things safer.** It never adds a trade or raises risk. Every rule was backtested before it went
 live; the honest results are below.

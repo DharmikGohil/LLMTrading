@@ -47,7 +47,7 @@ export default function Home() {
         ))}
         {opt ? (
           <Link href="/options" className="card">
-            <div className="top"><span className="nm">Nifty options</span><span className="tag">iron condors</span></div>
+            <div className="top"><span className="nm">Nifty options</span><span className="tag">weekly range bet</span></div>
             <span className="val">{fmt.money(data.options.books.main.equity, "₹", 0)}</span>
             <div className="row"><span>With LLM</span><b>{pct((data.options.books.main.equity / data.options.books.main.capital - 1) * 100)}</b></div>
             <div className="row"><span>Without LLM</span><b>{pct((data.options.books.control.equity / data.options.books.control.capital - 1) * 100)}</b></div>
@@ -57,10 +57,10 @@ export default function Home() {
         ) : null}
         {c ? (
           <Link href="/crypto" className="card">
-            <div className="top"><span className="nm">Crypto</span><span className="tag">BTC + ETH trend</span></div>
+            <div className="top"><span className="nm">Crypto</span><span className="tag">BTC + ETH, in cash when falling</span></div>
             <span className="val">${cBook("main").value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
             <div className="row"><span>With LLM</span><b>{pct(cBook("main").return_pct)}</b></div>
-            <div className="row"><span>BTC buy and hold</span><b>{pct(cBook("hold").return_pct)}</b></div>
+            <div className="row"><span>Just hold BTC</span><b>{pct(cBook("hold").return_pct)}</b></div>
             <div className="row"><span>LLM difference</span><b>{pp(cBook("main").return_pct - cBook("control").return_pct)}</b></div>
             <Spark values={cRows.map((r) => (r.main / 10000 - 1) * 100)} bench={cRows.map((r) => (r.hold / 10000 - 1) * 100)} />
           </Link>
@@ -93,17 +93,17 @@ export default function Home() {
         <summary>How it works</summary>
         <div>
           <p>
-            <b>Stocks (India and US):</b> a momentum screen with Minervini&apos;s trend template picks candidates. Each morning Claude
+            <b>Stocks (India and US):</b> the rules pick stocks that have been rising strongly (a momentum screen). Each morning Claude
             reviews them for red flags (results dates, filings, news) and can veto or shrink a buy, never add one. The account
             without LLM trades the screen alone.
           </p>
           <p style={{ marginTop: 10 }}>
-            <b>Nifty options:</b> defined-risk iron condors. Claude&apos;s event gate can widen the strikes or skip a week; the
+            <b>Nifty options:</b> a weekly bet that Nifty stays inside a range, with the loss capped (an iron condor). Claude can bet a wider range or skip a risky week; the
             account without LLM ignores the gate. There is also a ₹1,000 option-buying test.
           </p>
           <p style={{ marginTop: 10 }}>
-            <b>Crypto:</b> BTC and ETH, each held while above its 50-day average, running 24/7 on GitHub Actions, against simply
-            holding BTC.
+            <b>Crypto:</b> holds BTC and ETH only while they are rising (above their 50-day average), otherwise waits in cash.
+            It runs 24/7 on GitHub Actions, against simply holding BTC.
           </p>
           <p style={{ marginTop: 10 }}>
             Every rule was backtested before it went live, and most ideas failed honestly. See the{" "}

@@ -63,7 +63,7 @@ export default async function Desk({ params }) {
         <div>
           <h1>{d.title}</h1>
           <p className="sub">
-            {d.universe} momentum on {d.exchange}, in {d.currency}. The account with LLM follows Claude&apos;s vetoes; the account without LLM trades the same screen alone.
+            Buys {d.universe} stocks that have been rising strongly, up to 10 at a time, each with a stop-loss. The account with LLM lets Claude block or shrink a buy; the account without LLM buys by the rules alone.
           </p>
           <div className="facts">
             {d.schedule.map(([t, l]) => <span key={t}><b>{t}</b> {l}</span>)}

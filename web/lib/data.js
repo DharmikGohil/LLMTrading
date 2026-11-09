@@ -297,9 +297,9 @@ export function liveKeys(data) {
 }
 
 export const OPTION_ARMS = {
-  main: { title: "Iron condor with LLM", short: "Condor with LLM", sub: "The rules plus the LLM's event check: trade, widen the strikes, or skip the week" },
-  control: { title: "Iron condor without LLM", short: "Condor without LLM", sub: "The same rules with no LLM, to measure what the LLM adds" },
-  lotto: { title: "₹1,000 option buying", short: "₹1,000 test", sub: "One cheap out-of-the-money option per expiry, trend direction; stakes at most ₹1,000 a trade and keeps its winnings" },
+  main: { title: "With LLM", short: "With LLM", sub: "The range bet, plus Claude's check before each week: bet, bet a wider range, or skip the week" },
+  control: { title: "Without LLM", short: "Without LLM", sub: "The same range bet every week, with no LLM, to measure what the LLM adds" },
+  lotto: { title: "₹1,000 test", short: "₹1,000 test", sub: "A lottery-ticket style test: buys one cheap option a week in the direction Nifty is moving, staking at most ₹1,000 a trade" },
 };
 
 /** Options desk view: per-account money summary, desk totals, and equity paths for the charts. */

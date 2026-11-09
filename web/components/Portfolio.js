@@ -205,7 +205,7 @@ function OptionBook({ id, title, b, spot }) {
 }
 
 function Options({ options }) {
-  const names = { main: "Condor with LLM", control: "Condor without LLM", lotto: "₹1,000 test" };
+  const names = { main: "Range bet with LLM", control: "Range bet without LLM", lotto: "₹1,000 test" };
   const books = Object.entries(names).filter(([k]) => options.books[k]);
   const closed = books.flatMap(([k]) => (options.books[k].closed || []).map((c) => ({ ...c, arm: names[k] })))
     .sort((a, b) => new Date(b.closed) - new Date(a.closed)).slice(0, 20);

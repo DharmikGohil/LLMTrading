@@ -81,7 +81,7 @@ export default function Options() {
         <div>
           <h1>Nifty options</h1>
           <p className="sub">
-            Iron condors on Nifty weekly options, with and without Claude&apos;s event gate, plus a ₹1,000 option-buying test.
+            Bets that Nifty stays inside a range each week. If it does, the account keeps a small premium; a big move up or down loses, up to a fixed cap. Run with and without the LLM, plus a ₹1,000 lottery-ticket test.
           </p>
         </div>
       </div>
@@ -89,13 +89,13 @@ export default function Options() {
       <Kpis>
         <Kpi hl label="Value now" value={money(v.totals.value)} delta={`of ${money(v.totals.invested)} invested`} />
         <Kpi label="Total P&L" value={<Signed v={v.totals.pnl} sym="₹" d={0} />} delta={fmt.pct(v.totals.ret)} deltaTone={fmt.tone(v.totals.ret)} />
-        <Kpi label="LLM difference" value={<span className={fmt.tone(edge)}>{fmt.pp(edge)}</span>} delta="condor with LLM minus without" />
+        <Kpi label="LLM difference" value={<span className={fmt.tone(edge)}>{fmt.pp(edge)}</span>} delta="with LLM minus without" />
         <LiveNiftyKpi fallback={options.spot} syncedAt={options.time} />
       </Kpis>
 
       <div className="grid section">
         <div className="c7">
-          <Panel title="Condor accounts vs Nifty" meta="% since start">
+          <Panel title="With vs without LLM" meta="% since start, against Nifty">
             <EquityChart data={v.condorChart} height={240} compact ranges={false} />
           </Panel>
         </div>
@@ -139,9 +139,11 @@ export default function Options() {
         <summary>How this desk works</summary>
         <div>
           <p>
-            Three paper accounts. Two sell defined-risk iron condors on Nifty weekly options: one with LLM, where Claude&apos;s
-            event check can widen or skip a trade, and one without LLM that follows the rules alone. The third buys one cheap out-of-the-money option per
-            expiry in the trend direction, staking at most ₹1,000 a trade (before 5 November it re-staked its whole balance).
+            Three paper accounts. Two make the weekly range bet (in trading terms, an iron condor): they sell Nifty options
+            above and below the current price and collect the premium, and buy options further out as insurance so the loss is
+            capped. The account with LLM lets Claude bet a wider range or skip a risky week; the account without LLM bets every
+            week by the rules. The third buys one cheap option a week in the direction Nifty is moving, staking at most ₹1,000 a
+            trade (before 5 November it re-staked its whole balance).
             A one-minute monitor checks exits during market hours.
           </p>
           <p style={{ marginTop: 10 }}>
