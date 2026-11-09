@@ -22,14 +22,14 @@ def panel(days=200):
 
 def test_target_weights_picks_top_momentum_above_trend():
     closes, v = panel()
-    w = target_weights(closes, v, closes.index[-1], {**crypto.STRATEGY, "top_k": 2})
+    w = target_weights(closes, v, closes.index[-1], {**crypto.MOMENTUM, "top_k": 2})
     assert set(w) == {"AAA", "BBB"} and abs(sum(w.values()) - 1) < 1e-9
 
 
 def test_target_weights_goes_to_cash_when_btc_below_regime_average():
     closes, v = panel()
     closes["BTC"] = closes["BTC"].iloc[::-1].to_numpy()     # BTC now falling
-    assert target_weights(closes, v, closes.index[-1]) == {}
+    assert target_weights(closes, v, closes.index[-1], crypto.MOMENTUM) == {}
 
 
 class FakeAPI:
@@ -60,7 +60,8 @@ def test_rebalance_charges_fees_and_never_overspends(tmp_path):
     assert not b.data["pos"] and 9900 < b.data["cash"] < 10000
 
 
-def test_desk_gate_only_reduces_risk_and_hold_buys_btc_once(tmp_path):
+def test_desk_gate_only_reduces_risk_and_hold_buys_btc_once(tmp_path, monkeypatch):
+    monkeypatch.setattr(crypto, "STRATEGY", {**crypto.MOMENTUM, "drift": 0.002})
     prices = {"BTC": 50398.0, "AAA": 29.9, "BBB": 21.9, "CCC": 17.9, "DDD": 6.0, "ETH": 3000.0}
     desk = CryptoDesk(tmp_path, FakeAPI(prices))
     desk.set_gate(0.5, ["AAA"], "test: FOMC tonight")
@@ -75,3 +76,10 @@ def test_desk_gate_only_reduces_risk_and_hold_buys_btc_once(tmp_path):
     desk.run()                                                     # not due again for a week, benchmark not re-bought
     assert sum(1 for r in (tmp_path / "trades.csv").read_text().splitlines() if ",hold," in r or r.startswith("hold,")) == 1
     assert out["equity"]["control"] > 0 and not desk.due("control")
+
+
+def test_trend_mode_holds_each_coin_above_its_average():
+    closes, v = panel()
+    closes["ETH"] = closes["DDD"] * 100                       # falling
+    w = target_weights(closes, v, closes.index[-1], crypto.STRATEGY)
+    assert w == {"BTC": 0.5}                                  # BTC trending up: half; ETH below its average: USDT

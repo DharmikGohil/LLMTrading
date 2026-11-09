@@ -33,8 +33,12 @@ TOP_N, MIN_HISTORY = 20, 120
 EXCLUDE = {"USDC", "FDUSD", "TUSD", "USDP", "DAI", "BUSD", "EUR", "TRY", "BRL", "GBP", "AEUR", "USDE", "XUSD", "PAXG",
            "WBTC", "WBETH", "BFUSD", "USD1", "RLUSD", "EURI"}
 
-# The strategy, fixed from the study (see docs/crypto-desk.md). Keys mirror scripts/crypto_momentum_study.py.
-STRATEGY = {"lookback": 90, "top_k": 3, "risk_adjusted": False, "core_btc": 0.0, "rebalance_days": 7,
+# The strategy, fixed from the study (docs/crypto-desk.md): time-series momentum (trend) on BTC and ETH. Each coin is
+# held, equal weight, while its daily close is above its 50-day average; otherwise that half sits in USDT. Checked
+# daily. Cross-sectional altcoin momentum ("MOMENTUM" below) won the 2020-22 design period but lost money in the
+# untouched 2023-26 test, so it is kept for research only.
+STRATEGY = {"mode": "trend", "coins": ["BTC", "ETH"], "trend_sma": 50, "rebalance_days": 1, "drift": 0.05}
+MOMENTUM = {"mode": "momentum", "lookback": 90, "top_k": 3, "risk_adjusted": False, "core_btc": 0.0, "rebalance_days": 7,
             "coin_trend_sma": 50, "regime_sma": 100}
 
 
@@ -57,9 +61,14 @@ def universe(closes: pd.DataFrame, value30: pd.DataFrame, day, top_n: int = TOP_
     return list(tv.sort_values(ascending=False).index[:top_n])
 
 
-def target_weights(closes: pd.DataFrame, value30: pd.DataFrame, day, p: dict = STRATEGY) -> dict[str, float]:
-    """Momentum: the top k coins by L-day return (or return / volatility) among the liquid universe, each above its
+def target_weights(closes: pd.DataFrame, value30: pd.DataFrame, day, p: dict | None = None) -> dict[str, float]:
+    """Trend mode: each of `coins` gets an equal share while above its `trend_sma`-day average.
+    Momentum mode: the top k coins by L-day return (or return / volatility) among the liquid universe, each above its
     own trend average; nothing but the BTC core while BTC is below its regime average."""
+    p = p or STRATEGY
+    if p.get("mode") == "trend":
+        n = len(p["coins"])
+        return {c: 1 / n for c in p["coins"] if c in closes and above(closes[c].loc[:day], p["trend_sma"])}
     core = p.get("core_btc", 0.0)
     base = {"BTC": core} if core else {}
     if "BTC" not in closes or not above(closes["BTC"], p["regime_sma"]):
@@ -168,8 +177,8 @@ class CryptoBook:
             held = self.data["pos"].get(c, {}).get("qty", 0.0)
             want = target.get(c, 0.0) * total / q[c]["last"]
             d = want - held
-            if abs(d) * q[c]["last"] < 0.002 * total and target.get(c, 0.0) > 0:
-                continue                                     # skip dust rebalances of positions we keep
+            if abs(d) * q[c]["last"] < STRATEGY.get("drift", 0.002) * total and target.get(c, 0.0) > 0:
+                continue                                     # leave small drift alone: fewer trades, lower costs
             if d < 0 and held > 0:
                 fills.append(self._fill(c, "SELL", min(-d, held), q[c]["bid"] * (1 - SLIP), why, journal))
         for c in sorted(target, key=lambda c: -target[c]):
@@ -178,7 +187,7 @@ class CryptoBook:
             held = self.data["pos"].get(c, {}).get("qty", 0.0)
             want = target[c] * total / q[c]["last"]
             d = want - held
-            if d * q[c]["last"] < 0.002 * total:
+            if d * q[c]["last"] < STRATEGY.get("drift", 0.002) * total:
                 continue
             px = q[c]["ask"] * (1 + SLIP)
             d = min(d, 0.99999 * self.data["cash"] / (px * (1 + FEE)))
@@ -256,16 +265,20 @@ class CryptoDesk:
         last = self.books[arm].data.get("last_rebalance")
         if not last:
             return True
-        days = (now_utc() - datetime.fromisoformat(last)).total_seconds() / 86400
-        return days >= STRATEGY["rebalance_days"] - 0.05
+        last_day = datetime.fromisoformat(last).date()
+        return (now_utc().date() - last_day).days >= STRATEGY["rebalance_days"]   # calendar days (UTC)
 
     def run(self, force: bool = False) -> dict:
-        """Daily job: rebalance accounts that are due (weekly), buy the benchmark once, record equity."""
+        """Daily job: rebalance the strategy accounts when due, buy the benchmark once, record equity."""
         out: dict = {"time": now_utc().isoformat(timespec="seconds")}
         hold = self.books["hold"]
         need = [a for a in ("main", "control") if force or self.due(a)]
         if need:
-            pool = sorted(set(self.api.liquid_coins()) | {"BTC", "ETH"} | {c for a in ARMS for c in self.books[a].data["pos"]})
+            held = {c for a in ARMS for c in self.books[a].data["pos"]}
+            if STRATEGY.get("mode") == "trend":
+                pool = sorted(set(STRATEGY["coins"]) | held)
+            else:
+                pool = sorted(set(self.api.liquid_coins()) | {"BTC", "ETH"} | held)
             closes, value30 = self.api.panel(pool)
             day = closes.index[-1]
             target = target_weights(closes, value30, day)
@@ -277,7 +290,7 @@ class CryptoDesk:
                 if arm not in need:
                     continue
                 q = self.api.quotes(sorted(set(t) | set(self.books[arm].data["pos"]) | {"BTC"}))
-                why = f"weekly rebalance: {', '.join(f'{c} {w:.0%}' for c, w in t.items()) or 'all USDT'}"
+                why = f"rebalance: {', '.join(f'{c} {w:.0%}' for c, w in t.items()) or 'all USDT'}"
                 if arm == "main" and g:
                     excl = f", excluded {', '.join(g['exclude'])}" if g.get("exclude") else ""
                     why += f"; gate: exposure {g.get('max_exposure', 1):.0%}{excl}"
@@ -306,7 +319,7 @@ class CryptoDesk:
                 clock = main.data.get("last_rebalance")
                 out["main"] = main.rebalance({c: w for c, w in want.items() if w > 0}, q,
                                              f"gate applied: {g.get('note', '')[:160]}", self._journal("main"))
-                main.data["last_rebalance"] = clock          # a gate trim does not restart the weekly clock
+                main.data["last_rebalance"] = clock          # a gate trim does not restart the rebalance clock
                 main.save()
         out["equity"] = self.record()
         return out

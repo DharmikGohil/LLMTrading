@@ -25,7 +25,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from indtrader.crypto import STRATEGY, above, target_weights
+from indtrader.crypto import MOMENTUM, above, target_weights
 
 ROOT = Path(__file__).resolve().parent
 _spec = importlib.util.spec_from_file_location("crypto_backtest", ROOT / "crypto_backtest.py")
@@ -76,7 +76,7 @@ def variants(value30: pd.DataFrame):
         return {k: 0.5 for k in held}
 
     def momentum(lookback: int, k: int, risk_adj: bool = False, core: float = 0.0):
-        p = {**STRATEGY, "lookback": lookback, "top_k": k, "risk_adjusted": risk_adj, "core_btc": core}
+        p = {**MOMENTUM, "lookback": lookback, "top_k": k, "risk_adjusted": risk_adj, "core_btc": core}
 
         def fn(day, c):
             return target_weights(c, value30, day, p)

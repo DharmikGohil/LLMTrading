@@ -1,0 +1,56 @@
+name: Crypto desk
+
+# The crypto paper desk runs here, around the clock, instead of in the scheduled Claude sessions (whose container
+# restarts several times a day). Daily at 00:10 UTC: the rebalance. Every 2 hours: apply the analyst's
+# gate to the LLM-gated account (risk can only go down) and record equity. State lives in paper/crypto/.
+on:
+  schedule:
+    - cron: "10 0 * * *"
+    - cron: "40 1-23/2 * * *"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "run (daily rebalance) or check (gate + equity)"
+        default: run
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-desk
+  cancel-in-progress: false
+
+jobs:
+  desk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install
+        run: |
+          pip install pandas numpy pydantic pyyaml python-dotenv requests typer yfinance
+          pip install --no-deps -e .
+      - name: Run the desk
+        run: |
+          if [ "${{ github.event.schedule }}" = "10 0 * * *" ] || [ "${{ inputs.job }}" = "run" ]; then
+            indtrader crypto-run
+          else
+            indtrader crypto-check
+          fi
+          indtrader crypto-export --out public
+          cp public/crypto.json web/data/crypto.json
+      - name: Commit and push
+        run: |
+          git config user.name "dharmikgohil"
+          git config user.email "gohildharmik2020@gmail.com"
+          git add paper/crypto public/crypto.json web/data/crypto.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Crypto desk $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          for i in 1 2 3 4; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

@@ -1,0 +1,82 @@
+{
+ "time": "2026-11-09T14:07:41+00:00",
+ "btc": 74556.01,
+ "books": {
+  "main": {
+   "capital": 10000.0,
+   "value": 10000.0,
+   "cash": 10000.0,
+   "realized": 0.0,
+   "fees": 0.0,
+   "return_pct": 0.0,
+   "last_rebalance": "2026-11-09T14:07:39+00:00",
+   "positions": []
+  },
+  "control": {
+   "capital": 10000.0,
+   "value": 10000.0,
+   "cash": 10000.0,
+   "realized": 0.0,
+   "fees": 0.0,
+   "return_pct": 0.0,
+   "last_rebalance": "2026-11-09T14:07:39+00:00",
+   "positions": []
+  },
+  "hold": {
+   "capital": 10000.0,
+   "value": 9984.75,
+   "cash": 0.1,
+   "realized": 0.0,
+   "fees": 9.99,
+   "return_pct": -0.15,
+   "last_rebalance": "2026-11-09T14:07:39+00:00",
+   "positions": [
+    {
+     "coin": "BTC",
+     "qty": 0.13392146103543462,
+     "avg": 74595.28900499998,
+     "last": 74556.01,
+     "value": 9984.65,
+     "pnl": -5.26,
+     "pnl_pct": -0.05,
+     "day_pct": -1.817,
+     "opened": "2026-11-09T14:07:39+00:00"
+    }
+   ]
+  }
+ },
+ "equity": [
+  {
+   "time": "2026-11-09T14:07:40+00:00",
+   "btc": "74556.01",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "9984.75"
+  }
+ ],
+ "trades": [
+  {
+   "arm": "hold",
+   "time": "2026-11-09T14:07:39+00:00",
+   "coin": "BTC",
+   "side": "BUY",
+   "qty": "0.13392146",
+   "price": "74595.289005",
+   "value": "9989.91",
+   "fee": "9.9899",
+   "pnl": "",
+   "reason": "benchmark: buy and hold BTC"
+  }
+ ],
+ "gates": [],
+ "strategy": {
+  "mode": "trend",
+  "coins": [
+   "BTC",
+   "ETH"
+  ],
+  "trend_sma": 50,
+  "rebalance_days": 1,
+  "drift": 0.05
+ }
+}

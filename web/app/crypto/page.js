@@ -6,7 +6,7 @@ import { fmt, load } from "@/lib/data";
 
 export const metadata = { title: "Crypto desk" };
 
-const NAMES = { main: "LLM-gated momentum", control: "Rules-only momentum", hold: "BTC buy and hold" };
+const NAMES = { main: "LLM-gated trend", control: "Rules-only trend", hold: "BTC buy and hold" };
 
 function chartData(c) {
   const rows = (c.equity || []).map((r) => ({ t: new Date(r.time).getTime(), btc: +r.btc, main: +r.main, control: +r.control, hold: +r.hold }))
@@ -37,13 +37,16 @@ export default function Crypto() {
             <span className="label">Binance spot · USDT · paper money · runs 24/7</span>
             <h1>Crypto desk</h1>
             <p className="sub">
-              Momentum with a trend filter, tested before it went live (see the{" "}
-              <a className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-desk.md">desk notes</a>).
-              Every {s.rebalance_days ?? 7} days the desk holds the top {s.top_k ?? 3} of the 20 most-traded coins by{" "}
-              {s.lookback ?? 90}-day return{s.risk_adjusted ? " per unit of volatility" : ""}, each above its {s.coin_trend_sma ?? 50}-day average,
-              and goes to USDT while BTC is below its {s.regime_sma ?? 100}-day average.
-              {s.core_btc ? ` ${Math.round(s.core_btc * 100)}% always sits in BTC.` : ""}{" "}
-              The LLM-gated account can cut exposure or exclude coins around risky events. The control follows the rules
+              {s.mode === "trend" ? (
+                <>Trend-following on {(s.coins || ["BTC", "ETH"]).join(" and ")}: each coin gets an equal share while its daily close is
+                  above its {s.trend_sma ?? 50}-day average, otherwise that share sits in USDT. It is checked daily.</>
+              ) : (
+                <>Every {s.rebalance_days ?? 7} days the desk holds the top {s.top_k ?? 3} of the 20 most-traded coins by {s.lookback ?? 90}-day return,
+                  each above its own trend average, and goes to USDT while BTC is below its {s.regime_sma ?? 100}-day average.</>
+              )}{" "}
+              It was chosen by a test with a design period and an untouched test period; altcoin momentum lost money in the
+              test (see the <a className="accent" href="https://github.com/DharmikGohil/LLMTrading/blob/main/docs/crypto-desk.md">desk notes</a>).
+              The LLM-gated account can cut exposure or exclude coins around risky events, the control follows the rules
               alone, and buying and holding BTC is the benchmark both must beat.
             </p>
           </div>
@@ -87,7 +90,7 @@ export default function Crypto() {
         </div>
         <p className="muted" style={{ fontSize: 12.5, marginTop: 12 }}>
           Prices and account values on this page update live from Binance every 10 seconds. Trades happen only at the desk&apos;s
-          scheduled runs, on GitHub Actions: a daily rebalance check at 00:10 UTC and a gate and equity check every 2 hours.
+          scheduled runs on GitHub Actions: a daily rebalance check at 00:10 UTC (05:40 IST), and a gate and equity check every 2 hours.
           Indian crypto tax (30% plus cess on every gain, no loss set-off) is not deducted here; see the{" "}
           <Link className="accent" href="/research">research</Link> for after-tax results.
         </p>

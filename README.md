@@ -128,6 +128,7 @@ docs/             Architecture, strategy, operations, CLI, live trading, researc
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
 | [Kronos test](docs/kronos.md) | Walk-forward check of the Kronos candlestick model on Nifty, stocks and SPY |
 | [Technical analysis](docs/technical-analysis.md) | How the desk reads a chart (EMA, RSI, MACD, Bollinger, levels, candles) and what the evidence says |
+| [Crypto desk](docs/crypto-desk.md) | How the crypto strategy was chosen (altcoin momentum vs trend, design vs test) and how the 24/7 desk runs |
 | [Crypto backtest](docs/crypto-backtest.md) | BTC trend and altcoin momentum vs buy-and-hold, 2020-2026, with Indian crypto tax |
 | [Backtest forensics](docs/backtest-forensics.md) | Survivorship, costs and timing audit of the momentum backtest |
 | [OI build-up test](docs/oi-buildup.md) | Does the F&O open-interest build-up ("order-flow board") predict returns? 2023-2026 |

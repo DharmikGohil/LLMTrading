@@ -8,6 +8,10 @@ Desk activity (trades, reviews) is not listed; it is in `paper/`, `journal/` and
 ### Added
 - Kronos walk-forward test (`scripts/kronos_eval.py`, `scripts/kronos_score.py`, `docs/kronos.md`): not adopted;
   its 80% bands held 46% of outcomes and its target-first odds scored worse than the base rate.
+- Crypto paper desk (`indtrader/crypto.py`, `.github/workflows/crypto-desk.yml`, `/crypto` page,
+  `analyst/CRYPTO_PLAYBOOK.md`, `docs/crypto-desk.md`): BTC + ETH 50-day trend with an LLM gate, a rules-only
+  control and BTC buy-and-hold, 10,000 USDT each, running 24/7 on GitHub Actions. Altcoin momentum was rejected: it
+  won 2020-22 but lost money in the untouched 2023-26 test.
 - Chart reading: `indtrader/signals/chart.py` (MACD, Bollinger Bands, support/resistance from swing points,
   candlestick patterns) feeds a `chart` block into `indtrader brief`; each stock page on the site has a daily
   candlestick chart with EMA 20/50, SMA 200, Bollinger, levels, volume, RSI, MACD and a plain-English chart read

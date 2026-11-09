@@ -1,0 +1,2 @@
+arm,time,coin,side,qty,price,value,fee,pnl,reason
+hold,2026-11-09T14:07:39+00:00,BTC,BUY,0.13392146,74595.289005,9989.91,9.9899,,benchmark: buy and hold BTC
