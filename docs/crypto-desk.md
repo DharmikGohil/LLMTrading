@@ -81,3 +81,29 @@ exposure or exclude a coin.
 **Judged on:**
 - `main` against `control`: does the LLM gate add anything?
 - both against `hold`, after Indian tax, out of sample, before any real money.
+
+## The learning loop
+
+The desk trades about once a day, which is too rarely to learn from. So the analyst also makes small, checkable
+forecasts at 05:05, 13:05 and 23:05 IST (`indtrader crypto-forecast`): the probability that BTC and ETH are higher
+24 hours later (and 7 days later at 05:05), and an 80% price range. Code: `indtrader/crypto_learn.py`; data:
+`paper/crypto/learn/`.
+
+- **Fact sheet** (`indtrader crypto-brief`): price, 24h/7d/30d change, distance from the 50- and 200-day averages,
+  RSI, volatility, the Fear & Greed index (alternative.me), OKX perpetual funding, and market-state **tags**
+  computed from the data (`below_50d`, `fg_extreme_fear`, `funding_high`, `vol_high`, `big_move_24h`, ...).
+- **Baseline:** every call is stored next to a no-skill call made at the same moment: 50% up, and a range of
+  ±1.28 × daily volatility × √(days). Skill means beating it.
+- **Scoring** (every 2 hours on GitHub Actions, `indtrader crypto-score`): the price at the due time from Binance's
+  1-minute bars; the Brier score (squared error of the probability; lower is better; 0.25 for a coin flip), range
+  coverage (should be about 80%), the pinball loss of the range, calibration, and the same broken down by tag.
+- **Significance:** the LLM-minus-baseline Brier difference gets a Newey-West t-statistic, because calls 8 hours apart
+  with a 24-hour horizon overlap. Under 30 calls the verdict is "too few to tell".
+- **Lessons** (`journal/crypto_lessons.json`): each lesson names one tag, a horizon and what it expects: `llm`
+  lessons claim the analyst is `worse` or `better` than the baseline under that tag; `market` lessons claim the
+  price went `up` or `down` more often than half the time. `indtrader crypto-learn` recounts the evidence from the
+  scores and sets the status: confirmed at 30+ calls and |t| ≥ 2 in the claimed direction, retired when it turns
+  the other way. The analyst writes the words; the data decides the status. Seeded with six hypotheses: fear
+  rebounds, greed pullbacks, crowded longs, downtrends persisting, overconfidence in high volatility, chasing big
+  moves.
+

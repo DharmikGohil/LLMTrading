@@ -59,8 +59,9 @@ playbooks in [`analyst/`](analyst). The crypto desk runs 24/7 on GitHub Actions.
 
 | Time | Desk | Run |
 |---|---|---|
-| 05:05 IST | Crypto | Claude's risk gate for the day ([playbook](analyst/CRYPTO_PLAYBOOK.md)) |
-| 05:40 IST, then every 2 h | Crypto | Daily rebalance check; gate and equity checks (GitHub Actions) |
+| 05:05 IST | Crypto | Claude's risk gate for the day, plus 24h and 7-day forecasts ([playbook](analyst/CRYPTO_PLAYBOOK.md)) |
+| 13:05 · 23:05 IST | Crypto | 24h forecasts for BTC and ETH (the learning loop) |
+| 05:40 IST, then every 2 h | Crypto | Daily rebalance check; gate and equity checks; grading of every forecast that is due (GitHub Actions) |
 | 07:40 IST | India | Analyst reviews the screen's candidates and writes sourced ratings, a chart read and a bear case |
 | 09:16 · 12:35 · 15:05 IST | India + options | Trade · monitor · close (equity, graded review, lessons); options gate and condor entries |
 | Market hours | Options | One-minute exit monitor for the condors and the ₹1,000 test |
@@ -74,6 +75,16 @@ DP charges, NSE tick bands and holidays, ASM/GSM surveillance lists, results bla
 
 **Learns in public.** Every close writes a graded review. Patterns become lessons only after three supporting cases,
 and every analyst run reads the lesson book first.
+
+**The crypto learning loop.** The model is never retrained; it learns the way a reinforcement-learning agent would
+with a memory instead of weight updates. Three times a day Claude makes small, checkable calls: the chance BTC and ETH
+are higher in 24 hours (and in 7 days), and an 80% price range. Each call is stored next to a no-skill baseline (50/50,
+with a range from recent volatility) and graded automatically when its time is up (Brier score, range coverage,
+calibration, a t-statistic that allows for overlapping calls). Lessons in
+[`journal/crypto_lessons.json`](journal/crypto_lessons.json) are tied to a measurable market state (extreme fear,
+crowded longs, high volatility, a big 24h move, ...). Their evidence is counted from the scores, never by hand, so a
+lesson is confirmed only with 30+ calls and |t| ≥ 2, and retired when the data turns against it. The scorecard and the
+lessons are on the [crypto page](https://llmtrading.dharmikgohil.in/crypto).
 
 ## The website
 
@@ -125,6 +136,8 @@ indtrader brief RELIANCE,TCS        # fact sheet: technicals, chart read, NSE fi
 indtrader costs 2500 40             # round-trip charges and break-even move
 indtrader backtest --start 2024-01-01
 indtrader crypto-status             # the crypto desk's accounts
+indtrader crypto-brief              # fact sheet: trend, volatility, Fear & Greed, funding, the scorecard and lessons
+indtrader crypto-learn              # forecast scorecard against the no-skill baseline; updates the lessons' evidence
 ```
 
 The site: `cd web && npm ci && npm run dev`. Every command: [CLI reference](docs/cli.md).
@@ -158,7 +171,7 @@ docs/             Architecture, strategy, operations, CLI, research and every st
 | [Going live](docs/live-trading.md) | Brokers, data sources, SEBI algo rules, a checklist before real money |
 | [Research](docs/research.md) | The evidence behind the design, and the projects it borrows from |
 | [Technical analysis](docs/technical-analysis.md) | How the desk reads a chart (EMA, RSI, MACD, Bollinger, levels, candles) and what the evidence says |
-| [Crypto desk](docs/crypto-desk.md) | How the crypto strategy was chosen (design vs test period) and how the 24/7 desk runs |
+| [Crypto desk](docs/crypto-desk.md) | How the crypto strategy was chosen (design vs test period), how the 24/7 desk runs, and the learning loop |
 | [Crypto backtest](docs/crypto-backtest.md) | BTC trend and altcoin momentum vs buy and hold, 2020-2026, with Indian crypto tax |
 | [Options backtest](docs/options-backtest.md) | Nifty, Bank Nifty and Fin Nifty iron condors and option buying, 2020-2026 |
 | [Backtest forensics](docs/backtest-forensics.md) | Survivorship, costs and timing audit of the momentum backtest |
