@@ -1,0 +1,12 @@
+{
+  "symbol": "MAHABANK",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 8). Q2 FY27 on 26 Oct: net profit Rs 2,310 cr (+41%), NII +22%, net NPA 0.12%, CAR 18.5% (BusinessToday; PSU Connect). RSI 62.8, template 7/7; high volatility (36%) is sized by the stop. No red flag.",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T07:43:16+05:30"
+}

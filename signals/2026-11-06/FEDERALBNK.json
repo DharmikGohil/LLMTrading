@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Trend repaired: template back to 7/7, above EMA50, RSI 52.5 (brief). Investor meet scheduled 8 Nov (NSE). No red flag.",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T07:43:15+05:30"
+}

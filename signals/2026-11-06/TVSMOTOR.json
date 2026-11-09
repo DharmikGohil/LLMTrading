@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. +7% in a week, RSI 72, template 7/7. No red flag found.",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T07:43:17+05:30"
+}
