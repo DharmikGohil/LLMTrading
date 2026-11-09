@@ -2,7 +2,8 @@ name: Crypto desk
 
 # The crypto paper desk runs here, around the clock, instead of in the scheduled Claude sessions (whose container
 # restarts several times a day). Daily at 00:10 UTC: the rebalance. Every 2 hours: apply the analyst's
-# gate to the LLM-gated account (risk can only go down) and record equity. State lives in paper/crypto/.
+# gate to the LLM-gated account (risk can only go down), record equity, and grade the analyst's forecasts
+# (paper/crypto/learn/). State lives in paper/crypto/.
 on:
   schedule:
     - cron: "10 0 * * *"
@@ -40,13 +41,16 @@ jobs:
           else
             indtrader crypto-check
           fi
+          # grade every forecast whose time has come, and update the lesson book's evidence from the scores
+          indtrader crypto-score || echo "scoring failed; will retry next run"
+          indtrader crypto-learn > /dev/null || echo "lesson update failed"
           indtrader crypto-export --out public
           cp public/crypto.json web/data/crypto.json
       - name: Commit and push
         run: |
           git config user.name "dharmikgohil"
           git config user.email "gohildharmik2020@gmail.com"
-          git add paper/crypto public/crypto.json web/data/crypto.json
+          git add paper/crypto public/crypto.json web/data/crypto.json journal/crypto_lessons.json
           git diff --cached --quiet && exit 0
           git commit -m "Crypto desk $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
           for i in 1 2 3 4; do

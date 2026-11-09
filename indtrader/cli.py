@@ -634,9 +634,61 @@ def crypto_status():
 
 @app.command("crypto-export")
 def crypto_export(out: str = typer.Option("public", help="output folder")):
-    """Write public/crypto.json for the site."""
+    """Write public/crypto.json for the site (desk accounts plus the forecast scorecard)."""
     snap = _crypto_desk().export(Path(out))
+    f = Path(out) / "crypto.json"
+    data = json.loads(f.read_text())
+    data["learn"] = _learner().export()
+    f.write_text(json.dumps(data, indent=1, default=str))
     typer.echo("crypto: " + ", ".join(f"{a} {b['value']:,.2f}" for a, b in snap["books"].items()))
+
+
+def _learner():
+    from indtrader.crypto_learn import Learner
+
+    return Learner(CRYPTO_DIR)
+
+
+@app.command("crypto-brief")
+def crypto_brief(coins: str = typer.Option("BTC,ETH", help="comma-separated coins")):
+    """Fact sheet for the analyst's forecasts: price, trend, volatility, Fear & Greed, funding, market-state tags,
+    the no-skill baseline call, the scorecard so far, and the crypto lesson book."""
+    b = _learner().brief([c.strip().upper() for c in coins.split(",") if c.strip()])
+    typer.echo(json.dumps(b, indent=1, default=str))
+
+
+@app.command("crypto-forecast")
+def crypto_forecast(
+    coin: str = typer.Option(..., help="BTC or ETH"),
+    horizon: int = typer.Option(24, help="hours ahead: 24 or 168"),
+    p_up: float = typer.Option(..., help="your probability that the price is higher at the horizon, 0.01-0.99"),
+    lo: float = typer.Option(..., help="price you are 90% sure it stays above (the 10th percentile)"),
+    hi: float = typer.Option(..., help="price you are 90% sure it stays below (the 90th percentile)"),
+    note: str = typer.Option(..., help="your reasons, with sources and dates"),
+):
+    """Record one scorable forecast. A no-skill baseline call is recorded at the same moment for comparison."""
+    rows = _learner().record(coin, horizon, p_up, lo, hi, note)
+    for r in rows:
+        typer.echo(f"{r['source']:5} {r['coin']} {r['horizon_h']}h  spot {r['spot']}  P(up) {r['p_up']}  "
+                   f"range {r['lo']}-{r['hi']}  due {r['due']}")
+
+
+@app.command("crypto-score")
+def crypto_score():
+    """Grade every forecast whose time has come (run by the crypto workflow every 2 hours)."""
+    rows = _learner().score()
+    typer.echo(f"scored {len(rows)}")
+
+
+@app.command("crypto-learn")
+def crypto_learn(update: bool = typer.Option(True, help="update the evidence and status of journal/crypto_lessons.json")):
+    """The scorecard (Brier score against the baseline, coverage, calibration, by market state) and the lessons."""
+    ln = _learner()
+    if update:
+        ln.update_lessons()
+    typer.echo(json.dumps({"scorecard": ln.summary(),
+                           "lessons": json.loads(ln.lessons.read_text()) if ln.lessons.exists() else []},
+                          indent=1, default=str))
 
 
 @app.command()
