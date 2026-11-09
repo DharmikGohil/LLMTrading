@@ -1,0 +1,12 @@
+{
+  "symbol": "AMGN",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 beat on 3 Nov: revenue +8%, non-GAAP EPS +14% (SEC 8-K; RTTNews). No red flag. Bear case: guidance change not verified; the post-results pop (+3%) can fade.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T09:52:02-05:00"
+}

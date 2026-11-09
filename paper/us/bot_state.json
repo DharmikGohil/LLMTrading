@@ -59,7 +59,7 @@
     "DE": {
       "qty": 1,
       "avg": 679.39,
-      "stop": 607.58,
+      "stop": 610.89,
       "target": 8154.81,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-06",
-    "start_equity": 9801.22,
+    "date": "2026-11-09",
+    "start_equity": 9941.52,
     "orders": 0,
     "partial": false
   },

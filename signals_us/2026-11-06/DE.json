@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Fiscal Q4 results expected 25 Nov 2026, 12 trading days away. No new red flag. Bear case: ag-equipment cycle and tariff costs flagged by the company for FY26.",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T09:52:01-05:00"
+}

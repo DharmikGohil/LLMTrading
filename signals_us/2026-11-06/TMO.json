@@ -1,0 +1,12 @@
+{
+  "symbol": "TMO",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Next results 28 Jan 2027. No red flag. Bear case: life-science tools spending is sensitive to biotech funding and China demand.",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T09:52:00-05:00"
+}

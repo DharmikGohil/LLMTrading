@@ -1,0 +1,12 @@
+{
+  "symbol": "XOM",
+  "as_of": "2026-11-06",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Q3 reported 30 Oct (ExxonMobil IR); figures not verified. No red flag found. Bear case: oil-price exposure; stocks fell on 2 Nov on hopes of lower oil prices (Yahoo market live coverage).",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-09T09:52:01-05:00"
+}
