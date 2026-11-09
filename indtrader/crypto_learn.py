@@ -131,6 +131,20 @@ def nw_tstat(x: np.ndarray, lags: int) -> float:
     return float(x.mean() / se)
 
 
+def overlap_lags(made: list[str], horizon_h: float) -> int:
+    """Newey-West lags for overlapping calls: how many calls, on average, fall inside one horizon window.
+
+    BTC and ETH calls are pooled and runs are not evenly spaced, so the lag is counted from the actual timestamps
+    rather than assumed from the schedule (6 calls a day with a 24h horizon -> 5 lags, not 2)."""
+    if len(made) < 2:
+        return 0
+    t = sorted(datetime.fromisoformat(m) for m in made)
+    span_h = (t[-1] - t[0]).total_seconds() / 3600
+    if span_h <= 0:
+        return len(t) - 1
+    return max(0, math.ceil(len(t) * horizon_h / span_h) - 1)
+
+
 def hac_slope_t(y: np.ndarray, d: np.ndarray, lags: int) -> float:
     """t-statistic of b in y = a + b*d + e, with a Newey-West (HAC) covariance. b is the difference in means."""
     X = np.column_stack([np.ones_like(d), d])
@@ -270,7 +284,7 @@ class Learner:
         if j.empty:
             return {"n": 0, "verdict": "no scored calls yet"}
         diff = (j["brier_base"] - j["brier"]).to_numpy()          # > 0: the LLM beat the baseline
-        lags = max(0, math.ceil(horizon_h / 8) - 1)                # calls ~8h apart overlap for horizon_h hours
+        lags = overlap_lags(list(j["made"]), horizon_h)            # overlapping horizons, BTC and ETH pooled
         t = nw_tstat(diff, lags)
         n = len(j)
         verdict = ("too few calls to tell" if n < MIN_N else "LLM beats the baseline" if t >= MIN_T
@@ -315,7 +329,7 @@ class Learner:
                "up_pct": round(100 * float(y[d == 1].mean()), 1) if n_tag else None,
                "other_up_pct": round(100 * float(y[d == 0].mean()), 1) if n_other else None, "t": None}
         if n_tag >= 3 and n_other >= 3:
-            out["t"] = round(hac_slope_t(y, d, max(0, math.ceil(horizon_h / 8) - 1)), 2)
+            out["t"] = round(hac_slope_t(y, d, overlap_lags([r["made"] for r in rows], horizon_h)), 2)
         return out
 
     # -- 5. lessons: text by the analyst, evidence by the data

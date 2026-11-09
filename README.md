@@ -119,6 +119,10 @@ holding the index (or BTC) after costs and tax:
 | [Kronos forecasts](docs/kronos.md) | Its 80% price bands held only 46% of outcomes; its odds scored worse than the base rate |
 | [Technical analysis](docs/technical-analysis.md) | RSI, MACD, Bollinger and candle rules mostly do not beat buy and hold after costs; they are used as reading aids |
 
+Before any real money, every desk has to pass the [go-live checklist](docs/go-live-checklist.md): numeric evidence that
+it beats the cheap alternative after costs and tax, that the result is not luck, and that the owner is ready. No desk
+passes today. The [test plan](docs/test-plan.md) lists the next tests, crypto first.
+
 The LLM layer cannot be backtested honestly (models have seen the past), so it is judged only on forward paper
 trading against its account without LLM. Live numbers are on the [site](https://llmtrading.dharmikgohil.in).
 
@@ -164,6 +168,9 @@ docs/             Architecture, strategy, operations, CLI, research and every st
 
 | Guide | What it covers |
 |---|---|
+| [Trading knowledge](docs/trading-knowledge.md) | Plain-English guide: crypto first, chart patterns, data beyond price, crowd emotion and our own biases, costs and tax, luck vs skill, what the evidence says about each |
+| [Test plan](docs/test-plan.md) | Pre-registered tests (crypto first): exact rules, data, design/test split, pass/fail lines decided before running |
+| [Go-live checklist](docs/go-live-checklist.md) | The gate between paper and real money: numeric criteria per desk, your own readiness, staged start, sizing, owner rules, SEBI and tax notes |
 | [Architecture](docs/architecture.md) | Modules, data flow, safety design, the site |
 | [Strategy](docs/strategy.md) | Screen, hybrid veto, sizing, stops, regime filter, backtests, learning loop |
 | [Operations](docs/operations.md) | Scheduled desks, playbooks, state in git, running your own desk |

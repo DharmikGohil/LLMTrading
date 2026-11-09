@@ -6,7 +6,7 @@ import pandas as pd
 import pytest
 
 from indtrader import crypto_learn
-from indtrader.crypto_learn import Learner, baseline, nw_tstat, state
+from indtrader.crypto_learn import Learner, baseline, nw_tstat, overlap_lags, state
 
 
 class FakeAPI:
@@ -140,3 +140,13 @@ def test_market_lesson_needs_a_contrast_not_a_coin_flip(tmp_path):
     crypto_learn._append(ln.sc, crypto_learn.SC_COLS, rows)
     le = ln.update_lessons()[0]
     assert le["status"] == "hypothesis" and le["evidence"]["t"] is None
+
+
+def test_overlap_lags_count_pooled_calls_from_timestamps():
+    t0 = datetime(2026, 1, 1, tzinfo=UTC)
+    # three runs a day, two coins each, for 10 days: about 6 calls inside any 24h window
+    made = [(t0 + timedelta(hours=h)).isoformat() for d in range(10) for h in (24 * d + 0, 24 * d + 8, 24 * d + 18)
+            for _ in ("BTC", "ETH")]
+    assert overlap_lags(made, 24) in (5, 6)                       # rounding up is the cautious side
+    assert overlap_lags(made, 168) > 30
+    assert overlap_lags(made[:1], 24) == 0

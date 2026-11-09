@@ -35,15 +35,18 @@ indtrader crypto-brief          # the fact sheet: read all of it before forecast
   leveraged longs are)
 - **tags**: the market state, computed from the data (for example `below_50d`, `fg_fear`, `vol_high`)
 - **the baseline call** for 24h and 168h: 50% up, and an 80% range from recent volatility. This is what a forecaster
-  with no skill would say. You are scored against it.
+  with no skill would say. You are scored against it. At its checkpoints, test M-C1 also scores you against the
+  market's own drift (the share of up periods over the past year; the fact sheet's `up_days_365_pct` for 1 day), so
+  leaning up every day in a rising market is not skill.
 - **the scorecard so far** (Brier score, lower is better; skill % against the baseline; range coverage; calibration;
   the same split by tag) and **the lesson book** (`journal/crypto_lessons.json`)
 
 Apply the lessons:
 - A **confirmed** `llm` lesson ("my calls are worse than the baseline when the tag X is on"): when X is on today, stay
   at or very near the baseline (p_up within 0.45-0.55, baseline range).
-- A **confirmed** `market` lesson ("under tag X the price rose/fell more often than not"): you may lean that way
-  when X is on, by at most 0.10 from 0.5 unless other evidence agrees.
+- A **confirmed** `market` lesson ("under tag X the price rose (or fell) more often than on the other calls of the
+  same period"; the scorer compares with that up-rate, not with 50%): you may lean that way when X is on, by at
+  most 0.10 from 0.5 unless other evidence agrees.
 - **Hypotheses** are unproven: do not lean on them.
 
 ## 2. Check the next 24-48 hours for events (web search, cite sources and dates)
@@ -71,6 +74,12 @@ indtrader crypto-forecast --coin BTC --horizon 24 --p-up 0.55 --lo 73200 --hi 76
   - *Anchoring:* am I repeating my previous call instead of re-reading today's facts?
   - *Herding/FOMO:* am I following the crowd's mood? Fear & Greed is a fact to weigh, not a feeling to share.
   - *Overconfidence:* would I really bet at these odds? Write the bull case **and** the bear case in the note.
+  - *Results-chasing:* is a good or bad week for the accounts or the scorecard changing my calls? It should not.
+- **Chart claims are context only** until their tests in `docs/test-plan.md` report: support/resistance (H10c),
+  round numbers (H19c), double tops and head-and-shoulders (H9c). Describe them if useful, but never move `--p-up`
+  or set the gate because of one, and never quote a pattern book's "success rate" as odds. In one study of intraday
+  currency data (1996-98), arbitrary levels "held" 56% of the time, against 61% for levels published by trading
+  firms (Osler 2000); our crypto rate is unknown until H10c.
 - One call per coin and horizon every 6 hours at most (the tool refuses repeats). Never delete or edit a forecast.
 
 ## 4. The gate (05:05 run only)
@@ -82,9 +91,12 @@ indtrader crypto-forecast --coin BTC --horizon 24 --p-up 0.55 --lo 73200 --hi 76
 | Systemic stress (an exchange failure, a stablecoin de-peg, BTC −15% in 24h) | `--exposure 0` |
 
 ```bash
-indtrader crypto-gate --exposure 1 --exclude "" --note "No material events in the next 24-48h: next FOMC <date> (Fed calendar), no unlocks over 2% for BTC/ETH."
+indtrader crypto-gate --exposure 1 --exclude "" --note "Reason: none. Fear & Greed <value> (alternative.me, <date>). No material events in the next 24-48h: next FOMC <date> (Fed calendar), no unlocks over 2% for BTC/ETH."
 ```
 Every note cites its sources and dates. **No invented facts.** If you cannot verify an event, do not act on it.
+Extreme fear or greed is a mood, not a gate row: on its own it never lowers `--exposure` (test H6 audits gate
+actions taken in fear). Start each gate note with `Reason: none|macro|coin|stress` and today's Fear & Greed value,
+so test M-C2 can grade each reason type.
 
 ## 5. Lesson review (Sunday's 05:05 run)
 ```bash
@@ -96,6 +108,15 @@ indtrader crypto-learn          # updates each lesson's evidence from the scores
 - You may add at most **two** new hypotheses a week, each tied to one existing tag, with `kind` (`llm` or
   `market`), `horizon_h` (24 or 168), `expect` (`worse`/`better` for `llm`, `up`/`down` for `market`) and a
   `source`. Base them on the by-tag scorecard or on published evidence, not on one memorable day.
+- A confirmed lesson guides your forecasts only. Using it for the gate, the trading rule or the go-live case needs
+  the stricter M-C1 bar in `docs/test-plan.md` (at least 30 distinct days, 3 separate episodes, a t of 3 or more on
+  the daily series, and the same sign in both halves of the data and for BTC and ETH separately).
+- The forecast record gets a verdict only at the M-C1 checkpoints (7 Feb 2027, 8 May 2027, then every 90 days).
+  Until then, report the running scorecard without calling it skill or failure. If a checkpoint says "worse than no
+  skill" for a horizon, stay at the baseline for that horizon (p_up 0.45-0.55, baseline range) until the next one.
+  A better Brier score is not profit: money still has to survive costs and India's crypto tax (30% plus 4% cess,
+  31.2%, more with surcharge at high incomes, no loss set-off). Never suggest real orders, more capital or a looser
+  gate.
 - Write three lines in the run summary: what the scorecard says, which lessons changed, what you will do
   differently.
 
