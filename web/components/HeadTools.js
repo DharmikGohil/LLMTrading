@@ -32,6 +32,7 @@ export function ThemeToggle() {
   const flip = () => {
     const n = t === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = n;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", n === "dark" ? "#0c0b14" : "#f3f2f8");
     try { localStorage.setItem("theme", n); } catch {}
     setT(n);
   };

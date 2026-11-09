@@ -14,15 +14,10 @@ export const metadata = {
   description: "Paper trading desks run by Claude: India and US stocks, Nifty options and crypto. A rules-based strategy run with and without an LLM that can only make it safer, to measure whether the LLM helps.",
 };
 
-export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f2f8" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c0b14" },
-  ],
-};
+export const viewport = { themeColor: "#f3f2f8" };
 
 // set the theme before first paint (light unless the visitor chose dark)
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m&&t==="dark")m.content="#0c0b14"}catch(e){}`;
 
 export default function RootLayout({ children }) {
   const data = load();

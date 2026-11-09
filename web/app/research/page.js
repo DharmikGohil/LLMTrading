@@ -39,7 +39,7 @@ export default function Research() {
               { key: "variant", label: "Variant", render: (r) => <span>{r.variant}{r.id === "slow_sepa" ? <span className="chip llm" style={{ marginLeft: 8 }}>live</span> : null}</span> },
               { key: "universe", label: "Universe" },
               { key: "return_pct", label: "Return", n: true, render: (r) => <b className={fmt.tone(r.return_pct)}>{fmt.pct(r.return_pct)}</b> },
-              { key: "max_drawdown_pct", label: "Max drawdown", n: true, render: (r) => <span className="down">{fmt.pct(r.max_drawdown_pct)}</span> },
+              { key: "max_drawdown_pct", label: "Max drawdown", n: true, render: (r) => (r.max_drawdown_pct == null ? <span className="muted">—</span> : <span className="down">{fmt.pct(r.max_drawdown_pct)}</span>) },
               { key: "trades", label: "Trades", n: true },
               { key: "charges_inr", label: "Charges ₹", n: true, render: (r) => fmt.num(r.charges_inr, 0) },
               { key: "windows_beating_index", label: "Windows beating Nifty", n: true },

@@ -5,7 +5,7 @@ import { fmt } from "@/lib/fmt";
 
 const RANGES = [["3M", 63], ["6M", 126], ["1Y", 252], ["2Y", 9999]];
 const OVERLAYS = [
-  ["ema20", "EMA 20", "var(--s-factor)"],
+  ["ema20", "EMA 20", "var(--ink)"],
   ["ema50", "EMA 50", "var(--accent)"],
   ["sma200", "SMA 200", "var(--ink-2)"],
   ["bb", "Bollinger 20,2", "var(--muted)"],
@@ -188,7 +188,7 @@ export default function PriceChart({ market, sym, avg, stop, cur = "" }) {
         <span>{new Date(hb.t).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</span>
         <span>O {fmt.num(hb.o)}</span><span>H {fmt.num(hb.h)}</span><span>L {fmt.num(hb.l)}</span>
         <span>C <b className={fmt.tone(chg)}>{fmt.num(hb.c)} ({fmt.pct(chg)})</b></span>
-        {on.ema20 && ind.ema20[hiAbs] ? <span style={{ color: "var(--s-factor)" }}>EMA20 {fmt.num(ind.ema20[hiAbs])}</span> : null}
+        {on.ema20 && ind.ema20[hiAbs] ? <span style={{ color: "var(--ink)" }}>EMA20 {fmt.num(ind.ema20[hiAbs])}</span> : null}
         {on.ema50 && ind.ema50[hiAbs] ? <span style={{ color: "var(--accent)" }}>EMA50 {fmt.num(ind.ema50[hiAbs])}</span> : null}
         {on.sma200 && ind.sma200[hiAbs] ? <span>SMA200 {fmt.num(ind.sma200[hiAbs])}</span> : null}
         {on.rsi && ind.rsi[hiAbs] != null ? <span>RSI {ind.rsi[hiAbs].toFixed(1)}</span> : null}
@@ -217,12 +217,11 @@ export default function PriceChart({ market, sym, avg, stop, cur = "" }) {
             return (
               <g key={`${l.price}`}>
                 <line x1={m.l} x2={m.l + pw} y1={y(l.price)} y2={y(l.price)} stroke={isRes ? "var(--down)" : "var(--up)"} strokeWidth={Math.min(2.5, 0.6 + l.touches * 0.25)} strokeDasharray="6 4" opacity="0.7" />
-                <text x={m.l + 4} y={y(l.price) - 3} className="halo" style={{ fill: isRes ? "var(--down)" : "var(--up)" }}>{isRes ? "R" : "S"} {fmt.num(l.price)} ×{l.touches}</text>
               </g>
             );
           })}
-          {avg ? <g><line x1={m.l} x2={m.l + pw} y1={y(avg)} y2={y(avg)} stroke="var(--accent)" strokeWidth="1" /><text x={m.l + pw - 4} y={y(avg) - 3} textAnchor="end" className="halo" style={{ fill: "var(--accent)" }}>avg cost {fmt.num(avg)}</text></g> : null}
-          {stop ? <g><line x1={m.l} x2={m.l + pw} y1={y(stop)} y2={y(stop)} stroke="var(--down)" strokeWidth="1.2" /><text x={m.l + pw - 4} y={y(stop) + 11} textAnchor="end" className="halo" style={{ fill: "var(--down)" }}>stop {fmt.num(stop)}</text></g> : null}
+          {avg ? <line x1={m.l} x2={m.l + pw} y1={y(avg)} y2={y(avg)} stroke="var(--ink)" strokeWidth="1" /> : null}
+          {stop ? <line x1={m.l} x2={m.l + pw} y1={y(stop)} y2={y(stop)} stroke="var(--down)" strokeWidth="1.2" /> : null}
 
           {view.map((b, i) => {
             const upC = b.c >= b.o, col = upC ? "var(--up)" : "var(--down)";
@@ -234,7 +233,7 @@ export default function PriceChart({ market, sym, avg, stop, cur = "" }) {
               </g>
             );
           })}
-          {on.ema20 ? <path d={line(ind.ema20)} fill="none" stroke="var(--s-factor)" strokeWidth="1.4" /> : null}
+          {on.ema20 ? <path d={line(ind.ema20)} fill="none" stroke="var(--ink)" strokeWidth="1.2" opacity="0.75" /> : null}
           {on.ema50 ? <path d={line(ind.ema50)} fill="none" stroke="var(--accent)" strokeWidth="1.4" /> : null}
           {on.sma200 ? <path d={line(ind.sma200)} fill="none" stroke="var(--ink-2)" strokeWidth="1.4" strokeDasharray="5 3" /> : null}
           <g>
@@ -245,10 +244,9 @@ export default function PriceChart({ market, sym, avg, stop, cur = "" }) {
 
           {on.vol ? (
             <g>
-              <text x={m.l + 2} y={paneBox.vol + 9}>Vol</text>
               {view.map((b, i) => {
                 const h = (b.v / vmax) * (paneH - 4);
-                return <rect key={b.t} x={x(i) - bw / 2} y={paneBox.vol + paneH - h} width={bw} height={h} fill={b.c >= b.o ? "var(--up)" : "var(--down)"} opacity="0.45" />;
+                return <rect key={b.t} x={x(i) - bw / 2} y={paneBox.vol + paneH - h} width={bw} height={h} fill={b.c >= b.o ? "var(--up)" : "var(--down)"} opacity="0.7" />;
               })}
               <path d={paneLine(ind.vol50, (v) => paneBox.vol + paneH - (v / vmax) * (paneH - 4))} fill="none" stroke="var(--ink-2)" strokeWidth="1" />
             </g>
@@ -259,22 +257,31 @@ export default function PriceChart({ market, sym, avg, stop, cur = "" }) {
               {[30, 50, 70].map((v) => (
                 <g key={v}><line className="gl" x1={m.l} x2={m.l + pw} y1={yR(v)} y2={yR(v)} strokeDasharray={v === 50 ? "2 3" : undefined} /><text x={m.l + pw + 6} y={yR(v) + 3.5}>{v}</text></g>
               ))}
-              <text x={m.l + 2} y={paneBox.rsi + 9}>RSI 14</text>
-              <path d={paneLine(ind.rsi, yR)} fill="none" stroke="var(--s-main)" strokeWidth="1.3" />
+              <path d={paneLine(ind.rsi, yR)} fill="none" stroke="var(--accent)" strokeWidth="1.3" />
             </g>
           ) : null}
           {on.macd ? (
             <g>
               <line className="gl" x1={m.l} x2={m.l + pw} y1={yM(0)} y2={yM(0)} />
-              <text x={m.l + 2} y={paneBox.macd + 9}>MACD</text>
               {sl(ind.macd.hist).map((v, i) => (v == null ? null : (
-                <rect key={i} x={x(i) - bw / 2} y={Math.min(yM(0), yM(v))} width={bw} height={Math.abs(yM(v) - yM(0))} fill={v >= 0 ? "var(--up)" : "var(--down)"} opacity="0.5" />
+                <rect key={i} x={x(i) - bw / 2} y={Math.min(yM(0), yM(v))} width={bw} height={Math.abs(yM(v) - yM(0))} fill={v >= 0 ? "var(--up)" : "var(--down)"} opacity="0.7" />
               )))}
-              <path d={paneLine(ind.macd.line, yM)} fill="none" stroke="var(--s-factor)" strokeWidth="1.3" />
+              <path d={paneLine(ind.macd.line, yM)} fill="none" stroke="var(--ink)" strokeWidth="1.2" opacity="0.75" />
               <path d={paneLine(ind.macd.signal, yM)} fill="none" stroke="var(--accent)" strokeWidth="1.1" />
             </g>
           ) : null}
 
+          <g pointerEvents="none">
+            {srShow.map((l) => {
+              const isRes = l.price >= last;
+              return <text key={l.price} x={m.l + 4} y={y(l.price) - 3} className="halo" style={{ fill: isRes ? "var(--down)" : "var(--up)" }}>{isRes ? "R" : "S"} {fmt.num(l.price)} ×{l.touches}</text>;
+            })}
+            {avg ? <text x={m.l + pw - 4} y={y(avg) - 3} textAnchor="end" className="halo" style={{ fill: "var(--ink)" }}>avg cost {fmt.num(avg)}</text> : null}
+            {stop ? <text x={m.l + pw - 4} y={y(stop) + 11} textAnchor="end" className="halo" style={{ fill: "var(--down)" }}>stop {fmt.num(stop)}</text> : null}
+            {on.vol ? <text x={m.l + 2} y={paneBox.vol + 9} className="halo">Vol</text> : null}
+            {on.rsi ? <text x={m.l + 2} y={paneBox.rsi + 9} className="halo">RSI 14</text> : null}
+            {on.macd ? <text x={m.l + 2} y={paneBox.macd + 9} className="halo">MACD</text> : null}
+          </g>
           {hi != null ? (
             <g pointerEvents="none">
               <line className="xh" x1={x(hi)} x2={x(hi)} y1={m.t} y2={H - 18} />

@@ -13,7 +13,7 @@ export default function Payoff({ legs, spot, charges = 0, width = 560, height = 
   const pts = Array.from({ length: N + 1 }, (_, i) => { const s = lo + ((hi - lo) * i) / N; return [s, pnlAt(s)]; });
   const ys = pts.map((p) => p[1]);
   const ymax = Math.max(...ys, 0), ymin = Math.min(...ys, 0);
-  const m = { l: 56, r: 12, t: 12, b: 26 };
+  const m = { l: 72, r: 12, t: 12, b: 26 };
   const pw = width - m.l - m.r, ph = height - m.t - m.b;
   const x = (s) => m.l + ((s - lo) / (hi - lo)) * pw;
   const y = (v) => m.t + ((ymax - v) / (ymax - ymin || 1)) * ph;
@@ -25,7 +25,7 @@ export default function Payoff({ legs, spot, charges = 0, width = 560, height = 
   const breakevens = [];
   for (let i = 1; i < pts.length; i++) if ((pts[i - 1][1] < 0) !== (pts[i][1] < 0)) breakevens.push(pts[i][0]);
   return (
-    <div className="chart">
+    <div className="chart payoff">
       <svg width="100%" viewBox={`0 0 ${width} ${height}`} role="img"
         aria-label={`Profit or loss at expiry. Best case ${fmt.money(ymax, "₹", 0)}, worst case ${fmt.money(ymin, "₹", 0)}; breakevens ${breakevens.map((b) => b.toFixed(0)).join(" and ")}.`}>
         <path d={area(1)} fill="var(--up)" opacity="0.12" />

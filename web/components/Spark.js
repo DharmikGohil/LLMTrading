@@ -19,7 +19,7 @@ export default function Spark({ values, bench, w = 260, h = 44 }) {
   return (
     <div className="spark" aria-hidden="true">
       <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none">
-        {bench ? <path d={path(bench)} fill="none" stroke="var(--s-index)" strokeWidth="1.2" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.7" /> : null}
+        {bench ? <path d={path(bench)} fill="none" stroke="var(--s-index)" strokeWidth="1.2" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" /> : null}
         <path d={`${path(values.map((v) => v ?? pts[0]))}L${w},${h}L0,${h}Z`} fill={color} fillOpacity="0.08" stroke="none" />
         <path d={path(values)} fill="none" stroke={color} strokeWidth="2" vectorEffect="non-scaling-stroke" strokeLinejoin="round" strokeLinecap="round" />
       </svg>

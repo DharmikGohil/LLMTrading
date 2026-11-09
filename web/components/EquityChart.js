@@ -4,7 +4,10 @@ import { liveEquity, liveIndex, useLive } from "@/components/Live";
 
 const COLOR = { main: "var(--s-main)", factor: "var(--s-factor)", index: "var(--s-index)" };
 const RANGES = [["1D", 1], ["5D", 5], ["1M", 31], ["All", Infinity]];
-const STEPS = [0.01, 0.02, 0.05, 0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5, 10, 20, 25, 50, 100];
+const STEPS = [0.01, 0.02, 0.05, 0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000];
+// draw the benchmark first and the With-LLM (violet) line last, so it is never hidden under the control line
+const Z = { index: 0, factor: 1, main: 2 };
+const byZ = (a, b) => (Z[a.key] ?? 0) - (Z[b.key] ?? 0);
 
 const pct = (v) => {
   if (v == null) return "—";
@@ -15,7 +18,7 @@ const money = (v, sym) => `${sym}${Number(v).toLocaleString("en-IN", { maximumFr
 
 function niceTicks(lo, hi) {
   const span = Math.max(hi - lo, 0.02);
-  const step = STEPS.find((s) => span / s <= 5) || 100;
+  const step = STEPS.find((s) => span / s <= 5) || 1000;
   const a = Math.floor(lo / step) * step;
   const b = Math.ceil(hi / step) * step;
   const out = [];
@@ -70,7 +73,9 @@ export default function EquityChart({ data: recorded, spec, height = 260, compac
   if (!view) return <div className="empty">The equity curve starts after the first run.</div>;
 
   const narrow = w < 520;
-  const m = { l: 46, r: narrow ? 8 : compact ? 112 : 128, t: 10, b: 24 };
+  // room on the right for the longest end-of-line label ("Without LLM −8.91%")
+  const endLen = Math.max(0, ...view.series.map((s) => { const v = s.values.filter(Boolean).at(-1); return v ? `${s.label} ${pct(v.r)}`.length : 0; }));
+  const m = { l: 46, r: narrow ? 8 : Math.max(compact ? 112 : 128, 22 + Math.ceil(endLen * 6.6)), t: 10, b: 24 };
   const pw = w - m.l - m.r;
   const ph = height - m.t - m.b;
   const n = view.times.length;
@@ -157,11 +162,11 @@ export default function EquityChart({ data: recorded, spec, height = 260, compac
             </g>
           ))}
           {xt.map(([i, l]) => <text key={i} x={x(i)} y={height - 6} textAnchor={i === 0 ? "start" : "middle"}>{l}</text>)}
-          {paths.map((p) => (
+          {[...paths].sort(byZ).map((p) => (
             <path key={p.key} d={p.d} fill="none" stroke={COLOR[p.key]} strokeWidth={p.key === "main" ? 2.25 : 2}
               strokeDasharray={p.key === "index" ? "5 4" : undefined} strokeLinejoin="round" strokeLinecap="round" />
           ))}
-          {paths.filter((p) => p.last).map((p) => (
+          {[...paths].sort(byZ).filter((p) => p.last).map((p) => (
             <circle key={p.key} cx={x(p.lastI)} cy={y(p.last.r)} r={3.5} fill={COLOR[p.key]} stroke="var(--panel)" strokeWidth={2} />
           ))}
           {!narrow && labels.map((l) => (
@@ -173,7 +178,7 @@ export default function EquityChart({ data: recorded, spec, height = 260, compac
           {hi != null ? (
             <g>
               <line className="xh" x1={x(hi)} x2={x(hi)} y1={m.t} y2={m.t + ph} />
-              {view.series.map((s) => s.values[hi] ? (
+              {[...view.series].sort(byZ).map((s) => s.values[hi] ? (
                 <circle key={s.key} cx={x(hi)} cy={y(s.values[hi].r)} r={4.5} fill={COLOR[s.key]} stroke="var(--panel)" strokeWidth={2} />
               ) : null)}
             </g>
