@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-11-09",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q1 FY27 results Thu 12 Nov 2026 after the close (Cisco newsroom, 3 Nov 2026), 2 trading days away: binary gap risk. The stock has moved 8% or more on each of the last three reports (247 Wall St, 10 Nov). Tags: reason=event; attention=no",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:06-05:00"
+}

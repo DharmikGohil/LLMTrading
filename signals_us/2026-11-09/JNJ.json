@@ -1,0 +1,12 @@
+{
+  "symbol": "JNJ",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Label news on Caplyta (J&J release via Yahoo Finance, 10 Nov 2026). No results until January. No red flag found. Bear case: talc litigation remains open. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:05-05:00"
+}

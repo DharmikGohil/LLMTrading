@@ -1,0 +1,12 @@
+{
+  "symbol": "MET",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Agreed to divest MetLife UK Limited (Yahoo Finance, 10 Nov 2026); 8-K on 9 Nov for a material agreement and new debt (SEC EDGAR). Q3 reported 4 Nov. No red flag found. Bear case: new debt and a hot CPI print (0.4% vs 0.3% expected, BLS via CNBC, 10 Nov) that moves rates. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:05-05:00"
+}

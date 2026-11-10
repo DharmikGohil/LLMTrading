@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the top 10 (rank 10). FY27 Q1 reported 28 Oct 2026: revenue 92.3B (+19%), Azure +48% vs 44-45% guided (secondary coverage, not the release). Next results late January. No red flag found. Bear case: +7.5% in a week (brief), tech sold off after today's CPI, and a Fed official called AI data-centre spending overheated (Yahoo Finance, 10 Nov). Tags: reason=none; attention=yes",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:06-05:00"
+}

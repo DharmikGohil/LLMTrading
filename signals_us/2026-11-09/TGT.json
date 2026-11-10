@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-09",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Q3 results expected Wed 18 Nov 2026 (Nasdaq-based calendars; Earnings Whispers shows 19 Nov; not company-confirmed), about 6 trading days away: inside the Hold window. Stock -2.6% intraday 10 Nov (Yahoo quote, 12:07 ET) on a hot CPI day. Tags: reason=event; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:05-05:00"
+}

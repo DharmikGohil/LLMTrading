@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Fiscal Q4 results expected 25 Nov 2026, about 11 trading days away. Deere will close two Iowa plants by fiscal 2029 and says it is running far below normal volumes in the ag downturn (DTN, 4 Nov 2026): a restructuring, not a guidance cut. Bear case: weak equipment demand ahead of results. Tags: reason=news; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:07-05:00"
+}

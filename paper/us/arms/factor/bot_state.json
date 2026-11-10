@@ -43,7 +43,7 @@
     "KO": {
       "qty": 4,
       "avg": 94.69,
-      "stop": 88.78,
+      "stop": 89.14,
       "target": 852.93,
       "opened": "2026-10-30",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "DE": {
       "qty": 1,
       "avg": 679.39,
-      "stop": 610.19,
+      "stop": 612.57,
       "target": 8154.63,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-09",
-    "start_equity": 9971.02,
+    "date": "2026-11-10",
+    "start_equity": 10126.78,
     "orders": 0,
     "partial": false
   },

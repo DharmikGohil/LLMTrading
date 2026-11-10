@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 reported 2 Nov. Three contract workers died at supplier Tata Electronics' Hosur plant; Apple and Tata are investigating, and the article reports no interruption to manufacturing (Yahoo Finance/Reuters, 10 Nov 2026). First close above 350 on 9 Nov (brief). Bear case: supplier-safety scrutiny in India and a headline-driven run. Tags: reason=news; attention=yes",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:06-05:00"
+}

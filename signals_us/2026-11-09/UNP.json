@@ -1,0 +1,12 @@
+{
+  "symbol": "UNP",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Next results 26 Jan 2027. No red flag found. Bear case: rail volumes are cyclical and the stock sits near its 50-day average. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:08-05:00"
+}

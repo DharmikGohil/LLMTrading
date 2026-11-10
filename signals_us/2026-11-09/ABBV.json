@@ -1,0 +1,12 @@
+{
+  "symbol": "ABBV",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Q3 beat and raised outlook on 30 Oct (earlier review). No new red flag in the last 4 days of headlines. Bear case: Humira erosion continues and growth rests on Skyrizi and Rinvoq. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:05-05:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "PM",
+  "as_of": "2026-11-09",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. JPMorgan reinstated coverage at Neutral with a 200 target (247 Wall St, 10 Nov 2026); trend template down to 6/7 and RSI 41 (brief). One neutral rating is a minor concern, not a downgrade cluster: Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:07-05:00"
+}

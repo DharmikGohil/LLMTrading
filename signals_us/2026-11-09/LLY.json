@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-11-09",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick, not held. FDA ordered vision-loss (NAION) warnings on GLP-1 labels including Mounjaro, Zepbound and Foundayo on 9 Nov 2026 (IBTimes, 10 Nov); shares rose 4.3% that day and volume was 1.56x its 50-day average (brief). A new safety label is a minor regulatory concern: Hold. Tags: reason=news; attention=yes",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:07-05:00"
+}

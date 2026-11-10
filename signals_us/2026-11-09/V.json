@@ -1,0 +1,12 @@
+{
+  "symbol": "V",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the top 10 (rank 8). Fiscal Q4 reported 27 Oct 2026: revenue 12.1B (+13%), dividend raised 16% (Visa 8-K). Next results late January (date not confirmed). No red flag found. Bear case: 469M litigation provision for the interchange case in Q4 (Visa release), and a hot CPI can slow spending. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:06-05:00"
+}

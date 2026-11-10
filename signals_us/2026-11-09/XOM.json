@@ -1,0 +1,12 @@
+{
+  "symbol": "XOM",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick, not held. Signed an MoU with Venezuela to evaluate oil investments (market chatter via Yahoo Finance, 10 Nov 2026, unverified). No company red flag found. Bear case: crude slid toward 87 dollars and energy stocks fell pre-market (Yahoo Finance, 9-10 Nov); trend template 6/7, RSI 38. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-10T12:10:08-05:00"
+}
