@@ -57,17 +57,30 @@ out, stop 1-3 ATR, target 1R/2R/3R/none, risk fixed at 1% of game cash) → reve
 Close now, Stop to breakeven, Move stop) → result card: R, cash change, coin-flip comparison, mistakes and lessons,
 and the reveal ("Bitcoin, 3-11 Mar 2020"). `onDone(result)` returns the history entry. Works on a 390 px phone.
 
+## 3b. The Strip: `web/lib/game/strip.js` + `web/components/game/StripMission.js` (written by the main session)
+A neon casino-style district whose missions teach the **house edge**. Each mission sells a "lottery ticket": a cheap
+out-of-the-money Nifty option (call or put, 1-3% away, expiring tomorrow or in 5 trading days) priced the way the
+market prices it (implied volatility above realised, plus a spread), then reveals the real Nifty path day by day like
+spinning reels. The result card shows the payout, the ticket's fair value against what you paid (the house edge),
+the odds of it paying off, and your running total on the Strip, next to SEBI's finding that about 9 in 10 F&O
+traders lose money. Props: `{ data, seed, history, cash, tilt, onDone(result), onExit() }`, the same as Mission;
+`result` is a history entry with `kind: "strip"` plus `{ stake, payout, fair, edgePct }` and the mistakes
+`"lottery"` (buying far out-of-the-money) and `"chasing-losses"` (playing again straight after a loss with a bigger
+stake). The shell routes markers whose `district` is `"strip"` to `StripMission`.
+
 ## 4. World: `web/components/game/World.js`, client component, three.js
 Props: `{ markers: [{ id, district, label, x, z, color }], tilt, paused, onEnterMarker(id), onReady() }`. A small
 low-poly city (instanced buildings, roads, a harbour on one side for the Crypto Docks, a market square for Nifty
-Market, a park for Cool-down Park), dusk lighting in the site's violet palette, an arcade car, chase camera,
+Market, a park for Cool-down Park, and **the Strip**: a wide boulevard of tall neon-lit towers and glowing signs with
+casino-style names of our own, e.g. "The Lucky Strike", "Expiry Palace", "Theta Lounge", never real casino or game
+brands), dusk lighting in the site's violet palette, an arcade car, chase camera,
 keyboard (WASD/arrows, Space brake) and a touch joystick on phones, glowing marker pillars that call
 `onEnterMarker` when the car stops inside one, and a minimap. Tilt above 60 adds a red vignette and camera shake.
-Disposes everything on unmount. Caps pixel ratio at 1.5; no shadows on phones. Exports `DISTRICTS` and
+Disposes everything on unmount. Caps pixel ratio at 1.5; no shadows on phones. Exports `DISTRICTS` (ids `docks`, `market`, `park`, `strip`) and
 `defaultMarkers()`.
 
 ## 5. Shell: `web/app/game/page.js` + `web/components/game/GameShell.js` (+ `GameShell.module.css`)
 Fetches `/game/series.json`, holds state (game cash starting at $10,000, history, tilt, seed) in `localStorage`
 key `candle-city-v1` (wrapped in try/catch; works without it), shows the intro (controls, "practice with game cash:
-no real money"), the HUD (cash, rounds, edge vs coin flip, tilt meter), switches World ↔ Mission, runs Cool-down
+no real money"), the HUD (cash, rounds, edge vs coin flip, tilt meter), switches World ↔ Mission (markers in district `"strip"` open `StripMission` from `./StripMission`), runs Cool-down
 Park (tilt falls while parked; a short lesson card), the stats screen, and Reset. Adds "Play" to the site nav.
