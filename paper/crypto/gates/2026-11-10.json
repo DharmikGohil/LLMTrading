@@ -1,7 +1,7 @@
 {
  "date": "2026-11-10",
- "max_exposure": 0.5,
+ "max_exposure": 1.0,
  "exclude": [],
- "note": "Reason: macro. Fear & Greed 32 (alternative.me, 10 Nov 2026). US October CPI today 10 Nov 08:30 ET / 13:30 UTC (BLS schedule) and PPI Fri 13 Nov: playbook row 'major macro event in the next 24 hours' -> exposure 0.5. Both strategy accounts are all in USDT (BTC and ETH below their 50-day averages), so this changes nothing today. No coin-specific red flag verified: a reported Binance hack appears in a single outlet only and is not acted on.",
- "time": "2026-11-10T01:43:42+00:00"
+ "note": "Reason: none. Fear & Greed 32 (alternative.me, 10 Nov 2026). No scheduled macro event in the next 24-48h: CPI was released 10 Nov, PPI is Fri 13 Nov (BLS), no FOMC until 8-9 Dec. No BTC/ETH-specific red flag found. Watched, no action: several outlets now mention an Oct 29 security breach at Binance (crypto.news and FXStreet, 9-10 Nov 2026); the exchange is operating and this is not an exchange failure. Both strategy accounts are all in USDT (BTC and ETH below their 50-day averages), so the gate changes nothing today.",
+ "time": "2026-11-10T23:37:45+00:00"
 }

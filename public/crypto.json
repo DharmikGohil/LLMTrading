@@ -1,6 +1,6 @@
 {
- "time": "2026-11-10T22:32:04+00:00",
- "btc": 73666.5,
+ "time": "2026-11-10T23:37:47+00:00",
+ "btc": 73746.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9865.63,
+   "value": 9876.27,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -1.34,
+   "return_pct": -1.24,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 73666.5,
-     "value": 9865.53,
-     "pnl": -124.38,
-     "pnl_pct": -1.25,
-     "day_pct": -1.925,
+     "last": 73746.01,
+     "value": 9876.17,
+     "pnl": -113.74,
+     "pnl_pct": -1.14,
+     "day_pct": -1.913,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -113,10 +113,10 @@
  "gates": [
   {
    "date": "2026-11-10",
-   "max_exposure": 0.5,
+   "max_exposure": 1.0,
    "exclude": [],
-   "note": "Reason: macro. Fear & Greed 32 (alternative.me, 10 Nov 2026). US October CPI today 10 Nov 08:30 ET / 13:30 UTC (BLS schedule) and PPI Fri 13 Nov: playbook row 'major macro event in the next 24 hours' -> exposure 0.5. Both strategy accounts are all in USDT (BTC and ETH below their 50-day averages), so this changes nothing today. No coin-specific red flag verified: a reported Binance hack appears in a single outlet only and is not acted on.",
-   "time": "2026-11-10T01:43:42+00:00"
+   "note": "Reason: none. Fear & Greed 32 (alternative.me, 10 Nov 2026). No scheduled macro event in the next 24-48h: CPI was released 10 Nov, PPI is Fri 13 Nov (BLS), no FOMC until 8-9 Dec. No BTC/ETH-specific red flag found. Watched, no action: several outlets now mention an Oct 29 security breach at Binance (crypto.news and FXStreet, 9-10 Nov 2026); the exchange is operating and this is not an exchange failure. Both strategy accounts are all in USDT (BTC and ETH below their 50-day averages), so the gate changes nothing today.",
+   "time": "2026-11-10T23:37:45+00:00"
   }
  ],
  "strategy": {
@@ -209,6 +209,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261110T2337-ETH-168",
+    "made": "2026-11-10T23:37:43+00:00",
+    "due": "2026-11-17T23:37:43+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "2050.9",
+    "p_up": "0.47",
+    "lo": "1860.1",
+    "hi": "2260.5",
+    "note": "7 days: slight down lean, range 10% wider than baseline. Bear: below both averages, -9.9% on the week, weak against BTC despite a reported BitMine purchase of 9,587 ETH (crypto.news, 10 Nov 2026). Bull: RSI 29 (context only), funding near zero so longs are not crowded, fear 32. No unproven lesson used; the oversold reading does not move the call. Sources: US October CPI +0.4% vs +0.3% expected and rate-hike bets up (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "1876.930757",
+    "base_hi": "2240.994131",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261110T2337-BTC-168",
+    "made": "2026-11-10T23:37:40+00:00",
+    "due": "2026-11-17T23:37:40+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "73731.39",
+    "p_up": "0.47",
+    "lo": "68792.0",
+    "hi": "79009.0",
+    "note": "7 days: slight down lean, range 10% wider than baseline with PPI on Friday inside the window and the Fed being repriced. Bear: -9.8% below the 50-day average, ETF outflows, hike bets. Bull: fear 32, funding normal, RSI 34. The 7-day lessons (fear rebound, downtrend continues) are unproven and weak in history (H8a), so not used. Emotion checks: not extending the -4.8% week; no chart level used. Sources: US October CPI +0.4% vs +0.3% expected and rate-hike bets up (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "69233.347331",
+    "base_hi": "78521.667389",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261110T2049-ETH-24",
     "made": "2026-11-10T20:49:05+00:00",
@@ -588,6 +624,6 @@
     "last_checked": "2026-11-10"
    }
   ],
-  "open": 8
+  "open": 10
  }
 }
