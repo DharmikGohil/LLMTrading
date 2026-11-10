@@ -1,6 +1,6 @@
 {
- "time": "2026-11-09T23:51:42+00:00",
- "btc": 75319.89,
+ "time": "2026-11-10T01:43:48+00:00",
+ "btc": 75000.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 10087.05,
+   "value": 10044.21,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": 0.87,
+   "return_pct": 0.44,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 75319.89,
-     "value": 10086.95,
-     "pnl": 97.04,
-     "pnl_pct": 0.97,
-     "day_pct": 0.56,
+     "last": 75000.01,
+     "value": 10044.11,
+     "pnl": 54.2,
+     "pnl_pct": 0.54,
+     "day_pct": -0.16,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -82,7 +82,15 @@
    "reason": "benchmark: buy and hold BTC"
   }
  ],
- "gates": [],
+ "gates": [
+  {
+   "date": "2026-11-10",
+   "max_exposure": 0.5,
+   "exclude": [],
+   "note": "Reason: macro. Fear & Greed 32 (alternative.me, 10 Nov 2026). US October CPI today 10 Nov 08:30 ET / 13:30 UTC (BLS schedule) and PPI Fri 13 Nov: playbook row 'major macro event in the next 24 hours' -> exposure 0.5. Both strategy accounts are all in USDT (BTC and ETH below their 50-day averages), so this changes nothing today. No coin-specific red flag verified: a reported Binance hack appears in a single outlet only and is not acted on.",
+   "time": "2026-11-10T01:43:42+00:00"
+  }
+ ],
  "strategy": {
   "mode": "trend",
   "coins": [
@@ -105,6 +113,78 @@
    }
   },
   "recent": [
+   {
+    "id": "20261110T0143-ETH-168",
+    "made": "2026-11-10T01:43:39+00:00",
+    "due": "2026-11-17T01:43:39+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "2124.76",
+    "p_up": "0.47",
+    "lo": "1928.0",
+    "hi": "2343.0",
+    "note": "7 days: slight down lean, range widened 10% for CPI and PPI. Bear: below both averages, weak against BTC, ETF outflows. Bull: fear, negative-leaning funding. No unproven lesson used. Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "1944.525523",
+    "base_hi": "2321.700078",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261110T0143-BTC-168",
+    "made": "2026-11-10T01:43:37+00:00",
+    "due": "2026-11-17T01:43:37+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "75006.0",
+    "p_up": "0.48",
+    "lo": "70014.0",
+    "hi": "80413.0",
+    "note": "7 days: slight down lean, range widened 10% for two inflation prints (CPI today, PPI Friday) that can move December rate expectations. Bear: downtrend, outflows. Bull: fear readings. The seeded 7-day lessons (fear rebound, downtrend continues) are unproven and weak in history (H8a: t 0.3 and -0.3 in 2023-26), so not used. Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "70430.198724",
+    "base_hi": "79879.087918",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261110T0143-ETH-24",
+    "made": "2026-11-10T01:43:34+00:00",
+    "due": "2026-11-11T01:43:34+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "2124.72",
+    "p_up": "0.47",
+    "lo": "2038.3",
+    "hi": "2216.4",
+    "note": "Slight down lean; range widened 25% for CPI. Bear: -14% below the 50-day and below the 200-day average, ETH/BTC weakest since July (cryptoticker, Nov 2026), ETH ETF outflows. Bull: fear 32, funding just turned negative (-0.0002% last settlement, OKX) so little long leverage left. Emotion checks: -6.6% week not extended by itself (recency). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "2054.714554",
+    "base_hi": "2197.110577",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261110T0143-BTC-24",
+    "made": "2026-11-10T01:43:31+00:00",
+    "due": "2026-11-11T01:43:31+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "75006.0",
+    "p_up": "0.48",
+    "lo": "72835.0",
+    "hi": "77299.0",
+    "note": "Slight down lean; range widened 25% vs baseline for CPI inside the window. Bear: below the 50-day average (-8.2%), ETF outflows, five weekly losses. Bull: fear 32 and leverage already flushed (OKX funding 0.005%/8h), RSI 37. Emotion checks: facts re-read, not copied from yesterday's 0.47; levels (e.g. the 200-day average) not used as reasons (H10c). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
+    "base_lo": "73242.566841",
+    "base_hi": "76811.890662",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261109T1736-ETH-24",
     "made": "2026-11-09T17:36:47+00:00",
@@ -340,6 +420,6 @@
     "last_checked": "2026-11-09"
    }
   ],
-  "open": 2
+  "open": 6
  }
 }
