@@ -1,6 +1,6 @@
 {
- "time": "2026-11-10T01:43:48+00:00",
- "btc": 75000.01,
+ "time": "2026-11-10T07:11:12+00:00",
+ "btc": 74667.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -9,7 +9,7 @@
    "realized": 0.0,
    "fees": 0.0,
    "return_pct": 0.0,
-   "last_rebalance": "2026-11-09T14:07:39+00:00",
+   "last_rebalance": "2026-11-10T07:11:10+00:00",
    "positions": []
   },
   "control": {
@@ -19,27 +19,27 @@
    "realized": 0.0,
    "fees": 0.0,
    "return_pct": 0.0,
-   "last_rebalance": "2026-11-09T14:07:39+00:00",
+   "last_rebalance": "2026-11-10T07:11:10+00:00",
    "positions": []
   },
   "hold": {
    "capital": 10000.0,
-   "value": 10044.21,
+   "value": 9999.62,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": 0.44,
+   "return_pct": -0.0,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 75000.01,
-     "value": 10044.11,
-     "pnl": 54.2,
-     "pnl_pct": 0.54,
-     "day_pct": -0.16,
+     "last": 74667.01,
+     "value": 9999.52,
+     "pnl": 9.6,
+     "pnl_pct": 0.1,
+     "day_pct": 0.715,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -66,6 +66,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "10087.05"
+  },
+  {
+   "time": "2026-11-10T07:11:10+00:00",
+   "btc": "74667.01",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "9999.62"
   }
  ],
  "trades": [
@@ -240,7 +247,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09",
+    "last_checked": "2026-11-10",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -279,7 +286,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09",
+    "last_checked": "2026-11-10",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -318,7 +325,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09",
+    "last_checked": "2026-11-10",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -357,7 +364,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-09",
+    "last_checked": "2026-11-10",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -397,7 +404,7 @@
      "t": null,
      "verdict": "no scored calls yet"
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-10"
    },
    {
     "id": "chasing-big-moves",
@@ -417,7 +424,7 @@
      "t": null,
      "verdict": "no scored calls yet"
     },
-    "last_checked": "2026-11-09"
+    "last_checked": "2026-11-10"
    }
   ],
   "open": 6
