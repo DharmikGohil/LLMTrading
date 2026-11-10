@@ -85,7 +85,7 @@ def clean(rows: list[tuple[date, float, float, float, float]]) -> list[Candle]:
         raw = by_day[d]
         # yfinance pads some NSE holidays (e.g. election days) with a zero-range candle at the previous close.
         # Nothing traded, and a candle with no range would distort the ATR, so skip it.
-        if prev_close is not None and all(math.isclose(v, prev_close, rel_tol=1e-6) for v in raw):   # 1e-6: adjustment float drift
+        if prev_close is not None and all(v == prev_close for v in raw):
             continue
         prev_close = raw[3]
         o, h, l, c = (round_price(v) for v in raw)  # noqa: E741
