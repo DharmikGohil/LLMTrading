@@ -1,5 +1,11 @@
 [
  {
+  "id": "2026-11-10-us",
+  "date": "2026-11-10",
+  "market": "US",
+  "reflection": "- Close: With LLM $10,068.48 (+0.68%), Without LLM $10,139.52 (+1.40%), S&P 500 -2.83% since 28 Oct (index close\n  7,520.04, -0.62% today after a hot CPI: +0.4% against +0.3% expected). Both accounts rose today (+0.28% and\n  +0.48%) while the index fell; the account without the LLM leads the one with it by 0.71 pp.\n  (The Accounts table above may show an intraday snapshot, not the close.)\n- No orders and no stop-outs: both accounts are full at 10 positions. Today's review vetoed CSCO (results Thu 12\n  Nov) and put TGT, LLY and PM on Hold; none of that traded.\n- Vetoes: the 2 Nov AMGN (+1.59%) and MET (+2.61%) vetoes completed their 5-day windows. Both are repeats of\n  episodes already counted in the pre-results veto lesson (AMGN from 28 Oct, MET from 29 Oct), so no new evidence\n  is added: one results event counts once.\n- The gap to the account without the LLM keeps widening on days when defensives rise: it holds more of the\n  screen's top names that the early pre-results vetoes kept out of the With LLM account.\n- Nothing new for the lesson book."
+ },
+ {
   "id": "2026-11-09-us",
   "date": "2026-11-09",
   "market": "US",
