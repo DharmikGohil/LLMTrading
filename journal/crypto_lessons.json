@@ -89,9 +89,9 @@
   "first_seen": "2026-11-09",
   "evidence": {
    "n": 0,
-   "n_other": 0,
+   "n_other": 2,
    "up_pct": null,
-   "other_up_pct": null,
+   "other_up_pct": 0.0,
    "t": null
   },
   "last_checked": "2026-11-10",
