@@ -1,6 +1,6 @@
 {
- "time": "2026-11-11T07:07:55+00:00",
- "btc": 73636.18,
+ "time": "2026-11-11T07:37:19+00:00",
+ "btc": 73890.89,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9861.56,
+   "value": 9895.68,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -1.38,
+   "return_pct": -1.04,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 73636.18,
-     "value": 9861.46,
-     "pnl": -128.45,
-     "pnl_pct": -1.29,
-     "day_pct": -1.466,
+     "last": 73890.89,
+     "value": 9895.58,
+     "pnl": -94.33,
+     "pnl_pct": -0.94,
+     "day_pct": -1.335,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -223,6 +223,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261111T0737-ETH-24",
+    "made": "2026-11-11T07:37:16+00:00",
+    "due": "2026-11-12T07:37:16+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "2063.33",
+    "p_up": "0.47",
+    "lo": "1987.9",
+    "hi": "2142.9",
+    "note": "Slight down lean, range 10% wider than baseline. Bear: -16% below the 50-day and -4.2% below the 200-day average, -14.9% on the week, weak against BTC. Bull: 3-day funding has turned negative (-0.0006%/8h, OKX), so shorts are paying and longs are not crowded; RSI 31; fear 29. The funding and fear lessons are unproven (H8a), so they do not move the call. Emotion checks: not chasing the weekly drop. Sources: hot US October CPI on 10 Nov and higher rate-hike bets (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov (outside this window); US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 29 (alternative.me, 11 Nov).",
+    "base_lo": "1994.087814",
+    "base_hi": "2134.976534",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261111T0737-BTC-24",
+    "made": "2026-11-11T07:37:11+00:00",
+    "due": "2026-11-12T07:37:11+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "73918.48",
+    "p_up": "0.47",
+    "lo": "71998.0",
+    "hi": "75893.0",
+    "note": "Slight down lean, range 10% wider than baseline (my coverage so far is 75% against an 80% aim, and the Fed is still being repriced). No scheduled event in the next 24h; no fresh 11 Nov news found. Bear: -9.2% below the 50-day average, -8.2% on the week, ETF outflows. Bull: fear 29, funding normal (0.006%/8h, OKX), RSI 35. Emotion checks: four right calls in a row do not justify a bigger lean (results-chasing); facts re-read, unchanged; no chart level used (H10c). Sources: hot US October CPI on 10 Nov and higher rate-hike bets (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov (outside this window); US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 29 (alternative.me, 11 Nov).",
+    "base_lo": "72169.559031",
+    "base_hi": "75709.783444",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261110T2337-ETH-168",
     "made": "2026-11-10T23:37:43+00:00",
@@ -638,6 +674,6 @@
     "last_checked": "2026-11-11"
    }
   ],
-  "open": 8
+  "open": 10
  }
 }
