@@ -1,0 +1,12 @@
+{
+  "symbol": "MRK",
+  "as_of": "2026-11-10",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. No new company news in the last day; positive Phase 2b MASH data on 9 Nov (Merck release via Yahoo Finance). No red flag found. Bear case: Keytruda's patent cliff later this decade; -1.1% in early trade. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T09:53:11-05:00"
+}

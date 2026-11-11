@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-10",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Fiscal Q4 results expected 25 Nov 2026, about 10 trading days away. Plant closures announced 4 Nov (DTN) are a restructuring, not a guidance cut. No new red flag. Bear case: weak equipment demand ahead of results. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T09:53:13-05:00"
+}

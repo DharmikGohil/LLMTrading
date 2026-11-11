@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-10",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. FY27 Q1 reported 28 Oct; next results late January. No new company red flag. Bear case: -0.9% in early trade after falling 2.2% on 10 Nov as tech sold off on rate-hike bets (Yahoo quotes; CNBC, 10 Nov). Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T09:53:14-05:00"
+}

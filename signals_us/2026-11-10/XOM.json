@@ -1,0 +1,12 @@
+{
+  "symbol": "XOM",
+  "as_of": "2026-11-10",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick, not held. Oil fell to its lowest since August on 10 Nov (Yahoo Finance); no company-specific red flag found. Bear case: falling crude cuts earnings; trend template 6/7 (brief, 10 Nov). Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T09:53:14-05:00"
+}
