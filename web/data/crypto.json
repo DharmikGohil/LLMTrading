@@ -1,6 +1,6 @@
 {
- "time": "2026-11-11T09:38:35+00:00",
- "btc": 73608.01,
+ "time": "2026-11-11T11:26:52+00:00",
+ "btc": 74010.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9857.79,
+   "value": 9911.63,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -1.42,
+   "return_pct": -0.88,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 73608.01,
-     "value": 9857.69,
-     "pnl": -132.22,
-     "pnl_pct": -1.32,
-     "day_pct": -0.995,
+     "last": 74010.01,
+     "value": 9911.53,
+     "pnl": -78.38,
+     "pnl_pct": -0.78,
+     "day_pct": -0.356,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -108,6 +108,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "9893.28"
+  },
+  {
+   "time": "2026-11-11T11:26:49+00:00",
+   "btc": "74010.0",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "9911.63"
   }
  ],
  "trades": [
@@ -146,73 +153,73 @@
  "learn": {
   "summary": {
    "24h": {
-    "n": 4,
-    "brier_llm": 0.221,
+    "n": 6,
+    "brier_llm": 0.2225,
     "brier_base": 0.25,
-    "skill_pct": 11.6,
-    "t": 30.28,
-    "coverage_llm_pct": 75.0,
-    "coverage_base_pct": 50.0,
-    "pinball_llm": 0.917,
-    "pinball_base": 0.98,
+    "skill_pct": 11.0,
+    "t": 25.89,
+    "coverage_llm_pct": 83.3,
+    "coverage_base_pct": 66.7,
+    "pinball_llm": 0.85,
+    "pinball_base": 0.845,
     "hit_rate_pct": 100.0,
     "verdict": "too few calls to tell",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 4,
-      "said_pct": 47.0,
+      "n": 6,
+      "said_pct": 47.2,
       "happened_pct": 0.0
      }
     ],
     "by_tag": [
      {
       "tag": "above_200d",
-      "n": 2,
-      "skill_pct": 9.7,
-      "t": null,
+      "n": 3,
+      "skill_pct": 9.1,
+      "t": 16.71,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_200d",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 3,
+      "skill_pct": 12.9,
+      "t": 24.14,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_50d",
-      "n": 4,
-      "skill_pct": 11.6,
-      "t": 30.28,
+      "n": 6,
+      "skill_pct": 11.0,
+      "t": 25.89,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "fg_fear",
-      "n": 4,
-      "skill_pct": 11.6,
-      "t": 30.28,
+      "n": 6,
+      "skill_pct": 11.0,
+      "t": 25.89,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "funding_normal",
-      "n": 4,
-      "skill_pct": 11.6,
-      "t": 30.28,
+      "n": 6,
+      "skill_pct": 11.0,
+      "t": 25.89,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "rsi_middle",
-      "n": 4,
-      "skill_pct": 11.6,
-      "t": 30.28,
+      "n": 6,
+      "skill_pct": 11.0,
+      "t": 25.89,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "vol_normal",
-      "n": 4,
-      "skill_pct": 11.6,
-      "t": 30.28,
+      "n": 6,
+      "skill_pct": 11.0,
+      "t": 25.89,
       "verdict": "too few calls to tell"
      }
     ]
@@ -344,10 +351,10 @@
     "note": "Slight down lean, range widened 25% for CPI. Bear: -14% below the 50-day and below the 200-day average, weak against BTC, six weeks of ETH ETF outflows (Zerocap weekly wrap, 9 Nov 2026). Bull: fear 32, funding near zero (-0.0002% last settlement, OKX) so little long leverage left, +1.3% in 24h. Emotion checks: not chasing the bounce or the -6.7% week. Sources: US October CPI today 10 Nov 08:30 ET / 13:30 UTC (BLS schedule, bls.gov/schedule/news_release/cpi.htm), PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (coin-turk, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
     "base_lo": "2052.761109",
     "base_hi": "2195.021754",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "2062.4",
+    "up": "0",
+    "brier": "0.2209",
+    "inside": "1"
    },
    {
     "id": "20261110T0744-BTC-24",
@@ -362,10 +369,10 @@
     "note": "Slight down lean, range widened 25% vs baseline because CPI lands inside the window; no reliable 2026 consensus found, so CPI is treated as two-way risk, not a direction. Bear: below the 50-day average (-8.4%), ETF outflows, five weekly losses. Bull: fear 32, OKX funding normal (0.005%/8h), RSI 37. Emotion checks: the +1% bounce in 24h is not chased (recency); same lean as this morning because the facts are unchanged, not by anchoring; no chart levels used (H10c). Sources: US October CPI today 10 Nov 08:30 ET / 13:30 UTC (BLS schedule, bls.gov/schedule/news_release/cpi.htm), PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (coin-turk, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
     "base_lo": "73127.302028",
     "base_hi": "76691.008658",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "73873.98",
+    "up": "0",
+    "brier": "0.2304",
+    "inside": "1"
    },
    {
     "id": "20261110T0143-ETH-168",
@@ -567,7 +574,7 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 4,
+     "n_other": 6,
      "up_pct": null,
      "other_up_pct": 0.0,
      "t": null
@@ -674,6 +681,6 @@
     "last_checked": "2026-11-11"
    }
   ],
-  "open": 10
+  "open": 8
  }
 }
