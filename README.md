@@ -86,6 +86,13 @@ crowded longs, high volatility, a big 24h move, ...). Their evidence is counted 
 lesson is confirmed only with 30+ calls and |t| ≥ 2, and retired when the data turns against it. The scorecard and the
 lessons are on the [crypto page](https://llmtrading.dharmikgohil.in/crypto).
 
+Each run also makes **"which is hit first?" bracket calls**: for a long and a short on BTC and ETH, the chance that
+a target 1.5 days' volatility away, a stop one day's volatility away, or neither is touched first within 24 hours.
+They are judged against the coin's own measured base rates (a harder bar than a coin flip), blended with them by a
+weight fitted on graded calls, checked with a mirror probe (the same question on a flipped fact sheet), and given an
+expected value in R after costs that is logged, never traded. Design ideas adapted from
+[calibrain-harness](https://github.com/zadescoxp/calibrain-harness); verdict rules in the test plan (M-C3).
+
 ## The website
 
 [llmtrading.dharmikgohil.in](https://llmtrading.dharmikgohil.in) (Next.js on Vercel, in [`web/`](web/README.md)):
@@ -142,6 +149,7 @@ indtrader costs 2500 40             # round-trip charges and break-even move
 indtrader backtest --start 2024-01-01
 indtrader crypto-status             # the crypto desk's accounts
 indtrader crypto-brief              # fact sheet: trend, volatility, Fear & Greed, funding, the scorecard and lessons
+indtrader crypto-bracket            # a "which is hit first?" call against the coin's base rates
 indtrader crypto-learn              # forecast scorecard against the no-skill baseline; updates the lessons' evidence
 ```
 

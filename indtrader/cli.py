@@ -650,10 +650,15 @@ def _learner():
 
 
 @app.command("crypto-brief")
-def crypto_brief(coins: str = typer.Option("BTC,ETH", help="comma-separated coins")):
+def crypto_brief(coins: str = typer.Option("BTC,ETH", help="comma-separated coins"),
+                 mirror: bool = typer.Option(False, help="print a mirrored (bullish <-> bearish) fact sheet for the probe")):
     """Fact sheet for the analyst's forecasts: price, trend, volatility, Fear & Greed, funding, market-state tags,
     the no-skill baseline call, the scorecard so far, and the crypto lesson book."""
     b = _learner().brief([c.strip().upper() for c in coins.split(",") if c.strip()])
+    if mirror:
+        from indtrader.crypto_bracket import mirror as _mirror
+
+        b = {"time": b["time"], "mirror": True, "coins": {c: _mirror(v) for c, v in b["coins"].items()}}
     typer.echo(json.dumps(b, indent=1, default=str))
 
 
@@ -675,9 +680,41 @@ def crypto_forecast(
 
 @app.command("crypto-score")
 def crypto_score():
-    """Grade every forecast whose time has come (run by the crypto workflow every 2 hours)."""
-    rows = _learner().score()
-    typer.echo(f"scored {len(rows)}")
+    """Grade every forecast and bracket call whose time has come (run by the crypto workflow every 2 hours)."""
+    ln = _learner()
+    rows = ln.score()
+    br = ln.brackets.score()
+    typer.echo(f"scored {len(rows)} forecasts, {len(br)} bracket rows")
+
+
+def _bracket_args(long: str, short: str) -> tuple[float, float, float, float]:
+    try:
+        lt, ls = (float(x) for x in long.split(","))
+        st, ss = (float(x) for x in short.split(","))
+    except ValueError as e:
+        raise typer.BadParameter("give each bracket as TARGET,STOP probabilities, e.g. --long 0.25,0.35") from e
+    return lt, ls, st, ss
+
+
+@app.command("crypto-bracket")
+def crypto_bracket(
+    coin: str = typer.Option(..., help="BTC or ETH"),
+    long: str = typer.Option(..., help="long bracket: P(target first),P(stop first), e.g. 0.25,0.35 (neither = the rest)"),
+    short: str = typer.Option(..., help="short bracket: P(target first),P(stop first)"),
+    note: str = typer.Option(..., help="your reasons, with sources and dates"),
+    mirror: bool = typer.Option(False, help="record a mirror-probe answer (to `crypto-brief --mirror`), not a real call"),
+):
+    """Record a 24h "which is hit first?" call (bracket-v1). The base rates are stored next to it as the baseline."""
+    ln = _learner()
+    lt, ls, st, ss = _bracket_args(long, short)
+    c = coin.strip().upper()
+    if mirror:
+        typer.echo(json.dumps(ln.brackets.probe(c, lt, ls, st, ss, note)))
+        return
+    b = ln.brief([c])["coins"][c]
+    for r in ln.brackets.record(c, lt, ls, st, ss, note, b):
+        typer.echo(f"{r['source']:5} {r['coin']} {r['side']:5} stop {r['d_pct']}% target {round(1.5 * float(r['d_pct']), 2)}%  "
+                   f"P(target) {r['p_target']}  P(stop) {r['p_stop']}  EV {r['ev_r']:+}R  due {r['due']}")
 
 
 @app.command("crypto-learn")

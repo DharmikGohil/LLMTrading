@@ -109,3 +109,13 @@ forecasts at 05:05, 13:05 and 23:05 IST (`indtrader crypto-forecast`): the proba
   rebounds, greed pullbacks, crowded longs, downtrends persisting, overconfidence in high volatility, chasing big
   moves.
 
+### Bracket calls (bracket-v1, from 11 Nov 2026)
+
+Each run also asks "which is hit first within 24 hours: a target 1.5 d away, a stop d away, or neither?" for a long
+and a short on BTC and ETH (d = one day's volatility). The fact sheet shows the coin's measured base rates for that
+exact bracket (about 80 days of hourly candles), the baseline the analyst must beat. The tool blends the analyst
+with the base rates (weight fitted on graded calls, Brier score; it falls to 0 for an analyst who adds nothing), logs
+the expected value in R after costs (never traded), grades every call from 1-minute candles, and runs a mirror probe
+(flipped fact sheet) twice a week. Code: `indtrader/crypto_bracket.py`; verdict rules: `docs/test-plan.md` M-C3.
+Ideas adapted from the design of zadescoxp/calibrain-harness; no code copied.
+

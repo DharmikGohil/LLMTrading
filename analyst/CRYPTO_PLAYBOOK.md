@@ -82,6 +82,25 @@ indtrader crypto-forecast --coin BTC --horizon 24 --p-up 0.55 --lo 73200 --hi 76
   description only, saying "no better than random on our data". Never quote a pattern book's "success rate" as odds.
 - One call per coin and horizon every 6 hours at most (the tool refuses repeats). Never delete or edit a forecast.
 
+**Bracket calls ("which is hit first?", bracket-v1, every run, BTC and ETH).** The fact sheet's `bracket` block
+gives, per coin, a stop distance d (one day's volatility), a target 1.5 d away, and the **base rates**: how often, on
+the coin's last ~80 days of hourly candles, a long or a short with that bracket hit its target first, its stop first,
+or neither within 24 hours. It also shows the expected value of trading on the base rates alone (`ev_base_r`, after
+costs; usually negative) and the current blend weight. Start from the base rates and move only for a stated reason:
+```bash
+indtrader crypto-bracket --coin BTC --long 0.12,0.29 --short 0.14,0.23 \
+  --note "Base rates long 0.11/0.29, short 0.13/0.24 (fact sheet). <evidence and sources>. Bull case: ... Bear case: ..."
+```
+`--long TARGET,STOP` and `--short TARGET,STOP` are your chances that the target or the stop is touched first; the
+rest is "neither". The tool stores the base rates next to your call and logs the expected value of your blended
+call in R (P(target) x 1.5 - P(stop) - costs/stop). Nothing trades on it. A long target and a short stop are both
+"price rises 1.5 d / d first": keep them consistent.
+
+**Mirror probe (05:05 run, Mondays and Thursdays).** After the real bracket calls, run `indtrader crypto-brief
+--mirror`: every number is flipped bullish <-> bearish. Answer its brackets as if it were the real market and record
+them with `indtrader crypto-bracket --mirror ...`. A consistent forecaster's mirrored long equals its real short.
+The scorecard reports the average gap; it is not graded against prices.
+
 ## 4. The gate (05:05 run only)
 | Situation | Gate |
 |---|---|

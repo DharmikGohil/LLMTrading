@@ -244,6 +244,29 @@ evidence yet" at the first checkpoints. That is the honest answer, not a failure
 **Script.** `scripts/forecast_verdict.py` (new): reads the two CSV files, builds the daily series and the drift
 baseline, prints the verdict table. It reuses `crypto_learn.nw_tstat`.
 
+### M-C3. Bracket calls against the base rates (bracket-v1, from 11 Nov 2026)
+
+**What it answers.** Does the analyst predict *which is hit first* (a target 1.5 d away, a stop d away, or neither,
+within 24 h; d = one day's volatility) better than the coin's own measured base rates? This is closer to a trade's
+result than "up or down", and the base rates are a harder, fairer yardstick than a coin flip. Adapted from the
+design of zadescoxp/calibrain-harness (read on 11 Nov 2026), whose first question set lost to base rates until the
+model was shown them.
+
+**Data.** `paper/crypto/learn/brackets.csv` (analyst rows and base-rate rows, one long and one short bracket per
+call), graded from Binance 1-minute candles into `bracket_scores.csv` (a candle touching both levels counts as stop
+first). Mirror probes in `probes.csv`.
+
+**Verdict rules, fixed now** (read at the M-C1 checkpoints, 7 Feb 2027 and 8 May 2027, then every 90 days)
+- Score: the three-way Brier score of the analyst against the base rates, averaged per UTC day across coins and
+  sides, Newey-West t with 2 lags.
+- **Skill shown:** daily-series t >= 3.0, the same sign for long and for short, and a fitted blend weight above 0.
+- **Worse than the base rates:** t <= -2.0. Then the analyst gives the base rates unchanged until the next checkpoint.
+- **Ranks trades:** reported, not a pass line yet: does realised R rise with logged EV (Spearman, EV terciles)?
+- **Mirror consistency:** mean gap between mirrored and real answers. Above 0.10 flags a direction bias.
+- Logged EV never trades. Linking it to the desk needs this verdict plus the go-live checklist.
+
+**Trials.** 1 (bracket-v1). Any wording or bracket-size change is a new version and a new trial.
+
 ### M-C2. The crypto gate: With LLM against Without LLM (running now)
 
 **What it answers.** Does the LLM gate (cut exposure around big events, exclude a coin on a red flag) improve the

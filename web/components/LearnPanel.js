@@ -25,6 +25,7 @@ export function LearnStats({ learn }) {
         <div><span className="label">Verdict so far</span><b className="verdict">{s.verdict || "no scored calls yet"}</b>
           <span className="muted">needs 30+ calls</span></div>
       </div>
+      {learn?.brackets ? <BracketStats b={learn.brackets.summary} /> : null}
     </div>
   );
 }
@@ -76,5 +77,30 @@ export function LessonTable({ learn }) {
         return <span title="Up-rate when the tag was on vs the other days; exploratory, does not change the status">{f(h.design_years)} · {f(h["2023_26"])}</span>;
       } },
     ]} />
+  );
+}
+
+/** "Which is hit first?" calls (bracket-v1): judged against the coin's own measured base rates, not a coin flip. */
+function BracketStats({ b }) {
+  const a = b?.all || { n: 0 };
+  const skill = a.skill_vs_base_pct;
+  return (
+    <>
+      <p className="sub" style={{ marginTop: 18 }}>
+        Which is hit first in 24 hours: a target 1.5 days&apos; volatility away, a stop one day&apos;s volatility away, or neither?
+        Judged against how often each really happened on the coin&apos;s recent history. Expected value is logged, never traded.
+      </p>
+      <div className="learn-kpis">
+        <div><span className="label">Bracket calls</span><b>{b?.calls ?? 0}</b><span className="muted">{a.n || 0} sides graded</span></div>
+        <div><span className="label">Better than base rates</span>
+          <b className={skill == null ? "" : fmt.tone(skill)}>{skill == null ? "—" : `${skill > 0 ? "+" : ""}${skill}%`}</b>
+          <span className="muted">Brier score</span></div>
+        <div><span className="label">Trust in the LLM (blend weight)</span><b>{a.fitted ? a.w : "—"}</b>
+          <span className="muted">{a.fitted ? "0 = ignore, 1 = follow" : "fitted after 30 graded sides"}</span></div>
+        <div><span className="label">Average logged EV</span>
+          <b className={b?.mean_ev_r == null ? "" : fmt.tone(b.mean_ev_r)}>{b?.mean_ev_r == null ? "—" : `${b.mean_ev_r > 0 ? "+" : ""}${b.mean_ev_r}R`}</b>
+          <span className="muted">after costs; below 0 = no trade</span></div>
+      </div>
+    </>
   );
 }

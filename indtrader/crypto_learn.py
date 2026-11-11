@@ -176,11 +176,17 @@ def _append(f: Path, cols: list[str], rows: list[dict]) -> None:
 
 
 class Learner:
+    _read_rows = staticmethod(lambda f: _read(f))
+    _append_rows = staticmethod(lambda f, cols, rows: _append(f, cols, rows))
+
     def __init__(self, root: Path, api: Binance | None = None, feeds: Feeds | None = None,
                  lessons: Path = Path("journal/crypto_lessons.json")):
         self.dir = root / "learn"
         self.fc, self.sc = self.dir / "forecasts.csv", self.dir / "scores.csv"
         self.api, self.feeds, self.lessons = api or Binance(), feeds or Feeds(), lessons
+        from indtrader.crypto_bracket import Brackets
+
+        self.brackets = Brackets(self)
 
     # -- 1. the fact sheet the analyst reads before forecasting
     def brief(self, coins: list[str]) -> dict:
@@ -193,6 +199,10 @@ class Learner:
             st = state(closes, q[c]["last"], fg, self.feeds.funding(c), q[c].get("change_pct"))
             st["baseline_24h"] = baseline(q[c]["last"], st["vol_daily"], 24)
             st["baseline_168h"] = baseline(q[c]["last"], st["vol_daily"], 168)
+            try:
+                st["bracket"] = self.brackets.plan(c, st["vol_daily"])
+            except Exception as e:  # noqa: BLE001 - a missing feed must not stop the brief
+                st["bracket"] = {"error": str(e)[:160]}
             out["coins"][c] = st
         out["scorecard"] = self.summary()
         out["lessons"] = json.loads(self.lessons.read_text()) if self.lessons.exists() else []
@@ -376,5 +386,6 @@ class Learner:
                            "brier": s["brier"] if s else None, "inside": s["inside"] if s else None})
         return {"summary": self.summary(), "recent": list(reversed(recent)),
                 "lessons": json.loads(self.lessons.read_text()) if self.lessons.exists() else [],
-                "open": sum(1 for r in fc if r["source"] == "llm" and (r["id"], "llm") not in scored)}
+                "open": sum(1 for r in fc if r["source"] == "llm" and (r["id"], "llm") not in scored),
+                "brackets": {"summary": self.brackets.summary(), "recent": self.brackets.recent()}}
 
