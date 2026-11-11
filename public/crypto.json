@@ -1,6 +1,6 @@
 {
- "time": "2026-11-10T23:37:47+00:00",
- "btc": 73746.01,
+ "time": "2026-11-11T03:00:13+00:00",
+ "btc": 73640.0,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9876.27,
+   "value": 9862.08,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -1.24,
+   "return_pct": -1.38,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 73746.01,
-     "value": 9876.17,
-     "pnl": -113.74,
-     "pnl_pct": -1.14,
-     "day_pct": -1.913,
+     "last": 73640.0,
+     "value": 9861.98,
+     "pnl": -127.93,
+     "pnl_pct": -1.28,
+     "day_pct": -1.653,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -94,6 +94,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "9865.62"
+  },
+  {
+   "time": "2026-11-11T03:00:10+00:00",
+   "btc": "73642.01",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "9862.35"
   }
  ],
  "trades": [
@@ -132,73 +139,73 @@
  "learn": {
   "summary": {
    "24h": {
-    "n": 2,
-    "brier_llm": 0.2162,
+    "n": 4,
+    "brier_llm": 0.221,
     "brier_base": 0.25,
-    "skill_pct": 13.5,
-    "t": null,
-    "coverage_llm_pct": 50.0,
-    "coverage_base_pct": 0.0,
-    "pinball_llm": 1.116,
-    "pinball_base": 1.388,
+    "skill_pct": 11.6,
+    "t": 30.28,
+    "coverage_llm_pct": 75.0,
+    "coverage_base_pct": 50.0,
+    "pinball_llm": 0.917,
+    "pinball_base": 0.98,
     "hit_rate_pct": 100.0,
     "verdict": "too few calls to tell",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 2,
-      "said_pct": 46.5,
+      "n": 4,
+      "said_pct": 47.0,
       "happened_pct": 0.0
      }
     ],
     "by_tag": [
      {
       "tag": "above_200d",
-      "n": 1,
-      "skill_pct": 11.6,
+      "n": 2,
+      "skill_pct": 9.7,
       "t": null,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_200d",
-      "n": 1,
-      "skill_pct": 15.4,
+      "n": 2,
+      "skill_pct": 13.5,
       "t": null,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_50d",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 4,
+      "skill_pct": 11.6,
+      "t": 30.28,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "fg_fear",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 4,
+      "skill_pct": 11.6,
+      "t": 30.28,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "funding_normal",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 4,
+      "skill_pct": 11.6,
+      "t": 30.28,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "rsi_middle",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 4,
+      "skill_pct": 11.6,
+      "t": 30.28,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "vol_normal",
-      "n": 2,
-      "skill_pct": 13.5,
-      "t": null,
+      "n": 4,
+      "skill_pct": 11.6,
+      "t": 30.28,
       "verdict": "too few calls to tell"
      }
     ]
@@ -366,10 +373,10 @@
     "note": "Slight down lean; range widened 25% for CPI. Bear: -14% below the 50-day and below the 200-day average, ETH/BTC weakest since July (cryptoticker, Nov 2026), ETH ETF outflows. Bull: fear 32, funding just turned negative (-0.0002% last settlement, OKX) so little long leverage left. Emotion checks: -6.6% week not extended by itself (recency). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
     "base_lo": "2054.714554",
     "base_hi": "2197.110577",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "2062.49",
+    "up": "0",
+    "brier": "0.2209",
+    "inside": "1"
    },
    {
     "id": "20261110T0143-BTC-24",
@@ -384,10 +391,10 @@
     "note": "Slight down lean; range widened 25% vs baseline for CPI inside the window. Bear: below the 50-day average (-8.2%), ETF outflows, five weekly losses. Bull: fear 32 and leverage already flushed (OKX funding 0.005%/8h), RSI 37. Emotion checks: facts re-read, not copied from yesterday's 0.47; levels (e.g. the 200-day average) not used as reasons (H10c). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
     "base_lo": "73242.566841",
     "base_hi": "76811.890662",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "73882.0",
+    "up": "0",
+    "brier": "0.2304",
+    "inside": "1"
    },
    {
     "id": "20261109T1736-ETH-24",
@@ -444,7 +451,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-10",
+    "last_checked": "2026-11-11",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -483,7 +490,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-10",
+    "last_checked": "2026-11-11",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -517,12 +524,12 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 2,
+     "n_other": 4,
      "up_pct": null,
      "other_up_pct": 0.0,
      "t": null
     },
-    "last_checked": "2026-11-10",
+    "last_checked": "2026-11-11",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -561,7 +568,7 @@
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-10",
+    "last_checked": "2026-11-11",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -601,7 +608,7 @@
      "t": null,
      "verdict": "no scored calls yet"
     },
-    "last_checked": "2026-11-10"
+    "last_checked": "2026-11-11"
    },
    {
     "id": "chasing-big-moves",
@@ -621,9 +628,9 @@
      "t": null,
      "verdict": "no scored calls yet"
     },
-    "last_checked": "2026-11-10"
+    "last_checked": "2026-11-11"
    }
   ],
-  "open": 10
+  "open": 8
  }
 }
