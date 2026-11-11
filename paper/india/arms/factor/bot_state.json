@@ -11,7 +11,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 3976.17,
+      "stop": 4079.81,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -19,7 +19,7 @@
     "ADANIPORTS": {
       "qty": 5,
       "avg": 1903.53,
-      "stop": 1733.77,
+      "stop": 1755.05,
       "target": 22795.29,
       "opened": "2026-10-30",
       "buy_charges": 11.3
@@ -35,7 +35,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.67,
-      "stop": 321.77,
+      "stop": 327.43,
       "target": 4532.52,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -43,7 +43,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.49,
-      "stop": 309.19,
+      "stop": 311.66,
       "target": 3913.3,
       "opened": "2026-10-30",
       "buy_charges": 11.76
@@ -51,7 +51,7 @@
     "NYKAA": {
       "qty": 28,
       "avg": 349.44,
-      "stop": 314.48,
+      "stop": 315.66,
       "target": 4759.22,
       "opened": "2026-10-30",
       "buy_charges": 11.620000000000001
@@ -59,7 +59,7 @@
     "LAURUSLABS": {
       "qty": 4,
       "avg": 2351.02,
-      "stop": 2095.51,
+      "stop": 2148.52,
       "target": 31530.32,
       "opened": "2026-11-02",
       "buy_charges": 11.17
@@ -67,7 +67,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1895.3,
+      "stop": 1929.14,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -75,7 +75,7 @@
     "AUROPHARMA": {
       "qty": 5,
       "avg": 1764.56,
-      "stop": 1639.46,
+      "stop": 1668.88,
       "target": 19843.33,
       "opened": "2026-11-05",
       "buy_charges": 10.469999999999999
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-09",
-    "start_equity": 101106.52,
-    "orders": 1,
+    "date": "2026-11-11",
+    "start_equity": 102559.14,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {},
@@ -111,6 +111,6 @@
   "ca_pending": {},
   "cash": 24843.54000000001,
   "capital": 100000.0,
-  "peak_equity": 101106.52,
+  "peak_equity": 102559.14,
   "ca_applied": []
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 35624.5166526642,
+  "cash": 31610.452953811662,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -30,16 +30,16 @@
       "avg": 2020.709801147461
     },
     "AUROPHARMA": {
-      "qty": 4,
-      "avg": 1758.0786122131346
+      "qty": 5,
+      "avg": 1776.1676448852536
     },
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.6930255737304
     },
     "NYKAA": {
-      "qty": 21,
-      "avg": 346.58511333138597
+      "qty": 27,
+      "avg": 349.5950853051079
     }
   },
   "orders": [
@@ -229,8 +229,30 @@
       "price": 336.92,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 29 (alloc 29, risk-sized 57) stop 301.73",
       "message": "charges Rs 2.80"
+    },
+    {
+      "time": "2026-11-11T09:19:12+05:30",
+      "id": "PAPER-a4ea77d59c",
+      "symbol": "AUROPHARMA",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 1848.52,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 5 (alloc 5, risk-sized 11) stop 1669.38",
+      "message": "charges Rs 2.19"
+    },
+    {
+      "time": "2026-11-11T09:19:13+05:30",
+      "id": "PAPER-60f11c05e3",
+      "symbol": "NYKAA",
+      "side": "BUY",
+      "qty": 6,
+      "status": "COMPLETE",
+      "price": 360.13,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 27 (alloc 27, risk-sized 45) stop 315.56",
+      "message": "charges Rs 2.57"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 76.35
+  "charges": 81.10999999999999
 }

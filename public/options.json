@@ -1,6 +1,6 @@
 {
- "time": "2026-11-11T02:18:03+05:30",
- "spot": 25044.65,
+ "time": "2026-11-11T09:20:06+05:30",
+ "spot": 25353.75,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -111,55 +111,55 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 91089.6,
-   "realized": -6963.82,
+   "equity": 88043.98,
+   "realized": -11778.63,
    "open": {
     "name": "iron condor",
     "expiry": "2026-11-17",
-    "opened": "2026-11-06T09:18:20+05:30",
+    "opened": "2026-11-11T09:19:36+05:30",
     "legs": [
      {
       "kind": "CE",
-      "strike": 25150,
+      "strike": 25950,
       "side": "SELL",
       "qty": 65,
-      "entry": 48.5
+      "entry": 57.7
      },
      {
       "kind": "PE",
-      "strike": 23800,
+      "strike": 24750,
       "side": "SELL",
       "qty": 65,
-      "entry": 84.3
+      "entry": 46.0
      },
      {
       "kind": "CE",
-      "strike": 25350,
+      "strike": 26150,
       "side": "BUY",
       "qty": 65,
-      "entry": 29.0
+      "entry": 34.6
      },
      {
       "kind": "PE",
-      "strike": 23600,
+      "strike": 24550,
       "side": "BUY",
       "qty": 65,
-      "entry": 60.15
+      "entry": 26.85
      }
     ],
-    "credit": 2837.25,
-    "entry_charges": 113.58,
-    "max_loss": 10162.75,
-    "note": "1 SD short strikes, spot 24488, ATM IV 15.3%; rules only"
+    "credit": 2746.25,
+    "entry_charges": 109.14,
+    "max_loss": 10253.75,
+    "note": "1 SD short strikes, spot 25354, ATM IV 18.0%; rules only"
    },
    "mark": {
-    "close_value": 4670.25,
-    "pnl": -1946.58,
+    "close_value": 2814.5,
+    "pnl": -177.39,
     "prices": [
-     187.85,
-     11.1,
-     119.6,
-     7.5
+     59.75,
+     45.4,
+     35.5,
+     26.35
     ]
    },
    "closed": [
@@ -260,6 +260,55 @@
      "exit_charges": 106.5,
      "pnl": -2796.67,
      "reason": "stop: close cost 5034 >= 2x credit 2450 (loss = credit)"
+    },
+    {
+     "name": "iron condor",
+     "expiry": "2026-11-17",
+     "opened": "2026-11-06T09:18:20+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 25150,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 48.5
+      },
+      {
+       "kind": "PE",
+       "strike": 23800,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 84.3
+      },
+      {
+       "kind": "CE",
+       "strike": 25350,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 29.0
+      },
+      {
+       "kind": "PE",
+       "strike": 23600,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 60.15
+      }
+     ],
+     "credit": 2837.25,
+     "entry_charges": 113.58,
+     "max_loss": 10162.75,
+     "note": "1 SD short strikes, spot 24488, ATM IV 15.3%; rules only",
+     "closed": "2026-11-11T09:18:35+05:30",
+     "exit_prices": [
+      347.75,
+      7.9,
+      235.55,
+      6.2
+     ],
+     "exit_charges": 134.98,
+     "pnl": -4814.81,
+     "reason": "stop: close cost 7404 >= 2x credit 2837 (loss = credit)"
     }
    ]
   },
@@ -628,6 +677,13 @@
    "main": "94123.31",
    "control": "91089.6",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-11T09:20:06+05:30",
+   "spot": "25353.75",
+   "main": "94123.31",
+   "control": "88043.98",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -672,6 +728,13 @@
    "lotto_direction": "none",
    "note": "Trending regime: Nifty +6.4% over 5 sessions (Yahoo daily) against a weekly 1 SD of about 2.5% at India VIX 18. Realized moves are about 2.5x what option prices imply. India VIX is rising (17.6 to 18.3 at the 9 Nov open) and both condor accounts were stopped out by this rally four times since 4 Nov. Skip: no new LLM-reviewed condor and no lotto today. The rules-only control keeps its open 17 Nov condor by rule.",
    "time": "2026-11-09T09:18:25+05:30"
+  },
+  {
+   "date": "2026-11-11",
+   "action": "skip",
+   "lotto_direction": "none",
+   "note": "Trending regime continues: Nifty about 25,357 in early trade on 11 Nov, +1.2% on the day and +6.5% over 5 sessions (Yahoo daily), against a weekly 1 SD of about 2.4% at India VIX 17.4 (9 Nov close). The rules-only condor was stopped out again at today's open (loss equal to its credit), the fifth condor stop since 4 Nov. Events before the 17 Nov expiry: HAL and other results on 12 Nov, US PPI on 13 Nov (BLS schedule), after a hot US CPI on 10 Nov (CNBC). Skip: no new condor for the With LLM account and no lotto today.",
+   "time": "2026-11-11T09:19:33+05:30"
   }
  ]
 }

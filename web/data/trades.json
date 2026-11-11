@@ -540,6 +540,30 @@
   "id": "India:main:16"
  },
  {
+  "time": "2026-11-11T09:19:12+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "AUROPHARMA",
+  "side": "BUY",
+  "qty": 1,
+  "price": 1848.52,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 5 (alloc 5, risk-sized 11) stop 1669.38",
+  "id": "India:main:17"
+ },
+ {
+  "time": "2026-11-11T09:19:13+05:30",
+  "market": "India",
+  "book": "main",
+  "symbol": "NYKAA",
+  "side": "BUY",
+  "qty": 6,
+  "price": 360.13,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 27 (alloc 27, risk-sized 45) stop 315.56",
+  "id": "India:main:18"
+ },
+ {
   "time": "2026-10-30T11:04:39+05:30",
   "market": "India",
   "book": "factor",
@@ -549,7 +573,7 @@
   "price": 4819.81,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4334.25",
-  "id": "India:factor:17"
+  "id": "India:factor:19"
  },
  {
   "time": "2026-10-30T11:04:39+05:30",
@@ -561,7 +585,7 @@
   "price": 4247.22,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.27",
-  "id": "India:factor:18"
+  "id": "India:factor:20"
  },
  {
   "time": "2026-10-30T11:04:39+05:30",
@@ -573,7 +597,7 @@
   "price": 1843.92,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.74",
-  "id": "India:factor:19"
+  "id": "India:factor:21"
  },
  {
   "time": "2026-10-30T11:04:40+05:30",
@@ -585,7 +609,7 @@
   "price": 1230.62,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 4 (alloc 8, risk-sized 15) stop 1100.56",
-  "id": "India:factor:20"
+  "id": "India:factor:22"
  },
  {
   "time": "2026-10-30T11:04:40+05:30",
@@ -597,7 +621,7 @@
   "price": 344.67,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.77",
-  "id": "India:factor:21"
+  "id": "India:factor:23"
  },
  {
   "time": "2026-10-30T11:04:41+05:30",
@@ -609,7 +633,7 @@
   "price": 345.37,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.19",
-  "id": "India:factor:22"
+  "id": "India:factor:24"
  },
  {
   "time": "2026-10-30T11:04:42+05:30",
@@ -621,7 +645,7 @@
   "price": 350.07,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",
-  "id": "India:factor:23"
+  "id": "India:factor:25"
  },
  {
   "time": "2026-11-02T09:36:44+05:30",
@@ -633,7 +657,7 @@
   "price": 2378.39,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2090.13",
-  "id": "India:factor:24"
+  "id": "India:factor:26"
  },
  {
   "time": "2026-11-02T09:36:44+05:30",
@@ -645,7 +669,7 @@
   "price": 2020.71,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",
-  "id": "India:factor:25"
+  "id": "India:factor:27"
  },
  {
   "time": "2026-11-05T09:40:11+05:30",
@@ -657,7 +681,7 @@
   "price": 1727.16,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",
-  "id": "India:factor:26"
+  "id": "India:factor:28"
  },
  {
   "time": "2026-11-06T09:18:00+05:30",
@@ -669,7 +693,7 @@
   "price": 2323.66,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 6) stop 2028.91",
-  "id": "India:factor:27"
+  "id": "India:factor:29"
  },
  {
   "time": "2026-11-06T09:18:01+05:30",
@@ -681,7 +705,7 @@
   "price": 1789.49,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 1608.15",
-  "id": "India:factor:28"
+  "id": "India:factor:30"
  },
  {
   "time": "2026-11-06T09:18:01+05:30",
@@ -693,7 +717,7 @@
   "price": 1194.7,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 8 (alloc 8, risk-sized 13) stop 1048.62",
-  "id": "India:factor:29"
+  "id": "India:factor:31"
  },
  {
   "time": "2026-11-06T09:18:01+05:30",
@@ -705,7 +729,7 @@
   "price": 348.82,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 28 (alloc 28, risk-sized 45) stop 304.54",
-  "id": "India:factor:30"
+  "id": "India:factor:32"
  },
  {
   "time": "2026-11-06T09:18:01+05:30",
@@ -717,7 +741,7 @@
   "price": 337.87,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",
-  "id": "India:factor:31"
+  "id": "India:factor:33"
  },
  {
   "time": "2026-11-09T09:17:54+05:30",
@@ -729,6 +753,6 @@
   "price": 1943.27,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 1733.77",
-  "id": "India:factor:32"
+  "id": "India:factor:34"
  }
 ]
