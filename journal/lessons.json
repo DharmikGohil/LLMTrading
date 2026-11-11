@@ -4,19 +4,19 @@
   "lesson": "A pre-results veto on a top-ranked momentum stock may cost more than it saves: so far the vetoed names that reported a beat rose sharply (judge on 5-day excess, not 1-day).",
   "market": "all",
   "status": "hypothesis",
-  "evidence_for": 5,
-  "evidence_against": 3,
+  "evidence_for": 6,
+  "evidence_against": 4,
   "first_seen": "2026-10-31",
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-11",
   "examples": [
-   "2026-10-27 LLY vetoed (results 29 Oct), beat and raised, 1-day excess +6.9%, +7% to a record",
-   "+ 2026-10-27 MRK vetoed before 29 Oct results (beat, guidance raised): 5-day excess vs S&P +3.52% (close 27 Oct 141.82 -> 3 Nov 144.02)",
    "+ 2026-10-28 AMGN vetoed before 3 Nov results (beat: revenue +8%, non-GAAP EPS +14%): 5-day excess vs S&P +6.75% (close 28 Oct to 4 Nov)",
    "+ 2026-10-28 ABBV vetoed before 30 Oct results (beat, FY26 outlook and dividend raised): 5-day excess vs S&P +3.38% (close 28 Oct to 4 Nov)",
    "- 2026-10-29 NYKAA vetoed before 4 Nov results: 5-day excess vs Nifty -7.90% (352.90 to 349.75 vs Nifty +7.01%, close 29 Oct to 5 Nov); the veto helped",
    "- 2026-10-29 ZYDUSLIFE vetoed before 4 Nov results (stock -4.2% on results day): 5-day excess vs Nifty -5.94%; the veto helped",
    "- 2026-10-27 AAPL (US) vetoed before 2 Nov results: 5-day excess vs S&P -2.73%; the veto helped (recorded late: earlier left out because the beat/miss was unverified, which only filtered out cases against the lesson)",
-   "+ 2026-10-29 MET vetoed before 4 Nov results (record adjusted EPS): 5-day excess vs S&P +4.00% (close 29 Oct to 5 Nov)"
+   "+ 2026-10-29 MET vetoed before 4 Nov results (record adjusted EPS): 5-day excess vs S&P +4.00% (close 29 Oct to 5 Nov)",
+   "+ 2026-10-30 AUROPHARMA vetoed before 4-5 Nov results (record revenue, profit +32.5%, above estimates): 5-day excess vs Nifty +3.34% (review table, 11 Nov); the veto cost return",
+   "- 2026-11-02 BOSCHLTD vetoed before 6 Nov results (profit +19% but the stock fell on the day): 5-day excess vs Nifty -4.71% (review table, 11 Nov); the veto helped"
   ]
  }
 ]
