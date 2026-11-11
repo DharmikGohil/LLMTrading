@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. October sales update filed 1 Nov and EICMA launches on 3 Nov (NSE). At its 52-week high, +7% in a week, RSI 72.5, template 7/7 (brief). No red flag found. Bear case: extended after a 17% month; two-wheeler demand after the festive season is uncertain. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T07:45:10+05:30"
+}

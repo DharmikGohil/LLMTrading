@@ -1,0 +1,12 @@
+{
+  "symbol": "MAHABANK",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Q2 FY27 on 26 Oct: net profit Rs 2,310 cr (+41%), net NPA 0.12% (BusinessToday; earlier review). CRISIL rating letter filed 4 Nov (NSE). +11% in a week, RSI 64, volume 1.65x (brief). No red flag found. Bear case: a PSU bank with 36% volatility; the weekly jump can reverse. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T07:45:08+05:30"
+}

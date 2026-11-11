@@ -1,0 +1,12 @@
+{
+  "symbol": "DIVISLAB",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 FY27 on 7 Nov: net profit about Rs 1,127 cr (+64% y/y), revenue Rs 3,676 cr (+35%) (press reports based on the NSE filing; one source says Rs 1,140 cr). +16.3% in a week, RSI 85, 24% above EMA50, volume 4.2x its 50-day average (brief): the untested parabolic house rule lowers confidence, no veto. Bear case: a results spike this steep often gives some back; P/E near 90 per one aggregator. Tags: reason=house; attention=yes",
+  "confidence": 53.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T07:45:07+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 5). Q2 FY27 on 5 Nov: revenue about Rs 38,280 cr (+27%), net profit about Rs 1,175 cr (+44%) (Autocar Pro; Univest, Nov 2026). RSI 53, 1.9% above EMA50, template 7/7 (brief). No red flag found. Bear case: -3.9% over 3 months and exposed to European car demand; high volatility (35%). Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T07:45:07+05:30"
+}

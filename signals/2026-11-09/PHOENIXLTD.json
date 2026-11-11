@@ -1,0 +1,12 @@
+{
+  "symbol": "PHOENIXLTD",
+  "as_of": "2026-11-09",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Held. Investor-meet schedules filed 6 Nov (NSE). +6.5% in a week, RSI 73, 10% above EMA50, volume 0.6x (brief). No red flag found. Bear case: extended on light volume; mall consumption is cyclical. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-11T07:45:09+05:30"
+}
