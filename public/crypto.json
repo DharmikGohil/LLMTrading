@@ -1,6 +1,6 @@
 {
- "time": "2026-11-12T14:53:43+00:00",
- "btc": 71586.0,
+ "time": "2026-11-12T17:42:49+00:00",
+ "btc": 71814.98,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9587.0,
+   "value": 9617.67,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -4.13,
+   "return_pct": -3.82,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 71586.0,
-     "value": 9586.9,
-     "pnl": -403.01,
-     "pnl_pct": -4.03,
-     "day_pct": -2.816,
+     "last": 71814.98,
+     "value": 9617.57,
+     "pnl": -372.34,
+     "pnl_pct": -3.73,
+     "day_pct": -3.71,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -279,6 +279,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261112T1742-ETH-24",
+    "made": "2026-11-12T17:42:37+00:00",
+    "due": "2026-11-13T17:42:37+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "2011.21",
+    "p_up": "0.48",
+    "lo": "1946.0",
+    "hi": "2080.0",
+    "note": "Near baseline. -3.9% in 24h, -10% week, RSI 27.8 (oversold, no confirmed lesson), funding normal, F&G 28. PPI inside the window (TD calendar). Bull case: oversold squeeze. Bear case: weakest trend, follows BTC lower on a hot PPI.",
+    "base_lo": "1945.041315",
+    "base_hi": "2079.629689",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261112T1742-BTC-24",
+    "made": "2026-11-12T17:42:35+00:00",
+    "due": "2026-11-13T17:42:35+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "71812.05",
+    "p_up": "0.48",
+    "lo": "70150.0",
+    "hi": "73500.0",
+    "note": "Near baseline. -3.7% in 24h, now below both the 50- and 200-day averages, RSI 30, F&G 28, funding normal. Risk-off day: Nvidia CEO Jensen Huang resigned (IBTimes via Yahoo, 12 Nov). US PPI Fri 13 Nov 8:30 ET falls inside this window (TD Economics calendar, 6 Nov). No dated BTC-specific cause found. Coverage 90% (at the 'too wide' edge): baseline range, not wider. Recency check: the drop is not a reason to lean further down. Bull case: oversold bounce on a soft PPI. Bear case: hot PPI after hot CPI, risk-off continues below the 200-day.",
+    "base_lo": "70140.734556",
+    "base_hi": "73523.189596",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261112T0736-ETH-24",
     "made": "2026-11-12T07:36:39+00:00",
@@ -838,7 +874,7 @@
     "last_checked": "2026-11-12"
    }
   ],
-  "open": 10,
+  "open": 12,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -861,11 +897,63 @@
      "probes": 2,
      "mean_abs_error": 0.0012
     },
-    "calls": 4,
-    "mean_ev_r": -0.219,
+    "calls": 6,
+    "mean_ev_r": -0.221,
     "verdict": "too few graded calls to tell"
    },
    "recent": [
+    {
+     "id": "20261112T1742-ETH-br",
+     "made": "2026-11-12T17:42:48+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "2011.4",
+     "d_pct": "2.61",
+     "p_target": "0.15",
+     "p_stop": "0.22",
+     "p_neither": "0.63",
+     "ev_r": "-0.1134",
+     "outcome": null
+    },
+    {
+     "id": "20261112T1742-ETH-br",
+     "made": "2026-11-12T17:42:48+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "2011.4",
+     "d_pct": "2.61",
+     "p_target": "0.09",
+     "p_stop": "0.3",
+     "p_neither": "0.61",
+     "ev_r": "-0.2806",
+     "outcome": null
+    },
+    {
+     "id": "20261112T1742-BTC-br",
+     "made": "2026-11-12T17:42:44+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "71806.93",
+     "d_pct": "1.84",
+     "p_target": "0.13",
+     "p_stop": "0.23",
+     "p_neither": "0.64",
+     "ev_r": "-0.1952",
+     "outcome": null
+    },
+    {
+     "id": "20261112T1742-BTC-br",
+     "made": "2026-11-12T17:42:44+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "71806.93",
+     "d_pct": "1.84",
+     "p_target": "0.1",
+     "p_stop": "0.3",
+     "p_neither": "0.6",
+     "ev_r": "-0.3082",
+     "outcome": null
+    },
     {
      "id": "20261112T0736-ETH-br",
      "made": "2026-11-12T07:36:49+00:00",
