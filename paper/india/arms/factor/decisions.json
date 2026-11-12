@@ -1141,5 +1141,194 @@
   "held": 8,
   "target_qty": 8,
   "decision": "momentum: Buy; Buy: already at/above size (8 >= 8)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ABCAPITAL",
+  "price": 402.9,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ADANIPORTS",
+  "price": 1923.9,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "AUROPHARMA",
+  "price": 1804.3,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "BOSCHLTD",
+  "price": 50250.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "DIVISLAB",
+  "price": 11318.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ETERNAL",
+  "price": 361.7,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum: Hold; Hold: keep 14"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "FEDERALBNK",
+  "price": 363.15,
+  "held": 29,
+  "target_qty": 29,
+  "decision": "momentum: Buy; Buy: already at/above size (29 >= 27)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "GLENMARK",
+  "price": 2662.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "HAL",
+  "price": 4994.0,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "KOTAKBANK",
+  "price": 489.65,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LAURUSLABS",
+  "price": 2413.1,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum: Buy; Buy: already at/above size (4 >= 4)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LGEINDIA",
+  "price": 1737.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MAHABANK",
+  "price": 90.92,
+  "held": 0,
+  "target_qty": 109,
+  "decision": "momentum: Buy; Buy: add to 109 (alloc 109, risk-sized 180) stop 79.82"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MANKIND",
+  "price": 2660.8,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MOTHERSON",
+  "price": 169.14,
+  "held": 0,
+  "target_qty": 59,
+  "decision": "momentum: Buy; Buy: add to 59 (alloc 59, risk-sized 85) stop 145.76"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "NYKAA",
+  "price": 354.65,
+  "held": 28,
+  "target_qty": 28,
+  "decision": "momentum: Buy; Buy: already at/above size (28 >= 28)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "PHOENIXLTD",
+  "price": 2189.8,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum: Hold; Hold: keep 2"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "RADICO",
+  "price": 4457.1,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 3892.53"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TITAN",
+  "price": 4990.4,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TVSMOTOR",
+  "price": 4547.1,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Underweight; Underweight but held 13d < min 20d; keeping (stop still active)"
+ },
+ {
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ZYDUSLIFE",
+  "price": 1199.2,
+  "held": 8,
+  "target_qty": 8,
+  "decision": "momentum: Buy; Buy: already at/above size (8 >= 8)"
  }
 ]

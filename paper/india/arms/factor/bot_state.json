@@ -11,7 +11,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 4079.81,
+      "stop": 4080.9,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -43,7 +43,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.49,
-      "stop": 311.66,
+      "stop": 325.19,
       "target": 3913.3,
       "opened": "2026-10-30",
       "buy_charges": 11.76
@@ -67,7 +67,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1929.14,
+      "stop": 1957.34,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-11",
-    "start_equity": 102559.14,
+    "date": "2026-11-12",
+    "start_equity": 102176.59,
     "orders": 0,
     "partial": false
   },

@@ -1,5 +1,5 @@
 {
-  "cash": 31610.452953811662,
+  "cash": 27756.159004959125,
   "positions": {
     "HAL": {
       "qty": 1,
@@ -10,8 +10,8 @@
       "avg": 4247.722897705078
     },
     "ADANIPORTS": {
-      "qty": 3,
-      "avg": 1877.2048162841795
+      "qty": 5,
+      "avg": 1896.2676795410157
     },
     "ETERNAL": {
       "qty": 14,
@@ -251,8 +251,19 @@
       "price": 360.13,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 27 (alloc 27, risk-sized 45) stop 315.56",
       "message": "charges Rs 2.57"
+    },
+    {
+      "time": "2026-11-12T09:20:37+05:30",
+      "id": "PAPER-1732d0bc49",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 1924.86,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 9) stop 1711.58",
+      "message": "charges Rs 4.57"
     }
   ],
   "realized_pnl": 0.0,
-  "charges": 81.10999999999999
+  "charges": 85.67999999999998
 }

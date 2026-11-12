@@ -11,18 +11,18 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 4077.61,
+      "stop": 4085.7,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
     },
     "ADANIPORTS": {
-      "qty": 3,
-      "avg": 1877.2,
+      "qty": 5,
+      "avg": 1896.26,
       "stop": 1754.95,
-      "target": 22796.39,
+      "target": 23267.42,
       "opened": "2026-10-30",
-      "buy_charges": 6.6899999999999995
+      "buy_charges": 11.26
     },
     "ETERNAL": {
       "qty": 14,
@@ -35,7 +35,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.27,
-      "stop": 311.51,
+      "stop": 325.04,
       "target": 3808.08,
       "opened": "2026-10-30",
       "buy_charges": 11.75
@@ -51,7 +51,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1929.54,
+      "stop": 1957.24,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-11",
-    "start_equity": 102612.99,
-    "orders": 2,
+    "date": "2026-11-12",
+    "start_equity": 102358.83,
+    "orders": 1,
     "partial": false
   },
   "stopped_out": {},
@@ -109,10 +109,11 @@
     "PAPER-fe2d199aea",
     "PAPER-db179c960a",
     "PAPER-a4ea77d59c",
-    "PAPER-60f11c05e3"
+    "PAPER-60f11c05e3",
+    "PAPER-1732d0bc49"
   ],
   "ca_pending": {},
-  "cash": 31610.580000000024,
+  "cash": 27756.290000000023,
   "capital": 100000.0,
   "peak_equity": 102612.99,
   "ca_applied": []

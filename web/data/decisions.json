@@ -6793,6 +6793,258 @@
  },
  {
   "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ABCAPITAL",
+  "price": 403.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:127"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ADANIPORTS",
+  "price": 1925.0,
+  "held": 3,
+  "target_qty": 5,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 9) stop 1711.58",
+  "id": "India:main:128"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "AUROPHARMA",
+  "price": 1804.0,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 5",
+  "id": "India:main:129"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "BOSCHLTD",
+  "price": 50305.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:130"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "DIVISLAB",
+  "price": 11332.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (53%) does not object; Buy: already at/above size (0 >= 0)",
+  "id": "India:main:131"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ETERNAL",
+  "price": 362.2,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Hold; Hold: keep 14",
+  "id": "India:main:132"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "FEDERALBNK",
+  "price": 363.0,
+  "held": 29,
+  "target_qty": 29,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (29 >= 27)",
+  "id": "India:main:133"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "GLENMARK",
+  "price": 2660.9,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:134"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "HAL",
+  "price": 4990.2,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1",
+  "id": "India:main:135"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "KOTAKBANK",
+  "price": 489.85,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:136"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LAURUSLABS",
+  "price": 2414.9,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (4 >= 4)",
+  "id": "India:main:137"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LGEINDIA",
+  "price": 1736.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:138"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MAHABANK",
+  "price": 91.25,
+  "held": 0,
+  "target_qty": 109,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 109 (alloc 109, risk-sized 180) stop 80.15",
+  "id": "India:main:139"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MANKIND",
+  "price": 2658.4,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:140"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MOTHERSON",
+  "price": 169.17,
+  "held": 0,
+  "target_qty": 59,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 59 (alloc 59, risk-sized 85) stop 145.79",
+  "id": "India:main:141"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "NYKAA",
+  "price": 355.05,
+  "held": 27,
+  "target_qty": 28,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 28 (alloc 28, risk-sized 45) stop 311.02",
+  "id": "India:main:142"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "PHOENIXLTD",
+  "price": 2189.7,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Hold; Hold: keep 2",
+  "id": "India:main:143"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "RADICO",
+  "price": 4465.2,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (58%) vetoes the buy; Hold: keep 0",
+  "id": "India:main:144"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TITAN",
+  "price": 4995.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "India:main:145"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TVSMOTOR",
+  "price": 4551.9,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Underweight; Underweight but held 13d < min 20d; keeping (stop still active)",
+  "id": "India:main:146"
+ },
+ {
+  "market": "India",
+  "book": "main",
+  "time": "2026-11-12T09:20:31+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ZYDUSLIFE",
+  "price": 1198.0,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (57%) vetoes the buy; Hold: keep 6",
+  "id": "India:main:147"
+ },
+ {
+  "market": "India",
   "book": "factor",
   "time": "2026-10-30T11:04:39+05:30",
   "as_of": "2026-10-29",
@@ -6801,7 +7053,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 9) stop 1640.74",
-  "id": "India:factor:127"
+  "id": "India:factor:148"
  },
  {
   "market": "India",
@@ -6813,7 +7065,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:128"
+  "id": "India:factor:149"
  },
  {
   "market": "India",
@@ -6825,7 +7077,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:129"
+  "id": "India:factor:150"
  },
  {
   "market": "India",
@@ -6837,7 +7089,7 @@
   "held": 0,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 29, risk-sized 47) stop 302.77",
-  "id": "India:factor:130"
+  "id": "India:factor:151"
  },
  {
   "market": "India",
@@ -6849,7 +7101,7 @@
   "held": 0,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 55) stop 309.19",
-  "id": "India:factor:131"
+  "id": "India:factor:152"
  },
  {
   "market": "India",
@@ -6861,7 +7113,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 4334.25",
-  "id": "India:factor:132"
+  "id": "India:factor:153"
  },
  {
   "market": "India",
@@ -6873,7 +7125,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 8) stop 2109.02",
-  "id": "India:factor:133"
+  "id": "India:factor:154"
  },
  {
   "market": "India",
@@ -6885,7 +7137,7 @@
   "held": 0,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 14 (alloc 28, risk-sized 46) stop 306.9",
-  "id": "India:factor:134"
+  "id": "India:factor:155"
  },
  {
   "market": "India",
@@ -6897,7 +7149,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 3759.27",
-  "id": "India:factor:135"
+  "id": "India:factor:156"
  },
  {
   "market": "India",
@@ -6909,7 +7161,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 4 (alloc 8, risk-sized 15) stop 1100.56",
-  "id": "India:factor:136"
+  "id": "India:factor:157"
  },
  {
   "market": "India",
@@ -6921,7 +7173,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:137"
+  "id": "India:factor:158"
  },
  {
   "market": "India",
@@ -6933,7 +7185,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 11) stop 1495.87",
-  "id": "India:factor:138"
+  "id": "India:factor:159"
  },
  {
   "market": "India",
@@ -6945,7 +7197,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:139"
+  "id": "India:factor:160"
  },
  {
   "market": "India",
@@ -6957,7 +7209,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:140"
+  "id": "India:factor:161"
  },
  {
   "market": "India",
@@ -6969,7 +7221,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:141"
+  "id": "India:factor:162"
  },
  {
   "market": "India",
@@ -6981,7 +7233,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:142"
+  "id": "India:factor:163"
  },
  {
   "market": "India",
@@ -6993,7 +7245,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:143"
+  "id": "India:factor:164"
  },
  {
   "market": "India",
@@ -7005,7 +7257,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 6) stop 2090.13",
-  "id": "India:factor:144"
+  "id": "India:factor:165"
  },
  {
   "market": "India",
@@ -7017,7 +7269,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:145"
+  "id": "India:factor:166"
  },
  {
   "market": "India",
@@ -7029,7 +7281,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 9) stop 1802.01",
-  "id": "India:factor:146"
+  "id": "India:factor:167"
  },
  {
   "market": "India",
@@ -7041,7 +7293,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Sell; Sell but held 3d < min 20d; keeping (stop still active)",
-  "id": "India:factor:147"
+  "id": "India:factor:168"
  },
  {
   "market": "India",
@@ -7053,7 +7305,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (4 >= 4)",
-  "id": "India:factor:148"
+  "id": "India:factor:169"
  },
  {
   "market": "India",
@@ -7065,7 +7317,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:149"
+  "id": "India:factor:170"
  },
  {
   "market": "India",
@@ -7077,7 +7329,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 11) stop 1498.67",
-  "id": "India:factor:150"
+  "id": "India:factor:171"
  },
  {
   "market": "India",
@@ -7089,7 +7341,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:151"
+  "id": "India:factor:172"
  },
  {
   "market": "India",
@@ -7101,7 +7353,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:152"
+  "id": "India:factor:173"
  },
  {
   "market": "India",
@@ -7113,7 +7365,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:153"
+  "id": "India:factor:174"
  },
  {
   "market": "India",
@@ -7125,7 +7377,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Sell; Sell but held 4d < min 20d; keeping (stop still active)",
-  "id": "India:factor:154"
+  "id": "India:factor:175"
  },
  {
   "market": "India",
@@ -7137,7 +7389,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:155"
+  "id": "India:factor:176"
  },
  {
   "market": "India",
@@ -7149,7 +7401,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 7) stop 2117.49",
-  "id": "India:factor:156"
+  "id": "India:factor:177"
  },
  {
   "market": "India",
@@ -7161,7 +7413,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:157"
+  "id": "India:factor:178"
  },
  {
   "market": "India",
@@ -7173,7 +7425,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:158"
+  "id": "India:factor:179"
  },
  {
   "market": "India",
@@ -7185,7 +7437,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:159"
+  "id": "India:factor:180"
  },
  {
   "market": "India",
@@ -7197,7 +7449,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:160"
+  "id": "India:factor:181"
  },
  {
   "market": "India",
@@ -7209,7 +7461,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Sell; Sell but held 4d < min 20d; keeping (stop still active)",
-  "id": "India:factor:161"
+  "id": "India:factor:182"
  },
  {
   "market": "India",
@@ -7221,7 +7473,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (4 >= 4)",
-  "id": "India:factor:162"
+  "id": "India:factor:183"
  },
  {
   "market": "India",
@@ -7233,7 +7485,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:163"
+  "id": "India:factor:184"
  },
  {
   "market": "India",
@@ -7245,7 +7497,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1531.15",
-  "id": "India:factor:164"
+  "id": "India:factor:185"
  },
  {
   "market": "India",
@@ -7257,7 +7509,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:165"
+  "id": "India:factor:186"
  },
  {
   "market": "India",
@@ -7269,7 +7521,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:166"
+  "id": "India:factor:187"
  },
  {
   "market": "India",
@@ -7281,7 +7533,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Hold; Hold: keep 14",
-  "id": "India:factor:167"
+  "id": "India:factor:188"
  },
  {
   "market": "India",
@@ -7293,7 +7545,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Sell; Sell but held 5d < min 20d; keeping (stop still active)",
-  "id": "India:factor:168"
+  "id": "India:factor:189"
  },
  {
   "market": "India",
@@ -7305,7 +7557,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:169"
+  "id": "India:factor:190"
  },
  {
   "market": "India",
@@ -7317,7 +7569,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 4, risk-sized 7) stop 2124.89",
-  "id": "India:factor:170"
+  "id": "India:factor:191"
  },
  {
   "market": "India",
@@ -7329,7 +7581,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (1 >= 1)",
-  "id": "India:factor:171"
+  "id": "India:factor:192"
  },
  {
   "market": "India",
@@ -7341,7 +7593,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:172"
+  "id": "India:factor:193"
  },
  {
   "market": "India",
@@ -7353,7 +7605,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:173"
+  "id": "India:factor:194"
  },
  {
   "market": "India",
@@ -7365,7 +7617,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:174"
+  "id": "India:factor:195"
  },
  {
   "market": "India",
@@ -7377,7 +7629,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:175"
+  "id": "India:factor:196"
  },
  {
   "market": "India",
@@ -7389,7 +7641,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:176"
+  "id": "India:factor:197"
  },
  {
   "market": "India",
@@ -7401,7 +7653,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (4 >= 3)",
-  "id": "India:factor:177"
+  "id": "India:factor:198"
  },
  {
   "market": "India",
@@ -7413,7 +7665,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:178"
+  "id": "India:factor:199"
  },
  {
   "market": "India",
@@ -7425,7 +7677,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 12) stop 1561.58",
-  "id": "India:factor:179"
+  "id": "India:factor:200"
  },
  {
   "market": "India",
@@ -7437,7 +7689,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:180"
+  "id": "India:factor:201"
  },
  {
   "market": "India",
@@ -7449,7 +7701,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:181"
+  "id": "India:factor:202"
  },
  {
   "market": "India",
@@ -7461,7 +7713,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Hold; Hold: keep 14",
-  "id": "India:factor:182"
+  "id": "India:factor:203"
  },
  {
   "market": "India",
@@ -7473,7 +7725,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Sell; Sell but held 6d < min 20d; keeping (stop still active)",
-  "id": "India:factor:183"
+  "id": "India:factor:204"
  },
  {
   "market": "India",
@@ -7485,7 +7737,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 6) stop 2232.66",
-  "id": "India:factor:184"
+  "id": "India:factor:205"
  },
  {
   "market": "India",
@@ -7497,7 +7749,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (1 >= 0)",
-  "id": "India:factor:185"
+  "id": "India:factor:206"
  },
  {
   "market": "India",
@@ -7509,7 +7761,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:186"
+  "id": "India:factor:207"
  },
  {
   "market": "India",
@@ -7521,7 +7773,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:187"
+  "id": "India:factor:208"
  },
  {
   "market": "India",
@@ -7533,7 +7785,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:188"
+  "id": "India:factor:209"
  },
  {
   "market": "India",
@@ -7545,7 +7797,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (14 >= 14)",
-  "id": "India:factor:189"
+  "id": "India:factor:210"
  },
  {
   "market": "India",
@@ -7557,7 +7809,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (2 >= 2)",
-  "id": "India:factor:190"
+  "id": "India:factor:211"
  },
  {
   "market": "India",
@@ -7569,7 +7821,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:191"
+  "id": "India:factor:212"
  },
  {
   "market": "India",
@@ -7581,7 +7833,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; bear regime: size x0.5; Buy: already at/above size (4 >= 4)",
-  "id": "India:factor:192"
+  "id": "India:factor:213"
  },
  {
   "market": "India",
@@ -7593,7 +7845,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:193"
+  "id": "India:factor:214"
  },
  {
   "market": "India",
@@ -7605,7 +7857,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "India:factor:194"
+  "id": "India:factor:215"
  },
  {
   "market": "India",
@@ -7617,7 +7869,7 @@
   "held": 2,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 1608.15",
-  "id": "India:factor:195"
+  "id": "India:factor:216"
  },
  {
   "market": "India",
@@ -7629,7 +7881,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:196"
+  "id": "India:factor:217"
  },
  {
   "market": "India",
@@ -7641,7 +7893,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:197"
+  "id": "India:factor:218"
  },
  {
   "market": "India",
@@ -7653,7 +7905,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Hold; Hold: keep 14",
-  "id": "India:factor:198"
+  "id": "India:factor:219"
  },
  {
   "market": "India",
@@ -7665,7 +7917,7 @@
   "held": 14,
   "target_qty": 29,
   "decision": "momentum: Buy; Buy: add to 29 (alloc 29, risk-sized 55) stop 301.94",
-  "id": "India:factor:199"
+  "id": "India:factor:220"
  },
  {
   "market": "India",
@@ -7677,7 +7929,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:200"
+  "id": "India:factor:221"
  },
  {
   "market": "India",
@@ -7689,7 +7941,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:201"
+  "id": "India:factor:222"
  },
  {
   "market": "India",
@@ -7701,7 +7953,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:202"
+  "id": "India:factor:223"
  },
  {
   "market": "India",
@@ -7713,7 +7965,7 @@
   "held": 2,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 6) stop 2028.91",
-  "id": "India:factor:203"
+  "id": "India:factor:224"
  },
  {
   "market": "India",
@@ -7725,7 +7977,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:204"
+  "id": "India:factor:225"
  },
  {
   "market": "India",
@@ -7737,7 +7989,7 @@
   "held": 0,
   "target_qty": 118,
   "decision": "momentum: Buy; Buy: add to 118 (alloc 118, risk-sized 185) stop 73.27",
-  "id": "India:factor:205"
+  "id": "India:factor:226"
  },
  {
   "market": "India",
@@ -7749,7 +8001,7 @@
   "held": 0,
   "target_qty": 61,
   "decision": "momentum: Buy; Buy: add to 61 (alloc 61, risk-sized 101) stop 142.53",
-  "id": "India:factor:206"
+  "id": "India:factor:227"
  },
  {
   "market": "India",
@@ -7761,7 +8013,7 @@
   "held": 14,
   "target_qty": 28,
   "decision": "momentum: Buy; Buy: add to 28 (alloc 28, risk-sized 45) stop 304.54",
-  "id": "India:factor:207"
+  "id": "India:factor:228"
  },
  {
   "market": "India",
@@ -7773,7 +8025,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "India:factor:208"
+  "id": "India:factor:229"
  },
  {
   "market": "India",
@@ -7785,7 +8037,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 3886.18",
-  "id": "India:factor:209"
+  "id": "India:factor:230"
  },
  {
   "market": "India",
@@ -7797,7 +8049,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:210"
+  "id": "India:factor:231"
  },
  {
   "market": "India",
@@ -7809,7 +8061,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:211"
+  "id": "India:factor:232"
  },
  {
   "market": "India",
@@ -7821,7 +8073,7 @@
   "held": 4,
   "target_qty": 8,
   "decision": "momentum: Buy; Buy: add to 8 (alloc 8, risk-sized 13) stop 1048.62",
-  "id": "India:factor:212"
+  "id": "India:factor:233"
  },
  {
   "market": "India",
@@ -7833,7 +8085,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:213"
+  "id": "India:factor:234"
  },
  {
   "market": "India",
@@ -7845,7 +8097,7 @@
   "held": 2,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 1733.77",
-  "id": "India:factor:214"
+  "id": "India:factor:235"
  },
  {
   "market": "India",
@@ -7857,7 +8109,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)",
-  "id": "India:factor:215"
+  "id": "India:factor:236"
  },
  {
   "market": "India",
@@ -7869,7 +8121,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:216"
+  "id": "India:factor:237"
  },
  {
   "market": "India",
@@ -7881,7 +8133,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:217"
+  "id": "India:factor:238"
  },
  {
   "market": "India",
@@ -7893,7 +8145,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Hold; Hold: keep 14",
-  "id": "India:factor:218"
+  "id": "India:factor:239"
  },
  {
   "market": "India",
@@ -7905,7 +8157,7 @@
   "held": 29,
   "target_qty": 29,
   "decision": "momentum: Buy; Buy: already at/above size (29 >= 29)",
-  "id": "India:factor:219"
+  "id": "India:factor:240"
  },
  {
   "market": "India",
@@ -7917,7 +8169,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:220"
+  "id": "India:factor:241"
  },
  {
   "market": "India",
@@ -7929,7 +8181,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:221"
+  "id": "India:factor:242"
  },
  {
   "market": "India",
@@ -7941,7 +8193,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:222"
+  "id": "India:factor:243"
  },
  {
   "market": "India",
@@ -7953,7 +8205,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: already at/above size (4 >= 4)",
-  "id": "India:factor:223"
+  "id": "India:factor:244"
  },
  {
   "market": "India",
@@ -7965,7 +8217,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:224"
+  "id": "India:factor:245"
  },
  {
   "market": "India",
@@ -7977,7 +8229,7 @@
   "held": 0,
   "target_qty": 115,
   "decision": "momentum: Buy; Buy: add to 115 (alloc 115, risk-sized 180) stop 75.51",
-  "id": "India:factor:225"
+  "id": "India:factor:246"
  },
  {
   "market": "India",
@@ -7989,7 +8241,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:226"
+  "id": "India:factor:247"
  },
  {
   "market": "India",
@@ -8001,7 +8253,7 @@
   "held": 28,
   "target_qty": 28,
   "decision": "momentum: Buy; Buy: already at/above size (28 >= 28)",
-  "id": "India:factor:227"
+  "id": "India:factor:248"
  },
  {
   "market": "India",
@@ -8013,7 +8265,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "India:factor:228"
+  "id": "India:factor:249"
  },
  {
   "market": "India",
@@ -8025,7 +8277,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 3949.64",
-  "id": "India:factor:229"
+  "id": "India:factor:250"
  },
  {
   "market": "India",
@@ -8037,7 +8289,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:230"
+  "id": "India:factor:251"
  },
  {
   "market": "India",
@@ -8049,7 +8301,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:231"
+  "id": "India:factor:252"
  },
  {
   "market": "India",
@@ -8061,7 +8313,7 @@
   "held": 8,
   "target_qty": 8,
   "decision": "momentum: Buy; Buy: already at/above size (8 >= 8)",
-  "id": "India:factor:232"
+  "id": "India:factor:253"
  },
  {
   "market": "India",
@@ -8073,7 +8325,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:233"
+  "id": "India:factor:254"
  },
  {
   "market": "India",
@@ -8085,7 +8337,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Hold; Hold: keep 5",
-  "id": "India:factor:234"
+  "id": "India:factor:255"
  },
  {
   "market": "India",
@@ -8097,7 +8349,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)",
-  "id": "India:factor:235"
+  "id": "India:factor:256"
  },
  {
   "market": "India",
@@ -8109,7 +8361,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:236"
+  "id": "India:factor:257"
  },
  {
   "market": "India",
@@ -8121,7 +8373,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
-  "id": "India:factor:237"
+  "id": "India:factor:258"
  },
  {
   "market": "India",
@@ -8133,7 +8385,7 @@
   "held": 14,
   "target_qty": 14,
   "decision": "momentum: Hold; Hold: keep 14",
-  "id": "India:factor:238"
+  "id": "India:factor:259"
  },
  {
   "market": "India",
@@ -8145,7 +8397,7 @@
   "held": 29,
   "target_qty": 29,
   "decision": "momentum: Buy; Buy: already at/above size (29 >= 28)",
-  "id": "India:factor:239"
+  "id": "India:factor:260"
  },
  {
   "market": "India",
@@ -8157,7 +8409,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:240"
+  "id": "India:factor:261"
  },
  {
   "market": "India",
@@ -8169,7 +8421,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:241"
+  "id": "India:factor:262"
  },
  {
   "market": "India",
@@ -8181,7 +8433,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:242"
+  "id": "India:factor:263"
  },
  {
   "market": "India",
@@ -8193,7 +8445,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: already at/above size (4 >= 4)",
-  "id": "India:factor:243"
+  "id": "India:factor:264"
  },
  {
   "market": "India",
@@ -8205,7 +8457,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:244"
+  "id": "India:factor:265"
  },
  {
   "market": "India",
@@ -8217,7 +8469,7 @@
   "held": 0,
   "target_qty": 111,
   "decision": "momentum: Buy; Buy: add to 111 (alloc 111, risk-sized 183) stop 78.61",
-  "id": "India:factor:245"
+  "id": "India:factor:266"
  },
  {
   "market": "India",
@@ -8229,7 +8481,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:246"
+  "id": "India:factor:267"
  },
  {
   "market": "India",
@@ -8241,7 +8493,7 @@
   "held": 0,
   "target_qty": 60,
   "decision": "momentum: Buy; Buy: add to 60 (alloc 60, risk-sized 87) stop 141.15",
-  "id": "India:factor:247"
+  "id": "India:factor:268"
  },
  {
   "market": "India",
@@ -8253,7 +8505,7 @@
   "held": 28,
   "target_qty": 28,
   "decision": "momentum: Buy; Buy: already at/above size (28 >= 27)",
-  "id": "India:factor:248"
+  "id": "India:factor:269"
  },
  {
   "market": "India",
@@ -8265,7 +8517,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Underweight; Underweight but held 9d < min 20d; keeping (stop still active)",
-  "id": "India:factor:249"
+  "id": "India:factor:270"
  },
  {
   "market": "India",
@@ -8277,7 +8529,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 4003.84",
-  "id": "India:factor:250"
+  "id": "India:factor:271"
  },
  {
   "market": "India",
@@ -8289,7 +8541,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "India:factor:251"
+  "id": "India:factor:272"
  },
  {
   "market": "India",
@@ -8301,7 +8553,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "India:factor:252"
+  "id": "India:factor:273"
  },
  {
   "market": "India",
@@ -8313,6 +8565,258 @@
   "held": 8,
   "target_qty": 8,
   "decision": "momentum: Buy; Buy: already at/above size (8 >= 8)",
-  "id": "India:factor:253"
+  "id": "India:factor:274"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ABCAPITAL",
+  "price": 402.9,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:275"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ADANIPORTS",
+  "price": 1923.9,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)",
+  "id": "India:factor:276"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "AUROPHARMA",
+  "price": 1804.3,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum: Buy; Buy: already at/above size (5 >= 5)",
+  "id": "India:factor:277"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "BOSCHLTD",
+  "price": 50250.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:278"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "DIVISLAB",
+  "price": 11318.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Buy; Buy: already at/above size (0 >= 0)",
+  "id": "India:factor:279"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ETERNAL",
+  "price": 361.7,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum: Hold; Hold: keep 14",
+  "id": "India:factor:280"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "FEDERALBNK",
+  "price": 363.15,
+  "held": 29,
+  "target_qty": 29,
+  "decision": "momentum: Buy; Buy: already at/above size (29 >= 27)",
+  "id": "India:factor:281"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "GLENMARK",
+  "price": 2662.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:282"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "HAL",
+  "price": 4994.0,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1",
+  "id": "India:factor:283"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "KOTAKBANK",
+  "price": 489.65,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:284"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LAURUSLABS",
+  "price": 2413.1,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum: Buy; Buy: already at/above size (4 >= 4)",
+  "id": "India:factor:285"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "LGEINDIA",
+  "price": 1737.1,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:286"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MAHABANK",
+  "price": 90.92,
+  "held": 0,
+  "target_qty": 109,
+  "decision": "momentum: Buy; Buy: add to 109 (alloc 109, risk-sized 180) stop 79.82",
+  "id": "India:factor:287"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MANKIND",
+  "price": 2660.8,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:288"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "MOTHERSON",
+  "price": 169.14,
+  "held": 0,
+  "target_qty": 59,
+  "decision": "momentum: Buy; Buy: add to 59 (alloc 59, risk-sized 85) stop 145.76",
+  "id": "India:factor:289"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "NYKAA",
+  "price": 354.65,
+  "held": 28,
+  "target_qty": 28,
+  "decision": "momentum: Buy; Buy: already at/above size (28 >= 28)",
+  "id": "India:factor:290"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "PHOENIXLTD",
+  "price": 2189.8,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum: Hold; Hold: keep 2",
+  "id": "India:factor:291"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "RADICO",
+  "price": 4457.1,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 3892.53",
+  "id": "India:factor:292"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TITAN",
+  "price": 4990.4,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "India:factor:293"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "TVSMOTOR",
+  "price": 4547.1,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Underweight; Underweight but held 13d < min 20d; keeping (stop still active)",
+  "id": "India:factor:294"
+ },
+ {
+  "market": "India",
+  "book": "factor",
+  "time": "2026-11-12T09:20:46+05:30",
+  "as_of": "2026-11-11",
+  "symbol": "ZYDUSLIFE",
+  "price": 1199.2,
+  "held": 8,
+  "target_qty": 8,
+  "decision": "momentum: Buy; Buy: already at/above size (8 >= 8)",
+  "id": "India:factor:295"
  }
 ]
