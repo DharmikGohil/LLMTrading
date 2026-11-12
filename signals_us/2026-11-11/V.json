@@ -1,0 +1,12 @@
+{
+  "symbol": "V",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Next results late January; no company news in 30h. Bear case: hot CPI can slow spending; interchange litigation. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:01-05:00"
+}

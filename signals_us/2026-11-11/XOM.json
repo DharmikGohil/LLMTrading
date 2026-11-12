@@ -1,0 +1,12 @@
+{
+  "symbol": "XOM",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick, not held. Bernstein cut peers COP and FANG on looming Iran de-escalation (Yahoo, 12 Nov): sector risk to oil prices, not an XOM-specific red flag. Bear case: lower crude cuts earnings. Tags: reason=news; attention=no",
+  "confidence": 52.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:03-05:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-11-11",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q1 FY27 results today, Thu 12 Nov, after the close (Cisco newsroom, 3 Nov): binary gap risk. Tags: reason=event; attention=no",
+  "confidence": 67.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:02-05:00"
+}

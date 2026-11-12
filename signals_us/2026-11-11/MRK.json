@@ -1,0 +1,12 @@
+{
+  "symbol": "MRK",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. No company news in 30h (trader-news, 12 Nov). Bear case: Keytruda patent cliff later this decade. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:00-05:00"
+}

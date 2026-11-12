@@ -1,0 +1,12 @@
+{
+  "symbol": "TMO",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. -1.5% early with no company news found (trader-news, 12 Nov); no results until late January. Bear case: soft biotech funding and China demand. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:03-05:00"
+}

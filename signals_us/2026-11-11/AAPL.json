@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Near all-time high despite the tech sell-off (Motley Fool via Yahoo, 12 Nov); China Renaissance upgrade 11 Nov. No red flag. Market context: Nvidia CEO Jensen Huang resigned (IBTimes/Stocktwits via Yahoo, 12 Nov), futures weighed pre-bell; not company-specific. Bear case: tech sell-off spreads after the Nvidia CEO exit. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:01-05:00"
+}

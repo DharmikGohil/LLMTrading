@@ -3,7 +3,7 @@
     "LLY": {
       "qty": 1,
       "avg": 1289.69,
-      "stop": 1258.23,
+      "stop": 1259.39,
       "target": 1470.84,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -43,7 +43,7 @@
     "KO": {
       "qty": 4,
       "avg": 94.69,
-      "stop": 89.14,
+      "stop": 89.93,
       "target": 852.93,
       "opened": "2026-10-30",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "DE": {
       "qty": 1,
       "avg": 679.39,
-      "stop": 612.57,
+      "stop": 613.46,
       "target": 8154.63,
       "opened": "2026-11-02",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-11",
-    "start_equity": 10083.58,
+    "date": "2026-11-12",
+    "start_equity": 10199.86,
     "orders": 0,
     "partial": false
   },

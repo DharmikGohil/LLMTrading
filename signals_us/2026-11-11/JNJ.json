@@ -1,0 +1,12 @@
+{
+  "symbol": "JNJ",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. No results until January; +0.9% early. No red flag. Bear case: talc litigation remains open. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:02-05:00"
+}

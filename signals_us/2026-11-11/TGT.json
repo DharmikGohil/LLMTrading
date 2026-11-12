@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-11",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Screen rank 1. Q3 results expected Wed 18 Nov (Nasdaq-based calendars; not company-confirmed), 4 trading days away: Hold window, binary risk close. No new red flag in 30h headlines (trader-news, 12 Nov 09:52 ET). Tags: reason=event; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:52:59-05:00"
+}

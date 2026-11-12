@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Passed Nvidia in market value (247 Wall St, 12 Nov); next results late January. Market context: Nvidia CEO Jensen Huang resigned (IBTimes/Stocktwits via Yahoo, 12 Nov), futures weighed pre-bell; not company-specific. Bear case: tech sell-off on rate-hike bets. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:03-05:00"
+}

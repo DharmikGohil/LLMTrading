@@ -1,0 +1,12 @@
+{
+  "symbol": "UNP",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. Next results 26 Jan 2027; no company news. Bear case: cyclical rail volumes. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:01-05:00"
+}

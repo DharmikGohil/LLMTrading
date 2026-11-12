@@ -1,0 +1,12 @@
+{
+  "symbol": "COP",
+  "as_of": "2026-11-11",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 6). Bernstein cut its rating on 12 Nov as Iran de-escalation looms (Yahoo Finance, 12 Nov): one downgrade, not a cluster, but a fresh sector headwind for oil prices. Minor concern: Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T09:53:01-05:00"
+}
