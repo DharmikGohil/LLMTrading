@@ -1,6 +1,6 @@
 {
- "time": "2026-11-12T21:06:04+00:00",
- "btc": 71416.0,
+ "time": "2026-11-12T23:36:40+00:00",
+ "btc": 71300.0,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9564.24,
+   "value": 9548.7,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -4.36,
+   "return_pct": -4.51,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 71416.0,
-     "value": 9564.14,
-     "pnl": -425.78,
-     "pnl_pct": -4.26,
-     "day_pct": -4.33,
+     "last": 71300.0,
+     "value": 9548.6,
+     "pnl": -441.31,
+     "pnl_pct": -4.42,
+     "day_pct": -3.493,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -180,6 +180,13 @@
    "exclude": [],
    "note": "Reason: none. Fear & Greed 29 (alternative.me, 12 Nov). Next 24h: US jobless claims Thu 12 Nov only; PPI Fri 13 Nov 8:30 ET is ~38h out (TD Economics upcoming-events table, 6 Nov). No coin-specific red flags or stress found (BTC +0.3%, ETH +0.1% in 24h, funding normal/slightly negative). Both coins below their 50-day, so the rule holds USDT anyway.",
    "time": "2026-11-11T23:37:12+00:00"
+  },
+  {
+   "date": "2026-11-12",
+   "max_exposure": 1.0,
+   "exclude": [],
+   "note": "Reason: none. Fear & Greed 28 (alternative.me, 13 Nov). Next 24h: US PPI (October) Fri 13 Nov 8:30 ET (TD Economics upcoming-events table, 6 Nov): a secondary inflation print, not FOMC/CPI. No dated coin-specific red flags found (search 13 Nov). BTC -3.6%, ETH -1.9% in 24h: below the 8% stress line; funding normal. Both coins below their 50-day, so the rule holds USDT anyway.",
+   "time": "2026-11-12T23:36:39+00:00"
   }
  ],
  "strategy": {
@@ -286,6 +293,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261112T2336-ETH-168",
+    "made": "2026-11-12T23:36:36+00:00",
+    "due": "2026-11-19T23:36:36+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "2015.54",
+    "p_up": "0.48",
+    "lo": "1840.0",
+    "hi": "2205.0",
+    "note": "Near baseline. -10% week, RSI 27.9 oversold, below both averages, funding normal, F&G 28. PPI 13 Nov (TD calendar). Bull case: oversold squeeze. Bear case: weakest trend, lower lows with BTC.",
+    "base_lo": "1844.813159",
+    "base_hi": "2202.066627",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261112T2336-BTC-168",
+    "made": "2026-11-12T23:36:33+00:00",
+    "due": "2026-11-19T23:36:33+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "71300.79",
+    "p_up": "0.48",
+    "lo": "66800.0",
+    "hi": "76000.0",
+    "note": "Near baseline. Now below the 50- and 200-day averages, RSI 29 (oversold, no confirmed lesson), F&G 28 (-22 in 7 days), funding normal. -3.6% in 24h is not a reason by itself (recency). Week: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov). Fear-rebound lesson is an unproven hypothesis (history t 0.6). Bull case: oversold bounce once PPI passes. Bear case: lost the 200-day, risk-off after Nvidia CEO exit, trend extends.",
+    "base_lo": "66994.045502",
+    "base_hi": "75884.395644",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261112T1742-ETH-24",
     "made": "2026-11-12T17:42:37+00:00",
@@ -881,7 +924,7 @@
     "last_checked": "2026-11-12"
    }
   ],
-  "open": 10,
+  "open": 12,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
