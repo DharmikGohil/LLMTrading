@@ -1,6 +1,6 @@
 {
- "time": "2026-11-12T07:07:31+00:00",
- "btc": 73544.67,
+ "time": "2026-11-12T07:36:50+00:00",
+ "btc": 73638.42,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9849.31,
+   "value": 9861.86,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -1.51,
+   "return_pct": -1.38,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 73544.67,
-     "value": 9849.21,
-     "pnl": -140.7,
-     "pnl_pct": -1.41,
-     "day_pct": -0.091,
+     "last": 73638.42,
+     "value": 9861.76,
+     "pnl": -128.15,
+     "pnl_pct": -1.28,
+     "day_pct": -0.396,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -265,6 +265,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261112T0736-ETH-24",
+    "made": "2026-11-12T07:36:39+00:00",
+    "due": "2026-11-13T07:36:39+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "2052.03",
+    "p_up": "0.48",
+    "lo": "1984.0",
+    "hi": "2120.0",
+    "note": "Near baseline. 16% below the 50-day, below the 200-day, RSI 29.7 (oversold; no confirmed lesson), funding back to normal, F&G 28. -8.3% week is not a reason by itself (recency). PPI 13 Nov just outside 24h (TD calendar). Bull case: oversold bounce. Bear case: weakest trend of the two, lower lows.",
+    "base_lo": "1984.518339",
+    "base_hi": "2121.838351",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261112T0736-BTC-24",
+    "made": "2026-11-12T07:36:37+00:00",
+    "due": "2026-11-13T07:36:37+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "73638.42",
+    "p_up": "0.48",
+    "lo": "71900.0",
+    "hi": "75350.0",
+    "note": "Near baseline. Below the 50-day average, RSI 34, F&G 28 (fear), funding normal (3d 0.0072%); flat 24h (-0.4%). US PPI Fri 13 Nov 8:30 ET falls just after this window; Fed speakers Daly/Williams 12 Nov (TD Economics calendar, 6 Nov). Coverage 87.5% (target 80): baseline-width range, not wider. Bull case: fear unwinds into PPI. Bear case: downtrend grinds lower. Calibration watch: 'about 47% up' calls came true 25% of the time (n=8, too few to act on).",
+    "base_lo": "71924.598593",
+    "base_hi": "75393.078393",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261111T2337-ETH-168",
     "made": "2026-11-11T23:37:09+00:00",
@@ -788,7 +824,7 @@
     "last_checked": "2026-11-12"
    }
   ],
-  "open": 10,
+  "open": 12,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -811,11 +847,63 @@
      "probes": 2,
      "mean_abs_error": 0.0012
     },
-    "calls": 2,
-    "mean_ev_r": -0.217,
+    "calls": 4,
+    "mean_ev_r": -0.219,
     "verdict": "too few graded calls to tell"
    },
    "recent": [
+    {
+     "id": "20261112T0736-ETH-br",
+     "made": "2026-11-12T07:36:49+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "2052.04",
+     "d_pct": "2.61",
+     "p_target": "0.15",
+     "p_stop": "0.23",
+     "p_neither": "0.62",
+     "ev_r": "-0.1212",
+     "outcome": null
+    },
+    {
+     "id": "20261112T0736-ETH-br",
+     "made": "2026-11-12T07:36:49+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "2052.04",
+     "d_pct": "2.61",
+     "p_target": "0.1",
+     "p_stop": "0.3",
+     "p_neither": "0.6",
+     "ev_r": "-0.2691",
+     "outcome": null
+    },
+    {
+     "id": "20261112T0736-BTC-br",
+     "made": "2026-11-12T07:36:45+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "73638.43",
+     "d_pct": "1.84",
+     "p_target": "0.13",
+     "p_stop": "0.24",
+     "p_neither": "0.63",
+     "ev_r": "-0.2028",
+     "outcome": null
+    },
+    {
+     "id": "20261112T0736-BTC-br",
+     "made": "2026-11-12T07:36:45+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "73638.43",
+     "d_pct": "1.84",
+     "p_target": "0.11",
+     "p_stop": "0.29",
+     "p_neither": "0.6",
+     "ev_r": "-0.2917",
+     "outcome": null
+    },
     {
      "id": "20261111T1743-ETH-br",
      "made": "2026-11-11T17:43:41+00:00",
