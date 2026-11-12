@@ -1,0 +1,12 @@
+{
+  "symbol": "AUROPHARMA",
+  "as_of": "2026-11-11",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "US FDA classified the Lannett (Seymour, IN) inspection as Official Action Indicated, disclosed 11 Nov 20:17 IST after the close (NSE filing). OAI = regulatory action, red flag. Offsetting: Apitoria Unit 2 got VAI the same day (NSE filing). Tags: reason=filing; attention=no",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T07:43:10+05:30"
+}

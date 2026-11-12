@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag in NSE filings to 11 Nov (meet schedules, ESOP allotment). Bear case: bank margins under rate pressure after hot US CPI. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T07:43:10+05:30"
+}

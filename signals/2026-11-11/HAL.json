@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-11",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Board meets Thu 12 Nov for Q2 FY27 results (NSE results calendar in brief; CompoundingAI preview, 7 Nov): binary event within 3 trading days. Tags: reason=event; attention=no",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T07:43:12+05:30"
+}

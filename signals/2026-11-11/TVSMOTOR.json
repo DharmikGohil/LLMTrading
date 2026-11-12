@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-11",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; 11 Nov press release on a Turkey launch, October monthly sales filed 1 Nov. RSI 72.5. Bear case: extended after a strong run. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-12T07:43:12+05:30"
+}
