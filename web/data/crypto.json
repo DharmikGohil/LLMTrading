@@ -1,6 +1,6 @@
 {
- "time": "2026-11-13T15:43:10+00:00",
- "btc": 68183.25,
+ "time": "2026-11-13T17:44:18+00:00",
+ "btc": 69054.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9131.3,
+   "value": 9247.91,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -8.69,
+   "return_pct": -7.52,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 68183.25,
-     "value": 9131.2,
-     "pnl": -858.71,
-     "pnl_pct": -8.6,
-     "day_pct": -4.544,
+     "last": 69054.01,
+     "value": 9247.81,
+     "pnl": -742.1,
+     "pnl_pct": -7.43,
+     "day_pct": -3.752,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -314,6 +314,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261113T1744-ETH-24",
+    "made": "2026-11-13T17:44:07+00:00",
+    "due": "2026-11-14T17:44:07+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "1944.37",
+    "p_up": "0.49",
+    "lo": "1862.0",
+    "hi": "2025.0",
+    "note": "Near baseline. -3.3% in 24h, -13% week, RSI 24.8, F&G 20, funding near zero. Weekend, no scheduled macro. Range ~25% wider than baseline because coverage is 64% (below 70%). Bull case: short-covering from oversold. Bear case: weakest trend, follows BTC lower.",
+    "base_lo": "1881.355004",
+    "base_hi": "2009.49565",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261113T1744-BTC-24",
+    "made": "2026-11-13T17:44:03+00:00",
+    "due": "2026-11-14T17:44:03+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "69077.01",
+    "p_up": "0.49",
+    "lo": "67000.0",
+    "hi": "71150.0",
+    "note": "Near baseline. -3.8% in 24h, -8.9% week, RSI 25.5 oversold, F&G 20 extreme fear, funding normal, below both averages. Next 24h is the weekend: no scheduled US macro (TD Economics calendar lists the week to 13 Nov; PPI was today). Coverage 64% is below 70%: ranges too narrow, so this range is ~25% wider than baseline (playbook rule). Recency: not extending the slide; the extreme-fear rebound is an unproven hypothesis. Bull case: oversold weekend bounce. Bear case: thin weekend liquidity, liquidations push below 67k.",
+    "base_lo": "67425.44776",
+    "base_hi": "70769.026667",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261113T0737-ETH-24",
     "made": "2026-11-13T07:37:03+00:00",
@@ -981,7 +1017,7 @@
     "last_checked": "2026-11-13"
    }
   ],
-  "open": 12,
+  "open": 14,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1019,11 +1055,63 @@
      "probes": 2,
      "mean_abs_error": 0.0012
     },
-    "calls": 8,
-    "mean_ev_r": -0.222,
+    "calls": 10,
+    "mean_ev_r": -0.221,
     "verdict": "too few graded calls to tell"
    },
    "recent": [
+    {
+     "id": "20261113T1744-ETH-br",
+     "made": "2026-11-13T17:44:16+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "1943.13",
+     "d_pct": "2.57",
+     "p_target": "0.16",
+     "p_stop": "0.22",
+     "p_neither": "0.62",
+     "ev_r": "-0.1007",
+     "outcome": null
+    },
+    {
+     "id": "20261113T1744-ETH-br",
+     "made": "2026-11-13T17:44:16+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "1943.13",
+     "d_pct": "2.57",
+     "p_target": "0.09",
+     "p_stop": "0.31",
+     "p_neither": "0.6",
+     "ev_r": "-0.2945",
+     "outcome": null
+    },
+    {
+     "id": "20261113T1744-BTC-br",
+     "made": "2026-11-13T17:44:13+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "69056.01",
+     "d_pct": "1.89",
+     "p_target": "0.14",
+     "p_stop": "0.22",
+     "p_neither": "0.64",
+     "ev_r": "-0.1689",
+     "outcome": null
+    },
+    {
+     "id": "20261113T1744-BTC-br",
+     "made": "2026-11-13T17:44:13+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "69056.01",
+     "d_pct": "1.89",
+     "p_target": "0.1",
+     "p_stop": "0.29",
+     "p_neither": "0.61",
+     "ev_r": "-0.2981",
+     "outcome": null
+    },
     {
      "id": "20261113T0737-ETH-br",
      "made": "2026-11-13T07:37:13+00:00",
