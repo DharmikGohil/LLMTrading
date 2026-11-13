@@ -51,7 +51,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1957.24,
+      "stop": 1999.61,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -83,9 +83,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-12",
-    "start_equity": 102358.83,
-    "orders": 1,
+    "date": "2026-11-13",
+    "start_equity": 102380.14,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {},

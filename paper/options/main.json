@@ -1,7 +1,45 @@
 {
  "capital": 100000.0,
- "cash": 94123.31,
- "open": null,
+ "cash": 95964.18,
+ "open": {
+  "name": "iron condor",
+  "expiry": "2026-11-23",
+  "opened": "2026-11-13T09:18:37+05:30",
+  "legs": [
+   {
+    "kind": "CE",
+    "strike": 25950,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 43.55
+   },
+   {
+    "kind": "PE",
+    "strike": 24250,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 36.65
+   },
+   {
+    "kind": "CE",
+    "strike": 26150,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 27.35
+   },
+   {
+    "kind": "PE",
+    "strike": 24050,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 22.9
+   }
+  ],
+  "credit": 1946.75,
+  "entry_charges": 105.88,
+  "max_loss": 11053.25,
+  "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none."
+ },
  "closed": [
   {
    "name": "iron condor",
