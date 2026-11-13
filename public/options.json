@@ -1,10 +1,10 @@
 {
- "time": "2026-11-13T12:38:09+05:30",
- "spot": 25114.35,
+ "time": "2026-11-13T15:07:09+05:30",
+ "spot": 25110.7,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 94407.43,
+   "equity": 94537.43,
    "realized": -5876.69,
    "open": {
     "name": "iron condor",
@@ -46,13 +46,13 @@
     "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none."
    },
    "mark": {
-    "close_value": 1556.75,
-    "pnl": 284.12,
+    "close_value": 1426.75,
+    "pnl": 414.12,
     "prices": [
-     34.95,
-     26.15,
-     21.05,
-     16.1
+     32.95,
+     22.95,
+     19.5,
+     14.45
     ]
    },
    "closed": [
@@ -829,6 +829,13 @@
    "time": "2026-11-13T12:38:09+05:30",
    "spot": "25114.35",
    "main": "94407.43",
+   "control": "89425.4",
+   "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-13T15:07:09+05:30",
+   "spot": "25110.7",
+   "main": "94537.43",
    "control": "89425.4",
    "lotto": "9634.6"
   }
