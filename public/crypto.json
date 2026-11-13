@@ -1,6 +1,6 @@
 {
- "time": "2026-11-13T20:48:17+00:00",
- "btc": 68918.0,
+ "time": "2026-11-13T23:37:02+00:00",
+ "btc": 68170.0,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9229.7,
+   "value": 9129.53,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -7.7,
+   "return_pct": -8.7,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 68918.0,
-     "value": 9229.6,
-     "pnl": -760.31,
-     "pnl_pct": -7.61,
-     "day_pct": -3.737,
+     "last": 68170.0,
+     "value": 9129.43,
+     "pnl": -860.48,
+     "pnl_pct": -8.61,
+     "day_pct": -4.372,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -215,6 +215,13 @@
    "exclude": [],
    "note": "Reason: none. Fear & Greed 28 (alternative.me, 13 Nov). Next 24h: US PPI (October) Fri 13 Nov 8:30 ET (TD Economics upcoming-events table, 6 Nov): a secondary inflation print, not FOMC/CPI. No dated coin-specific red flags found (search 13 Nov). BTC -3.6%, ETH -1.9% in 24h: below the 8% stress line; funding normal. Both coins below their 50-day, so the rule holds USDT anyway.",
    "time": "2026-11-12T23:36:39+00:00"
+  },
+  {
+   "date": "2026-11-13",
+   "max_exposure": 1.0,
+   "exclude": [],
+   "note": "Reason: none. Fear & Greed 20, extreme fear (alternative.me, 14 Nov): a mood, not a gate row. Weekend: no scheduled US macro in the next 24-48h (TD Economics calendar, 6 Nov, covers through 13 Nov PPI). BTC -4.4%, ETH -4.5% in 24h: below the 8% stress line, no exchange failure or de-peg found (search 14 Nov). Both coins below their 50-day, so the rule holds USDT anyway.",
+   "time": "2026-11-13T23:37:00+00:00"
   }
  ],
  "strategy": {
@@ -321,6 +328,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261113T2336-ETH-168",
+    "made": "2026-11-13T23:36:56+00:00",
+    "due": "2026-11-20T23:36:56+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "1925.08",
+    "p_up": "0.48",
+    "lo": "1705.0",
+    "hi": "2145.0",
+    "note": "Near baseline. -14% week, RSI 24 oversold, F&G 20, funding near zero, below both averages. Range ~30% wider than baseline (coverage 56%). Bull case: short-covering bounce. Bear case: weakest trend, below 1,800.",
+    "base_lo": "1764.383356",
+    "base_hi": "2100.412585",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261113T2336-BTC-168",
+    "made": "2026-11-13T23:36:54+00:00",
+    "due": "2026-11-20T23:36:54+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "68183.72",
+    "p_up": "0.48",
+    "lo": "62500.0",
+    "hi": "73900.0",
+    "note": "Near baseline. -10% week, -4.4% in 24h, RSI 24 oversold, F&G 20 extreme fear, funding normal, below both averages. No scheduled US macro until the week of 16 Nov; no dated BTC-specific cause found (search 14 Nov). 24h coverage is 56% (well below 70%): realised moves are beating recent volatility, so this range is ~30% wider than the baseline. Extreme-fear rebound is an unproven hypothesis (history t 0.6): no lean on it. Bull case: capitulation bounce toward 72-74k. Bear case: liquidation cascade toward 62k.",
+    "base_lo": "63955.023304",
+    "base_hi": "72692.017497",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261113T1744-ETH-24",
     "made": "2026-11-13T17:44:07+00:00",
@@ -1024,7 +1067,7 @@
     "last_checked": "2026-11-13"
    }
   ],
-  "open": 12,
+  "open": 14,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
