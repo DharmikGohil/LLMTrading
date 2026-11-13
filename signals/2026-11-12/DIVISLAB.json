@@ -1,0 +1,12 @@
+{
+  "symbol": "DIVISLAB",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 FY27 profit +64% (results 7 Nov, NSE). RSI 79 after the results spike: untested parabolic rule (H14) lowers confidence only. Bear case: blow-off risk after the post-results run. Tags: reason=house; attention=no",
+  "confidence": 53.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T07:43:11+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "TVSMOTOR",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; 12-13 Nov press releases are product/market launches (NSE). RSI 74.5. Bear case: extended after a strong run. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T07:43:15+05:30"
+}

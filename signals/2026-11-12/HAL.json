@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results now out (NSE filing 12 Nov 13:30): Q2 FY27 standalone revenue from operations Rs 7,613 cr vs 6,628 cr (+15%), profit after tax Rs 1,839 cr vs 1,663 cr (+11%); consolidated PAT +16%. Event passed; no miss. Close 4,949 on 12 Nov (-1.0%, Yahoo), partly before the release. No upgrade on results (H4 pending). Bear case: margin and Tejas delivery timing. Tags: reason=filing; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T07:43:14+05:30"
+}

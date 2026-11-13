@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag: 12 Nov filings are ESOP allotment and a 17 Nov investor meet (NSE). Bear case: margin pressure if rates stay high. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T07:43:13+05:30"
+}

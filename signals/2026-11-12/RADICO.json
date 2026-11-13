@@ -1,0 +1,12 @@
+{
+  "symbol": "RADICO",
+  "as_of": "2026-11-12",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Open DRI/customs inquiry: search disclosed 27 Oct, seizure memos 6 Nov, Reg 30 update 10 Nov (NSE filings). Tags: reason=filing; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T07:43:12+05:30"
+}
