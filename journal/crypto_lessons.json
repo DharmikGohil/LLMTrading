@@ -16,7 +16,7 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-13",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -55,7 +55,7 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-13",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -94,7 +94,7 @@
    "other_up_pct": 16.7,
    "t": null
   },
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-13",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -133,7 +133,7 @@
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-13",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -173,7 +173,7 @@
    "t": null,
    "verdict": "no scored calls yet"
   },
-  "last_checked": "2026-11-12"
+  "last_checked": "2026-11-13"
  },
  {
   "id": "chasing-big-moves",
@@ -193,6 +193,6 @@
    "t": null,
    "verdict": "no scored calls yet"
   },
-  "last_checked": "2026-11-12"
+  "last_checked": "2026-11-13"
  }
 ]
