@@ -1,6 +1,6 @@
 {
- "time": "2026-11-13T07:08:11+00:00",
- "btc": 69176.9,
+ "time": "2026-11-13T07:37:15+00:00",
+ "btc": 68821.71,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 9264.37,
+   "value": 9216.8,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -7.36,
+   "return_pct": -7.83,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 69176.9,
-     "value": 9264.27,
-     "pnl": -725.64,
-     "pnl_pct": -7.26,
-     "day_pct": -5.967,
+     "last": 68821.71,
+     "value": 9216.7,
+     "pnl": -773.21,
+     "pnl_pct": -7.74,
+     "day_pct": -6.54,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -307,6 +307,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261113T0737-ETH-24",
+    "made": "2026-11-13T07:37:03+00:00",
+    "due": "2026-11-14T07:37:03+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "1939.01",
+    "p_up": "0.49",
+    "lo": "1865.0",
+    "hi": "2020.0",
+    "note": "Near baseline. -5.4% in 24h, -13% week, RSI 24.7 oversold, F&G 20, funding normal. PPI today inside the window (TD calendar). Range slightly wider than baseline. Bull case: oversold short-covering. Bear case: follows BTC lower, weakest trend.",
+    "base_lo": "1876.168716",
+    "base_hi": "2003.95612",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261113T0737-BTC-24",
+    "made": "2026-11-13T07:37:00+00:00",
+    "due": "2026-11-14T07:37:00+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "68797.99",
+    "p_up": "0.49",
+    "lo": "66800.0",
+    "hi": "70900.0",
+    "note": "Near baseline. -6.5% in 24h (big_move tag; below the 8% stress line), RSI 25 oversold, F&G 20 extreme fear, funding normal, below both averages. No dated cause found in a news search. US PPI today 8:30 ET inside this window (TD Economics calendar, 6 Nov). Recency check: not extending the drop; the extreme-fear rebound is an unproven 7-day hypothesis (history t 0.6), so no lean up either. Range a little wider than baseline for the event and the fresh shock. Bull case: capitulation bounce on a soft PPI. Bear case: hot PPI, liquidations continue toward 66k. Calibration watch: ~47% calls came true 17% (n=12; not yet a lesson).",
+    "base_lo": "67153.098849",
+    "base_hi": "70483.172171",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261112T2336-ETH-168",
     "made": "2026-11-12T23:36:36+00:00",
@@ -938,7 +974,7 @@
     "last_checked": "2026-11-13"
    }
   ],
-  "open": 12,
+  "open": 14,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -976,11 +1012,63 @@
      "probes": 2,
      "mean_abs_error": 0.0012
     },
-    "calls": 6,
-    "mean_ev_r": -0.221,
+    "calls": 8,
+    "mean_ev_r": -0.222,
     "verdict": "too few graded calls to tell"
    },
    "recent": [
+    {
+     "id": "20261113T0737-ETH-br",
+     "made": "2026-11-13T07:37:13+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "1939.61",
+     "d_pct": "2.57",
+     "p_target": "0.15",
+     "p_stop": "0.23",
+     "p_neither": "0.62",
+     "ev_r": "-0.1147",
+     "outcome": null
+    },
+    {
+     "id": "20261113T0737-ETH-br",
+     "made": "2026-11-13T07:37:13+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "1939.61",
+     "d_pct": "2.57",
+     "p_target": "0.09",
+     "p_stop": "0.32",
+     "p_neither": "0.59",
+     "ev_r": "-0.2995",
+     "outcome": null
+    },
+    {
+     "id": "20261113T0737-BTC-br",
+     "made": "2026-11-13T07:37:09+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "68824.01",
+     "d_pct": "1.89",
+     "p_target": "0.13",
+     "p_stop": "0.23",
+     "p_neither": "0.64",
+     "ev_r": "-0.1852",
+     "outcome": null
+    },
+    {
+     "id": "20261113T0737-BTC-br",
+     "made": "2026-11-13T07:37:09+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "68824.01",
+     "d_pct": "1.89",
+     "p_target": "0.1",
+     "p_stop": "0.29",
+     "p_neither": "0.61",
+     "ev_r": "-0.2976",
+     "outcome": null
+    },
     {
      "id": "20261112T1742-ETH-br",
      "made": "2026-11-12T17:42:48+00:00",
