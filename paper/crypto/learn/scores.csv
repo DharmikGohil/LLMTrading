@@ -27,3 +27,7 @@ id,source,coin,horizon_h,made,due,spot,px,up,p_up,brier,inside,pinball,tags
 20261112T0736-BTC-24,base,BTC,24,2026-11-12T07:36:37+00:00,2026-11-13T07:36:37+00:00,73638.42,68798.0,0,0.5,0.25,0,4.716894,below_50d;above_200d;fg_fear;funding_normal;vol_normal;rsi_middle
 20261112T0736-ETH-24,llm,ETH,24,2026-11-12T07:36:39+00:00,2026-11-13T07:36:39+00:00,2052.03,1938.96,0,0.48,0.2304,0,2.857658,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_oversold
 20261112T0736-ETH-24,base,ETH,24,2026-11-12T07:36:39+00:00,2026-11-13T07:36:39+00:00,2052.03,1938.96,0,0.5,0.25,0,2.889351,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_oversold
+20261112T1742-BTC-24,llm,BTC,24,2026-11-12T17:42:35+00:00,2026-11-13T17:42:35+00:00,71812.05,69126.63,0,0.48,0.2304,0,1.891563,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_middle
+20261112T1742-BTC-24,base,BTC,24,2026-11-12T17:42:35+00:00,2026-11-13T17:42:35+00:00,71812.05,69126.63,0,0.5,0.25,0,1.88318,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_middle
+20261112T1742-ETH-24,llm,ETH,24,2026-11-12T17:42:37+00:00,2026-11-13T17:42:37+00:00,2011.21,1945.0,0,0.48,0.2304,0,0.715987,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_oversold
+20261112T1742-ETH-24,base,ETH,24,2026-11-12T17:42:37+00:00,2026-11-13T17:42:37+00:00,2011.21,1945.0,0,0.5,0.25,0,0.671245,below_50d;below_200d;fg_fear;funding_normal;vol_normal;rsi_oversold
