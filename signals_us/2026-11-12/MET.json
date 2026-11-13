@@ -1,0 +1,12 @@
+{
+  "symbol": "MET",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. No red flag in 24h. Bear case: rate swings move insurers both ways. Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:34-05:00"
+}

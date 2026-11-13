@@ -1,0 +1,12 @@
+{
+  "symbol": "XOM",
+  "as_of": "2026-11-12",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Analyst trimmed price targets on XOM, CVX, COP, warning oil stocks may struggle (Stocktwits via Yahoo, 13 Nov); Bernstein cut COP on looming Iran de-escalation (Yahoo, 12 Nov). Sector headwind, not an XOM red flag: shrink to Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:35-05:00"
+}

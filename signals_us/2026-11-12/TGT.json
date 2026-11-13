@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-12",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 results expected Wed 18 Nov (Nasdaq-based calendars), 3 trading days away: binary gap risk. Also an 8-K for a director or officer change filed 12 Nov 16:35 ET (SEC EDGAR via trader-news), details not yet read. Tags: reason=event; attention=no",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:33-05:00"
+}

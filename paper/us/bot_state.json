@@ -3,7 +3,7 @@
     "JNJ": {
       "qty": 7,
       "avg": 271.44,
-      "stop": 258.61,
+      "stop": 260.22,
       "target": 303.04,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -19,7 +19,7 @@
     "KO": {
       "qty": 21,
       "avg": 91.79,
-      "stop": 89.94,
+      "stop": 91.04,
       "target": 99.6,
       "opened": "2026-10-28",
       "buy_charges": 0.0
@@ -35,7 +35,7 @@
     "UNP": {
       "qty": 3,
       "avg": 301.39,
-      "stop": 281.13,
+      "stop": 281.16,
       "target": 2711.11,
       "opened": "2026-10-29",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-12",
-    "start_equity": 10124.48,
+    "date": "2026-11-13",
+    "start_equity": 10129.91,
     "orders": 0,
     "partial": false
   },

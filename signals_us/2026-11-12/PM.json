@@ -1,0 +1,12 @@
+{
+  "symbol": "PM",
+  "as_of": "2026-11-12",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Holding. JPMorgan Neutral, target 200 (10 Nov); trend template 6/7. Minor concern: Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:35-05:00"
+}

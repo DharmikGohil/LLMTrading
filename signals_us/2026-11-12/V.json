@@ -1,0 +1,12 @@
+{
+  "symbol": "V",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. No company news; +1.4% today. Bear case: hot CPI slows spending. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:37-05:00"
+}

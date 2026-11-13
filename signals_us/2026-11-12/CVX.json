@@ -1,0 +1,12 @@
+{
+  "symbol": "CVX",
+  "as_of": "2026-11-12",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 5). Analyst trimmed price targets on XOM, CVX, COP, warning oil stocks may struggle (Stocktwits via Yahoo, 13 Nov); Bernstein cut COP on looming Iran de-escalation (Yahoo, 12 Nov): sector target cuts, not a downgrade cluster. Minor concern: Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:34-05:00"
+}

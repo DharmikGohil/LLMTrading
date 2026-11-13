@@ -1,0 +1,12 @@
+{
+  "symbol": "AMGN",
+  "as_of": "2026-11-12",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Recent pick. Positive Phase 3 dazodalibep data (11 Nov); no red flag. Bear case: pipeline wins slow to reach earnings. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:36-05:00"
+}

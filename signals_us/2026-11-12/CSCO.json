@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-11-12",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results out 12 Nov after the close: beat and raised FY27 and AI outlook (Yahoo/Zacks, 13 Nov), but margins slipped, orders slowed and five firms cut price targets (247 Wall St, 13 Nov); -5.7% at 10:42 ET. No upgrade or veto on results (H4 pending); target-cut cluster: Hold. Tags: reason=news; attention=yes",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:36-05:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "LLY",
+  "as_of": "2026-11-12",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "FDA vision-loss warning added to Zepbound label (Tikr via Yahoo, 12 Nov): minor regulatory concern. Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-13T10:42:36-05:00"
+}
