@@ -1,10 +1,10 @@
 {
- "time": "2026-11-13T09:18:48+05:30",
- "spot": 25113.5,
+ "time": "2026-11-13T12:38:09+05:30",
+ "spot": 25114.35,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 93942.68,
+   "equity": 94407.43,
    "realized": -5876.69,
    "open": {
     "name": "iron condor",
@@ -46,13 +46,13 @@
     "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none."
    },
    "mark": {
-    "close_value": 2021.5,
-    "pnl": -180.63,
+    "close_value": 1556.75,
+    "pnl": 284.12,
     "prices": [
-     43.85,
-     36.8,
-     26.85,
-     22.7
+     34.95,
+     26.15,
+     21.05,
+     16.1
     ]
    },
    "closed": [
@@ -158,57 +158,10 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 88882.48,
-   "realized": -11778.63,
-   "open": {
-    "name": "iron condor",
-    "expiry": "2026-11-17",
-    "opened": "2026-11-11T09:19:36+05:30",
-    "legs": [
-     {
-      "kind": "CE",
-      "strike": 25950,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 57.7
-     },
-     {
-      "kind": "PE",
-      "strike": 24750,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 46.0
-     },
-     {
-      "kind": "CE",
-      "strike": 26150,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 34.6
-     },
-     {
-      "kind": "PE",
-      "strike": 24550,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 26.85
-     }
-    ],
-    "credit": 2746.25,
-    "entry_charges": 109.14,
-    "max_loss": 10253.75,
-    "note": "1 SD short strikes, spot 25354, ATM IV 18.0%; rules only"
-   },
-   "mark": {
-    "close_value": 1976.0,
-    "pnl": 661.11,
-    "prices": [
-     11.35,
-     44.4,
-     6.25,
-     19.1
-    ]
-   },
+   "equity": 89425.4,
+   "realized": -10574.6,
+   "open": null,
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -356,6 +309,55 @@
      "exit_charges": 134.98,
      "pnl": -4814.81,
      "reason": "stop: close cost 7404 >= 2x credit 2837 (loss = credit)"
+    },
+    {
+     "name": "iron condor",
+     "expiry": "2026-11-17",
+     "opened": "2026-11-11T09:19:36+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 25950,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 57.7
+      },
+      {
+       "kind": "PE",
+       "strike": 24750,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 46.0
+      },
+      {
+       "kind": "CE",
+       "strike": 26150,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 34.6
+      },
+      {
+       "kind": "PE",
+       "strike": 24550,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 26.85
+      }
+     ],
+     "credit": 2746.25,
+     "entry_charges": 109.14,
+     "max_loss": 10253.75,
+     "note": "1 SD short strikes, spot 25354, ATM IV 18.0%; rules only",
+     "closed": "2026-11-13T12:37:42+05:30",
+     "exit_prices": [
+      7.35,
+      28.2,
+      4.45,
+      10.55
+     ],
+     "exit_charges": 97.33,
+     "pnl": 1204.03,
+     "reason": "take profit: close cost 1336 <= 50% of credit 2746"
     }
    ]
   },
@@ -821,6 +823,13 @@
    "spot": "25113.5",
    "main": "93942.68",
    "control": "88882.48",
+   "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-13T12:38:09+05:30",
+   "spot": "25114.35",
+   "main": "94407.43",
+   "control": "89425.4",
    "lotto": "9634.6"
   }
  ],

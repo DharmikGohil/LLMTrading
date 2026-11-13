@@ -1,45 +1,7 @@
 {
  "capital": 100000.0,
- "cash": 90858.48,
- "open": {
-  "name": "iron condor",
-  "expiry": "2026-11-17",
-  "opened": "2026-11-11T09:19:36+05:30",
-  "legs": [
-   {
-    "kind": "CE",
-    "strike": 25950,
-    "side": "SELL",
-    "qty": 65,
-    "entry": 57.7
-   },
-   {
-    "kind": "PE",
-    "strike": 24750,
-    "side": "SELL",
-    "qty": 65,
-    "entry": 46.0
-   },
-   {
-    "kind": "CE",
-    "strike": 26150,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 34.6
-   },
-   {
-    "kind": "PE",
-    "strike": 24550,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 26.85
-   }
-  ],
-  "credit": 2746.25,
-  "entry_charges": 109.14,
-  "max_loss": 10253.75,
-  "note": "1 SD short strikes, spot 25354, ATM IV 18.0%; rules only"
- },
+ "cash": 89425.4,
+ "open": null,
  "closed": [
   {
    "name": "iron condor",
@@ -187,7 +149,56 @@
    "exit_charges": 134.98,
    "pnl": -4814.81,
    "reason": "stop: close cost 7404 >= 2x credit 2837 (loss = credit)"
+  },
+  {
+   "name": "iron condor",
+   "expiry": "2026-11-17",
+   "opened": "2026-11-11T09:19:36+05:30",
+   "legs": [
+    {
+     "kind": "CE",
+     "strike": 25950,
+     "side": "SELL",
+     "qty": 65,
+     "entry": 57.7
+    },
+    {
+     "kind": "PE",
+     "strike": 24750,
+     "side": "SELL",
+     "qty": 65,
+     "entry": 46.0
+    },
+    {
+     "kind": "CE",
+     "strike": 26150,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 34.6
+    },
+    {
+     "kind": "PE",
+     "strike": 24550,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 26.85
+    }
+   ],
+   "credit": 2746.25,
+   "entry_charges": 109.14,
+   "max_loss": 10253.75,
+   "note": "1 SD short strikes, spot 25354, ATM IV 18.0%; rules only",
+   "closed": "2026-11-13T12:37:42+05:30",
+   "exit_prices": [
+    7.35,
+    28.2,
+    4.45,
+    10.55
+   ],
+   "exit_charges": 97.33,
+   "pnl": 1204.03,
+   "reason": "take profit: close cost 1336 <= 50% of credit 2746"
   }
  ],
- "realized": -11778.63
+ "realized": -10574.6
 }
