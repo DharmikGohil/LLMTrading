@@ -47,3 +47,11 @@ id,made,due,source,qset,coin,spot,d_pct,side,p_target,p_stop,p_neither,w,ev_r,no
 20261114T0737-ETH-br,2026-11-14T07:37:19+00:00,2026-11-15T07:37:19+00:00,rate,bracket-v1,ETH,1899.91,2.63,long,0.0839,0.3074,0.6087,0,-0.2956,base rates
 20261114T0737-ETH-br,2026-11-14T07:37:19+00:00,2026-11-15T07:37:19+00:00,llm,bracket-v1,ETH,1899.91,2.63,short,0.16,0.22,0.62,0.5,-0.0929,"Base rates long 0.08/0.31, short 0.16/0.21; no reason to move. Bull case: squeeze. Bear case: downtrend resumes."
 20261114T0737-ETH-br,2026-11-14T07:37:19+00:00,2026-11-15T07:37:19+00:00,rate,bracket-v1,ETH,1899.91,2.63,short,0.1582,0.2149,0.6269,0,-0.0917,base rates
+20261114T1737-BTC-br,2026-11-14T17:37:05+00:00,2026-11-15T17:37:05+00:00,llm,bracket-v1,BTC,65734.21,2.01,long,0.09,0.27,0.64,0.5,-0.2818,"Base rates long 0.09/0.27, short 0.13/0.20; no evidence to move. Bull case: bounce +3%. Bear case: -2% first."
+20261114T1737-BTC-br,2026-11-14T17:37:05+00:00,2026-11-15T17:37:05+00:00,rate,bracket-v1,BTC,65734.21,2.01,long,0.0905,0.2659,0.6436,0,-0.2794,base rates
+20261114T1737-BTC-br,2026-11-14T17:37:05+00:00,2026-11-15T17:37:05+00:00,llm,bracket-v1,BTC,65734.21,2.01,short,0.13,0.2,0.67,0.5,-0.1548,"Base rates long 0.09/0.27, short 0.13/0.20; no evidence to move. Bull case: bounce +3%. Bear case: -2% first."
+20261114T1737-BTC-br,2026-11-14T17:37:05+00:00,2026-11-15T17:37:05+00:00,rate,bracket-v1,BTC,65734.21,2.01,short,0.1304,0.2017,0.6678,0,-0.1554,base rates
+20261114T1737-ETH-br,2026-11-14T17:37:10+00:00,2026-11-15T17:37:10+00:00,llm,bracket-v1,ETH,1845.55,2.63,long,0.08,0.31,0.61,0.5,-0.3031,"Base rates long 0.08/0.31, short 0.16/0.21; no reason to move. Bull case: squeeze. Bear case: downtrend resumes."
+20261114T1737-ETH-br,2026-11-14T17:37:10+00:00,2026-11-15T17:37:10+00:00,rate,bracket-v1,ETH,1845.55,2.63,long,0.0819,0.3109,0.6072,0,-0.3021,base rates
+20261114T1737-ETH-br,2026-11-14T17:37:10+00:00,2026-11-15T17:37:10+00:00,llm,bracket-v1,ETH,1845.55,2.63,short,0.16,0.21,0.63,0.5,-0.0846,"Base rates long 0.08/0.31, short 0.16/0.21; no reason to move. Bull case: squeeze. Bear case: downtrend resumes."
+20261114T1737-ETH-br,2026-11-14T17:37:10+00:00,2026-11-15T17:37:10+00:00,rate,bracket-v1,ETH,1845.55,2.63,short,0.1608,0.2123,0.6269,0,-0.0852,base rates
