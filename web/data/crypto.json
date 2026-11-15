@@ -1,6 +1,6 @@
 {
- "time": "2026-11-15T07:37:18+00:00",
- "btc": 64084.67,
+ "time": "2026-11-15T11:29:43+00:00",
+ "btc": 65428.0,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8582.41,
+   "value": 8762.31,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -14.18,
+   "return_pct": -12.38,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 64084.67,
-     "value": 8582.31,
-     "pnl": -1407.6,
-     "pnl_pct": -14.09,
-     "day_pct": -4.763,
+     "last": 65428.0,
+     "value": 8762.21,
+     "pnl": -1227.7,
+     "pnl_pct": -12.29,
+     "day_pct": -2.709,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -227,6 +227,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "8636.36"
+  },
+  {
+   "time": "2026-11-15T11:29:39+00:00",
+   "btc": "65428.01",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "8762.31"
   }
  ],
  "trades": [
@@ -293,23 +300,23 @@
  "learn": {
   "summary": {
    "24h": {
-    "n": 20,
-    "brier_llm": 0.2341,
+    "n": 22,
+    "brier_llm": 0.2346,
     "brier_base": 0.25,
-    "skill_pct": 6.4,
-    "t": 3.98,
-    "coverage_llm_pct": 55.0,
-    "coverage_base_pct": 50.0,
-    "pinball_llm": 1.263,
-    "pinball_base": 1.334,
-    "hit_rate_pct": 90.0,
+    "skill_pct": 6.2,
+    "t": 4.13,
+    "coverage_llm_pct": 50.0,
+    "coverage_base_pct": 45.5,
+    "pinball_llm": 1.347,
+    "pinball_base": 1.491,
+    "hit_rate_pct": 90.9,
     "verdict": "too few calls to tell",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 20,
-      "said_pct": 47.8,
-      "happened_pct": 10.0
+      "n": 22,
+      "said_pct": 47.9,
+      "happened_pct": 9.1
      }
     ],
     "by_tag": [
@@ -322,16 +329,16 @@
      },
      {
       "tag": "below_200d",
-      "n": 13,
-      "skill_pct": 6.5,
-      "t": 4.95,
+      "n": 15,
+      "skill_pct": 6.2,
+      "t": 5.09,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_50d",
-      "n": 20,
-      "skill_pct": 6.4,
-      "t": 3.98,
+      "n": 22,
+      "skill_pct": 6.2,
+      "t": 4.13,
       "verdict": "too few calls to tell"
      },
      {
@@ -343,9 +350,9 @@
      },
      {
       "tag": "fg_extreme_fear",
-      "n": 4,
+      "n": 6,
       "skill_pct": 4.0,
-      "t": 19800000.0,
+      "t": 24249948.45,
       "verdict": "too few calls to tell"
      },
      {
@@ -364,9 +371,9 @@
      },
      {
       "tag": "funding_normal",
-      "n": 18,
-      "skill_pct": 6.0,
-      "t": 3.36,
+      "n": 20,
+      "skill_pct": 5.8,
+      "t": 3.55,
       "verdict": "too few calls to tell"
      },
      {
@@ -378,16 +385,16 @@
      },
      {
       "tag": "rsi_oversold",
-      "n": 7,
-      "skill_pct": 2.7,
-      "t": 1.39,
+      "n": 9,
+      "skill_pct": 3.0,
+      "t": 1.96,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "vol_normal",
-      "n": 20,
-      "skill_pct": 6.4,
-      "t": 3.98,
+      "n": 22,
+      "skill_pct": 6.2,
+      "t": 4.13,
       "verdict": "too few calls to tell"
      }
     ]
@@ -519,10 +526,10 @@
     "note": "Near baseline. -2.2% in 24h, -15% week, RSI 23, F&G 13, funding near zero. Weekend, no scheduled macro. Range ~30% wider than baseline (coverage 56%). Bull case: oversold short-covering. Bear case: weakest trend, toward 1,800.",
     "base_lo": "1836.811572",
     "base_hi": "1964.907072",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "1784.87",
+    "up": "0",
+    "brier": "0.2401",
+    "inside": "0"
    },
    {
     "id": "20261114T0737-BTC-24",
@@ -537,10 +544,10 @@
     "note": "Near baseline. -2.3% in 24h, -11% week, RSI 23 oversold, F&G 13 extreme fear (lowest this month), funding normal, below both averages. Weekend: no scheduled macro (TD Economics calendar). Coverage 56% (<70%): range ~30% wider than baseline. Recency/herding check: not extending the slide or betting on the crowd's panic; the extreme-fear rebound is unproven. Bull case: capitulation bounce. Bear case: grinding weekend liquidations toward 65k.",
     "base_lo": "65570.909933",
     "base_hi": "69041.886898",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "64096.0",
+    "up": "0",
+    "brier": "0.2401",
+    "inside": "0"
    },
    {
     "id": "20261113T2336-ETH-168",
@@ -1174,9 +1181,9 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 20,
+     "n_other": 22,
      "up_pct": null,
-     "other_up_pct": 10.0,
+     "other_up_pct": 9.1,
      "t": null
     },
     "last_checked": "2026-11-15",
@@ -1281,38 +1288,38 @@
     "last_checked": "2026-11-15"
    }
   ],
-  "open": 18,
+  "open": 16,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
     "all": {
-     "n": 20,
-     "brier_analyst": 0.9699,
-     "brier_base_rates": 0.9717,
-     "brier_best_blend": 0.9699,
-     "best_w": 1.0,
-     "fitted": false,
-     "skill_vs_base_pct": 0.2,
-     "w": 0.5
-    },
-    "long": {
-     "n": 10,
-     "brier_analyst": 0.8664,
-     "brier_base_rates": 0.8697,
-     "brier_best_blend": 0.8664,
+     "n": 24,
+     "brier_analyst": 0.9824,
+     "brier_base_rates": 0.9861,
+     "brier_best_blend": 0.9824,
      "best_w": 1.0,
      "fitted": false,
      "skill_vs_base_pct": 0.4,
      "w": 0.5
     },
-    "short": {
-     "n": 10,
-     "brier_analyst": 1.0734,
-     "brier_base_rates": 1.0737,
-     "brier_best_blend": 1.0734,
+    "long": {
+     "n": 12,
+     "brier_analyst": 0.8724,
+     "brier_base_rates": 0.8772,
+     "brier_best_blend": 0.8724,
      "best_w": 1.0,
      "fitted": false,
-     "skill_vs_base_pct": 0.0,
+     "skill_vs_base_pct": 0.5,
+     "w": 0.5
+    },
+    "short": {
+     "n": 12,
+     "brier_analyst": 1.0925,
+     "brier_base_rates": 1.0949,
+     "brier_best_blend": 1.0925,
+     "best_w": 1.0,
+     "fitted": false,
+     "skill_vs_base_pct": 0.2,
      "w": 0.5
     },
     "mirror": {
@@ -1439,7 +1446,7 @@
      "p_stop": "0.22",
      "p_neither": "0.62",
      "ev_r": "-0.0929",
-     "outcome": null
+     "outcome": "target"
     },
     {
      "id": "20261114T0737-ETH-br",
@@ -1452,7 +1459,7 @@
      "p_stop": "0.31",
      "p_neither": "0.61",
      "ev_r": "-0.2998",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261114T0737-BTC-br",
@@ -1465,7 +1472,7 @@
      "p_stop": "0.21",
      "p_neither": "0.66",
      "ev_r": "-0.1633",
-     "outcome": null
+     "outcome": "target"
     },
     {
      "id": "20261114T0737-BTC-br",
@@ -1478,7 +1485,7 @@
      "p_stop": "0.27",
      "p_neither": "0.64",
      "ev_r": "-0.2798",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261113T1744-ETH-br",
