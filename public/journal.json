@@ -54,6 +54,12 @@
   "reflection": "First session, a partial day: entries at about 14:15 New York time, close at 16:00.\n- **Difference from the control:** the LLM review vetoed LLY and MRK (results Thu 29 Oct) and AAPL (results Mon 2 Nov),\n  shrank MET (results 4 Nov) and bought KO (beat and raised guidance on 27 Oct), which the control did not hold.\n  The control held LLY and AAPL instead of KO.\n- **Result:** both accounts were flat into the close (main +0.01%, control -0.01%) while the S&P 500 gained about 0.19%\n  from the entry time. That is too small a difference to mean anything.\n- **Vetoes:** no outcomes yet. LLY and MRK report before tomorrow's open, so the 1-day outcome of the earnings vetoes\n  is known at tomorrow's close. This is the first real test of the \"no entry before earnings\" rule.\n- **No stop-outs**, and no calls have elapsed outcome windows yet.\n- **Process note:** in earnings season, 3 of the 8 top S&P 100 momentum names had results within 3 trading days.\n  The earnings check is the most important part of the US review right now.\n- **No lessons added:** no evidence yet. Candidate to watch: whether vetoing names into earnings beats holding them."
  },
  {
+  "id": "2026-11-16-india",
+  "date": "2026-11-16",
+  "market": "India",
+  "reflection": "- Close run (15:05 IST): With LLM Rs 1,01,159 (+1.16%), Without LLM Rs 1,00,989 (+0.99%), Nifty 50 25,230 (flat on\n  the day, price index; +10.0% since the start). Both accounts lost about 1.2% today while the Nifty was flat: the\n  momentum holdings fell together. The LLM difference is +0.17 pp; both trail the index by about 8.9 pp.\n- Orders: none. Vetoes blocked AUROPHARMA (US FDA OAI), RADICO (DRI inquiry) and ZYDUSLIFE (Q2 miss) in the With LLM\n  account; MOTHERSON, MAHABANK (and RADICO for the control) were blocked by the 10-position cap. No stop-outs.\n- Veto outcomes completed today (4-5 Nov) are repeat vetoes of results events already counted (BOSCHLTD helped,\n  -4.9% to -8.4%; DIVISLAB cost, +6.1% to +10.4%), so the lesson book is unchanged (7 for, 4 against).\n- Options: gate said trade (Nifty range-bound 25,144-25,299 since 11 Nov). The control opened a 1 SD condor for\n  23 Nov (credit Rs 2,655), now +Rs 139; the With LLM 1.25 SD condor is +Rs 791. The one-minute monitor was again\n  found dead at the open and midday runs and restarted."
+ },
+ {
   "id": "2026-11-13-india",
   "date": "2026-11-13",
   "market": "India",
