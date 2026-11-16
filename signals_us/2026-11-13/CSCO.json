@@ -1,0 +1,12 @@
+{
+  "symbol": "CSCO",
+  "as_of": "2026-11-13",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Beat and raised (12 Nov) but margins slipped and five firms cut targets; fell ~6% on 13 Nov. Hold. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-16T09:54:39-05:00"
+}

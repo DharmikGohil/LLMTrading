@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-13",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag on 13 Nov; next results late January. News feed timed out on 16 Nov (Yahoo RSS); carried from the 13 Nov review. Bear case: tech sell-off. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-16T09:54:40-05:00"
+}
