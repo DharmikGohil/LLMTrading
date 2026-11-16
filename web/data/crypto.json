@@ -1,6 +1,6 @@
 {
- "time": "2026-11-16T14:55:15+00:00",
- "btc": 65258.62,
+ "time": "2026-11-16T17:36:53+00:00",
+ "btc": 65015.47,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8739.63,
+   "value": 8707.07,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -12.6,
+   "return_pct": -12.93,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 65258.62,
-     "value": 8739.53,
-     "pnl": -1250.38,
-     "pnl_pct": -12.52,
-     "day_pct": 0.525,
+     "last": 65015.47,
+     "value": 8706.97,
+     "pnl": -1282.94,
+     "pnl_pct": -12.84,
+     "day_pct": 0.702,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -447,6 +447,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261116T1736-ETH-24",
+    "made": "2026-11-16T17:36:41+00:00",
+    "due": "2026-11-17T17:36:41+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "1830.26",
+    "p_up": "0.49",
+    "lo": "1727.0",
+    "hi": "1931.0",
+    "note": "Near baseline. +1.2% in 24h after -14% week, RSI 26, F&G 10, funding negative (shorts paying). Retail sales inside the window. Range ~40% wider than baseline. Bull case: short squeeze. Bear case: macro surprise, new low.",
+    "base_lo": "1758.835456",
+    "base_hi": "1904.585023",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261116T1736-BTC-24",
+    "made": "2026-11-16T17:36:38+00:00",
+    "due": "2026-11-17T17:36:38+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "65000.0",
+    "p_up": "0.49",
+    "lo": "62300.0",
+    "hi": "67700.0",
+    "note": "Near baseline. Stabilising: +0.6% in 24h after -13.8% week; RSI 24, F&G 10 extreme fear, funding near zero, below both averages. US retail sales Tue 17 Nov 8:30 ET falls inside this window (Forex Fundamentals); FOMC minutes Wed 18 Nov (Fed calendar). Coverage 58%: range ~40% wider than baseline. Recency/anchoring check: re-read the facts, no lean. Bull case: base forms, relief toward 67k. Bear case: strong retail sales lift yields, new low under 63k.",
+    "base_lo": "63111.12126",
+    "base_hi": "66945.411769",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261115T2337-ETH-168",
     "made": "2026-11-15T23:37:22+00:00",
@@ -1130,42 +1166,6 @@
     "up": null,
     "brier": null,
     "inside": null
-   },
-   {
-    "id": "20261110T0143-ETH-24",
-    "made": "2026-11-10T01:43:34+00:00",
-    "due": "2026-11-11T01:43:34+00:00",
-    "coin": "ETH",
-    "horizon_h": "24",
-    "spot": "2124.72",
-    "p_up": "0.47",
-    "lo": "2038.3",
-    "hi": "2216.4",
-    "note": "Slight down lean; range widened 25% for CPI. Bear: -14% below the 50-day and below the 200-day average, ETH/BTC weakest since July (cryptoticker, Nov 2026), ETH ETF outflows. Bull: fear 32, funding just turned negative (-0.0002% last settlement, OKX) so little long leverage left. Emotion checks: -6.6% week not extended by itself (recency). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "2054.714554",
-    "base_hi": "2197.110577",
-    "px": "2062.49",
-    "up": "0",
-    "brier": "0.2209",
-    "inside": "1"
-   },
-   {
-    "id": "20261110T0143-BTC-24",
-    "made": "2026-11-10T01:43:31+00:00",
-    "due": "2026-11-11T01:43:31+00:00",
-    "coin": "BTC",
-    "horizon_h": "24",
-    "spot": "75006.0",
-    "p_up": "0.48",
-    "lo": "72835.0",
-    "hi": "77299.0",
-    "note": "Slight down lean; range widened 25% vs baseline for CPI inside the window. Bear: below the 50-day average (-8.2%), ETF outflows, five weekly losses. Bull: fear 32 and leverage already flushed (OKX funding 0.005%/8h), RSI 37. Emotion checks: facts re-read, not copied from yesterday's 0.47; levels (e.g. the 200-day average) not used as reasons (H10c). Sources: US October CPI Tue 10 Nov 08:30 ET (BLS schedule, bls.gov/schedule/news_release/cpi.htm); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week, IBIT ~US$1.21B (coin-turk, 9 Nov 2026); fifth straight weekly loss, low since August (fxstreet, 9 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "73242.566841",
-    "base_hi": "76811.890662",
-    "px": "73882.0",
-    "up": "0",
-    "brier": "0.2304",
-    "inside": "1"
    }
   ],
   "lessons": [
@@ -1366,7 +1366,7 @@
     "last_checked": "2026-11-16"
    }
   ],
-  "open": 16,
+  "open": 18,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1404,11 +1404,63 @@
      "probes": 4,
      "mean_abs_error": 0.0006
     },
-    "calls": 18,
-    "mean_ev_r": -0.209,
+    "calls": 20,
+    "mean_ev_r": -0.205,
     "verdict": "analyst beats the base rates"
    },
    "recent": [
+    {
+     "id": "20261116T1736-ETH-br",
+     "made": "2026-11-16T17:36:51+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "1829.78",
+     "d_pct": "3.11",
+     "p_target": "0.13",
+     "p_stop": "0.15",
+     "p_neither": "0.72",
+     "ev_r": "-0.0471",
+     "outcome": null
+    },
+    {
+     "id": "20261116T1736-ETH-br",
+     "made": "2026-11-16T17:36:51+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "1829.78",
+     "d_pct": "3.11",
+     "p_target": "0.07",
+     "p_stop": "0.25",
+     "p_neither": "0.68",
+     "ev_r": "-0.2418",
+     "outcome": null
+    },
+    {
+     "id": "20261116T1736-BTC-br",
+     "made": "2026-11-16T17:36:47+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "65026.73",
+     "d_pct": "2.3",
+     "p_target": "0.1",
+     "p_stop": "0.14",
+     "p_neither": "0.76",
+     "ev_r": "-0.124",
+     "outcome": null
+    },
+    {
+     "id": "20261116T1736-BTC-br",
+     "made": "2026-11-16T17:36:47+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "65026.73",
+     "d_pct": "2.3",
+     "p_target": "0.06",
+     "p_stop": "0.23",
+     "p_neither": "0.71",
+     "ev_r": "-0.2715",
+     "outcome": null
+    },
     {
      "id": "20261115T1736-ETH-br",
      "made": "2026-11-15T17:36:39+00:00",
@@ -1615,58 +1667,6 @@
      "p_stop": "0.27",
      "p_neither": "0.64",
      "ev_r": "-0.2798",
-     "outcome": "stop"
-    },
-    {
-     "id": "20261113T1744-ETH-br",
-     "made": "2026-11-13T17:44:16+00:00",
-     "coin": "ETH",
-     "side": "short",
-     "spot": "1943.13",
-     "d_pct": "2.57",
-     "p_target": "0.16",
-     "p_stop": "0.22",
-     "p_neither": "0.62",
-     "ev_r": "-0.1007",
-     "outcome": "target"
-    },
-    {
-     "id": "20261113T1744-ETH-br",
-     "made": "2026-11-13T17:44:16+00:00",
-     "coin": "ETH",
-     "side": "long",
-     "spot": "1943.13",
-     "d_pct": "2.57",
-     "p_target": "0.09",
-     "p_stop": "0.31",
-     "p_neither": "0.6",
-     "ev_r": "-0.2945",
-     "outcome": "stop"
-    },
-    {
-     "id": "20261113T1744-BTC-br",
-     "made": "2026-11-13T17:44:13+00:00",
-     "coin": "BTC",
-     "side": "short",
-     "spot": "69056.01",
-     "d_pct": "1.89",
-     "p_target": "0.14",
-     "p_stop": "0.22",
-     "p_neither": "0.64",
-     "ev_r": "-0.1689",
-     "outcome": "target"
-    },
-    {
-     "id": "20261113T1744-BTC-br",
-     "made": "2026-11-13T17:44:13+00:00",
-     "coin": "BTC",
-     "side": "long",
-     "spot": "69056.01",
-     "d_pct": "1.89",
-     "p_target": "0.1",
-     "p_stop": "0.29",
-     "p_neither": "0.61",
-     "ev_r": "-0.2981",
      "outcome": "stop"
     }
    ]
