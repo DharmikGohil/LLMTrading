@@ -1,6 +1,6 @@
 {
- "time": "2026-11-17T23:09:28+00:00",
- "btc": 65074.22,
+ "time": "2026-11-17T23:36:43+00:00",
+ "btc": 64976.39,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8714.93,
+   "value": 8701.83,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -12.85,
+   "return_pct": -12.98,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 65074.22,
-     "value": 8714.83,
-     "pnl": -1275.08,
-     "pnl_pct": -12.76,
-     "day_pct": -0.366,
+     "last": 64976.39,
+     "value": 8701.73,
+     "pnl": -1288.18,
+     "pnl_pct": -12.89,
+     "day_pct": -0.07,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -369,6 +369,13 @@
    "exclude": [],
    "note": "Reason: none. Fear & Greed 10, extreme fear (alternative.me, 17 Nov): a mood, not a gate row. Next 24h: US retail sales (October) Tue 17 Nov 8:30 ET (Forex Fundamentals): a secondary release, not FOMC/CPI. FOMC minutes Wed 18 Nov (federalreserve.gov) ~43h out. BTC flat, ETH -0.5% in 24h: no stress; no coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
    "time": "2026-11-16T23:36:23+00:00"
+  },
+  {
+   "date": "2026-11-17",
+   "max_exposure": 1.0,
+   "exclude": [],
+   "note": "Reason: none. Fear & Greed 12, extreme fear (alternative.me, 18 Nov): a mood, not a gate row. Next 24h: FOMC minutes Wed 18 Nov 2pm ET (federalreserve.gov calendar): minutes of a past meeting, not a rate decision; Nvidia results this week. BTC flat, ETH +0.2% in 24h: no stress; no coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
+   "time": "2026-11-17T23:36:41+00:00"
   }
  ],
  "strategy": {
@@ -557,6 +564,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261117T2336-ETH-168",
+    "made": "2026-11-17T23:36:38+00:00",
+    "due": "2026-11-24T23:36:38+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "1825.03",
+    "p_up": "0.49",
+    "lo": "1555.0",
+    "hi": "2095.0",
+    "note": "Near baseline. Flat 24h, -11% week, RSI 26, F&G 12, funding negative. Same macro week. Range ~40% wider than baseline. Bull case: short squeeze. Bear case: new lows under 1,650.",
+    "base_lo": "1642.595081",
+    "base_hi": "2027.727064",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261117T2336-BTC-168",
+    "made": "2026-11-17T23:36:34+00:00",
+    "due": "2026-11-24T23:36:34+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "64974.45",
+    "p_up": "0.49",
+    "lo": "57800.0",
+    "hi": "72200.0",
+    "note": "Near baseline. Flat 24h, -12% week, RSI 24, F&G 12 extreme fear, funding near zero, below both averages. Week: FOMC minutes Wed 18 Nov 2pm ET (Fed calendar), Nvidia results this week. Both first 7-day calls fell below their ranges and 24h coverage is 63%: range ~40% wider than baseline. Fear-rebound hypothesis unproven: no lean. Bull case: base around 63-65k, relief rally. Bear case: risk-off continues, below 60k.",
+    "base_lo": "60103.056783",
+    "base_hi": "70240.672917",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261117T1736-ETH-24",
     "made": "2026-11-17T17:36:58+00:00",
@@ -1240,42 +1283,6 @@
     "up": "0",
     "brier": "0.2209",
     "inside": "1"
-   },
-   {
-    "id": "20261110T2337-ETH-168",
-    "made": "2026-11-10T23:37:43+00:00",
-    "due": "2026-11-17T23:37:43+00:00",
-    "coin": "ETH",
-    "horizon_h": "168",
-    "spot": "2050.9",
-    "p_up": "0.47",
-    "lo": "1860.1",
-    "hi": "2260.5",
-    "note": "7 days: slight down lean, range 10% wider than baseline. Bear: below both averages, -9.9% on the week, weak against BTC despite a reported BitMine purchase of 9,587 ETH (crypto.news, 10 Nov 2026). Bull: RSI 29 (context only), funding near zero so longs are not crowded, fear 32. No unproven lesson used; the oversold reading does not move the call. Sources: US October CPI +0.4% vs +0.3% expected and rate-hike bets up (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "1876.930757",
-    "base_hi": "2240.994131",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
-   },
-   {
-    "id": "20261110T2337-BTC-168",
-    "made": "2026-11-10T23:37:40+00:00",
-    "due": "2026-11-17T23:37:40+00:00",
-    "coin": "BTC",
-    "horizon_h": "168",
-    "spot": "73731.39",
-    "p_up": "0.47",
-    "lo": "68792.0",
-    "hi": "79009.0",
-    "note": "7 days: slight down lean, range 10% wider than baseline with PPI on Friday inside the window and the Fed being repriced. Bear: -9.8% below the 50-day average, ETF outflows, hike bets. Bull: fear 32, funding normal, RSI 34. The 7-day lessons (fear rebound, downtrend continues) are unproven and weak in history (H8a), so not used. Emotion checks: not extending the -4.8% week; no chart level used. Sources: US October CPI +0.4% vs +0.3% expected and rate-hike bets up (BLS via CNBC live coverage, 10 Nov 2026); PPI Fri 13 Nov; US spot BTC ETFs ~US$1.28B net outflows last week (altcoinbuzz, 10 Nov 2026); Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "69233.347331",
-    "base_hi": "78521.667389",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
    }
   ],
   "lessons": [
@@ -1476,7 +1483,7 @@
     "last_checked": "2026-11-17"
    }
   ],
-  "open": 18,
+  "open": 20,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
