@@ -1,0 +1,12 @@
+{
+  "symbol": "AUROPHARMA",
+  "as_of": "2026-11-16",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "US FDA Official Action Indicated at Lannett (NSE filing, 11 Nov), unresolved. Tags: reason=filing; attention=no",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T07:42:59+05:30"
+}

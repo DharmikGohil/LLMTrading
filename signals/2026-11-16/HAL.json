@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 PAT +11% standalone, +16% consolidated (12 Nov); no new red flag. RSI 46. Bear case: margins, Tejas timing. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T07:43:01+05:30"
+}
