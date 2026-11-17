@@ -27,7 +27,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.77,
-      "stop": 328.08,
+      "stop": 332.02,
       "target": 4532.67,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -35,7 +35,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.27,
-      "stop": 326.42,
+      "stop": 328.62,
       "target": 3808.08,
       "opened": "2026-10-30",
       "buy_charges": 11.75
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-16",
-    "start_equity": 102647.34,
+    "date": "2026-11-17",
+    "start_equity": 101622.64,
     "orders": 0,
     "partial": false
   },

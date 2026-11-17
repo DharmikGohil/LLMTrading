@@ -1,10 +1,10 @@
 {
- "time": "2026-11-17T02:17:25+05:30",
- "spot": 25291.1,
+ "time": "2026-11-17T09:17:41+05:30",
+ "spot": 25337.35,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 94732.43,
+   "equity": 94797.43,
    "realized": -5876.69,
    "open": {
     "name": "iron condor",
@@ -46,13 +46,13 @@
     "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none."
    },
    "mark": {
-    "close_value": 1231.75,
-    "pnl": 609.12,
+    "close_value": 1166.75,
+    "pnl": 674.12,
     "prices": [
-     31.0,
-     11.3,
-     15.9,
-     7.45
+     30.6,
+     8.35,
+     15.1,
+     5.9
     ]
    },
    "closed": [
@@ -158,7 +158,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 89479.4,
+   "equity": 89567.15,
    "realized": -10574.6,
    "open": {
     "name": "iron condor",
@@ -200,13 +200,13 @@
     "note": "1 SD short strikes, spot 25239, ATM IV 15.9%; rules only"
    },
    "mark": {
-    "close_value": 2492.75,
-    "pnl": 54.0,
+    "close_value": 2405.0,
+    "pnl": 141.75,
     "prices": [
-     50.05,
-     32.85,
-     26.5,
-     18.05
+     51.9,
+     24.6,
+     25.75,
+     13.75
     ]
    },
    "closed": [
@@ -948,6 +948,13 @@
    "main": "94732.43",
    "control": "89479.4",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-17T09:17:41+05:30",
+   "spot": "25337.35",
+   "main": "94797.43",
+   "control": "89567.15",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -1020,6 +1027,13 @@
    "lotto_direction": "none",
    "note": "Range-bound now: Nifty 25,231 early on 16 Nov (Yahoo), between 25,144 and 25,299 since 11 Nov, +0.8% over 5 sessions, well inside a weekly 1 SD (~2.2%) at India VIX 15.7 (16 Nov, Yahoo; 1-year percentile ~69). The trend that stopped the condors in early November has paused. Events before the 24 Nov expiry: US retail sales Tue 17 Nov and FOMC minutes Wed 18 Nov (Forex Fundamentals; federalreserve.gov), no RBI or budget event, Q2 results season over for Nifty heavyweights. Trade: normal 1 SD condor; no lotto direction.",
    "time": "2026-11-16T09:17:57+05:30"
+  },
+  {
+   "date": "2026-11-17",
+   "action": "trade",
+   "lotto_direction": "none",
+   "note": "Range-bound: Nifty 25,338 early on 17 Nov (Yahoo), 25,144-25,338 since 11 Nov, +0.3% over 5 sessions, inside a weekly 1 SD (~2.1%) at India VIX 15.2 (17 Nov, Yahoo). Events before the 23 Nov expiry: US retail sales 17 Nov and FOMC minutes 18 Nov (Forex Fundamentals; federalreserve.gov); no RBI or budget event. Trade; no lotto direction. Both condor accounts already hold positions, so no new condor opens.",
+   "time": "2026-11-17T09:17:25+05:30"
   }
  ]
 }
