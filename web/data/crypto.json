@@ -1,6 +1,6 @@
 {
- "time": "2026-11-17T14:53:32+00:00",
- "btc": 64956.23,
+ "time": "2026-11-17T17:37:11+00:00",
+ "btc": 63729.7,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8699.13,
+   "value": 8534.87,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -13.01,
+   "return_pct": -14.65,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 64956.23,
-     "value": 8699.03,
-     "pnl": -1290.88,
-     "pnl_pct": -12.92,
-     "day_pct": -0.511,
+     "last": 63729.7,
+     "value": 8534.77,
+     "pnl": -1455.14,
+     "pnl_pct": -14.57,
+     "day_pct": -1.962,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -550,6 +550,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261117T1736-ETH-24",
+    "made": "2026-11-17T17:36:58+00:00",
+    "due": "2026-11-18T17:36:58+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "1782.01",
+    "p_up": "0.49",
+    "lo": "1682.0",
+    "hi": "1880.0",
+    "note": "Near baseline. -2.7% in 24h, -13% week, RSI 24, F&G 12, funding negative (shorts paying). Range ~40% wider than baseline. Bull case: short squeeze. Bear case: new low under 1,700.",
+    "base_lo": "1712.467092",
+    "base_hi": "1854.37703",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261117T1736-BTC-24",
+    "made": "2026-11-17T17:36:56+00:00",
+    "due": "2026-11-18T17:36:56+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "63724.21",
+    "p_up": "0.49",
+    "lo": "61100.0",
+    "hi": "66350.0",
+    "note": "Near baseline. -2.0% in 24h, -13.7% week, RSI 22, F&G 12 extreme fear, funding near zero, below both averages. US retail sales out today; FOMC minutes Wed 18 Nov 2pm ET just after this window (Fed calendar). Coverage 61% and the first two 7-day calls both fell below their ranges: range ~40% wider than baseline. Recency check: no lean. Bull case: base near 62-63k holds, relief bounce. Bear case: grind lower toward 61k.",
+    "base_lo": "61874.521744",
+    "base_hi": "65629.193174",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261117T0736-ETH-24",
     "made": "2026-11-17T07:36:20+00:00",
@@ -1233,42 +1269,6 @@
     "up": null,
     "brier": null,
     "inside": null
-   },
-   {
-    "id": "20261110T2049-ETH-24",
-    "made": "2026-11-10T20:49:05+00:00",
-    "due": "2026-11-11T20:49:05+00:00",
-    "coin": "ETH",
-    "horizon_h": "24",
-    "spot": "2058.71",
-    "p_up": "0.47",
-    "lo": "1983.2",
-    "hi": "2134.9",
-    "note": "Slight down lean, range 10% wider than baseline after the hot CPI. Bear: -16.8% below the 50-day and -4.5% below the 200-day average, -3.4% today, weak against BTC. Bull: RSI 29.8 (oversold, context only), last funding negative (-0.004%/8h, OKX) so longs are not crowded, fear 32. Emotion checks: not chasing the drop; the oversold reading is not a tested signal here, so the lean stays small. Sources: US October CPI +0.4% vs +0.3% expected, core +0.3% vs +0.2%; 10-year yield 4.96%, traders now expect a Fed hike (BLS via CNBC and Yahoo Finance live coverage, 10 Nov 2026); PPI Fri 13 Nov; Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "1990.879457",
-    "base_hi": "2128.851573",
-    "px": "2082.11",
-    "up": "1",
-    "brier": "0.2809",
-    "inside": "1"
-   },
-   {
-    "id": "20261110T2049-BTC-24",
-    "made": "2026-11-10T20:49:02+00:00",
-    "due": "2026-11-11T20:49:02+00:00",
-    "coin": "BTC",
-    "horizon_h": "24",
-    "spot": "73809.26",
-    "p_up": "0.47",
-    "lo": "71872.0",
-    "hi": "75734.0",
-    "note": "Slight down lean, range 10% wider than baseline while markets reprice the Fed after a hot CPI; no scheduled event in the next 24h. Bear: below the 50-day average (-9.7%), rate-hike bets rose today, S&P 500 -0.6%. Bull: fear 32, funding normal (0.005%/8h, OKX), RSI 34. Emotion checks: today's -1.4% is not extended by itself (recency); no chart level used as a reason (H10c). Sources: US October CPI +0.4% vs +0.3% expected, core +0.3% vs +0.2%; 10-year yield 4.96%, traders now expect a Fed hike (BLS via CNBC and Yahoo Finance live coverage, 10 Nov 2026); PPI Fri 13 Nov; Fear & Greed 32 (alternative.me, 10 Nov).",
-    "base_lo": "72073.96287",
-    "base_hi": "75586.337212",
-    "px": "74692.0",
-    "up": "1",
-    "brier": "0.2809",
-    "inside": "1"
    }
   ],
   "lessons": [
@@ -1469,7 +1469,7 @@
     "last_checked": "2026-11-17"
    }
   ],
-  "open": 18,
+  "open": 20,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1507,11 +1507,63 @@
      "probes": 4,
      "mean_abs_error": 0.0006
     },
-    "calls": 22,
-    "mean_ev_r": -0.202,
+    "calls": 24,
+    "mean_ev_r": -0.199,
     "verdict": "analyst beats the base rates"
    },
    "recent": [
+    {
+     "id": "20261117T1737-ETH-br",
+     "made": "2026-11-17T17:37:09+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "1781.62",
+     "d_pct": "3.11",
+     "p_target": "0.13",
+     "p_stop": "0.15",
+     "p_neither": "0.72",
+     "ev_r": "-0.0486",
+     "outcome": null
+    },
+    {
+     "id": "20261117T1737-ETH-br",
+     "made": "2026-11-17T17:37:09+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "1781.62",
+     "d_pct": "3.11",
+     "p_target": "0.07",
+     "p_stop": "0.25",
+     "p_neither": "0.68",
+     "ev_r": "-0.2424",
+     "outcome": null
+    },
+    {
+     "id": "20261117T1737-BTC-br",
+     "made": "2026-11-17T17:37:04+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "63735.91",
+     "d_pct": "2.3",
+     "p_target": "0.1",
+     "p_stop": "0.15",
+     "p_neither": "0.75",
+     "ev_r": "-0.1298",
+     "outcome": null
+    },
+    {
+     "id": "20261117T1737-BTC-br",
+     "made": "2026-11-17T17:37:04+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "63735.91",
+     "d_pct": "2.3",
+     "p_target": "0.06",
+     "p_stop": "0.23",
+     "p_neither": "0.71",
+     "ev_r": "-0.2715",
+     "outcome": null
+    },
     {
      "id": "20261117T0736-ETH-br",
      "made": "2026-11-17T07:36:32+00:00",
@@ -1719,58 +1771,6 @@
      "p_neither": "0.69",
      "ev_r": "-0.267",
      "outcome": "neither"
-    },
-    {
-     "id": "20261114T1737-ETH-br",
-     "made": "2026-11-14T17:37:10+00:00",
-     "coin": "ETH",
-     "side": "short",
-     "spot": "1845.55",
-     "d_pct": "2.63",
-     "p_target": "0.16",
-     "p_stop": "0.21",
-     "p_neither": "0.63",
-     "ev_r": "-0.0846",
-     "outcome": "target"
-    },
-    {
-     "id": "20261114T1737-ETH-br",
-     "made": "2026-11-14T17:37:10+00:00",
-     "coin": "ETH",
-     "side": "long",
-     "spot": "1845.55",
-     "d_pct": "2.63",
-     "p_target": "0.08",
-     "p_stop": "0.31",
-     "p_neither": "0.61",
-     "ev_r": "-0.3031",
-     "outcome": "stop"
-    },
-    {
-     "id": "20261114T1737-BTC-br",
-     "made": "2026-11-14T17:37:05+00:00",
-     "coin": "BTC",
-     "side": "short",
-     "spot": "65734.21",
-     "d_pct": "2.01",
-     "p_target": "0.13",
-     "p_stop": "0.2",
-     "p_neither": "0.67",
-     "ev_r": "-0.1548",
-     "outcome": "target"
-    },
-    {
-     "id": "20261114T1737-BTC-br",
-     "made": "2026-11-14T17:37:05+00:00",
-     "coin": "BTC",
-     "side": "long",
-     "spot": "65734.21",
-     "d_pct": "2.01",
-     "p_target": "0.09",
-     "p_stop": "0.27",
-     "p_neither": "0.64",
-     "ev_r": "-0.2818",
-     "outcome": "stop"
     }
    ]
   }
