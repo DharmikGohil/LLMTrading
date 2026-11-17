@@ -1,0 +1,12 @@
+{
+  "symbol": "KO",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Screen rank 1. TD Cowen named Coca-Cola its top 2027 pick and lifted its target to Street-high (Yahoo, 17 Nov); no results until 2027; no red flag. Bear case: crowded defensive trade near the 52-week high. Tags: reason=news; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T09:51:59-05:00"
+}

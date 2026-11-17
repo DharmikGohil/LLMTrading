@@ -1,0 +1,12 @@
+{
+  "symbol": "ABBV",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q3 beat and raised 30 Oct; no red flag in 30h headlines (trader-news, 17 Nov). Bear case: Humira erosion; -0.9% early. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T09:52:00-05:00"
+}

@@ -4,156 +4,12 @@
   "book": "main",
   "time": "2026-10-28T18:14:05+00:00",
   "as_of": "2026-10-27",
-  "symbol": "AAPL",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Buy; LLM: claude-analyst Underweight (60%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:0"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "ABBV",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:1"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "AMGN",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:2"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "BMY",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:3"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "DE",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:4"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "LLY",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Buy; LLM: claude-analyst Underweight (75%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:5"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "MRK",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Buy; LLM: claude-analyst Underweight (75%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:6"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "SPG",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:7"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "TGT",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Buy; LLM: claude-analyst Hold (60%): Buy softened to Overweight; Overweight but close 148.01 <= EMA50 153.31; not adding",
-  "id": "US:main:8"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "TMO",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:9"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "UNP",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:10"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "USB",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:11"
- },
- {
-  "market": "US",
-  "book": "main",
-  "time": "2026-10-28T18:14:05+00:00",
-  "as_of": "2026-10-27",
   "symbol": "JNJ",
   "price": null,
   "held": 0,
   "target_qty": null,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
-  "id": "US:main:12"
+  "id": "US:main:0"
  },
  {
   "market": "US",
@@ -165,7 +21,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 15 (alloc 15, risk-sized 23) stop 95.42 tp 110.4",
-  "id": "US:main:13"
+  "id": "US:main:1"
  },
  {
   "market": "US",
@@ -177,7 +33,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
-  "id": "US:main:14"
+  "id": "US:main:2"
  },
  {
   "market": "US",
@@ -189,7 +45,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum Buy; LLM: claude-analyst Buy (65%) does not object; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",
-  "id": "US:main:15"
+  "id": "US:main:3"
  },
  {
   "market": "US",
@@ -201,7 +57,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:16"
+  "id": "US:main:4"
  },
  {
   "market": "US",
@@ -213,7 +69,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (75%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:17"
+  "id": "US:main:5"
  },
  {
   "market": "US",
@@ -225,7 +81,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:18"
+  "id": "US:main:6"
  },
  {
   "market": "US",
@@ -237,7 +93,7 @@
   "held": 16,
   "target_qty": 16,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (16 >= 9)",
-  "id": "US:main:19"
+  "id": "US:main:7"
  },
  {
   "market": "US",
@@ -249,7 +105,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:20"
+  "id": "US:main:8"
  },
  {
   "market": "US",
@@ -261,7 +117,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:21"
+  "id": "US:main:9"
  },
  {
   "market": "US",
@@ -273,7 +129,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:22"
+  "id": "US:main:10"
  },
  {
   "market": "US",
@@ -285,7 +141,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: already at/above size (0 >= 0)",
-  "id": "US:main:23"
+  "id": "US:main:11"
  },
  {
   "market": "US",
@@ -297,7 +153,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (15 >= 7)",
-  "id": "US:main:24"
+  "id": "US:main:12"
  },
  {
   "market": "US",
@@ -309,7 +165,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:25"
+  "id": "US:main:13"
  },
  {
   "market": "US",
@@ -321,7 +177,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Buy (62%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
-  "id": "US:main:26"
+  "id": "US:main:14"
  },
  {
   "market": "US",
@@ -333,7 +189,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:27"
+  "id": "US:main:15"
  },
  {
   "market": "US",
@@ -345,7 +201,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",
-  "id": "US:main:28"
+  "id": "US:main:16"
  },
  {
   "market": "US",
@@ -357,7 +213,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:29"
+  "id": "US:main:17"
  },
  {
   "market": "US",
@@ -369,7 +225,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (70%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:30"
+  "id": "US:main:18"
  },
  {
   "market": "US",
@@ -381,7 +237,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:31"
+  "id": "US:main:19"
  },
  {
   "market": "US",
@@ -393,7 +249,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:32"
+  "id": "US:main:20"
  },
  {
   "market": "US",
@@ -405,7 +261,7 @@
   "held": 16,
   "target_qty": 16,
   "decision": "momentum Sell; Sell but held 2d < min 20d; keeping (stop still active)",
-  "id": "US:main:33"
+  "id": "US:main:21"
  },
  {
   "market": "US",
@@ -417,7 +273,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:34"
+  "id": "US:main:22"
  },
  {
   "market": "US",
@@ -429,7 +285,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:35"
+  "id": "US:main:23"
  },
  {
   "market": "US",
@@ -441,7 +297,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:36"
+  "id": "US:main:24"
  },
  {
   "market": "US",
@@ -453,7 +309,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: already at/above size (0 >= 0)",
-  "id": "US:main:37"
+  "id": "US:main:25"
  },
  {
   "market": "US",
@@ -465,7 +321,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (60%) vetoes the buy; Hold: keep 15",
-  "id": "US:main:38"
+  "id": "US:main:26"
  },
  {
   "market": "US",
@@ -477,7 +333,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:39"
+  "id": "US:main:27"
  },
  {
   "market": "US",
@@ -489,7 +345,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:40"
+  "id": "US:main:28"
  },
  {
   "market": "US",
@@ -501,7 +357,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: add to 4 (alloc 4, risk-sized 9) stop 191.3",
-  "id": "US:main:41"
+  "id": "US:main:29"
  },
  {
   "market": "US",
@@ -513,7 +369,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Buy (60%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:42"
+  "id": "US:main:30"
  },
  {
   "market": "US",
@@ -525,7 +381,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:43"
+  "id": "US:main:31"
  },
  {
   "market": "US",
@@ -537,7 +393,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:44"
+  "id": "US:main:32"
  },
  {
   "market": "US",
@@ -549,7 +405,7 @@
   "held": 0,
   "target_qty": 12,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 12 (alloc 12, risk-sized 41) stop 55.05",
-  "id": "US:main:45"
+  "id": "US:main:33"
  },
  {
   "market": "US",
@@ -561,7 +417,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:46"
+  "id": "US:main:34"
  },
  {
   "market": "US",
@@ -573,7 +429,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (70%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:47"
+  "id": "US:main:35"
  },
  {
   "market": "US",
@@ -585,7 +441,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:48"
+  "id": "US:main:36"
  },
  {
   "market": "US",
@@ -597,7 +453,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:49"
+  "id": "US:main:37"
  },
  {
   "market": "US",
@@ -609,7 +465,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:50"
+  "id": "US:main:38"
  },
  {
   "market": "US",
@@ -621,7 +477,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:51"
+  "id": "US:main:39"
  },
  {
   "market": "US",
@@ -633,7 +489,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:52"
+  "id": "US:main:40"
  },
  {
   "market": "US",
@@ -645,7 +501,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.47",
-  "id": "US:main:53"
+  "id": "US:main:41"
  },
  {
   "market": "US",
@@ -657,7 +513,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:54"
+  "id": "US:main:42"
  },
  {
   "market": "US",
@@ -669,7 +525,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:55"
+  "id": "US:main:43"
  },
  {
   "market": "US",
@@ -681,7 +537,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:56"
+  "id": "US:main:44"
  },
  {
   "market": "US",
@@ -693,7 +549,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:57"
+  "id": "US:main:45"
  },
  {
   "market": "US",
@@ -705,7 +561,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 15",
-  "id": "US:main:58"
+  "id": "US:main:46"
  },
  {
   "market": "US",
@@ -717,7 +573,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
-  "id": "US:main:59"
+  "id": "US:main:47"
  },
  {
   "market": "US",
@@ -729,7 +585,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:60"
+  "id": "US:main:48"
  },
  {
   "market": "US",
@@ -741,7 +597,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (4 >= 4)",
-  "id": "US:main:61"
+  "id": "US:main:49"
  },
  {
   "market": "US",
@@ -753,7 +609,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:62"
+  "id": "US:main:50"
  },
  {
   "market": "US",
@@ -765,7 +621,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:63"
+  "id": "US:main:51"
  },
  {
   "market": "US",
@@ -777,7 +633,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:64"
+  "id": "US:main:52"
  },
  {
   "market": "US",
@@ -789,7 +645,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Sell; Sell but held 3d < min 20d; keeping (stop still active)",
-  "id": "US:main:65"
+  "id": "US:main:53"
  },
  {
   "market": "US",
@@ -801,7 +657,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:66"
+  "id": "US:main:54"
  },
  {
   "market": "US",
@@ -813,7 +669,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:67"
+  "id": "US:main:55"
  },
  {
   "market": "US",
@@ -825,7 +681,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 2 (alloc 2, risk-sized 7) stop 305.31",
-  "id": "US:main:68"
+  "id": "US:main:56"
  },
  {
   "market": "US",
@@ -837,7 +693,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 263.96",
-  "id": "US:main:69"
+  "id": "US:main:57"
  },
  {
   "market": "US",
@@ -849,7 +705,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 0",
-  "id": "US:main:70"
+  "id": "US:main:58"
  },
  {
   "market": "US",
@@ -861,7 +717,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:71"
+  "id": "US:main:59"
  },
  {
   "market": "US",
@@ -873,7 +729,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:72"
+  "id": "US:main:60"
  },
  {
   "market": "US",
@@ -885,7 +741,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:73"
+  "id": "US:main:61"
  },
  {
   "market": "US",
@@ -897,7 +753,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:74"
+  "id": "US:main:62"
  },
  {
   "market": "US",
@@ -909,7 +765,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:75"
+  "id": "US:main:63"
  },
  {
   "market": "US",
@@ -921,7 +777,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:76"
+  "id": "US:main:64"
  },
  {
   "market": "US",
@@ -933,7 +789,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:77"
+  "id": "US:main:65"
  },
  {
   "market": "US",
@@ -945,7 +801,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:78"
+  "id": "US:main:66"
  },
  {
   "market": "US",
@@ -957,7 +813,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 15",
-  "id": "US:main:79"
+  "id": "US:main:67"
  },
  {
   "market": "US",
@@ -969,7 +825,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (62%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:80"
+  "id": "US:main:68"
  },
  {
   "market": "US",
@@ -981,7 +837,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Hold; Hold: keep 4",
-  "id": "US:main:81"
+  "id": "US:main:69"
  },
  {
   "market": "US",
@@ -993,7 +849,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 11) stop 139.86",
-  "id": "US:main:82"
+  "id": "US:main:70"
  },
  {
   "market": "US",
@@ -1005,7 +861,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:83"
+  "id": "US:main:71"
  },
  {
   "market": "US",
@@ -1017,7 +873,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:84"
+  "id": "US:main:72"
  },
  {
   "market": "US",
@@ -1029,7 +885,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:85"
+  "id": "US:main:73"
  },
  {
   "market": "US",
@@ -1041,7 +897,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:86"
+  "id": "US:main:74"
  },
  {
   "market": "US",
@@ -1053,7 +909,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:87"
+  "id": "US:main:75"
  },
  {
   "market": "US",
@@ -1065,7 +921,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:88"
+  "id": "US:main:76"
  },
  {
   "market": "US",
@@ -1077,7 +933,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.7",
-  "id": "US:main:89"
+  "id": "US:main:77"
  },
  {
   "market": "US",
@@ -1089,7 +945,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 4) stop 431.61",
-  "id": "US:main:90"
+  "id": "US:main:78"
  },
  {
   "market": "US",
@@ -1101,7 +957,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:91"
+  "id": "US:main:79"
  },
  {
   "market": "US",
@@ -1113,7 +969,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:92"
+  "id": "US:main:80"
  },
  {
   "market": "US",
@@ -1125,7 +981,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:93"
+  "id": "US:main:81"
  },
  {
   "market": "US",
@@ -1137,7 +993,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:94"
+  "id": "US:main:82"
  },
  {
   "market": "US",
@@ -1149,7 +1005,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:95"
+  "id": "US:main:83"
  },
  {
   "market": "US",
@@ -1161,7 +1017,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:96"
+  "id": "US:main:84"
  },
  {
   "market": "US",
@@ -1173,7 +1029,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:97"
+  "id": "US:main:85"
  },
  {
   "market": "US",
@@ -1185,7 +1041,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:98"
+  "id": "US:main:86"
  },
  {
   "market": "US",
@@ -1197,7 +1053,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (62%) vetoes the buy; Hold: keep 15",
-  "id": "US:main:99"
+  "id": "US:main:87"
  },
  {
   "market": "US",
@@ -1209,7 +1065,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:100"
+  "id": "US:main:88"
  },
  {
   "market": "US",
@@ -1221,7 +1077,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Sell; Sell but held 2d < min 20d; keeping (stop still active)",
-  "id": "US:main:101"
+  "id": "US:main:89"
  },
  {
   "market": "US",
@@ -1233,7 +1089,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:102"
+  "id": "US:main:90"
  },
  {
   "market": "US",
@@ -1245,7 +1101,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (4 >= 4)",
-  "id": "US:main:103"
+  "id": "US:main:91"
  },
  {
   "market": "US",
@@ -1257,7 +1113,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Sell; Sell but held 1d < min 20d; keeping (stop still active)",
-  "id": "US:main:104"
+  "id": "US:main:92"
  },
  {
   "market": "US",
@@ -1269,7 +1125,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:105"
+  "id": "US:main:93"
  },
  {
   "market": "US",
@@ -1281,7 +1137,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:106"
+  "id": "US:main:94"
  },
  {
   "market": "US",
@@ -1293,7 +1149,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:107"
+  "id": "US:main:95"
  },
  {
   "market": "US",
@@ -1305,7 +1161,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:108"
+  "id": "US:main:96"
  },
  {
   "market": "US",
@@ -1317,7 +1173,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:109"
+  "id": "US:main:97"
  },
  {
   "market": "US",
@@ -1329,7 +1185,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 12) stop 155.51",
-  "id": "US:main:110"
+  "id": "US:main:98"
  },
  {
   "market": "US",
@@ -1341,7 +1197,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 319.15",
-  "id": "US:main:111"
+  "id": "US:main:99"
  },
  {
   "market": "US",
@@ -1353,7 +1209,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 270.76",
-  "id": "US:main:112"
+  "id": "US:main:100"
  },
  {
   "market": "US",
@@ -1365,7 +1221,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 4) stop 433.72",
-  "id": "US:main:113"
+  "id": "US:main:101"
  },
  {
   "market": "US",
@@ -1377,7 +1233,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:114"
+  "id": "US:main:102"
  },
  {
   "market": "US",
@@ -1389,7 +1245,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:115"
+  "id": "US:main:103"
  },
  {
   "market": "US",
@@ -1401,7 +1257,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:116"
+  "id": "US:main:104"
  },
  {
   "market": "US",
@@ -1413,7 +1269,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:117"
+  "id": "US:main:105"
  },
  {
   "market": "US",
@@ -1425,7 +1281,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:118"
+  "id": "US:main:106"
  },
  {
   "market": "US",
@@ -1437,7 +1293,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:119"
+  "id": "US:main:107"
  },
  {
   "market": "US",
@@ -1449,7 +1305,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:120"
+  "id": "US:main:108"
  },
  {
   "market": "US",
@@ -1461,7 +1317,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:121"
+  "id": "US:main:109"
  },
  {
   "market": "US",
@@ -1473,7 +1329,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:122"
+  "id": "US:main:110"
  },
  {
   "market": "US",
@@ -1485,7 +1341,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:123"
+  "id": "US:main:111"
  },
  {
   "market": "US",
@@ -1497,7 +1353,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:124"
+  "id": "US:main:112"
  },
  {
   "market": "US",
@@ -1509,7 +1365,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (4 >= 4)",
-  "id": "US:main:125"
+  "id": "US:main:113"
  },
  {
   "market": "US",
@@ -1521,7 +1377,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 10) stop 145.41",
-  "id": "US:main:126"
+  "id": "US:main:114"
  },
  {
   "market": "US",
@@ -1533,7 +1389,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:127"
+  "id": "US:main:115"
  },
  {
   "market": "US",
@@ -1545,7 +1401,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Hold; Hold: keep 3",
-  "id": "US:main:128"
+  "id": "US:main:116"
  },
  {
   "market": "US",
@@ -1557,7 +1413,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:129"
+  "id": "US:main:117"
  },
  {
   "market": "US",
@@ -1569,7 +1425,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:130"
+  "id": "US:main:118"
  },
  {
   "market": "US",
@@ -1581,7 +1437,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:131"
+  "id": "US:main:119"
  },
  {
   "market": "US",
@@ -1593,7 +1449,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 306.19",
-  "id": "US:main:132"
+  "id": "US:main:120"
  },
  {
   "market": "US",
@@ -1605,7 +1461,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 3 (alloc 3, risk-sized 6) stop 257.28",
-  "id": "US:main:133"
+  "id": "US:main:121"
  },
  {
   "market": "US",
@@ -1617,7 +1473,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 3) stop 407.24",
-  "id": "US:main:134"
+  "id": "US:main:122"
  },
  {
   "market": "US",
@@ -1629,7 +1485,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:135"
+  "id": "US:main:123"
  },
  {
   "market": "US",
@@ -1641,7 +1497,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:136"
+  "id": "US:main:124"
  },
  {
   "market": "US",
@@ -1653,7 +1509,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Sell; Sell but held 4d < min 20d; keeping (stop still active)",
-  "id": "US:main:137"
+  "id": "US:main:125"
  },
  {
   "market": "US",
@@ -1665,7 +1521,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:138"
+  "id": "US:main:126"
  },
  {
   "market": "US",
@@ -1677,7 +1533,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:139"
+  "id": "US:main:127"
  },
  {
   "market": "US",
@@ -1689,7 +1545,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:140"
+  "id": "US:main:128"
  },
  {
   "market": "US",
@@ -1701,7 +1557,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:141"
+  "id": "US:main:129"
  },
  {
   "market": "US",
@@ -1713,7 +1569,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:142"
+  "id": "US:main:130"
  },
  {
   "market": "US",
@@ -1725,7 +1581,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:143"
+  "id": "US:main:131"
  },
  {
   "market": "US",
@@ -1737,7 +1593,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:144"
+  "id": "US:main:132"
  },
  {
   "market": "US",
@@ -1749,7 +1605,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (4 >= 4)",
-  "id": "US:main:145"
+  "id": "US:main:133"
  },
  {
   "market": "US",
@@ -1761,7 +1617,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 6 (alloc 6, risk-sized 9) stop 137.3",
-  "id": "US:main:146"
+  "id": "US:main:134"
  },
  {
   "market": "US",
@@ -1773,7 +1629,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:147"
+  "id": "US:main:135"
  },
  {
   "market": "US",
@@ -1785,7 +1641,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:148"
+  "id": "US:main:136"
  },
  {
   "market": "US",
@@ -1797,7 +1653,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Hold; Hold: keep 3",
-  "id": "US:main:149"
+  "id": "US:main:137"
  },
  {
   "market": "US",
@@ -1809,7 +1665,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:150"
+  "id": "US:main:138"
  },
  {
   "market": "US",
@@ -1821,7 +1677,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:151"
+  "id": "US:main:139"
  },
  {
   "market": "US",
@@ -1833,7 +1689,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:152"
+  "id": "US:main:140"
  },
  {
   "market": "US",
@@ -1845,7 +1701,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 313.81",
-  "id": "US:main:153"
+  "id": "US:main:141"
  },
  {
   "market": "US",
@@ -1857,7 +1713,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 6) stop 259.25",
-  "id": "US:main:154"
+  "id": "US:main:142"
  },
  {
   "market": "US",
@@ -1869,7 +1725,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:155"
+  "id": "US:main:143"
  },
  {
   "market": "US",
@@ -1881,7 +1737,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:156"
+  "id": "US:main:144"
  },
  {
   "market": "US",
@@ -1893,7 +1749,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:157"
+  "id": "US:main:145"
  },
  {
   "market": "US",
@@ -1905,7 +1761,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:158"
+  "id": "US:main:146"
  },
  {
   "market": "US",
@@ -1917,7 +1773,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:159"
+  "id": "US:main:147"
  },
  {
   "market": "US",
@@ -1929,7 +1785,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:160"
+  "id": "US:main:148"
  },
  {
   "market": "US",
@@ -1941,7 +1797,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:161"
+  "id": "US:main:149"
  },
  {
   "market": "US",
@@ -1953,7 +1809,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:162"
+  "id": "US:main:150"
  },
  {
   "market": "US",
@@ -1965,7 +1821,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:163"
+  "id": "US:main:151"
  },
  {
   "market": "US",
@@ -1977,7 +1833,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:164"
+  "id": "US:main:152"
  },
  {
   "market": "US",
@@ -1989,7 +1845,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:165"
+  "id": "US:main:153"
  },
  {
   "market": "US",
@@ -2001,7 +1857,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:166"
+  "id": "US:main:154"
  },
  {
   "market": "US",
@@ -2013,7 +1869,7 @@
   "held": 4,
   "target_qty": 5,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 8) stop 172.23",
-  "id": "US:main:167"
+  "id": "US:main:155"
  },
  {
   "market": "US",
@@ -2025,7 +1881,7 @@
   "held": 1,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 9) stop 143.99",
-  "id": "US:main:168"
+  "id": "US:main:156"
  },
  {
   "market": "US",
@@ -2037,7 +1893,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (1 >= 1)",
-  "id": "US:main:169"
+  "id": "US:main:157"
  },
  {
   "market": "US",
@@ -2049,7 +1905,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:170"
+  "id": "US:main:158"
  },
  {
   "market": "US",
@@ -2061,7 +1917,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (54%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:171"
+  "id": "US:main:159"
  },
  {
   "market": "US",
@@ -2073,7 +1929,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:172"
+  "id": "US:main:160"
  },
  {
   "market": "US",
@@ -2085,7 +1941,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:173"
+  "id": "US:main:161"
  },
  {
   "market": "US",
@@ -2097,7 +1953,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:174"
+  "id": "US:main:162"
  },
  {
   "market": "US",
@@ -2109,7 +1965,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 312.92",
-  "id": "US:main:175"
+  "id": "US:main:163"
  },
  {
   "market": "US",
@@ -2121,7 +1977,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 6) stop 263.48",
-  "id": "US:main:176"
+  "id": "US:main:164"
  },
  {
   "market": "US",
@@ -2133,7 +1989,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 2 (alloc 2, risk-sized 3) stop 412.36",
-  "id": "US:main:177"
+  "id": "US:main:165"
  },
  {
   "market": "US",
@@ -2145,7 +2001,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:178"
+  "id": "US:main:166"
  },
  {
   "market": "US",
@@ -2157,7 +2013,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Sell; Sell but held 8d < min 20d; keeping (stop still active)",
-  "id": "US:main:179"
+  "id": "US:main:167"
  },
  {
   "market": "US",
@@ -2169,7 +2025,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:180"
+  "id": "US:main:168"
  },
  {
   "market": "US",
@@ -2181,7 +2037,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:181"
+  "id": "US:main:169"
  },
  {
   "market": "US",
@@ -2193,7 +2049,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:182"
+  "id": "US:main:170"
  },
  {
   "market": "US",
@@ -2205,7 +2061,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:183"
+  "id": "US:main:171"
  },
  {
   "market": "US",
@@ -2217,7 +2073,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:184"
+  "id": "US:main:172"
  },
  {
   "market": "US",
@@ -2229,7 +2085,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:185"
+  "id": "US:main:173"
  },
  {
   "market": "US",
@@ -2241,7 +2097,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:186"
+  "id": "US:main:174"
  },
  {
   "market": "US",
@@ -2253,7 +2109,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:187"
+  "id": "US:main:175"
  },
  {
   "market": "US",
@@ -2265,7 +2121,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 1 (alloc 1, risk-sized 3) stop 480.66",
-  "id": "US:main:188"
+  "id": "US:main:176"
  },
  {
   "market": "US",
@@ -2277,7 +2133,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Sell; Sell but held 11d < min 20d; keeping (stop still active)",
-  "id": "US:main:189"
+  "id": "US:main:177"
  },
  {
   "market": "US",
@@ -2289,7 +2145,7 @@
   "held": 1,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 9) stop 139.36",
-  "id": "US:main:190"
+  "id": "US:main:178"
  },
  {
   "market": "US",
@@ -2301,7 +2157,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:191"
+  "id": "US:main:179"
  },
  {
   "market": "US",
@@ -2313,7 +2169,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:192"
+  "id": "US:main:180"
  },
  {
   "market": "US",
@@ -2325,7 +2181,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Hold; Hold: keep 3",
-  "id": "US:main:193"
+  "id": "US:main:181"
  },
  {
   "market": "US",
@@ -2337,7 +2193,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:194"
+  "id": "US:main:182"
  },
  {
   "market": "US",
@@ -2349,7 +2205,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 386.35",
-  "id": "US:main:195"
+  "id": "US:main:183"
  },
  {
   "market": "US",
@@ -2361,7 +2217,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:196"
+  "id": "US:main:184"
  },
  {
   "market": "US",
@@ -2373,7 +2229,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 318.3",
-  "id": "US:main:197"
+  "id": "US:main:185"
  },
  {
   "market": "US",
@@ -2385,7 +2241,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 6) stop 262.3",
-  "id": "US:main:198"
+  "id": "US:main:186"
  },
  {
   "market": "US",
@@ -2397,7 +2253,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 2 (alloc 2, risk-sized 3) stop 411.54",
-  "id": "US:main:199"
+  "id": "US:main:187"
  },
  {
   "market": "US",
@@ -2409,7 +2265,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:200"
+  "id": "US:main:188"
  },
  {
   "market": "US",
@@ -2421,7 +2277,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:201"
+  "id": "US:main:189"
  },
  {
   "market": "US",
@@ -2433,7 +2289,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:202"
+  "id": "US:main:190"
  },
  {
   "market": "US",
@@ -2445,7 +2301,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (7 >= 3)",
-  "id": "US:main:203"
+  "id": "US:main:191"
  },
  {
   "market": "US",
@@ -2457,7 +2313,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:204"
+  "id": "US:main:192"
  },
  {
   "market": "US",
@@ -2469,7 +2325,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:205"
+  "id": "US:main:193"
  },
  {
   "market": "US",
@@ -2481,7 +2337,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:206"
+  "id": "US:main:194"
  },
  {
   "market": "US",
@@ -2493,7 +2349,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:207"
+  "id": "US:main:195"
  },
  {
   "market": "US",
@@ -2505,7 +2361,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:208"
+  "id": "US:main:196"
  },
  {
   "market": "US",
@@ -2517,7 +2373,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:209"
+  "id": "US:main:197"
  },
  {
   "market": "US",
@@ -2529,7 +2385,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:210"
+  "id": "US:main:198"
  },
  {
   "market": "US",
@@ -2541,7 +2397,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Sell; Sell but held 12d < min 20d; keeping (stop still active)",
-  "id": "US:main:211"
+  "id": "US:main:199"
  },
  {
   "market": "US",
@@ -2553,7 +2409,7 @@
   "held": 1,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 9) stop 141.38",
-  "id": "US:main:212"
+  "id": "US:main:200"
  },
  {
   "market": "US",
@@ -2565,7 +2421,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:213"
+  "id": "US:main:201"
  },
  {
   "market": "US",
@@ -2577,7 +2433,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:214"
+  "id": "US:main:202"
  },
  {
   "market": "US",
@@ -2589,7 +2445,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:215"
+  "id": "US:main:203"
  },
  {
   "market": "US",
@@ -2601,7 +2457,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Hold; Hold: keep 6",
-  "id": "US:main:216"
+  "id": "US:main:204"
  },
  {
   "market": "US",
@@ -2613,7 +2469,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 384.84",
-  "id": "US:main:217"
+  "id": "US:main:205"
  },
  {
   "market": "US",
@@ -2625,7 +2481,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:218"
+  "id": "US:main:206"
  },
  {
   "market": "US",
@@ -2637,7 +2493,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 323.41",
-  "id": "US:main:219"
+  "id": "US:main:207"
  },
  {
   "market": "US",
@@ -2649,7 +2505,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 6) stop 268.42",
-  "id": "US:main:220"
+  "id": "US:main:208"
  },
  {
   "market": "US",
@@ -2661,7 +2517,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:221"
+  "id": "US:main:209"
  },
  {
   "market": "US",
@@ -2673,7 +2529,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 5 (alloc 5, risk-sized 12) stop 121.43",
-  "id": "US:main:222"
+  "id": "US:main:210"
  },
  {
   "market": "US",
@@ -2685,7 +2541,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:223"
+  "id": "US:main:211"
  },
  {
   "market": "US",
@@ -2697,7 +2553,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:224"
+  "id": "US:main:212"
  },
  {
   "market": "US",
@@ -2709,7 +2565,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:225"
+  "id": "US:main:213"
  },
  {
   "market": "US",
@@ -2721,7 +2577,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Hold; Hold: keep 7",
-  "id": "US:main:226"
+  "id": "US:main:214"
  },
  {
   "market": "US",
@@ -2733,7 +2589,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:227"
+  "id": "US:main:215"
  },
  {
   "market": "US",
@@ -2745,7 +2601,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:228"
+  "id": "US:main:216"
  },
  {
   "market": "US",
@@ -2757,7 +2613,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:229"
+  "id": "US:main:217"
  },
  {
   "market": "US",
@@ -2769,7 +2625,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:230"
+  "id": "US:main:218"
  },
  {
   "market": "US",
@@ -2781,7 +2637,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:231"
+  "id": "US:main:219"
  },
  {
   "market": "US",
@@ -2793,7 +2649,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:232"
+  "id": "US:main:220"
  },
  {
   "market": "US",
@@ -2805,7 +2661,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:233"
+  "id": "US:main:221"
  },
  {
   "market": "US",
@@ -2817,7 +2673,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (4 >= 3)",
-  "id": "US:main:234"
+  "id": "US:main:222"
  },
  {
   "market": "US",
@@ -2829,7 +2685,7 @@
   "held": 1,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 9) stop 142.46",
-  "id": "US:main:235"
+  "id": "US:main:223"
  },
  {
   "market": "US",
@@ -2841,7 +2697,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:236"
+  "id": "US:main:224"
  },
  {
   "market": "US",
@@ -2853,7 +2709,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:237"
+  "id": "US:main:225"
  },
  {
   "market": "US",
@@ -2865,7 +2721,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: already at/above size (3 >= 3)",
-  "id": "US:main:238"
+  "id": "US:main:226"
  },
  {
   "market": "US",
@@ -2877,7 +2733,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Underweight; Underweight but held 13d < min 20d; keeping (stop still active)",
-  "id": "US:main:239"
+  "id": "US:main:227"
  },
  {
   "market": "US",
@@ -2889,7 +2745,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 389.61",
-  "id": "US:main:240"
+  "id": "US:main:228"
  },
  {
   "market": "US",
@@ -2901,7 +2757,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:241"
+  "id": "US:main:229"
  },
  {
   "market": "US",
@@ -2913,7 +2769,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 325.14",
-  "id": "US:main:242"
+  "id": "US:main:230"
  },
  {
   "market": "US",
@@ -2925,7 +2781,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 267.3",
-  "id": "US:main:243"
+  "id": "US:main:231"
  },
  {
   "market": "US",
@@ -2937,7 +2793,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:244"
+  "id": "US:main:232"
  },
  {
   "market": "US",
@@ -2949,7 +2805,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:245"
+  "id": "US:main:233"
  },
  {
   "market": "US",
@@ -2961,7 +2817,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 5 (alloc 5, risk-sized 12) stop 125.41",
-  "id": "US:main:246"
+  "id": "US:main:234"
  },
  {
   "market": "US",
@@ -2973,7 +2829,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:247"
+  "id": "US:main:235"
  },
  {
   "market": "US",
@@ -2985,7 +2841,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 3 (alloc 3, risk-sized 9) stop 197.69",
-  "id": "US:main:248"
+  "id": "US:main:236"
  },
  {
   "market": "US",
@@ -2997,7 +2853,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:249"
+  "id": "US:main:237"
  },
  {
   "market": "US",
@@ -3009,7 +2865,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:250"
+  "id": "US:main:238"
  },
  {
   "market": "US",
@@ -3021,7 +2877,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Hold; Hold: keep 7",
-  "id": "US:main:251"
+  "id": "US:main:239"
  },
  {
   "market": "US",
@@ -3033,7 +2889,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:252"
+  "id": "US:main:240"
  },
  {
   "market": "US",
@@ -3045,7 +2901,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:253"
+  "id": "US:main:241"
  },
  {
   "market": "US",
@@ -3057,7 +2913,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:254"
+  "id": "US:main:242"
  },
  {
   "market": "US",
@@ -3069,7 +2925,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:255"
+  "id": "US:main:243"
  },
  {
   "market": "US",
@@ -3081,7 +2937,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:256"
+  "id": "US:main:244"
  },
  {
   "market": "US",
@@ -3093,7 +2949,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Underweight; Underweight: trim 0 -> 0",
-  "id": "US:main:257"
+  "id": "US:main:245"
  },
  {
   "market": "US",
@@ -3105,7 +2961,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (4 >= 3)",
-  "id": "US:main:258"
+  "id": "US:main:246"
  },
  {
   "market": "US",
@@ -3117,7 +2973,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (65%) vetoes the buy; Hold: keep 1",
-  "id": "US:main:259"
+  "id": "US:main:247"
  },
  {
   "market": "US",
@@ -3129,7 +2985,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:260"
+  "id": "US:main:248"
  },
  {
   "market": "US",
@@ -3141,7 +2997,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Hold; Hold: keep 3",
-  "id": "US:main:261"
+  "id": "US:main:249"
  },
  {
   "market": "US",
@@ -3153,7 +3009,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Sell; Sell but held 14d < min 20d; keeping (stop still active)",
-  "id": "US:main:262"
+  "id": "US:main:250"
  },
  {
   "market": "US",
@@ -3165,7 +3021,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:263"
+  "id": "US:main:251"
  },
  {
   "market": "US",
@@ -3177,7 +3033,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 11) stop 152.46",
-  "id": "US:main:264"
+  "id": "US:main:252"
  },
  {
   "market": "US",
@@ -3189,7 +3045,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 6) stop 322.42",
-  "id": "US:main:265"
+  "id": "US:main:253"
  },
  {
   "market": "US",
@@ -3201,7 +3057,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 270.97",
-  "id": "US:main:266"
+  "id": "US:main:254"
  },
  {
   "market": "US",
@@ -3213,7 +3069,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:267"
+  "id": "US:main:255"
  },
  {
   "market": "US",
@@ -3225,7 +3081,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:268"
+  "id": "US:main:256"
  },
  {
   "market": "US",
@@ -3237,7 +3093,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 5 (alloc 5, risk-sized 12) stop 123.61",
-  "id": "US:main:269"
+  "id": "US:main:257"
  },
  {
   "market": "US",
@@ -3249,7 +3105,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Sell; Sell: trim 0 -> 0",
-  "id": "US:main:270"
+  "id": "US:main:258"
  },
  {
   "market": "US",
@@ -3261,7 +3117,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 3 (alloc 3, risk-sized 9) stop 197.51",
-  "id": "US:main:271"
+  "id": "US:main:259"
  },
  {
   "market": "US",
@@ -3273,7 +3129,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:272"
+  "id": "US:main:260"
  },
  {
   "market": "US",
@@ -3285,7 +3141,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum Hold; Hold: keep 7",
-  "id": "US:main:273"
+  "id": "US:main:261"
  },
  {
   "market": "US",
@@ -3297,7 +3153,7 @@
   "held": 21,
   "target_qty": 21,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: already at/above size (21 >= 10)",
-  "id": "US:main:274"
+  "id": "US:main:262"
  },
  {
   "market": "US",
@@ -3309,7 +3165,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:275"
+  "id": "US:main:263"
  },
  {
   "market": "US",
@@ -3321,7 +3177,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:276"
+  "id": "US:main:264"
  },
  {
   "market": "US",
@@ -3333,7 +3189,7 @@
   "held": 15,
   "target_qty": 15,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
-  "id": "US:main:277"
+  "id": "US:main:265"
  },
  {
   "market": "US",
@@ -3345,7 +3201,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:278"
+  "id": "US:main:266"
  },
  {
   "market": "US",
@@ -3357,7 +3213,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (6 >= 6)",
-  "id": "US:main:279"
+  "id": "US:main:267"
  },
  {
   "market": "US",
@@ -3369,7 +3225,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Underweight; Underweight: trim 0 -> 0",
-  "id": "US:main:280"
+  "id": "US:main:268"
  },
  {
   "market": "US",
@@ -3381,7 +3237,7 @@
   "held": 4,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (4 >= 3)",
-  "id": "US:main:281"
+  "id": "US:main:269"
  },
  {
   "market": "US",
@@ -3393,7 +3249,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Buy; LLM: claude-analyst Underweight (66%) vetoes the buy; Hold: keep 1",
-  "id": "US:main:282"
+  "id": "US:main:270"
  },
  {
   "market": "US",
@@ -3405,7 +3261,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum Hold; Hold: keep 1",
-  "id": "US:main:283"
+  "id": "US:main:271"
  },
  {
   "market": "US",
@@ -3417,7 +3273,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum Hold; Hold: keep 3",
-  "id": "US:main:284"
+  "id": "US:main:272"
  },
  {
   "market": "US",
@@ -3429,7 +3285,7 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Underweight; Underweight but held 17d < min 20d; keeping (stop still active)",
-  "id": "US:main:285"
+  "id": "US:main:273"
  },
  {
   "market": "US",
@@ -3441,7 +3297,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum Hold; Hold: keep 0",
-  "id": "US:main:286"
+  "id": "US:main:274"
  },
  {
   "market": "US",
@@ -3453,127 +3309,295 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 4 (alloc 4, risk-sized 11) stop 150.88",
+  "id": "US:main:275"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "AAPL",
+  "price": 353.58,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: add to 2 (alloc 2, risk-sized 6) stop 321.41",
+  "id": "US:main:276"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "ABBV",
+  "price": 292.15,
+  "held": 0,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 3 (alloc 3, risk-sized 7) stop 264.55",
+  "id": "US:main:277"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "AMGN",
+  "price": 461.51,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "US:main:278"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CL",
+  "price": 100.61,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "US:main:279"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "COP",
+  "price": 143.07,
+  "held": 0,
+  "target_qty": 5,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 5 (alloc 5, risk-sized 13) stop 127.71",
+  "id": "US:main:280"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CSCO",
+  "price": 95.39,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Sell; Sell: trim 0 -> 0",
+  "id": "US:main:281"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CVX",
+  "price": 219.18,
+  "held": 0,
+  "target_qty": 3,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 3 (alloc 3, risk-sized 10) stop 199.55",
+  "id": "US:main:282"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "DE",
+  "price": 659.27,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Sell; Sell but held 15d < min 20d; keeping (stop still active)",
+  "id": "US:main:283"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "JNJ",
+  "price": 279.97,
+  "held": 7,
+  "target_qty": 7,
+  "decision": "momentum Hold; Hold: keep 7",
+  "id": "US:main:284"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "KO",
+  "price": 99.37,
+  "held": 21,
+  "target_qty": 21,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (21 >= 10)",
+  "id": "US:main:285"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "LLY",
+  "price": 1426.94,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "US:main:286"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MA",
+  "price": 657.8,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
   "id": "US:main:287"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "ABBV",
-  "price": null,
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MDLZ",
+  "price": 67.71,
   "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:288"
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0",
+  "id": "US:main:288"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "AMGN",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:289"
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MET",
+  "price": 101.47,
+  "held": 15,
+  "target_qty": 15,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: already at/above size (15 >= 9)",
+  "id": "US:main:289"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "BMY",
-  "price": null,
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MO",
+  "price": 78.87,
   "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:290"
+  "target_qty": 12,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (54%) does not object; Buy: add to 12 (alloc 12, risk-sized 30) stop 72.34",
+  "id": "US:main:290"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "DE",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:291"
- },
- {
-  "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
   "symbol": "MRK",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Buy; Buy but close 141.82 <= EMA50 143.04; not adding",
-  "id": "US:factor:292"
+  "price": 143.37,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Sell; Sell but held 15d < min 20d; keeping (stop still active)",
+  "id": "US:main:291"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
-  "symbol": "SPG",
-  "price": null,
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MSFT",
+  "price": 511.54,
   "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:293"
+  "target_qty": 0,
+  "decision": "momentum Sell; Sell: trim 0 -> 0",
+  "id": "US:main:292"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "PM",
+  "price": 197.05,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (4 >= 3)",
+  "id": "US:main:293"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
   "symbol": "TGT",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Buy; Buy but close 148.01 <= EMA50 153.31; not adding",
-  "id": "US:factor:294"
+  "price": 160.31,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (67%) vetoes the buy; Hold: keep 1",
+  "id": "US:main:294"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
   "symbol": "TMO",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:295"
+  "price": 694.62,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1",
+  "id": "US:main:295"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
   "symbol": "UNP",
-  "price": null,
-  "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:296"
+  "price": 300.05,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum Hold; Hold: keep 3",
+  "id": "US:main:296"
  },
  {
   "market": "US",
-  "book": "factor",
-  "time": "2026-10-28T18:14:08+00:00",
-  "as_of": "2026-10-27",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
   "symbol": "USB",
-  "price": null,
+  "price": 60.22,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Hold; Hold: keep 6",
+  "id": "US:main:297"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "V",
+  "price": 424.7,
   "held": 0,
-  "target_qty": null,
-  "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:297"
+  "target_qty": 2,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 2 (alloc 2, risk-sized 5) stop 389.81",
+  "id": "US:main:298"
+ },
+ {
+  "market": "US",
+  "book": "main",
+  "time": "2026-11-17T09:52:25-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "XOM",
+  "price": 169.25,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Sell; Sell: trim 0 -> 0",
+  "id": "US:main:299"
  },
  {
   "market": "US",
@@ -3585,7 +3609,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
-  "id": "US:factor:298"
+  "id": "US:factor:300"
  },
  {
   "market": "US",
@@ -3597,7 +3621,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
-  "id": "US:factor:299"
+  "id": "US:factor:301"
  },
  {
   "market": "US",
@@ -3609,7 +3633,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
-  "id": "US:factor:300"
+  "id": "US:factor:302"
  },
  {
   "market": "US",
@@ -3621,7 +3645,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
-  "id": "US:factor:301"
+  "id": "US:factor:303"
  },
  {
   "market": "US",
@@ -3633,7 +3657,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
-  "id": "US:factor:302"
+  "id": "US:factor:304"
  },
  {
   "market": "US",
@@ -3645,7 +3669,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "momentum: Buy; Buy: add to 21 (alloc 21, risk-sized 31) stop 88.6 tp 99.6",
-  "id": "US:factor:303"
+  "id": "US:factor:305"
  },
  {
   "market": "US",
@@ -3657,7 +3681,7 @@
   "held": 0,
   "target_qty": null,
   "decision": "buy blocked: max open positions (5)",
-  "id": "US:factor:304"
+  "id": "US:factor:306"
  },
  {
   "market": "US",
@@ -3669,7 +3693,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 2)",
-  "id": "US:factor:305"
+  "id": "US:factor:307"
  },
  {
   "market": "US",
@@ -3681,7 +3705,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
-  "id": "US:factor:306"
+  "id": "US:factor:308"
  },
  {
   "market": "US",
@@ -3693,7 +3717,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 423.5",
-  "id": "US:factor:307"
+  "id": "US:factor:309"
  },
  {
   "market": "US",
@@ -3705,7 +3729,7 @@
   "held": 16,
   "target_qty": 16,
   "decision": "momentum: Buy; Buy: already at/above size (16 >= 9)",
-  "id": "US:factor:308"
+  "id": "US:factor:310"
  },
  {
   "market": "US",
@@ -3717,7 +3741,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:309"
+  "id": "US:factor:311"
  },
  {
   "market": "US",
@@ -3729,7 +3753,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:310"
+  "id": "US:factor:312"
  },
  {
   "market": "US",
@@ -3741,7 +3765,7 @@
   "held": 0,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 27) stop 85.09",
-  "id": "US:factor:311"
+  "id": "US:factor:313"
  },
  {
   "market": "US",
@@ -3753,7 +3777,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 0)",
-  "id": "US:factor:312"
+  "id": "US:factor:314"
  },
  {
   "market": "US",
@@ -3765,7 +3789,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:313"
+  "id": "US:factor:315"
  },
  {
   "market": "US",
@@ -3777,7 +3801,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:314"
+  "id": "US:factor:316"
  },
  {
   "market": "US",
@@ -3789,7 +3813,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
-  "id": "US:factor:315"
+  "id": "US:factor:317"
  },
  {
   "market": "US",
@@ -3801,7 +3825,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:316"
+  "id": "US:factor:318"
  },
  {
   "market": "US",
@@ -3813,7 +3837,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.14",
-  "id": "US:factor:317"
+  "id": "US:factor:319"
  },
  {
   "market": "US",
@@ -3825,7 +3849,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:318"
+  "id": "US:factor:320"
  },
  {
   "market": "US",
@@ -3837,7 +3861,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 2)",
-  "id": "US:factor:319"
+  "id": "US:factor:321"
  },
  {
   "market": "US",
@@ -3849,7 +3873,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:320"
+  "id": "US:factor:322"
  },
  {
   "market": "US",
@@ -3861,7 +3885,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 428.07",
-  "id": "US:factor:321"
+  "id": "US:factor:323"
  },
  {
   "market": "US",
@@ -3873,7 +3897,7 @@
   "held": 16,
   "target_qty": 16,
   "decision": "momentum: Sell; Sell but held 2d < min 20d; keeping (stop still active)",
-  "id": "US:factor:322"
+  "id": "US:factor:324"
  },
  {
   "market": "US",
@@ -3885,7 +3909,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:323"
+  "id": "US:factor:325"
  },
  {
   "market": "US",
@@ -3897,7 +3921,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:324"
+  "id": "US:factor:326"
  },
  {
   "market": "US",
@@ -3909,7 +3933,7 @@
   "held": 0,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.95",
-  "id": "US:factor:325"
+  "id": "US:factor:327"
  },
  {
   "market": "US",
@@ -3921,7 +3945,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 0)",
-  "id": "US:factor:326"
+  "id": "US:factor:328"
  },
  {
   "market": "US",
@@ -3933,7 +3957,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:327"
+  "id": "US:factor:329"
  },
  {
   "market": "US",
@@ -3945,7 +3969,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:328"
+  "id": "US:factor:330"
  },
  {
   "market": "US",
@@ -3957,7 +3981,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:329"
+  "id": "US:factor:331"
  },
  {
   "market": "US",
@@ -3969,7 +3993,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 191.19",
-  "id": "US:factor:330"
+  "id": "US:factor:332"
  },
  {
   "market": "US",
@@ -3981,7 +4005,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:331"
+  "id": "US:factor:333"
  },
  {
   "market": "US",
@@ -3993,7 +4017,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:332"
+  "id": "US:factor:334"
  },
  {
   "market": "US",
@@ -4005,7 +4029,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 278.28",
-  "id": "US:factor:333"
+  "id": "US:factor:335"
  },
  {
   "market": "US",
@@ -4017,7 +4041,7 @@
   "held": 0,
   "target_qty": 16,
   "decision": "momentum: Buy; Buy: add to 16 (alloc 16, risk-sized 41) stop 55.05",
-  "id": "US:factor:334"
+  "id": "US:factor:336"
  },
  {
   "market": "US",
@@ -4029,7 +4053,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:335"
+  "id": "US:factor:337"
  },
  {
   "market": "US",
@@ -4041,7 +4065,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 2)",
-  "id": "US:factor:336"
+  "id": "US:factor:338"
  },
  {
   "market": "US",
@@ -4053,7 +4077,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:337"
+  "id": "US:factor:339"
  },
  {
   "market": "US",
@@ -4065,7 +4089,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 416.29",
-  "id": "US:factor:338"
+  "id": "US:factor:340"
  },
  {
   "market": "US",
@@ -4077,7 +4101,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:339"
+  "id": "US:factor:341"
  },
  {
   "market": "US",
@@ -4089,7 +4113,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:340"
+  "id": "US:factor:342"
  },
  {
   "market": "US",
@@ -4101,7 +4125,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:341"
+  "id": "US:factor:343"
  },
  {
   "market": "US",
@@ -4113,7 +4137,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.3",
-  "id": "US:factor:342"
+  "id": "US:factor:344"
  },
  {
   "market": "US",
@@ -4125,7 +4149,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:343"
+  "id": "US:factor:345"
  },
  {
   "market": "US",
@@ -4137,7 +4161,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:344"
+  "id": "US:factor:346"
  },
  {
   "market": "US",
@@ -4149,7 +4173,7 @@
   "held": 2,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.5",
-  "id": "US:factor:345"
+  "id": "US:factor:347"
  },
  {
   "market": "US",
@@ -4161,7 +4185,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:346"
+  "id": "US:factor:348"
  },
  {
   "market": "US",
@@ -4173,7 +4197,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:347"
+  "id": "US:factor:349"
  },
  {
   "market": "US",
@@ -4185,7 +4209,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
-  "id": "US:factor:348"
+  "id": "US:factor:350"
  },
  {
   "market": "US",
@@ -4197,7 +4221,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:349"
+  "id": "US:factor:351"
  },
  {
   "market": "US",
@@ -4209,7 +4233,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 185.77",
-  "id": "US:factor:350"
+  "id": "US:factor:352"
  },
  {
   "market": "US",
@@ -4221,7 +4245,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:351"
+  "id": "US:factor:353"
  },
  {
   "market": "US",
@@ -4233,7 +4257,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:352"
+  "id": "US:factor:354"
  },
  {
   "market": "US",
@@ -4245,7 +4269,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 281.12",
-  "id": "US:factor:353"
+  "id": "US:factor:355"
  },
  {
   "market": "US",
@@ -4257,7 +4281,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:354"
+  "id": "US:factor:356"
  },
  {
   "market": "US",
@@ -4269,7 +4293,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:355"
+  "id": "US:factor:357"
  },
  {
   "market": "US",
@@ -4281,7 +4305,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:356"
+  "id": "US:factor:358"
  },
  {
   "market": "US",
@@ -4293,7 +4317,7 @@
   "held": 5,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: already at/above size (5 >= 2)",
-  "id": "US:factor:357"
+  "id": "US:factor:359"
  },
  {
   "market": "US",
@@ -4305,7 +4329,7 @@
   "held": 1,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 263.96",
-  "id": "US:factor:358"
+  "id": "US:factor:360"
  },
  {
   "market": "US",
@@ -4317,7 +4341,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:359"
+  "id": "US:factor:361"
  },
  {
   "market": "US",
@@ -4329,7 +4353,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:360"
+  "id": "US:factor:362"
  },
  {
   "market": "US",
@@ -4341,7 +4365,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:361"
+  "id": "US:factor:363"
  },
  {
   "market": "US",
@@ -4353,7 +4377,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:362"
+  "id": "US:factor:364"
  },
  {
   "market": "US",
@@ -4365,7 +4389,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:363"
+  "id": "US:factor:365"
  },
  {
   "market": "US",
@@ -4377,7 +4401,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:364"
+  "id": "US:factor:366"
  },
  {
   "market": "US",
@@ -4389,7 +4413,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:365"
+  "id": "US:factor:367"
  },
  {
   "market": "US",
@@ -4401,7 +4425,7 @@
   "held": 2,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.9",
-  "id": "US:factor:366"
+  "id": "US:factor:368"
  },
  {
   "market": "US",
@@ -4413,7 +4437,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:367"
+  "id": "US:factor:369"
  },
  {
   "market": "US",
@@ -4425,7 +4449,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:368"
+  "id": "US:factor:370"
  },
  {
   "market": "US",
@@ -4437,7 +4461,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 11) stop 128.25",
-  "id": "US:factor:369"
+  "id": "US:factor:371"
  },
  {
   "market": "US",
@@ -4449,7 +4473,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:370"
+  "id": "US:factor:372"
  },
  {
   "market": "US",
@@ -4461,7 +4485,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 11) stop 139.86",
-  "id": "US:factor:371"
+  "id": "US:factor:373"
  },
  {
   "market": "US",
@@ -4473,7 +4497,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:372"
+  "id": "US:factor:374"
  },
  {
   "market": "US",
@@ -4485,7 +4509,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:373"
+  "id": "US:factor:375"
  },
  {
   "market": "US",
@@ -4497,7 +4521,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 278.98",
-  "id": "US:factor:374"
+  "id": "US:factor:376"
  },
  {
   "market": "US",
@@ -4509,7 +4533,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:375"
+  "id": "US:factor:377"
  },
  {
   "market": "US",
@@ -4521,7 +4545,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:376"
+  "id": "US:factor:378"
  },
  {
   "market": "US",
@@ -4533,7 +4557,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:377"
+  "id": "US:factor:379"
  },
  {
   "market": "US",
@@ -4545,7 +4569,7 @@
   "held": 1,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",
-  "id": "US:factor:378"
+  "id": "US:factor:380"
  },
  {
   "market": "US",
@@ -4557,7 +4581,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:379"
+  "id": "US:factor:381"
  },
  {
   "market": "US",
@@ -4569,7 +4593,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:380"
+  "id": "US:factor:382"
  },
  {
   "market": "US",
@@ -4581,7 +4605,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:381"
+  "id": "US:factor:383"
  },
  {
   "market": "US",
@@ -4593,7 +4617,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:382"
+  "id": "US:factor:384"
  },
  {
   "market": "US",
@@ -4605,7 +4629,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:383"
+  "id": "US:factor:385"
  },
  {
   "market": "US",
@@ -4617,7 +4641,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:384"
+  "id": "US:factor:386"
  },
  {
   "market": "US",
@@ -4629,7 +4653,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:385"
+  "id": "US:factor:387"
  },
  {
   "market": "US",
@@ -4641,7 +4665,7 @@
   "held": 2,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",
-  "id": "US:factor:386"
+  "id": "US:factor:388"
  },
  {
   "market": "US",
@@ -4653,7 +4677,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:387"
+  "id": "US:factor:389"
  },
  {
   "market": "US",
@@ -4665,7 +4689,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:388"
+  "id": "US:factor:390"
  },
  {
   "market": "US",
@@ -4677,7 +4701,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:389"
+  "id": "US:factor:391"
  },
  {
   "market": "US",
@@ -4689,7 +4713,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Sell; Sell but held 2d < min 20d; keeping (stop still active)",
-  "id": "US:factor:390"
+  "id": "US:factor:392"
  },
  {
   "market": "US",
@@ -4701,7 +4725,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:391"
+  "id": "US:factor:393"
  },
  {
   "market": "US",
@@ -4713,7 +4737,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 190.05",
-  "id": "US:factor:392"
+  "id": "US:factor:394"
  },
  {
   "market": "US",
@@ -4725,7 +4749,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:393"
+  "id": "US:factor:395"
  },
  {
   "market": "US",
@@ -4737,7 +4761,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:394"
+  "id": "US:factor:396"
  },
  {
   "market": "US",
@@ -4749,7 +4773,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:395"
+  "id": "US:factor:397"
  },
  {
   "market": "US",
@@ -4761,7 +4785,7 @@
   "held": 0,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",
-  "id": "US:factor:396"
+  "id": "US:factor:398"
  },
  {
   "market": "US",
@@ -4773,7 +4797,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:397"
+  "id": "US:factor:399"
  },
  {
   "market": "US",
@@ -4785,7 +4809,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:398"
+  "id": "US:factor:400"
  },
  {
   "market": "US",
@@ -4797,7 +4821,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 12) stop 155.51",
-  "id": "US:factor:399"
+  "id": "US:factor:401"
  },
  {
   "market": "US",
@@ -4809,7 +4833,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 318.6",
-  "id": "US:factor:400"
+  "id": "US:factor:402"
  },
  {
   "market": "US",
@@ -4821,7 +4845,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:401"
+  "id": "US:factor:403"
  },
  {
   "market": "US",
@@ -4833,7 +4857,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:402"
+  "id": "US:factor:404"
  },
  {
   "market": "US",
@@ -4845,7 +4869,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:403"
+  "id": "US:factor:405"
  },
  {
   "market": "US",
@@ -4857,7 +4881,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:404"
+  "id": "US:factor:406"
  },
  {
   "market": "US",
@@ -4869,7 +4893,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:405"
+  "id": "US:factor:407"
  },
  {
   "market": "US",
@@ -4881,7 +4905,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:406"
+  "id": "US:factor:408"
  },
  {
   "market": "US",
@@ -4893,7 +4917,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:407"
+  "id": "US:factor:409"
  },
  {
   "market": "US",
@@ -4905,7 +4929,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 88.78",
-  "id": "US:factor:408"
+  "id": "US:factor:410"
  },
  {
   "market": "US",
@@ -4917,7 +4941,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:409"
+  "id": "US:factor:411"
  },
  {
   "market": "US",
@@ -4929,7 +4953,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:410"
+  "id": "US:factor:412"
  },
  {
   "market": "US",
@@ -4941,7 +4965,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:411"
+  "id": "US:factor:413"
  },
  {
   "market": "US",
@@ -4953,7 +4977,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 133.88",
-  "id": "US:factor:412"
+  "id": "US:factor:414"
  },
  {
   "market": "US",
@@ -4965,7 +4989,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:413"
+  "id": "US:factor:415"
  },
  {
   "market": "US",
@@ -4977,7 +5001,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 188.38",
-  "id": "US:factor:414"
+  "id": "US:factor:416"
  },
  {
   "market": "US",
@@ -4989,7 +5013,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 145.43",
-  "id": "US:factor:415"
+  "id": "US:factor:417"
  },
  {
   "market": "US",
@@ -5001,7 +5025,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:416"
+  "id": "US:factor:418"
  },
  {
   "market": "US",
@@ -5013,7 +5037,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Hold; Hold: keep 3",
-  "id": "US:factor:417"
+  "id": "US:factor:419"
  },
  {
   "market": "US",
@@ -5025,7 +5049,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:418"
+  "id": "US:factor:420"
  },
  {
   "market": "US",
@@ -5037,7 +5061,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:419"
+  "id": "US:factor:421"
  },
  {
   "market": "US",
@@ -5049,7 +5073,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:420"
+  "id": "US:factor:422"
  },
  {
   "market": "US",
@@ -5061,7 +5085,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 306.19",
-  "id": "US:factor:421"
+  "id": "US:factor:423"
  },
  {
   "market": "US",
@@ -5073,7 +5097,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:422"
+  "id": "US:factor:424"
  },
  {
   "market": "US",
@@ -5085,7 +5109,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:423"
+  "id": "US:factor:425"
  },
  {
   "market": "US",
@@ -5097,7 +5121,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:424"
+  "id": "US:factor:426"
  },
  {
   "market": "US",
@@ -5109,7 +5133,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:425"
+  "id": "US:factor:427"
  },
  {
   "market": "US",
@@ -5121,7 +5145,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Sell; Sell but held 4d < min 20d; keeping (stop still active)",
-  "id": "US:factor:426"
+  "id": "US:factor:428"
  },
  {
   "market": "US",
@@ -5133,7 +5157,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:427"
+  "id": "US:factor:429"
  },
  {
   "market": "US",
@@ -5145,7 +5169,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 86.89",
-  "id": "US:factor:428"
+  "id": "US:factor:430"
  },
  {
   "market": "US",
@@ -5157,7 +5181,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:429"
+  "id": "US:factor:431"
  },
  {
   "market": "US",
@@ -5169,7 +5193,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:430"
+  "id": "US:factor:432"
  },
  {
   "market": "US",
@@ -5181,7 +5205,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:431"
+  "id": "US:factor:433"
  },
  {
   "market": "US",
@@ -5193,7 +5217,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 126.79",
-  "id": "US:factor:432"
+  "id": "US:factor:434"
  },
  {
   "market": "US",
@@ -5205,7 +5229,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:433"
+  "id": "US:factor:435"
  },
  {
   "market": "US",
@@ -5217,7 +5241,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 8) stop 176.4",
-  "id": "US:factor:434"
+  "id": "US:factor:436"
  },
  {
   "market": "US",
@@ -5229,7 +5253,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 137.3",
-  "id": "US:factor:435"
+  "id": "US:factor:437"
  },
  {
   "market": "US",
@@ -5241,7 +5265,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:436"
+  "id": "US:factor:438"
  },
  {
   "market": "US",
@@ -5253,7 +5277,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:437"
+  "id": "US:factor:439"
  },
  {
   "market": "US",
@@ -5265,7 +5289,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Hold; Hold: keep 3",
-  "id": "US:factor:438"
+  "id": "US:factor:440"
  },
  {
   "market": "US",
@@ -5277,7 +5301,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:439"
+  "id": "US:factor:441"
  },
  {
   "market": "US",
@@ -5289,7 +5313,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:440"
+  "id": "US:factor:442"
  },
  {
   "market": "US",
@@ -5301,7 +5325,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:441"
+  "id": "US:factor:443"
  },
  {
   "market": "US",
@@ -5313,7 +5337,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 313.72",
-  "id": "US:factor:442"
+  "id": "US:factor:444"
  },
  {
   "market": "US",
@@ -5325,7 +5349,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:443"
+  "id": "US:factor:445"
  },
  {
   "market": "US",
@@ -5337,7 +5361,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "US:factor:444"
+  "id": "US:factor:446"
  },
  {
   "market": "US",
@@ -5349,7 +5373,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:445"
+  "id": "US:factor:447"
  },
  {
   "market": "US",
@@ -5361,7 +5385,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:446"
+  "id": "US:factor:448"
  },
  {
   "market": "US",
@@ -5373,7 +5397,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:447"
+  "id": "US:factor:449"
  },
  {
   "market": "US",
@@ -5385,7 +5409,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:448"
+  "id": "US:factor:450"
  },
  {
   "market": "US",
@@ -5397,7 +5421,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:449"
+  "id": "US:factor:451"
  },
  {
   "market": "US",
@@ -5409,7 +5433,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.3",
-  "id": "US:factor:450"
+  "id": "US:factor:452"
  },
  {
   "market": "US",
@@ -5421,7 +5445,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:451"
+  "id": "US:factor:453"
  },
  {
   "market": "US",
@@ -5433,7 +5457,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:452"
+  "id": "US:factor:454"
  },
  {
   "market": "US",
@@ -5445,7 +5469,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:453"
+  "id": "US:factor:455"
  },
  {
   "market": "US",
@@ -5457,7 +5481,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 127.87",
-  "id": "US:factor:454"
+  "id": "US:factor:456"
  },
  {
   "market": "US",
@@ -5469,7 +5493,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:455"
+  "id": "US:factor:457"
  },
  {
   "market": "US",
@@ -5481,7 +5505,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 8) stop 172.44",
-  "id": "US:factor:456"
+  "id": "US:factor:458"
  },
  {
   "market": "US",
@@ -5493,7 +5517,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 143.99",
-  "id": "US:factor:457"
+  "id": "US:factor:459"
  },
  {
   "market": "US",
@@ -5505,7 +5529,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: already at/above size (1 >= 1)",
-  "id": "US:factor:458"
+  "id": "US:factor:460"
  },
  {
   "market": "US",
@@ -5517,7 +5541,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:459"
+  "id": "US:factor:461"
  },
  {
   "market": "US",
@@ -5529,7 +5553,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:460"
+  "id": "US:factor:462"
  },
  {
   "market": "US",
@@ -5541,7 +5565,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:461"
+  "id": "US:factor:463"
  },
  {
   "market": "US",
@@ -5553,7 +5577,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:462"
+  "id": "US:factor:464"
  },
  {
   "market": "US",
@@ -5565,7 +5589,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:463"
+  "id": "US:factor:465"
  },
  {
   "market": "US",
@@ -5577,7 +5601,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 312.92",
-  "id": "US:factor:464"
+  "id": "US:factor:466"
  },
  {
   "market": "US",
@@ -5589,7 +5613,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:465"
+  "id": "US:factor:467"
  },
  {
   "market": "US",
@@ -5601,7 +5625,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:466"
+  "id": "US:factor:468"
  },
  {
   "market": "US",
@@ -5613,7 +5637,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:467"
+  "id": "US:factor:469"
  },
  {
   "market": "US",
@@ -5625,7 +5649,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Sell; Sell but held 8d < min 20d; keeping (stop still active)",
-  "id": "US:factor:468"
+  "id": "US:factor:470"
  },
  {
   "market": "US",
@@ -5637,7 +5661,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:469"
+  "id": "US:factor:471"
  },
  {
   "market": "US",
@@ -5649,7 +5673,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:470"
+  "id": "US:factor:472"
  },
  {
   "market": "US",
@@ -5661,7 +5685,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 89.14",
-  "id": "US:factor:471"
+  "id": "US:factor:473"
  },
  {
   "market": "US",
@@ -5673,7 +5697,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:472"
+  "id": "US:factor:474"
  },
  {
   "market": "US",
@@ -5685,7 +5709,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:473"
+  "id": "US:factor:475"
  },
  {
   "market": "US",
@@ -5697,7 +5721,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:474"
+  "id": "US:factor:476"
  },
  {
   "market": "US",
@@ -5709,7 +5733,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:475"
+  "id": "US:factor:477"
  },
  {
   "market": "US",
@@ -5721,7 +5745,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 128.3",
-  "id": "US:factor:476"
+  "id": "US:factor:478"
  },
  {
   "market": "US",
@@ -5733,7 +5757,7 @@
   "held": 0,
   "target_qty": 1,
   "decision": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 3) stop 480.66",
-  "id": "US:factor:477"
+  "id": "US:factor:479"
  },
  {
   "market": "US",
@@ -5745,7 +5769,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:478"
+  "id": "US:factor:480"
  },
  {
   "market": "US",
@@ -5757,7 +5781,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 139.36",
-  "id": "US:factor:479"
+  "id": "US:factor:481"
  },
  {
   "market": "US",
@@ -5769,7 +5793,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:480"
+  "id": "US:factor:482"
  },
  {
   "market": "US",
@@ -5781,7 +5805,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:481"
+  "id": "US:factor:483"
  },
  {
   "market": "US",
@@ -5793,7 +5817,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Hold; Hold: keep 3",
-  "id": "US:factor:482"
+  "id": "US:factor:484"
  },
  {
   "market": "US",
@@ -5805,7 +5829,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:483"
+  "id": "US:factor:485"
  },
  {
   "market": "US",
@@ -5817,7 +5841,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 386.35",
-  "id": "US:factor:484"
+  "id": "US:factor:486"
  },
  {
   "market": "US",
@@ -5829,7 +5853,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:485"
+  "id": "US:factor:487"
  },
  {
   "market": "US",
@@ -5841,7 +5865,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 318.51",
-  "id": "US:factor:486"
+  "id": "US:factor:488"
  },
  {
   "market": "US",
@@ -5853,7 +5877,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:487"
+  "id": "US:factor:489"
  },
  {
   "market": "US",
@@ -5865,7 +5889,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: already at/above size (2 >= 2)",
-  "id": "US:factor:488"
+  "id": "US:factor:490"
  },
  {
   "market": "US",
@@ -5877,7 +5901,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:489"
+  "id": "US:factor:491"
  },
  {
   "market": "US",
@@ -5889,7 +5913,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:490"
+  "id": "US:factor:492"
  },
  {
   "market": "US",
@@ -5901,7 +5925,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:491"
+  "id": "US:factor:493"
  },
  {
   "market": "US",
@@ -5913,7 +5937,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: already at/above size (7 >= 3)",
-  "id": "US:factor:492"
+  "id": "US:factor:494"
  },
  {
   "market": "US",
@@ -5925,7 +5949,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 88.86",
-  "id": "US:factor:493"
+  "id": "US:factor:495"
  },
  {
   "market": "US",
@@ -5937,7 +5961,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:494"
+  "id": "US:factor:496"
  },
  {
   "market": "US",
@@ -5949,7 +5973,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:495"
+  "id": "US:factor:497"
  },
  {
   "market": "US",
@@ -5961,7 +5985,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:496"
+  "id": "US:factor:498"
  },
  {
   "market": "US",
@@ -5973,7 +5997,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:497"
+  "id": "US:factor:499"
  },
  {
   "market": "US",
@@ -5985,7 +6009,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 11) stop 128.32",
-  "id": "US:factor:498"
+  "id": "US:factor:500"
  },
  {
   "market": "US",
@@ -5997,7 +6021,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:499"
+  "id": "US:factor:501"
  },
  {
   "market": "US",
@@ -6009,7 +6033,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:500"
+  "id": "US:factor:502"
  },
  {
   "market": "US",
@@ -6021,7 +6045,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 141.34",
-  "id": "US:factor:501"
+  "id": "US:factor:503"
  },
  {
   "market": "US",
@@ -6033,7 +6057,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:502"
+  "id": "US:factor:504"
  },
  {
   "market": "US",
@@ -6045,7 +6069,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:503"
+  "id": "US:factor:505"
  },
  {
   "market": "US",
@@ -6057,7 +6081,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:504"
+  "id": "US:factor:506"
  },
  {
   "market": "US",
@@ -6069,7 +6093,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:505"
+  "id": "US:factor:507"
  },
  {
   "market": "US",
@@ -6081,7 +6105,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 384.91",
-  "id": "US:factor:506"
+  "id": "US:factor:508"
  },
  {
   "market": "US",
@@ -6093,7 +6117,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:507"
+  "id": "US:factor:509"
  },
  {
   "market": "US",
@@ -6105,7 +6129,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 323.41",
-  "id": "US:factor:508"
+  "id": "US:factor:510"
  },
  {
   "market": "US",
@@ -6117,7 +6141,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:509"
+  "id": "US:factor:511"
  },
  {
   "market": "US",
@@ -6129,7 +6153,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "US:factor:510"
+  "id": "US:factor:512"
  },
  {
   "market": "US",
@@ -6141,7 +6165,7 @@
   "held": 0,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 12) stop 121.43",
-  "id": "US:factor:511"
+  "id": "US:factor:513"
  },
  {
   "market": "US",
@@ -6153,7 +6177,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:512"
+  "id": "US:factor:514"
  },
  {
   "market": "US",
@@ -6165,7 +6189,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:513"
+  "id": "US:factor:515"
  },
  {
   "market": "US",
@@ -6177,7 +6201,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:514"
+  "id": "US:factor:516"
  },
  {
   "market": "US",
@@ -6189,7 +6213,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Hold; Hold: keep 7",
-  "id": "US:factor:515"
+  "id": "US:factor:517"
  },
  {
   "market": "US",
@@ -6201,7 +6225,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 89.93",
-  "id": "US:factor:516"
+  "id": "US:factor:518"
  },
  {
   "market": "US",
@@ -6213,7 +6237,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:517"
+  "id": "US:factor:519"
  },
  {
   "market": "US",
@@ -6225,7 +6249,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:518"
+  "id": "US:factor:520"
  },
  {
   "market": "US",
@@ -6237,7 +6261,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:519"
+  "id": "US:factor:521"
  },
  {
   "market": "US",
@@ -6249,7 +6273,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:520"
+  "id": "US:factor:522"
  },
  {
   "market": "US",
@@ -6261,7 +6285,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 11) stop 130.22",
-  "id": "US:factor:521"
+  "id": "US:factor:523"
  },
  {
   "market": "US",
@@ -6273,7 +6297,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:522"
+  "id": "US:factor:524"
  },
  {
   "market": "US",
@@ -6285,7 +6309,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Buy; Buy but close 196.35 <= EMA50 196.56; not adding",
-  "id": "US:factor:523"
+  "id": "US:factor:525"
  },
  {
   "market": "US",
@@ -6297,7 +6321,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 142.46",
-  "id": "US:factor:524"
+  "id": "US:factor:526"
  },
  {
   "market": "US",
@@ -6309,7 +6333,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:525"
+  "id": "US:factor:527"
  },
  {
   "market": "US",
@@ -6321,7 +6345,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:526"
+  "id": "US:factor:528"
  },
  {
   "market": "US",
@@ -6333,7 +6357,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:527"
+  "id": "US:factor:529"
  },
  {
   "market": "US",
@@ -6345,7 +6369,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 389.61",
-  "id": "US:factor:528"
+  "id": "US:factor:530"
  },
  {
   "market": "US",
@@ -6357,7 +6381,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:529"
+  "id": "US:factor:531"
  },
  {
   "market": "US",
@@ -6369,7 +6393,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 325.14",
-  "id": "US:factor:530"
+  "id": "US:factor:532"
  },
  {
   "market": "US",
@@ -6381,7 +6405,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:531"
+  "id": "US:factor:533"
  },
  {
   "market": "US",
@@ -6393,7 +6417,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "US:factor:532"
+  "id": "US:factor:534"
  },
  {
   "market": "US",
@@ -6405,7 +6429,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:533"
+  "id": "US:factor:535"
  },
  {
   "market": "US",
@@ -6417,7 +6441,7 @@
   "held": 0,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 12) stop 125.41",
-  "id": "US:factor:534"
+  "id": "US:factor:536"
  },
  {
   "market": "US",
@@ -6429,7 +6453,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:535"
+  "id": "US:factor:537"
  },
  {
   "market": "US",
@@ -6441,7 +6465,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 197.69",
-  "id": "US:factor:536"
+  "id": "US:factor:538"
  },
  {
   "market": "US",
@@ -6453,7 +6477,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:537"
+  "id": "US:factor:539"
  },
  {
   "market": "US",
@@ -6465,7 +6489,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:538"
+  "id": "US:factor:540"
  },
  {
   "market": "US",
@@ -6477,7 +6501,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Hold; Hold: keep 7",
-  "id": "US:factor:539"
+  "id": "US:factor:541"
  },
  {
   "market": "US",
@@ -6489,7 +6513,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 91.04",
-  "id": "US:factor:540"
+  "id": "US:factor:542"
  },
  {
   "market": "US",
@@ -6501,7 +6525,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:541"
+  "id": "US:factor:543"
  },
  {
   "market": "US",
@@ -6513,7 +6537,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:542"
+  "id": "US:factor:544"
  },
  {
   "market": "US",
@@ -6525,7 +6549,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:543"
+  "id": "US:factor:545"
  },
  {
   "market": "US",
@@ -6537,7 +6561,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 11) stop 129.64",
-  "id": "US:factor:544"
+  "id": "US:factor:546"
  },
  {
   "market": "US",
@@ -6549,7 +6573,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Underweight; Underweight: trim 0 -> 0",
-  "id": "US:factor:545"
+  "id": "US:factor:547"
  },
  {
   "market": "US",
@@ -6561,7 +6585,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 176.63",
-  "id": "US:factor:546"
+  "id": "US:factor:548"
  },
  {
   "market": "US",
@@ -6573,7 +6597,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 138.93",
-  "id": "US:factor:547"
+  "id": "US:factor:549"
  },
  {
   "market": "US",
@@ -6585,7 +6609,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:548"
+  "id": "US:factor:550"
  },
  {
   "market": "US",
@@ -6597,7 +6621,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Hold; Hold: keep 3",
-  "id": "US:factor:549"
+  "id": "US:factor:551"
  },
  {
   "market": "US",
@@ -6609,7 +6633,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:550"
+  "id": "US:factor:552"
  },
  {
   "market": "US",
@@ -6621,7 +6645,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 152.46",
-  "id": "US:factor:551"
+  "id": "US:factor:553"
  },
  {
   "market": "US",
@@ -6633,7 +6657,7 @@
   "held": 0,
   "target_qty": 2,
   "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 6) stop 322.42",
-  "id": "US:factor:552"
+  "id": "US:factor:554"
  },
  {
   "market": "US",
@@ -6645,7 +6669,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
-  "id": "US:factor:553"
+  "id": "US:factor:555"
  },
  {
   "market": "US",
@@ -6657,7 +6681,7 @@
   "held": 2,
   "target_qty": 2,
   "decision": "momentum: Hold; Hold: keep 2",
-  "id": "US:factor:554"
+  "id": "US:factor:556"
  },
  {
   "market": "US",
@@ -6669,7 +6693,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:555"
+  "id": "US:factor:557"
  },
  {
   "market": "US",
@@ -6681,7 +6705,7 @@
   "held": 0,
   "target_qty": 7,
   "decision": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 12) stop 123.61",
-  "id": "US:factor:556"
+  "id": "US:factor:558"
  },
  {
   "market": "US",
@@ -6693,7 +6717,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Sell; Sell: trim 0 -> 0",
-  "id": "US:factor:557"
+  "id": "US:factor:559"
  },
  {
   "market": "US",
@@ -6705,7 +6729,7 @@
   "held": 0,
   "target_qty": 4,
   "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 9) stop 197.23",
-  "id": "US:factor:558"
+  "id": "US:factor:560"
  },
  {
   "market": "US",
@@ -6717,7 +6741,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:559"
+  "id": "US:factor:561"
  },
  {
   "market": "US",
@@ -6729,7 +6753,7 @@
   "held": 7,
   "target_qty": 7,
   "decision": "momentum: Hold; Hold: keep 7",
-  "id": "US:factor:560"
+  "id": "US:factor:562"
  },
  {
   "market": "US",
@@ -6741,7 +6765,7 @@
   "held": 4,
   "target_qty": 10,
   "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 91.87",
-  "id": "US:factor:561"
+  "id": "US:factor:563"
  },
  {
   "market": "US",
@@ -6753,7 +6777,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:562"
+  "id": "US:factor:564"
  },
  {
   "market": "US",
@@ -6765,7 +6789,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:563"
+  "id": "US:factor:565"
  },
  {
   "market": "US",
@@ -6777,7 +6801,7 @@
   "held": 20,
   "target_qty": 20,
   "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
-  "id": "US:factor:564"
+  "id": "US:factor:566"
  },
  {
   "market": "US",
@@ -6789,7 +6813,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:565"
+  "id": "US:factor:567"
  },
  {
   "market": "US",
@@ -6801,7 +6825,7 @@
   "held": 1,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 12) stop 131.7",
-  "id": "US:factor:566"
+  "id": "US:factor:568"
  },
  {
   "market": "US",
@@ -6813,7 +6837,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Underweight; Underweight: trim 0 -> 0",
-  "id": "US:factor:567"
+  "id": "US:factor:569"
  },
  {
   "market": "US",
@@ -6825,7 +6849,7 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 175.38",
-  "id": "US:factor:568"
+  "id": "US:factor:570"
  },
  {
   "market": "US",
@@ -6837,7 +6861,7 @@
   "held": 0,
   "target_qty": 6,
   "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 9) stop 139.87",
-  "id": "US:factor:569"
+  "id": "US:factor:571"
  },
  {
   "market": "US",
@@ -6849,7 +6873,7 @@
   "held": 1,
   "target_qty": 1,
   "decision": "momentum: Hold; Hold: keep 1",
-  "id": "US:factor:570"
+  "id": "US:factor:572"
  },
  {
   "market": "US",
@@ -6861,7 +6885,7 @@
   "held": 3,
   "target_qty": 3,
   "decision": "momentum: Hold; Hold: keep 3",
-  "id": "US:factor:571"
+  "id": "US:factor:573"
  },
  {
   "market": "US",
@@ -6873,7 +6897,7 @@
   "held": 0,
   "target_qty": 0,
   "decision": "momentum: Hold; Hold: keep 0",
-  "id": "US:factor:572"
+  "id": "US:factor:574"
  },
  {
   "market": "US",
@@ -6885,7 +6909,295 @@
   "held": 0,
   "target_qty": 5,
   "decision": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 11) stop 150.88",
-  "id": "US:factor:573"
+  "id": "US:factor:575"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "AAPL",
+  "price": 353.7,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 6) stop 321.54",
+  "id": "US:factor:576"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "ABBV",
+  "price": 292.15,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum: Buy; Buy: already at/above size (3 >= 3)",
+  "id": "US:factor:577"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "AMGN",
+  "price": 461.51,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum: Hold; Hold: keep 2",
+  "id": "US:factor:578"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CL",
+  "price": 100.59,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "US:factor:579"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "COP",
+  "price": 143.12,
+  "held": 0,
+  "target_qty": 6,
+  "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 13) stop 127.77",
+  "id": "US:factor:580"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CSCO",
+  "price": 95.43,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Sell; Sell: trim 0 -> 0",
+  "id": "US:factor:581"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "CVX",
+  "price": 219.24,
+  "held": 0,
+  "target_qty": 4,
+  "decision": "momentum: Buy; Buy: add to 4 (alloc 4, risk-sized 10) stop 199.61",
+  "id": "US:factor:582"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "DE",
+  "price": 659.27,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Sell; Sell but held 15d < min 20d; keeping (stop still active)",
+  "id": "US:factor:583"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "JNJ",
+  "price": 280.01,
+  "held": 7,
+  "target_qty": 7,
+  "decision": "momentum: Hold; Hold: keep 7",
+  "id": "US:factor:584"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "KO",
+  "price": 99.33,
+  "held": 4,
+  "target_qty": 10,
+  "decision": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 25) stop 91.38",
+  "id": "US:factor:585"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "LLY",
+  "price": 1426.55,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1",
+  "id": "US:factor:586"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MA",
+  "price": 657.69,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "US:factor:587"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MDLZ",
+  "price": 67.71,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "US:factor:588"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MET",
+  "price": 101.47,
+  "held": 20,
+  "target_qty": 20,
+  "decision": "momentum: Buy; Buy: already at/above size (20 >= 9)",
+  "id": "US:factor:589"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MO",
+  "price": 78.85,
+  "held": 0,
+  "target_qty": 12,
+  "decision": "momentum: Buy; Buy: add to 12 (alloc 12, risk-sized 30) stop 72.32",
+  "id": "US:factor:590"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MRK",
+  "price": 143.28,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Sell; Sell but held 15d < min 20d; keeping (stop still active)",
+  "id": "US:factor:591"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "MSFT",
+  "price": 511.41,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Sell; Sell: trim 0 -> 0",
+  "id": "US:factor:592"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "PM",
+  "price": 197.05,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Buy; Buy but close 196.04 <= EMA50 196.63; not adding",
+  "id": "US:factor:593"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "TGT",
+  "price": 160.23,
+  "held": 0,
+  "target_qty": 6,
+  "decision": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 140.61",
+  "id": "US:factor:594"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "TMO",
+  "price": 694.62,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum: Hold; Hold: keep 1",
+  "id": "US:factor:595"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "UNP",
+  "price": 300.05,
+  "held": 3,
+  "target_qty": 3,
+  "decision": "momentum: Hold; Hold: keep 3",
+  "id": "US:factor:596"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "USB",
+  "price": 60.22,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Hold; Hold: keep 0",
+  "id": "US:factor:597"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "V",
+  "price": 424.7,
+  "held": 0,
+  "target_qty": 2,
+  "decision": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 5) stop 389.81",
+  "id": "US:factor:598"
+ },
+ {
+  "market": "US",
+  "book": "factor",
+  "time": "2026-11-17T09:52:30-05:00",
+  "as_of": "2026-11-16",
+  "symbol": "XOM",
+  "price": 169.25,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum: Sell; Sell: trim 0 -> 0",
+  "id": "US:factor:599"
  },
  {
   "market": "India",

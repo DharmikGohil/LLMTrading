@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Voluntary exit offers to engineers for the first time (Yahoo, 17 Nov): cost action, not a red flag. Bear case: tech sell-off. Tags: reason=news; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T09:52:02-05:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 10. Berkshire held its whole Apple stake for a second quarter (13F, Yahoo 17 Nov); no red flag. Bear case: tech sell-off after the Nvidia CEO exit. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T09:52:01-05:00"
+}

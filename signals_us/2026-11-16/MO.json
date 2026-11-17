@@ -1,0 +1,12 @@
+{
+  "symbol": "MO",
+  "as_of": "2026-11-16",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 8). No company-specific red flag in a week of headlines (trader-news, 17 Nov: dividend and sector pieces only); Q3 reported late October. Bear case: falling cigarette volumes; rate-sensitive yield stock after a long run. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-17T09:52:00-05:00"
+}
