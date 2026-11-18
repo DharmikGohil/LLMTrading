@@ -54,6 +54,12 @@
   "reflection": "First session, a partial day: entries at about 14:15 New York time, close at 16:00.\n- **Difference from the control:** the LLM review vetoed LLY and MRK (results Thu 29 Oct) and AAPL (results Mon 2 Nov),\n  shrank MET (results 4 Nov) and bought KO (beat and raised guidance on 27 Oct), which the control did not hold.\n  The control held LLY and AAPL instead of KO.\n- **Result:** both accounts were flat into the close (main +0.01%, control -0.01%) while the S&P 500 gained about 0.19%\n  from the entry time. That is too small a difference to mean anything.\n- **Vetoes:** no outcomes yet. LLY and MRK report before tomorrow's open, so the 1-day outcome of the earnings vetoes\n  is known at tomorrow's close. This is the first real test of the \"no entry before earnings\" rule.\n- **No stop-outs**, and no calls have elapsed outcome windows yet.\n- **Process note:** in earnings season, 3 of the 8 top S&P 100 momentum names had results within 3 trading days.\n  The earnings check is the most important part of the US review right now.\n- **No lessons added:** no evidence yet. Candidate to watch: whether vetoing names into earnings beats holding them."
  },
  {
+  "id": "2026-11-18-india",
+  "date": "2026-11-18",
+  "market": "India",
+  "reflection": "- Close run (15:05 IST): With LLM Rs 1,01,295 (+1.29%), Without LLM Rs 1,01,129 (+1.13%), Nifty 50 25,203 (-0.7% on\n  the day, price index; about +9.9% since the start). The LLM difference is +0.17 pp; both trail the index by\n  about 8.6 pp.\n- Orders: none. New veto: LAURUSLABS (promoters sold 20.7 lakh shares on 11-12 Nov, company filing 17 Nov), plus\n  AUROPHARMA, RADICO and ZYDUSLIFE. The With LLM account still holds 4 LAURUSLABS (ratings never force a sale).\n  Other buys were blocked by the 10-position cap. No stop-outs.\n- Veto outcomes: none completed a 5-day window today; 1-day results of the 11 Nov vetoes were small (-0.7% to\n  +1.5%). Lesson book unchanged.\n- Options: both condors closed at take-profit today: the With LLM 1.25 SD condor at the open (+Rs 791) and the\n  rules-only condor at the close run (+Rs 1,146). Both options accounts are flat. The one-minute monitor was again\n  found dead at the open, midday and close runs; the With LLM exit was left uncommitted until a later run."
+ },
+ {
   "id": "2026-11-17-india",
   "date": "2026-11-17",
   "market": "India",
