@@ -27,7 +27,7 @@
     "ETERNAL": {
       "qty": 14,
       "avg": 344.77,
-      "stop": 332.02,
+      "stop": 338.69,
       "target": 4532.67,
       "opened": "2026-10-30",
       "buy_charges": 5.73
@@ -35,7 +35,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.27,
-      "stop": 328.62,
+      "stop": 331.91,
       "target": 3808.08,
       "opened": "2026-10-30",
       "buy_charges": 11.75
@@ -67,7 +67,7 @@
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.69,
-      "stop": 1075.29,
+      "stop": 1078.56,
       "target": 15650.02,
       "opened": "2026-11-05",
       "buy_charges": 8.45
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-17",
-    "start_equity": 101622.64,
+    "date": "2026-11-18",
+    "start_equity": 102147.84,
     "orders": 0,
     "partial": false
   },
