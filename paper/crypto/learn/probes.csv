@@ -3,3 +3,5 @@ id,made,coin,probe,of_id,long_target,long_stop,short_target,short_stop,note
 20261111T2337-ETH-mirror,2026-11-11T23:37:24+00:00,ETH,mirror,20261111T1743-ETH-br,0.14,0.23,0.1,0.29,"Mirror probe: base rates of the flipped sheet, no move."
 20261115T2337-BTC-mirror,2026-11-15T23:37:26+00:00,BTC,mirror,20261115T1736-BTC-br,0.1,0.15,0.07,0.24,"Mirror probe: flipped sheet's base rates (long 0.11/0.15, short 0.06/0.25), no evidence to move; matches my real calls mirrored."
 20261115T2337-ETH-mirror,2026-11-15T23:37:26+00:00,ETH,mirror,20261115T1736-ETH-br,0.14,0.16,0.07,0.26,"Mirror probe: flipped sheet's base rates, no move."
+20261118T2336-BTC-mirror,2026-11-18T23:36:50+00:00,BTC,mirror,20261118T1737-BTC-br,0.1,0.14,0.06,0.24,"Mirror probe: flipped sheet's base rates (long 0.10/0.13, short 0.06/0.24); matches my real calls mirrored."
+20261118T2336-ETH-mirror,2026-11-18T23:36:50+00:00,ETH,mirror,20261118T1737-ETH-br,0.13,0.14,0.07,0.26,Mirror probe: flipped sheet's base rates; matches real calls mirrored.
