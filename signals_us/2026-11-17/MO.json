@@ -1,0 +1,12 @@
+{
+  "symbol": "MO",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No company red flag (headlines through 17 Nov). Bear case: rate-sensitive yield stock; falling volumes. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T09:52:09-05:00"
+}

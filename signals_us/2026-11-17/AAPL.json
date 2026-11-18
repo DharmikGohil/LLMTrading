@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; Berkshire held its stake (13F). Bear case: tech outages and rate-hike talk. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T09:52:08-05:00"
+}

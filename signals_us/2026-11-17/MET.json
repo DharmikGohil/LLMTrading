@@ -1,0 +1,12 @@
+{
+  "symbol": "MET",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag. Bear case: rate swings; a Fed official called for a larger hike (Yahoo live coverage, 18 Nov). Tags: reason=none; attention=no",
+  "confidence": 58.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T09:52:08-05:00"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Results out 18 Nov before the open: Q3 sales +7.1%, comparable sales +5.6%, outlook raised (Yahoo, 18 Nov); stock +4.9% at 09:51 ET. Event passed, no miss. No upgrade on results (H4 pending). Bear case: weak spending in two categories flagged in coverage (Yahoo, 18 Nov). Tags: reason=news; attention=yes",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T09:52:07-05:00"
+}

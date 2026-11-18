@@ -75,7 +75,7 @@
     "TGT": {
       "qty": 1,
       "avg": 156.74,
-      "stop": 145.41,
+      "stop": 147.88,
       "target": 1836.87,
       "opened": "2026-11-03",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-17",
-    "start_equity": 10019.75,
+    "date": "2026-11-18",
+    "start_equity": 9898.78,
     "orders": 0,
     "partial": false
   },
