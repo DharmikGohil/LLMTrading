@@ -1,60 +1,13 @@
 {
- "time": "2026-11-18T09:17:46+05:30",
- "spot": 25384.1,
+ "time": "2026-11-18T12:38:20+05:30",
+ "spot": 25195.0,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 95011.93,
-   "realized": -5876.69,
-   "open": {
-    "name": "iron condor",
-    "expiry": "2026-11-23",
-    "opened": "2026-11-13T09:18:37+05:30",
-    "legs": [
-     {
-      "kind": "CE",
-      "strike": 25950,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 43.55
-     },
-     {
-      "kind": "PE",
-      "strike": 24250,
-      "side": "SELL",
-      "qty": 65,
-      "entry": 36.65
-     },
-     {
-      "kind": "CE",
-      "strike": 26150,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 27.35
-     },
-     {
-      "kind": "PE",
-      "strike": 24050,
-      "side": "BUY",
-      "qty": 65,
-      "entry": 22.9
-     }
-    ],
-    "credit": 1946.75,
-    "entry_charges": 105.88,
-    "max_loss": 11053.25,
-    "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none."
-   },
-   "mark": {
-    "close_value": 952.25,
-    "pnl": 888.62,
-    "prices": [
-     24.6,
-     6.1,
-     11.8,
-     4.25
-    ]
-   },
+   "equity": 94914.63,
+   "realized": -5085.37,
+   "open": null,
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -153,12 +106,61 @@
      "exit_charges": 112.99,
      "pnl": -2154.74,
      "reason": "stop: close cost 3819 >= 2x credit 1885 (loss = credit)"
+    },
+    {
+     "name": "iron condor",
+     "expiry": "2026-11-23",
+     "opened": "2026-11-13T09:18:37+05:30",
+     "legs": [
+      {
+       "kind": "CE",
+       "strike": 25950,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 43.55
+      },
+      {
+       "kind": "PE",
+       "strike": 24250,
+       "side": "SELL",
+       "qty": 65,
+       "entry": 36.65
+      },
+      {
+       "kind": "CE",
+       "strike": 26150,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 27.35
+      },
+      {
+       "kind": "PE",
+       "strike": 24050,
+       "side": "BUY",
+       "qty": 65,
+       "entry": 22.9
+      }
+     ],
+     "credit": 1946.75,
+     "entry_charges": 105.88,
+     "max_loss": 11053.25,
+     "note": "1.25 SD short strikes, spot 25114, ATM IV 15.9%; gate: widen: Trend cooling but not gone: Nifty 25,113 early on 13 Nov (-0.7% on the day, Yahoo), +4.8% since the 4 Nov close of 23,961 and +2.4% over 5 sessions, about 1 weekly SD at India VIX 16.4 (13 Nov, Yahoo). The rules-only condor has been stopped five times since 4 Nov. Event before the expiry: US PPI Fri 13 Nov 8:30 ET (TD Economics calendar, 6 Nov), after a hot US CPI (10 Nov, CNBC) and the Nvidia CEO resignation (12 Nov, IBTimes). Widen: short strikes at 1.25 SD; lotto direction none.",
+     "closed": "2026-11-18T09:17:50+05:30",
+     "exit_prices": [
+      24.6,
+      6.1,
+      11.8,
+      4.25
+     ],
+     "exit_charges": 97.3,
+     "pnl": 791.32,
+     "reason": "take profit: close cost 952 <= 50% of credit 1947"
     }
    ]
   },
   "control": {
    "capital": 100000.0,
-   "equity": 89992.9,
+   "equity": 90473.9,
    "realized": -10574.6,
    "open": {
     "name": "iron condor",
@@ -200,13 +202,13 @@
     "note": "1 SD short strikes, spot 25239, ATM IV 15.9%; rules only"
    },
    "mark": {
-    "close_value": 1979.25,
-    "pnl": 567.5,
+    "close_value": 1498.25,
+    "pnl": 1048.5,
     "prices": [
-     42.9,
-     17.4,
-     20.35,
-     9.5
+     22.6,
+     23.15,
+     11.7,
+     11.0
     ]
    },
    "closed": [
@@ -996,6 +998,13 @@
    "spot": "25384.1",
    "main": "95011.93",
    "control": "89992.9",
+   "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-18T12:38:20+05:30",
+   "spot": "25195.0",
+   "main": "94914.63",
+   "control": "90473.9",
    "lotto": "9634.6"
   }
  ],
