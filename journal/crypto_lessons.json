@@ -11,12 +11,12 @@
   "first_seen": "2026-11-09",
   "evidence": {
    "n": 0,
-   "n_other": 2,
+   "n_other": 4,
    "up_pct": null,
    "other_up_pct": 0.0,
    "t": null
   },
-  "last_checked": "2026-11-17",
+  "last_checked": "2026-11-18",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -50,12 +50,12 @@
   "first_seen": "2026-11-09",
   "evidence": {
    "n": 0,
-   "n_other": 2,
+   "n_other": 4,
    "up_pct": null,
    "other_up_pct": 0.0,
    "t": null
   },
-  "last_checked": "2026-11-17",
+  "last_checked": "2026-11-18",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -94,7 +94,7 @@
    "other_up_pct": 20.0,
    "t": null
   },
-  "last_checked": "2026-11-17",
+  "last_checked": "2026-11-18",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -127,13 +127,13 @@
   "source": "Time-series momentum (Moskowitz, Ooi and Pedersen 2012; Liu and Tsyvinski 2021 for crypto); our 2020-26 backtest (docs/crypto-desk.md).",
   "first_seen": "2026-11-09",
   "evidence": {
-   "n": 2,
+   "n": 4,
    "n_other": 0,
    "up_pct": 0.0,
    "other_up_pct": null,
    "t": null
   },
-  "last_checked": "2026-11-17",
+  "last_checked": "2026-11-18",
   "evidence_history": {
    "label": "history, outcomes already seen; does not change the status",
    "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -173,7 +173,7 @@
    "t": null,
    "verdict": "no scored calls yet"
   },
-  "last_checked": "2026-11-17"
+  "last_checked": "2026-11-18"
  },
  {
   "id": "chasing-big-moves",
@@ -193,6 +193,6 @@
    "t": 0.65,
    "verdict": "too few calls to tell"
   },
-  "last_checked": "2026-11-17"
+  "last_checked": "2026-11-18"
  }
 ]
