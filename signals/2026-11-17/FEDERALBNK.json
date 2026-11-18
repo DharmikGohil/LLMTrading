@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "GST penalty set aside (13 Nov); no red flag. Bear case: margin pressure. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T07:42:50+05:30"
+}

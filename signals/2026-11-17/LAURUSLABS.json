@@ -1,0 +1,12 @@
+{
+  "symbol": "LAURUSLABS",
+  "as_of": "2026-11-17",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Promoter selling: founder Dr Satyanarayana Chava sold 15.7 lakh shares and V V Ravi Kumar 5.0 lakh on 11-12 Nov (company clarification, NSE filing 17 Nov 18:45). Stock fell to 2,220 on 16 Nov (-8.4%) on about 3x normal volume (Yahoo). Red flag. Tags: reason=filing; attention=yes",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T07:42:49+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "PHOENIXLTD",
+  "as_of": "2026-11-17",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Analyst meets (CLSA, BofA) and ESOP allotment of 9,734 shares (17 Nov), routine. Bear case: extended chart. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-18T07:42:51+05:30"
+}
