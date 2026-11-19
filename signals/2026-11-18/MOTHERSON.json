@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-18",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Q2 profit +44%; 18 Nov: voluntary dissolution of a small Korean subsidiary (MSSL Korea WH), routine. Bear case: auto demand, Europe exposure. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-19T07:42:49+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "MAHABANK",
+  "as_of": "2026-11-18",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "MCLR review (18 Nov), routine. RSI 75 on 2x volume: extended. Bear case: crowded PSU-bank rally. Tags: reason=none; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-19T07:42:50+05:30"
+}
