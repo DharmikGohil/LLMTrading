@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-18",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results expected 25 Nov, 4 trading days away (outside the 3-day window); -1.7% early. Bear case: weak equipment demand into results. Tags: reason=none; attention=no",
+  "confidence": 52.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-19T09:52:46-05:00"
+}

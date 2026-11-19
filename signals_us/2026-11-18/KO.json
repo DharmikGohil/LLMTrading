@@ -1,0 +1,12 @@
+{
+  "symbol": "KO",
+  "as_of": "2026-11-18",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 1. TD Cowen top 2027 pick (17 Nov). Defensives sold off at the open (KO -2.9%, PM/MO -3%, JNJ -2%) with no company news: rate-hike talk (Yahoo, 18 Nov), not a red flag. Bear case: bond-yield sensitive defensive. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-19T09:52:43-05:00"
+}
