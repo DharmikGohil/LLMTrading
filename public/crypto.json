@@ -1,6 +1,6 @@
 {
- "time": "2026-11-19T09:37:18+00:00",
- "btc": 63879.99,
+ "time": "2026-11-19T14:41:13+00:00",
+ "btc": 63882.02,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,7 +24,7 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8555.0,
+   "value": 8555.27,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
@@ -35,11 +35,11 @@
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 63879.99,
-     "value": 8554.9,
-     "pnl": -1435.01,
+     "last": 63882.02,
+     "value": 8555.17,
+     "pnl": -1434.74,
      "pnl_pct": -14.36,
-     "day_pct": -1.289,
+     "day_pct": 1.239,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -346,6 +346,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "8523.79"
+  },
+  {
+   "time": "2026-11-19T14:41:09+00:00",
+   "btc": "63869.98",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "8553.66"
   }
  ],
  "trades": [
@@ -440,23 +447,23 @@
  "learn": {
   "summary": {
    "24h": {
-    "n": 34,
-    "brier_llm": 0.2389,
+    "n": 36,
+    "brier_llm": 0.239,
     "brier_base": 0.25,
     "skill_pct": 4.4,
-    "t": 3.18,
-    "coverage_llm_pct": 67.6,
-    "coverage_base_pct": 64.7,
-    "pinball_llm": 1.197,
-    "pinball_base": 1.201,
-    "hit_rate_pct": 82.4,
+    "t": 3.34,
+    "coverage_llm_pct": 69.4,
+    "coverage_base_pct": 66.7,
+    "pinball_llm": 1.184,
+    "pinball_base": 1.172,
+    "hit_rate_pct": 83.3,
     "verdict": "LLM beats the baseline",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 34,
+      "n": 36,
       "said_pct": 48.3,
-      "happened_pct": 17.6
+      "happened_pct": 16.7
      }
     ],
     "by_tag": [
@@ -469,16 +476,16 @@
      },
      {
       "tag": "below_200d",
-      "n": 27,
+      "n": 29,
       "skill_pct": 4.0,
-      "t": 3.06,
+      "t": 3.29,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_50d",
-      "n": 34,
+      "n": 36,
       "skill_pct": 4.4,
-      "t": 3.18,
+      "t": 3.34,
       "verdict": "LLM beats the baseline"
      },
      {
@@ -490,9 +497,9 @@
      },
      {
       "tag": "fg_extreme_fear",
-      "n": 18,
-      "skill_pct": 2.2,
-      "t": 1.83,
+      "n": 20,
+      "skill_pct": 2.4,
+      "t": 2.13,
       "verdict": "too few calls to tell"
      },
      {
@@ -504,16 +511,16 @@
      },
      {
       "tag": "funding_negative",
-      "n": 8,
-      "skill_pct": 3.4,
-      "t": 1.61,
+      "n": 9,
+      "skill_pct": 3.5,
+      "t": 1.84,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "funding_normal",
-      "n": 26,
-      "skill_pct": 4.8,
-      "t": 3.15,
+      "n": 27,
+      "skill_pct": 4.7,
+      "t": 3.25,
       "verdict": "too few calls to tell"
      },
      {
@@ -525,16 +532,16 @@
      },
      {
       "tag": "rsi_oversold",
-      "n": 21,
-      "skill_pct": 2.0,
-      "t": 1.72,
+      "n": 23,
+      "skill_pct": 2.2,
+      "t": 2.0,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "vol_normal",
-      "n": 34,
+      "n": 36,
       "skill_pct": 4.4,
-      "t": 3.18,
+      "t": 3.34,
       "verdict": "LLM beats the baseline"
      }
     ]
@@ -748,10 +755,10 @@
     "note": "Near baseline. -1% in 24h, -12% week, RSI 25, F&G 11, funding negative (shorts paying). FOMC minutes inside the window. Range ~40% wider than baseline. Bull case: short squeeze on dovish minutes. Bear case: new low under 1,720.",
     "base_lo": "1738.014356",
     "base_hi": "1881.989889",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "1803.7",
+    "up": "0",
+    "brier": "0.2401",
+    "inside": "1"
    },
    {
     "id": "20261118T0736-BTC-24",
@@ -766,10 +773,10 @@
     "note": "Near baseline. Flat 24h, -12.7% week, RSI 23.5, F&G 11 extreme fear, funding near zero, below both averages. FOMC minutes today 2pm ET inside this window (federalreserve.gov); Nvidia results this week. Coverage 63% and all four 7-day calls fell outside: range ~40% wider than baseline. No lean. Bull case: dovish minutes, relief toward 67k. Bear case: hawkish minutes, new low near 62k.",
     "base_lo": "62698.439475",
     "base_hi": "66482.618547",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "63628.81",
+    "up": "0",
+    "brier": "0.2401",
+    "inside": "1"
    },
    {
     "id": "20261117T2336-ETH-168",
@@ -1439,9 +1446,9 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 34,
+     "n_other": 36,
      "up_pct": null,
-     "other_up_pct": 17.6,
+     "other_up_pct": 16.7,
      "t": null
     },
     "last_checked": "2026-11-19",
@@ -1546,35 +1553,35 @@
     "last_checked": "2026-11-19"
    }
   ],
-  "open": 20,
+  "open": 18,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
     "all": {
-     "n": 48,
-     "brier_analyst": 0.7852,
-     "brier_base_rates": 0.788,
-     "brier_best_blend": 0.7852,
+     "n": 52,
+     "brier_analyst": 0.7938,
+     "brier_base_rates": 0.7968,
+     "brier_best_blend": 0.7938,
      "best_w": 1.0,
      "fitted": true,
      "skill_vs_base_pct": 0.4,
      "w": 1.0
     },
     "long": {
-     "n": 24,
-     "brier_analyst": 0.6902,
-     "brier_base_rates": 0.693,
-     "brier_best_blend": 0.6902,
+     "n": 26,
+     "brier_analyst": 0.7169,
+     "brier_base_rates": 0.7197,
+     "brier_best_blend": 0.7169,
      "best_w": 1.0,
      "fitted": false,
      "skill_vs_base_pct": 0.4,
      "w": 0.5
     },
     "short": {
-     "n": 24,
-     "brier_analyst": 0.8802,
-     "brier_base_rates": 0.883,
-     "brier_best_blend": 0.8802,
+     "n": 26,
+     "brier_analyst": 0.8708,
+     "brier_base_rates": 0.8738,
+     "brier_best_blend": 0.8708,
      "best_w": 1.0,
      "fitted": false,
      "skill_vs_base_pct": 0.3,
@@ -1704,7 +1711,7 @@
      "p_stop": "0.14",
      "p_neither": "0.73",
      "ev_r": "-0.0409",
-     "outcome": null
+     "outcome": "neither"
     },
     {
      "id": "20261118T0736-ETH-br",
@@ -1717,7 +1724,7 @@
      "p_stop": "0.26",
      "p_neither": "0.67",
      "ev_r": "-0.2528",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261118T0736-BTC-br",
@@ -1730,7 +1737,7 @@
      "p_stop": "0.14",
      "p_neither": "0.76",
      "ev_r": "-0.1222",
-     "outcome": null
+     "outcome": "target"
     },
     {
      "id": "20261118T0736-BTC-br",
@@ -1743,7 +1750,7 @@
      "p_stop": "0.24",
      "p_neither": "0.7",
      "ev_r": "-0.2803",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261117T1737-ETH-br",
