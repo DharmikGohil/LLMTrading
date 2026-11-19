@@ -1,10 +1,6 @@
 {
-  "cash": 24843.364938934326,
+  "cash": 20470.16073654175,
   "positions": {
-    "HAL": {
-      "qty": 1,
-      "avg": 4819.808602294922
-    },
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.222647705078
@@ -40,6 +36,10 @@
     "AUROPHARMA": {
       "qty": 5,
       "avg": 1764.561844885254
+    },
+    "RADICO": {
+      "qty": 2,
+      "avg": 4518.258
     }
   },
   "orders": [
@@ -218,8 +218,30 @@
       "price": 1943.27,
       "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 9) stop 1733.77",
       "message": "charges Rs 6.92"
+    },
+    {
+      "time": "2026-11-19T09:17:33+05:30",
+      "id": "PAPER-37f8d93a1b",
+      "symbol": "HAL",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 4694.25,
+      "reason": "momentum: Sell; Sell: trim 1 -> 0",
+      "message": "charges Rs 20.21"
+    },
+    {
+      "time": "2026-11-19T09:17:34+05:30",
+      "id": "PAPER-ce1249c428",
+      "symbol": "RADICO",
+      "side": "BUY",
+      "qty": 2,
+      "status": "COMPLETE",
+      "price": 4518.26,
+      "reason": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 3) stop 3972.6",
+      "message": "charges Rs 10.73"
     }
   ],
-  "realized_pnl": 0.0,
-  "charges": 89.12
+  "realized_pnl": -145.76680468749962,
+  "charges": 120.06000000000002
 }

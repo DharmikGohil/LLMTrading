@@ -1,13 +1,60 @@
 {
- "time": "2026-11-19T02:16:40+05:30",
- "spot": null,
+ "time": "2026-11-19T09:18:01+05:30",
+ "spot": 25209.65,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 94914.63,
+   "equity": 94719.54,
    "realized": -5085.37,
-   "open": null,
-   "mark": null,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-12-01",
+    "opened": "2026-11-19T09:17:47+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 25850,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 58.5
+     },
+     {
+      "kind": "PE",
+      "strike": 24550,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 55.1
+     },
+     {
+      "kind": "CE",
+      "strike": 26050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 34.4
+     },
+     {
+      "kind": "PE",
+      "strike": 24350,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 34.05
+     }
+    ],
+    "credit": 2934.75,
+    "entry_charges": 110.59,
+    "max_loss": 10065.25,
+    "note": "1 SD short strikes, spot 25210, ATM IV 14.0%; gate: trade: Range-bound: Nifty 25,218 early on 19 Nov (Yahoo), 25,144-25,403 since 11 Nov, -0.3% over 5 sessions, inside a weekly 1 SD (~2.2%) at India VIX 15.5 (19 Nov, Yahoo). Events before expiry: no RBI policy or budget; US data light after the FOMC minutes and Nvidia results (18 Nov). Trade: normal 1 SD condor; no lotto direction."
+   },
+   "mark": {
+    "close_value": 3019.25,
+    "pnl": -195.09,
+    "prices": [
+     58.65,
+     55.65,
+     34.15,
+     33.7
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -160,10 +207,57 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 90571.02,
+   "equity": 90375.93,
    "realized": -9428.98,
-   "open": null,
-   "mark": null,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-12-01",
+    "opened": "2026-11-19T09:17:47+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 25850,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 58.5
+     },
+     {
+      "kind": "PE",
+      "strike": 24550,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 55.1
+     },
+     {
+      "kind": "CE",
+      "strike": 26050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 34.4
+     },
+     {
+      "kind": "PE",
+      "strike": 24350,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 34.05
+     }
+    ],
+    "credit": 2934.75,
+    "entry_charges": 110.59,
+    "max_loss": 10065.25,
+    "note": "1 SD short strikes, spot 25210, ATM IV 14.0%; rules only"
+   },
+   "mark": {
+    "close_value": 3019.25,
+    "pnl": -195.09,
+    "prices": [
+     58.65,
+     55.65,
+     34.15,
+     33.7
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -1036,6 +1130,13 @@
    "main": "94914.63",
    "control": "90571.02",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-19T09:18:01+05:30",
+   "spot": "25209.65",
+   "main": "94719.54",
+   "control": "90375.93",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -1122,6 +1223,13 @@
    "lotto_direction": "none",
    "note": "Range-bound: Nifty 25,386 early on 18 Nov (Yahoo), 25,144-25,403 since 11 Nov, +0.5% over 5 sessions, inside a weekly 1 SD (~2.2%) at India VIX 15.8 (18 Nov, Yahoo). Events before the 23 Nov expiry: FOMC minutes 18 Nov (federalreserve.gov), Nvidia results this week; no RBI or budget event. Trade; no lotto direction. Both condor accounts already hold positions.",
    "time": "2026-11-18T09:17:31+05:30"
+  },
+  {
+   "date": "2026-11-19",
+   "action": "trade",
+   "lotto_direction": "none",
+   "note": "Range-bound: Nifty 25,218 early on 19 Nov (Yahoo), 25,144-25,403 since 11 Nov, -0.3% over 5 sessions, inside a weekly 1 SD (~2.2%) at India VIX 15.5 (19 Nov, Yahoo). Events before expiry: no RBI policy or budget; US data light after the FOMC minutes and Nvidia results (18 Nov). Trade: normal 1 SD condor; no lotto direction.",
+   "time": "2026-11-19T09:17:44+05:30"
   }
  ]
 }

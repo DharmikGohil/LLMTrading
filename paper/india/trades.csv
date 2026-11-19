@@ -19,3 +19,5 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-11T09:19:12+05:30,AUROPHARMA,BUY,1,1853.7,COMPLETE,1,1848.52,PAPER-a4ea77d59c,"momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 5 (alloc 5, risk-sized 11) stop 1669.38",charges Rs 2.19
 2026-11-11T09:19:13+05:30,NYKAA,BUY,6,360.9,COMPLETE,6,360.13,PAPER-60f11c05e3,"momentum Buy; LLM: claude-analyst Overweight (60%) does not object; Buy: add to 27 (alloc 27, risk-sized 45) stop 315.56",charges Rs 2.57
 2026-11-12T09:20:37+05:30,ADANIPORTS,BUY,2,1930.8,COMPLETE,2,1924.86,PAPER-1732d0bc49,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 9) stop 1711.58",charges Rs 4.57
+2026-11-19T09:17:21+05:30,HAL,SELL,1,4679.5,COMPLETE,1,4691.65,PAPER-e828899c0d,momentum Sell; Sell: trim 1 -> 0,charges Rs 20.21
+2026-11-19T09:17:28+05:30,MAHABANK,BUY,103,96.79,COMPLETE,103,96.76,PAPER-8440be90ad,"momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 103 (alloc 103, risk-sized 188) stop 85.88",charges Rs 11.83

@@ -1,13 +1,5 @@
 {
   "positions": {
-    "HAL": {
-      "qty": 1,
-      "avg": 4819.21,
-      "stop": 4626.04,
-      "target": 53135.35,
-      "opened": "2026-10-30",
-      "buy_charges": 5.72
-    },
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
@@ -79,17 +71,28 @@
       "target": 4783.51,
       "opened": "2026-11-05",
       "buy_charges": 11.219999999999999
+    },
+    "MAHABANK": {
+      "qty": 103,
+      "avg": 96.76,
+      "stop": 85.88,
+      "target": 1158.01,
+      "opened": "2026-11-19",
+      "buy_charges": 11.83
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-18",
-    "start_equity": 102147.84,
-    "orders": 0,
-    "partial": false
+    "date": "2026-11-19",
+    "start_equity": 101139.34,
+    "orders": 2,
+    "partial": false,
+    "dp_charged": [
+      "HAL"
+    ]
   },
   "stopped_out": {},
-  "realized_pnl": 0.0,
+  "realized_pnl": -153.4900000000004,
   "applied_orders": [
     "PAPER-915cdcfff1",
     "PAPER-03995ed7d1",
@@ -110,10 +113,12 @@
     "PAPER-db179c960a",
     "PAPER-a4ea77d59c",
     "PAPER-60f11c05e3",
-    "PAPER-1732d0bc49"
+    "PAPER-1732d0bc49",
+    "PAPER-e828899c0d",
+    "PAPER-8440be90ad"
   ],
   "ca_pending": {},
-  "cash": 27756.290000000023,
+  "cash": 22449.62000000002,
   "capital": 100000.0,
   "peak_equity": 102647.34,
   "ca_applied": []

@@ -1,10 +1,6 @@
 {
-  "cash": 27756.159004959125,
+  "cash": 22449.66153430559,
   "positions": {
-    "HAL": {
-      "qty": 1,
-      "avg": 4819.208204589843
-    },
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.722897705078
@@ -40,6 +36,10 @@
     "NYKAA": {
       "qty": 27,
       "avg": 349.5950853051079
+    },
+    "MAHABANK": {
+      "qty": 103,
+      "avg": 96.75835408401488
     }
   },
   "orders": [
@@ -262,8 +262,30 @@
       "price": 1924.86,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; Buy: add to 5 (alloc 5, risk-sized 9) stop 1711.58",
       "message": "charges Rs 4.57"
+    },
+    {
+      "time": "2026-11-19T09:17:21+05:30",
+      "id": "PAPER-e828899c0d",
+      "symbol": "HAL",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 4691.65,
+      "reason": "momentum Sell; Sell: trim 1 -> 0",
+      "message": "charges Rs 20.21"
+    },
+    {
+      "time": "2026-11-19T09:17:28+05:30",
+      "id": "PAPER-8440be90ad",
+      "symbol": "MAHABANK",
+      "side": "BUY",
+      "qty": 103,
+      "status": "COMPLETE",
+      "price": 96.76,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (57%) does not object; Buy: add to 103 (alloc 103, risk-sized 188) stop 85.88",
+      "message": "charges Rs 11.83"
     }
   ],
-  "realized_pnl": 0.0,
-  "charges": 85.67999999999998
+  "realized_pnl": -147.76520458984302,
+  "charges": 117.71999999999998
 }

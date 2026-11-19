@@ -1,13 +1,5 @@
 {
   "positions": {
-    "HAL": {
-      "qty": 1,
-      "avg": 4819.81,
-      "stop": 4625.84,
-      "target": 53132.75,
-      "opened": "2026-10-30",
-      "buy_charges": 5.72
-    },
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
@@ -79,17 +71,28 @@
       "target": 19843.33,
       "opened": "2026-11-05",
       "buy_charges": 10.469999999999999
+    },
+    "RADICO": {
+      "qty": 2,
+      "avg": 4518.26,
+      "stop": 3972.6,
+      "target": 58856.21,
+      "opened": "2026-11-19",
+      "buy_charges": 10.73
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-18",
-    "start_equity": 102027.99,
-    "orders": 0,
-    "partial": false
+    "date": "2026-11-19",
+    "start_equity": 100955.24,
+    "orders": 2,
+    "partial": false,
+    "dp_charged": [
+      "HAL"
+    ]
   },
   "stopped_out": {},
-  "realized_pnl": 0.0,
+  "realized_pnl": -151.4900000000004,
   "applied_orders": [
     "PAPER-fbb763ebff",
     "PAPER-6aca3a61ce",
@@ -106,10 +109,12 @@
     "PAPER-ea12022563",
     "PAPER-a7c76b39b7",
     "PAPER-496bfc779b",
-    "PAPER-a1e3bab141"
+    "PAPER-a1e3bab141",
+    "PAPER-37f8d93a1b",
+    "PAPER-ce1249c428"
   ],
   "ca_pending": {},
-  "cash": 24843.54000000001,
+  "cash": 20470.330000000013,
   "capital": 100000.0,
   "peak_equity": 102559.14,
   "ca_applied": []
