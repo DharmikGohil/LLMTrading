@@ -1,5 +1,5 @@
 {
-  "cash": 25.04794802093639,
+  "cash": 158.6011331405653,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -32,10 +32,6 @@
     "AMGN": {
       "qty": 2,
       "avg": 462.45111122131345
-    },
-    "MRK": {
-      "qty": 1,
-      "avg": 148.27910433197022
     },
     "UNP": {
       "qty": 3,
@@ -218,8 +214,19 @@
       "price": 94.82,
       "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-19T12:50:40-05:00",
+      "id": "PAPER-e540e1b098",
+      "symbol": "MRK",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 133.55,
+      "reason": "stop-loss hit (133.62 <= 133.88)",
+      "message": "charges $0.00"
     }
   ],
-  "realized_pnl": -177.0472928466792,
+  "realized_pnl": -191.7732120590205,
   "charges": 0.1
 }

@@ -48,14 +48,6 @@
       "opened": "2026-11-02",
       "buy_charges": 0.0
     },
-    "MRK": {
-      "qty": 6,
-      "avg": 148.28,
-      "stop": 133.8,
-      "target": 1988.72,
-      "opened": "2026-11-02",
-      "buy_charges": 0.0
-    },
     "TGT": {
       "qty": 2,
       "avg": 161.57,
@@ -85,18 +77,20 @@
   "day": {
     "date": "2026-11-19",
     "start_equity": 9675.33,
-    "orders": 5,
+    "orders": 6,
     "partial": false,
     "dp_charged": [
       "USB",
-      "PM"
+      "PM",
+      "MRK"
     ]
   },
   "stopped_out": {
-    "CSCO": "2026-10-30"
+    "CSCO": "2026-10-30",
+    "MRK": "2026-11-19"
   },
-  "realized_pnl": -212.93999999999997,
-  "cash": 327.21999999999946,
+  "realized_pnl": -301.3399999999999,
+  "cash": 1128.4999999999995,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
@@ -110,7 +104,8 @@
     "PAPER-20093bfc35",
     "PAPER-24fcb9137b",
     "PAPER-d8b5986380",
-    "PAPER-c7bafef7e0"
+    "PAPER-c7bafef7e0",
+    "PAPER-c1bc28af66"
   ],
   "ca_pending": {},
   "peak_equity": 10162.25

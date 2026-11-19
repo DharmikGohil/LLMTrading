@@ -16,3 +16,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-19T09:53:14-05:00,AAPL,BUY,1,350.29,COMPLETE,1,349.37,PAPER-24fcb9137b,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 6) stop 318.58",charges $0.00
 2026-11-19T09:53:14-05:00,ABBV,BUY,1,282.55,COMPLETE,1,282.06,PAPER-d8b5986380,"momentum Buy; LLM: claude-analyst Overweight (56%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 254.69",charges $0.00
 2026-11-19T09:53:14-05:00,TGT,BUY,1,166.63,COMPLETE,1,166.4,PAPER-c7bafef7e0,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 8) stop 144.32",charges $0.00
+2026-11-19T12:50:39-05:00,MRK,SELL,6,133.21,COMPLETE,6,133.55,PAPER-c1bc28af66,stop-loss hit (133.62 <= 133.8),charges $0.02

@@ -1,5 +1,5 @@
 {
-  "cash": 327.13007152938866,
+  "cash": 1128.4291822471623,
   "positions": {
     "JNJ": {
       "qty": 7,
@@ -24,10 +24,6 @@
     "DE": {
       "qty": 1,
       "avg": 679.3928103332519
-    },
-    "MRK": {
-      "qty": 6,
-      "avg": 148.27910433197022
     },
     "TGT": {
       "qty": 2,
@@ -229,8 +225,19 @@
       "price": 166.4,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 8) stop 144.32",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-19T12:50:39-05:00",
+      "id": "PAPER-c1bc28af66",
+      "symbol": "MRK",
+      "side": "SELL",
+      "qty": 6,
+      "status": "COMPLETE",
+      "price": 133.55,
+      "reason": "stop-loss hit (133.62 <= 133.8)",
+      "message": "charges $0.02"
     }
   ],
-  "realized_pnl": -213.01923610687226,
-  "charges": 0.08
+  "realized_pnl": -301.39475138092,
+  "charges": 0.1
 }

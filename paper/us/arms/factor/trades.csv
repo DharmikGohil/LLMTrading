@@ -15,3 +15,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-04T09:52:50-05:00,ABBV,BUY,2,288.88,COMPLETE,2,288.15,PAPER-83881d201f,"momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",charges $0.00
 2026-11-04T09:52:50-05:00,UNP,BUY,3,302.51,COMPLETE,3,301.75,PAPER-9964d80ba8,"momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",charges $0.00
 2026-11-04T09:52:50-05:00,KO,BUY,2,95.06,COMPLETE,2,94.82,PAPER-418779cf2a,"momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",charges $0.00
+2026-11-19T12:50:40-05:00,MRK,SELL,1,133.21,COMPLETE,1,133.55,PAPER-e540e1b098,stop-loss hit (133.62 <= 133.88),charges $0.00
