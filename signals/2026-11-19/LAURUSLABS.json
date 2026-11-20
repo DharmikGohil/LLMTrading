@@ -1,0 +1,12 @@
+{
+  "symbol": "LAURUSLABS",
+  "as_of": "2026-11-19",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Promoter selling: founder and a co-promoter sold 20.7 lakh shares on 11-12 Nov (company clarification, NSE 17 Nov). Red flag. Tags: reason=filing; attention=no",
+  "confidence": 63.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-20T07:43:04+05:30"
+}

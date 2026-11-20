@@ -1,0 +1,12 @@
+{
+  "symbol": "TECHM",
+  "as_of": "2026-11-19",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "New to the screen (rank 7). NSE filings to 19 Nov are routine (ESOP allotment, investor meets, an acquisition disclosure 6 Nov); no results due; no dated news found in a web search. Bear case: IT demand and US rate-hike talk; momentum just turned up. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-20T07:43:06+05:30"
+}

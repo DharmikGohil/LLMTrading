@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-19",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "CRISIL reaffirmed AAA (Stable) on 19 Nov (NSE filing). Q2 profit +44%. Bear case: auto demand, Europe exposure. Tags: reason=filing; attention=no",
+  "confidence": 57.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-20T07:43:07+05:30"
+}
