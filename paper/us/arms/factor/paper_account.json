@@ -1,5 +1,5 @@
 {
-  "cash": 2818.9440094146744,
+  "cash": 3428.2291897735613,
   "positions": {
     "LLY": {
       "qty": 1,
@@ -16,10 +16,6 @@
     "KO": {
       "qty": 4,
       "avg": 94.68731938934326
-    },
-    "DE": {
-      "qty": 1,
-      "avg": 679.3928103332519
     },
     "AMGN": {
       "qty": 2,
@@ -284,8 +280,19 @@
       "price": 75.41,
       "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 6 (alloc 12, risk-sized 28) stop 68.52",
       "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-20T12:51:23-05:00",
+      "id": "PAPER-11a2a2618d",
+      "symbol": "DE",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 609.31,
+      "reason": "stop-loss hit (609.61 <= 613.46)",
+      "message": "charges $0.02"
     }
   ],
-  "realized_pnl": -229.64365164947398,
-  "charges": 0.21000000000000002
+  "realized_pnl": -299.7512816238391,
+  "charges": 0.23
 }

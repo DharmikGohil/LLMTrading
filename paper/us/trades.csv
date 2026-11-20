@@ -22,3 +22,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-20T09:53:39-05:00,AMGN,BUY,1,442.91,COMPLETE,1,441.8,PAPER-fc62b70add,"momentum Buy; LLM: claude-analyst Overweight (57%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 4) stop 395.09",charges $0.00
 2026-11-20T09:53:39-05:00,V,BUY,1,407.47,COMPLETE,1,406.45,PAPER-1f54e85d68,"momentum Buy; LLM: claude-analyst Overweight (56%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 5) stop 370.09",charges $0.00
 2026-11-20T09:53:40-05:00,MO,BUY,6,75.55,COMPLETE,6,75.36,PAPER-d907c1a8d7,"momentum Buy; LLM: claude-analyst Overweight (53%) does not object; bear regime: size x0.5; Buy: add to 6 (alloc 12, risk-sized 28) stop 68.52",charges $0.00
+2026-11-20T12:51:21-05:00,DE,SELL,1,607.78,COMPLETE,1,609.31,PAPER-415ace00bf,stop-loss hit (609.61 <= 613.46),charges $0.02
