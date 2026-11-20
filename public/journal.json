@@ -54,6 +54,12 @@
   "reflection": "First session, a partial day: entries at about 14:15 New York time, close at 16:00.\n- **Difference from the control:** the LLM review vetoed LLY and MRK (results Thu 29 Oct) and AAPL (results Mon 2 Nov),\n  shrank MET (results 4 Nov) and bought KO (beat and raised guidance on 27 Oct), which the control did not hold.\n  The control held LLY and AAPL instead of KO.\n- **Result:** both accounts were flat into the close (main +0.01%, control -0.01%) while the S&P 500 gained about 0.19%\n  from the entry time. That is too small a difference to mean anything.\n- **Vetoes:** no outcomes yet. LLY and MRK report before tomorrow's open, so the 1-day outcome of the earnings vetoes\n  is known at tomorrow's close. This is the first real test of the \"no entry before earnings\" rule.\n- **No stop-outs**, and no calls have elapsed outcome windows yet.\n- **Process note:** in earnings season, 3 of the 8 top S&P 100 momentum names had results within 3 trading days.\n  The earnings check is the most important part of the US review right now.\n- **No lessons added:** no evidence yet. Candidate to watch: whether vetoing names into earnings beats holding them."
  },
  {
+  "id": "2026-11-20-india",
+  "date": "2026-11-20",
+  "market": "India",
+  "reflection": "- Close run (15:05 IST): With LLM Rs 1,02,542 (+2.54%), Without LLM Rs 1,02,482 (+2.48%), Nifty 50 25,804 (+1.4% on\n  the day, price index; about +12.1% since the start). The LLM difference is +0.06 pp; both trail the index by\n  about 9.6 pp.\n- Orders: none. Vetoes blocked AUROPHARMA, LAURUSLABS and RADICO; other buys were blocked by the 10-position cap.\n  No stop-outs on stocks.\n- Veto outcomes (5-day, 12 Nov): AUROPHARMA -4.1% (US FDA OAI), RADICO -1.3% (DRI inquiry), ZYDUSLIFE -1.8% (Q2\n  miss): all three helped. None was a pre-results veto, so the pre-results lesson is unchanged (7 for, 5 against).\n- Options: the Nifty's breakout toward 25,800 hit both 1 Dec condors (short 25,850 CE). The one-minute monitor was\n  found dead at the close run and the manual check closed both at the stop: about -Rs 3,230 each (loss = credit\n  plus charges). The gate said trade on 19 Nov because the market had been range-bound since 11 Nov; it broke out\n  two days later. One more case that a range of a week is weak evidence for the next week.\n- The monitor was dead at all three runs again today; with it running, the stop could have fired earlier or later\n  at a different price."
+ },
+ {
   "id": "2026-11-19-india",
   "date": "2026-11-19",
   "market": "India",
