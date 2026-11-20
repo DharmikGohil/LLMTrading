@@ -3,7 +3,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 4085.7,
+      "stop": 4096.34,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -59,7 +59,7 @@
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.69,
-      "stop": 1078.56,
+      "stop": 1082.49,
       "target": 15650.02,
       "opened": "2026-11-05",
       "buy_charges": 8.45
@@ -83,13 +83,10 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-19",
-    "start_equity": 101139.34,
-    "orders": 2,
-    "partial": false,
-    "dp_charged": [
-      "HAL"
-    ]
+    "date": "2026-11-20",
+    "start_equity": 101606.24,
+    "orders": 0,
+    "partial": false
   },
   "stopped_out": {},
   "realized_pnl": -153.4900000000004,
