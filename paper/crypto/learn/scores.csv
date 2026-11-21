@@ -107,3 +107,7 @@ id,source,coin,horizon_h,made,due,spot,px,up,p_up,brier,inside,pinball,tags
 20261120T0736-BTC-24,base,BTC,24,2026-11-20T07:36:43+00:00,2026-11-21T07:36:43+00:00,61643.61,58298.4,0,0.5,0.25,0,3.127471,below_50d;below_200d;fg_extreme_fear;funding_normal;vol_normal;rsi_oversold
 20261120T0736-ETH-24,llm,ETH,24,2026-11-20T07:36:45+00:00,2026-11-21T07:36:45+00:00,1742.5,1637.32,0,0.49,0.2401,0,1.559828,below_50d;below_200d;fg_extreme_fear;funding_negative;vol_normal;rsi_oversold
 20261120T0736-ETH-24,base,ETH,24,2026-11-20T07:36:45+00:00,2026-11-21T07:36:45+00:00,1742.5,1637.32,0,0.5,0.25,0,2.961189,below_50d;below_200d;fg_extreme_fear;funding_negative;vol_normal;rsi_oversold
+20261120T1737-BTC-24,llm,BTC,24,2026-11-20T17:37:11+00:00,2026-11-21T17:37:11+00:00,59182.16,60090.01,1,0.49,0.2601,1,0.827952,below_50d;below_200d;fg_extreme_fear;funding_normal;vol_normal;big_move_24h;rsi_oversold
+20261120T1737-BTC-24,base,BTC,24,2026-11-20T17:37:11+00:00,2026-11-21T17:37:11+00:00,59182.16,60090.01,1,0.5,0.25,1,0.585517,below_50d;below_200d;fg_extreme_fear;funding_normal;vol_normal;big_move_24h;rsi_oversold
+20261120T1737-ETH-24,llm,ETH,24,2026-11-20T17:37:13+00:00,2026-11-21T17:37:13+00:00,1632.44,1681.97,1,0.49,0.2601,1,1.102644,below_50d;below_200d;fg_extreme_fear;funding_normal;vol_normal;big_move_24h;rsi_oversold
+20261120T1737-ETH-24,base,ETH,24,2026-11-20T17:37:13+00:00,2026-11-21T17:37:13+00:00,1632.44,1681.97,1,0.5,0.25,1,0.788146,below_50d;below_200d;fg_extreme_fear;funding_normal;vol_normal;big_move_24h;rsi_oversold

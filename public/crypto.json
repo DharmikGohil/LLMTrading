@@ -1,6 +1,6 @@
 {
- "time": "2026-11-21T17:36:46+00:00",
- "btc": 60090.92,
+ "time": "2026-11-21T21:08:17+00:00",
+ "btc": 60503.04,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8047.56,
+   "value": 8102.76,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -19.52,
+   "return_pct": -18.97,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 60090.92,
-     "value": 8047.46,
-     "pnl": -1942.45,
-     "pnl_pct": -19.44,
-     "day_pct": 1.627,
+     "last": 60503.04,
+     "value": 8102.66,
+     "pnl": -1887.25,
+     "pnl_pct": -18.89,
+     "day_pct": 3.581,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -409,6 +409,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "8092.59"
+  },
+  {
+   "time": "2026-11-21T21:08:14+00:00",
+   "btc": "60498.23",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "8102.11"
   }
  ],
  "trades": [
@@ -517,23 +524,23 @@
  "learn": {
   "summary": {
    "24h": {
-    "n": 44,
-    "brier_llm": 0.2396,
+    "n": 46,
+    "brier_llm": 0.2405,
     "brier_base": 0.25,
-    "skill_pct": 4.1,
-    "t": 3.78,
-    "coverage_llm_pct": 65.9,
-    "coverage_base_pct": 61.4,
-    "pinball_llm": 1.298,
-    "pinball_base": 1.382,
-    "hit_rate_pct": 84.1,
+    "skill_pct": 3.8,
+    "t": 3.46,
+    "coverage_llm_pct": 67.4,
+    "coverage_base_pct": 63.0,
+    "pinball_llm": 1.284,
+    "pinball_base": 1.352,
+    "hit_rate_pct": 80.4,
     "verdict": "LLM beats the baseline",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 44,
-      "said_pct": 48.4,
-      "happened_pct": 15.9
+      "n": 46,
+      "said_pct": 48.5,
+      "happened_pct": 19.6
      }
     ],
     "by_tag": [
@@ -546,31 +553,31 @@
      },
      {
       "tag": "below_200d",
-      "n": 37,
-      "skill_pct": 3.8,
-      "t": 3.88,
+      "n": 39,
+      "skill_pct": 3.4,
+      "t": 3.43,
       "verdict": "LLM beats the baseline"
      },
      {
       "tag": "below_50d",
-      "n": 44,
-      "skill_pct": 4.1,
-      "t": 3.78,
+      "n": 46,
+      "skill_pct": 3.8,
+      "t": 3.46,
       "verdict": "LLM beats the baseline"
      },
      {
       "tag": "big_move_24h",
-      "n": 3,
-      "skill_pct": 1.3,
-      "t": 0.65,
+      "n": 5,
+      "skill_pct": -0.8,
+      "t": -0.48,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "fg_extreme_fear",
-      "n": 28,
-      "skill_pct": 2.5,
-      "t": 3.08,
-      "verdict": "too few calls to tell"
+      "n": 30,
+      "skill_pct": 2.1,
+      "t": 2.55,
+      "verdict": "LLM beats the baseline"
      },
      {
       "tag": "fg_fear",
@@ -588,9 +595,9 @@
      },
      {
       "tag": "funding_normal",
-      "n": 31,
-      "skill_pct": 4.6,
-      "t": 3.64,
+      "n": 33,
+      "skill_pct": 4.1,
+      "t": 3.2,
       "verdict": "LLM beats the baseline"
      },
      {
@@ -602,16 +609,16 @@
      },
      {
       "tag": "rsi_oversold",
-      "n": 31,
-      "skill_pct": 2.4,
-      "t": 2.85,
+      "n": 33,
+      "skill_pct": 2.0,
+      "t": 2.37,
       "verdict": "LLM beats the baseline"
      },
      {
       "tag": "vol_normal",
-      "n": 44,
-      "skill_pct": 4.1,
-      "t": 3.78,
+      "n": 46,
+      "skill_pct": 3.8,
+      "t": 3.46,
       "verdict": "LLM beats the baseline"
      }
     ]
@@ -832,10 +839,10 @@
     "note": "Near baseline. -8.5% in 24h (above the 8% stress line), -15.5% week, RSI 19.5, F&G 12, funding near zero. No dated cause found. Range ~40% wider than baseline. Bull case: oversold snap-back. Bear case: cascade continues toward 1,550.",
     "base_lo": "1569.377028",
     "base_hi": "1698.03706",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "1681.97",
+    "up": "1",
+    "brier": "0.2601",
+    "inside": "1"
    },
    {
     "id": "20261120T1737-BTC-24",
@@ -850,10 +857,10 @@
     "note": "Near baseline. -6.4% in 24h to 59.1k (below 60k for the first time this cycle), -13.4% week, RSI 17.5, F&G 12 extreme fear, funding near zero. No dated cause found in a web search (20 Nov). Weekend next; no scheduled macro. big_move tag on: recency check, no chasing the drop and no betting on a bounce. Range ~40% wider than baseline. Bull case: capitulation bounce back above 60k. Bear case: liquidations toward 57k.",
     "base_lo": "57474.908765",
     "base_hi": "60940.123917",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
+    "px": "60090.01",
+    "up": "1",
+    "brier": "0.2601",
+    "inside": "1"
    },
    {
     "id": "20261120T0736-ETH-24",
@@ -1523,9 +1530,9 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 44,
+     "n_other": 46,
      "up_pct": null,
-     "other_up_pct": 15.9,
+     "other_up_pct": 19.6,
      "t": null
     },
     "last_checked": "2026-11-21",
@@ -1620,48 +1627,48 @@
     "source": "Recency and attention effects (Barber and Odean 2008); untested for this analyst.",
     "first_seen": "2026-11-09",
     "evidence": {
-     "n": 3,
-     "brier_llm": 0.2468,
+     "n": 5,
+     "brier_llm": 0.2521,
      "brier_base": 0.25,
-     "skill_pct": 1.3,
-     "t": 0.65,
+     "skill_pct": -0.8,
+     "t": -0.48,
      "verdict": "too few calls to tell"
     },
     "last_checked": "2026-11-21"
    }
   ],
-  "open": 20,
+  "open": 18,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
     "all": {
-     "n": 68,
-     "brier_analyst": 0.8264,
-     "brier_base_rates": 0.8284,
-     "brier_best_blend": 0.8264,
+     "n": 72,
+     "brier_analyst": 0.8456,
+     "brier_base_rates": 0.8476,
+     "brier_best_blend": 0.8456,
      "best_w": 1.0,
      "fitted": true,
      "skill_vs_base_pct": 0.2,
      "w": 1.0
     },
     "long": {
-     "n": 34,
-     "brier_analyst": 0.7408,
-     "brier_base_rates": 0.7425,
-     "brier_best_blend": 0.7408,
+     "n": 36,
+     "brier_analyst": 0.7557,
+     "brier_base_rates": 0.7574,
+     "brier_best_blend": 0.7557,
      "best_w": 1.0,
      "fitted": true,
      "skill_vs_base_pct": 0.2,
      "w": 1.0
     },
     "short": {
-     "n": 34,
-     "brier_analyst": 0.9119,
-     "brier_base_rates": 0.9144,
-     "brier_best_blend": 0.9119,
+     "n": 36,
+     "brier_analyst": 0.9355,
+     "brier_base_rates": 0.9378,
+     "brier_best_blend": 0.9355,
      "best_w": 1.0,
      "fitted": true,
-     "skill_vs_base_pct": 0.3,
+     "skill_vs_base_pct": 0.2,
      "w": 1.0
     },
     "mirror": {
@@ -1788,7 +1795,7 @@
      "p_stop": "0.15",
      "p_neither": "0.71",
      "ev_r": "-0.0377",
-     "outcome": null
+     "outcome": "target"
     },
     {
      "id": "20261120T1737-ETH-br",
@@ -1801,7 +1808,7 @@
      "p_stop": "0.27",
      "p_neither": "0.66",
      "ev_r": "-0.2627",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261120T1737-BTC-br",
@@ -1814,7 +1821,7 @@
      "p_stop": "0.14",
      "p_neither": "0.76",
      "ev_r": "-0.1216",
-     "outcome": null
+     "outcome": "target"
     },
     {
      "id": "20261120T1737-BTC-br",
@@ -1827,7 +1834,7 @@
      "p_stop": "0.25",
      "p_neither": "0.69",
      "ev_r": "-0.2916",
-     "outcome": null
+     "outcome": "stop"
     },
     {
      "id": "20261120T0736-ETH-br",
