@@ -89,9 +89,9 @@
   "first_seen": "2026-11-09",
   "evidence": {
    "n": 0,
-   "n_other": 46,
+   "n_other": 48,
    "up_pct": null,
-   "other_up_pct": 19.6,
+   "other_up_pct": 22.9,
    "t": null
   },
   "last_checked": "2026-11-22",
@@ -186,11 +186,11 @@
   "source": "Recency and attention effects (Barber and Odean 2008); untested for this analyst.",
   "first_seen": "2026-11-09",
   "evidence": {
-   "n": 5,
-   "brier_llm": 0.2521,
+   "n": 7,
+   "brier_llm": 0.2544,
    "brier_base": 0.25,
-   "skill_pct": -0.8,
-   "t": -0.48,
+   "skill_pct": -1.8,
+   "t": -1.28,
    "verdict": "too few calls to tell"
   },
   "last_checked": "2026-11-22"
