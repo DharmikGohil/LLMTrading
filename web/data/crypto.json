@@ -1,6 +1,6 @@
 {
- "time": "2026-11-22T22:48:13+00:00",
- "btc": 60858.15,
+ "time": "2026-11-22T23:36:51+00:00",
+ "btc": 61314.63,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8150.31,
+   "value": 8211.44,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -18.5,
+   "return_pct": -17.89,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 60858.15,
-     "value": 8150.21,
-     "pnl": -1839.7,
-     "pnl_pct": -18.42,
-     "day_pct": 1.069,
+     "last": 61314.63,
+     "value": 8211.34,
+     "pnl": -1778.57,
+     "pnl_pct": -17.8,
+     "day_pct": 1.73,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -551,6 +551,13 @@
    "exclude": [],
    "note": "Reason: none. Fear & Greed 12, extreme fear (alternative.me, 22 Nov): a mood, not a gate row. BTC +2.1%, ETH +3.7% in 24h: no stress. Weekend: no scheduled US macro in the next 24h. No coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
    "time": "2026-11-21T23:37:00+00:00"
+  },
+  {
+   "date": "2026-11-22",
+   "max_exposure": 1.0,
+   "exclude": [],
+   "note": "Reason: none. Fear & Greed 11, extreme fear (alternative.me, 23 Nov): a mood, not a gate row. BTC +1.7%, ETH +2.4% in 24h: no stress. No FOMC/CPI in the next 24h; Thanksgiving week. No coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
+   "time": "2026-11-22T23:36:48+00:00"
   }
  ],
  "strategy": {
@@ -767,6 +774,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261122T2336-ETH-168",
+    "made": "2026-11-22T23:36:44+00:00",
+    "due": "2026-11-29T23:36:44+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "1724.43",
+    "p_up": "0.49",
+    "lo": "1460.0",
+    "hi": "2000.0",
+    "note": "Near baseline. +2.4% in 24h, -6% week, RSI 30, F&G 11, funding negative. Range ~40% wider than baseline. Bull case: squeeze toward 1,950. Bear case: new low near 1,480.",
+    "base_lo": "1536.840515",
+    "base_hi": "1934.916991",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261122T2336-BTC-168",
+    "made": "2026-11-22T23:36:40+00:00",
+    "due": "2026-11-29T23:36:40+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "61310.09",
+    "p_up": "0.49",
+    "lo": "54300.0",
+    "hi": "68300.0",
+    "note": "Near baseline. Bounce continues: 61.3k, +1.7% in 24h, -6.2% week, RSI 27, F&G 11 extreme fear, funding negative, below both averages. Thanksgiving week (26 Nov): thin US liquidity, light calendar. 7-day coverage 17% (2 of 12 inside): range ~40% wider than baseline. Fear-rebound hypothesis unproven. Bull case: short squeeze toward the 50-day. Bear case: dead-cat bounce, new low near 55k.",
+    "base_lo": "56518.357752",
+    "base_hi": "66508.074284",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261122T1736-ETH-24",
     "made": "2026-11-22T17:36:42+00:00",
@@ -1450,42 +1493,6 @@
     "up": "0",
     "brier": "0.2401",
     "inside": "1"
-   },
-   {
-    "id": "20261115T2337-ETH-168",
-    "made": "2026-11-15T23:37:22+00:00",
-    "due": "2026-11-22T23:37:22+00:00",
-    "coin": "ETH",
-    "horizon_h": "168",
-    "spot": "1835.1",
-    "p_up": "0.49",
-    "lo": "1575.0",
-    "hi": "2095.0",
-    "note": "Near baseline. +5.4% in 24h (big_move tag) after -14% week, RSI 26, F&G 10, funding negative. Same macro week. Range ~40% wider than baseline. Bull case: short squeeze continues. Bear case: bounce fades, lower low.",
-    "base_lo": "1658.579279",
-    "base_hi": "2030.407622",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
-   },
-   {
-    "id": "20261115T2337-BTC-168",
-    "made": "2026-11-15T23:37:20+00:00",
-    "due": "2026-11-22T23:37:20+00:00",
-    "coin": "BTC",
-    "horizon_h": "168",
-    "spot": "65273.89",
-    "p_up": "0.49",
-    "lo": "58200.0",
-    "hi": "72200.0",
-    "note": "Near baseline. First bounce: +2.6% in 24h after -12.9% week; RSI 24, F&G 10 extreme fear, funding near zero, below both averages. Week: US retail sales Tue 17 Nov 8:30 ET (Forex Fundamentals), FOMC minutes Wed 18 Nov (Fed calendar), Nvidia results. 24h coverage 54%: range ~40% wider than baseline. Recency check: one green day is not a trend change; fear-rebound hypothesis unproven. Bull case: relief rally toward the 50-day. Bear case: dead-cat bounce, new low under 60k.",
-    "base_lo": "60482.783681",
-    "base_hi": "70444.520844",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
    }
   ],
   "lessons": [
@@ -1686,7 +1693,7 @@
     "last_checked": "2026-11-22"
    }
   ],
-  "open": 18,
+  "open": 20,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1721,8 +1728,8 @@
      "w": 1.0
     },
     "mirror": {
-     "probes": 6,
-     "mean_abs_error": 0.0004
+     "probes": 8,
+     "mean_abs_error": 0.0003
     },
     "calls": 44,
     "mean_ev_r": -0.185,
