@@ -1,0 +1,12 @@
+{
+  "symbol": "MAHABANK",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag. RSI 79, near the untested parabolic threshold (H14): confidence lowered. Bear case: crowded PSU-bank rally. Tags: reason=house; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T07:42:53+05:30"
+}

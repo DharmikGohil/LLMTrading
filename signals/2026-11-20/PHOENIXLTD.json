@@ -1,0 +1,12 @@
+{
+  "symbol": "PHOENIXLTD",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; RSI 71, 1.8x volume. Bear case: extended chart. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T07:42:53+05:30"
+}

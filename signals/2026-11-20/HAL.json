@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "as_of": "2026-11-20",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; weak trend (RSI 48), out of the ranking. Hold. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T07:42:53+05:30"
+}
