@@ -3,7 +3,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 4096.34,
+      "stop": 4112.33,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -11,7 +11,7 @@
     "ADANIPORTS": {
       "qty": 5,
       "avg": 1896.26,
-      "stop": 1754.95,
+      "stop": 1758.19,
       "target": 23267.42,
       "opened": "2026-10-30",
       "buy_charges": 11.26
@@ -27,7 +27,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.27,
-      "stop": 331.91,
+      "stop": 335.02,
       "target": 3808.08,
       "opened": "2026-10-30",
       "buy_charges": 11.75
@@ -43,7 +43,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1999.61,
+      "stop": 2026.53,
       "target": 23788.55,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -59,7 +59,7 @@
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.69,
-      "stop": 1082.49,
+      "stop": 1085.78,
       "target": 15650.02,
       "opened": "2026-11-05",
       "buy_charges": 8.45
@@ -75,7 +75,7 @@
     "MAHABANK": {
       "qty": 103,
       "avg": 96.76,
-      "stop": 85.88,
+      "stop": 87.96,
       "target": 1158.01,
       "opened": "2026-11-19",
       "buy_charges": 11.83
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-20",
-    "start_equity": 101606.24,
+    "date": "2026-11-23",
+    "start_equity": 102700.17,
     "orders": 0,
     "partial": false
   },
@@ -117,6 +117,6 @@
   "ca_pending": {},
   "cash": 22449.62000000002,
   "capital": 100000.0,
-  "peak_equity": 102647.34,
+  "peak_equity": 102700.17,
   "ca_applied": []
 }

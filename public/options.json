@@ -1,6 +1,6 @@
 {
- "time": "2026-11-21T02:16:41+05:30",
- "spot": null,
+ "time": "2026-11-23T09:18:06+05:30",
+ "spot": 25919.3,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -209,10 +209,57 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 87341.08,
+   "equity": 87162.41,
    "realized": -12658.92,
-   "open": null,
-   "mark": null,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-12-01",
+    "opened": "2026-11-23T09:17:53+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 26600,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 56.1
+     },
+     {
+      "kind": "PE",
+      "strike": 25250,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 55.95
+     },
+     {
+      "kind": "CE",
+      "strike": 26800,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 33.55
+     },
+     {
+      "kind": "PE",
+      "strike": 25050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 36.3
+     }
+    ],
+    "credit": 2743.0,
+    "entry_charges": 110.42,
+    "max_loss": 10257.0,
+    "note": "1 SD short strikes, spot 25919, ATM IV 16.6%; rules only"
+   },
+   "mark": {
+    "close_value": 2811.25,
+    "pnl": -178.67,
+    "prices": [
+     56.5,
+     56.35,
+     33.5,
+     36.1
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -1218,6 +1265,13 @@
    "main": "91684.69",
    "control": "87341.08",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-23T09:18:06+05:30",
+   "spot": "25919.3",
+   "main": "91684.69",
+   "control": "87162.41",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -1318,6 +1372,13 @@
    "lotto_direction": "none",
    "note": "Nifty 25,442 early on 20 Nov (Yahoo), 25,144-25,514 since 11 Nov, +0.6% over 5 sessions: still range-bound, inside a weekly 1 SD (~2.3%) at India VIX 16.3 (20 Nov, Yahoo). US stocks fell ~1.8% on 19 Nov on rate-hike talk (US desk eod). No RBI or budget event before the 1 Dec expiry. Trade; no lotto direction. Both condor accounts already hold positions.",
    "time": "2026-11-20T09:17:56+05:30"
+  },
+  {
+   "date": "2026-11-23",
+   "action": "skip",
+   "lotto_direction": "none",
+   "note": "Trend resumed: Nifty 25,882 early on 23 Nov (Yahoo), +2.9% since the 13 Nov close of 25,144 and +1.4% on 20 Nov alone, breaking out of the 25,144-25,514 range; India VIX up to 18.6 (23 Nov, Yahoo; 79th percentile on 20 Nov). Both 1 Dec condors were stopped on 20 Nov by this breakout. US stocks -10% in three weeks (US desk). Skip: no new condor for the With LLM account and no lotto today.",
+   "time": "2026-11-23T09:17:50+05:30"
   }
  ]
 }

@@ -3,7 +3,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 4093.04,
+      "stop": 4110.03,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -11,7 +11,7 @@
     "ADANIPORTS": {
       "qty": 5,
       "avg": 1903.53,
-      "stop": 1755.05,
+      "stop": 1759.09,
       "target": 22795.29,
       "opened": "2026-10-30",
       "buy_charges": 11.3
@@ -35,7 +35,7 @@
     "FEDERALBNK": {
       "qty": 29,
       "avg": 341.49,
-      "stop": 331.86,
+      "stop": 335.07,
       "target": 3913.3,
       "opened": "2026-10-30",
       "buy_charges": 11.76
@@ -59,7 +59,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 1997.71,
+      "stop": 2025.83,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -75,7 +75,7 @@
     "RADICO": {
       "qty": 2,
       "avg": 4518.26,
-      "stop": 4095.99,
+      "stop": 4159.0,
       "target": 58856.21,
       "opened": "2026-11-19",
       "buy_charges": 10.73
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-20",
-    "start_equity": 101769.03,
+    "date": "2026-11-23",
+    "start_equity": 102637.93,
     "orders": 0,
     "partial": false
   },
@@ -113,6 +113,6 @@
   "ca_pending": {},
   "cash": 20470.330000000013,
   "capital": 100000.0,
-  "peak_equity": 102559.14,
+  "peak_equity": 102637.93,
   "ca_applied": []
 }
