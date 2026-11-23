@@ -1,0 +1,12 @@
+{
+  "symbol": "KO",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 1. EU Commission opened an antitrust probe into bottler Coca-Cola Europacific Partners (Yahoo, 23 Nov): a separate listed company, not a KO red flag, but a risk to watch; confidence lowered. Bear case: bottler probe spreads, bond-yield sensitivity. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T09:52:19-05:00"
+}

@@ -1,6 +1,6 @@
 {
- "time": "2026-11-23T15:07:26+05:30",
- "spot": 25368.3,
+ "time": "2026-11-23T20:22:54+05:30",
+ "spot": 25349.65,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -209,7 +209,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 84815.91,
+   "equity": 89973.66,
    "realized": -12658.92,
    "open": {
     "name": "iron condor",
@@ -250,16 +250,7 @@
     "max_loss": 10257.0,
     "note": "1 SD short strikes, spot 25919, ATM IV 16.6%; rules only"
    },
-   "mark": {
-    "close_value": 5157.75,
-    "pnl": -2525.17,
-    "prices": [
-     15.35,
-     192.75,
-     10.15,
-     118.6
-    ]
-   },
+   "mark": null,
    "closed": [
     {
      "name": "iron condor",
@@ -1285,6 +1276,13 @@
    "spot": "25368.3",
    "main": "91684.69",
    "control": "84815.91",
+   "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-23T20:22:54+05:30",
+   "spot": "25349.65",
+   "main": "91684.69",
+   "control": "89973.66",
    "lotto": "9634.6"
   }
  ],

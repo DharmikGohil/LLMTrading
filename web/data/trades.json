@@ -288,6 +288,42 @@
   "id": "US:main:23"
  },
  {
+  "time": "2026-11-23T09:52:40-05:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "UNP",
+  "side": "SELL",
+  "qty": 3,
+  "price": 290.09,
+  "status": "COMPLETE",
+  "reason": "momentum Sell; Sell: trim 3 -> 0",
+  "id": "US:main:24"
+ },
+ {
+  "time": "2026-11-23T09:52:40-05:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "TMO",
+  "side": "SELL",
+  "qty": 1,
+  "price": 688.3,
+  "status": "COMPLETE",
+  "reason": "momentum Sell; Sell: trim 1 -> 0",
+  "id": "US:main:25"
+ },
+ {
+  "time": "2026-11-23T09:52:40-05:00",
+  "market": "US",
+  "book": "main",
+  "symbol": "JNJ",
+  "side": "BUY",
+  "qty": 1,
+  "price": 271.31,
+  "status": "COMPLETE",
+  "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",
+  "id": "US:main:26"
+ },
+ {
   "time": "2026-10-28T14:14:08-04:00",
   "market": "US",
   "book": "factor",
@@ -297,7 +333,7 @@
   "price": 1289.69,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 1) stop 1216.33 tp 1470.84",
-  "id": "US:factor:24"
+  "id": "US:factor:27"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -309,7 +345,7 @@
   "price": 345.21,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 5 (alloc 5, risk-sized 7) stop 332.33 tp 376.83",
-  "id": "US:factor:25"
+  "id": "US:factor:28"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -321,7 +357,7 @@
   "price": 271.44,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 7 (alloc 7, risk-sized 7) stop 258.61 tp 303.04",
-  "id": "US:factor:26"
+  "id": "US:factor:29"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -333,7 +369,7 @@
   "price": 109.98,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 16 (alloc 18, risk-sized 16) stop 104.01 tp 124.74",
-  "id": "US:factor:27"
+  "id": "US:factor:30"
  },
  {
   "time": "2026-10-28T14:14:08-04:00",
@@ -345,7 +381,7 @@
   "price": 99.75,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 20 (alloc 20, risk-sized 23) stop 95.42 tp 110.4",
-  "id": "US:factor:28"
+  "id": "US:factor:31"
  },
  {
   "time": "2026-10-29T09:56:11-04:00",
@@ -357,7 +393,7 @@
   "price": 708.11,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 626.76",
-  "id": "US:factor:29"
+  "id": "US:factor:32"
  },
  {
   "time": "2026-10-29T09:56:11-04:00",
@@ -369,7 +405,7 @@
   "price": 292.14,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 266.91",
-  "id": "US:factor:30"
+  "id": "US:factor:33"
  },
  {
   "time": "2026-10-30T09:53:12-04:00",
@@ -381,7 +417,7 @@
   "price": 94.56,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 86.95",
-  "id": "US:factor:31"
+  "id": "US:factor:34"
  },
  {
   "time": "2026-10-30T15:47:27-04:00",
@@ -393,7 +429,7 @@
   "price": 103.43,
   "status": "COMPLETE",
   "reason": "stop-loss hit (103.48 <= 104.01)",
-  "id": "US:factor:32"
+  "id": "US:factor:35"
  },
  {
   "time": "2026-11-02T10:54:05-05:00",
@@ -405,7 +441,7 @@
   "price": 679.39,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 1 (alloc 1, risk-sized 2) stop 604.3",
-  "id": "US:factor:33"
+  "id": "US:factor:36"
  },
  {
   "time": "2026-11-02T10:54:05-05:00",
@@ -417,7 +453,7 @@
   "price": 462.45,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 2 (alloc 2, risk-sized 4) stop 416.29",
-  "id": "US:factor:34"
+  "id": "US:factor:37"
  },
  {
   "time": "2026-11-02T10:54:05-05:00",
@@ -429,7 +465,7 @@
   "price": 148.28,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 6 (alloc 6, risk-sized 10) stop 129.8",
-  "id": "US:factor:35"
+  "id": "US:factor:38"
  },
  {
   "time": "2026-11-03T15:47:13-05:00",
@@ -441,7 +477,7 @@
   "price": 330.8,
   "status": "COMPLETE",
   "reason": "stop-loss hit (330.97 <= 332.33)",
-  "id": "US:factor:36"
+  "id": "US:factor:39"
  },
  {
   "time": "2026-11-04T09:52:50-05:00",
@@ -453,7 +489,7 @@
   "price": 288.15,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 7) stop 261.67",
-  "id": "US:factor:37"
+  "id": "US:factor:40"
  },
  {
   "time": "2026-11-04T09:52:50-05:00",
@@ -465,7 +501,7 @@
   "price": 301.75,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 3 (alloc 3, risk-sized 8) stop 277.47",
-  "id": "US:factor:38"
+  "id": "US:factor:41"
  },
  {
   "time": "2026-11-04T09:52:50-05:00",
@@ -477,7 +513,7 @@
   "price": 94.82,
   "status": "COMPLETE",
   "reason": "momentum: Buy; Buy: add to 10 (alloc 10, risk-sized 26) stop 87.19",
-  "id": "US:factor:39"
+  "id": "US:factor:42"
  },
  {
   "time": "2026-11-19T12:50:40-05:00",
@@ -489,7 +525,7 @@
   "price": 133.55,
   "status": "COMPLETE",
   "reason": "stop-loss hit (133.62 <= 133.88)",
-  "id": "US:factor:40"
+  "id": "US:factor:43"
  },
  {
   "time": "2026-11-20T09:53:43-05:00",
@@ -501,7 +537,7 @@
   "price": 98.33,
   "status": "COMPLETE",
   "reason": "momentum: Sell; Sell: trim 20 -> 0",
-  "id": "US:factor:41"
+  "id": "US:factor:44"
  },
  {
   "time": "2026-11-20T09:53:43-05:00",
@@ -513,7 +549,7 @@
   "price": 270.11,
   "status": "COMPLETE",
   "reason": "momentum: Sell; Sell: trim 7 -> 0",
-  "id": "US:factor:42"
+  "id": "US:factor:45"
  },
  {
   "time": "2026-11-20T09:53:44-05:00",
@@ -525,7 +561,7 @@
   "price": 406.45,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 5) stop 370.09",
-  "id": "US:factor:43"
+  "id": "US:factor:46"
  },
  {
   "time": "2026-11-20T09:53:44-05:00",
@@ -537,7 +573,7 @@
   "price": 168.98,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 8) stop 147.08",
-  "id": "US:factor:44"
+  "id": "US:factor:47"
  },
  {
   "time": "2026-11-20T09:53:44-05:00",
@@ -549,7 +585,7 @@
   "price": 75.41,
   "status": "COMPLETE",
   "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 6 (alloc 12, risk-sized 28) stop 68.52",
-  "id": "US:factor:45"
+  "id": "US:factor:48"
  },
  {
   "time": "2026-11-20T12:51:23-05:00",
@@ -561,7 +597,43 @@
   "price": 609.31,
   "status": "COMPLETE",
   "reason": "stop-loss hit (609.61 <= 613.46)",
-  "id": "US:factor:46"
+  "id": "US:factor:49"
+ },
+ {
+  "time": "2026-11-23T09:52:42-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "TMO",
+  "side": "SELL",
+  "qty": 1,
+  "price": 688.3,
+  "status": "COMPLETE",
+  "reason": "momentum: Sell; Sell: trim 1 -> 0",
+  "id": "US:factor:50"
+ },
+ {
+  "time": "2026-11-23T09:52:43-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "AAPL",
+  "side": "BUY",
+  "qty": 1,
+  "price": 348.25,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 5) stop 315.54",
+  "id": "US:factor:51"
+ },
+ {
+  "time": "2026-11-23T09:52:43-05:00",
+  "market": "US",
+  "book": "factor",
+  "symbol": "JNJ",
+  "side": "BUY",
+  "qty": 1,
+  "price": 271.19,
+  "status": "COMPLETE",
+  "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",
+  "id": "US:factor:52"
  },
  {
   "time": "2026-10-30T11:04:32+05:30",

@@ -1,0 +1,12 @@
+{
+  "symbol": "AAPL",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 6. Above Wall Street targets (Yahoo, 23 Nov); no red flag. Bear case: Michael Burry warns of a delayed selloff (Yahoo, 23 Nov); tech volatility. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T09:52:20-05:00"
+}

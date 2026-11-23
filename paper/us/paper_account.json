@@ -1,17 +1,9 @@
 {
-  "cash": 3803.405621616365,
+  "cash": 5090.640328540804,
   "positions": {
     "KO": {
       "qty": 21,
       "avg": 91.79087524795531
-    },
-    "TMO": {
-      "qty": 1,
-      "avg": 708.1138897705077
-    },
-    "UNP": {
-      "qty": 3,
-      "avg": 301.3856028442383
     },
     "TGT": {
       "qty": 2,
@@ -36,6 +28,10 @@
     "MO": {
       "qty": 6,
       "avg": 75.35765969467163
+    },
+    "JNJ": {
+      "qty": 1,
+      "avg": 271.3055984344482
     }
   },
   "orders": [
@@ -302,8 +298,41 @@
       "price": 609.31,
       "reason": "stop-loss hit (609.61 <= 613.46)",
       "message": "charges $0.02"
+    },
+    {
+      "time": "2026-11-23T09:52:40-05:00",
+      "id": "PAPER-ccfe10409f",
+      "symbol": "UNP",
+      "side": "SELL",
+      "qty": 3,
+      "status": "COMPLETE",
+      "price": 290.09,
+      "reason": "momentum Sell; Sell: trim 3 -> 0",
+      "message": "charges $0.02"
+    },
+    {
+      "time": "2026-11-23T09:52:40-05:00",
+      "id": "PAPER-40f70d0776",
+      "symbol": "TMO",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 688.3,
+      "reason": "momentum Sell; Sell: trim 1 -> 0",
+      "message": "charges $0.02"
+    },
+    {
+      "time": "2026-11-23T09:52:40-05:00",
+      "id": "PAPER-6064a7db35",
+      "symbol": "JNJ",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 271.31,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",
+      "message": "charges $0.00"
     }
   ],
-  "realized_pnl": -401.7434830169668,
-  "charges": 0.21
+  "realized_pnl": -455.4738759613026,
+  "charges": 0.24999999999999997
 }

@@ -8,22 +8,6 @@
       "opened": "2026-10-28",
       "buy_charges": 0.0
     },
-    "TMO": {
-      "qty": 1,
-      "avg": 708.11,
-      "stop": 634.06,
-      "target": 8807.87,
-      "opened": "2026-10-29",
-      "buy_charges": 0.0
-    },
-    "UNP": {
-      "qty": 3,
-      "avg": 301.39,
-      "stop": 281.16,
-      "target": 2711.11,
-      "opened": "2026-10-29",
-      "buy_charges": 0.0
-    },
     "TGT": {
       "qty": 2,
       "avg": 161.57,
@@ -43,7 +27,7 @@
     "ABBV": {
       "qty": 1,
       "avg": 282.06,
-      "stop": 260.75,
+      "stop": 261.62,
       "target": 2982.28,
       "opened": "2026-11-19",
       "buy_charges": 0.0
@@ -51,7 +35,7 @@
     "AMGN": {
       "qty": 1,
       "avg": 441.8,
-      "stop": 395.09,
+      "stop": 400.52,
       "target": 5090.44,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -59,7 +43,7 @@
     "V": {
       "qty": 1,
       "avg": 406.45,
-      "stop": 370.09,
+      "stop": 374.22,
       "target": 4021.81,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -71,18 +55,25 @@
       "target": 754.83,
       "opened": "2026-11-20",
       "buy_charges": 0.0
+    },
+    "JNJ": {
+      "qty": 1,
+      "avg": 271.31,
+      "stop": 244.36,
+      "target": 2952.46,
+      "opened": "2026-11-23",
+      "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-20",
-    "start_equity": 9685.75,
-    "orders": 6,
+    "date": "2026-11-23",
+    "start_equity": 9654.5,
+    "orders": 3,
     "partial": false,
     "dp_charged": [
-      "MET",
-      "JNJ",
-      "DE"
+      "UNP",
+      "TMO"
     ]
   },
   "stopped_out": {
@@ -90,8 +81,8 @@
     "MRK": "2026-11-19",
     "DE": "2026-11-20"
   },
-  "realized_pnl": -401.6499999999999,
-  "cash": 3803.5,
+  "realized_pnl": -455.4,
+  "cash": 5090.719999999999,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
@@ -112,7 +103,10 @@
     "PAPER-fc62b70add",
     "PAPER-1f54e85d68",
     "PAPER-d907c1a8d7",
-    "PAPER-415ace00bf"
+    "PAPER-415ace00bf",
+    "PAPER-ccfe10409f",
+    "PAPER-40f70d0776",
+    "PAPER-6064a7db35"
   ],
   "ca_pending": {},
   "peak_equity": 10162.25

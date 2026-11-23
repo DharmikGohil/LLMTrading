@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag. Bear case: tech volatility after the Nvidia CEO saga. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T09:52:22-05:00"
+}

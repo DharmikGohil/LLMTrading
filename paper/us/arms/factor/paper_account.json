@@ -1,13 +1,9 @@
 {
-  "cash": 3428.2291897735613,
+  "cash": 3497.065345062258,
   "positions": {
     "LLY": {
       "qty": 1,
       "avg": 1289.689566467285
-    },
-    "TMO": {
-      "qty": 1,
-      "avg": 708.1138897705077
     },
     "ABBV": {
       "qty": 3,
@@ -36,6 +32,14 @@
     "MO": {
       "qty": 6,
       "avg": 75.40768774795532
+    },
+    "AAPL": {
+      "qty": 1,
+      "avg": 348.2540265655517
+    },
+    "JNJ": {
+      "qty": 1,
+      "avg": 271.1855127868652
     }
   },
   "orders": [
@@ -291,8 +295,41 @@
       "price": 609.31,
       "reason": "stop-loss hit (609.61 <= 613.46)",
       "message": "charges $0.02"
+    },
+    {
+      "time": "2026-11-23T09:52:42-05:00",
+      "id": "PAPER-52658199f7",
+      "symbol": "TMO",
+      "side": "SELL",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 688.3,
+      "reason": "momentum: Sell; Sell: trim 1 -> 0",
+      "message": "charges $0.02"
+    },
+    {
+      "time": "2026-11-23T09:52:43-05:00",
+      "id": "PAPER-e91a86bc99",
+      "symbol": "AAPL",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 348.25,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 5) stop 315.54",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-23T09:52:43-05:00",
+      "id": "PAPER-d009aafe91",
+      "symbol": "JNJ",
+      "side": "BUY",
+      "qty": 1,
+      "status": "COMPLETE",
+      "price": 271.19,
+      "reason": "momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",
+      "message": "charges $0.00"
     }
   ],
-  "realized_pnl": -299.7512816238391,
-  "charges": 0.23
+  "realized_pnl": -319.5894767532335,
+  "charges": 0.25
 }

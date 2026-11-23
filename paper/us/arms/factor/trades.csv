@@ -22,3 +22,6 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-20T09:53:44-05:00,TGT,BUY,2,169.2,COMPLETE,2,168.98,PAPER-a1078f0c42,"momentum: Buy; bear regime: size x0.5; Buy: add to 2 (alloc 5, risk-sized 8) stop 147.08",charges $0.00
 2026-11-20T09:53:44-05:00,MO,BUY,6,75.55,COMPLETE,6,75.41,PAPER-e43236b00b,"momentum: Buy; bear regime: size x0.5; Buy: add to 6 (alloc 12, risk-sized 28) stop 68.52",charges $0.00
 2026-11-20T12:51:23-05:00,DE,SELL,1,607.78,COMPLETE,1,609.31,PAPER-11a2a2618d,stop-loss hit (609.61 <= 613.46),charges $0.02
+2026-11-23T09:52:42-05:00,TMO,SELL,1,686.57,COMPLETE,1,688.3,PAPER-52658199f7,momentum: Sell; Sell: trim 1 -> 0,charges $0.02
+2026-11-23T09:52:43-05:00,AAPL,BUY,1,349.3,COMPLETE,1,348.25,PAPER-e91a86bc99,"momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 2, risk-sized 5) stop 315.54",charges $0.00
+2026-11-23T09:52:43-05:00,JNJ,BUY,1,271.99,COMPLETE,1,271.19,PAPER-d009aafe91,"momentum: Buy; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",charges $0.00

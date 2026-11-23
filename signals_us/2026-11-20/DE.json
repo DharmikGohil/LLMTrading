@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-20",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 results Wed 25 Nov, 2 trading days away: binary gap risk. Stopped out 20 Nov. Tags: reason=event; attention=no",
+  "confidence": 64.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T09:52:22-05:00"
+}

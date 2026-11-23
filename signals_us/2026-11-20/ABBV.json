@@ -1,0 +1,12 @@
+{
+  "symbol": "ABBV",
+  "as_of": "2026-11-20",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 3. No red flag; +0.8% early. Bear case: Humira erosion. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-23T09:52:20-05:00"
+}

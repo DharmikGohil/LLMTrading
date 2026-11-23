@@ -8,14 +8,6 @@
       "opened": "2026-10-28",
       "buy_charges": 0.0
     },
-    "TMO": {
-      "qty": 1,
-      "avg": 708.11,
-      "stop": 634.06,
-      "target": 8807.87,
-      "opened": "2026-10-29",
-      "buy_charges": 0.0
-    },
     "ABBV": {
       "qty": 3,
       "avg": 289.48,
@@ -51,7 +43,7 @@
     "V": {
       "qty": 1,
       "avg": 406.45,
-      "stop": 370.09,
+      "stop": 374.22,
       "target": 4021.81,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -71,18 +63,32 @@
       "target": 754.83,
       "opened": "2026-11-20",
       "buy_charges": 0.0
+    },
+    "AAPL": {
+      "qty": 1,
+      "avg": 348.25,
+      "stop": 315.54,
+      "target": 3619.03,
+      "opened": "2026-11-23",
+      "buy_charges": 0.0
+    },
+    "JNJ": {
+      "qty": 1,
+      "avg": 271.19,
+      "stop": 244.36,
+      "target": 2952.46,
+      "opened": "2026-11-23",
+      "buy_charges": 0.0
     }
   },
   "pending": [],
   "day": {
-    "date": "2026-11-20",
-    "start_equity": 9690.23,
-    "orders": 6,
+    "date": "2026-11-23",
+    "start_equity": 9683.09,
+    "orders": 3,
     "partial": false,
     "dp_charged": [
-      "MET",
-      "JNJ",
-      "DE"
+      "TMO"
     ]
   },
   "stopped_out": {
@@ -91,8 +97,8 @@
     "MRK": "2026-11-19",
     "DE": "2026-11-20"
   },
-  "realized_pnl": -299.59999999999974,
-  "cash": 3428.379999999999,
+  "realized_pnl": -319.4299999999998,
+  "cash": 3497.219999999999,
   "capital": 10000.0,
   "ca_applied": [],
   "applied_orders": [
@@ -111,7 +117,10 @@
     "PAPER-8dca937b2a",
     "PAPER-a1078f0c42",
     "PAPER-e43236b00b",
-    "PAPER-11a2a2618d"
+    "PAPER-11a2a2618d",
+    "PAPER-52658199f7",
+    "PAPER-e91a86bc99",
+    "PAPER-d009aafe91"
   ],
   "ca_pending": {},
   "peak_equity": 10206.2
