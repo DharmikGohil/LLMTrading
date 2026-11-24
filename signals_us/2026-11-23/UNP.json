@@ -1,0 +1,12 @@
+{
+  "symbol": "UNP",
+  "as_of": "2026-11-23",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Sold by momentum 23 Nov; no news. Hold. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-24T09:52:41-05:00"
+}

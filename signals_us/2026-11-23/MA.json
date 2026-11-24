@@ -1,0 +1,12 @@
+{
+  "symbol": "MA",
+  "as_of": "2026-11-23",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No company red flag; +1.3% early. Bear case: rich valuation, spending slowdown. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-24T09:52:40-05:00"
+}

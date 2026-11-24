@@ -43,7 +43,7 @@
     "V": {
       "qty": 1,
       "avg": 406.45,
-      "stop": 374.22,
+      "stop": 378.07,
       "target": 4021.81,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "TGT": {
       "qty": 2,
       "avg": 168.98,
-      "stop": 147.08,
+      "stop": 151.82,
       "target": 2329.15,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -67,7 +67,7 @@
     "AAPL": {
       "qty": 1,
       "avg": 348.25,
-      "stop": 315.54,
+      "stop": 319.65,
       "target": 3619.03,
       "opened": "2026-11-23",
       "buy_charges": 0.0
@@ -75,7 +75,7 @@
     "JNJ": {
       "qty": 1,
       "avg": 271.19,
-      "stop": 244.36,
+      "stop": 246.75,
       "target": 2952.46,
       "opened": "2026-11-23",
       "buy_charges": 0.0
@@ -83,13 +83,10 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-23",
-    "start_equity": 9683.09,
-    "orders": 3,
-    "partial": false,
-    "dp_charged": [
-      "TMO"
-    ]
+    "date": "2026-11-24",
+    "start_equity": 9802.91,
+    "orders": 0,
+    "partial": false
   },
   "stopped_out": {
     "CSCO": "2026-10-30",

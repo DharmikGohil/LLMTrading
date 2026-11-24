@@ -26,3 +26,4 @@ time,symbol,side,qty,limit,status,fill_qty,fill_price,order_id,reason,message
 2026-11-23T09:52:40-05:00,UNP,SELL,3,289.36,COMPLETE,3,290.09,PAPER-ccfe10409f,momentum Sell; Sell: trim 3 -> 0,charges $0.02
 2026-11-23T09:52:40-05:00,TMO,SELL,1,686.57,COMPLETE,1,688.3,PAPER-40f70d0776,momentum Sell; Sell: trim 1 -> 0,charges $0.02
 2026-11-23T09:52:40-05:00,JNJ,BUY,1,271.99,COMPLETE,1,271.31,PAPER-6064a7db35,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",charges $0.00
+2026-11-24T09:52:59-05:00,MET,BUY,4,100.26,COMPLETE,4,100.01,PAPER-222a6ece03,"momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 4 (alloc 9, risk-sized 18) stop 89.2",charges $0.00

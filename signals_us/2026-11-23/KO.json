@@ -1,0 +1,12 @@
+{
+  "symbol": "KO",
+  "as_of": "2026-11-23",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 3. EU antitrust probe into bottler CCEP (23 Nov): separate company, risk to watch. Bear case: bond-yield sensitivity. Tags: reason=news; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-24T09:52:38-05:00"
+}

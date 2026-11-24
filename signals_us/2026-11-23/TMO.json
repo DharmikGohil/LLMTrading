@@ -1,0 +1,12 @@
+{
+  "symbol": "TMO",
+  "as_of": "2026-11-23",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 8, back in the top 10. No company news. Bear case: soft biotech funding. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-24T09:52:39-05:00"
+}

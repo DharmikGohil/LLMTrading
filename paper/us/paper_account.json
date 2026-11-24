@@ -1,5 +1,5 @@
 {
-  "cash": 5090.640328540804,
+  "cash": 4690.600412204744,
   "positions": {
     "KO": {
       "qty": 21,
@@ -32,6 +32,10 @@
     "JNJ": {
       "qty": 1,
       "avg": 271.3055984344482
+    },
+    "MET": {
+      "qty": 4,
+      "avg": 100.00997908401489
     }
   },
   "orders": [
@@ -330,6 +334,17 @@
       "status": "COMPLETE",
       "price": 271.31,
       "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 1 (alloc 3, risk-sized 7) stop 244.36",
+      "message": "charges $0.00"
+    },
+    {
+      "time": "2026-11-24T09:52:59-05:00",
+      "id": "PAPER-222a6ece03",
+      "symbol": "MET",
+      "side": "BUY",
+      "qty": 4,
+      "status": "COMPLETE",
+      "price": 100.01,
+      "reason": "momentum Buy; LLM: claude-analyst Overweight (55%) does not object; bear regime: size x0.5; Buy: add to 4 (alloc 9, risk-sized 18) stop 89.2",
       "message": "charges $0.00"
     }
   ],
