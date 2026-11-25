@@ -29,7 +29,7 @@ Vetoes/shrinks by reason type: news 1, filing 3, event 1, chart 0, sentiment 0, 
 | TVSMOTOR | recent pick | Overweight | 53 | Senior exit to watch |
 
 Change since 20 Nov: MOTHERSON from Overweight 57 to Underweight 60 (board meeting at short notice within 3 trading
-days; the With LLM account holds it, and a rating never forces a sale). TORNTPHARM new.
+days; neither account holds it, so the veto only blocks a new buy). TORNTPHARM new.
 
 ## Sources
 - https://nsearchives.nseindia.in/corporate/MOTHERSON_24112026175832_Disclosure_TWC.pdf
