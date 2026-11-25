@@ -1,6 +1,6 @@
 {
- "time": "2026-11-25T20:46:27+00:00",
- "btc": 59988.88,
+ "time": "2026-11-25T23:36:23+00:00",
+ "btc": 60277.6,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8033.9,
+   "value": 8072.56,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -19.66,
+   "return_pct": -19.27,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 59988.88,
-     "value": 8033.8,
-     "pnl": -1956.11,
-     "pnl_pct": -19.58,
-     "day_pct": 0.602,
+     "last": 60277.6,
+     "value": 8072.46,
+     "pnl": -1917.45,
+     "pnl_pct": -19.19,
+     "day_pct": 0.721,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -642,6 +642,13 @@
    "exclude": [],
    "note": "Reason: none. Fear & Greed 11, extreme fear (alternative.me, 25 Nov): a mood, not a gate row. BTC -2.7%, ETH -2.2% in 24h: no stress. No FOMC/CPI in the next 24h; US Thanksgiving 26 Nov. No coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
    "time": "2026-11-24T23:36:20+00:00"
+  },
+  {
+   "date": "2026-11-25",
+   "max_exposure": 1.0,
+   "exclude": [],
+   "note": "Reason: none. Fear & Greed 13, extreme fear (alternative.me, 26 Nov): a mood, not a gate row. BTC +0.7%, ETH +0.7% in 24h: no stress. US markets closed 26 Nov (Thanksgiving); no FOMC/CPI in the next 24h. No coin-specific red flags found. Both coins below their 50-day: the rule holds USDT anyway.",
+   "time": "2026-11-25T23:36:21+00:00"
   }
  ],
  "strategy": {
@@ -858,6 +865,42 @@
    }
   },
   "recent": [
+   {
+    "id": "20261125T2336-ETH-168",
+    "made": "2026-11-25T23:36:18+00:00",
+    "due": "2026-12-02T23:36:18+00:00",
+    "coin": "ETH",
+    "horizon_h": "168",
+    "spot": "1691.71",
+    "p_up": "0.49",
+    "lo": "1425.0",
+    "hi": "1980.0",
+    "note": "Near baseline. +0.7% in 24h, -4.9% week, RSI 29, F&G 13, funding normal. Range ~40% wider than baseline. Bull case: squeeze toward 1,950. Bear case: below 1,450.",
+    "base_lo": "1504.863318",
+    "base_hi": "1901.75592",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261125T2336-BTC-168",
+    "made": "2026-11-25T23:36:15+00:00",
+    "due": "2026-12-02T23:36:15+00:00",
+    "coin": "BTC",
+    "horizon_h": "168",
+    "spot": "60272.0",
+    "p_up": "0.49",
+    "lo": "53200.0",
+    "hi": "67350.0",
+    "note": "Near baseline. 60.2k, +0.7% in 24h, -4.5% week, RSI 26, F&G 13 extreme fear, funding normal, below both averages. US Thanksgiving 26 Nov, half-day 27 Nov; tariff talk and AI selloff (Yahoo, 25 Nov). 7-day coverage 44% (8 of 18), still low: range ~40% wider than baseline. No lean. Bull case: rebound with year-end flows toward 66k. Bear case: risk-off continues toward 54k.",
+    "base_lo": "55435.45018",
+    "base_hi": "65530.521936",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
    {
     "id": "20261125T1736-ETH-24",
     "made": "2026-11-25T17:36:43+00:00",
@@ -1541,42 +1584,6 @@
     "up": "0",
     "brier": "0.2401",
     "inside": "0"
-   },
-   {
-    "id": "20261119T0735-ETH-24",
-    "made": "2026-11-19T07:35:42+00:00",
-    "due": "2026-11-20T07:35:42+00:00",
-    "coin": "ETH",
-    "horizon_h": "24",
-    "spot": "1803.07",
-    "p_up": "0.49",
-    "lo": "1702.0",
-    "hi": "1904.0",
-    "note": "Near baseline. -0.5% in 24h, -10.7% week, RSI 27, F&G 10, funding negative (shorts paying). Range ~40% wider than baseline. Bull case: short squeeze. Bear case: new low under 1,720.",
-    "base_lo": "1732.476485",
-    "base_hi": "1876.540001",
-    "px": "1739.31",
-    "up": "0",
-    "brier": "0.2401",
-    "inside": "1"
-   },
-   {
-    "id": "20261119T0735-BTC-24",
-    "made": "2026-11-19T07:35:39+00:00",
-    "due": "2026-11-20T07:35:39+00:00",
-    "coin": "BTC",
-    "horizon_h": "24",
-    "spot": "63608.58",
-    "p_up": "0.49",
-    "lo": "60950.0",
-    "hi": "66250.0",
-    "note": "Near baseline. -1.6% in 24h, -11% week, RSI 24, F&G 10 extreme fear, funding near zero, below both averages. No scheduled US macro decision in the next 24h (FOMC minutes and Nvidia results out 18 Nov, Yahoo). Coverage 68%: range ~40% wider than baseline. No lean. Bull case: relief bounce toward 66k. Bear case: new low near 61k.",
-    "base_lo": "61747.60791",
-    "base_hi": "65525.63875",
-    "px": "61540.8",
-    "up": "0",
-    "brier": "0.2401",
-    "inside": "1"
    }
   ],
   "lessons": [
@@ -1777,7 +1784,7 @@
     "last_checked": "2026-11-25"
    }
   ],
-  "open": 18,
+  "open": 20,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1812,8 +1819,8 @@
      "w": 1.0
     },
     "mirror": {
-     "probes": 8,
-     "mean_abs_error": 0.0003
+     "probes": 10,
+     "mean_abs_error": 0.0002
     },
     "calls": 56,
     "mean_ev_r": -0.177,
