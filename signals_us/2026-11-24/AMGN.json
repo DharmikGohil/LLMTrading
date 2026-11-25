@@ -1,0 +1,12 @@
+{
+  "symbol": "AMGN",
+  "as_of": "2026-11-24",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 8. MariTide Phase 3 (19 Nov); no red flag. Bear case: pipeline timing, pricing politics. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T09:53:01-05:00"
+}

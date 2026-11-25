@@ -1,0 +1,12 @@
+{
+  "symbol": "TGT",
+  "as_of": "2026-11-24",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 4. Beat and raised Q3 (18 Nov); -2.6% early with the market. Bear case: holiday spending soft, tariff headlines. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T09:53:00-05:00"
+}

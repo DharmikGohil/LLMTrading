@@ -59,7 +59,7 @@
     "MO": {
       "qty": 6,
       "avg": 75.41,
-      "stop": 68.52,
+      "stop": 68.93,
       "target": 754.83,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -75,7 +75,7 @@
     "JNJ": {
       "qty": 1,
       "avg": 271.19,
-      "stop": 246.75,
+      "stop": 247.62,
       "target": 2952.46,
       "opened": "2026-11-23",
       "buy_charges": 0.0
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-24",
-    "start_equity": 9802.91,
+    "date": "2026-11-25",
+    "start_equity": 9798.85,
     "orders": 0,
     "partial": false
   },

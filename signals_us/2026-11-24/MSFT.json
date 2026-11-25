@@ -1,0 +1,12 @@
+{
+  "symbol": "MSFT",
+  "as_of": "2026-11-24",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No company red flag. Market: potential new US tariffs and a renewed AI selloff weigh on futures (Yahoo, 25 Nov); context only. Bear case: AI selloff. Tags: reason=news; attention=no",
+  "confidence": 53.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T09:53:03-05:00"
+}

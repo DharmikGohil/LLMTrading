@@ -1,0 +1,12 @@
+{
+  "symbol": "ABBV",
+  "as_of": "2026-11-24",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Rank 1. No red flag; pharma seen as shelter from the AI selloff (Yahoo, 25 Nov). Market: potential new US tariffs and a renewed AI selloff weigh on futures (Yahoo, 25 Nov); context only. Bear case: Humira erosion, pricing politics. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T09:52:59-05:00"
+}

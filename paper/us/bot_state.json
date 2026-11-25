@@ -27,7 +27,7 @@
     "ABBV": {
       "qty": 1,
       "avg": 282.06,
-      "stop": 267.79,
+      "stop": 269.86,
       "target": 2982.28,
       "opened": "2026-11-19",
       "buy_charges": 0.0
@@ -35,7 +35,7 @@
     "AMGN": {
       "qty": 1,
       "avg": 441.8,
-      "stop": 414.77,
+      "stop": 414.82,
       "target": 5090.44,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -51,7 +51,7 @@
     "MO": {
       "qty": 6,
       "avg": 75.36,
-      "stop": 68.52,
+      "stop": 68.93,
       "target": 754.83,
       "opened": "2026-11-20",
       "buy_charges": 0.0
@@ -59,7 +59,7 @@
     "JNJ": {
       "qty": 1,
       "avg": 271.31,
-      "stop": 246.75,
+      "stop": 247.62,
       "target": 2952.46,
       "opened": "2026-11-23",
       "buy_charges": 0.0
@@ -75,9 +75,9 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-24",
-    "start_equity": 9718.41,
-    "orders": 1,
+    "date": "2026-11-25",
+    "start_equity": 9734.17,
+    "orders": 0,
     "partial": false
   },
   "stopped_out": {

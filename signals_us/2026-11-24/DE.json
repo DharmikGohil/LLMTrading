@@ -1,0 +1,12 @@
+{
+  "symbol": "DE",
+  "as_of": "2026-11-24",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Fiscal Q4 earnings unexpectedly declined and the full-year profit outlook was weak (Yahoo/Dow Jones, 25 Nov); shares -3.8% premarket. Earnings miss plus guidance cut: red flag. Tags: reason=news; attention=yes",
+  "confidence": 65.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T09:53:02-05:00"
+}
