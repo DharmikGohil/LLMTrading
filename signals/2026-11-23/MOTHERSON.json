@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-23",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Board meeting called at short notice for Thu 26 Nov, purpose not disclosed; trading window closed 24-28 Nov (NSE filing, 24 Nov): a major board meeting within 3 trading days, binary event risk. Tags: reason=event; attention=no",
+  "confidence": 60.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-25T07:43:29+05:30"
+}
