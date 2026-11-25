@@ -1,6 +1,6 @@
 {
- "time": "2026-11-24T23:36:21+00:00",
- "btc": 59846.01,
+ "time": "2026-11-25T00:06:52+00:00",
+ "btc": 59756.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8014.77,
+   "value": 8002.71,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -19.85,
+   "return_pct": -19.97,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 59846.01,
-     "value": 8014.67,
-     "pnl": -1975.24,
-     "pnl_pct": -19.77,
-     "day_pct": -2.599,
+     "last": 59756.01,
+     "value": 8002.61,
+     "pnl": -1987.3,
+     "pnl_pct": -19.89,
+     "day_pct": -2.393,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -493,6 +493,13 @@
    "main": "10000.0",
    "control": "10000.0",
    "hold": "8080.34"
+  },
+  {
+   "time": "2026-11-25T00:06:49+00:00",
+   "btc": "59760.0",
+   "main": "10000.0",
+   "control": "10000.0",
+   "hold": "8003.25"
   }
  ],
  "trades": [
@@ -729,22 +736,22 @@
     ]
    },
    "168h": {
-    "n": 16,
-    "brier_llm": 0.231,
+    "n": 18,
+    "brier_llm": 0.2321,
     "brier_base": 0.25,
-    "skill_pct": 7.6,
-    "t": 8.1,
-    "coverage_llm_pct": 37.5,
-    "coverage_base_pct": 37.5,
-    "pinball_llm": 5.209,
-    "pinball_base": 5.428,
+    "skill_pct": 7.2,
+    "t": 6.45,
+    "coverage_llm_pct": 44.4,
+    "coverage_base_pct": 38.9,
+    "pinball_llm": 4.918,
+    "pinball_base": 5.05,
     "hit_rate_pct": 100.0,
     "verdict": "too few calls to tell",
     "calibration": [
      {
       "range": "(0.45, 0.55]",
-      "n": 16,
-      "said_pct": 48.1,
+      "n": 18,
+      "said_pct": 48.2,
       "happened_pct": 0.0
      }
     ],
@@ -758,16 +765,16 @@
      },
      {
       "tag": "below_200d",
-      "n": 13,
-      "skill_pct": 7.2,
-      "t": 7.35,
+      "n": 15,
+      "skill_pct": 6.8,
+      "t": 6.13,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "below_50d",
-      "n": 16,
-      "skill_pct": 7.6,
-      "t": 8.1,
+      "n": 18,
+      "skill_pct": 7.2,
+      "t": 6.45,
       "verdict": "too few calls to tell"
      },
      {
@@ -779,9 +786,9 @@
      },
      {
       "tag": "fg_extreme_fear",
-      "n": 8,
-      "skill_pct": 5.9,
-      "t": 11.31,
+      "n": 10,
+      "skill_pct": 5.5,
+      "t": 9.63,
       "verdict": "too few calls to tell"
      },
      {
@@ -793,16 +800,16 @@
      },
      {
       "tag": "funding_negative",
-      "n": 4,
-      "skill_pct": 5.9,
-      "t": 8.6,
+      "n": 5,
+      "skill_pct": 5.5,
+      "t": 7.63,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "funding_normal",
-      "n": 12,
-      "skill_pct": 8.1,
-      "t": 9.57,
+      "n": 13,
+      "skill_pct": 7.8,
+      "t": 7.58,
       "verdict": "too few calls to tell"
      },
      {
@@ -814,16 +821,16 @@
      },
      {
       "tag": "rsi_oversold",
-      "n": 12,
-      "skill_pct": 6.9,
-      "t": 8.55,
+      "n": 14,
+      "skill_pct": 6.4,
+      "t": 7.04,
       "verdict": "too few calls to tell"
      },
      {
       "tag": "vol_normal",
-      "n": 16,
-      "skill_pct": 7.6,
-      "t": 8.1,
+      "n": 18,
+      "skill_pct": 7.2,
+      "t": 6.45,
       "verdict": "too few calls to tell"
      }
     ]
@@ -1563,13 +1570,13 @@
     "source": "Common contrarian belief; untested here. Evidence on sentiment indices is mixed.",
     "first_seen": "2026-11-09",
     "evidence": {
-     "n": 8,
+     "n": 10,
      "n_other": 8,
      "up_pct": 0.0,
      "other_up_pct": 0.0,
      "t": 0.0
     },
-    "last_checked": "2026-11-24",
+    "last_checked": "2026-11-25",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -1603,12 +1610,12 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 16,
+     "n_other": 18,
      "up_pct": null,
      "other_up_pct": 0.0,
      "t": null
     },
-    "last_checked": "2026-11-24",
+    "last_checked": "2026-11-25",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -1642,12 +1649,12 @@
     "first_seen": "2026-11-09",
     "evidence": {
      "n": 0,
-     "n_other": 56,
+     "n_other": 58,
      "up_pct": null,
-     "other_up_pct": 30.4,
+     "other_up_pct": 29.3,
      "t": null
     },
-    "last_checked": "2026-11-24",
+    "last_checked": "2026-11-25",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -1680,13 +1687,13 @@
     "source": "Time-series momentum (Moskowitz, Ooi and Pedersen 2012; Liu and Tsyvinski 2021 for crypto); our 2020-26 backtest (docs/crypto-desk.md).",
     "first_seen": "2026-11-09",
     "evidence": {
-     "n": 16,
+     "n": 18,
      "n_other": 0,
      "up_pct": 0.0,
      "other_up_pct": null,
      "t": null
     },
-    "last_checked": "2026-11-24",
+    "last_checked": "2026-11-25",
     "evidence_history": {
      "label": "history, outcomes already seen; does not change the status",
      "source": "research/results/H8a.json (scripts/study_crypto_sentiment.py --exploratory)",
@@ -1726,7 +1733,7 @@
      "t": null,
      "verdict": "no scored calls yet"
     },
-    "last_checked": "2026-11-24"
+    "last_checked": "2026-11-25"
    },
    {
     "id": "chasing-big-moves",
@@ -1746,10 +1753,10 @@
      "t": -1.28,
      "verdict": "too few calls to tell"
     },
-    "last_checked": "2026-11-24"
+    "last_checked": "2026-11-25"
    }
   ],
-  "open": 20,
+  "open": 18,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
