@@ -59,7 +59,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 2025.83,
+      "stop": 2030.99,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -75,7 +75,7 @@
     "RADICO": {
       "qty": 2,
       "avg": 4518.26,
-      "stop": 4159.0,
+      "stop": 4167.12,
       "target": 58856.21,
       "opened": "2026-11-19",
       "buy_charges": 10.73
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-23",
-    "start_equity": 102637.93,
+    "date": "2026-11-25",
+    "start_equity": 102455.23,
     "orders": 0,
     "partial": false
   },

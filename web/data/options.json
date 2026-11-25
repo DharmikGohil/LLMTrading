@@ -1,6 +1,6 @@
 {
- "time": "2026-11-25T02:16:45+05:30",
- "spot": 25349.65,
+ "time": "2026-11-25T09:18:00+05:30",
+ "spot": 25720.35,
  "books": {
   "main": {
    "capital": 100000.0,
@@ -209,7 +209,7 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 89973.66,
+   "equity": 87493.91,
    "realized": -12658.92,
    "open": {
     "name": "iron condor",
@@ -250,7 +250,16 @@
     "max_loss": 10257.0,
     "note": "1 SD short strikes, spot 25919, ATM IV 16.6%; rules only"
    },
-   "mark": null,
+   "mark": {
+    "close_value": 2479.75,
+    "pnl": 152.83,
+    "prices": [
+     21.85,
+     71.0,
+     13.0,
+     41.7
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -1319,6 +1328,13 @@
    "main": "91684.69",
    "control": "89973.66",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-25T09:18:00+05:30",
+   "spot": "25720.35",
+   "main": "91684.69",
+   "control": "87493.91",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -1426,6 +1442,13 @@
    "lotto_direction": "none",
    "note": "Trend resumed: Nifty 25,882 early on 23 Nov (Yahoo), +2.9% since the 13 Nov close of 25,144 and +1.4% on 20 Nov alone, breaking out of the 25,144-25,514 range; India VIX up to 18.6 (23 Nov, Yahoo; 79th percentile on 20 Nov). Both 1 Dec condors were stopped on 20 Nov by this breakout. US stocks -10% in three weeks (US desk). Skip: no new condor for the With LLM account and no lotto today.",
    "time": "2026-11-23T09:17:50+05:30"
+  },
+  {
+   "date": "2026-11-25",
+   "action": "skip",
+   "lotto_direction": "none",
+   "note": "Whipsaw regime: Nifty 25,742 early on 25 Nov (Yahoo) after 25,801 (20 Nov), 25,350 (23 Nov, -1.7%) and now +1.5%: daily swings of 1.5-2% in both directions, near a weekly 1 SD at India VIX 16.6 (25 Nov, Yahoo; 81st percentile on 23 Nov). Both 1 Dec condors were stopped on 20 Nov; the rules-only condor opened 23 Nov swung to -Rs 2,535 intraday. US Thanksgiving 26 Nov thins global liquidity. Skip: no new condor for the With LLM account and no lotto today.",
+   "time": "2026-11-25T09:17:46+05:30"
   }
  ]
 }
