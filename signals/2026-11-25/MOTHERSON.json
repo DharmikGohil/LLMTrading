@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-25",
+  "rating": "Underweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Board meeting today, Thu 26 Nov, called at short notice, purpose undisclosed; investor call scheduled 30 Nov (NSE filings, 24-25 Nov): an event is likely. Binary risk today. Tags: reason=event; attention=no",
+  "confidence": 62.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-26T07:43:43+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "TORNTPHARM",
+  "as_of": "2026-11-25",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Routine filings; no red flag. Bear case: US pricing pressure. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-26T07:43:44+05:30"
+}

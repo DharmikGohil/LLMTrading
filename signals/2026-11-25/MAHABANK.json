@@ -1,0 +1,12 @@
+{
+  "symbol": "MAHABANK",
+  "as_of": "2026-11-25",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "No red flag; RSI 72. Bear case: crowded PSU-bank rally. Tags: reason=none; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-26T07:43:45+05:30"
+}

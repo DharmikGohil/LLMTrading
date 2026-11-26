@@ -1,0 +1,12 @@
+{
+  "symbol": "FEDERALBNK",
+  "as_of": "2026-11-25",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "ESOP allotment (25 Nov), routine; no red flag. Bear case: margin pressure. Tags: reason=none; attention=no",
+  "confidence": 56.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-26T07:43:43+05:30"
+}
