@@ -3,7 +3,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.72,
-      "stop": 4112.33,
+      "stop": 4122.49,
       "target": 52828.2,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -51,7 +51,7 @@
     "AUROPHARMA": {
       "qty": 5,
       "avg": 1776.16,
-      "stop": 1669.38,
+      "stop": 1678.37,
       "target": 19720.17,
       "opened": "2026-11-05",
       "buy_charges": 10.54
@@ -59,7 +59,7 @@
     "ZYDUSLIFE": {
       "qty": 6,
       "avg": 1186.69,
-      "stop": 1096.51,
+      "stop": 1123.25,
       "target": 15650.02,
       "opened": "2026-11-05",
       "buy_charges": 8.45
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-25",
-    "start_equity": 102454.95,
+    "date": "2026-11-26",
+    "start_equity": 103186.29,
     "orders": 0,
     "partial": false
   },
@@ -117,6 +117,6 @@
   "ca_pending": {},
   "cash": 22449.62000000002,
   "capital": 100000.0,
-  "peak_equity": 102700.17,
+  "peak_equity": 103186.29,
   "ca_applied": []
 }
