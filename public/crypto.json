@@ -1,6 +1,6 @@
 {
- "time": "2026-11-26T15:46:31+00:00",
- "btc": 60436.16,
+ "time": "2026-11-26T17:36:56+00:00",
+ "btc": 60520.01,
  "books": {
   "main": {
    "capital": 10000.0,
@@ -24,22 +24,22 @@
   },
   "hold": {
    "capital": 10000.0,
-   "value": 8093.8,
+   "value": 8105.03,
    "cash": 0.1,
    "realized": 0.0,
    "fees": 9.99,
-   "return_pct": -19.06,
+   "return_pct": -18.95,
    "last_rebalance": "2026-11-09T14:07:39+00:00",
    "positions": [
     {
      "coin": "BTC",
      "qty": 0.13392146103543462,
      "avg": 74595.28900499998,
-     "last": 60436.16,
-     "value": 8093.7,
-     "pnl": -1896.21,
-     "pnl_pct": -18.98,
-     "day_pct": 4.056,
+     "last": 60520.01,
+     "value": 8104.93,
+     "pnl": -1884.98,
+     "pnl_pct": -18.87,
+     "day_pct": 1.613,
      "opened": "2026-11-09T14:07:39+00:00"
     }
    ]
@@ -887,6 +887,42 @@
   },
   "recent": [
    {
+    "id": "20261126T1736-ETH-24",
+    "made": "2026-11-26T17:36:43+00:00",
+    "due": "2026-11-27T17:36:43+00:00",
+    "coin": "ETH",
+    "horizon_h": "24",
+    "spot": "1693.4",
+    "p_up": "0.49",
+    "lo": "1581.0",
+    "hi": "1806.0",
+    "note": "Near baseline. +1.5% in 24h, RSI 29, F&G 11, funding normal. Holiday-thin. Range ~50% wider than baseline. Bull case: squeeze. Bear case: below 1,600.",
+    "base_lo": "1619.855314",
+    "base_hi": "1770.283762",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
+    "id": "20261126T1736-BTC-24",
+    "made": "2026-11-26T17:36:40+00:00",
+    "due": "2026-11-27T17:36:40+00:00",
+    "coin": "BTC",
+    "horizon_h": "24",
+    "spot": "60540.74",
+    "p_up": "0.49",
+    "lo": "57650.0",
+    "hi": "63400.0",
+    "note": "Near baseline. 60.5k, +1.8% in 24h, -2.4% week, RSI 27.5, F&G 11 extreme fear, funding normal, below both averages. US half-day 27 Nov; thin liquidity. Coverage 77%: range ~50% wider than baseline. No lean. Bull case: squeeze toward 63k. Bear case: back to 58k.",
+    "base_lo": "58640.484967",
+    "base_hi": "62502.573126",
+    "px": null,
+    "up": null,
+    "brier": null,
+    "inside": null
+   },
+   {
     "id": "20261126T0736-ETH-24",
     "made": "2026-11-26T07:36:19+00:00",
     "due": "2026-11-27T07:36:19+00:00",
@@ -1569,42 +1605,6 @@
     "up": "0",
     "brier": "0.2401",
     "inside": "0"
-   },
-   {
-    "id": "20261119T2336-ETH-168",
-    "made": "2026-11-19T23:36:28+00:00",
-    "due": "2026-11-26T23:36:28+00:00",
-    "coin": "ETH",
-    "horizon_h": "168",
-    "spot": "1748.97",
-    "p_up": "0.49",
-    "lo": "1500.0",
-    "hi": "2015.0",
-    "note": "Near baseline. -1.4% in 24h, -13.4% week, RSI 23, F&G 10, funding negative. Range ~40% wider than baseline. Bull case: short squeeze. Bear case: new lows near 1,500.",
-    "base_lo": "1573.588494",
-    "base_hi": "1943.89834",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
-   },
-   {
-    "id": "20261119T2336-BTC-168",
-    "made": "2026-11-19T23:36:25+00:00",
-    "due": "2026-11-26T23:36:25+00:00",
-    "coin": "BTC",
-    "horizon_h": "168",
-    "spot": "61826.51",
-    "p_up": "0.49",
-    "lo": "55000.0",
-    "hi": "68300.0",
-    "note": "Near baseline. -1.7% in 24h, -13.5% week, RSI 20, F&G 10 extreme fear, funding near zero, below both averages. US stocks fell ~1.8% on 19 Nov on rate-hike talk (US desk eod; Yahoo, 18 Nov). All six graded 7-day calls fell outside their ranges: range ~40% wider than baseline. Fear-rebound hypothesis unproven: no lean. Bull case: capitulation and a relief rally toward 66k. Bear case: breakdown toward 55k.",
-    "base_lo": "57155.269921",
-    "base_hi": "66879.525616",
-    "px": null,
-    "up": null,
-    "brier": null,
-    "inside": null
    }
   ],
   "lessons": [
@@ -1805,7 +1805,7 @@
     "last_checked": "2026-11-26"
    }
   ],
-  "open": 18,
+  "open": 20,
   "brackets": {
    "summary": {
     "qset": "bracket-v1",
@@ -1843,11 +1843,63 @@
      "probes": 10,
      "mean_abs_error": 0.0002
     },
-    "calls": 58,
-    "mean_ev_r": -0.176,
+    "calls": 60,
+    "mean_ev_r": -0.175,
     "verdict": "analyst beats the base rates"
    },
    "recent": [
+    {
+     "id": "20261126T1736-ETH-br",
+     "made": "2026-11-26T17:36:55+00:00",
+     "coin": "ETH",
+     "side": "short",
+     "spot": "1693.13",
+     "d_pct": "3.46",
+     "p_target": "0.13",
+     "p_stop": "0.12",
+     "p_neither": "0.75",
+     "ev_r": "-0.0117",
+     "outcome": null
+    },
+    {
+     "id": "20261126T1736-ETH-br",
+     "made": "2026-11-26T17:36:55+00:00",
+     "coin": "ETH",
+     "side": "long",
+     "spot": "1693.13",
+     "d_pct": "3.46",
+     "p_target": "0.07",
+     "p_stop": "0.25",
+     "p_neither": "0.68",
+     "ev_r": "-0.2317",
+     "outcome": null
+    },
+    {
+     "id": "20261126T1736-BTC-br",
+     "made": "2026-11-26T17:36:50+00:00",
+     "coin": "BTC",
+     "side": "short",
+     "spot": "60524.38",
+     "d_pct": "2.49",
+     "p_target": "0.11",
+     "p_stop": "0.13",
+     "p_neither": "0.76",
+     "ev_r": "-0.0855",
+     "outcome": null
+    },
+    {
+     "id": "20261126T1736-BTC-br",
+     "made": "2026-11-26T17:36:50+00:00",
+     "coin": "BTC",
+     "side": "long",
+     "spot": "60524.38",
+     "d_pct": "2.49",
+     "p_target": "0.06",
+     "p_stop": "0.24",
+     "p_neither": "0.7",
+     "ev_r": "-0.2705",
+     "outcome": null
+    },
     {
      "id": "20261126T0736-ETH-br",
      "made": "2026-11-26T07:36:30+00:00",
@@ -2049,58 +2101,6 @@
      "coin": "BTC",
      "side": "long",
      "spot": "59982.01",
-     "d_pct": "2.45",
-     "p_target": "0.07",
-     "p_stop": "0.23",
-     "p_neither": "0.7",
-     "ev_r": "-0.2474",
-     "outcome": "stop"
-    },
-    {
-     "id": "20261124T0736-ETH-br",
-     "made": "2026-11-24T07:36:24+00:00",
-     "coin": "ETH",
-     "side": "short",
-     "spot": "1697.74",
-     "d_pct": "3.45",
-     "p_target": "0.13",
-     "p_stop": "0.13",
-     "p_neither": "0.74",
-     "ev_r": "-0.022",
-     "outcome": "neither"
-    },
-    {
-     "id": "20261124T0736-ETH-br",
-     "made": "2026-11-24T07:36:24+00:00",
-     "coin": "ETH",
-     "side": "long",
-     "spot": "1697.74",
-     "d_pct": "3.45",
-     "p_target": "0.07",
-     "p_stop": "0.24",
-     "p_neither": "0.69",
-     "ev_r": "-0.222",
-     "outcome": "stop"
-    },
-    {
-     "id": "20261124T0736-BTC-br",
-     "made": "2026-11-24T07:36:20+00:00",
-     "coin": "BTC",
-     "side": "short",
-     "spot": "60460.01",
-     "d_pct": "2.45",
-     "p_target": "0.11",
-     "p_stop": "0.13",
-     "p_neither": "0.76",
-     "ev_r": "-0.0874",
-     "outcome": "neither"
-    },
-    {
-     "id": "20261124T0736-BTC-br",
-     "made": "2026-11-24T07:36:20+00:00",
-     "coin": "BTC",
-     "side": "long",
-     "spot": "60460.01",
      "d_pct": "2.45",
      "p_target": "0.07",
      "p_stop": "0.23",
