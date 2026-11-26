@@ -1,45 +1,7 @@
 {
  "capital": 100000.0,
- "cash": 89973.65999999999,
- "open": {
-  "name": "iron condor",
-  "expiry": "2026-12-01",
-  "opened": "2026-11-23T09:17:53+05:30",
-  "legs": [
-   {
-    "kind": "CE",
-    "strike": 26600,
-    "side": "SELL",
-    "qty": 65,
-    "entry": 56.1
-   },
-   {
-    "kind": "PE",
-    "strike": 25250,
-    "side": "SELL",
-    "qty": 65,
-    "entry": 55.95
-   },
-   {
-    "kind": "CE",
-    "strike": 26800,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 33.55
-   },
-   {
-    "kind": "PE",
-    "strike": 25050,
-    "side": "BUY",
-    "qty": 65,
-    "entry": 36.3
-   }
-  ],
-  "credit": 2743.0,
-  "entry_charges": 110.42,
-  "max_loss": 10257.0,
-  "note": "1 SD short strikes, spot 25919, ATM IV 16.6%; rules only"
- },
+ "cash": 88856.13999999998,
+ "open": null,
  "closed": [
   {
    "name": "iron condor",
@@ -334,7 +296,56 @@
    "exit_charges": 122.85,
    "pnl": -3229.94,
    "reason": "stop: close cost 5931 >= 2x credit 2935 (loss = credit)"
+  },
+  {
+   "name": "iron condor",
+   "expiry": "2026-12-01",
+   "opened": "2026-11-23T09:17:53+05:30",
+   "legs": [
+    {
+     "kind": "CE",
+     "strike": 26600,
+     "side": "SELL",
+     "qty": 65,
+     "entry": 56.1
+    },
+    {
+     "kind": "PE",
+     "strike": 25250,
+     "side": "SELL",
+     "qty": 65,
+     "entry": 55.95
+    },
+    {
+     "kind": "CE",
+     "strike": 26800,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 33.55
+    },
+    {
+     "kind": "PE",
+     "strike": 25050,
+     "side": "BUY",
+     "qty": 65,
+     "entry": 36.3
+    }
+   ],
+   "credit": 2743.0,
+   "entry_charges": 110.42,
+   "max_loss": 10257.0,
+   "note": "1 SD short strikes, spot 25919, ATM IV 16.6%; rules only",
+   "closed": "2026-11-26T15:06:21+05:30",
+   "exit_prices": [
+    12.45,
+    17.25,
+    5.35,
+    8.65
+   ],
+   "exit_charges": 97.02,
+   "pnl": 1515.06,
+   "reason": "take profit: close cost 1020 <= 50% of credit 2743"
   }
  ],
- "realized": -12658.92
+ "realized": -11143.86
 }
