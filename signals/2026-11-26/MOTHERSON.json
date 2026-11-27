@@ -1,0 +1,12 @@
+{
+  "symbol": "MOTHERSON",
+  "as_of": "2026-11-26",
+  "rating": "Hold",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "The short-notice 26 Nov board meeting was postponed or cancelled 'due to unavoidable reasons' and the trading window reopened (NSE filing, 26 Nov); investor call 30 Nov still scheduled. Purpose never disclosed: unresolved uncertainty, minor concern. Hold. Tags: reason=filing; attention=no",
+  "confidence": 55.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-27T07:43:21+05:30"
+}

@@ -1,0 +1,12 @@
+{
+  "symbol": "TECHM",
+  "as_of": "2026-11-26",
+  "rating": "Overweight",
+  "entry_price": null,
+  "stop_loss": null,
+  "price_target": null,
+  "summary": "Bonus record date 30 Nov: neutral. Bear case: IT demand, AI selloff. Tags: reason=none; attention=no",
+  "confidence": 54.0,
+  "source": "claude-analyst",
+  "created_at": "2026-11-27T07:43:21+05:30"
+}
