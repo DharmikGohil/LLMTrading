@@ -46,7 +46,6 @@ export function load() {
     research: read("research", []),
     docs: read("docs", []),
     options: read("options", null),
-    crypto: read("crypto", null),
   };
   return cache;
 }

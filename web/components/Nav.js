@@ -8,8 +8,8 @@ export const SECTIONS = [
   { href: "/", label: "Home", match: (p) => p === "/", icon: "M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" },
   { href: "/portfolio", label: "Portfolio", match: (p) => p.startsWith("/portfolio"), icon: "M3 7h18v13H3zM8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" },
   {
-    href: "/desk/india", label: "Desks", match: (p) => /^\/(desk|options|crypto|symbol)/.test(p), icon: "M4 19V9M10 19V5M16 19v-7M22 19H2",
-    sub: [["/desk/india", "India stocks"], ["/desk/us", "US stocks"], ["/options", "Nifty options"], ["/crypto", "Crypto"]],
+    href: "/desk/india", label: "Desks", match: (p) => /^\/(desk|options|symbol)/.test(p), icon: "M4 19V9M10 19V5M16 19v-7M22 19H2",
+    sub: [["/desk/india", "India stocks"], ["/desk/us", "US stocks"], ["/options", "Nifty options"]],
   },
   {
     href: "/tape", label: "Activity", match: (p) => /^\/(tape|history|calls)/.test(p), icon: "M3 12h4l3-8 4 16 3-8h4",

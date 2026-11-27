@@ -11,7 +11,7 @@ const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata = {
   title: { default: "LLMTrading", template: "%s · LLMTrading" },
-  description: "Paper trading desks run by Claude: India and US stocks, Nifty options and crypto. A rules-based strategy run with and without an LLM that can only make it safer, to measure whether the LLM helps.",
+  description: "Paper trading desks run by Claude: India and US stocks and Nifty options. A rules-based strategy run with and without an LLM that can only make it safer, to measure whether the LLM helps.",
 };
 
 export const viewport = { themeColor: "#f3f2f8" };

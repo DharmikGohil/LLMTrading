@@ -17,9 +17,6 @@ export default function Home() {
   const data = load();
   const stockDesks = MARKET_LIST.slice().reverse().map((m) => ({ ...deskOf(data, m.key), spec: liveSpec(data, m.key), eq: equitySeries(data, m.key) }));
   const opt = data.options ? optionsView(data.options) : null;
-  const c = data.crypto;
-  const cBook = (k) => c?.books?.[k];
-  const cRows = (c?.equity || []).map((r) => ({ main: +r.main, control: +r.control, hold: +r.hold }));
   const calls = stockDesks.flatMap((d) => d.latestCalls.slice(0, 4).map((s) => ({ ...s, desk: d.name })));
 
   return (
@@ -53,16 +50,6 @@ export default function Home() {
             <div className="row"><span>Without LLM</span><b>{pct((data.options.books.control.equity / data.options.books.control.capital - 1) * 100)}</b></div>
             <div className="row"><span>LLM difference</span><b>{pp(((data.options.books.main.equity - data.options.books.control.equity) / data.options.books.main.capital) * 100)}</b></div>
             <Spark values={series(opt.condorChart, "main")} bench={series(opt.condorChart, "index")} />
-          </Link>
-        ) : null}
-        {c ? (
-          <Link href="/crypto" className="card">
-            <div className="top"><span className="nm">Crypto</span><span className="tag">BTC + ETH, in cash when falling</span></div>
-            <span className="val">${cBook("main").value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-            <div className="row"><span>With LLM</span><b>{pct(cBook("main").return_pct)}</b></div>
-            <div className="row"><span>Just hold BTC</span><b>{pct(cBook("hold").return_pct)}</b></div>
-            <div className="row"><span>LLM difference</span><b>{pp(cBook("main").return_pct - cBook("control").return_pct)}</b></div>
-            <Spark values={cRows.map((r) => (r.main / 10000 - 1) * 100)} bench={cRows.map((r) => (r.hold / 10000 - 1) * 100)} />
           </Link>
         ) : null}
       </div>
@@ -100,10 +87,6 @@ export default function Home() {
           <p style={{ marginTop: 10 }}>
             <b>Nifty options:</b> a weekly bet that Nifty stays inside a range, with the loss capped (an iron condor). Claude can bet a wider range or skip a risky week; the
             account without LLM ignores the gate. There is also a ₹1,000 option-buying test.
-          </p>
-          <p style={{ marginTop: 10 }}>
-            <b>Crypto:</b> holds BTC and ETH only while they are rising (above their 50-day average), otherwise waits in cash.
-            It runs 24/7 on GitHub Actions, against simply holding BTC.
           </p>
           <p style={{ marginTop: 10 }}>
             Every rule was backtested before it went live, and most ideas failed honestly. See the{" "}
