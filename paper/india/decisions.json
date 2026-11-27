@@ -3058,5 +3058,185 @@
   "held": 6,
   "target_qty": 6,
   "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: already at/above size (6 >= 6)"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "ADANIPORTS",
+  "price": 1938.9,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum Hold; Hold: keep 5"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "AUROPHARMA",
+  "price": 1818.8,
+  "held": 5,
+  "target_qty": 5,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (60%) vetoes the buy; Hold: keep 5"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "BOSCHLTD",
+  "price": 49030.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "DIVISLAB",
+  "price": 11672.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (54%) does not object; Buy: already at/above size (0 >= 0)"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "ETERNAL",
+  "price": 369.4,
+  "held": 14,
+  "target_qty": 14,
+  "decision": "momentum Hold; Hold: keep 14"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "FEDERALBNK",
+  "price": 362.1,
+  "held": 29,
+  "target_qty": 29,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (56%) does not object; Buy: already at/above size (29 >= 27)"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "HAL",
+  "price": 4929.0,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "INDHOTEL",
+  "price": 901.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: second opinion missing; no new buys; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "KOTAKBANK",
+  "price": 508.6,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "LAURUSLABS",
+  "price": 2525.2,
+  "held": 4,
+  "target_qty": 4,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (58%) vetoes the buy; Hold: keep 4"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "MAHABANK",
+  "price": 94.95,
+  "held": 103,
+  "target_qty": 103,
+  "decision": "momentum Hold; Hold: keep 103"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "MOTHERSON",
+  "price": 164.72,
+  "held": 0,
+  "target_qty": 45,
+  "decision": "momentum Buy; LLM: claude-analyst Hold (55%): Buy softened to Overweight; Overweight: add to 45 (alloc 45, risk-sized 90) stop 142.66"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "NYKAA",
+  "price": 356.7,
+  "held": 27,
+  "target_qty": 28,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (58%) does not object; Buy: add to 28 (alloc 28, risk-sized 50) stop 317.36"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "PHOENIXLTD",
+  "price": 2311.5,
+  "held": 2,
+  "target_qty": 2,
+  "decision": "momentum Hold; Hold: keep 2"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "PNB",
+  "price": 147.47,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "RADICO",
+  "price": 4702.7,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (58%) vetoes the buy; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "TECHM",
+  "price": 1858.0,
+  "held": 0,
+  "target_qty": 5,
+  "decision": "momentum Buy; LLM: claude-analyst Overweight (54%) does not object; Buy: add to 5 (alloc 5, risk-sized 10) stop 1667.64"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "TORNTPHARM",
+  "price": 5046.5,
+  "held": 0,
+  "target_qty": 0,
+  "decision": "momentum Hold; Hold: keep 0"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "TVSMOTOR",
+  "price": 4591.8,
+  "held": 1,
+  "target_qty": 1,
+  "decision": "momentum Hold; Hold: keep 1"
+ },
+ {
+  "time": "2026-11-27T09:17:27+05:30",
+  "as_of": "2026-11-26",
+  "symbol": "ZYDUSLIFE",
+  "price": 1185.9,
+  "held": 6,
+  "target_qty": 6,
+  "decision": "momentum Buy; LLM: claude-analyst Underweight (63%) vetoes the buy; Hold: keep 6"
  }
 ]

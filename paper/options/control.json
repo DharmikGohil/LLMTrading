@@ -1,7 +1,45 @@
 {
  "capital": 100000.0,
- "cash": 88856.13999999998,
- "open": null,
+ "cash": 91679.77999999998,
+ "open": {
+  "name": "iron condor",
+  "expiry": "2026-12-08",
+  "opened": "2026-11-27T09:17:54+05:30",
+  "legs": [
+   {
+    "kind": "CE",
+    "strike": 26650,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 54.15
+   },
+   {
+    "kind": "PE",
+    "strike": 25150,
+    "side": "SELL",
+    "qty": 65,
+    "entry": 62.85
+   },
+   {
+    "kind": "CE",
+    "strike": 26850,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 31.85
+   },
+   {
+    "kind": "PE",
+    "strike": 24950,
+    "side": "BUY",
+    "qty": 65,
+    "entry": 40.0
+   }
+  ],
+  "credit": 2934.75,
+  "entry_charges": 111.11,
+  "max_loss": 10065.25,
+  "note": "1 SD short strikes, spot 25906, ATM IV 16.2%; rules only"
+ },
  "closed": [
   {
    "name": "iron condor",

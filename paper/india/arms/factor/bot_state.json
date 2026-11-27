@@ -3,7 +3,7 @@
     "TVSMOTOR": {
       "qty": 1,
       "avg": 4247.22,
-      "stop": 4123.79,
+      "stop": 4128.79,
       "target": 52828.4,
       "opened": "2026-10-30",
       "buy_charges": 5.04
@@ -11,7 +11,7 @@
     "ADANIPORTS": {
       "qty": 5,
       "avg": 1903.53,
-      "stop": 1759.09,
+      "stop": 1764.78,
       "target": 22795.29,
       "opened": "2026-10-30",
       "buy_charges": 11.3
@@ -51,7 +51,7 @@
     "LAURUSLABS": {
       "qty": 4,
       "avg": 2351.02,
-      "stop": 2148.52,
+      "stop": 2202.93,
       "target": 31530.32,
       "opened": "2026-11-02",
       "buy_charges": 11.17
@@ -59,7 +59,7 @@
     "PHOENIXLTD": {
       "qty": 2,
       "avg": 2020.71,
-      "stop": 2030.99,
+      "stop": 2044.8,
       "target": 23788.25,
       "opened": "2026-11-02",
       "buy_charges": 4.8
@@ -75,7 +75,7 @@
     "RADICO": {
       "qty": 2,
       "avg": 4518.26,
-      "stop": 4203.02,
+      "stop": 4206.54,
       "target": 58856.21,
       "opened": "2026-11-19",
       "buy_charges": 10.73
@@ -83,8 +83,8 @@
   },
   "pending": [],
   "day": {
-    "date": "2026-11-26",
-    "start_equity": 103252.93,
+    "date": "2026-11-27",
+    "start_equity": 103091.33,
     "orders": 0,
     "partial": false
   },

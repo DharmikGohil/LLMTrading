@@ -1,13 +1,60 @@
 {
- "time": "2026-11-26T15:06:53+05:30",
- "spot": null,
+ "time": "2026-11-27T09:18:08+05:30",
+ "spot": 25892.0,
  "books": {
   "main": {
    "capital": 100000.0,
-   "equity": 91684.69,
+   "equity": 91372.29,
    "realized": -8315.31,
-   "open": null,
-   "mark": null,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-12-08",
+    "opened": "2026-11-27T09:17:54+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 26850,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 30.3
+     },
+     {
+      "kind": "PE",
+      "strike": 24950,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 39.75
+     },
+     {
+      "kind": "CE",
+      "strike": 27050,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 17.9
+     },
+     {
+      "kind": "PE",
+      "strike": 24750,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 25.4
+     }
+    ],
+    "credit": 1738.75,
+    "entry_charges": 104.4,
+    "max_loss": 11261.25,
+    "note": "1.25 SD short strikes, spot 25906, ATM IV 16.2%; gate: widen: Calming but recent whipsaw: Nifty 25,892 early on 27 Nov (Yahoo), +0.3% and flat over the last two sessions after 1.5-2% daily swings 20-25 Nov; India VIX easing to 16.2 (27 Nov, Yahoo). No RBI policy or budget before the expiry; US half-day 27 Nov. Widen: short strikes at 1.25 SD to allow for a return of the swings; no lotto direction."
+   },
+   "mark": {
+    "close_value": 1946.75,
+    "pnl": -312.4,
+    "prices": [
+     32.3,
+     40.5,
+     17.95,
+     24.9
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -209,10 +256,57 @@
   },
   "control": {
    "capital": 100000.0,
-   "equity": 88856.14,
+   "equity": 88637.78,
    "realized": -11143.86,
-   "open": null,
-   "mark": null,
+   "open": {
+    "name": "iron condor",
+    "expiry": "2026-12-08",
+    "opened": "2026-11-27T09:17:54+05:30",
+    "legs": [
+     {
+      "kind": "CE",
+      "strike": 26650,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 54.15
+     },
+     {
+      "kind": "PE",
+      "strike": 25150,
+      "side": "SELL",
+      "qty": 65,
+      "entry": 62.85
+     },
+     {
+      "kind": "CE",
+      "strike": 26850,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 31.85
+     },
+     {
+      "kind": "PE",
+      "strike": 24950,
+      "side": "BUY",
+      "qty": 65,
+      "entry": 40.0
+     }
+    ],
+    "credit": 2934.75,
+    "entry_charges": 111.11,
+    "max_loss": 10065.25,
+    "note": "1 SD short strikes, spot 25906, ATM IV 16.2%; rules only"
+   },
+   "mark": {
+    "close_value": 3042.0,
+    "pnl": -218.36,
+    "prices": [
+     55.15,
+     63.55,
+     31.9,
+     40.0
+    ]
+   },
    "closed": [
     {
      "name": "iron condor",
@@ -1393,6 +1487,13 @@
    "main": "91684.69",
    "control": "88856.14",
    "lotto": "9634.6"
+  },
+  {
+   "time": "2026-11-27T09:18:08+05:30",
+   "spot": "25892.0",
+   "main": "91372.29",
+   "control": "88637.78",
+   "lotto": "9634.6"
   }
  ],
  "gates": [
@@ -1514,6 +1615,13 @@
    "lotto_direction": "none",
    "note": "Whipsaw continues: Nifty 25,857 early on 26 Nov (Yahoo) after 25,801 (20 Nov), 25,350 (23 Nov) and 25,819 (25 Nov): 1.5-2% daily swings, India VIX 17.5 (26 Nov, Yahoo; 81st percentile on 23 Nov). US markets closed 26 Nov (Thanksgiving) with tariff headlines on 25 Nov (Yahoo). Skip: no new condor for the With LLM account and no lotto today.",
    "time": "2026-11-26T09:17:58+05:30"
+  },
+  {
+   "date": "2026-11-27",
+   "action": "widen",
+   "lotto_direction": "none",
+   "note": "Calming but recent whipsaw: Nifty 25,892 early on 27 Nov (Yahoo), +0.3% and flat over the last two sessions after 1.5-2% daily swings 20-25 Nov; India VIX easing to 16.2 (27 Nov, Yahoo). No RBI policy or budget before the expiry; US half-day 27 Nov. Widen: short strikes at 1.25 SD to allow for a return of the swings; no lotto direction.",
+   "time": "2026-11-27T09:17:50+05:30"
   }
  ]
 }
